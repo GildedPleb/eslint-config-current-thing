@@ -1,0 +1,5 @@
+unopinionated
+TSDoc
+JSDoc
+AirBnB
+KXCD
