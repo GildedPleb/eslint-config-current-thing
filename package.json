@@ -94,7 +94,9 @@
     "es2020",
     "es2021",
     "es2022",
-    "esnext"
+    "esnext",
+    "flat",
+    "flatconfig"
   ],
   "author": "GildedPleb (https://twitter.com/@gildedpleb)",
   "contributors": [
@@ -102,5 +104,12 @@
       "name": "GildedPleb",
       "url": "https://twitter.com/@gildedpleb"
     }
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GildedPleb/eslint-config-current-thing"
+  },
+  "bugs": {
+    "url": "https://github.com/GildedPleb/eslint-config-current-thing/issues"
+  }
 }
