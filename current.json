@@ -853,9 +853,9 @@
     "security",
     "sonarjs",
     "react-native",
-    "simple-import-sort",
     "@eslint-community/eslint-comments",
     "eslint-comments",
+    "simple-import-sort",
     "jsdoc",
     "unicorn",
     "import",
@@ -4175,12 +4175,6 @@
     "react-native/no-single-element-style-arrays": [
       2
     ],
-    "simple-import-sort/imports": [
-      2
-    ],
-    "simple-import-sort/exports": [
-      2
-    ],
     "@eslint-community/eslint-comments/disable-enable-pair": [
       2
     ],
@@ -4194,6 +4188,12 @@
       2
     ],
     "@eslint-community/eslint-comments/no-unused-enable": [
+      2
+    ],
+    "simple-import-sort/imports": [
+      2
+    ],
+    "simple-import-sort/exports": [
       2
     ],
     "jsdoc/check-access": [
