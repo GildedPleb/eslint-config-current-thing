@@ -78,7 +78,7 @@
   },
   "browserslist": [
     "defaults and supports es6-module",
-    "maintained node versions"
+    "node >= 18"
   ],
   "exports": "./index.js",
   "keywords": [
