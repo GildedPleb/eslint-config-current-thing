@@ -140,6 +140,19 @@
       "FinalizationRegistry": false,
       "WeakRef": false,
       "document": false,
+      "afterAll": false,
+      "afterEach": false,
+      "beforeAll": false,
+      "beforeEach": false,
+      "describe": false,
+      "expect": false,
+      "fit": false,
+      "it": false,
+      "jest": false,
+      "test": false,
+      "xdescribe": false,
+      "xit": false,
+      "xtest": false,
       "addEventListener": false,
       "AnalyserNode": false,
       "Animation": false,
@@ -849,10 +862,12 @@
     "tsdoc",
     "sort-class-members",
     "compat",
+    "jest-formatting",
     "@babel",
     "security",
     "sonarjs",
     "react-native",
+    "jest-dom",
     "@eslint-community/eslint-comments",
     "eslint-comments",
     "simple-import-sort",
@@ -3884,6 +3899,24 @@
     "jest/valid-expect": [
       2
     ],
+    "jest-formatting/padding-around-after-all-blocks": [
+      2
+    ],
+    "jest-formatting/padding-around-after-each-blocks": [
+      2
+    ],
+    "jest-formatting/padding-around-before-all-blocks": [
+      2
+    ],
+    "jest-formatting/padding-around-before-each-blocks": [
+      2
+    ],
+    "jest-formatting/padding-around-describe-blocks": [
+      2
+    ],
+    "jest-formatting/padding-around-test-blocks": [
+      2
+    ],
     "react/jsx-closing-bracket-location": [
       0,
       "line-aligned"
@@ -4173,6 +4206,39 @@
       0
     ],
     "react-native/no-single-element-style-arrays": [
+      2
+    ],
+    "jest-dom/prefer-checked": [
+      2
+    ],
+    "jest-dom/prefer-empty": [
+      2
+    ],
+    "jest-dom/prefer-enabled-disabled": [
+      2
+    ],
+    "jest-dom/prefer-focus": [
+      2
+    ],
+    "jest-dom/prefer-in-document": [
+      2
+    ],
+    "jest-dom/prefer-required": [
+      2
+    ],
+    "jest-dom/prefer-to-have-attribute": [
+      2
+    ],
+    "jest-dom/prefer-to-have-class": [
+      2
+    ],
+    "jest-dom/prefer-to-have-style": [
+      2
+    ],
+    "jest-dom/prefer-to-have-text-content": [
+      2
+    ],
+    "jest-dom/prefer-to-have-value": [
       2
     ],
     "@eslint-community/eslint-comments/disable-enable-pair": [

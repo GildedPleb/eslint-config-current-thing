@@ -7,6 +7,23 @@ export default {
   name: "Jest",
   definitions: `{
     files,
+    languageOptions: {
+      globals: {
+        afterAll: false,
+        afterEach: false,
+        beforeAll: false,
+        beforeEach: false,
+        describe: false,
+        expect: false,
+        fit: false,
+        it: false,
+        jest: false,
+        test: false,
+        xdescribe: false,
+        xit: false,
+        xtest: false,
+      },
+    },
 		plugins: { jest },
     ${RULES}
   }`,

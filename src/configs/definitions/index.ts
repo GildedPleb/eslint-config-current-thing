@@ -10,6 +10,8 @@ import google from "./google";
 import index from "./import";
 import importSort from "./import-sort";
 import jest from "./jest";
+import jestDom from "./jest-dom";
+import jestFormatting from "./jest-formatting";
 import jsdoc from "./jsdoc";
 import jsxA11y from "./jsx-a11y";
 import nextjs from "./nextjs";
@@ -83,4 +85,6 @@ export default [
   reactNativeConfig,
   jest,
   standardJsx,
+  jestFormatting,
+  jestDom,
 ];

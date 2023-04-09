@@ -10,7 +10,7 @@ An **extremely unopinionated** config based on a popularity contest between the 
 
 Linting can be so opinionated, it can become political. `Eslint Config Current Thing` generates an ESLint config objectively based on whatever the current thing is at the time of build w/r/t broad ecosystem-wide definitions and opinion around JavaScript linting. Now, those political preferences can be exposed for what they are--power-grabs--by competing on an inter-ecosystem, distributed scale, not just within a set of contributors or a niche.
 
-Presently, it combines these configs:
+Presently, it combines these configs (and their plugins, sub-modules, etc.):
 
 |                |          |            |             |                  |
 | -------------- | -------- | ---------- | ----------- | ---------------- |
@@ -26,6 +26,8 @@ The winning (and thus supported) high-level architecture is:
 | Types | FrontEnd | Testing |
 | ----- | -------- | ------- |
 |`Typescript` | `React` / `React Native`| `Jest`
+
+---
 
 Unsurprisingly, it is incredibly strict with around 1000 rules.
 
@@ -77,6 +79,8 @@ And if you are using VS Code, you should get the extension for ESLint `dbaeumer.
 
 And you'll probably want to restart your ESLint server, maybe more than once. `Command Pallet` > `Restart ESLint Server`
 
+Oh god, what have we done.
+
 ---
 
 ## Usage
@@ -127,7 +131,7 @@ export default [
 
 There are around 1000 rules in this config, and they are completely overwhelming.
 
-1. Try easing into them with [nibble](https://github.com/IanVS/eslint-nibble).
+1. Try easing into them with [nibble](https://github.com/IanVS/eslint-nibble) (though, we have no idea if it works with flat config).
 1. Importantly, the config is also exported as a plain JS object called `JSONConfig`. As such, you can pick off rules to disable in `eslint.config.js`, like below, and choke out the problems in your code by slowly allowing more rules in:
 
 ```js
@@ -178,7 +182,7 @@ To determine if your preferred config is eligible, visit the NPM page and check 
 
 You can always extend/disable this config to meet your own needs. However, if you think a config should be included, and it passes the `monthly count test` (and is not garbage/has stars/contributors, etc.), open a PR or Issue, and it will be added. When adding a rule, the `recommended` version of that rule will be unashamedly used with as little alterations as possible (however, if it has serious conflicts with higher priority rules we will find workarounds, e.g. even "lite" FP rules break everything popular).
 
-This repo does all it can to _not_ define any new individual rules or to have any opinion outside of getting the various pieces to play nice together.
+Outside of getting the various pieces to play nice together, this repo does all it can to _not_ define any new individual rules or to have any opinion. **[Holding back intensifies]**
 
 ### 2. Conflicts
 
