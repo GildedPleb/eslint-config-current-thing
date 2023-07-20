@@ -838,7 +838,7 @@
       "XPathResult": false,
       "XSLTProcessor": false
     },
-    "parser": "typescript-eslint/parser@5.57.1",
+    "parser": "typescript-eslint/parser@5.62.0",
     "parserOptions": {
       "ecmaFeatures": {
         "globalReturn": true,
@@ -862,27 +862,27 @@
     "tsdoc",
     "sort-class-members",
     "compat",
-    "jest-formatting",
     "@babel",
+    "jest-formatting",
     "security",
     "sonarjs",
-    "react-native",
     "jest-dom",
-    "@eslint-community/eslint-comments",
-    "eslint-comments",
+    "react-native",
     "simple-import-sort",
     "jsdoc",
-    "unicorn",
+    "unicorn:eslint-plugin-unicorn@48.0.0",
+    "@eslint-community/eslint-comments",
+    "eslint-comments",
     "import",
     "n",
     "promise",
     "@typescript-eslint",
     "@next/next",
     "node",
+    "flowtype",
     "react",
     "jsx-a11y",
     "react-hooks",
-    "flowtype",
     "jest",
     "prettier",
     "@ts"
@@ -4190,24 +4190,6 @@
     "sonarjs/prefer-while": [
       2
     ],
-    "react-native/no-unused-styles": [
-      2
-    ],
-    "react-native/no-color-literals": [
-      2
-    ],
-    "react-native/sort-styles": [
-      2
-    ],
-    "react-native/split-platform-components": [
-      2
-    ],
-    "react-native/no-raw-text": [
-      0
-    ],
-    "react-native/no-single-element-style-arrays": [
-      2
-    ],
     "jest-dom/prefer-checked": [
       2
     ],
@@ -4241,19 +4223,22 @@
     "jest-dom/prefer-to-have-value": [
       2
     ],
-    "@eslint-community/eslint-comments/disable-enable-pair": [
+    "react-native/no-unused-styles": [
       2
     ],
-    "@eslint-community/eslint-comments/no-aggregating-enable": [
+    "react-native/no-color-literals": [
       2
     ],
-    "@eslint-community/eslint-comments/no-duplicate-disable": [
+    "react-native/sort-styles": [
       2
     ],
-    "@eslint-community/eslint-comments/no-unlimited-disable": [
+    "react-native/split-platform-components": [
       2
     ],
-    "@eslint-community/eslint-comments/no-unused-enable": [
+    "react-native/no-raw-text": [
+      0
+    ],
+    "react-native/no-single-element-style-arrays": [
       2
     ],
     "simple-import-sort/imports": [
@@ -4305,6 +4290,12 @@
     "jsdoc/implements-on-classes": [
       1
     ],
+    "jsdoc/imports-as-dependencies": [
+      0
+    ],
+    "jsdoc/informative-docs": [
+      0
+    ],
     "jsdoc/match-description": [
       0
     ],
@@ -4314,14 +4305,17 @@
     "jsdoc/multiline-blocks": [
       1
     ],
-    "jsdoc/newline-after-description": [
-      1
-    ],
     "jsdoc/no-bad-blocks": [
       0
     ],
-    "jsdoc/no-defaults": [
+    "jsdoc/no-blank-block-descriptions": [
       0
+    ],
+    "jsdoc/no-blank-blocks": [
+      0
+    ],
+    "jsdoc/no-defaults": [
+      1
     ],
     "jsdoc/no-missing-syntax": [
       0
@@ -4554,9 +4548,6 @@
     "unicorn/no-unreadable-iife": [
       2
     ],
-    "unicorn/no-unsafe-regex": [
-      0
-    ],
     "unicorn/no-unused-properties": [
       0
     ],
@@ -4606,7 +4597,10 @@
       2
     ],
     "unicorn/prefer-at": [
-      0
+      2
+    ],
+    "unicorn/prefer-blob-reading-methods": [
+      2
     ],
     "unicorn/prefer-code-point": [
       2
@@ -4630,7 +4624,7 @@
       2
     ],
     "unicorn/prefer-event-target": [
-      0
+      2
     ],
     "unicorn/prefer-export-from": [
       2
@@ -4699,7 +4693,7 @@
       2
     ],
     "unicorn/prefer-string-replace-all": [
-      0
+      2
     ],
     "unicorn/prefer-string-slice": [
       2
@@ -4750,6 +4744,21 @@
       2
     ],
     "unicorn/throw-new-error": [
+      2
+    ],
+    "@eslint-community/eslint-comments/disable-enable-pair": [
+      2
+    ],
+    "@eslint-community/eslint-comments/no-aggregating-enable": [
+      2
+    ],
+    "@eslint-community/eslint-comments/no-duplicate-disable": [
+      2
+    ],
+    "@eslint-community/eslint-comments/no-unlimited-disable": [
+      2
+    ],
+    "@eslint-community/eslint-comments/no-unused-enable": [
       2
     ],
     "n/handle-callback-err": [
@@ -4943,6 +4952,9 @@
       1
     ],
     "@next/next/next-script-for-ga": [
+      1
+    ],
+    "@next/next/no-async-client-component": [
       1
     ],
     "@next/next/no-before-interactive-script-outside-document": [

@@ -15,7 +15,6 @@ interface Stats {
 }
 /**
  * Gets the download count for a given npm package
- *
  * @param name - The name of the package.
  */
 async function getDownloadCount(name: string) {
@@ -33,7 +32,6 @@ interface Info {
 }
 /**
  * Gets the info for a given npm package
- *
  * @param name - The name of the package.
  */
 async function getInfo(name: string): Promise<Info> {
