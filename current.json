@@ -53,7 +53,7 @@
     ]
   },
   "linterOptions": {
-    "reportUnusedDisableDirectives": true
+    "reportUnusedDisableDirectives": 1
   },
   "languageOptions": {
     "ecmaVersion": 2018,
@@ -873,7 +873,7 @@
     "@eslint-community/eslint-comments",
     "eslint-comments",
     "import",
-    "n",
+    "n:eslint-plugin-n@16.0.1",
     "promise",
     "@typescript-eslint",
     "@next/next",
@@ -898,7 +898,8 @@
       2,
       {
         "allowImplicit": true,
-        "checkForEach": false
+        "checkForEach": false,
+        "allowVoid": false
       }
     ],
     "block-scoped-var": [
@@ -948,11 +949,7 @@
     "dot-notation": [
       0,
       {
-        "allowKeywords": true,
-        "allowPattern": "",
-        "allowPrivateClassPropertyAccess": false,
-        "allowProtectedClassPropertyAccess": false,
-        "allowIndexSignaturePropertyAccess": false
+        "allowKeywords": true
       }
     ],
     "dot-location": [
@@ -1213,8 +1210,7 @@
       {
         "allowShortCircuit": false,
         "allowTernary": false,
-        "allowTaggedTemplates": false,
-        "enforceForJSX": false
+        "allowTaggedTemplates": false
       }
     ],
     "no-unused-labels": [
