@@ -9,7 +9,7 @@ const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 const generateCode = `/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable tsdoc/syntax */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
@@ -45,7 +45,9 @@ const files = ["**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}"];
 
 const defaultOptions = { disable: [], override: {} };
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-return
+/**
+ * @param {{ disable: string[], override: Record<string, Record<string, number | string>> }} default - Options
+ */
 export default ({ disable = [], override = {} } = defaultOptions) => [
   {
     ignores: [
