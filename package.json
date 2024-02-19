@@ -4,10 +4,11 @@
   "description": "Lint The Current Thing",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint",
+    "test": "npm run predeploy && npm run lint",
     "current": "npx eslint --print-config src/generate.ts > current.json",
     "lint": "npx eslint --fix -c ./eslint.config.js --max-warnings 0 .",
-    "generate": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/generate.ts && npm run current && npx eslint --fix src/config.js"
+    "generate": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/generate.ts && npm run current && npx eslint --fix src/config.js",
+    "predeploy": "npx update-browserslist-db@latest -y"
   },
   "license": "MIT",
   "dependencies": {
