@@ -853,23 +853,22 @@
   },
   "plugins": [
     "@",
-    "you-dont-need-lodash-underscore",
-    "react-perf",
-    "functional",
     "@shopify",
     "@shopify/typescript",
-    "no-unsanitized",
-    "tsdoc",
+    "you-dont-need-lodash-underscore",
+    "functional",
     "sort-class-members",
-    "compat",
+    "no-unsanitized",
     "@babel",
+    "tsdoc",
     "jest-formatting",
+    "compat",
     "security",
     "sonarjs",
     "jest-dom",
     "react-native",
-    "simple-import-sort",
     "jsdoc",
+    "simple-import-sort",
     "unicorn:eslint-plugin-unicorn@48.0.0",
     "@eslint-community/eslint-comments",
     "eslint-comments",
@@ -878,325 +877,16 @@
     "promise",
     "@typescript-eslint",
     "@next/next",
-    "node",
     "flowtype",
     "react",
     "jsx-a11y",
     "react-hooks",
+    "node",
     "jest",
     "prettier",
     "@ts"
   ],
   "rules": {
-    "you-dont-need-lodash-underscore/concat": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/drop": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/drop-right": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/index-of": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/join": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/last": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/last-index-of": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/reverse": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/fill": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/detect": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/first": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-array": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/slice": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/bind": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-finite": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-integer": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-nan": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-nil": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-null": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-undefined": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/keys": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/extend-own": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/assign": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/values": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/entries": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/to-pairs": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/pairs": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/split": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/starts-with": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/ends-with": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/to-lower": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/to-upper": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/trim": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/pad-start": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/pad-end": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/repeat": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/uniq": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/replace": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/omit": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/flatten": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/throttle": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-string": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/cast-array": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-function": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/find": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/find-index": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/each": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/for-each": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/every": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/all": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/filter": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/select": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/map": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/collect": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/reduce": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/inject": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/foldl": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/reduce-right": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/foldr": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/size": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/some": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/any": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/includes": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/contains": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/take-right": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/get": [
-      1
-    ],
-    "react/jsx-no-bind": [
-      2,
-      {
-        "ignoreRefs": true,
-        "allowArrowFunctions": true,
-        "allowFunctions": false,
-        "allowBind": false,
-        "ignoreDOMComponents": true
-      }
-    ],
-    "react/no-did-update-set-state": [
-      2
-    ],
-    "react/no-unknown-property": [
-      2
-    ],
-    "react/no-unused-prop-types": [
-      2,
-      {
-        "customValidators": [],
-        "skipShapeProps": true
-      }
-    ],
-    "react/prop-types": [
-      2,
-      {
-        "ignore": [],
-        "customValidators": [],
-        "skipUndeclared": false
-      }
-    ],
-    "react/react-in-jsx-scope": [
-      2
-    ],
-    "react-hooks/rules-of-hooks": [
-      2
-    ],
-    "react-hooks/exhaustive-deps": [
-      1
-    ],
-    "react-perf/jsx-no-new-object-as-prop": [
-      2
-    ],
-    "react-perf/jsx-no-new-array-as-prop": [
-      2
-    ],
-    "react-perf/jsx-no-new-function-as-prop": [
-      2
-    ],
-    "prefer-const": [
-      2,
-      {
-        "destructuring": "any",
-        "ignoreReadBeforeAssign": true
-      }
-    ],
-    "no-param-reassign": [
-      2,
-      {
-        "props": true,
-        "ignorePropertyModificationsFor": [
-          "acc",
-          "accumulator",
-          "e",
-          "ctx",
-          "context",
-          "req",
-          "request",
-          "res",
-          "response",
-          "$scope",
-          "staticContext"
-        ]
-      }
-    ],
-    "no-var": [
-      2
-    ],
-    "@typescript-eslint/prefer-readonly": [
-      2,
-      {
-        "onlyInlineLambdas": false
-      }
-    ],
-    "@typescript-eslint/switch-exhaustiveness-check": [
-      2
-    ],
-    "functional/prefer-property-signatures": [
-      2
-    ],
-    "functional/prefer-tacit": [
-      1,
-      {
-        "assumeTypes": true
-      }
-    ],
-    "functional/readonly-type": [
-      2
-    ],
-    "functional/no-classes": [
-      2
-    ],
-    "functional/no-mixed-types": [
-      2
-    ],
-    "functional/no-this-expressions": [
-      2
-    ],
-    "functional/no-loop-statements": [
-      0
-    ],
     "accessor-pairs": [
       0,
       {
@@ -1407,6 +1097,25 @@
     ],
     "no-octal": [
       2
+    ],
+    "no-param-reassign": [
+      2,
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": [
+          "acc",
+          "accumulator",
+          "e",
+          "ctx",
+          "context",
+          "req",
+          "request",
+          "res",
+          "response",
+          "$scope",
+          "staticContext"
+        ]
+      }
     ],
     "no-process-env": [
       0
@@ -2742,6 +2451,9 @@
         "ignoreExport": false
       }
     ],
+    "no-var": [
+      2
+    ],
     "object-shorthand": [
       2,
       "always",
@@ -2755,6 +2467,13 @@
       {
         "allowNamedFunctions": false,
         "allowUnboundThis": true
+      }
+    ],
+    "prefer-const": [
+      2,
+      {
+        "destructuring": "any",
+        "ignoreReadBeforeAssign": true
       }
     ],
     "prefer-destructuring": [
@@ -3692,6 +3411,12 @@
     "@typescript-eslint/no-unnecessary-type-arguments": [
       2
     ],
+    "@typescript-eslint/prefer-readonly": [
+      2,
+      {
+        "onlyInlineLambdas": false
+      }
+    ],
     "@typescript-eslint/consistent-indexed-object-style": [
       2,
       "record"
@@ -3704,6 +3429,271 @@
       "always"
     ],
     "@typescript-eslint/space-infix-ops": [
+      0
+    ],
+    "react/jsx-no-bind": [
+      2,
+      {
+        "ignoreRefs": true,
+        "allowArrowFunctions": true,
+        "allowFunctions": false,
+        "allowBind": false,
+        "ignoreDOMComponents": true
+      }
+    ],
+    "react/no-did-update-set-state": [
+      2
+    ],
+    "react/no-unknown-property": [
+      2
+    ],
+    "react/no-unused-prop-types": [
+      2,
+      {
+        "customValidators": [],
+        "skipShapeProps": true
+      }
+    ],
+    "react/prop-types": [
+      2,
+      {
+        "ignore": [],
+        "customValidators": [],
+        "skipUndeclared": false
+      }
+    ],
+    "react/react-in-jsx-scope": [
+      2
+    ],
+    "react-hooks/rules-of-hooks": [
+      2
+    ],
+    "react-hooks/exhaustive-deps": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/concat": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/drop": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/drop-right": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/index-of": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/join": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/last": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/last-index-of": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/reverse": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/fill": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/detect": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/first": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-array": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/slice": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/bind": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-finite": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-integer": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-nan": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-nil": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-null": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-undefined": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/keys": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/extend-own": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/assign": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/values": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/entries": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/to-pairs": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/pairs": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/split": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/starts-with": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/ends-with": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/to-lower": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/to-upper": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/trim": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/pad-start": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/pad-end": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/repeat": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/uniq": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/replace": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/omit": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/flatten": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/throttle": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-string": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/cast-array": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-function": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/find": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/find-index": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/each": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/for-each": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/every": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/all": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/filter": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/select": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/map": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/collect": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/reduce": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/inject": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/foldl": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/reduce-right": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/foldr": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/size": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/some": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/any": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/includes": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/contains": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/take-right": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/get": [
+      1
+    ],
+    "@typescript-eslint/switch-exhaustiveness-check": [
+      2
+    ],
+    "functional/prefer-property-signatures": [
+      2
+    ],
+    "functional/prefer-tacit": [
+      1,
+      {
+        "assumeTypes": true
+      }
+    ],
+    "functional/readonly-type": [
+      2
+    ],
+    "functional/no-classes": [
+      2
+    ],
+    "functional/no-mixed-types": [
+      2
+    ],
+    "functional/no-this-expressions": [
+      2
+    ],
+    "functional/no-loop-statements": [
       0
     ],
     "no-unsanitized/property": [
@@ -3740,9 +3730,6 @@
           ]
         }
       }
-    ],
-    "tsdoc/syntax": [
-      2
     ],
     "no-empty-static-block": [
       2
@@ -3798,6 +3785,27 @@
       2
     ],
     "no-new-native-nonconstructor": [
+      2
+    ],
+    "tsdoc/syntax": [
+      2
+    ],
+    "jest-formatting/padding-around-after-all-blocks": [
+      2
+    ],
+    "jest-formatting/padding-around-after-each-blocks": [
+      2
+    ],
+    "jest-formatting/padding-around-before-all-blocks": [
+      2
+    ],
+    "jest-formatting/padding-around-before-each-blocks": [
+      2
+    ],
+    "jest-formatting/padding-around-describe-blocks": [
+      2
+    ],
+    "jest-formatting/padding-around-test-blocks": [
       2
     ],
     "compat/compat": [
@@ -3897,24 +3905,6 @@
       2
     ],
     "jest/valid-expect": [
-      2
-    ],
-    "jest-formatting/padding-around-after-all-blocks": [
-      2
-    ],
-    "jest-formatting/padding-around-after-each-blocks": [
-      2
-    ],
-    "jest-formatting/padding-around-before-all-blocks": [
-      2
-    ],
-    "jest-formatting/padding-around-before-each-blocks": [
-      2
-    ],
-    "jest-formatting/padding-around-describe-blocks": [
-      2
-    ],
-    "jest-formatting/padding-around-test-blocks": [
       2
     ],
     "react/jsx-closing-bracket-location": [
@@ -4241,12 +4231,6 @@
     "react-native/no-single-element-style-arrays": [
       2
     ],
-    "simple-import-sort/imports": [
-      2
-    ],
-    "simple-import-sort/exports": [
-      2
-    ],
     "jsdoc/check-access": [
       1
     ],
@@ -4418,6 +4402,12 @@
     ],
     "jsdoc/valid-types": [
       1
+    ],
+    "simple-import-sort/imports": [
+      2
+    ],
+    "simple-import-sort/exports": [
+      2
     ],
     "unicorn/better-regex": [
       2
@@ -4945,69 +4935,6 @@
       2,
       "in-try-catch"
     ],
-    "@next/next/google-font-display": [
-      1
-    ],
-    "@next/next/google-font-preconnect": [
-      1
-    ],
-    "@next/next/next-script-for-ga": [
-      1
-    ],
-    "@next/next/no-async-client-component": [
-      1
-    ],
-    "@next/next/no-before-interactive-script-outside-document": [
-      1
-    ],
-    "@next/next/no-css-tags": [
-      1
-    ],
-    "@next/next/no-head-element": [
-      1
-    ],
-    "@next/next/no-html-link-for-pages": [
-      0
-    ],
-    "@next/next/no-img-element": [
-      1
-    ],
-    "@next/next/no-page-custom-font": [
-      1
-    ],
-    "@next/next/no-styled-jsx-in-document": [
-      1
-    ],
-    "@next/next/no-sync-scripts": [
-      2
-    ],
-    "@next/next/no-title-in-document-head": [
-      1
-    ],
-    "@next/next/no-typos": [
-      1
-    ],
-    "@next/next/no-unwanted-polyfillio": [
-      1
-    ],
-    "@next/next/inline-script-id": [
-      2
-    ],
-    "@next/next/no-assign-module-variable": [
-      2
-    ],
-    "@next/next/no-document-import-in-page": [
-      2
-    ],
-    "@next/next/no-duplicate-head": [
-      2
-    ],
-    "@next/next/no-head-import-in-document": [
-      2
-    ],
-    "@next/next/no-script-component-in-head": [
-      2
-    ],
     "react/forbid-foreign-prop-types": [
       1,
       {
@@ -5122,45 +5049,67 @@
     "flowtype/use-flow-type": [
       1
     ],
-    "n/no-extraneous-import": [
-      2
+    "@next/next/google-font-display": [
+      1
     ],
-    "n/no-extraneous-require": [
-      2
+    "@next/next/google-font-preconnect": [
+      1
     ],
-    "n/no-missing-import": [
+    "@next/next/next-script-for-ga": [
+      1
+    ],
+    "@next/next/no-async-client-component": [
+      1
+    ],
+    "@next/next/no-before-interactive-script-outside-document": [
+      1
+    ],
+    "@next/next/no-css-tags": [
+      1
+    ],
+    "@next/next/no-head-element": [
+      1
+    ],
+    "@next/next/no-html-link-for-pages": [
       0
     ],
-    "n/no-missing-require": [
+    "@next/next/no-img-element": [
+      1
+    ],
+    "@next/next/no-page-custom-font": [
+      1
+    ],
+    "@next/next/no-styled-jsx-in-document": [
+      1
+    ],
+    "@next/next/no-sync-scripts": [
       2
     ],
-    "n/no-process-exit": [
+    "@next/next/no-title-in-document-head": [
+      1
+    ],
+    "@next/next/no-typos": [
+      1
+    ],
+    "@next/next/no-unwanted-polyfillio": [
+      1
+    ],
+    "@next/next/inline-script-id": [
       2
     ],
-    "n/no-unpublished-bin": [
+    "@next/next/no-assign-module-variable": [
       2
     ],
-    "n/no-unpublished-import": [
-      0
-    ],
-    "n/no-unpublished-require": [
+    "@next/next/no-document-import-in-page": [
       2
     ],
-    "n/no-unsupported-features/es-builtins": [
+    "@next/next/no-duplicate-head": [
       2
     ],
-    "n/no-unsupported-features/es-syntax": [
-      2,
-      {
-        "ignores": [
-          "modules"
-        ]
-      }
-    ],
-    "n/no-unsupported-features/node-builtins": [
+    "@next/next/no-head-import-in-document": [
       2
     ],
-    "n/shebang": [
+    "@next/next/no-script-component-in-head": [
       2
     ],
     "default-param-last": [
@@ -5718,6 +5667,47 @@
       2
     ],
     "@typescript-eslint/no-loop-func": [
+      2
+    ],
+    "n/no-extraneous-import": [
+      2
+    ],
+    "n/no-extraneous-require": [
+      2
+    ],
+    "n/no-missing-import": [
+      0
+    ],
+    "n/no-missing-require": [
+      2
+    ],
+    "n/no-process-exit": [
+      2
+    ],
+    "n/no-unpublished-bin": [
+      2
+    ],
+    "n/no-unpublished-import": [
+      0
+    ],
+    "n/no-unpublished-require": [
+      2
+    ],
+    "n/no-unsupported-features/es-builtins": [
+      2
+    ],
+    "n/no-unsupported-features/es-syntax": [
+      2,
+      {
+        "ignores": [
+          "modules"
+        ]
+      }
+    ],
+    "n/no-unsupported-features/node-builtins": [
+      2
+    ],
+    "n/shebang": [
       2
     ],
     "jest/expect-expect": [
