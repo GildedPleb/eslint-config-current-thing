@@ -26,8 +26,11 @@ import { fileURLToPath } from "node:url";
 ${[
   ...configs
     .filter(({ requiresImport }) => requiresImport)
-    .flatMap(({ packages }) =>
-      packages.map(({ name, package: p }) => `import ${name} from "${p}";`)
+    .flatMap(({ packages, count }) =>
+      packages.map(
+        ({ name, package: p }) =>
+          `${count > 400_000 ? "" : "// "}import ${name} from "${p}";`
+      )
     ),
   'import { FlatCompat } from "@eslint/eslintrc";',
 ].join(`
