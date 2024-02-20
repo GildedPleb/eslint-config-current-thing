@@ -871,8 +871,8 @@
     "sonarjs",
     "jest-dom",
     "react-native",
-    "simple-import-sort",
     "jsdoc",
+    "simple-import-sort",
     "unicorn:eslint-plugin-unicorn@48.0.0",
     "@eslint-community/eslint-comments",
     "eslint-comments",
@@ -3870,12 +3870,6 @@
     "react-native/no-single-element-style-arrays": [
       2
     ],
-    "simple-import-sort/imports": [
-      2
-    ],
-    "simple-import-sort/exports": [
-      2
-    ],
     "jsdoc/check-access": [
       1
     ],
@@ -4047,6 +4041,12 @@
     ],
     "jsdoc/valid-types": [
       1
+    ],
+    "simple-import-sort/imports": [
+      2
+    ],
+    "simple-import-sort/exports": [
+      2
     ],
     "unicorn/better-regex": [
       2
