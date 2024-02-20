@@ -3,32 +3,35 @@ import type { Config } from ".";
 
 export default {
   packages: [
-    { name: "typescriptParser", package: "@typescript-eslint/parser" },
-    { name: "typescriptPlugin", package: "@typescript-eslint/eslint-plugin" },
+    { name: "tseslint", package: "typescript-eslint", requiresImport: true },
+    {
+      name: "typescriptParser",
+      package: "@typescript-eslint/parser",
+      requiresImport: false,
+    },
+    {
+      name: "typescriptPlugin",
+      package: "@typescript-eslint/eslint-plugin",
+      requiresImport: false,
+    },
   ],
-  requiresImport: true,
   name: "TypeScript",
-  definitions: `{
-    files,
-    linterOptions: { reportUnusedDisableDirectives: true },
-    languageOptions: {
-      parser: typescriptParser,
-      parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
-        project: "./tsconfig.json",
-      },
-      globals: {
-        ...globals.browser,
-        ...globals.node,
+  definitions: `...tseslint.config(
+    ...tseslint.configs.recommendedTypeChecked,
+    {
+      languageOptions: {
+        parserOptions: { project: true },
+        globals: {
+          ...globals.browser,
+          ...globals.node,
+        },
       },
     },
-    plugins: { "@ts": typescriptPlugin },
-    ${RULES}
-  }`,
+    {
+      ${RULES}
+    }
+  )`,
   rules: `{
-    ...typescriptPlugin.configs.recommended.rules,
-    ...typescriptPlugin.configs["recommended-requiring-type-checking"].rules,
     // "allowNullableObject: false," autofixes type \`object | undefined\` poorly.
     // When checking a nullable object, \`if (obj)...\` it autofixes to \`if (obj != null)...\`.
     // This violates both the "unicorn/no-null" rule and the "eqeqeq" rule, causing unneeded further corrections.

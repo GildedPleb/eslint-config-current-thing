@@ -2,8 +2,9 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [{ name: "cra", package: "eslint-config-react-app" }],
-  requiresImport: true,
+  packages: [
+    { name: "cra", package: "eslint-config-react-app", requiresImport: true },
+  ],
   name: "Create React App",
   definitions: `{
     files,

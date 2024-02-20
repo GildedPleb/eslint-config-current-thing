@@ -30,25 +30,25 @@ import sort from "./sort-class";
 import standard from "./standard";
 import standardJsx from "./standard-jsx";
 import standardReact from "./standard-react";
+import ts from "./ts";
 import tsdoc from "./tsdoc";
-import typescript from "./typescript";
 import unicorn from "./unicorn";
 import unsanitized from "./unsanitized";
 import xo from "./xo";
 import youDontNeedLodash from "./you-dont-need-lodash";
 
 export interface Config {
-  packages: Array<{
+  packages: {
     name: string;
     package: string;
-  }>;
-  requiresImport: boolean;
+    requiresImport: boolean;
+  }[];
   name: string;
-  definitions: `${"..." | "{"}${string}}`;
+  definitions: `${"..." | "{"}${string}${"}" | ")"}`;
   rules?: string;
 }
 
-export default [
+const packages = [
   xo,
   comments,
   security,
@@ -63,7 +63,6 @@ export default [
   airbnb,
   prettier,
   index,
-  typescript,
   compat,
   functional,
   babel,
@@ -87,4 +86,7 @@ export default [
   standardJsx,
   jestFormatting,
   jestDom,
+  ts,
 ];
+
+export default packages;

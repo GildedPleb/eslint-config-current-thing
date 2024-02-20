@@ -2,8 +2,13 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [{ name: "jestDom", package: "eslint-plugin-jest-dom" }],
-  requiresImport: true,
+  packages: [
+    {
+      name: "jestDom",
+      package: "eslint-plugin-jest-dom",
+      requiresImport: true,
+    },
+  ],
   name: "Jest Dom",
   definitions: `{
     files,

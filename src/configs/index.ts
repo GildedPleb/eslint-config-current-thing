@@ -8,7 +8,7 @@ export interface PopulatedConfig extends Config {
   homepage: string;
 }
 
-const getDate = (d: Date) => d.toISOString().split("T")[0];
+const getDate = (date: Date) => date.toISOString().split("T")[0];
 
 interface Stats {
   downloads: number;
@@ -46,9 +46,9 @@ for await (const config of definitions) {
   let count = 0;
   let description = "";
   let homepage = "";
-  for await (const { package: p } of config.packages) {
-    count += await getDownloadCount(p);
-    const info = await getInfo(p);
+  for await (const { package: pack } of config.packages) {
+    count += await getDownloadCount(pack);
+    const info = await getInfo(pack);
     description =
       description === ""
         ? info.description
@@ -56,6 +56,7 @@ for await (const config of definitions) {
     homepage =
       homepage === "" ? info.homepage : `${homepage} / ${info.homepage}`;
   }
+
   configsWithCount.push({ ...config, count, description, homepage });
 }
 

@@ -6,9 +6,9 @@ export default {
     {
       name: "youDontNeedLodash",
       package: "eslint-plugin-you-dont-need-lodash-underscore",
+      requiresImport: true,
     },
   ],
-  requiresImport: true,
   name: "You Dont Need Lodash",
   definitions: `{
     files,

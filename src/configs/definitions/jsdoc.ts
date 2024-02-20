@@ -2,8 +2,9 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [{ name: "jsdoc", package: "eslint-plugin-jsdoc" }],
-  requiresImport: true,
+  packages: [
+    { name: "jsdoc", package: "eslint-plugin-jsdoc", requiresImport: true },
+  ],
   name: "JSDoc",
   definitions: `{
     files,

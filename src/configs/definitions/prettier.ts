@@ -3,16 +3,21 @@ import type { Config } from ".";
 
 export default {
   packages: [
-    { name: "prettier", package: "eslint-plugin-prettier" },
-    { name: "prettierConfig", package: "eslint-config-prettier" },
+    {
+      name: "prettier",
+      package: "eslint-plugin-prettier",
+      requiresImport: true,
+    },
+    {
+      name: "prettierConfig",
+      package: "eslint-config-prettier",
+      requiresImport: true,
+    },
   ],
-  requiresImport: true,
   name: "Prettier",
   definitions: `{
     files,
-    plugins: {
-      prettier
-    },
+    plugins: { prettier },
     ${RULES}
   }`,
   rules: `{

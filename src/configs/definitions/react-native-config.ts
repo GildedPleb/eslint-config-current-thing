@@ -6,9 +6,9 @@ export default {
     {
       name: "reactNativeConfig",
       package: "@react-native-community/eslint-config",
+      requiresImport: true,
     },
   ],
-  requiresImport: true,
   name: "React Native Config",
   definitions: `{
     files,

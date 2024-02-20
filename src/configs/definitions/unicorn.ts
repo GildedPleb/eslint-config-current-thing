@@ -2,8 +2,9 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [{ name: "unicorn", package: "eslint-plugin-unicorn" }],
-  requiresImport: true,
+  packages: [
+    { name: "unicorn", package: "eslint-plugin-unicorn", requiresImport: true },
+  ],
   name: "Unicorn",
   definitions: `{
     files,

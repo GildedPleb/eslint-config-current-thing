@@ -6,9 +6,9 @@ export default {
     {
       name: "unsanitized",
       package: "eslint-plugin-no-unsanitized",
+      requiresImport: true,
     },
   ],
-  requiresImport: true,
   name: "No Unsanitized",
   definitions: `{
     files,

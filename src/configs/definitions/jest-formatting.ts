@@ -3,9 +3,12 @@ import type { Config } from ".";
 
 export default {
   packages: [
-    { name: "jestFormatting", package: "eslint-plugin-jest-formatting" },
+    {
+      name: "jestFormatting",
+      package: "eslint-plugin-jest-formatting",
+      requiresImport: true,
+    },
   ],
-  requiresImport: true,
   name: "Jest Formatting",
   definitions: `{
     files,

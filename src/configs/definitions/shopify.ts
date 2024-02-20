@@ -2,8 +2,13 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [{ name: "shopify", package: "@shopify/eslint-plugin" }],
-  requiresImport: true,
+  packages: [
+    {
+      name: "shopify",
+      package: "@shopify/eslint-plugin",
+      requiresImport: true,
+    },
+  ],
   name: "Shopify",
   definitions: `{
     files,

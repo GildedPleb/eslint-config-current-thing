@@ -2,8 +2,13 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [{ name: "functional", package: "eslint-plugin-functional" }],
-  requiresImport: true,
+  packages: [
+    {
+      name: "functional",
+      package: "eslint-plugin-functional",
+      requiresImport: true,
+    },
+  ],
   name: "Functional",
   definitions: `{
     files,

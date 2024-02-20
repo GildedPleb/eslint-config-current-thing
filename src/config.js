@@ -14,14 +14,16 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import babelPlugin from "@babel/eslint-plugin";
+// Import typescriptParser from "@typescript-eslint/parser";
+// import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import { FlatCompat } from "@eslint/eslintrc";
 import eslint from "@eslint/js";
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
+// Import standard from "eslint-config-standard";
+// import standardTS from "eslint-config-standard-with-typescript";
 import nextjs from "@next/eslint-plugin-next";
 import reactNativeConfig from "@react-native-community/eslint-config";
 import shopify from "@shopify/eslint-plugin";
-import typescriptPlugin from "@typescript-eslint/eslint-plugin";
-import typescriptParser from "@typescript-eslint/parser";
 import google from "eslint-config-google";
 import prettierConfig from "eslint-config-prettier";
 import cra from "eslint-config-react-app";
@@ -38,14 +40,16 @@ import jestDom from "eslint-plugin-jest-dom";
 import jestFormatting from "eslint-plugin-jest-formatting";
 import jsdoc from "eslint-plugin-jsdoc";
 import jsxA11y from "eslint-plugin-jsx-a11y";
-import n from "eslint-plugin-n";
+import nNode from "eslint-plugin-n";
 import unsanitized from "eslint-plugin-no-unsanitized";
 import node from "eslint-plugin-node";
+// Import airbnbBase from "eslint-config-airbnb";
+// import airBnbTypescript from "eslint-config-airbnb-typescript";
 import prettier from "eslint-plugin-prettier";
 import promise from "eslint-plugin-promise";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
-// import reactPerf from "eslint-plugin-react-perf";
+// Import reactPerf from "eslint-plugin-react-perf";
 import reactNative from "eslint-plugin-react-native";
 import security from "eslint-plugin-security";
 import importSort from "eslint-plugin-simple-import-sort";
@@ -55,6 +59,7 @@ import tsdoc from "eslint-plugin-tsdoc";
 import unicorn from "eslint-plugin-unicorn";
 import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
 import globals from "globals";
+import tseslint from "typescript-eslint";
 
 const filename = fileURLToPath(import.meta.url);
 const baseDirectory = path.dirname(filename);
@@ -67,7 +72,7 @@ const defaultOptions = { disable: [], override: {} };
 /**
  * @param {{ disable: string[], override: Record<string, Record<string, number | string>> }} default - Options
  */
-export default ({ disable = [], override = {} } = defaultOptions) => [
+const configGen = ({ disable = [], override = {} } = defaultOptions) => [
   {
     ignores: [
       "**/eslint.config.js",
@@ -83,16 +88,14 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     React Performance
-    323,801 monthly downloads
+    305,501 monthly downloads
     Performance-minded React linting rules for ESLint
     https://github.com/cvazac/eslint-plugin-react-perf#readme
 
   ...(!disable.includes("eslint-plugin-react-perf") ? [
         {
     files,
-		plugins: {
-			"react-perf": reactPerf
-		},
+		plugins: { "react-perf": reactPerf },
     rules: { ...reactPerf.configs.recommended.rules,
                ...("eslint-plugin-react-perf" in override ? override["eslint-plugin-react-perf"] : {})
                },
@@ -100,7 +103,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
   */
   /*
     Shopify
-    467,689 monthly downloads
+    451,260 monthly downloads
     Shopify's ESLint rules and configs.
     https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
   */
@@ -137,7 +140,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Standard React
-    508,727 monthly downloads
+    484,061 monthly downloads
     JavaScript Standard Style React/JSX support - ESLint Shareable Config
     https://github.com/standard/eslint-config-standard-react
   */
@@ -157,7 +160,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     You Dont Need Lodash
-    639,009 monthly downloads
+    607,651 monthly downloads
     Check methods you can use natively without lodash/underscore
     https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore.git
   */
@@ -178,7 +181,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Functional
-    736,055 monthly downloads
+    703,007 monthly downloads
     ESLint rules to disable mutation and promote fp in TypeScript.
     https://github.com/eslint-functional/eslint-plugin-functional#readme
   */
@@ -203,7 +206,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Sort Class Members
-    766,135 monthly downloads
+    734,487 monthly downloads
     ESLint rule for enforcing consistent ES6 class member order.
     https://github.com/bryanrsmith/eslint-plugin-sort-class-members
   */
@@ -213,7 +216,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
         {
           files,
           plugins: { "sort-class-members": sortClassMembers },
-          // there are no recomended ways to use this rule, but Shopify has opinions about it.
+          // There are no recomended ways to use this rule, but Shopify has opinions about it.
           rules: {
             ...("eslint-plugin-sort-class-members" in override
               ? override["eslint-plugin-sort-class-members"]
@@ -224,7 +227,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     No Unsanitized
-    1,028,138 monthly downloads
+    990,163 monthly downloads
     ESLint rule to disallow unsanitized code
     https://github.com/mozilla/eslint-plugin-no-unsanitized/
   */
@@ -245,7 +248,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     XO
-    1,093,725 monthly downloads
+    1,041,226 monthly downloads
     ESLint shareable config for XO
     https://github.com/xojs/eslint-config-xo#readme
   */
@@ -265,7 +268,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Babel
-    1,453,799 monthly downloads
+    1,390,679 monthly downloads
     Companion rules for @babel/eslint-parser
     https://babel.dev/
   */
@@ -287,7 +290,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Google
-    1,684,772 monthly downloads
+    1,609,894 monthly downloads
     ESLint shareable config for the Google style
     https://github.com/google/eslint-config-google#readme
   */
@@ -307,7 +310,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     TSDoc
-    1,702,014 monthly downloads
+    1,626,217 monthly downloads
     An ESLint plugin that validates TypeScript doc comments
     https://tsdoc.org/
   */
@@ -328,7 +331,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Jest Formatting
-    1,910,014 monthly downloads
+    1,824,677 monthly downloads
     ESLint rules for formatting jest tests
     https://github.com/dangreenisrael/eslint-plugin-jest-formatting#readme
   */
@@ -349,7 +352,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Compat
-    1,939,060 monthly downloads
+    1,845,056 monthly downloads
     Lint browser compatibility of API used
     https://github.com/amilajack/eslint-plugin-compat#readme
   */
@@ -370,7 +373,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     React Native Config
-    2,206,308 monthly downloads
+    2,110,628 monthly downloads
     ESLint config for React Native
     https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native-community#readme
   */
@@ -392,7 +395,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Standard JSX
-    2,305,753 monthly downloads
+    2,194,810 monthly downloads
     JavaScript Standard Style JSX support - ESLint Shareable Config
     https://github.com/standard/eslint-config-standard-jsx
   */
@@ -412,7 +415,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Security
-    3,371,656 monthly downloads
+    3,221,961 monthly downloads
     Security rules for eslint
     https://github.com/eslint-community/eslint-plugin-security#readme
   */
@@ -433,7 +436,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     SonarJS
-    3,802,060 monthly downloads
+    3,615,947 monthly downloads
     SonarJS rules for ESLint
     https://github.com/SonarSource/eslint-plugin-sonarjs
   */
@@ -457,7 +460,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Jest Dom
-    3,985,247 monthly downloads
+    3,786,609 monthly downloads
     ESLint plugin to follow best practices and anticipate common mistakes when writing tests with jest-dom
     https://github.com/testing-library/eslint-plugin-jest-dom#readme
   */
@@ -478,7 +481,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     React Native
-    4,462,303 monthly downloads
+    4,264,041 monthly downloads
     React Native specific linting rules for ESLint
     https://github.com/intellicode/eslint-plugin-react-native
   */
@@ -487,9 +490,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
     : [
         {
           files,
-          plugins: {
-            "react-native": reactNative,
-          },
+          plugins: { "react-native": reactNative },
           languageOptions: {
             globals: {
               ...reactNative.environments["react-native"].globals,
@@ -507,8 +508,30 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
       ]),
 
   /*
+    Simple Import Sort
+    7,298,837 monthly downloads
+    Easy autofixable import sorting
+    https://github.com/lydell/eslint-plugin-simple-import-sort#readme
+  */
+  ...(disable.includes("eslint-plugin-simple-import-sort")
+    ? []
+    : [
+        {
+          files,
+          plugins: { "simple-import-sort": importSort },
+          rules: {
+            "simple-import-sort/imports": 2,
+            "simple-import-sort/exports": 2,
+            ...("eslint-plugin-simple-import-sort" in override
+              ? override["eslint-plugin-simple-import-sort"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
     JSDoc
-    7,658,308 monthly downloads
+    7,304,047 monthly downloads
     JSDoc linting rules for ESLint.
     https://github.com/gajus/eslint-plugin-jsdoc#readme
   */
@@ -540,30 +563,8 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
       ]),
 
   /*
-    Simple Import Sort
-    7,659,653 monthly downloads
-    Easy autofixable import sorting
-    https://github.com/lydell/eslint-plugin-simple-import-sort#readme
-  */
-  ...(disable.includes("eslint-plugin-simple-import-sort")
-    ? []
-    : [
-        {
-          files,
-          plugins: { "simple-import-sort": importSort },
-          rules: {
-            "simple-import-sort/imports": 2,
-            "simple-import-sort/exports": 2,
-            ...("eslint-plugin-simple-import-sort" in override
-              ? override["eslint-plugin-simple-import-sort"]
-              : {}),
-          },
-        },
-      ]),
-
-  /*
     Unicorn
-    8,474,403 monthly downloads
+    8,087,824 monthly downloads
     More than 100 powerful ESLint rules
     https://github.com/sindresorhus/eslint-plugin-unicorn#readme
   */
@@ -584,7 +585,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Comments
-    8,520,919 monthly downloads
+    8,134,047 monthly downloads
     Additional ESLint rules for ESLint directive comments. / Additional ESLint rules for ESLint directive comments.
     https://github.com/eslint-community/eslint-plugin-eslint-comments#readme / https://github.com/mysticatea/eslint-plugin-eslint-comments#readme
   */
@@ -614,18 +615,19 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Standard
-    14,102,310 monthly downloads
+    13,435,665 monthly downloads
     JavaScript Standard Style - ESLint Shareable Config / An ESLint Shareable Config for JavaScript Standard Style with TypeScript support
     https://github.com/standard/eslint-config-standard / https://github.com/mightyiam/eslint-config-standard-with-typescript#readme
   */
   ...(!disable.includes("eslint-config-standard") &&
   !disable.includes("eslint-config-standard-with-typescript")
     ? [
-        ...compat.extends("standard", "standard-with-typescript"),
         {
           files,
           rules: {
-            // types can be infered by typescript
+            ...compat.extends("standard")[0].rules,
+            ...compat.extends("standard-with-typescript")[0].rules,
+            // Types can be infered by typescript
             "@typescript-eslint/explicit-function-return-type": 0,
             ...("eslint-config-standard" in override
               ? override["eslint-config-standard"]
@@ -640,7 +642,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Promises
-    17,622,477 monthly downloads
+    16,802,286 monthly downloads
     Enforce best practices for JavaScript promises
     https://github.com/eslint-community/eslint-plugin-promise
   */
@@ -649,8 +651,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
     : [
         {
           files,
-          // This is defined elsewhere, and thus can be commented out here
-          // plugins: { async: promise },
+          plugins: { promise },
           rules: {
             ...promise.configs.recommended.rules,
             ...("eslint-plugin-promise" in override
@@ -662,7 +663,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Create React App
-    17,702,481 monthly downloads
+    16,905,721 monthly downloads
     ESLint configuration used by Create React App
     https://github.com/facebook/create-react-app#readme
   */
@@ -685,7 +686,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     NextJS
-    17,792,006 monthly downloads
+    16,917,934 monthly downloads
     ESLint plugin for Next.js.
     https://github.com/vercel/next.js#readme
   */
@@ -709,7 +710,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Flowtype
-    19,292,144 monthly downloads
+    18,418,478 monthly downloads
     Flowtype linting rules for ESLint.
     https://github.com/gajus/eslint-plugin-flowtype#readme
   */
@@ -718,9 +719,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
     : [
         {
           files,
-          plugins: {
-            flowtype,
-          },
+          plugins: { flowtype },
           // No rules as they conflict with Typescript
           rules: {
             ...("eslint-plugin-flowtype" in override
@@ -732,17 +731,19 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     AirBnb/AirBnb-Typescript
-    22,671,305 monthly downloads
+    21,614,579 monthly downloads
     Airbnb's ESLint config, following our styleguide / Airbnb's ESLint config with TypeScript support
     https://github.com/airbnb/javascript / https://github.com/iamturns/eslint-config-airbnb-typescript
   */
   ...(!disable.includes("eslint-config-airbnb") &&
   !disable.includes("eslint-config-airbnb-typescript")
     ? [
-        ...compat.extends("airbnb", "airbnb/hooks", "airbnb-typescript"),
         {
           files,
           rules: {
+            ...compat.extends("airbnb")[0].rules,
+            ...compat.extends("airbnb/hooks")[0].rules,
+            ...compat.extends("airbnb-typescript")[0].rules,
             // Added to moderize this infrequently updated, but oft used config
             "no-restricted-syntax": [0, { selector: "ForOfStatement" }],
             ...("eslint-config-airbnb" in override
@@ -758,7 +759,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Node.js
-    23,073,341 monthly downloads
+    21,996,156 monthly downloads
     Additional ESLint's rules for Node.js / Additional ESLint's rules for Node.js
     https://github.com/eslint-community/eslint-plugin-n#readme / https://github.com/mysticatea/eslint-plugin-node#readme
   */
@@ -768,16 +769,18 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
         {
           files,
           plugins: {
-            // "n" is defined elsewhere, and thus can be commented out here
-            // n
+            // eslint-disable-next-line id-length
+            n: nNode,
             node,
           },
           rules: {
-            // there are no recomended ways to use "node", as the "n" rule obsoletes
+            // There are no recomended ways to use "node", as the "n" rule obsoletes
             // it, but "node" is still used by the Shopify config.
-            ...n.configs["recommended-module"].rules,
-            "n/no-missing-import": 0, // Typescript handles this
-            "n/no-unpublished-import": 0, // Typescript handles this
+            ...nNode.configs["recommended-module"].rules,
+            // Typescript handles this
+            "n/no-missing-import": 0,
+            // Typescript handles this
+            "n/no-unpublished-import": 0,
             ...("eslint-plugin-n" in override
               ? override["eslint-plugin-n"]
               : {}),
@@ -791,7 +794,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Jest
-    41,229,131 monthly downloads
+    39,312,766 monthly downloads
     ESLint rules for Jest
     https://github.com/jest-community/eslint-plugin-jest#readme
   */
@@ -829,7 +832,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     JSX A11y
-    50,829,765 monthly downloads
+    48,449,759 monthly downloads
     Static AST checker for accessibility rules on JSX elements.
     https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#readme
   */
@@ -838,10 +841,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
     : [
         {
           files,
-          plugins: {
-            // Defined in AirBnB
-            // "jsx-a11y": jsxA11y
-          },
+          plugins: { "jsx-a11y": jsxA11y },
           rules: {
             ...jsxA11y.configs.recommended.rules,
             ...("eslint-plugin-jsx-a11y" in override
@@ -853,7 +853,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     React Hooks
-    56,698,462 monthly downloads
+    54,067,713 monthly downloads
     ESLint rules for React Hooks
     https://reactjs.org/
   */
@@ -862,10 +862,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
     : [
         {
           files,
-          plugins: {
-            // Defined in AirBnB
-            // "react-hooks": reactHooks
-          },
+          plugins: { "react-hooks": reactHooks },
           rules: {
             ...reactHooks.configs.recommended.rules,
             ...("eslint-plugin-react-hooks" in override
@@ -877,7 +874,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     React
-    68,544,680 monthly downloads
+    65,337,274 monthly downloads
     React specific linting rules for ESLint
     https://github.com/jsx-eslint/eslint-plugin-react
   */
@@ -886,9 +883,20 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
     : [
         {
           files,
-          plugins: {
-            // Defined in AirBnB
-            // react
+          plugins: { react },
+          settings: {
+            react: {
+              pragma: "React",
+              version: "detect",
+            },
+          },
+          languageOptions: {
+            ecmaVersion: "latest",
+            parserOptions: {
+              ecmaFeatures: {
+                jsx: true,
+              },
+            },
           },
           rules: {
             ...react.configs.recommended.rules,
@@ -901,7 +909,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     ESLint
-    80,854,267 monthly downloads
+    77,062,624 monthly downloads
     ESLint JavaScript language implementation
     https://eslint.org
   */
@@ -910,6 +918,11 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
     : [
         {
           files,
+          settings: {
+            linterOptions: {
+              reportUnusedDisableDirectives: 1,
+            },
+          },
           rules: {
             ...eslint.configs.recommended.rules,
             ...("@eslint/js" in override ? override["@eslint/js"] : {}),
@@ -919,7 +932,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Import
-    87,584,079 monthly downloads
+    83,488,186 monthly downloads
     Import with sanity.
     https://github.com/import-js/eslint-plugin-import
   */
@@ -928,20 +941,47 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
     : [
         {
           files,
-          // This is defined in AirBnb
-          // plugins: { i: importPlugin },
+          plugins: { import: importPlugin },
           settings: {
             "import/parsers": {
               "@typescript-eslint/parser": [".ts", ".tsx"],
             },
             "import/resolver": {
               typescript: { alwaysTryTypes: true },
-              node: true,
+              node: {
+                extensions: [
+                  ".mjs",
+                  ".js",
+                  ".jsx",
+                  ".json",
+                  ".ts",
+                  ".tsx",
+                  ".d.ts",
+                ],
+              },
             },
+            "import/extensions": [
+              ".js",
+              ".mjs",
+              ".jsx",
+              ".ts",
+              ".tsx",
+              ".d.ts",
+            ],
+            "import/core-modules": [],
+            "import/ignore": [
+              "node_modules",
+              ".(coffee|scss|css|less|hbs|svg|json)$",
+            ],
+            "import/external-module-folders": [
+              "node_modules",
+              "node_modules/@types",
+            ],
           },
           rules: {
             ...importPlugin.configs.recommended.rules,
             ...importPlugin.configs.typescript.rules,
+            "import/order": 0,
             ...("eslint-plugin-import" in override
               ? override["eslint-plugin-import"]
               : {}),
@@ -951,7 +991,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Prettier
-    129,946,263 monthly downloads
+    123,725,430 monthly downloads
     Runs prettier as an eslint rule / Turns off all rules that are unnecessary or might conflict with Prettier.
     https://github.com/prettier/eslint-plugin-prettier#readme / https://github.com/prettier/eslint-config-prettier#readme
   */
@@ -960,9 +1000,7 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
     ? [
         {
           files,
-          plugins: {
-            prettier,
-          },
+          plugins: { prettier },
           rules: {
             "prettier/prettier": 2,
             ...prettierConfig.rules,
@@ -979,59 +1017,59 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     TypeScript
-    221,865,990 monthly downloads
-    An ESLint custom parser which leverages TypeScript ESTree / TypeScript plugin for ESLint
-    https://github.com/typescript-eslint/typescript-eslint#readme / https://github.com/typescript-eslint/typescript-eslint#readme
+    211,871,742 monthly downloads
+    Tooling which enables you to use TypeScript with ESLint / An ESLint custom parser which leverages TypeScript ESTree / TypeScript plugin for ESLint
+    https://github.com/typescript-eslint/typescript-eslint#readme / https://github.com/typescript-eslint/typescript-eslint#readme / https://github.com/typescript-eslint/typescript-eslint#readme
   */
-  ...(!disable.includes("@typescript-eslint/parser") &&
+  ...(!disable.includes("typescript-eslint") &&
+  !disable.includes("@typescript-eslint/parser") &&
   !disable.includes("@typescript-eslint/eslint-plugin")
     ? [
-        {
-          files,
-          linterOptions: { reportUnusedDisableDirectives: true },
-          languageOptions: {
-            parser: typescriptParser,
-            parserOptions: {
-              ecmaVersion: "latest",
-              sourceType: "module",
-              project: "./tsconfig.json",
-            },
-            globals: {
-              ...globals.browser,
-              ...globals.node,
-            },
-          },
-          plugins: { "@ts": typescriptPlugin },
-          rules: {
-            ...typescriptPlugin.configs.recommended.rules,
-            ...typescriptPlugin.configs["recommended-requiring-type-checking"]
-              .rules,
-            // "allowNullableObject: false," autofixes type `object | undefined` poorly.
-            // When checking a nullable object, `if (obj)...` it autofixes to `if (obj != null)...`.
-            // This violates both the "unicorn/no-null" rule and the "eqeqeq" rule, causing unneeded further corrections.
-            // See: https://eslint.org/docs/latest/rules/eqeqeq
-            //      https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v45.0.2/docs/rules/no-null.md
-            //      https://typescript-eslint.io/rules/strict-boolean-expressions/#fixes-and-suggestions
-            "@typescript-eslint/strict-boolean-expressions": [
-              2,
-              {
-                allowString: false,
-                allowNumber: false,
-                allowNullableObject: true,
-                allowNullableBoolean: false,
-                allowNullableString: false,
-                allowNullableNumber: false,
-                allowAny: false,
+        ...tseslint.config(
+          ...tseslint.configs.recommendedTypeChecked,
+          {
+            languageOptions: {
+              parserOptions: { project: true },
+              globals: {
+                ...globals.browser,
+                ...globals.node,
               },
-            ],
-            ...("@typescript-eslint/parser" in override
-              ? override["@typescript-eslint/parser"]
-              : {}),
-            ...("@typescript-eslint/eslint-plugin" in override
-              ? override["@typescript-eslint/eslint-plugin"]
-              : {}),
+            },
           },
-        },
+          {
+            rules: {
+              // "allowNullableObject: false," autofixes type `object | undefined` poorly.
+              // When checking a nullable object, `if (obj)...` it autofixes to `if (obj != null)...`.
+              // This violates both the "unicorn/no-null" rule and the "eqeqeq" rule, causing unneeded further corrections.
+              // See: https://eslint.org/docs/latest/rules/eqeqeq
+              //      https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v45.0.2/docs/rules/no-null.md
+              //      https://typescript-eslint.io/rules/strict-boolean-expressions/#fixes-and-suggestions
+              "@typescript-eslint/strict-boolean-expressions": [
+                2,
+                {
+                  allowString: false,
+                  allowNumber: false,
+                  allowNullableObject: true,
+                  allowNullableBoolean: false,
+                  allowNullableString: false,
+                  allowNullableNumber: false,
+                  allowAny: false,
+                },
+              ],
+              ...("typescript-eslint" in override
+                ? override["typescript-eslint"]
+                : {}),
+              ...("@typescript-eslint/parser" in override
+                ? override["@typescript-eslint/parser"]
+                : {}),
+              ...("@typescript-eslint/eslint-plugin" in override
+                ? override["@typescript-eslint/eslint-plugin"]
+                : {}),
+            },
+          }
+        ),
       ]
     : []),
 ];
+
+export default configGen;

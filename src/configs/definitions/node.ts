@@ -3,16 +3,15 @@ import type { Config } from ".";
 
 export default {
   packages: [
-    { name: "n", package: "eslint-plugin-n" },
-    { name: "node", package: "eslint-plugin-node" },
+    { name: "nNode", package: "eslint-plugin-n", requiresImport: true },
+    { name: "node", package: "eslint-plugin-node", requiresImport: true },
   ],
-  requiresImport: true,
   name: "Node.js",
   definitions: `{
     files,
     plugins: {
-      // "n" is defined elsewhere, and thus can be commented out here
-      // n
+      // eslint-disable-next-line id-length
+      n: nNode,
       node,
     },
     ${RULES}
@@ -20,8 +19,10 @@ export default {
   rules: `{
     // there are no recomended ways to use "node", as the "n" rule obsoletes
     // it, but "node" is still used by the Shopify config.
-    ...n.configs["recommended-module"].rules,
-    "n/no-missing-import": 0, // Typescript handles this
-    "n/no-unpublished-import": 0, // Typescript handles this
+    ...nNode.configs["recommended-module"].rules,
+    // Typescript handles this
+    "n/no-missing-import": 0,
+    // Typescript handles this
+    "n/no-unpublished-import": 0,
   }`,
 } satisfies Config;

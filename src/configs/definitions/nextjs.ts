@@ -2,8 +2,13 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [{ name: "nextjs", package: "@next/eslint-plugin-next" }],
-  requiresImport: true,
+  packages: [
+    {
+      name: "nextjs",
+      package: "@next/eslint-plugin-next",
+      requiresImport: true,
+    },
+  ],
   name: "NextJS",
   definitions: `{
     files,

@@ -2,8 +2,9 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [{ name: "comp", package: "eslint-plugin-compat" }],
-  requiresImport: true,
+  packages: [
+    { name: "comp", package: "eslint-plugin-compat", requiresImport: true },
+  ],
   name: "Compat",
   definitions: `{
     files,

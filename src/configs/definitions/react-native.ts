@@ -2,14 +2,17 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [{ name: "reactNative", package: "eslint-plugin-react-native" }],
-  requiresImport: true,
+  packages: [
+    {
+      name: "reactNative",
+      package: "eslint-plugin-react-native",
+      requiresImport: true,
+    },
+  ],
   name: "React Native",
   definitions: `{
     files,
-		plugins: {
-			"react-native": reactNative
-		},
+		plugins: { "react-native": reactNative },
 		languageOptions: {
       globals: {
         ...reactNative.environments["react-native"].globals

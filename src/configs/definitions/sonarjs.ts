@@ -2,8 +2,9 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [{ name: "sonarjs", package: "eslint-plugin-sonarjs" }],
-  requiresImport: true,
+  packages: [
+    { name: "sonarjs", package: "eslint-plugin-sonarjs", requiresImport: true },
+  ],
   name: "SonarJS",
   definitions: `{
     files,
