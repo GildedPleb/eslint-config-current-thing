@@ -7,7 +7,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 2/19/2024
+  Generated on 2/20/2024
 */
 
 import path from "node:path";
@@ -120,7 +120,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
                 Object.entries(shopify.rules).map(([key, value]) => [
                   key.startsWith("typescript/") ? key.slice(11) : key,
                   value,
-                ])
+                ]),
               ),
             },
           },
@@ -1066,7 +1066,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
                 ? override["@typescript-eslint/eslint-plugin"]
                 : {}),
             },
-          }
+          },
         ),
       ]
     : []),

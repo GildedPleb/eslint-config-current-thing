@@ -886,7 +886,7 @@
     "react-hooks",
     "react",
     "import",
-    "prettier",
+    "prettier:eslint-plugin-prettier@5.1.3",
     "@typescript-eslint:@typescript-eslint/eslint-plugin@7.0.2"
   ],
   "rules": {
@@ -1719,7 +1719,7 @@
       4
     ],
     "max-statements-per-line": [
-      2,
+      0,
       {
         "max": 2
       }
@@ -1997,7 +1997,7 @@
       "never"
     ],
     "unicode-bom": [
-      0,
+      1,
       "never"
     ],
     "wrap-regex": [
@@ -4401,7 +4401,7 @@
       2
     ],
     "unicorn/template-indent": [
-      2
+      0
     ],
     "unicorn/text-encoding-identifier-case": [
       2
@@ -5026,6 +5026,9 @@
     "vue/array-bracket-spacing": [
       0
     ],
+    "vue/array-element-newline": [
+      0
+    ],
     "vue/arrow-spacing": [
       0
     ],
@@ -5128,10 +5131,10 @@
     "vue/template-curly-spacing": [
       0
     ],
-    "generator-star": [
+    "space-unary-word-ops": [
       0
     ],
-    "no-arrow-condition": [
+    "generator-star": [
       0
     ],
     "no-comma-dangle": [
@@ -5140,19 +5143,19 @@
     "no-space-before-semi": [
       0
     ],
-    "no-spaced-func": [
-      0
-    ],
     "no-wrap-func": [
       0
     ],
     "space-after-function-name": [
       0
     ],
-    "space-after-keywords": [
+    "space-before-function-parentheses": [
       0
     ],
-    "space-before-function-parentheses": [
+    "no-arrow-condition": [
+      0
+    ],
+    "space-after-keywords": [
       0
     ],
     "space-before-keywords": [
@@ -5161,7 +5164,7 @@
     "space-return-throw-case": [
       0
     ],
-    "space-unary-word-ops": [
+    "no-spaced-func": [
       0
     ],
     "react/jsx-space-before-closing": [

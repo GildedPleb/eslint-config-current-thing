@@ -29,8 +29,8 @@ ${[
       ({ name, package: pack, requiresImport }) =>
         `${
           count > MINIMUMS && requiresImport ? "" : "// "
-        }import ${name} from "${pack}";`
-    )
+        }import ${name} from "${pack}";`,
+    ),
   ),
   'import { FlatCompat } from "@eslint/eslintrc";',
 ].join(`
@@ -92,10 +92,10 @@ ${configs
                ${packages
                  .map(
                    ({ package: pack }) =>
-                     `...("${pack}" in override ? override["${pack}"] : {})`
+                     `...("${pack}" in override ? override["${pack}"] : {})`,
                  )
                  .join(`, `)}
-               },`
+               },`,
         )}] : [])`;
 
       return `  /*
@@ -106,7 +106,7 @@ ${configs
 ${count > MINIMUMS ? "  */" : ""}
   ${definition},
 ${count > MINIMUMS ? "" : "  */"}`;
-    }
+    },
   ).join(`
 `)}];
 
