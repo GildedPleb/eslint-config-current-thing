@@ -3078,8 +3078,7 @@
       }
     ],
     "@typescript-eslint/consistent-indexed-object-style": [
-      2,
-      "index-signature"
+      2
     ],
     "@typescript-eslint/no-unnecessary-type-constraint": [
       2
