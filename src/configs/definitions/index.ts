@@ -35,6 +35,7 @@ import ts from "./ts";
 import tsdoc from "./tsdoc";
 import unicorn from "./unicorn";
 import unsanitized from "./unsanitized";
+import vue from "./vue";
 import xo from "./xo";
 import youDontNeedLodash from "./you-dont-need-lodash";
 
@@ -89,6 +90,7 @@ const packages = [
   jestDom,
   ts,
   reactRefresh,
+  vue,
 ];
 
 export default packages;

@@ -58,6 +58,7 @@ import sonarjs from "eslint-plugin-sonarjs";
 import sortClassMembers from "eslint-plugin-sort-class-members";
 import tsdoc from "eslint-plugin-tsdoc";
 import unicorn from "eslint-plugin-unicorn";
+import vue from "eslint-plugin-vue";
 import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
 import globals from "globals";
 import tseslint from "typescript-eslint";
@@ -643,6 +644,34 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
         },
       ]
     : []),
+
+  /*
+    Vue
+    10,512,526 monthly downloads
+    Official ESLint plugin for Vue.js
+    https://eslint.vuejs.org
+  */
+  ...(disable.includes("eslint-plugin-vue")
+    ? []
+    : [
+        {
+          files,
+          plugins: { vue },
+          rules: {
+            ...vue.configs.base.rules,
+            ...vue.configs.essential.rules,
+            ...vue.configs.recommended.rules,
+            ...vue.configs["strongly-recommended"].rules,
+            ...vue.configs["vue3-essential"].rules,
+            ...vue.configs["vue3-recommended"].rules,
+            ...vue.configs["vue3-strongly-recommended"].rules,
+
+            ...("eslint-plugin-vue" in override
+              ? override["eslint-plugin-vue"]
+              : {}),
+          },
+        },
+      ]),
 
   /*
     Standard
