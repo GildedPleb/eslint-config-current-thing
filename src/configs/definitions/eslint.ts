@@ -6,11 +6,6 @@ export default {
   name: "ESLint",
   definitions: `{
     files,
-    settings: {
-      linterOptions: {
-        reportUnusedDisableDirectives: 1
-      },
-    },
     ${RULES}
   }`,
   rules: `eslint.configs.recommended.rules`,

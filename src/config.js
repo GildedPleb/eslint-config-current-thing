@@ -927,11 +927,6 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     : [
         {
           files,
-          settings: {
-            linterOptions: {
-              reportUnusedDisableDirectives: 1,
-            },
-          },
           rules: {
             ...eslint.configs.recommended.rules,
             ...("@eslint/js" in override ? override["@eslint/js"] : {}),
