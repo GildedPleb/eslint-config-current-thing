@@ -1848,7 +1848,28 @@
       0
     ],
     "object-curly-newline": [
-      0
+      0,
+      {
+        "ObjectExpression": {
+          "multiline": true,
+          "minProperties": 4,
+          "consistent": true
+        },
+        "ObjectPattern": {
+          "multiline": true,
+          "consistent": true
+        },
+        "ImportDeclaration": {
+          "multiline": true,
+          "minProperties": 4,
+          "consistent": true
+        },
+        "ExportDeclaration": {
+          "multiline": true,
+          "minProperties": 4,
+          "consistent": true
+        }
+      }
     ],
     "object-curly-spacing": [
       0,
@@ -3412,6 +3433,9 @@
     "no-nonoctal-decimal-escape": [
       2
     ],
+    "no-object-constructor": [
+      2
+    ],
     "prefer-regex-literals": [
       2,
       {
@@ -3432,10 +3456,20 @@
       0,
       "consistent"
     ],
+    "logical-assignment-operators": [
+      2,
+      "always",
+      {
+        "enforceForIfStatements": true
+      }
+    ],
     "no-constant-binary-expression": [
       2
     ],
     "no-new-native-nonconstructor": [
+      2
+    ],
+    "prefer-object-has-own": [
       2
     ],
     "tsdoc/syntax": [
