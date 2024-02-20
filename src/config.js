@@ -86,6 +86,15 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ],
   },
 
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+  },
+
   /*
     React Performance
     316,527 monthly downloads
@@ -1030,10 +1039,6 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
           {
             languageOptions: {
               parserOptions: { project: true },
-              globals: {
-                ...globals.browser,
-                ...globals.node,
-              },
             },
           },
           {

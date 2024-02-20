@@ -21,10 +21,6 @@ export default {
     {
       languageOptions: {
         parserOptions: { project: true },
-        globals: {
-          ...globals.browser,
-          ...globals.node,
-        },
       },
     },
     {

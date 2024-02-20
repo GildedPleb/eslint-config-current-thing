@@ -58,7 +58,7 @@
     "eslint-plugin-unicorn": "^48.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "eslint-plugin-you-dont-need-lodash-underscore": "^6.13.0",
-    "globals": "^13.20.0",
+    "globals": "^14.0.0",
     "prettier": "^3.2.5",
     "typescript-eslint": "^7.0.2"
   },

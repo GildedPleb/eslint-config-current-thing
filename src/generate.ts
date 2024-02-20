@@ -62,6 +62,15 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ],
   },
 
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+  },
+
 ${configs
   .sort((first, second) => first.count - second.count)
   .map(
