@@ -32,3 +32,4 @@ declare module "eslint-plugin-simple-import-sort";
 declare module "eslint-plugin-sort-class-members";
 declare module "eslint-plugin-unicorn";
 declare module "eslint-plugin-you-dont-need-lodash-underscore";
+declare module "eslint-plugin-react-refresh";

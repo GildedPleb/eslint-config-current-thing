@@ -23,6 +23,7 @@ import reactHooks from "./react-hooks";
 import reactNative from "./react-native";
 import reactNativeConfig from "./react-native-config";
 import reactPerf from "./react-perf";
+import reactRefresh from "./react-refresh";
 import security from "./security";
 import shopify from "./shopify";
 import sonajs from "./sonarjs";
@@ -87,6 +88,7 @@ const packages = [
   jestFormatting,
   jestDom,
   ts,
+  reactRefresh,
 ];
 
 export default packages;

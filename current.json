@@ -866,6 +866,7 @@
     "compat",
     "security:eslint-plugin-security@2.1.1",
     "sonarjs",
+    "react-refresh",
     "jest-dom",
     "react-native",
     "jsdoc",
@@ -3845,6 +3846,9 @@
     ],
     "sonarjs/prefer-while": [
       2
+    ],
+    "react-refresh/only-export-components": [
+      1
     ],
     "jest-dom/prefer-checked": [
       2

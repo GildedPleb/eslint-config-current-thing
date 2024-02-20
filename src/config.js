@@ -14,8 +14,6 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import babelPlugin from "@babel/eslint-plugin";
-// Import typescriptParser from "@typescript-eslint/parser";
-// import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import { FlatCompat } from "@eslint/eslintrc";
 import eslint from "@eslint/js";
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
@@ -51,6 +49,9 @@ import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 // Import reactPerf from "eslint-plugin-react-perf";
 import reactNative from "eslint-plugin-react-native";
+// Import typescriptParser from "@typescript-eslint/parser";
+// import typescriptPlugin from "@typescript-eslint/eslint-plugin";
+import reactRefresh from "eslint-plugin-react-refresh";
 import security from "eslint-plugin-security";
 import importSort from "eslint-plugin-simple-import-sort";
 import sonarjs from "eslint-plugin-sonarjs";
@@ -462,6 +463,27 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
             "sonarjs/cognitive-complexity": 0,
             ...("eslint-plugin-sonarjs" in override
               ? override["eslint-plugin-sonarjs"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
+    React Refresh
+    3,914,429 monthly downloads
+    Validate that your components can safely be updated with fast refresh
+    https://github.com/ArnaudBarre/eslint-plugin-react-refresh#readme
+  */
+  ...(disable.includes("eslint-plugin-react-refresh")
+    ? []
+    : [
+        {
+          files,
+          plugins: { "react-refresh": reactRefresh },
+          rules: {
+            "react-refresh/only-export-components": "warn",
+            ...("eslint-plugin-react-refresh" in override
+              ? override["eslint-plugin-react-refresh"]
               : {}),
           },
         },
