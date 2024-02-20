@@ -3344,10 +3344,7 @@
       2
     ],
     "functional/prefer-tacit": [
-      1,
-      {
-        "assumeTypes": true
-      }
+      1
     ],
     "functional/readonly-type": [
       2
