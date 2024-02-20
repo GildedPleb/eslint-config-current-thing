@@ -869,7 +869,7 @@
     "jest-dom",
     "react-native",
     "jsdoc",
-    "simple-import-sort",
+    "simple-import-sort:eslint-plugin-simple-import-sort@12.0.0",
     "unicorn:eslint-plugin-unicorn@48.0.0",
     "@eslint-community/eslint-comments",
     "eslint-comments",
