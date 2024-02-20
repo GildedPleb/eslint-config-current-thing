@@ -12,20 +12,22 @@ Linting can be so opinionated, it can become political. `Eslint Config Current T
 
 Presently, it combines these configs (and their plugins, sub-modules, etc.):
 
-|                |          |            |             |                  |
-| -------------- | -------- | ---------- | ----------- | ---------------- |
-| AirBnB         | Babel    | Comments   | Compat      | Create React App |
-| ESLint         | Flowtype | Functional | Google      | Import-sort      |
-| Import         | Jest     | JSDoc      | JSX A11y    | NextJS           |
-| Node           | Prettier | Promises   | React Hooks | React Native     |
-| React Perf     | React    | Security   | Shopify     | SonarJS          |
-| Sort Classes   | Standard | TSDoc      | Typescript  | Unicorn          |
-| You Don't Need | XO       |
+|                |          |               |             |                  |
+| -------------- | -------- | ------------- | ----------- | ---------------- |
+| AirBnB         | Babel    | Comments      | Compat      | Create React App |
+| ESLint         | Flowtype | Functional    | Google      | Import-sort      |
+| Import         | Jest     | JSDoc         | JSX A11y    | NextJS           |
+| Node           | Prettier | Promises      | React Hooks | React Native     |
+| React Perf     | React    | Security      | Shopify     | SonarJS          |
+| Sort Classes   | Standard | TSDoc         | Typescript  | Unicorn          |
+| You Don't Need | XO       | React-Refresh | Vue         | Stylistic        |
 
 The winning (and thus supported) high-level architecture is:
 | Types | FrontEnd | Testing |
 | ----- | -------- | ------- |
 |`Typescript` | `React` / `React Native`| `Jest`
+
+Meaning, in many cases, using this config without these frameworks (by disabling them) or with competing frameworks, probably means you are gunna have a bad time.
 
 ---
 
@@ -145,7 +147,7 @@ export default [
       Object.entries(JSONConfig.rules).map(([rule, state], i) => [
         rule,
         i > 10 ? 0 : state,
-      ])
+      ]),
     ),
   },
 ];
