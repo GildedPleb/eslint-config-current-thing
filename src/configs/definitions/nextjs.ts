@@ -15,10 +15,8 @@ export default {
     plugins: { "@next/next": nextjs },
     ${RULES}
   }`,
-  rules: `{
-    ...nextjs.configs.recommended.rules,
+  rules: `nextjs.configs.recommended.rules,
     ...nextjs.configs["core-web-vitals"].rules,
     // Irrelevant for broad JS, and polutes logs when it doesn't apply.
-    "@next/next/no-html-link-for-pages": 0,
-  }`,
+    "@next/next/no-html-link-for-pages": 0`,
 } satisfies Config;

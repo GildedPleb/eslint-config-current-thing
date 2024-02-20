@@ -11,5 +11,5 @@ export default {
     plugins: { unicorn },
     ${RULES}
   }`,
-  rules: `{ ...unicorn.configs.recommended.rules }`,
+  rules: `unicorn.configs.recommended.rules`,
 } satisfies Config;

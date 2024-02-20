@@ -10,5 +10,5 @@ export default {
     files,
     ${RULES}
   }`,
-  rules: `{ ...google.rules }`,
+  rules: `google.rules`,
 } satisfies Config;

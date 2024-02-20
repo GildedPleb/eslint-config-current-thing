@@ -11,5 +11,5 @@ export default {
     plugins: { compat: comp },
     ${RULES}
   }`,
-  rules: `{ ...comp.configs.recommended.rules }`,
+  rules: `comp.configs.recommended.rules`,
 } satisfies Config;

@@ -8,7 +8,7 @@ export default {
   name: "React",
   definitions: `{
     files,
-		plugins: { react },
+    plugins: { react },
     settings: {
       react: {
         "pragma": "React",

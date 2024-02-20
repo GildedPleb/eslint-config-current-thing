@@ -11,5 +11,5 @@ export default {
     plugins: { promise },
     ${RULES}
   }`,
-  rules: `{ ...promise.configs.recommended.rules }`,
+  rules: `promise.configs.recommended.rules`,
 } satisfies Config;

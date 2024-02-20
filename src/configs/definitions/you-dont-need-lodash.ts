@@ -15,5 +15,5 @@ export default {
     plugins: { "you-dont-need-lodash-underscore": youDontNeedLodash },
     ${RULES}
   }`,
-  rules: `{ ...youDontNeedLodash.configs.compatible.rules }`,
+  rules: `youDontNeedLodash.configs.compatible.rules`,
 } satisfies Config;

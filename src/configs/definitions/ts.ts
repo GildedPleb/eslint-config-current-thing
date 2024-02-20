@@ -16,14 +16,10 @@ export default {
     },
   ],
   name: "TypeScript",
-  definitions: `...tseslint.config(
-    ...tseslint.configs.recommendedTypeChecked,
-    {
-      languageOptions: {
-        parserOptions: { project: true },
-      },
+  definitions: `...tseslint.config( ...tseslint.configs.recommendedTypeChecked, {
+      languageOptions: { parserOptions: { project: true } },
       ${RULES}
-    },
+    }
   )`,
   rules: `{
     // "allowNullableObject: false," autofixes type \`object | undefined\` poorly.

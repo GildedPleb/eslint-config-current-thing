@@ -51,9 +51,7 @@ export default {
     },
     ${RULES}
   }`,
-  rules: `{
-    ...importPlugin.configs.recommended.rules,
+  rules: `importPlugin.configs.recommended.rules,
     ...importPlugin.configs.typescript.rules,
-    "import/order": 0,
-  }`,
+    "import/order": 0`,
 } satisfies Config;

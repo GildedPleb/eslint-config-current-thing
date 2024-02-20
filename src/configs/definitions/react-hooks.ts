@@ -12,7 +12,7 @@ export default {
   name: "React Hooks",
   definitions: `{
     files,
-		plugins: { "react-hooks": reactHooks },
+    plugins: { "react-hooks": reactHooks },
     ${RULES}
   }`,
   rules: `reactHooks.configs.recommended.rules`,

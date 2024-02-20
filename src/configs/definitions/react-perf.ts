@@ -12,7 +12,7 @@ export default {
   name: "React Performance",
   definitions: `{
     files,
-		plugins: { "react-perf": reactPerf },
+    plugins: { "react-perf": reactPerf },
     ${RULES}
   }`,
   rules: `reactPerf.configs.recommended.rules`,

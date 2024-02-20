@@ -13,13 +13,11 @@ export default {
   definitions: `{
     files,
     plugins: { functional },
+    // "Strick", "Recommended", and "Lite" punch far above their weight and are not added.
     ${RULES}
   }`,
-  rules: `{
-    // "Strick", "Recommended", and "Lite" punch far above their weight and are not added.
-    ...functional.configs["external-typescript-recommended"].rules,
+  rules: `functional.configs["external-typescript-recommended"].rules,
     ...functional.configs.stylistic.rules,
     ...functional.configs["no-other-paradigms"].rules,
-    "functional/no-loop-statements": 0,
-  }`,
+    "functional/no-loop-statements": 0`,
 } satisfies Config;

@@ -15,5 +15,5 @@ export default {
     plugins: { "no-unsanitized": unsanitized },
     ${RULES}
   }`,
-  rules: `{ ...unsanitized.configs.DOM.rules }`,
+  rules: `unsanitized.configs.DOM.rules`,
 } satisfies Config;

@@ -25,8 +25,8 @@ export default {
         xtest: false,
       },
     },
-		plugins: { jest },
+    plugins: { jest },
     ${RULES}
   }`,
-  rules: `{ ...jest.configs.recommended.rules }`,
+  rules: `jest.configs.recommended.rules`,
 } satisfies Config;

@@ -22,6 +22,7 @@ import comments from "@eslint-community/eslint-plugin-eslint-comments";
 import nextjs from "@next/eslint-plugin-next";
 import reactNativeConfig from "@react-native-community/eslint-config";
 import shopify from "@shopify/eslint-plugin";
+import stylistic from "@stylistic/eslint-plugin";
 import google from "eslint-config-google";
 import prettierConfig from "eslint-config-prettier";
 import cra from "eslint-config-react-app";
@@ -87,7 +88,6 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
       "index.js",
     ],
   },
-
   {
     languageOptions: {
       globals: {
@@ -103,15 +103,45 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Performance-minded React linting rules for ESLint
     https://github.com/cvazac/eslint-plugin-react-perf#readme
 
-  ...(!disable.includes("eslint-plugin-react-perf") ? [
+  ...(disable.includes("eslint-plugin-react-perf")
+    ? []
+    : [
         {
     files,
-		plugins: { "react-perf": reactPerf },
-    rules: { ...reactPerf.configs.recommended.rules,
+    plugins: { "react-perf": reactPerf },
+    rules: {
+            ...reactPerf.configs.recommended.rules,
                ...("eslint-plugin-react-perf" in override ? override["eslint-plugin-react-perf"] : {})
-               },
-  }] : []),
+          },
+  }
+      ]),
   */
+  /*
+    Stylistic
+    403,761 monthly downloads
+    Stylistic rules for ESLint, works for both JavaScript and TypeScript.
+    https://github.com/eslint-stylistic/eslint-stylistic#readme
+  */
+  ...(disable.includes("@stylistic/eslint-plugin")
+    ? []
+    : [
+        {
+          files,
+          plugins: { "@stylistic": stylistic },
+          rules: {
+            ...stylistic.configs.customize({ quotes: "double", semi: true })
+              .rules,
+            // Conflicts with Prettier
+            "@stylistic/operator-linebreak": 0,
+            // Conflicts with Prettier
+            "@stylistic/quotes": 0,
+            ...("@stylistic/eslint-plugin" in override
+              ? override["@stylistic/eslint-plugin"]
+              : {}),
+          },
+        },
+      ]),
+
   /*
     Shopify
     467,776 monthly downloads
@@ -202,8 +232,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
         {
           files,
           plugins: { functional },
+          // "Strick", "Recommended", and "Lite" punch far above their weight and are not added.
           rules: {
-            // "Strick", "Recommended", and "Lite" punch far above their weight and are not added.
             ...functional.configs["external-typescript-recommended"].rules,
             ...functional.configs.stylistic.rules,
             ...functional.configs["no-other-paradigms"].rules,
@@ -530,8 +560,6 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
           },
           rules: {
             ...reactNative.configs.all.rules,
-            // Needed untill this is resolved: https://github.com/Intellicode/eslint-plugin-react-native/issues/270
-            "react-native/no-raw-text": "off",
             ...("eslint-plugin-react-native" in override
               ? override["eslint-plugin-react-native"]
               : {}),
@@ -621,9 +649,10 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Additional ESLint rules for ESLint directive comments. / Additional ESLint rules for ESLint directive comments.
     https://github.com/eslint-community/eslint-plugin-eslint-comments#readme / https://github.com/mysticatea/eslint-plugin-eslint-comments#readme
   */
-  ...(!disable.includes("@eslint-community/eslint-plugin-eslint-comments") &&
-  !disable.includes("eslint-plugin-eslint-comments")
-    ? [
+  ...(disable.includes("@eslint-community/eslint-plugin-eslint-comments") ||
+  disable.includes("eslint-plugin-eslint-comments")
+    ? []
+    : [
         {
           files,
           plugins: {
@@ -642,8 +671,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
               : {}),
           },
         },
-      ]
-    : []),
+      ]),
 
   /*
     Vue
@@ -665,7 +693,6 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
             ...vue.configs["vue3-essential"].rules,
             ...vue.configs["vue3-recommended"].rules,
             ...vue.configs["vue3-strongly-recommended"].rules,
-
             ...("eslint-plugin-vue" in override
               ? override["eslint-plugin-vue"]
               : {}),
@@ -679,9 +706,10 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     JavaScript Standard Style - ESLint Shareable Config / An ESLint Shareable Config for JavaScript Standard Style with TypeScript support
     https://github.com/standard/eslint-config-standard / https://github.com/mightyiam/eslint-config-standard-with-typescript#readme
   */
-  ...(!disable.includes("eslint-config-standard") &&
-  !disable.includes("eslint-config-standard-with-typescript")
-    ? [
+  ...(disable.includes("eslint-config-standard") ||
+  disable.includes("eslint-config-standard-with-typescript")
+    ? []
+    : [
         {
           files,
           rules: {
@@ -697,8 +725,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
               : {}),
           },
         },
-      ]
-    : []),
+      ]),
 
   /*
     Promises
@@ -795,9 +822,10 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Airbnb's ESLint config, following our styleguide / Airbnb's ESLint config with TypeScript support
     https://github.com/airbnb/javascript / https://github.com/iamturns/eslint-config-airbnb-typescript
   */
-  ...(!disable.includes("eslint-config-airbnb") &&
-  !disable.includes("eslint-config-airbnb-typescript")
-    ? [
+  ...(disable.includes("eslint-config-airbnb") ||
+  disable.includes("eslint-config-airbnb-typescript")
+    ? []
+    : [
         {
           files,
           rules: {
@@ -814,8 +842,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
               : {}),
           },
         },
-      ]
-    : []),
+      ]),
 
   /*
     Node.js
@@ -823,9 +850,10 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Additional ESLint's rules for Node.js / Additional ESLint's rules for Node.js
     https://github.com/eslint-community/eslint-plugin-n#readme / https://github.com/mysticatea/eslint-plugin-node#readme
   */
-  ...(!disable.includes("eslint-plugin-n") &&
-  !disable.includes("eslint-plugin-node")
-    ? [
+  ...(disable.includes("eslint-plugin-n") ||
+  disable.includes("eslint-plugin-node")
+    ? []
+    : [
         {
           files,
           plugins: {
@@ -849,8 +877,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
               : {}),
           },
         },
-      ]
-    : []),
+      ]),
 
   /*
     Jest
@@ -1050,9 +1077,10 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Runs prettier as an eslint rule / Turns off all rules that are unnecessary or might conflict with Prettier.
     https://github.com/prettier/eslint-plugin-prettier#readme / https://github.com/prettier/eslint-config-prettier#readme
   */
-  ...(!disable.includes("eslint-plugin-prettier") &&
-  !disable.includes("eslint-config-prettier")
-    ? [
+  ...(disable.includes("eslint-plugin-prettier") ||
+  disable.includes("eslint-config-prettier")
+    ? []
+    : [
         {
           files,
           plugins: { prettier },
@@ -1067,8 +1095,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
               : {}),
           },
         },
-      ]
-    : []),
+      ]),
 
   /*
     TypeScript
@@ -1076,14 +1103,13 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Tooling which enables you to use TypeScript with ESLint / An ESLint custom parser which leverages TypeScript ESTree / TypeScript plugin for ESLint
     https://github.com/typescript-eslint/typescript-eslint#readme / https://github.com/typescript-eslint/typescript-eslint#readme / https://github.com/typescript-eslint/typescript-eslint#readme
   */
-  ...(!disable.includes("typescript-eslint") &&
-  !disable.includes("@typescript-eslint/parser") &&
-  !disable.includes("@typescript-eslint/eslint-plugin")
-    ? [
+  ...(disable.includes("typescript-eslint") ||
+  disable.includes("@typescript-eslint/parser") ||
+  disable.includes("@typescript-eslint/eslint-plugin")
+    ? []
+    : [
         ...tseslint.config(...tseslint.configs.recommendedTypeChecked, {
-          languageOptions: {
-            parserOptions: { project: true },
-          },
+          languageOptions: { parserOptions: { project: true } },
           rules: {
             // "allowNullableObject: false," autofixes type `object | undefined` poorly.
             // When checking a nullable object, `if (obj)...` it autofixes to `if (obj != null)...`.
@@ -1114,8 +1140,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
               : {}),
           },
         }),
-      ]
-    : []),
+      ]),
 ];
 
 export default configGen;

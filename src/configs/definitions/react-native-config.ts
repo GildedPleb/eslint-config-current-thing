@@ -14,5 +14,7 @@ export default {
     files,
     ${RULES}
   }`,
-  rules: `{ ...reactNativeConfig.overrides[1].rules, ...reactNativeConfig.overrides[2].rules, ...reactNativeConfig.rules }`,
+  rules: `reactNativeConfig.overrides[1].rules,
+    ...reactNativeConfig.overrides[2].rules,
+    ...reactNativeConfig.rules`,
 } satisfies Config;

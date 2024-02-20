@@ -12,8 +12,8 @@ export default {
   name: "Flowtype",
   definitions: `{
     files,
-		plugins: { flowtype },
-		// No rules as they conflict with Typescript
+    plugins: { flowtype },
+    // No rules as they conflict with Typescript
     ${RULES}
   }`,
 } satisfies Config;

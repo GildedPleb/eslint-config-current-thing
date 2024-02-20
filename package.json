@@ -19,6 +19,7 @@
     "@next/eslint-plugin-next": "^14.1.0",
     "@react-native-community/eslint-config": "^3.2.0",
     "@shopify/eslint-plugin": "^44.0.0",
+    "@stylistic/eslint-plugin": "^1.6.2",
     "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",

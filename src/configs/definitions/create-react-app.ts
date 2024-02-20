@@ -11,10 +11,10 @@ export default {
     ${RULES}
   }`,
   rules: `{
-  	"react/jsx-uses-vars": "warn",
-  	"react/jsx-uses-react": "warn",
-  	...cra.rules,
-  	...cra.overrides[0].rules,
+    "react/jsx-uses-vars": "warn",
+    "react/jsx-uses-react": "warn",
+    ...cra.rules,
+    ...cra.overrides[0].rules,
   }`,
 } satisfies Config;
 

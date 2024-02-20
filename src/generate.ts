@@ -61,7 +61,6 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
       "index.js",
     ],
   },
-
   {
     languageOptions: {
       globals: {
@@ -93,19 +92,23 @@ ${configs
       const parsedRules = rules === undefined ? "" : `...${rules},`;
 
       const definition = `...(${packages
-        .map(({ package: pack }) => `!disable.includes("${pack}")`)
-        .join(` && `)} ? [
+        .map(({ package: pack }) => `disable.includes("${pack}")`)
+        .join(` || `)}
+    ? []
+    : [
         ${definitions.replace(
           RULES,
-          `rules: { ${parsedRules}
+          `rules: {
+            ${parsedRules}
                ${packages
                  .map(
                    ({ package: pack }) =>
                      `...("${pack}" in override ? override["${pack}"] : {})`,
                  )
                  .join(`, `)}
-               },`,
-        )}] : [])`;
+          },`,
+        )}
+      ])`;
 
       return `  /*
     ${name}

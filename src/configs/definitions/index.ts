@@ -31,6 +31,7 @@ import sort from "./sort-class";
 import standard from "./standard";
 import standardJsx from "./standard-jsx";
 import standardReact from "./standard-react";
+import styleistic from "./stylistic";
 import ts from "./ts";
 import tsdoc from "./tsdoc";
 import unicorn from "./unicorn";
@@ -91,6 +92,7 @@ const packages = [
   ts,
   reactRefresh,
   vue,
+  styleistic,
 ];
 
 export default packages;

@@ -12,8 +12,8 @@ export default {
   name: "Jest Dom",
   definitions: `{
     files,
-		plugins: { "jest-dom": jestDom },
+    plugins: { "jest-dom": jestDom },
     ${RULES}
   }`,
-  rules: `{ ...jestDom.configs.recommended.rules }`,
+  rules: `jestDom.configs.recommended.rules`,
 } satisfies Config;

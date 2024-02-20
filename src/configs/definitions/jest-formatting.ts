@@ -12,8 +12,8 @@ export default {
   name: "Jest Formatting",
   definitions: `{
     files,
-		plugins: { "jest-formatting": jestFormatting },
+    plugins: { "jest-formatting": jestFormatting },
     ${RULES}
   }`,
-  rules: `{ ...jestFormatting.configs.recommended.overrides[0].rules }`,
+  rules: `jestFormatting.configs.recommended.overrides[0].rules`,
 } satisfies Config;

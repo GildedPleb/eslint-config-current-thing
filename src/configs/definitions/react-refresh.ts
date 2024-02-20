@@ -12,10 +12,8 @@ export default {
   name: "React Refresh",
   definitions: `{
     files,
-		plugins: { "react-refresh": reactRefresh },
+    plugins: { "react-refresh": reactRefresh },
     ${RULES}
   }`,
-  rules: `{
-    "react-refresh/only-export-components": "warn",
-  }`,
+  rules: `{ "react-refresh/only-export-components": "warn" }`,
 } satisfies Config;
