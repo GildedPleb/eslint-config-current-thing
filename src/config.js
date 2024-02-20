@@ -1051,45 +1051,40 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
   !disable.includes("@typescript-eslint/parser") &&
   !disable.includes("@typescript-eslint/eslint-plugin")
     ? [
-        ...tseslint.config(
-          ...tseslint.configs.recommendedTypeChecked,
-          {
-            languageOptions: {
-              parserOptions: { project: true },
-            },
+        ...tseslint.config(...tseslint.configs.recommendedTypeChecked, {
+          languageOptions: {
+            parserOptions: { project: true },
           },
-          {
-            rules: {
-              // "allowNullableObject: false," autofixes type `object | undefined` poorly.
-              // When checking a nullable object, `if (obj)...` it autofixes to `if (obj != null)...`.
-              // This violates both the "unicorn/no-null" rule and the "eqeqeq" rule, causing unneeded further corrections.
-              // See: https://eslint.org/docs/latest/rules/eqeqeq
-              //      https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v45.0.2/docs/rules/no-null.md
-              //      https://typescript-eslint.io/rules/strict-boolean-expressions/#fixes-and-suggestions
-              "@typescript-eslint/strict-boolean-expressions": [
-                2,
-                {
-                  allowString: false,
-                  allowNumber: false,
-                  allowNullableObject: true,
-                  allowNullableBoolean: false,
-                  allowNullableString: false,
-                  allowNullableNumber: false,
-                  allowAny: false,
-                },
-              ],
-              ...("typescript-eslint" in override
-                ? override["typescript-eslint"]
-                : {}),
-              ...("@typescript-eslint/parser" in override
-                ? override["@typescript-eslint/parser"]
-                : {}),
-              ...("@typescript-eslint/eslint-plugin" in override
-                ? override["@typescript-eslint/eslint-plugin"]
-                : {}),
-            },
+          rules: {
+            // "allowNullableObject: false," autofixes type `object | undefined` poorly.
+            // When checking a nullable object, `if (obj)...` it autofixes to `if (obj != null)...`.
+            // This violates both the "unicorn/no-null" rule and the "eqeqeq" rule, causing unneeded further corrections.
+            // See: https://eslint.org/docs/latest/rules/eqeqeq
+            //      https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v45.0.2/docs/rules/no-null.md
+            //      https://typescript-eslint.io/rules/strict-boolean-expressions/#fixes-and-suggestions
+            "@typescript-eslint/strict-boolean-expressions": [
+              2,
+              {
+                allowString: false,
+                allowNumber: false,
+                allowNullableObject: true,
+                allowNullableBoolean: false,
+                allowNullableString: false,
+                allowNullableNumber: false,
+                allowAny: false,
+              },
+            ],
+            ...("typescript-eslint" in override
+              ? override["typescript-eslint"]
+              : {}),
+            ...("@typescript-eslint/parser" in override
+              ? override["@typescript-eslint/parser"]
+              : {}),
+            ...("@typescript-eslint/eslint-plugin" in override
+              ? override["@typescript-eslint/eslint-plugin"]
+              : {}),
           },
-        ),
+        }),
       ]
     : []),
 ];

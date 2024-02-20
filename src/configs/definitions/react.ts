@@ -15,11 +15,11 @@ export default {
         "version": "detect"
       },
     },
-    "languageOptions": {
-      "ecmaVersion": "latest",
-      "parserOptions": {
-        "ecmaFeatures": {
-          "jsx": true,
+    languageOptions: {
+      ecmaVersion: "latest",
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
         },
       },
     },

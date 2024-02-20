@@ -22,10 +22,8 @@ export default {
       languageOptions: {
         parserOptions: { project: true },
       },
-    },
-    {
       ${RULES}
-    }
+    },
   )`,
   rules: `{
     // "allowNullableObject: false," autofixes type \`object | undefined\` poorly.
