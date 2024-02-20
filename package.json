@@ -16,7 +16,7 @@
     "@eslint-community/eslint-plugin-eslint-comments": "^4.1.0",
     "@eslint/eslintrc": "^3.0.1",
     "@eslint/js": "^8.45.0",
-    "@next/eslint-plugin-next": "^13.4.10",
+    "@next/eslint-plugin-next": "^14.1.0",
     "@react-native-community/eslint-config": "^3.2.0",
     "@shopify/eslint-plugin": "^42.1.0",
     "eslint": "^8.56.0",
