@@ -10,7 +10,7 @@ An **extremely unopinionated** config based on a popularity contest between the 
 
 Linting can be so opinionated, it can become political. `Eslint Config Current Thing` generates an ESLint config objectively based on whatever the current thing is at the time of build w/r/t broad ecosystem-wide definitions and opinion around JavaScript linting. Now, those political preferences can be exposed for what they are--power-grabs--by competing on an inter-ecosystem, distributed scale, not just within a set of contributors or a niche.
 
-Presently, it combines these configs (and their plugins, sub-modules, etc.):
+Presently, it combines these configs (and their plugins, submodules, etc.):
 
 |                |          |               |             |                  |
 | -------------- | -------- | ------------- | ----------- | ---------------- |
