@@ -159,6 +159,7 @@
       "CloseEvent": false,
       "Comment": false,
       "CompositionEvent": false,
+      "CompressionStream": false,
       "confirm": false,
       "ConstantSourceNode": false,
       "ConvolverNode": false,
@@ -200,6 +201,7 @@
       "DataTransfer": false,
       "DataTransferItem": false,
       "DataTransferItemList": false,
+      "DecompressionStream": false,
       "defaultstatus": false,
       "defaultStatus": false,
       "DelayNode": false,
@@ -384,6 +386,7 @@
       "MediaStream": false,
       "MediaStreamAudioDestinationNode": false,
       "MediaStreamAudioSourceNode": false,
+      "MediaStreamConstraints": false,
       "MediaStreamEvent": false,
       "MediaStreamTrack": false,
       "MediaStreamTrackEvent": false,
@@ -580,7 +583,12 @@
       "queueMicrotask": false,
       "RadioNodeList": false,
       "Range": false,
+      "ReadableByteStreamController": false,
       "ReadableStream": false,
+      "ReadableStreamBYOBReader": false,
+      "ReadableStreamBYOBRequest": false,
+      "ReadableStreamDefaultController": false,
+      "ReadableStreamDefaultReader": false,
       "registerProcessor": false,
       "RemotePlayback": false,
       "removeEventListener": false,
@@ -750,7 +758,9 @@
       "TaskAttributionTiming": false,
       "Text": false,
       "TextDecoder": false,
+      "TextDecoderStream": false,
       "TextEncoder": false,
+      "TextEncoderStream": false,
       "TextEvent": false,
       "TextMetrics": false,
       "TextTrack": false,
@@ -758,6 +768,7 @@
       "TextTrackCueList": false,
       "TextTrackList": false,
       "TimeRanges": false,
+      "ToggleEvent": false,
       "toolbar": false,
       "top": false,
       "Touch": false,
@@ -765,6 +776,7 @@
       "TouchList": false,
       "TrackEvent": false,
       "TransformStream": false,
+      "TransformStreamDefaultController": false,
       "TransitionEvent": false,
       "TreeWalker": false,
       "UIEvent": false,
@@ -797,6 +809,8 @@
       "Window": false,
       "Worker": false,
       "WritableStream": false,
+      "WritableStreamDefaultController": false,
+      "WritableStreamDefaultWriter": false,
       "XMLDocument": false,
       "XMLHttpRequestEventTarget": false,
       "XMLHttpRequestUpload": false,
@@ -804,6 +818,30 @@
       "XPathEvaluator": false,
       "XPathExpression": false,
       "XPathResult": false,
+      "XRAnchor": false,
+      "XRBoundedReferenceSpace": false,
+      "XRCPUDepthInformation": false,
+      "XRDepthInformation": false,
+      "XRFrame": false,
+      "XRInputSource": false,
+      "XRInputSourceArray": false,
+      "XRInputSourceEvent": false,
+      "XRInputSourcesChangeEvent": false,
+      "XRPose": false,
+      "XRReferenceSpace": false,
+      "XRReferenceSpaceEvent": false,
+      "XRRenderState": false,
+      "XRRigidTransform": false,
+      "XRSession": false,
+      "XRSessionEvent": false,
+      "XRSpace": false,
+      "XRSystem": false,
+      "XRView": false,
+      "XRViewerPose": false,
+      "XRViewport": false,
+      "XRWebGLBinding": false,
+      "XRWebGLDepthInformation": false,
+      "XRWebGLLayer": false,
       "XSLTProcessor": false,
       "__filename": false,
       "Buffer": false
@@ -823,9 +861,9 @@
     "@shopify/typescript",
     "you-dont-need-lodash-underscore",
     "functional",
-    "sort-class-members",
+    "sort-class-members:eslint-plugin-sort-class-members@1.20.0",
     "no-unsanitized",
-    "@babel",
+    "@babel:@babel/eslint-plugin@7.23.5",
     "tsdoc",
     "jest-formatting",
     "compat",
@@ -841,9 +879,9 @@
     "promise",
     "@next/next",
     "flowtype",
-    "n:eslint-plugin-n@16.0.1",
+    "n:eslint-plugin-n@16.6.2",
     "node",
-    "jest",
+    "jest:eslint-plugin-jest@27.9.0",
     "jsx-a11y",
     "react-hooks",
     "react",
@@ -3198,6 +3236,18 @@
     "you-dont-need-lodash-underscore/is-function": [
       2
     ],
+    "you-dont-need-lodash-underscore/capitalize": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-date": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/defaults": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/head": [
+      2
+    ],
     "you-dont-need-lodash-underscore/find": [
       1
     ],
@@ -3262,6 +3312,12 @@
       1
     ],
     "you-dont-need-lodash-underscore/get": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/union-by": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/is-array-buffer": [
       1
     ],
     "@typescript-eslint/switch-exhaustiveness-check": [
