@@ -864,7 +864,7 @@
     "tsdoc",
     "jest-formatting",
     "compat",
-    "security",
+    "security:eslint-plugin-security@2.1.1",
     "sonarjs",
     "jest-dom",
     "react-native",
