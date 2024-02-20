@@ -870,7 +870,7 @@
     "react-native",
     "jsdoc",
     "simple-import-sort:eslint-plugin-simple-import-sort@12.0.0",
-    "unicorn:eslint-plugin-unicorn@48.0.0",
+    "unicorn:eslint-plugin-unicorn@51.0.1",
     "@eslint-community/eslint-comments",
     "eslint-comments",
     "promise",
@@ -4082,7 +4082,7 @@
       2
     ],
     "unicorn/consistent-destructuring": [
-      2
+      0
     ],
     "unicorn/consistent-function-scoping": [
       2
@@ -4196,6 +4196,9 @@
       2
     ],
     "unicorn/no-unnecessary-await": [
+      2
+    ],
+    "unicorn/no-unnecessary-polyfills": [
       2
     ],
     "unicorn/no-unreadable-array-destructuring": [
