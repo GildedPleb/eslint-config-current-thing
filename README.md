@@ -248,12 +248,8 @@ That said, there are some very compelling reasons to use this config above other
 
 ## We are considering adding these configs
 
-- https://www.npmjs.com/package/eslint-plugin-html : JS in HTML
-- https://www.npmjs.com/package/eslint-plugin-json : JSON
-- https://www.npmjs.com/package/eslint-plugin-markdown : JS in Markdown
-- https://www.npmjs.com/package/eslint-plugin-yml : YAML
-- https://www.npmjs.com/package/@graphql-eslint/eslint-plugin : GraphGL
 - https://www.npmjs.com/package/eslint-plugin-storybook : Storybook
+- https://www.npmjs.com/package/eslint-config-xo-typescript : Blocked by Old Peer Dependency trees
 
 ## We will not be adding these configs
 
@@ -263,3 +259,11 @@ That said, there are some very compelling reasons to use this config above other
 - https://www.npmjs.com/package/eslint-plugin-react-native-globals : Obsoleted by React Native
 - https://www.npmjs.com/package/@react-native-community/eslint-plugin : Included with @react-native-community/eslint-config
 - https://www.npmjs.com/package/eslint-plugin-deprecation : Obsoleted by SonarJS
+
+- https://www.npmjs.com/package/eslint-plugin-html : JS in HTML : Out of Scope
+- https://www.npmjs.com/package/eslint-plugin-json : JSON : Out of Scope
+- https://www.npmjs.com/package/eslint-plugin-markdown : JS in Markdown : Out of Scope
+- https://www.npmjs.com/package/eslint-plugin-yml : YAML : Out of Scope
+- https://www.npmjs.com/package/@graphql-eslint/eslint-plugin : GraphGL : Out of Scope
+
+- https://www.npmjs.com/package/vite-plugin-eslint : Not an actual ESLint Plugin, but a Vite Plugin.
