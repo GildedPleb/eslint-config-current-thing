@@ -4,16 +4,16 @@ import type { Config } from ".";
 export default {
   packages: [
     {
-      name: "reactPerf",
-      package: "eslint-plugin-react-perf",
+      name: "reactRefresh",
+      package: "eslint-plugin-react-refresh",
       requiresImport: true,
     },
   ],
-  name: "React Performance",
+  name: "React Refresh",
   definitions: `{
     files,
-    plugins: { "react-perf": reactPerf },
+    plugins: { "react-refresh": reactRefresh },
     ${RULES}
   }`,
-  rules: `reactPerf.configs.recommended.rules`,
+  rules: `{ "react-refresh/only-export-components": "warn" }`,
 } satisfies Config;

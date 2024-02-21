@@ -2,8 +2,9 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [{ name: "tsdoc", package: "eslint-plugin-tsdoc" }],
-  requiresImport: true,
+  packages: [
+    { name: "tsdoc", package: "eslint-plugin-tsdoc", requiresImport: true },
+  ],
   name: "TSDoc",
   definitions: `{
     files,

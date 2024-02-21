@@ -2,8 +2,7 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [{ name: "eslint", package: "@eslint/js" }],
-  requiresImport: true,
+  packages: [{ name: "eslint", package: "@eslint/js", requiresImport: true }],
   name: "ESLint",
   definitions: `{
     files,

@@ -3,9 +3,12 @@ import type { Config } from ".";
 
 export default {
   packages: [
-    { name: "standardReact", package: "eslint-config-standard-react" },
+    {
+      name: "standardReact",
+      package: "eslint-config-standard-react",
+      requiresImport: true,
+    },
   ],
-  requiresImport: true,
   name: "Standard React",
   definitions: `{
     files,

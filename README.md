@@ -10,22 +10,24 @@ An **extremely unopinionated** config based on a popularity contest between the 
 
 Linting can be so opinionated, it can become political. `Eslint Config Current Thing` generates an ESLint config objectively based on whatever the current thing is at the time of build w/r/t broad ecosystem-wide definitions and opinion around JavaScript linting. Now, those political preferences can be exposed for what they are--power-grabs--by competing on an inter-ecosystem, distributed scale, not just within a set of contributors or a niche.
 
-Presently, it combines these configs (and their plugins, sub-modules, etc.):
+Presently, it combines these configs (and their plugins, submodules, etc.):
 
-|                |          |            |             |                  |
-| -------------- | -------- | ---------- | ----------- | ---------------- |
-| AirBnB         | Babel    | Comments   | Compat      | Create React App |
-| ESLint         | Flowtype | Functional | Google      | Import-sort      |
-| Import         | Jest     | JSDoc      | JSX A11y    | NextJS           |
-| Node           | Prettier | Promises   | React Hooks | React Native     |
-| React Perf     | React    | Security   | Shopify     | SonarJS          |
-| Sort Classes   | Standard | TSDoc      | Typescript  | Unicorn          |
-| You Don't Need | XO       |
+|                |          |               |             |                  |
+| -------------- | -------- | ------------- | ----------- | ---------------- |
+| AirBnB         | Babel    | Comments      | Compat      | Create React App |
+| ESLint         | Flowtype | Functional    | Google      | Import-sort      |
+| Import         | Jest     | JSDoc         | JSX A11y    | NextJS           |
+| Node           | Prettier | Promises      | React Hooks | React Native     |
+| React Perf     | React    | Security      | Shopify     | SonarJS          |
+| Sort Classes   | Standard | TSDoc         | Typescript  | Unicorn          |
+| You Don't Need | XO       | React-Refresh | Vue         | Stylistic        |
 
 The winning (and thus supported) high-level architecture is:
 | Types | FrontEnd | Testing |
 | ----- | -------- | ------- |
 |`Typescript` | `React` / `React Native`| `Jest`
+
+Meaning, in many cases, using this config without these frameworks (by disabling them) or with competing frameworks, probably means you are gunna have a bad time.
 
 ---
 
@@ -145,7 +147,7 @@ export default [
       Object.entries(JSONConfig.rules).map(([rule, state], i) => [
         rule,
         i > 10 ? 0 : state,
-      ])
+      ]),
     ),
   },
 ];
@@ -246,12 +248,8 @@ That said, there are some very compelling reasons to use this config above other
 
 ## We are considering adding these configs
 
-- https://www.npmjs.com/package/eslint-plugin-html : JS in HTML
-- https://www.npmjs.com/package/eslint-plugin-json : JSON
-- https://www.npmjs.com/package/eslint-plugin-markdown : JS in Markdown
-- https://www.npmjs.com/package/eslint-plugin-yml : YAML
-- https://www.npmjs.com/package/@graphql-eslint/eslint-plugin : GraphGL
 - https://www.npmjs.com/package/eslint-plugin-storybook : Storybook
+- https://www.npmjs.com/package/eslint-config-xo-typescript : Blocked by Old Peer Dependency trees
 
 ## We will not be adding these configs
 
@@ -261,3 +259,11 @@ That said, there are some very compelling reasons to use this config above other
 - https://www.npmjs.com/package/eslint-plugin-react-native-globals : Obsoleted by React Native
 - https://www.npmjs.com/package/@react-native-community/eslint-plugin : Included with @react-native-community/eslint-config
 - https://www.npmjs.com/package/eslint-plugin-deprecation : Obsoleted by SonarJS
+
+- https://www.npmjs.com/package/eslint-plugin-html : JS in HTML : Out of Scope
+- https://www.npmjs.com/package/eslint-plugin-json : JSON : Out of Scope
+- https://www.npmjs.com/package/eslint-plugin-markdown : JS in Markdown : Out of Scope
+- https://www.npmjs.com/package/eslint-plugin-yml : YAML : Out of Scope
+- https://www.npmjs.com/package/@graphql-eslint/eslint-plugin : GraphGL : Out of Scope
+
+- https://www.npmjs.com/package/vite-plugin-eslint : Not an actual ESLint Plugin, but a Vite Plugin.

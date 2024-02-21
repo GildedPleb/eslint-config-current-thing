@@ -6,13 +6,14 @@ export default {
     {
       name: "comments",
       package: "@eslint-community/eslint-plugin-eslint-comments",
+      requiresImport: true,
     },
     {
       name: "commentsOld",
       package: "eslint-plugin-eslint-comments",
+      requiresImport: true,
     },
   ],
-  requiresImport: true,
   name: "Comments",
   definitions: `{
     files,

@@ -2,12 +2,13 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [{ name: "google", package: "eslint-config-google" }],
-  requiresImport: true,
+  packages: [
+    { name: "google", package: "eslint-config-google", requiresImport: true },
+  ],
   name: "Google",
   definitions: `{
     files,
     ${RULES}
   }`,
-  rules: `{ ...google.rules }`,
+  rules: `google.rules`,
 } satisfies Config;

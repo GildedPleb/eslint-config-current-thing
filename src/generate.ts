@@ -3,13 +3,13 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import configs from "./configs";
-import { RULES } from "./constants";
+import { MINIMUMS, RULES } from "./constants";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 const generateCode = `/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable tsdoc/syntax */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
@@ -24,11 +24,14 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 ${[
-  ...configs
-    .filter(({ requiresImport }) => requiresImport)
-    .flatMap(({ packages }) =>
-      packages.map(({ name, package: p }) => `import ${name} from "${p}";`)
+  ...configs.flatMap(({ packages, count }) =>
+    packages.map(
+      ({ name, package: pack, requiresImport }) =>
+        `${
+          count > MINIMUMS && requiresImport ? "" : "// "
+        }import ${name} from "${pack}";`,
     ),
+  ),
   'import { FlatCompat } from "@eslint/eslintrc";',
 ].join(`
 `)}
@@ -42,8 +45,10 @@ const files = ["**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}"];
 
 const defaultOptions = { disable: [], override: {} };
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-return
-export default ({ disable = [], override = {} } = defaultOptions) => [
+/**
+ * @param {{ disable: string[], override: Record<string, Record<string, number | string>> }} default - Options
+ */
+const configGen = ({ disable = [], override = {} } = defaultOptions) => [
   {
     ignores: [
       "**/eslint.config.js",
@@ -56,19 +61,29 @@ export default ({ disable = [], override = {} } = defaultOptions) => [
       "index.js",
     ],
   },
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+  },
 
 ${configs
-  .sort((a, b) => a.count - b.count)
+  .sort((first, second) => first.count - second.count)
   .map(
     ({ rules, definitions, name, packages, count, description, homepage }) => {
       if (rules !== undefined && !definitions.includes(RULES)) {
         const message = `Formatting Error: ${name} includes a 'rules' key but does not define were those rules should be placed inline.`;
         throw new Error(message);
       }
+
       if (definitions.includes("rules: ") && name !== "Shopify") {
         const message = `Formatting Error: ${name}.definitions includes a 'rules' key when it should use the 'RULES' replacement inline placeholder. See other config definitions for examples.`;
         throw new Error(message);
       }
+
       if (!definitions.includes(RULES)) {
         const message = `Formatting Error: ${name}.definitions does not include a 'RULES' inline market to show were rules should be added as a placeholder. See other config definitions for examples.`;
         throw new Error(message);
@@ -77,31 +92,37 @@ ${configs
       const parsedRules = rules === undefined ? "" : `...${rules},`;
 
       const definition = `...(${packages
-        .map(({ package: p }) => `!disable.includes("${p}")`)
-        .join(` && `)} ? [
+        .map(({ package: pack }) => `disable.includes("${pack}")`)
+        .join(` || `)}
+    ? []
+    : [
         ${definitions.replace(
           RULES,
-          `rules: { ${parsedRules}
+          `rules: {
+            ${parsedRules}
                ${packages
                  .map(
-                   ({ package: p }) =>
-                     `...("${p}" in override ? override["${p}"] : {})`
+                   ({ package: pack }) =>
+                     `...("${pack}" in override ? override["${pack}"] : {})`,
                  )
                  .join(`, `)}
-               },`
-        )}] : [])`;
+          },`,
+        )}
+      ])`;
 
       return `  /*
     ${name}
     ${count.toLocaleString()} monthly downloads
     ${description}
     ${homepage}
-${count > 400_000 ? "  */" : ""}
+${count > MINIMUMS ? "  */" : ""}
   ${definition},
-${count > 400_000 ? "" : "  */"}`;
-    }
+${count > MINIMUMS ? "" : "  */"}`;
+    },
   ).join(`
 `)}];
+
+export default configGen;
 `;
 
 const outputPath = path.join(dirname, "./config.js");

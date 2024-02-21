@@ -2,8 +2,13 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [{ name: "babelPlugin", package: "@babel/eslint-plugin" }],
-  requiresImport: true,
+  packages: [
+    {
+      name: "babelPlugin",
+      package: "@babel/eslint-plugin",
+      requiresImport: true,
+    },
+  ],
   name: "Babel",
   definitions: `{
     files,

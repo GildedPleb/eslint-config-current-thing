@@ -3,9 +3,12 @@ import type { Config } from ".";
 
 export default {
   packages: [
-    { name: "sortClassMembers", package: "eslint-plugin-sort-class-members" },
+    {
+      name: "sortClassMembers",
+      package: "eslint-plugin-sort-class-members",
+      requiresImport: true,
+    },
   ],
-  requiresImport: true,
   name: "Sort Class Members",
   definitions: `{
     files,

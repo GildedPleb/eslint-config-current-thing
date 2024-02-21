@@ -3,9 +3,12 @@ import type { Config } from ".";
 
 export default {
   packages: [
-    { name: "importSort", package: "eslint-plugin-simple-import-sort" },
+    {
+      name: "importSort",
+      package: "eslint-plugin-simple-import-sort",
+      requiresImport: true,
+    },
   ],
-  requiresImport: true,
   name: "Simple Import Sort",
   definitions: `{
     files,

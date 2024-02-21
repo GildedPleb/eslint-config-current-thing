@@ -6,14 +6,14 @@ export default {
     {
       name: "unsanitized",
       package: "eslint-plugin-no-unsanitized",
+      requiresImport: true,
     },
   ],
-  requiresImport: true,
   name: "No Unsanitized",
   definitions: `{
     files,
     plugins: { "no-unsanitized": unsanitized },
     ${RULES}
   }`,
-  rules: `{ ...unsanitized.configs.DOM.rules }`,
+  rules: `unsanitized.configs.DOM.rules`,
 } satisfies Config;
