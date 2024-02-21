@@ -34,3 +34,4 @@ declare module "eslint-plugin-unicorn";
 declare module "eslint-plugin-you-dont-need-lodash-underscore";
 declare module "eslint-plugin-react-refresh";
 declare module "eslint-plugin-vue";
+declare module "@react-native/eslint-config";
