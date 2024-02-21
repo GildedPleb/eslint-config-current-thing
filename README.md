@@ -60,7 +60,7 @@ You'll also probably want something like this in your `package.json` (edit accor
   "type": "module",
   "prettier": {},
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "browserslist": [
     "defaults and supports es6-module",
