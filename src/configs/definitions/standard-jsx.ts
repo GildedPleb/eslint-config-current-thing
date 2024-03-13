@@ -2,6 +2,11 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  definitions: `{
+    files,
+    ${RULES}
+  }`,
+  name: "Standard JSX",
   packages: [
     {
       name: "standardJsx",
@@ -9,10 +14,5 @@ export default {
       requiresImport: true,
     },
   ],
-  name: "Standard JSX",
-  definitions: `{
-    files,
-    ${RULES}
-  }`,
   rules: `standardJsx.rules`,
 } satisfies Config;

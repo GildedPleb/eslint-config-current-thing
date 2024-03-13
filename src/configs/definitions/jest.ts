@@ -2,10 +2,6 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [
-    { name: "jest", package: "eslint-plugin-jest", requiresImport: true },
-  ],
-  name: "Jest",
   definitions: `{
     files,
     languageOptions: {
@@ -28,5 +24,9 @@ export default {
     plugins: { jest },
     ${RULES}
   }`,
+  name: "Jest",
+  packages: [
+    { name: "jest", package: "eslint-plugin-jest", requiresImport: true },
+  ],
   rules: `jest.configs.recommended.rules`,
 } satisfies Config;

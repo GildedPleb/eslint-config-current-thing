@@ -2,14 +2,14 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [
-    { name: "promise", package: "eslint-plugin-promise", requiresImport: true },
-  ],
-  name: "Promises",
   definitions: `{
     files,
     plugins: { promise },
     ${RULES}
   }`,
+  name: "Promises",
+  packages: [
+    { name: "promise", package: "eslint-plugin-promise", requiresImport: true },
+  ],
   rules: `promise.configs.recommended.rules`,
 } satisfies Config;

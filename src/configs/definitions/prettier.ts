@@ -2,6 +2,12 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  definitions: `{
+    files,
+    plugins: { prettier },
+    ${RULES}
+  }`,
+  name: "Prettier",
   packages: [
     {
       name: "prettier",
@@ -14,12 +20,6 @@ export default {
       requiresImport: true,
     },
   ],
-  name: "Prettier",
-  definitions: `{
-    files,
-    plugins: { prettier },
-    ${RULES}
-  }`,
   rules: `{
     "prettier/prettier": 2,
     ...prettierConfig.rules,

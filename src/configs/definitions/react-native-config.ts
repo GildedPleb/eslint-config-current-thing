@@ -2,6 +2,11 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  definitions: `{
+    files,
+    ${RULES}
+  }`,
+  name: "React Native Config",
   packages: [
     {
       name: "reactNativeConfig",
@@ -14,11 +19,6 @@ export default {
       requiresImport: true,
     },
   ],
-  name: "React Native Config",
-  definitions: `{
-    files,
-    ${RULES}
-  }`,
   rules: `reactNativeConfig.overrides[1].rules,
     ...reactNativeConfig.overrides[2].rules,
     ...reactNativeConfig.rules,

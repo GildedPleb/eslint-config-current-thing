@@ -2,11 +2,6 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [
-    { name: "nNode", package: "eslint-plugin-n", requiresImport: true },
-    { name: "node", package: "eslint-plugin-node", requiresImport: true },
-  ],
-  name: "Node.js",
   definitions: `{
     files,
     plugins: {
@@ -16,6 +11,11 @@ export default {
     },
     ${RULES}
   }`,
+  name: "Node.js",
+  packages: [
+    { name: "nNode", package: "eslint-plugin-n", requiresImport: true },
+    { name: "node", package: "eslint-plugin-node", requiresImport: true },
+  ],
   rules: `{
     // there are no recomended ways to use "node", as the "n" rule obsoletes
     // it, but "node" is still used by the Shopify config.

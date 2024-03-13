@@ -35,3 +35,7 @@ declare module "eslint-plugin-you-dont-need-lodash-underscore";
 declare module "eslint-plugin-react-refresh";
 declare module "eslint-plugin-vue";
 declare module "@react-native/eslint-config";
+declare module "eslint-plugin-tailwindcss";
+declare module "eslint-plugin-regexp";
+declare module "eslint-plugin-storybook";
+declare module "eslint-plugin-perfectionist";

@@ -2,6 +2,12 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  definitions: `{
+    files,
+    plugins: { "react-perf": reactPerf },
+    ${RULES}
+  }`,
+  name: "React Performance",
   packages: [
     {
       name: "reactPerf",
@@ -9,11 +15,5 @@ export default {
       requiresImport: true,
     },
   ],
-  name: "React Performance",
-  definitions: `{
-    files,
-    plugins: { "react-perf": reactPerf },
-    ${RULES}
-  }`,
   rules: `reactPerf.configs.recommended.rules`,
 } satisfies Config;

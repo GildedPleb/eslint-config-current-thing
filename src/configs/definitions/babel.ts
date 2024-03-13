@@ -2,14 +2,6 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [
-    {
-      name: "babelPlugin",
-      package: "@babel/eslint-plugin",
-      requiresImport: true,
-    },
-  ],
-  name: "Babel",
   definitions: `{
     files,
     plugins: { "@babel": babelPlugin },
@@ -17,4 +9,12 @@ export default {
     // No recomendations given / defaults are all set to 0.
     ${RULES}
   }`,
+  name: "Babel",
+  packages: [
+    {
+      name: "babelPlugin",
+      package: "@babel/eslint-plugin",
+      requiresImport: true,
+    },
+  ],
 } satisfies Config;

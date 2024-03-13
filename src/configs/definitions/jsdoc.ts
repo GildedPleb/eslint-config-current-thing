@@ -2,16 +2,16 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [
-    { name: "jsdoc", package: "eslint-plugin-jsdoc", requiresImport: true },
-  ],
-  name: "JSDoc",
   definitions: `{
     files,
     plugins: { jsdoc },
     settings: { jsdoc: { mode: "typescript" } },
     ${RULES}
   }`,
+  name: "JSDoc",
+  packages: [
+    { name: "jsdoc", package: "eslint-plugin-jsdoc", requiresImport: true },
+  ],
   rules: `jsdoc.configs.recommended.rules,
     // Rules needed for TSDoc Compatability
     "jsdoc/require-param-type": 0,

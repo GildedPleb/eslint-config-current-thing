@@ -2,15 +2,15 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [
-    { name: "vue", package: "eslint-plugin-vue", requiresImport: true },
-  ],
-  name: "Vue",
   definitions: `{
     files,
     plugins: { vue },
     ${RULES}
   }`,
+  name: "Vue",
+  packages: [
+    { name: "vue", package: "eslint-plugin-vue", requiresImport: true },
+  ],
   rules: `vue.configs.base.rules,
     ...vue.configs.essential.rules,
     ...vue.configs.recommended.rules,

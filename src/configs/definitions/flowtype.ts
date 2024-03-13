@@ -2,6 +2,13 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  definitions: `{
+    files,
+    plugins: { flowtype },
+    // No rules as they conflict with Typescript
+    ${RULES}
+  }`,
+  name: "Flowtype",
   packages: [
     {
       name: "flowtype",
@@ -9,11 +16,4 @@ export default {
       requiresImport: true,
     },
   ],
-  name: "Flowtype",
-  definitions: `{
-    files,
-    plugins: { flowtype },
-    // No rules as they conflict with Typescript
-    ${RULES}
-  }`,
 } satisfies Config;

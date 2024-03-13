@@ -2,6 +2,11 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  definitions: `{
+    files,
+    ${RULES}
+  }`,
+  name: "Standard",
   packages: [
     {
       name: "standard",
@@ -14,11 +19,6 @@ export default {
       requiresImport: false,
     },
   ],
-  name: "Standard",
-  definitions: `{
-    files,
-    ${RULES}
-  }`,
   rules: `compat.extends("standard")[0].rules,
     ...compat.extends("standard-with-typescript")[0].rules,
     // types can be infered by typescript

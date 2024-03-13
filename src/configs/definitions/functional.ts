@@ -2,6 +2,13 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  definitions: `{
+    files,
+    plugins: { functional },
+    // "Strick", "Recommended", and "Lite" punch far above their weight and are not added.
+    ${RULES}
+  }`,
+  name: "Functional",
   packages: [
     {
       name: "functional",
@@ -9,13 +16,6 @@ export default {
       requiresImport: true,
     },
   ],
-  name: "Functional",
-  definitions: `{
-    files,
-    plugins: { functional },
-    // "Strick", "Recommended", and "Lite" punch far above their weight and are not added.
-    ${RULES}
-  }`,
   rules: `functional.configs["external-typescript-recommended"].rules,
     ...functional.configs.stylistic.rules,
     ...functional.configs["no-other-paradigms"].rules,

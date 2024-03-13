@@ -2,14 +2,6 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [
-    {
-      name: "importPlugin",
-      package: "eslint-plugin-import",
-      requiresImport: true,
-    },
-  ],
-  name: "Import",
   definitions: `{
     files,
     plugins: { import: importPlugin },
@@ -51,6 +43,14 @@ export default {
     },
     ${RULES}
   }`,
+  name: "Import",
+  packages: [
+    {
+      name: "importPlugin",
+      package: "eslint-plugin-import",
+      requiresImport: true,
+    },
+  ],
   rules: `importPlugin.configs.recommended.rules,
     ...importPlugin.configs.typescript.rules,
     "import/order": 0`,

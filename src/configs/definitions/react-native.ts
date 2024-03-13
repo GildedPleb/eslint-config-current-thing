@@ -2,14 +2,6 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  packages: [
-    {
-      name: "reactNative",
-      package: "eslint-plugin-react-native",
-      requiresImport: true,
-    },
-  ],
-  name: "React Native",
   definitions: `{
     files,
     plugins: { "react-native": reactNative },
@@ -20,5 +12,13 @@ export default {
     },
     ${RULES}
   }`,
+  name: "React Native",
+  packages: [
+    {
+      name: "reactNative",
+      package: "eslint-plugin-react-native",
+      requiresImport: true,
+    },
+  ],
   rules: `reactNative.configs.all.rules`,
 } satisfies Config;

@@ -2,6 +2,12 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  definitions: `{
+    files,
+    plugins: { "you-dont-need-lodash-underscore": youDontNeedLodash },
+    ${RULES}
+  }`,
+  name: "You Dont Need Lodash",
   packages: [
     {
       name: "youDontNeedLodash",
@@ -9,11 +15,5 @@ export default {
       requiresImport: true,
     },
   ],
-  name: "You Dont Need Lodash",
-  definitions: `{
-    files,
-    plugins: { "you-dont-need-lodash-underscore": youDontNeedLodash },
-    ${RULES}
-  }`,
   rules: `youDontNeedLodash.configs.compatible.rules`,
 } satisfies Config;

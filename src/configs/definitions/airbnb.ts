@@ -2,6 +2,11 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  definitions: `{
+    files,
+    ${RULES}
+  }`,
+  name: "AirBnb/AirBnb-Typescript",
   packages: [
     {
       name: "airbnbBase",
@@ -14,11 +19,6 @@ export default {
       requiresImport: false,
     },
   ],
-  name: "AirBnb/AirBnb-Typescript",
-  definitions: `{
-    files,
-    ${RULES}
-  }`,
   rules: `{
     ...compat.extends("airbnb")[0].rules,
     ...compat.extends("airbnb/hooks")[0].rules,

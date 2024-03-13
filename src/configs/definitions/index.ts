@@ -16,6 +16,7 @@ import jsdoc from "./jsdoc";
 import jsxA11y from "./jsx-a11y";
 import nextjs from "./nextjs";
 import node from "./node";
+import perfectionist from "./perfectionist";
 import prettier from "./prettier";
 import promises from "./promises";
 import react from "./react";
@@ -24,6 +25,7 @@ import reactNative from "./react-native";
 import reactNativeConfig from "./react-native-config";
 import reactPerf from "./react-perf";
 import reactRefresh from "./react-refresh";
+import regexp from "./regexp";
 import security from "./security";
 import shopify from "./shopify";
 import sonajs from "./sonarjs";
@@ -31,7 +33,9 @@ import sort from "./sort-class";
 import standard from "./standard";
 import standardJsx from "./standard-jsx";
 import standardReact from "./standard-react";
+import storybook from "./storybook";
 import styleistic from "./stylistic";
+import tailwindConfig from "./tailwind-config";
 import ts from "./ts";
 import tsdoc from "./tsdoc";
 import unicorn from "./unicorn";
@@ -41,17 +45,17 @@ import xo from "./xo";
 import youDontNeedLodash from "./you-dont-need-lodash";
 
 export interface Config {
+  definitions: `${"..." | "{"}${string}${")" | "}"}`;
+  name: string;
   packages: {
     name: string;
     package: string;
     requiresImport: boolean;
   }[];
-  name: string;
-  definitions: `${"..." | "{"}${string}${"}" | ")"}`;
   rules?: string;
 }
 
-const packages = [
+const packages: Config[] = [
   xo,
   comments,
   security,
@@ -93,6 +97,10 @@ const packages = [
   reactRefresh,
   vue,
   styleistic,
+  tailwindConfig,
+  regexp,
+  storybook,
+  perfectionist,
 ];
 
 export default packages;

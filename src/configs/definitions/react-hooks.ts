@@ -2,6 +2,12 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  definitions: `{
+    files,
+    plugins: { "react-hooks": reactHooks },
+    ${RULES}
+  }`,
+  name: "React Hooks",
   packages: [
     {
       name: "reactHooks",
@@ -9,11 +15,5 @@ export default {
       requiresImport: true,
     },
   ],
-  name: "React Hooks",
-  definitions: `{
-    files,
-    plugins: { "react-hooks": reactHooks },
-    ${RULES}
-  }`,
   rules: `reactHooks.configs.recommended.rules`,
 } satisfies Config;

@@ -2,6 +2,12 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  definitions: `...tseslint.config( ...tseslint.configs.recommendedTypeChecked, {
+      languageOptions: { parserOptions: { project: true } },
+      ${RULES}
+    }
+  )`,
+  name: "TypeScript",
   packages: [
     { name: "tseslint", package: "typescript-eslint", requiresImport: true },
     {
@@ -15,12 +21,6 @@ export default {
       requiresImport: false,
     },
   ],
-  name: "TypeScript",
-  definitions: `...tseslint.config( ...tseslint.configs.recommendedTypeChecked, {
-      languageOptions: { parserOptions: { project: true } },
-      ${RULES}
-    }
-  )`,
   rules: `{
     // "allowNullableObject: false," autofixes type \`object | undefined\` poorly.
     // When checking a nullable object, \`if (obj)...\` it autofixes to \`if (obj != null)...\`.

@@ -3,7 +3,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import configs from "./configs";
-import { MINIMUMS, RULES } from "./constants";
+import { LAST_DAY_INTERVAL, MINIMUMS, README_SLUG, RULES } from "./constants";
+import fetchEslintPlugins from "./get-packages";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -24,7 +25,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 ${[
-  ...configs.flatMap(({ packages, count }) =>
+  ...configs.flatMap(({ count, packages }) =>
     packages.map(
       ({ name, package: pack, requiresImport }) =>
         `${
@@ -73,7 +74,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 ${configs
   .sort((first, second) => first.count - second.count)
   .map(
-    ({ rules, definitions, name, packages, count, description, homepage }) => {
+    ({ count, definitions, description, homepage, name, packages, rules }) => {
       if (rules !== undefined && !definitions.includes(RULES)) {
         const message = `Formatting Error: ${name} includes a 'rules' key but does not define were those rules should be placed inline.`;
         throw new Error(message);
@@ -126,4 +127,37 @@ export default configGen;
 `;
 
 const outputPath = path.join(dirname, "./config.js");
-fs.writeFileSync(outputPath, generateCode, "utf8");
+try {
+  fs.writeFileSync(outputPath, generateCode, "utf8");
+  console.log("\n./config.js has been updated successfully.");
+} catch (error) {
+  console.error("Error processing the config.js file:", error);
+  throw new Error("Failed");
+}
+
+const newPackages = await fetchEslintPlugins();
+
+const underConsideration = `${README_SLUG}
+
+The following section is generated according to spec.
+
+Generated on ${new Date().toLocaleDateString()}, downloads for the previous ${LAST_DAY_INTERVAL} days.
+
+${newPackages.map(({ count, name }) => `- ${count} downloads, [${name}](https://www.npmjs.com/package/${name})`).join("\n")}
+`;
+
+const readmePath = path.join(dirname, "../README.md");
+try {
+  const data = fs.readFileSync(readmePath, "utf8");
+  const sectionStart = data.indexOf(README_SLUG);
+  const updatedContent =
+    sectionStart === -1
+      ? `${data}\n${underConsideration}`
+      : data.slice(0, Math.max(0, sectionStart)) + underConsideration;
+
+  fs.writeFileSync(readmePath, updatedContent, "utf8");
+  console.log("\nREADME.md has been updated successfully.");
+} catch (error) {
+  console.error("Error processing the README.md file:", error);
+  throw new Error("Failed");
+}

@@ -2,6 +2,12 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  definitions: `{
+    files,
+    plugins: { "react-refresh": reactRefresh },
+    ${RULES}
+  }`,
+  name: "React Refresh",
   packages: [
     {
       name: "reactRefresh",
@@ -9,11 +15,5 @@ export default {
       requiresImport: true,
     },
   ],
-  name: "React Refresh",
-  definitions: `{
-    files,
-    plugins: { "react-refresh": reactRefresh },
-    ${RULES}
-  }`,
   rules: `{ "react-refresh/only-export-components": "warn" }`,
 } satisfies Config;

@@ -2,6 +2,12 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  definitions: `{
+    files,
+    plugins: { "no-unsanitized": unsanitized },
+    ${RULES}
+  }`,
+  name: "No Unsanitized",
   packages: [
     {
       name: "unsanitized",
@@ -9,11 +15,5 @@ export default {
       requiresImport: true,
     },
   ],
-  name: "No Unsanitized",
-  definitions: `{
-    files,
-    plugins: { "no-unsanitized": unsanitized },
-    ${RULES}
-  }`,
   rules: `unsanitized.configs.DOM.rules`,
 } satisfies Config;

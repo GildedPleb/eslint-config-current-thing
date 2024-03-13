@@ -2,6 +2,12 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  definitions: `{
+    files,
+    plugins: { "jest-dom": jestDom },
+    ${RULES}
+  }`,
+  name: "Jest Dom",
   packages: [
     {
       name: "jestDom",
@@ -9,11 +15,5 @@ export default {
       requiresImport: true,
     },
   ],
-  name: "Jest Dom",
-  definitions: `{
-    files,
-    plugins: { "jest-dom": jestDom },
-    ${RULES}
-  }`,
   rules: `jestDom.configs.recommended.rules`,
 } satisfies Config;

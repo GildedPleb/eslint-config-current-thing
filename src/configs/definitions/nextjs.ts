@@ -2,6 +2,12 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  definitions: `{
+    files,
+    plugins: { "@next/next": nextjs },
+    ${RULES}
+  }`,
+  name: "NextJS",
   packages: [
     {
       name: "nextjs",
@@ -9,12 +15,6 @@ export default {
       requiresImport: true,
     },
   ],
-  name: "NextJS",
-  definitions: `{
-    files,
-    plugins: { "@next/next": nextjs },
-    ${RULES}
-  }`,
   rules: `nextjs.configs.recommended.rules,
     ...nextjs.configs["core-web-vitals"].rules,
     // Irrelevant for broad JS, and polutes logs when it doesn't apply.

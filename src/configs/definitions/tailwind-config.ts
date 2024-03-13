@@ -4,16 +4,18 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { security },
+    plugins: { tailwindcss: tailwindcss },
     ${RULES}
   }`,
-  name: "Security",
+  name: "Tailwind CSS",
   packages: [
     {
-      name: "security",
-      package: "eslint-plugin-security",
+      name: "tailwindcss",
+      package: "eslint-plugin-tailwindcss",
       requiresImport: true,
     },
   ],
-  rules: `security.configs.recommended.rules`,
+  rules: `{
+    ...tailwindcss.configs.recommended.rules,
+  }`,
 } satisfies Config;

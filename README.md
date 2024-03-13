@@ -12,15 +12,16 @@ Linting can be so opinionated, it can become political. `Eslint Config Current T
 
 Presently, it combines these configs (and their plugins, submodules, etc.):
 
-|                |          |               |             |                  |
-| -------------- | -------- | ------------- | ----------- | ---------------- |
-| AirBnB         | Babel    | Comments      | Compat      | Create React App |
-| ESLint         | Flowtype | Functional    | Google      | Import-sort      |
-| Import         | Jest     | JSDoc         | JSX A11y    | NextJS           |
-| Node           | Prettier | Promises      | React Hooks | React Native     |
-| React Perf     | React    | Security      | Shopify     | SonarJS          |
-| Sort Classes   | Standard | TSDoc         | Typescript  | Unicorn          |
-| You Don't Need | XO       | React-Refresh | Vue         | Stylistic        |
+|                |          |               |               |                  |
+| -------------- | -------- | ------------- | ------------- | ---------------- |
+| AirBnB         | Babel    | Comments      | Compat        | Create React App |
+| ESLint         | Flowtype | Functional    | Google        | Import-sort      |
+| Import         | Jest     | JSDoc         | JSX A11y      | NextJS           |
+| Node           | Prettier | Promises      | React Hooks   | React Native     |
+| React Perf     | React    | Security      | Shopify       | SonarJS          |
+| Sort Classes   | Standard | TSDoc         | Typescript    | Unicorn          |
+| You Don't Need | XO       | React-Refresh | Vue           | Stylistic        |
+| Storybook      | Regexp   | Tailwind      | Perfectionist |
 
 The winning (and thus supported) high-level architecture is:
 | Types | FrontEnd | Testing |
@@ -231,6 +232,8 @@ That said, there are some very compelling reasons to use this config above other
 
 1. This config will shift as the opinions in JS Linting shift, just as all human languages shift. All of those shifts in opinion, both outside and in the config will happen on the margin. Non-democratic configs do not listen to this nuance, they take a stance and see if anyone follows. To demonstrate how `current thing` manages this, clone this repo and open up `src/config.js`. Then, alter the `order` of the configs, and you will see how the rules _marginally_ change. It's not just that [software is eating the world](https://a16z.com/2011/08/20/why-software-is-eating-the-world/), it's actually _JavaScript_ software, and we must be cognizant of how everyone is using it in wildly disparate ways as new styles, processes, and technologies rise.
 
+1. Unlike many other configs, this config completely abstracts away the need to add any other `eslint` packages, configs, plugins, and management. It is a pure barbell--absolutely simple in its application, and yet insanely complex and heavy-weight in its implementation.
+
 ## What is everyone saying?
 
 <img src="./static/andreessen.png" alt="I support the Current Thing" width="800" style=""/>
@@ -246,24 +249,30 @@ That said, there are some very compelling reasons to use this config above other
 - [Awesome ESLint](https://github.com/dustinspecker/awesome-eslint)
 - [Sheriff ESLint Config](https://sheriffrc.gitbook.io/sheriff/)
 
-## We are considering adding these configs
-
-- https://www.npmjs.com/package/eslint-plugin-storybook : Storybook
-- https://www.npmjs.com/package/eslint-config-xo-typescript : Blocked by Old Peer Dependency trees
-
 ## We will not be adding these configs
 
-- https://www.npmjs.com/package/eslint-plugin-unused-imports : Obsoleted by Typescript
-- https://www.npmjs.com/package/eslint-plugin-prefer-arrow : Seems a little too obscure / narrow
-- https://www.npmjs.com/package/eslint-plugin-filenames : Obsoleted by Unicorn
-- https://www.npmjs.com/package/eslint-plugin-react-native-globals : Obsoleted by React Native
-- https://www.npmjs.com/package/@react-native-community/eslint-plugin : Included with @react-native-community/eslint-config
-- https://www.npmjs.com/package/eslint-plugin-deprecation : Obsoleted by SonarJS
+See [rejected](./src/rejected.ts) and [not-applicable](./src/not-applicable.ts) for the full list. But it's always open for debate!
 
-- https://www.npmjs.com/package/eslint-plugin-html : JS in HTML : Out of Scope
-- https://www.npmjs.com/package/eslint-plugin-json : JSON : Out of Scope
-- https://www.npmjs.com/package/eslint-plugin-markdown : JS in Markdown : Out of Scope
-- https://www.npmjs.com/package/eslint-plugin-yml : YAML : Out of Scope
-- https://www.npmjs.com/package/@graphql-eslint/eslint-plugin : GraphGL : Out of Scope
+## We are considering adding these configs
 
-- https://www.npmjs.com/package/vite-plugin-eslint : Not an actual ESLint Plugin, but a Vite Plugin.
+The following section is generated according to spec.
+
+Generated on 3/13/2024, downloads for the previous 28 days.
+
+- 496,739 downloads, [@ngdaddy/eslint-config](https://www.npmjs.com/package/@ngdaddy/eslint-config)
+- 521,637 downloads, [@vue/eslint-config-airbnb](https://www.npmjs.com/package/@vue/eslint-config-airbnb)
+- 681,101 downloads, [eslint-plugin-ember](https://www.npmjs.com/package/eslint-plugin-ember)
+- 696,788 downloads, [eslint-plugin-i18next](https://www.npmjs.com/package/eslint-plugin-i18next)
+- 775,725 downloads, [eslint-plugin-vuejs-accessibility](https://www.npmjs.com/package/eslint-plugin-vuejs-accessibility)
+- 816,625 downloads, [eslint-plugin-nuxt](https://www.npmjs.com/package/eslint-plugin-nuxt)
+- 823,039 downloads, [@emotion/eslint-plugin](https://www.npmjs.com/package/@emotion/eslint-plugin)
+- 858,314 downloads, [eslint-plugin-local-rules](https://www.npmjs.com/package/eslint-plugin-local-rules)
+- 971,151 downloads, [@react-native/eslint-plugin](https://www.npmjs.com/package/@react-native/eslint-plugin)
+- 1,068,871 downloads, [eslint-plugin-header](https://www.npmjs.com/package/eslint-plugin-header)
+- 1,831,294 downloads, [@tanstack/eslint-plugin-query](https://www.npmjs.com/package/@tanstack/eslint-plugin-query)
+- 2,445,328 downloads, [@vue/eslint-config-prettier](https://www.npmjs.com/package/@vue/eslint-config-prettier)
+- 2,956,360 downloads, [eslint-plugin-babel](https://www.npmjs.com/package/eslint-plugin-babel)
+- 3,180,901 downloads, [@vue/eslint-config-typescript](https://www.npmjs.com/package/@vue/eslint-config-typescript)
+- 4,219,832 downloads, [eslint-plugin-no-only-tests](https://www.npmjs.com/package/eslint-plugin-no-only-tests)
+- 4,222,382 downloads, [eslint-plugin-es-x](https://www.npmjs.com/package/eslint-plugin-es-x)
+- 14,971,906 downloads, [vue-eslint-parser](https://www.npmjs.com/package/vue-eslint-parser)

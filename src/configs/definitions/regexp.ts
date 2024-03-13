@@ -4,16 +4,18 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { security },
+    plugins: { regexp: regexp },
     ${RULES}
   }`,
-  name: "Security",
+  name: "Regular Expressions",
   packages: [
     {
-      name: "security",
-      package: "eslint-plugin-security",
+      name: "regexp",
+      package: "eslint-plugin-regexp",
       requiresImport: true,
     },
   ],
-  rules: `security.configs.recommended.rules`,
+  rules: `{
+    ...regexp.configs["flat/recommended"].rules,
+  }`,
 } satisfies Config;

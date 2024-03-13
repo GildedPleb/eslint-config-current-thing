@@ -2,6 +2,11 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  definitions: `{
+    files,
+    ${RULES}
+  }`,
+  name: "Standard React",
   packages: [
     {
       name: "standardReact",
@@ -9,10 +14,5 @@ export default {
       requiresImport: true,
     },
   ],
-  name: "Standard React",
-  definitions: `{
-    files,
-    ${RULES}
-  }`,
   rules: `standardReact.rules`,
 } satisfies Config;
