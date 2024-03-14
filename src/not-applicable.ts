@@ -30,7 +30,7 @@ const notApplicable = new Set([
   // Included with Airbnb
   "eslint-config-airbnb-base",
 
-  // Automatically inlcuded
+  // Automatically included
   "globals",
 ]);
 

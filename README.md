@@ -234,6 +234,8 @@ That said, there are some very compelling reasons to use this config above other
 
 1. Unlike many other configs, this config completely abstracts away the need to add any other `eslint` packages, configs, plugins, and management. It is a pure barbell--absolutely simple in its application, and yet insanely complex and heavy-weight in its implementation.
 
+1. This config can be, and should be, used as an auditing tool. It exposes an eye watering amount of linting problems. I'm not crying. You're crying.
+
 ## What is everyone saying?
 
 <img src="./static/andreessen.png" alt="I support the Current Thing" width="800" style=""/>
@@ -257,22 +259,22 @@ See [rejected](./src/rejected.ts) and [not-applicable](./src/not-applicable.ts) 
 
 The following section is generated according to spec.
 
-Generated on 3/13/2024, downloads for the previous 28 days.
+Generated on 3/14/2024, downloads for the previous 28 days.
 
-- 496,739 downloads, [@ngdaddy/eslint-config](https://www.npmjs.com/package/@ngdaddy/eslint-config)
-- 521,637 downloads, [@vue/eslint-config-airbnb](https://www.npmjs.com/package/@vue/eslint-config-airbnb)
-- 681,101 downloads, [eslint-plugin-ember](https://www.npmjs.com/package/eslint-plugin-ember)
-- 696,788 downloads, [eslint-plugin-i18next](https://www.npmjs.com/package/eslint-plugin-i18next)
-- 775,725 downloads, [eslint-plugin-vuejs-accessibility](https://www.npmjs.com/package/eslint-plugin-vuejs-accessibility)
-- 816,625 downloads, [eslint-plugin-nuxt](https://www.npmjs.com/package/eslint-plugin-nuxt)
-- 823,039 downloads, [@emotion/eslint-plugin](https://www.npmjs.com/package/@emotion/eslint-plugin)
-- 858,314 downloads, [eslint-plugin-local-rules](https://www.npmjs.com/package/eslint-plugin-local-rules)
-- 971,151 downloads, [@react-native/eslint-plugin](https://www.npmjs.com/package/@react-native/eslint-plugin)
-- 1,068,871 downloads, [eslint-plugin-header](https://www.npmjs.com/package/eslint-plugin-header)
-- 1,831,294 downloads, [@tanstack/eslint-plugin-query](https://www.npmjs.com/package/@tanstack/eslint-plugin-query)
-- 2,445,328 downloads, [@vue/eslint-config-prettier](https://www.npmjs.com/package/@vue/eslint-config-prettier)
-- 2,956,360 downloads, [eslint-plugin-babel](https://www.npmjs.com/package/eslint-plugin-babel)
-- 3,180,901 downloads, [@vue/eslint-config-typescript](https://www.npmjs.com/package/@vue/eslint-config-typescript)
-- 4,219,832 downloads, [eslint-plugin-no-only-tests](https://www.npmjs.com/package/eslint-plugin-no-only-tests)
-- 4,222,382 downloads, [eslint-plugin-es-x](https://www.npmjs.com/package/eslint-plugin-es-x)
-- 14,971,906 downloads, [vue-eslint-parser](https://www.npmjs.com/package/vue-eslint-parser)
+- 491,283 downloads, [@ngdaddy/eslint-config](https://www.npmjs.com/package/@ngdaddy/eslint-config)
+- 524,074 downloads, [@vue/eslint-config-airbnb](https://www.npmjs.com/package/@vue/eslint-config-airbnb)
+- 683,625 downloads, [eslint-plugin-ember](https://www.npmjs.com/package/eslint-plugin-ember)
+- 697,290 downloads, [eslint-plugin-i18next](https://www.npmjs.com/package/eslint-plugin-i18next)
+- 778,944 downloads, [eslint-plugin-vuejs-accessibility](https://www.npmjs.com/package/eslint-plugin-vuejs-accessibility)
+- 821,739 downloads, [eslint-plugin-nuxt](https://www.npmjs.com/package/eslint-plugin-nuxt)
+- 826,930 downloads, [@emotion/eslint-plugin](https://www.npmjs.com/package/@emotion/eslint-plugin)
+- 862,312 downloads, [eslint-plugin-local-rules](https://www.npmjs.com/package/eslint-plugin-local-rules)
+- 986,372 downloads, [@react-native/eslint-plugin](https://www.npmjs.com/package/@react-native/eslint-plugin)
+- 1,072,287 downloads, [eslint-plugin-header](https://www.npmjs.com/package/eslint-plugin-header)
+- 1,857,208 downloads, [@tanstack/eslint-plugin-query](https://www.npmjs.com/package/@tanstack/eslint-plugin-query)
+- 2,461,269 downloads, [@vue/eslint-config-prettier](https://www.npmjs.com/package/@vue/eslint-config-prettier)
+- 2,980,540 downloads, [eslint-plugin-babel](https://www.npmjs.com/package/eslint-plugin-babel)
+- 3,197,238 downloads, [@vue/eslint-config-typescript](https://www.npmjs.com/package/@vue/eslint-config-typescript)
+- 4,249,284 downloads, [eslint-plugin-no-only-tests](https://www.npmjs.com/package/eslint-plugin-no-only-tests)
+- 4,275,087 downloads, [eslint-plugin-es-x](https://www.npmjs.com/package/eslint-plugin-es-x)
+- 15,033,081 downloads, [vue-eslint-parser](https://www.npmjs.com/package/vue-eslint-parser)

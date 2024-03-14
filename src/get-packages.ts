@@ -41,7 +41,7 @@ async function fetchEslintPlugins() {
   }
 
   return downloadlist
-    .sort((first, second) => first.count - second.count)
+    .sort((first, second) => second.count - first.count)
     .map((pack) => ({ ...pack, count: pack.count.toLocaleString() }));
 }
 

@@ -16,7 +16,6 @@ const rejected = new Set([
   // Obsoleted by SonarJS
   "eslint-plugin-deprecation",
 
-  // Probably too in the weeds
   // Obsolete by perfectionist
   "eslint-plugin-sort-keys-fix",
   "eslint-plugin-typescript-sort-keys",

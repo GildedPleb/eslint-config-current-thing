@@ -855,9 +855,9 @@
     "@",
     "@stylistic",
     "regexp:eslint-plugin-regexp@2.3.0",
-    "you-dont-need-lodash-underscore",
     "@shopify",
     "@shopify/typescript",
+    "you-dont-need-lodash-underscore",
     "perfectionist:eslint-plugin-perfectionist",
     "functional",
     "sort-class-members:eslint-plugin-sort-class-members@1.20.0",
@@ -1533,222 +1533,6 @@
     ],
     "regexp/use-ignore-case": [
       2
-    ],
-    "you-dont-need-lodash-underscore/concat": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/drop": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/drop-right": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/index-of": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/join": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/last": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/last-index-of": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/reverse": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/fill": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/detect": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/first": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-array": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/slice": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/bind": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-finite": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-integer": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-nan": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-nil": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-null": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-undefined": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/keys": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/extend-own": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/assign": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/values": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/entries": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/to-pairs": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/pairs": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/split": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/starts-with": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/ends-with": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/to-lower": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/to-upper": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/trim": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/pad-start": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/pad-end": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/repeat": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/uniq": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/replace": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/omit": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/flatten": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/throttle": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-string": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/cast-array": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-function": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/capitalize": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/is-date": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/defaults": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/head": [
-      2
-    ],
-    "you-dont-need-lodash-underscore/find": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/find-index": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/each": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/for-each": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/every": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/all": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/filter": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/select": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/map": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/collect": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/reduce": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/inject": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/foldl": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/reduce-right": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/foldr": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/size": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/some": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/any": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/includes": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/contains": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/take-right": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/get": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/union-by": [
-      1
-    ],
-    "you-dont-need-lodash-underscore/is-array-buffer": [
-      1
     ],
     "accessor-pairs": [
       0,
@@ -3938,6 +3722,222 @@
     ],
     "@typescript-eslint/space-infix-ops": [
       0
+    ],
+    "you-dont-need-lodash-underscore/concat": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/drop": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/drop-right": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/index-of": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/join": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/last": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/last-index-of": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/reverse": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/fill": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/detect": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/first": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-array": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/slice": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/bind": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-finite": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-integer": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-nan": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-nil": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-null": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-undefined": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/keys": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/extend-own": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/assign": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/values": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/entries": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/to-pairs": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/pairs": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/split": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/starts-with": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/ends-with": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/to-lower": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/to-upper": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/trim": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/pad-start": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/pad-end": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/repeat": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/uniq": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/replace": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/omit": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/flatten": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/throttle": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-string": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/cast-array": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-function": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/capitalize": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/is-date": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/defaults": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/head": [
+      2
+    ],
+    "you-dont-need-lodash-underscore/find": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/find-index": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/each": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/for-each": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/every": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/all": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/filter": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/select": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/map": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/collect": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/reduce": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/inject": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/foldl": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/reduce-right": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/foldr": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/size": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/some": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/any": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/includes": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/contains": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/take-right": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/get": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/union-by": [
+      1
+    ],
+    "you-dont-need-lodash-underscore/is-array-buffer": [
+      1
     ],
     "perfectionist/sort-imports": [
       0
