@@ -27,6 +27,7 @@ const notApplicable = new Set([
   "prettier-eslint-cli",
   "vite-plugin-eslint",
   "eslint-formatter-pretty",
+  "eslint-snapshot-test",
 
   // Included with Airbnb
   "eslint-config-airbnb-base",

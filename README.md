@@ -273,9 +273,8 @@ Generated on 3/20/2024, downloads for the previous 28 days.
 - 832,102 downloads, [eslint-plugin-nuxt](https://www.npmjs.com/package/eslint-plugin-nuxt)
 - 793,624 downloads, [eslint-plugin-vuejs-accessibility](https://www.npmjs.com/package/eslint-plugin-vuejs-accessibility)
 - 531,095 downloads, [@vue/eslint-config-airbnb](https://www.npmjs.com/package/@vue/eslint-config-airbnb)
-- 446,745 downloads, [eslint-snapshot-test](https://www.npmjs.com/package/eslint-snapshot-test)
 - 410,716 downloads, [@ngdaddy/eslint-config](https://www.npmjs.com/package/@ngdaddy/eslint-config)
 
 ## Rule Count
 
-1357
+1359
