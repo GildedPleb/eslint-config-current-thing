@@ -1,12 +1,15 @@
+// PathMark: ./src/configs/definitions/index.ts
 import airbnb from "./airbnb";
 import babel from "./babel";
 import comments from "./comments";
 import compat from "./compat";
 import createReactApp from "./create-react-app";
+import es from "./es";
 import eslint from "./eslint";
 import flowtype from "./flowtype";
 import functional from "./functional";
 import google from "./google";
+import header from "./header";
 import index from "./import";
 import importSort from "./import-sort";
 import jest from "./jest";
@@ -15,6 +18,7 @@ import jestFormatting from "./jest-formatting";
 import jsdoc from "./jsdoc";
 import jsxA11y from "./jsx-a11y";
 import nextjs from "./nextjs";
+import noOnlyTest from "./no-only-test";
 import node from "./node";
 import perfectionist from "./perfectionist";
 import prettier from "./prettier";
@@ -47,11 +51,11 @@ import youDontNeedLodash from "./you-dont-need-lodash";
 export interface Config {
   definitions: `${"..." | "{"}${string}${")" | "}"}`;
   name: string;
-  packages: {
+  packages: Array<{
     name: string;
     package: string;
     requiresImport: boolean;
-  }[];
+  }>;
   rules?: string;
 }
 
@@ -101,6 +105,10 @@ const packages: Config[] = [
   regexp,
   storybook,
   perfectionist,
+  noOnlyTest,
+  es,
+  header,
 ];
 
 export default packages;
+// EOF

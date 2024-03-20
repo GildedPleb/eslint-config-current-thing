@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/standard.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -15,12 +16,13 @@ export default {
     },
     {
       name: "standardTS",
-      package: "eslint-config-standard-with-typescript",
-      requiresImport: false,
+      package: "eslint-config-love",
+      requiresImport: true,
     },
   ],
   rules: `compat.extends("standard")[0].rules,
-    ...compat.extends("standard-with-typescript")[0].rules,
+    ...standardTS.rules,
     // types can be infered by typescript
     "@typescript-eslint/explicit-function-return-type": 0`,
 } satisfies Config;
+// EOF

@@ -1,4 +1,4 @@
-// ./types/packages.d.ts
+// PathMark: ./types/packages.d.ts
 declare module "@babel/eslint-plugin";
 declare module "@eslint-community/eslint-plugin-eslint-comments";
 declare module "@next/eslint-plugin-next";
@@ -39,3 +39,9 @@ declare module "eslint-plugin-tailwindcss";
 declare module "eslint-plugin-regexp";
 declare module "eslint-plugin-storybook";
 declare module "eslint-plugin-perfectionist";
+declare module "eslint-plugin-no-only-tests";
+declare module "eslint-plugin-es-x";
+declare module "eslint-plugin-es";
+declare module "@react-native/eslint-plugin";
+declare module "eslint-plugin-header";
+// EOF

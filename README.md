@@ -8,7 +8,11 @@ An **extremely unopinionated** config based on a popularity contest between the 
 
 ---
 
-Linting can be so opinionated, it can become political. `Eslint Config Current Thing` generates an ESLint config objectively based on whatever the current thing is at the time of build w/r/t broad ecosystem-wide definitions and opinion around JavaScript linting. Now, those political preferences can be exposed for what they are--power-grabs--by competing on an inter-ecosystem, distributed scale, not just within a set of contributors or a niche.
+Linting can be so opinionated, it can become political. `Eslint Config Current Thing` generates an ESLint config objectively based on whatever the current thing is at the time of build w/r/t broad ecosystem-wide definitions and opinion around JavaScript linting. Now, those political preferences can be exposed for what they are--power-grabs--by competing on an inter-ecosystem, distributed scale, not just within a set of contributors or a niche!
+
+## Technical explainer
+
+This is a meta-config of many configs. The basic idea is that Linting is usually incrementally added in and teams have no reason or time to sit down like AirBnB and justify and debate every last ESLint rule, but they do all sit down and figure something out. Over time, hundreds of eslint plugins and configurations have emerged with various levels of popularity and maintenance, but they usually only address the small set of things that the team who developed them needed to address and invariably miss something--this is complicated by the fact that NPM does not make searching for ESLint configs/plugins easy. Then, the JS ecosystem moves to the next framework, the config goes out of maintenance and rules become irrelevant/bad and everybody has to solve the same problems again (welcome to FOSS!). Lint The Current Thing essentially grabs as many rules as possible, indiscriminately, provided they meet minimum thresholds of quality, and compares each rule on a popularity contest, so whatever the Current Thing is (provided you update your packages) that will fundamentally be tied to ecosystem-wide best practices as supported by the most people--this is to say Lint The Current Thing produces code that is accessible to the widest possible set of developers and stays in-step with the ecosystem. You can read more in the "Why is this a good idea" section.
 
 Presently, it combines these configs (and their plugins, submodules, etc.):
 
@@ -21,7 +25,8 @@ Presently, it combines these configs (and their plugins, submodules, etc.):
 | React Perf     | React    | Security      | Shopify       | SonarJS          |
 | Sort Classes   | Standard | TSDoc         | Typescript    | Unicorn          |
 | You Don't Need | XO       | React-Refresh | Vue           | Stylistic        |
-| Storybook      | Regexp   | Tailwind      | Perfectionist |
+| Storybook      | Regexp   | Tailwind      | Perfectionist | No-Only-Tests    |
+| ES/ES-X        | Header   |               |               |                  |
 
 The winning (and thus supported) high-level architecture is:
 | Types | FrontEnd | Testing |
@@ -249,7 +254,7 @@ That said, there are some very compelling reasons to use this config above other
 ## Great resources that this project draws heavily upon
 
 - [Awesome ESLint](https://github.com/dustinspecker/awesome-eslint)
-- [Sheriff ESLint Config](https://sheriffrc.gitbook.io/sheriff/)
+- [Sheriff ESLint Config](https://www.eslint-config-sheriff.dev/)
 
 ## We will not be adding these configs
 
@@ -259,22 +264,22 @@ See [rejected](./src/rejected.ts) and [not-applicable](./src/not-applicable.ts) 
 
 The following section is generated according to spec.
 
-Generated on 3/14/2024, downloads for the previous 28 days.
+Generated on 3/20/2024, downloads for the previous 28 days.
 
-- 491,283 downloads, [@ngdaddy/eslint-config](https://www.npmjs.com/package/@ngdaddy/eslint-config)
-- 524,074 downloads, [@vue/eslint-config-airbnb](https://www.npmjs.com/package/@vue/eslint-config-airbnb)
-- 683,625 downloads, [eslint-plugin-ember](https://www.npmjs.com/package/eslint-plugin-ember)
-- 697,290 downloads, [eslint-plugin-i18next](https://www.npmjs.com/package/eslint-plugin-i18next)
-- 778,944 downloads, [eslint-plugin-vuejs-accessibility](https://www.npmjs.com/package/eslint-plugin-vuejs-accessibility)
-- 821,739 downloads, [eslint-plugin-nuxt](https://www.npmjs.com/package/eslint-plugin-nuxt)
-- 826,930 downloads, [@emotion/eslint-plugin](https://www.npmjs.com/package/@emotion/eslint-plugin)
-- 862,312 downloads, [eslint-plugin-local-rules](https://www.npmjs.com/package/eslint-plugin-local-rules)
-- 986,372 downloads, [@react-native/eslint-plugin](https://www.npmjs.com/package/@react-native/eslint-plugin)
-- 1,072,287 downloads, [eslint-plugin-header](https://www.npmjs.com/package/eslint-plugin-header)
-- 1,857,208 downloads, [@tanstack/eslint-plugin-query](https://www.npmjs.com/package/@tanstack/eslint-plugin-query)
-- 2,461,269 downloads, [@vue/eslint-config-prettier](https://www.npmjs.com/package/@vue/eslint-config-prettier)
-- 2,980,540 downloads, [eslint-plugin-babel](https://www.npmjs.com/package/eslint-plugin-babel)
-- 3,197,238 downloads, [@vue/eslint-config-typescript](https://www.npmjs.com/package/@vue/eslint-config-typescript)
-- 4,249,284 downloads, [eslint-plugin-no-only-tests](https://www.npmjs.com/package/eslint-plugin-no-only-tests)
-- 4,275,087 downloads, [eslint-plugin-es-x](https://www.npmjs.com/package/eslint-plugin-es-x)
-- 15,033,081 downloads, [vue-eslint-parser](https://www.npmjs.com/package/vue-eslint-parser)
+- 6,327,534 downloads, [@angular-eslint/eslint-plugin](https://www.npmjs.com/package/@angular-eslint/eslint-plugin)
+- 6,096,744 downloads, [@angular-eslint/eslint-plugin-template](https://www.npmjs.com/package/@angular-eslint/eslint-plugin-template)
+- 3,258,830 downloads, [@vue/eslint-config-typescript](https://www.npmjs.com/package/@vue/eslint-config-typescript)
+- 2,509,022 downloads, [@vue/eslint-config-prettier](https://www.npmjs.com/package/@vue/eslint-config-prettier)
+- 867,152 downloads, [eslint-plugin-local-rules](https://www.npmjs.com/package/eslint-plugin-local-rules)
+- 832,102 downloads, [eslint-plugin-nuxt](https://www.npmjs.com/package/eslint-plugin-nuxt)
+- 824,170 downloads, [@emotion/eslint-plugin](https://www.npmjs.com/package/@emotion/eslint-plugin)
+- 793,624 downloads, [eslint-plugin-vuejs-accessibility](https://www.npmjs.com/package/eslint-plugin-vuejs-accessibility)
+- 712,756 downloads, [eslint-plugin-i18next](https://www.npmjs.com/package/eslint-plugin-i18next)
+- 531,095 downloads, [@vue/eslint-config-airbnb](https://www.npmjs.com/package/@vue/eslint-config-airbnb)
+- 446,801 downloads, [eslint-plugin-css-modules](https://www.npmjs.com/package/eslint-plugin-css-modules)
+- 446,745 downloads, [eslint-snapshot-test](https://www.npmjs.com/package/eslint-snapshot-test)
+- 410,716 downloads, [@ngdaddy/eslint-config](https://www.npmjs.com/package/@ngdaddy/eslint-config)
+
+## Rule Count
+
+1354

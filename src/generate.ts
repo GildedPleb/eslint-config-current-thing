@@ -1,7 +1,9 @@
+// PathMark: ./src/generate.ts
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+import JSONConfig from "../current.json" assert { type: "json" };
 import configs from "./configs";
 import { LAST_DAY_INTERVAL, MINIMUMS, README_SLUG, RULES } from "./constants";
 import fetchEslintPlugins from "./get-packages";
@@ -9,7 +11,8 @@ import fetchEslintPlugins from "./get-packages";
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
-const generateCode = `/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+const generateCode = `// PathMark: ./src/config.js
+/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable tsdoc/syntax */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
@@ -124,6 +127,7 @@ ${count > MINIMUMS ? "" : "  */"}`;
 `)}];
 
 export default configGen;
+// EOF
 `;
 
 const outputPath = path.join(dirname, "./config.js");
@@ -144,6 +148,10 @@ The following section is generated according to spec.
 Generated on ${new Date().toLocaleDateString()}, downloads for the previous ${LAST_DAY_INTERVAL} days.
 
 ${newPackages.map(({ count, name }) => `- ${count} downloads, [${name}](https://www.npmjs.com/package/${name})`).join("\n")}
+
+## Rule Count
+
+${Object.keys((JSONConfig as { rules: Record<string, unknown> }).rules).length}
 `;
 
 const readmePath = path.join(dirname, "../README.md");
@@ -161,3 +169,4 @@ try {
   console.error("Error processing the README.md file:", error);
   throw new Error("Failed");
 }
+// EOF

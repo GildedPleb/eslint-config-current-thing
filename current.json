@@ -843,7 +843,7 @@
       "xit": false,
       "xtest": false
     },
-    "parser": "typescript-eslint/parser@7.2.0",
+    "parser": "typescript-eslint/parser@7.3.1",
     "parserOptions": {
       "ecmaFeatures": {
         "jsx": true
@@ -853,15 +853,16 @@
   },
   "plugins": [
     "@",
-    "@stylistic",
     "regexp:eslint-plugin-regexp@2.3.0",
+    "@stylistic",
     "@shopify",
     "@shopify/typescript",
     "you-dont-need-lodash-underscore",
-    "perfectionist:eslint-plugin-perfectionist",
     "functional",
+    "perfectionist:eslint-plugin-perfectionist",
     "sort-class-members:eslint-plugin-sort-class-members@1.20.0",
     "no-unsanitized",
+    "header",
     "@babel:@babel/eslint-plugin@7.23.5",
     "tsdoc",
     "tailwindcss",
@@ -870,26 +871,31 @@
     "security:eslint-plugin-security@2.1.1",
     "sonarjs",
     "jest-dom",
-    "react-refresh",
+    "no-only-tests",
+    "@react-native",
     "react-native",
+    "react-refresh",
     "jsdoc",
     "simple-import-sort:eslint-plugin-simple-import-sort@12.0.0",
     "unicorn:eslint-plugin-unicorn@51.0.1",
     "@eslint-community/eslint-comments",
     "eslint-comments",
-    "vue:eslint-plugin-vue@9.23.0",
     "promise",
     "@next/next",
     "flowtype",
+    "es-x",
+    "es",
     "n:eslint-plugin-n@16.6.2",
     "node",
+    "vue:eslint-plugin-vue@9.23.0",
     "jest:eslint-plugin-jest@27.9.0",
     "jsx-a11y",
     "react-hooks",
     "react",
     "import",
     "prettier:eslint-plugin-prettier@5.1.3",
-    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.2.0"
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.3.1",
+    "pathmark"
   ],
   "rules": {
     "react/jsx-no-bind": [
@@ -922,6 +928,210 @@
     ],
     "react-hooks/exhaustive-deps": [
       1
+    ],
+    "no-control-regex": [
+      2
+    ],
+    "no-misleading-character-class": [
+      2
+    ],
+    "no-regex-spaces": [
+      2
+    ],
+    "prefer-regex-literals": [
+      2,
+      {
+        "disallowRedundantWrapping": true
+      }
+    ],
+    "no-invalid-regexp": [
+      2
+    ],
+    "no-useless-backreference": [
+      2
+    ],
+    "no-empty-character-class": [
+      2
+    ],
+    "regexp/confusing-quantifier": [
+      1
+    ],
+    "regexp/control-character-escape": [
+      2
+    ],
+    "regexp/match-any": [
+      2
+    ],
+    "regexp/negation": [
+      2
+    ],
+    "regexp/no-contradiction-with-assertion": [
+      2
+    ],
+    "regexp/no-dupe-characters-character-class": [
+      2
+    ],
+    "regexp/no-dupe-disjunctions": [
+      2
+    ],
+    "regexp/no-empty-alternative": [
+      1
+    ],
+    "regexp/no-empty-capturing-group": [
+      2
+    ],
+    "regexp/no-empty-character-class": [
+      2
+    ],
+    "regexp/no-empty-group": [
+      2
+    ],
+    "regexp/no-empty-lookarounds-assertion": [
+      2
+    ],
+    "regexp/no-empty-string-literal": [
+      2
+    ],
+    "regexp/no-escape-backspace": [
+      2
+    ],
+    "regexp/no-extra-lookaround-assertions": [
+      2
+    ],
+    "regexp/no-invalid-regexp": [
+      2
+    ],
+    "regexp/no-invisible-character": [
+      2
+    ],
+    "regexp/no-lazy-ends": [
+      1
+    ],
+    "regexp/no-legacy-features": [
+      2
+    ],
+    "regexp/no-misleading-capturing-group": [
+      2
+    ],
+    "regexp/no-misleading-unicode-character": [
+      2
+    ],
+    "regexp/no-missing-g-flag": [
+      2
+    ],
+    "regexp/no-non-standard-flag": [
+      2
+    ],
+    "regexp/no-obscure-range": [
+      2
+    ],
+    "regexp/no-optional-assertion": [
+      2
+    ],
+    "regexp/no-potentially-useless-backreference": [
+      1
+    ],
+    "regexp/no-super-linear-backtracking": [
+      2
+    ],
+    "regexp/no-trivially-nested-assertion": [
+      2
+    ],
+    "regexp/no-trivially-nested-quantifier": [
+      2
+    ],
+    "regexp/no-unused-capturing-group": [
+      2
+    ],
+    "regexp/no-useless-assertions": [
+      2
+    ],
+    "regexp/no-useless-backreference": [
+      2
+    ],
+    "regexp/no-useless-character-class": [
+      2
+    ],
+    "regexp/no-useless-dollar-replacements": [
+      2
+    ],
+    "regexp/no-useless-escape": [
+      2
+    ],
+    "regexp/no-useless-flag": [
+      1
+    ],
+    "regexp/no-useless-lazy": [
+      2
+    ],
+    "regexp/no-useless-non-capturing-group": [
+      2
+    ],
+    "regexp/no-useless-quantifier": [
+      2
+    ],
+    "regexp/no-useless-range": [
+      2
+    ],
+    "regexp/no-useless-set-operand": [
+      2
+    ],
+    "regexp/no-useless-string-literal": [
+      2
+    ],
+    "regexp/no-useless-two-nums-quantifier": [
+      2
+    ],
+    "regexp/no-zero-quantifier": [
+      2
+    ],
+    "regexp/optimal-lookaround-quantifier": [
+      1
+    ],
+    "regexp/optimal-quantifier-concatenation": [
+      2
+    ],
+    "regexp/prefer-character-class": [
+      2
+    ],
+    "regexp/prefer-d": [
+      2
+    ],
+    "regexp/prefer-plus-quantifier": [
+      2
+    ],
+    "regexp/prefer-predefined-assertion": [
+      2
+    ],
+    "regexp/prefer-question-quantifier": [
+      2
+    ],
+    "regexp/prefer-range": [
+      2
+    ],
+    "regexp/prefer-set-operation": [
+      2
+    ],
+    "regexp/prefer-star-quantifier": [
+      2
+    ],
+    "regexp/prefer-unicode-codepoint-escapes": [
+      2
+    ],
+    "regexp/prefer-w": [
+      2
+    ],
+    "regexp/simplify-set-operations": [
+      2
+    ],
+    "regexp/sort-flags": [
+      2
+    ],
+    "regexp/strict": [
+      2
+    ],
+    "regexp/use-ignore-case": [
+      2
     ],
     "@stylistic/array-bracket-spacing": [
       2,
@@ -1330,210 +1540,6 @@
         "return": "parens-new-line"
       }
     ],
-    "no-control-regex": [
-      2
-    ],
-    "no-misleading-character-class": [
-      2
-    ],
-    "no-regex-spaces": [
-      2
-    ],
-    "prefer-regex-literals": [
-      2,
-      {
-        "disallowRedundantWrapping": true
-      }
-    ],
-    "no-invalid-regexp": [
-      2
-    ],
-    "no-useless-backreference": [
-      2
-    ],
-    "no-empty-character-class": [
-      2
-    ],
-    "regexp/confusing-quantifier": [
-      1
-    ],
-    "regexp/control-character-escape": [
-      2
-    ],
-    "regexp/match-any": [
-      2
-    ],
-    "regexp/negation": [
-      2
-    ],
-    "regexp/no-contradiction-with-assertion": [
-      2
-    ],
-    "regexp/no-dupe-characters-character-class": [
-      2
-    ],
-    "regexp/no-dupe-disjunctions": [
-      2
-    ],
-    "regexp/no-empty-alternative": [
-      1
-    ],
-    "regexp/no-empty-capturing-group": [
-      2
-    ],
-    "regexp/no-empty-character-class": [
-      2
-    ],
-    "regexp/no-empty-group": [
-      2
-    ],
-    "regexp/no-empty-lookarounds-assertion": [
-      2
-    ],
-    "regexp/no-empty-string-literal": [
-      2
-    ],
-    "regexp/no-escape-backspace": [
-      2
-    ],
-    "regexp/no-extra-lookaround-assertions": [
-      2
-    ],
-    "regexp/no-invalid-regexp": [
-      2
-    ],
-    "regexp/no-invisible-character": [
-      2
-    ],
-    "regexp/no-lazy-ends": [
-      1
-    ],
-    "regexp/no-legacy-features": [
-      2
-    ],
-    "regexp/no-misleading-capturing-group": [
-      2
-    ],
-    "regexp/no-misleading-unicode-character": [
-      2
-    ],
-    "regexp/no-missing-g-flag": [
-      2
-    ],
-    "regexp/no-non-standard-flag": [
-      2
-    ],
-    "regexp/no-obscure-range": [
-      2
-    ],
-    "regexp/no-optional-assertion": [
-      2
-    ],
-    "regexp/no-potentially-useless-backreference": [
-      1
-    ],
-    "regexp/no-super-linear-backtracking": [
-      2
-    ],
-    "regexp/no-trivially-nested-assertion": [
-      2
-    ],
-    "regexp/no-trivially-nested-quantifier": [
-      2
-    ],
-    "regexp/no-unused-capturing-group": [
-      2
-    ],
-    "regexp/no-useless-assertions": [
-      2
-    ],
-    "regexp/no-useless-backreference": [
-      2
-    ],
-    "regexp/no-useless-character-class": [
-      2
-    ],
-    "regexp/no-useless-dollar-replacements": [
-      2
-    ],
-    "regexp/no-useless-escape": [
-      2
-    ],
-    "regexp/no-useless-flag": [
-      1
-    ],
-    "regexp/no-useless-lazy": [
-      2
-    ],
-    "regexp/no-useless-non-capturing-group": [
-      2
-    ],
-    "regexp/no-useless-quantifier": [
-      2
-    ],
-    "regexp/no-useless-range": [
-      2
-    ],
-    "regexp/no-useless-set-operand": [
-      2
-    ],
-    "regexp/no-useless-string-literal": [
-      2
-    ],
-    "regexp/no-useless-two-nums-quantifier": [
-      2
-    ],
-    "regexp/no-zero-quantifier": [
-      2
-    ],
-    "regexp/optimal-lookaround-quantifier": [
-      1
-    ],
-    "regexp/optimal-quantifier-concatenation": [
-      2
-    ],
-    "regexp/prefer-character-class": [
-      2
-    ],
-    "regexp/prefer-d": [
-      2
-    ],
-    "regexp/prefer-plus-quantifier": [
-      2
-    ],
-    "regexp/prefer-predefined-assertion": [
-      2
-    ],
-    "regexp/prefer-question-quantifier": [
-      2
-    ],
-    "regexp/prefer-range": [
-      2
-    ],
-    "regexp/prefer-set-operation": [
-      2
-    ],
-    "regexp/prefer-star-quantifier": [
-      2
-    ],
-    "regexp/prefer-unicode-codepoint-escapes": [
-      2
-    ],
-    "regexp/prefer-w": [
-      2
-    ],
-    "regexp/simplify-set-operations": [
-      2
-    ],
-    "regexp/sort-flags": [
-      2
-    ],
-    "regexp/strict": [
-      2
-    ],
-    "regexp/use-ignore-case": [
-      2
-    ],
     "accessor-pairs": [
       0,
       {
@@ -1843,7 +1849,10 @@
       2
     ],
     "no-void": [
-      2
+      2,
+      {
+        "allowAsStatement": true
+      }
     ],
     "no-warning-comments": [
       0,
@@ -3355,7 +3364,7 @@
       }
     ],
     "@typescript-eslint/no-non-null-assertion": [
-      0
+      2
     ],
     "@typescript-eslint/no-use-before-define": [
       2,
@@ -3412,28 +3421,30 @@
       0,
       {
         "multiline": {
-          "delimiter": "semi",
-          "requireLast": true
+          "delimiter": "none"
         },
         "singleline": {
-          "delimiter": "semi",
-          "requireLast": true
+          "delimiter": "comma",
+          "requireLast": false
         }
       }
     ],
     "@typescript-eslint/no-empty-interface": [
-      0
+      2,
+      {
+        "allowSingleExtends": true
+      }
     ],
     "@typescript-eslint/array-type": [
       2,
       {
-        "default": "array",
-        "readonly": "generic"
+        "default": "array-simple"
       }
     ],
     "@typescript-eslint/ban-types": [
       2,
       {
+        "extendDefaults": false,
         "types": {
           "String": {
             "message": "Use string instead",
@@ -3447,12 +3458,22 @@
             "message": "Use number instead",
             "fixWith": "number"
           },
-          "Object": {
-            "message": "Use object instead",
-            "fixWith": "object"
+          "Symbol": {
+            "message": "Use symbol instead",
+            "fixWith": "symbol"
           },
-          "Array": {
-            "message": "Provide a more specific type"
+          "BigInt": {
+            "message": "Use bigint instead",
+            "fixWith": "bigint"
+          },
+          "Function": {
+            "message": "The `Function` type accepts any function-like value.\nIt provides no type safety when calling the function, which can be a common source of bugs.\nIt also accepts things like class declarations, which will throw at runtime as they will not be called with `new`.\nIf you are expecting the function to accept certain arguments, you should explicitly define the function shape."
+          },
+          "Object": {
+            "message": "The `Object` type actually means \"any non-nullish value\", so it is marginally better than `unknown`.\n- If you want a type meaning \"any object\", you probably want `Record<string, unknown>` instead.\n- If you want a type meaning \"any value\", you probably want `unknown` instead."
+          },
+          "{}": {
+            "message": "`{}` actually means \"any non-nullish value\".\n- If you want a type meaning \"any object\", you probably want `Record<string, unknown>` instead.\n- If you want a type meaning \"any value\", you probably want `unknown` instead."
           }
         }
       }
@@ -3530,9 +3551,7 @@
     "@typescript-eslint/no-extraneous-class": [
       2,
       {
-        "allowConstructorOnly": false,
-        "allowEmpty": false,
-        "allowStaticOnly": false
+        "allowWithDecorator": true
       }
     ],
     "@typescript-eslint/no-misused-new": [
@@ -3544,21 +3563,27 @@
     "@typescript-eslint/no-this-alias": [
       2,
       {
-        "allowDestructuring": true,
-        "allowedNames": []
+        "allowDestructuring": true
       }
     ],
     "@typescript-eslint/no-useless-constructor": [
       2
     ],
     "@typescript-eslint/prefer-function-type": [
-      0
+      2
     ],
     "@typescript-eslint/promise-function-async": [
-      0
+      2
     ],
     "@typescript-eslint/ban-ts-comment": [
-      2
+      2,
+      {
+        "ts-expect-error": "allow-with-description",
+        "ts-ignore": true,
+        "ts-nocheck": true,
+        "ts-check": false,
+        "minimumDescriptionLength": 3
+      }
     ],
     "@typescript-eslint/brace-style": [
       0,
@@ -3571,7 +3596,7 @@
       1,
       {
         "assertionStyle": "as",
-        "objectLiteralTypeAssertions": "allow"
+        "objectLiteralTypeAssertions": "never"
       }
     ],
     "@typescript-eslint/consistent-type-definitions": [
@@ -3626,7 +3651,10 @@
       }
     ],
     "@typescript-eslint/require-array-sort-compare": [
-      0
+      2,
+      {
+        "ignoreStringArrays": true
+      }
     ],
     "@typescript-eslint/semi": [
       0,
@@ -3647,9 +3675,9 @@
     "@typescript-eslint/triple-slash-reference": [
       2,
       {
+        "lib": "never",
         "path": "never",
-        "types": "never",
-        "lib": "never"
+        "types": "never"
       }
     ],
     "@typescript-eslint/typedef": [
@@ -3696,7 +3724,10 @@
       2
     ],
     "@typescript-eslint/restrict-plus-operands": [
-      2
+      2,
+      {
+        "skipCompoundAssignments": false
+      }
     ],
     "@typescript-eslint/no-unnecessary-condition": [
       2
@@ -3711,7 +3742,8 @@
       }
     ],
     "@typescript-eslint/consistent-indexed-object-style": [
-      2
+      2,
+      "record"
     ],
     "@typescript-eslint/no-unnecessary-type-constraint": [
       2
@@ -3939,6 +3971,30 @@
     "you-dont-need-lodash-underscore/is-array-buffer": [
       1
     ],
+    "@typescript-eslint/switch-exhaustiveness-check": [
+      2
+    ],
+    "functional/prefer-property-signatures": [
+      2
+    ],
+    "functional/prefer-tacit": [
+      1
+    ],
+    "functional/readonly-type": [
+      2
+    ],
+    "functional/no-classes": [
+      2
+    ],
+    "functional/no-mixed-types": [
+      2
+    ],
+    "functional/no-this-expressions": [
+      2
+    ],
+    "functional/no-loop-statements": [
+      0
+    ],
     "perfectionist/sort-imports": [
       0
     ],
@@ -4015,17 +4071,12 @@
       {
         "type": "natural",
         "order": "asc",
-        "ignore-case": false
+        "ignore-case": false,
+        "group-kind": "mixed"
       }
     ],
     "perfectionist/sort-named-imports": [
-      2,
-      {
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false,
-        "ignore-alias": false
-      }
+      0
     ],
     "perfectionist/sort-object-types": [
       2,
@@ -4077,7 +4128,8 @@
       {
         "type": "natural",
         "order": "asc",
-        "ignore-case": false
+        "ignore-case": false,
+        "partition-by-comment": false
       }
     ],
     "perfectionist/sort-maps": [
@@ -4087,30 +4139,6 @@
         "order": "asc",
         "ignore-case": false
       }
-    ],
-    "@typescript-eslint/switch-exhaustiveness-check": [
-      2
-    ],
-    "functional/prefer-property-signatures": [
-      2
-    ],
-    "functional/prefer-tacit": [
-      1
-    ],
-    "functional/readonly-type": [
-      2
-    ],
-    "functional/no-classes": [
-      2
-    ],
-    "functional/no-mixed-types": [
-      2
-    ],
-    "functional/no-this-expressions": [
-      2
-    ],
-    "functional/no-loop-statements": [
-      0
     ],
     "no-unsanitized/property": [
       2,
@@ -4468,54 +4496,6 @@
     "security/detect-bidi-characters": [
       1
     ],
-    "@typescript-eslint/no-shadow": [
-      2
-    ],
-    "react-native/no-inline-styles": [
-      2
-    ],
-    "no-negated-in-lhs": [
-      1
-    ],
-    "no-reserved-keys": [
-      0
-    ],
-    "no-native-reassign": [
-      0
-    ],
-    "space-in-brackets": [
-      0
-    ],
-    "react/display-name": [
-      2
-    ],
-    "react/jsx-sort-props": [
-      0
-    ],
-    "react/no-did-mount-set-state": [
-      1
-    ],
-    "react/no-multi-comp": [
-      0
-    ],
-    "react/no-unstable-nested-components": [
-      1
-    ],
-    "react/wrap-multilines": [
-      0
-    ],
-    "jest/no-disabled-tests": [
-      1
-    ],
-    "jest/no-focused-tests": [
-      2
-    ],
-    "jest/no-identical-title": [
-      2
-    ],
-    "jest/valid-expect": [
-      2
-    ],
     "sonarjs/cognitive-complexity": [
       0
     ],
@@ -4645,8 +4625,56 @@
     "jest-dom/prefer-to-have-value": [
       2
     ],
-    "react-refresh/only-export-components": [
+    "no-only-tests/no-only-tests": [
+      2
+    ],
+    "@typescript-eslint/no-shadow": [
+      2
+    ],
+    "react-native/no-inline-styles": [
+      2
+    ],
+    "no-negated-in-lhs": [
       1
+    ],
+    "no-reserved-keys": [
+      0
+    ],
+    "no-native-reassign": [
+      0
+    ],
+    "space-in-brackets": [
+      0
+    ],
+    "react/display-name": [
+      2
+    ],
+    "react/jsx-sort-props": [
+      0
+    ],
+    "react/no-did-mount-set-state": [
+      1
+    ],
+    "react/no-multi-comp": [
+      0
+    ],
+    "react/no-unstable-nested-components": [
+      1
+    ],
+    "react/wrap-multilines": [
+      0
+    ],
+    "jest/no-disabled-tests": [
+      1
+    ],
+    "jest/no-focused-tests": [
+      2
+    ],
+    "jest/no-identical-title": [
+      2
+    ],
+    "jest/valid-expect": [
+      2
     ],
     "react-native/no-unused-styles": [
       2
@@ -4665,6 +4693,9 @@
     ],
     "react-native/no-single-element-style-arrays": [
       2
+    ],
+    "react-refresh/only-export-components": [
+      1
     ],
     "jsdoc/check-access": [
       1
@@ -5189,6 +5220,406 @@
     "@eslint-community/eslint-comments/no-unused-enable": [
       2
     ],
+    "@typescript-eslint/block-spacing": [
+      0,
+      "always"
+    ],
+    "@typescript-eslint/comma-spacing": [
+      0,
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "@typescript-eslint/dot-notation": [
+      2,
+      {
+        "allowKeywords": true,
+        "allowPattern": "",
+        "allowPrivateClassPropertyAccess": false,
+        "allowProtectedClassPropertyAccess": false,
+        "allowIndexSignaturePropertyAccess": false
+      }
+    ],
+    "@typescript-eslint/key-spacing": [
+      0,
+      {
+        "beforeColon": false,
+        "afterColon": true
+      }
+    ],
+    "@typescript-eslint/lines-between-class-members": [
+      2,
+      "always",
+      {
+        "exceptAfterSingleLine": false,
+        "exceptAfterOverload": true
+      }
+    ],
+    "@typescript-eslint/no-dupe-class-members": [
+      2
+    ],
+    "@typescript-eslint/no-implied-eval": [
+      2
+    ],
+    "@typescript-eslint/no-loss-of-precision": [
+      2
+    ],
+    "@typescript-eslint/no-redeclare": [
+      2,
+      {
+        "builtinGlobals": false
+      }
+    ],
+    "@typescript-eslint/no-throw-literal": [
+      2
+    ],
+    "@typescript-eslint/no-unused-expressions": [
+      2,
+      {
+        "allowShortCircuit": false,
+        "allowTernary": false,
+        "allowTaggedTemplates": false,
+        "enforceForJSX": false
+      }
+    ],
+    "@typescript-eslint/space-before-blocks": [
+      0,
+      "always"
+    ],
+    "@typescript-eslint/space-before-function-paren": [
+      0,
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "@typescript-eslint/ban-tslint-comment": [
+      2
+    ],
+    "@typescript-eslint/class-literal-property-style": [
+      2,
+      "fields"
+    ],
+    "@typescript-eslint/comma-dangle": [
+      0,
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "always-multiline",
+        "enums": "always-multiline",
+        "generics": "always-multiline",
+        "tuples": "always-multiline"
+      }
+    ],
+    "@typescript-eslint/consistent-generic-constructors": [
+      2,
+      "constructor"
+    ],
+    "@typescript-eslint/consistent-type-exports": [
+      2,
+      {
+        "fixMixedExportsWithInlineTypeSpecifier": true
+      }
+    ],
+    "@typescript-eslint/consistent-type-imports": [
+      2,
+      {
+        "prefer": "type-imports",
+        "disallowTypeAnnotations": true,
+        "fixStyle": "inline-type-imports"
+      }
+    ],
+    "@typescript-eslint/method-signature-style": [
+      2
+    ],
+    "@typescript-eslint/no-base-to-string": [
+      2
+    ],
+    "@typescript-eslint/no-confusing-void-expression": [
+      2,
+      {
+        "ignoreArrowShorthand": false,
+        "ignoreVoidOperator": false
+      }
+    ],
+    "@typescript-eslint/no-dynamic-delete": [
+      2
+    ],
+    "@typescript-eslint/no-extra-non-null-assertion": [
+      2
+    ],
+    "@typescript-eslint/no-invalid-void-type": [
+      2
+    ],
+    "@typescript-eslint/no-non-null-asserted-optional-chain": [
+      2
+    ],
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
+      2
+    ],
+    "@typescript-eslint/no-unsafe-argument": [
+      2
+    ],
+    "@typescript-eslint/non-nullable-type-assertion-style": [
+      2
+    ],
+    "@typescript-eslint/prefer-nullish-coalescing": [
+      2,
+      {
+        "ignoreConditionalTests": false,
+        "ignoreMixedLogicalExpressions": false
+      }
+    ],
+    "@typescript-eslint/prefer-optional-chain": [
+      2
+    ],
+    "@typescript-eslint/prefer-reduce-type-parameter": [
+      2
+    ],
+    "@typescript-eslint/prefer-return-this-type": [
+      2
+    ],
+    "@typescript-eslint/prefer-ts-expect-error": [
+      2
+    ],
+    "@typescript-eslint/restrict-template-expressions": [
+      2,
+      {
+        "allowNumber": true
+      }
+    ],
+    "@typescript-eslint/return-await": [
+      2,
+      "in-try-catch"
+    ],
+    "react/forbid-foreign-prop-types": [
+      1,
+      {
+        "allowInPropTypes": true
+      }
+    ],
+    "react/no-typos": [
+      2
+    ],
+    "react/style-prop-object": [
+      1
+    ],
+    "jsx-a11y/alt-text": [
+      2
+    ],
+    "jsx-a11y/anchor-has-content": [
+      2
+    ],
+    "jsx-a11y/anchor-is-valid": [
+      2,
+      {
+        "aspects": [
+          "noHref",
+          "invalidHref"
+        ]
+      }
+    ],
+    "jsx-a11y/aria-activedescendant-has-tabindex": [
+      2
+    ],
+    "jsx-a11y/aria-props": [
+      2
+    ],
+    "jsx-a11y/aria-proptypes": [
+      2
+    ],
+    "jsx-a11y/aria-role": [
+      2,
+      {
+        "ignoreNonDOM": true
+      }
+    ],
+    "jsx-a11y/aria-unsupported-elements": [
+      2
+    ],
+    "jsx-a11y/heading-has-content": [
+      2
+    ],
+    "jsx-a11y/iframe-has-title": [
+      2
+    ],
+    "jsx-a11y/img-redundant-alt": [
+      2
+    ],
+    "jsx-a11y/no-access-key": [
+      2
+    ],
+    "jsx-a11y/no-distracting-elements": [
+      2
+    ],
+    "jsx-a11y/no-redundant-roles": [
+      2
+    ],
+    "jsx-a11y/role-has-required-aria-props": [
+      2
+    ],
+    "jsx-a11y/role-supports-aria-props": [
+      2
+    ],
+    "jsx-a11y/scope": [
+      2
+    ],
+    "flowtype/define-flow-type": [
+      1
+    ],
+    "flowtype/require-valid-file-annotation": [
+      1
+    ],
+    "flowtype/use-flow-type": [
+      1
+    ],
+    "@next/next/google-font-display": [
+      1
+    ],
+    "@next/next/google-font-preconnect": [
+      1
+    ],
+    "@next/next/next-script-for-ga": [
+      1
+    ],
+    "@next/next/no-async-client-component": [
+      1
+    ],
+    "@next/next/no-before-interactive-script-outside-document": [
+      1
+    ],
+    "@next/next/no-css-tags": [
+      1
+    ],
+    "@next/next/no-head-element": [
+      1
+    ],
+    "@next/next/no-html-link-for-pages": [
+      0
+    ],
+    "@next/next/no-img-element": [
+      1
+    ],
+    "@next/next/no-page-custom-font": [
+      1
+    ],
+    "@next/next/no-styled-jsx-in-document": [
+      1
+    ],
+    "@next/next/no-sync-scripts": [
+      2
+    ],
+    "@next/next/no-title-in-document-head": [
+      1
+    ],
+    "@next/next/no-typos": [
+      1
+    ],
+    "@next/next/no-unwanted-polyfillio": [
+      1
+    ],
+    "@next/next/inline-script-id": [
+      2
+    ],
+    "@next/next/no-assign-module-variable": [
+      2
+    ],
+    "@next/next/no-document-import-in-page": [
+      2
+    ],
+    "@next/next/no-duplicate-head": [
+      2
+    ],
+    "@next/next/no-head-import-in-document": [
+      2
+    ],
+    "@next/next/no-script-component-in-head": [
+      2
+    ],
+    "es-x/no-atomics-waitasync": [
+      2
+    ],
+    "es-x/no-object-map-groupby": [
+      2
+    ],
+    "es-x/no-promise-withresolvers": [
+      2
+    ],
+    "es-x/no-regexp-v-flag": [
+      2
+    ],
+    "es-x/no-resizable-and-growable-arraybuffers": [
+      2
+    ],
+    "es-x/no-string-prototype-iswellformed-towellformed": [
+      2
+    ],
+    "default-param-last": [
+      0
+    ],
+    "@typescript-eslint/default-param-last": [
+      2
+    ],
+    "@typescript-eslint/no-extra-semi": [
+      0
+    ],
+    "@typescript-eslint/no-loop-func": [
+      2
+    ],
+    "n/no-deprecated-api": [
+      2
+    ],
+    "n/no-extraneous-import": [
+      2
+    ],
+    "n/no-extraneous-require": [
+      2
+    ],
+    "n/no-exports-assign": [
+      2
+    ],
+    "n/no-missing-import": [
+      0
+    ],
+    "n/no-missing-require": [
+      2
+    ],
+    "n/no-process-exit": [
+      2
+    ],
+    "n/no-unpublished-bin": [
+      2
+    ],
+    "n/no-unpublished-import": [
+      0
+    ],
+    "n/no-unpublished-require": [
+      2
+    ],
+    "n/no-unsupported-features/es-builtins": [
+      2
+    ],
+    "n/no-unsupported-features/es-syntax": [
+      2,
+      {
+        "ignores": [
+          "modules"
+        ]
+      }
+    ],
+    "n/no-unsupported-features/node-builtins": [
+      2
+    ],
+    "n/process-exit-as-throw": [
+      2
+    ],
+    "n/shebang": [
+      2
+    ],
     "vue/comment-directive": [
       2
     ],
@@ -5553,289 +5984,6 @@
         "autofix": true
       }
     ],
-    "react/forbid-foreign-prop-types": [
-      1,
-      {
-        "allowInPropTypes": true
-      }
-    ],
-    "react/no-typos": [
-      2
-    ],
-    "react/style-prop-object": [
-      1
-    ],
-    "jsx-a11y/alt-text": [
-      2
-    ],
-    "jsx-a11y/anchor-has-content": [
-      2
-    ],
-    "jsx-a11y/anchor-is-valid": [
-      2,
-      {
-        "aspects": [
-          "noHref",
-          "invalidHref"
-        ]
-      }
-    ],
-    "jsx-a11y/aria-activedescendant-has-tabindex": [
-      2
-    ],
-    "jsx-a11y/aria-props": [
-      2
-    ],
-    "jsx-a11y/aria-proptypes": [
-      2
-    ],
-    "jsx-a11y/aria-role": [
-      2,
-      {
-        "ignoreNonDOM": true
-      }
-    ],
-    "jsx-a11y/aria-unsupported-elements": [
-      2
-    ],
-    "jsx-a11y/heading-has-content": [
-      2
-    ],
-    "jsx-a11y/iframe-has-title": [
-      2
-    ],
-    "jsx-a11y/img-redundant-alt": [
-      2
-    ],
-    "jsx-a11y/no-access-key": [
-      2
-    ],
-    "jsx-a11y/no-distracting-elements": [
-      2
-    ],
-    "jsx-a11y/no-redundant-roles": [
-      2
-    ],
-    "jsx-a11y/role-has-required-aria-props": [
-      2
-    ],
-    "jsx-a11y/role-supports-aria-props": [
-      2
-    ],
-    "jsx-a11y/scope": [
-      2
-    ],
-    "flowtype/define-flow-type": [
-      1
-    ],
-    "flowtype/require-valid-file-annotation": [
-      1
-    ],
-    "flowtype/use-flow-type": [
-      1
-    ],
-    "@typescript-eslint/no-redeclare": [
-      2
-    ],
-    "@typescript-eslint/no-unused-expressions": [
-      2,
-      {
-        "allowShortCircuit": false,
-        "allowTernary": false,
-        "allowTaggedTemplates": false,
-        "enforceForJSX": false
-      }
-    ],
-    "@next/next/google-font-display": [
-      1
-    ],
-    "@next/next/google-font-preconnect": [
-      1
-    ],
-    "@next/next/next-script-for-ga": [
-      1
-    ],
-    "@next/next/no-async-client-component": [
-      1
-    ],
-    "@next/next/no-before-interactive-script-outside-document": [
-      1
-    ],
-    "@next/next/no-css-tags": [
-      1
-    ],
-    "@next/next/no-head-element": [
-      1
-    ],
-    "@next/next/no-html-link-for-pages": [
-      0
-    ],
-    "@next/next/no-img-element": [
-      1
-    ],
-    "@next/next/no-page-custom-font": [
-      1
-    ],
-    "@next/next/no-styled-jsx-in-document": [
-      1
-    ],
-    "@next/next/no-sync-scripts": [
-      2
-    ],
-    "@next/next/no-title-in-document-head": [
-      1
-    ],
-    "@next/next/no-typos": [
-      1
-    ],
-    "@next/next/no-unwanted-polyfillio": [
-      1
-    ],
-    "@next/next/inline-script-id": [
-      2
-    ],
-    "@next/next/no-assign-module-variable": [
-      2
-    ],
-    "@next/next/no-document-import-in-page": [
-      2
-    ],
-    "@next/next/no-duplicate-head": [
-      2
-    ],
-    "@next/next/no-head-import-in-document": [
-      2
-    ],
-    "@next/next/no-script-component-in-head": [
-      2
-    ],
-    "default-param-last": [
-      0
-    ],
-    "@typescript-eslint/comma-dangle": [
-      0,
-      {
-        "arrays": "always-multiline",
-        "objects": "always-multiline",
-        "imports": "always-multiline",
-        "exports": "always-multiline",
-        "functions": "always-multiline",
-        "enums": "always-multiline",
-        "generics": "always-multiline",
-        "tuples": "always-multiline"
-      }
-    ],
-    "@typescript-eslint/comma-spacing": [
-      0,
-      {
-        "before": false,
-        "after": true
-      }
-    ],
-    "@typescript-eslint/default-param-last": [
-      2
-    ],
-    "@typescript-eslint/dot-notation": [
-      2,
-      {
-        "allowKeywords": true,
-        "allowPattern": "",
-        "allowPrivateClassPropertyAccess": false,
-        "allowProtectedClassPropertyAccess": false,
-        "allowIndexSignaturePropertyAccess": false
-      }
-    ],
-    "@typescript-eslint/lines-between-class-members": [
-      2,
-      "always",
-      {
-        "exceptAfterSingleLine": false,
-        "exceptAfterOverload": true
-      }
-    ],
-    "@typescript-eslint/no-dupe-class-members": [
-      2
-    ],
-    "@typescript-eslint/no-extra-semi": [
-      0
-    ],
-    "@typescript-eslint/no-implied-eval": [
-      2
-    ],
-    "@typescript-eslint/no-loss-of-precision": [
-      2
-    ],
-    "@typescript-eslint/no-loop-func": [
-      2
-    ],
-    "@typescript-eslint/space-before-blocks": [
-      0
-    ],
-    "@typescript-eslint/no-throw-literal": [
-      2
-    ],
-    "@typescript-eslint/space-before-function-paren": [
-      0,
-      {
-        "anonymous": "always",
-        "named": "never",
-        "asyncArrow": "always"
-      }
-    ],
-    "@typescript-eslint/return-await": [
-      2,
-      "in-try-catch"
-    ],
-    "n/no-deprecated-api": [
-      2
-    ],
-    "n/no-extraneous-import": [
-      2
-    ],
-    "n/no-extraneous-require": [
-      2
-    ],
-    "n/no-exports-assign": [
-      2
-    ],
-    "n/no-missing-import": [
-      0
-    ],
-    "n/no-missing-require": [
-      2
-    ],
-    "n/no-process-exit": [
-      2
-    ],
-    "n/no-unpublished-bin": [
-      2
-    ],
-    "n/no-unpublished-import": [
-      0
-    ],
-    "n/no-unpublished-require": [
-      2
-    ],
-    "n/no-unsupported-features/es-builtins": [
-      2
-    ],
-    "n/no-unsupported-features/es-syntax": [
-      2,
-      {
-        "ignores": [
-          "modules"
-        ]
-      }
-    ],
-    "n/no-unsupported-features/node-builtins": [
-      2
-    ],
-    "n/process-exit-as-throw": [
-      2
-    ],
-    "n/shebang": [
-      2
-    ],
     "jest/expect-expect": [
       1
     ],
@@ -6080,12 +6228,6 @@
     "vue/max-len": [
       0
     ],
-    "@typescript-eslint/block-spacing": [
-      0
-    ],
-    "@typescript-eslint/key-spacing": [
-      0
-    ],
     "babel/object-curly-spacing": [
       0
     ],
@@ -6263,25 +6405,13 @@
     "react/jsx-space-before-closing": [
       0
     ],
-    "@typescript-eslint/no-base-to-string": [
-      2
-    ],
     "@typescript-eslint/no-duplicate-enum-values": [
       2
     ],
     "@typescript-eslint/no-duplicate-type-constituents": [
       2
     ],
-    "@typescript-eslint/no-extra-non-null-assertion": [
-      2
-    ],
-    "@typescript-eslint/no-non-null-asserted-optional-chain": [
-      2
-    ],
     "@typescript-eslint/no-redundant-type-constituents": [
-      2
-    ],
-    "@typescript-eslint/no-unsafe-argument": [
       2
     ],
     "@typescript-eslint/no-unsafe-assignment": [
@@ -6305,8 +6435,14 @@
     "@typescript-eslint/prefer-as-const": [
       2
     ],
-    "@typescript-eslint/restrict-template-expressions": [
-      2
+    "pathmark/add-eof": [
+      1
+    ],
+    "pathmark/add-path": [
+      1
+    ],
+    "pathmark/check-path": [
+      1
     ]
   }
 }
