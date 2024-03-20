@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/shopify.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -33,3 +34,4 @@ export default {
     ...shopify.configs.typescript.overrides[0].rules,
     ...shopify.configs["typescript-type-checking"].overrides[0].rules`,
 } satisfies Config;
+// EOF

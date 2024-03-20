@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/index.ts
 import { getDownloadCount, getInfo } from "../npm";
 import type { Config } from "./definitions";
 import definitions from "./definitions";
@@ -30,3 +31,4 @@ for await (const config of definitions) {
 }
 
 export default configsWithCount;
+// EOF

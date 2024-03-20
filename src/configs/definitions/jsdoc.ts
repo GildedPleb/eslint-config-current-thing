@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/jsdoc.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -25,3 +26,4 @@ export default {
     // Presently not implemented in TSDocs https://github.com/microsoft/tsdoc/issues/234
     "jsdoc/require-yields": 0`,
 } satisfies Config;
+// EOF

@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/unsanitized.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -17,3 +18,4 @@ export default {
   ],
   rules: `unsanitized.configs.DOM.rules`,
 } satisfies Config;
+// EOF

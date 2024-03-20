@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/react-refresh.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -17,3 +18,4 @@ export default {
   ],
   rules: `{ "react-refresh/only-export-components": "warn" }`,
 } satisfies Config;
+// EOF

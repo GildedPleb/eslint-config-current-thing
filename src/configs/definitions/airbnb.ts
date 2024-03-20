@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/airbnb.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -27,3 +28,4 @@ export default {
     "no-restricted-syntax": [0, { selector: "ForOfStatement" }],
   }`,
 } satisfies Config;
+// EOF

@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/react-native.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -22,3 +23,4 @@ export default {
   ],
   rules: `reactNative.configs.all.rules`,
 } satisfies Config;
+// EOF

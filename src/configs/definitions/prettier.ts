@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/prettier.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -25,3 +26,4 @@ export default {
     ...prettierConfig.rules,
   }`,
 } satisfies Config;
+// EOF

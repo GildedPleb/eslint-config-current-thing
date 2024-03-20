@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/functional.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -21,3 +22,4 @@ export default {
     ...functional.configs["no-other-paradigms"].rules,
     "functional/no-loop-statements": 0`,
 } satisfies Config;
+// EOF

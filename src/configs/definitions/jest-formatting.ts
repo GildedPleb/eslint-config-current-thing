@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/jest-formatting.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -17,3 +18,4 @@ export default {
   ],
   rules: `jestFormatting.configs.recommended.overrides[0].rules`,
 } satisfies Config;
+// EOF

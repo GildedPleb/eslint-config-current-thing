@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/sonarjs.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -16,3 +17,4 @@ export default {
     // would be simple, not complex.
     "sonarjs/cognitive-complexity": 0`,
 } satisfies Config;
+// EOF

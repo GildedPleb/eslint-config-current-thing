@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/storybook.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -19,3 +20,4 @@ export default {
     ...storybook.configs.recommended.overrides[0].rules,
   }`,
 } satisfies Config;
+// EOF

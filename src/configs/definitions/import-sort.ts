@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/import-sort.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -20,3 +21,4 @@ export default {
     "simple-import-sort/exports": 2,
   }`,
 } satisfies Config;
+// EOF

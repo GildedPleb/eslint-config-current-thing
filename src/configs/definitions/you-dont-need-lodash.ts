@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/you-dont-need-lodash.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -17,3 +18,4 @@ export default {
   ],
   rules: `youDontNeedLodash.configs.compatible.rules`,
 } satisfies Config;
+// EOF

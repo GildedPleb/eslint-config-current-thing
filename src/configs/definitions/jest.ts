@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/jest.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -30,3 +31,4 @@ export default {
   ],
   rules: `jest.configs.recommended.rules`,
 } satisfies Config;
+// EOF

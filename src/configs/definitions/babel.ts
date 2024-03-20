@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/babel.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -18,3 +19,4 @@ export default {
     },
   ],
 } satisfies Config;
+// EOF

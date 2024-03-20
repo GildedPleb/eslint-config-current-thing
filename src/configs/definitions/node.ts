@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/node.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -26,3 +27,4 @@ export default {
     "n/no-unpublished-import": 0,
   }`,
 } satisfies Config;
+// EOF

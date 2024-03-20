@@ -1,3 +1,4 @@
+// PathMark: ./src/npm.ts
 import { BASE_API, BASE_URL, LAST_DAY_INTERVAL } from "./constants";
 
 interface Info {
@@ -6,11 +7,11 @@ interface Info {
 }
 
 interface NpmSearchResult {
-  objects: {
+  objects: Array<{
     package: {
       name: string;
     };
-  }[];
+  }>;
 }
 
 interface Stats {
@@ -58,3 +59,4 @@ export async function fetchNPMURLs(searchStrings: string[]) {
 
   return [...new Set(pluginNames)];
 }
+// EOF

@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/react-hooks.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -17,3 +18,4 @@ export default {
   ],
   rules: `reactHooks.configs.recommended.rules`,
 } satisfies Config;
+// EOF

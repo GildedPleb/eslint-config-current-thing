@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/import.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -50,8 +51,14 @@ export default {
       package: "eslint-plugin-import",
       requiresImport: true,
     },
+    {
+      name: "importResolver",
+      package: "eslint-import-resolver-typescript",
+      requiresImport: false,
+    },
   ],
   rules: `importPlugin.configs.recommended.rules,
     ...importPlugin.configs.typescript.rules,
     "import/order": 0`,
 } satisfies Config;
+// EOF

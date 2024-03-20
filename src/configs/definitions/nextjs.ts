@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/nextjs.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -20,3 +21,4 @@ export default {
     // Irrelevant for broad JS, and polutes logs when it doesn't apply.
     "@next/next/no-html-link-for-pages": 0`,
 } satisfies Config;
+// EOF

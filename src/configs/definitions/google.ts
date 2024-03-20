@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/google.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -12,3 +13,4 @@ export default {
   ],
   rules: `google.rules`,
 } satisfies Config;
+// EOF

@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/tailwind-config.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -19,3 +20,4 @@ export default {
     ...tailwindcss.configs.recommended.rules,
   }`,
 } satisfies Config;
+// EOF

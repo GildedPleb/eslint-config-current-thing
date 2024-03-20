@@ -1,3 +1,4 @@
+// PathMark: ./src/rejected.ts
 const rejected = new Set([
   // Obsoleted by Typescript
   "eslint-plugin-unused-imports",
@@ -33,12 +34,11 @@ const rejected = new Set([
   "eslint-plugin-yml",
   "yaml-eslint-parser",
   "@graphql-eslint/eslint-plugin",
+  "@tanstack/eslint-plugin-query",
+  "eslint-plugin-ember",
 
   // Fork of import
   "eslint-plugin-i",
-
-  // Not maintained, see eslint-plugin-es-x
-  "eslint-plugin-es",
 
   // Less popular testing frameworks.
   "eslint-plugin-cypress",
@@ -55,6 +55,10 @@ const rejected = new Set([
   // Monorepo stuffs
   "@nx/eslint",
   "eslint-config-turbo",
+
+  // Not maintained / No recomended rules and largely irrelevant
+  "eslint-plugin-babel",
 ]);
 
 export default rejected;
+// EOF

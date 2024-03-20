@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/compat.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -13,3 +14,4 @@ export default {
   ],
   rules: `comp.configs.recommended.rules`,
 } satisfies Config;
+// EOF

@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/stylistic.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -27,3 +28,4 @@ export default {
     "@stylistic/brace-style": 0,
   }`,
 } satisfies Config;
+// EOF

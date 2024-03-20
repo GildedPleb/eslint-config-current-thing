@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/standard-react.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -16,3 +17,4 @@ export default {
   ],
   rules: `standardReact.rules`,
 } satisfies Config;
+// EOF

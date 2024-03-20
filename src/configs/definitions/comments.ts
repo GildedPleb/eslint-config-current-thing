@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/comments.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -27,3 +28,4 @@ export default {
   ],
   rules: `{ ...comments.configs.recommended.rules }`,
 } satisfies Config;
+// EOF

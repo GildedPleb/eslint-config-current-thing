@@ -1,3 +1,4 @@
+// PathMark: ./src/not-applicable.ts
 const notApplicable = new Set([
   "@babel/eslint-parser",
   "@eslint-community/eslint-utils",
@@ -15,7 +16,6 @@ const notApplicable = new Set([
   "eslint",
   "eslint-etc",
   "eslint-import-resolver-node",
-  "eslint-import-resolver-typescript",
   "eslint-plugin-eslint-plugin",
   "eslint-scope",
   "eslint-visitor-keys",
@@ -26,6 +26,7 @@ const notApplicable = new Set([
   "prettier-eslint",
   "prettier-eslint-cli",
   "vite-plugin-eslint",
+  "eslint-formatter-pretty",
 
   // Included with Airbnb
   "eslint-config-airbnb-base",
@@ -35,3 +36,4 @@ const notApplicable = new Set([
 ]);
 
 export default notApplicable;
+// EOF

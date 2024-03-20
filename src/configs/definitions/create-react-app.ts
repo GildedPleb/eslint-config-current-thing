@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/create-react-app.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -17,3 +18,4 @@ export default {
     ...cra.overrides[0].rules,
   }`,
 } satisfies Config;
+// EOF

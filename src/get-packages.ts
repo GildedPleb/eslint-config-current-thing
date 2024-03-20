@@ -1,3 +1,4 @@
+// PathMark: ./src/get-packages.ts
 import definitions from "./configs/definitions";
 import { MINIMUMS } from "./constants";
 import notApplicable from "./not-applicable";
@@ -25,7 +26,7 @@ async function fetchEslintPlugins() {
 
   const pluginNames = await fetchNPMURLs(searchTerms);
 
-  const downloadlist: { count: number; name: string }[] = [];
+  const downloadlist: Array<{ count: number; name: string }> = [];
   for await (const pluginName of pluginNames) {
     const downloads = await getDownloadCount(pluginName);
 
@@ -46,3 +47,4 @@ async function fetchEslintPlugins() {
 }
 
 export default fetchEslintPlugins;
+// EOF

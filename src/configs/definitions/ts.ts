@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/ts.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -42,3 +43,4 @@ export default {
     ],
   }`,
 } satisfies Config;
+// EOF

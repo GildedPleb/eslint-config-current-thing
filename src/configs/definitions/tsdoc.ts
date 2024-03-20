@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/tsdoc.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -13,3 +14,4 @@ export default {
   ],
   rules: `{ "tsdoc/syntax": 2 }`,
 } satisfies Config;
+// EOF

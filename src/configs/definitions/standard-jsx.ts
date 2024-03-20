@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/standard-jsx.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -16,3 +17,4 @@ export default {
   ],
   rules: `standardJsx.rules`,
 } satisfies Config;
+// EOF

@@ -1,3 +1,4 @@
+// PathMark: ./src/configs/definitions/xo.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -10,3 +11,4 @@ export default {
   packages: [{ name: "xo", package: "eslint-config-xo", requiresImport: true }],
   rules: `xo.rules`,
 } satisfies Config;
+// EOF
