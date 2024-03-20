@@ -18,14 +18,12 @@ export default {
   ],
   rules: `{
     ...stylistic.configs.customize({ quotes: "double", semi: true }).rules,
-    // Conflicts with Prettier
+    // All conflict with Prettier:
     "@stylistic/operator-linebreak": 0,
-    // Conflicts with Prettier
     "@stylistic/quotes": 0,
-    // Conflicts with Prettier
     "@stylistic/arrow-parens": 0,
-    // Conflicts with Prettier
     "@stylistic/brace-style": 0,
+    "@stylistic/multiline-ternary": 0,
   }`,
 } satisfies Config;
 // EOF
