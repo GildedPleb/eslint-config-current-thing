@@ -36,6 +36,7 @@ import standardReact from "eslint-config-standard-react";
 import xo from "eslint-config-xo";
 // Import importResolver from "eslint-import-resolver-typescript";
 import comp from "eslint-plugin-compat";
+import cssModules from "eslint-plugin-css-modules";
 import es from "eslint-plugin-es";
 import esX from "eslint-plugin-es-x";
 import commentsOld from "eslint-plugin-eslint-comments";
@@ -131,6 +132,27 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
   }
       ]),
   */
+  /*
+    CSS Modules
+    446,801 monthly downloads
+    Checks that you are using the existent css/scss/less classes, no more no less
+    undefined
+  */
+  ...(disable.includes("eslint-plugin-css-modules")
+    ? []
+    : [
+        {
+          files,
+          plugins: { "css-modules": cssModules },
+          rules: {
+            ...cssModules.configs.recommended.rules,
+            ...("eslint-plugin-css-modules" in override
+              ? override["eslint-plugin-css-modules"]
+              : {}),
+          },
+        },
+      ]),
+
   /*
     Standard React
     502,210 monthly downloads

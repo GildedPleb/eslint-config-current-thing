@@ -4,6 +4,7 @@ import babel from "./babel";
 import comments from "./comments";
 import compat from "./compat";
 import createReactApp from "./create-react-app";
+import cssModules from "./css-modules";
 import emotion from "./emotion";
 import es from "./es";
 import eslint from "./eslint";
@@ -112,6 +113,7 @@ const packages: Config[] = [
   header,
   i18next,
   emotion,
+  cssModules,
 ];
 
 export default packages;

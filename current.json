@@ -853,6 +853,7 @@
   },
   "plugins": [
     "@",
+    "css-modules",
     "regexp:eslint-plugin-regexp@2.3.0",
     "@stylistic",
     "@shopify",
@@ -899,6 +900,12 @@
     "@typescript-eslint:@typescript-eslint/eslint-plugin@7.3.1"
   ],
   "rules": {
+    "css-modules/no-unused-class": [
+      2
+    ],
+    "css-modules/no-undef-class": [
+      2
+    ],
     "react/jsx-no-bind": [
       2,
       {
