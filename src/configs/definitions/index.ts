@@ -10,6 +10,7 @@ import flowtype from "./flowtype";
 import functional from "./functional";
 import google from "./google";
 import header from "./header";
+import i18next from "./i18next";
 import index from "./import";
 import importSort from "./import-sort";
 import jest from "./jest";
@@ -108,6 +109,7 @@ const packages: Config[] = [
   noOnlyTest,
   es,
   header,
+  i18next,
 ];
 
 export default packages;

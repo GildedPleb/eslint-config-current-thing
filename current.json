@@ -858,6 +858,7 @@
     "@shopify",
     "@shopify/typescript",
     "you-dont-need-lodash-underscore",
+    "i18next",
     "functional",
     "perfectionist:eslint-plugin-perfectionist",
     "sort-class-members:eslint-plugin-sort-class-members@1.20.0",
@@ -894,8 +895,7 @@
     "react",
     "import",
     "prettier:eslint-plugin-prettier@5.1.3",
-    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.3.1",
-    "pathmark"
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.3.1"
   ],
   "rules": {
     "react/jsx-no-bind": [
@@ -3971,6 +3971,9 @@
     "you-dont-need-lodash-underscore/is-array-buffer": [
       1
     ],
+    "i18next/no-literal-string": [
+      2
+    ],
     "@typescript-eslint/switch-exhaustiveness-check": [
       2
     ],
@@ -6434,15 +6437,6 @@
     ],
     "@typescript-eslint/prefer-as-const": [
       2
-    ],
-    "pathmark/add-eof": [
-      1
-    ],
-    "pathmark/add-path": [
-      1
-    ],
-    "pathmark/check-path": [
-      1
     ]
   }
 }

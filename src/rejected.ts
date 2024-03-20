@@ -58,6 +58,9 @@ const rejected = new Set([
 
   // Not maintained / No recomended rules and largely irrelevant
   "eslint-plugin-babel",
+
+  // Irrelevant?
+  "eslint-plugin-local-rules",
 ]);
 
 export default rejected;

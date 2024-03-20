@@ -23,7 +23,7 @@ import rnConfig from "@react-native/eslint-config";
 import rnPlugin from "@react-native/eslint-plugin";
 import reactNativeConfig from "@react-native-community/eslint-config";
 import shopify from "@shopify/eslint-plugin";
-// Import vuePArser from "vue-eslint-parser";
+// Import vueParser from "vue-eslint-parser";
 import stylistic from "@stylistic/eslint-plugin";
 import google from "eslint-config-google";
 // Import standard from "eslint-config-standard";
@@ -41,6 +41,7 @@ import commentsOld from "eslint-plugin-eslint-comments";
 import flowtype from "eslint-plugin-flowtype";
 import functional from "eslint-plugin-functional";
 import header from "eslint-plugin-header";
+import i18next from "eslint-plugin-i18next";
 import importPlugin from "eslint-plugin-import";
 import jest from "eslint-plugin-jest";
 import jestDom from "eslint-plugin-jest-dom";
@@ -253,6 +254,27 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
             ...youDontNeedLodash.configs.compatible.rules,
             ...("eslint-plugin-you-dont-need-lodash-underscore" in override
               ? override["eslint-plugin-you-dont-need-lodash-underscore"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
+    I18n
+    712,756 monthly downloads
+    ESLint plugin for i18n
+    https://github.com/edvardchen/eslint-plugin-i18next#readme
+  */
+  ...(disable.includes("eslint-plugin-i18next")
+    ? []
+    : [
+        {
+          files,
+          plugins: { i18next },
+          rules: {
+            ...i18next.configs.recommended.rules,
+            ...("eslint-plugin-i18next" in override
+              ? override["eslint-plugin-i18next"]
               : {}),
           },
         },
