@@ -15,6 +15,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import babelPlugin from "@babel/eslint-plugin";
+import { rules as emotion } from "@emotion/eslint-plugin";
 import { FlatCompat } from "@eslint/eslintrc";
 import eslint from "@eslint/js";
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
@@ -300,6 +301,31 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
             "functional/no-loop-statements": 0,
             ...("eslint-plugin-functional" in override
               ? override["eslint-plugin-functional"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
+    Emotion CSS
+    824,170 monthly downloads
+    ESLint rules for emotion
+    https://github.com/emotion-js/emotion/tree/main#readme
+  */
+  ...(disable.includes("@emotion/eslint-plugin")
+    ? []
+    : [
+        {
+          files,
+          plugins: { "@emotion": { rules: emotion } },
+          rules: {
+            "@emotion/import-from-emotion": 2,
+            "@emotion/jsx-import": 2,
+            "@emotion/no-vanilla": 2,
+            "@emotion/pkg-renaming": 2,
+            "@emotion/styled-import": 2,
+            ...("@emotion/eslint-plugin" in override
+              ? override["@emotion/eslint-plugin"]
               : {}),
           },
         },

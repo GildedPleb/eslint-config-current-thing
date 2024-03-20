@@ -860,6 +860,7 @@
     "you-dont-need-lodash-underscore",
     "i18next",
     "functional",
+    "@emotion",
     "perfectionist:eslint-plugin-perfectionist",
     "sort-class-members:eslint-plugin-sort-class-members@1.20.0",
     "no-unsanitized",
@@ -3997,6 +3998,21 @@
     ],
     "functional/no-loop-statements": [
       0
+    ],
+    "@emotion/jsx-import": [
+      2
+    ],
+    "@emotion/no-vanilla": [
+      2
+    ],
+    "@emotion/import-from-emotion": [
+      2
+    ],
+    "@emotion/styled-import": [
+      2
+    ],
+    "@emotion/pkg-renaming": [
+      2
     ],
     "perfectionist/sort-imports": [
       0

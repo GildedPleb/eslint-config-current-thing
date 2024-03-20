@@ -26,7 +26,7 @@ Presently, it combines these configs (and their plugins, submodules, etc.):
 | Sort Classes   | Standard | TSDoc         | Typescript    | Unicorn          |
 | You Don't Need | XO       | React-Refresh | Vue           | Stylistic        |
 | Storybook      | Regexp   | Tailwind      | Perfectionist | No-Only-Tests    |
-| ES/ES-X        | Header   | i18next       |               |                  |
+| ES/ES-X        | Header   | i18next       | Emotion       |                  |
 
 The winning (and thus supported) high-level architecture is:
 | Types | FrontEnd | Testing |
@@ -271,7 +271,6 @@ Generated on 3/20/2024, downloads for the previous 28 days.
 - 3,258,830 downloads, [@vue/eslint-config-typescript](https://www.npmjs.com/package/@vue/eslint-config-typescript)
 - 2,509,022 downloads, [@vue/eslint-config-prettier](https://www.npmjs.com/package/@vue/eslint-config-prettier)
 - 832,102 downloads, [eslint-plugin-nuxt](https://www.npmjs.com/package/eslint-plugin-nuxt)
-- 824,170 downloads, [@emotion/eslint-plugin](https://www.npmjs.com/package/@emotion/eslint-plugin)
 - 793,624 downloads, [eslint-plugin-vuejs-accessibility](https://www.npmjs.com/package/eslint-plugin-vuejs-accessibility)
 - 531,095 downloads, [@vue/eslint-config-airbnb](https://www.npmjs.com/package/@vue/eslint-config-airbnb)
 - 446,801 downloads, [eslint-plugin-css-modules](https://www.npmjs.com/package/eslint-plugin-css-modules)
@@ -280,4 +279,4 @@ Generated on 3/20/2024, downloads for the previous 28 days.
 
 ## Rule Count
 
-1351
+1352

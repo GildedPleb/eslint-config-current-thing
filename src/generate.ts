@@ -83,7 +83,11 @@ ${configs
         throw new Error(message);
       }
 
-      if (definitions.includes("rules: ") && name !== "Shopify") {
+      if (
+        definitions.includes("rules: ") &&
+        name !== "Shopify" &&
+        name !== "Emotion CSS"
+      ) {
         const message = `Formatting Error: ${name}.definitions includes a 'rules' key when it should use the 'RULES' replacement inline placeholder. See other config definitions for examples.`;
         throw new Error(message);
       }

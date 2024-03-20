@@ -45,4 +45,5 @@ declare module "eslint-plugin-es";
 declare module "@react-native/eslint-plugin";
 declare module "eslint-plugin-header";
 declare module "eslint-plugin-i18next";
+declare module "@emotion/eslint-plugin";
 // EOF

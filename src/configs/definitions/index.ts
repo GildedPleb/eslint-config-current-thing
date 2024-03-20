@@ -4,6 +4,7 @@ import babel from "./babel";
 import comments from "./comments";
 import compat from "./compat";
 import createReactApp from "./create-react-app";
+import emotion from "./emotion";
 import es from "./es";
 import eslint from "./eslint";
 import flowtype from "./flowtype";
@@ -110,6 +111,7 @@ const packages: Config[] = [
   es,
   header,
   i18next,
+  emotion,
 ];
 
 export default packages;
