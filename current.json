@@ -1297,8 +1297,7 @@
       }
     ],
     "@stylistic/multiline-ternary": [
-      2,
-      "always-multiline"
+      0
     ],
     "@stylistic/new-parens": [
       2
