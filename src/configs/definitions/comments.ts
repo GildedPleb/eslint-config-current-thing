@@ -26,6 +26,6 @@ export default {
       requiresImport: true,
     },
   ],
-  rules: `{ ...comments.configs.recommended.rules }`,
+  rules: `comments.configs.recommended.rules`,
 } satisfies Config;
 // EOF

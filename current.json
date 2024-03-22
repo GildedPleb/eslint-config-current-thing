@@ -824,6 +824,7 @@
       "process": false,
       "require": false,
       "setImmediate": true,
+      "browser": true,
       "__DEV__": false,
       "escape": false,
       "Map": true,

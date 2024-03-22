@@ -410,7 +410,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
         {
           files,
           plugins: { "sort-class-members": sortClassMembers },
-          // There are no recomended ways to use this rule, but Shopify has opinions about it.
+          // There are no recommended ways to use this rule, but Shopify has opinions about it.
           rules: {
             ...("eslint-plugin-sort-class-members" in override
               ? override["eslint-plugin-sort-class-members"]
@@ -472,8 +472,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
         {
           files,
           plugins: { "@babel": babelPlugin },
-          // Shopify utilizes these rules, so defering to that config.
-          // No recomendations given / defaults are all set to 0.
+          // Shopify utilizes these rules, so deferring to that config.
+          // No recommendations given / defaults are all set to 0.
           rules: {
             ...("@babel/eslint-plugin" in override
               ? override["@babel/eslint-plugin"]
@@ -555,6 +555,11 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     : [
         {
           files,
+          languageOptions: {
+            globals: {
+              browser: true,
+            },
+          },
           plugins: { compat: comp },
           rules: {
             ...comp.configs.recommended.rules,
@@ -793,7 +798,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
               { checkDestructured: false, enableFixer: false },
             ],
             "jsdoc/require-param": [2, { checkDestructured: false }],
-            // Rules needed for TSDoc Compatability
+            // Rules needed for TSDoc Compatibility
             "jsdoc/require-param-type": 0,
             "jsdoc/require-returns": 0,
             "jsdoc/require-returns-type": 0,
@@ -888,7 +893,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
             "@eslint-community/eslint-comments": comments,
             "eslint-comments": commentsOld,
           },
-          // CommentsOld (mysticatea/eslint-plugin-eslint-comments) intentioanlly
+          // CommentsOld (mysticatea/eslint-plugin-eslint-comments) intentionally
           // left out: it has the most downloads, but is out of date / not maintained.
           rules: {
             ...comments.configs.recommended.rules,
@@ -938,7 +943,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
           rules: {
             ...compat.extends("standard")[0].rules,
             ...standardTS.rules,
-            // Types can be infered by typescript
+            // Types can be inferred by typescript
             "@typescript-eslint/explicit-function-return-type": 0,
             ...("eslint-config-standard" in override
               ? override["eslint-config-standard"]
@@ -1032,7 +1037,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
           rules: {
             ...nextjs.configs.recommended.rules,
             ...nextjs.configs["core-web-vitals"].rules,
-            // Irrelevant for broad JS, and polutes logs when it doesn't apply.
+            // Irrelevant for broad JS, and pollutes logs when it doesn't apply.
             "@next/next/no-html-link-for-pages": 0,
             ...("@next/eslint-plugin-next" in override
               ? override["@next/eslint-plugin-next"]
@@ -1105,7 +1110,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
             node,
           },
           rules: {
-            // There are no recomended ways to use "node", as the "n" rule obsoletes
+            // There are no recommended ways to use "node", as the "n" rule obsoletes
             // it, but "node" is still used by the Shopify config.
             ...nNode.configs["recommended-module"].rules,
             // Typescript handles this
@@ -1411,8 +1416,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
         ...tseslint.config(...tseslint.configs.recommendedTypeChecked, {
           languageOptions: { parserOptions: { project: true } },
           rules: {
-            // "allowNullableObject: false," autofixes type `object | undefined` poorly.
-            // When checking a nullable object, `if (obj)...` it autofixes to `if (obj != null)...`.
+            // "allowNullableObject: false," auto-fixes type `object | undefined` poorly.
+            // When checking a nullable object, `if (obj)...` it auto-fixes to `if (obj != null)...`.
             // This violates both the "unicorn/no-null" rule and the "eqeqeq" rule, causing unneeded further corrections.
             // See: https://eslint.org/docs/latest/rules/eqeqeq
             //      https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v45.0.2/docs/rules/no-null.md

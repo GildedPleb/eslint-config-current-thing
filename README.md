@@ -288,4 +288,4 @@ Generated on 3/22/2024, downloads for the previous 28 days.
 
 ## Rule Count
 
-1362
+1359

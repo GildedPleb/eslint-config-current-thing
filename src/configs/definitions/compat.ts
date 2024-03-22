@@ -6,6 +6,11 @@ export default {
   definitions: `{
     files,
     plugins: { compat: comp },
+    languageOptions: {
+      globals: {
+        browser: true,
+      }
+    },
     ${RULES}
   }`,
   name: "Compat",
