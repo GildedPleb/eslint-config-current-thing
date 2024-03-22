@@ -1,4 +1,4 @@
-// PathMark: ./src/configs/definitions/airbnb.ts
+// PathMark: ./src/configs/definitions/airbnb-base.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -7,17 +7,16 @@ export default {
     files,
     ${RULES}
   }`,
-  name: "AirBnb",
+  name: "AirBnb Base",
   packages: [
     {
-      name: "airbnb",
-      package: "eslint-config-airbnb",
+      name: "airbnbBase",
+      package: "eslint-config-airbnb-base",
       requiresImport: false,
     },
   ],
   rules: `{
-    ...compat.extends("airbnb")[0].rules,
-    ...compat.extends("airbnb/hooks")[0].rules,
+    ...compat.extends("airbnb-base")[0].rules,
     // Added to modernize this infrequently updated, but oft used config
     "no-restricted-syntax": [0, { selector: "ForOfStatement" }],
   }`,

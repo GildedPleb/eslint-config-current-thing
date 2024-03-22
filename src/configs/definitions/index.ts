@@ -1,5 +1,7 @@
 // PathMark: ./src/configs/definitions/index.ts
 import airbnb from "./airbnb";
+import airbnbBase from "./airbnb-base";
+import airbnbTs from "./airbnb-ts";
 import babel from "./babel";
 import comments from "./comments";
 import compat from "./compat";
@@ -41,7 +43,7 @@ import standard from "./standard";
 import standardJsx from "./standard-jsx";
 import standardReact from "./standard-react";
 import storybook from "./storybook";
-import styleistic from "./stylistic";
+import stylistic from "./stylistic";
 import tailwindConfig from "./tailwind-config";
 import ts from "./ts";
 import tsdoc from "./tsdoc";
@@ -74,7 +76,6 @@ const packages: Config[] = [
   standard,
   nextjs,
   promises,
-  airbnb,
   prettier,
   index,
   compat,
@@ -103,7 +104,7 @@ const packages: Config[] = [
   ts,
   reactRefresh,
   vue,
-  styleistic,
+  stylistic,
   tailwindConfig,
   regexp,
   storybook,
@@ -114,6 +115,9 @@ const packages: Config[] = [
   i18next,
   emotion,
   cssModules,
+  airbnb,
+  airbnbBase,
+  airbnbTs,
 ];
 
 export default packages;
