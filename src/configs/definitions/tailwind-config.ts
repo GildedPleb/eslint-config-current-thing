@@ -5,7 +5,7 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { tailwindcss: tailwindcss },
+    plugins: { tailwindcss },
     ${RULES}
   }`,
   name: "Tailwind CSS",

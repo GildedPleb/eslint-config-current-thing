@@ -18,7 +18,7 @@ export default {
     { name: "node", package: "eslint-plugin-node", requiresImport: true },
   ],
   rules: `{
-    // there are no recomended ways to use "node", as the "n" rule obsoletes
+    // there are no recommended ways to use "node", as the "n" rule obsoletes
     // it, but "node" is still used by the Shopify config.
     ...nNode.configs["recommended-module"].rules,
     // Typescript handles this

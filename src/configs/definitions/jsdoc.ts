@@ -14,7 +14,7 @@ export default {
     { name: "jsdoc", package: "eslint-plugin-jsdoc", requiresImport: true },
   ],
   rules: `jsdoc.configs.recommended.rules,
-    // Rules needed for TSDoc Compatability
+    // Rules needed for TSDoc Compatibility
     "jsdoc/require-param-type": 0,
     "jsdoc/check-param-names": [
       2,

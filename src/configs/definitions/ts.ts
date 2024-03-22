@@ -23,8 +23,8 @@ export default {
     },
   ],
   rules: `{
-    // "allowNullableObject: false," autofixes type \`object | undefined\` poorly.
-    // When checking a nullable object, \`if (obj)...\` it autofixes to \`if (obj != null)...\`.
+    // "allowNullableObject: false," auto-fixes type \`object | undefined\` poorly.
+    // When checking a nullable object, \`if (obj)...\` it auto-fixes to \`if (obj != null)...\`.
     // This violates both the "unicorn/no-null" rule and the "eqeqeq" rule, causing unneeded further corrections.
     // See: https://eslint.org/docs/latest/rules/eqeqeq
     //      https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v45.0.2/docs/rules/no-null.md

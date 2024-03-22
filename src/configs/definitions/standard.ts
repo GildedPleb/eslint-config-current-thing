@@ -22,7 +22,7 @@ export default {
   ],
   rules: `compat.extends("standard")[0].rules,
     ...standardTS.rules,
-    // types can be infered by typescript
+    // types can be inferred by typescript
     "@typescript-eslint/explicit-function-return-type": 0`,
 } satisfies Config;
 // EOF

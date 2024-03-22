@@ -1,28 +1,28 @@
 // PathMark: ./src/rejected.ts
 const rejected = new Set([
-  // Obsoleted by Typescript
+  // Obsoleted by Typescript -- Should consider adding back
   "eslint-plugin-unused-imports",
+
+  // Tslint is a dead project, replaced by @typescript-eslint
+  "tslint-config-prettier",
 
   // 'Function' definitions are good.
   "eslint-plugin-prefer-arrow",
 
-  // Obsoleted by Unicorn
+  // Obsoleted by Unicorn -- Should consider adding back
   "eslint-plugin-filenames",
   "eslint-plugin-check-file",
 
-  // Obsoleted by React Native
+  // Obsoleted by React Native -- Should consider adding back
   "eslint-plugin-react-native-globals",
   "@react-native-community/eslint-plugin",
 
-  // Obsoleted by SonarJS
+  // Obsoleted by SonarJS -- Should consider adding back
   "eslint-plugin-deprecation",
 
-  // Obsolete by perfectionist
+  // Obsolete by perfectionist -- Should consider adding back
   "eslint-plugin-sort-keys-fix",
   "eslint-plugin-typescript-sort-keys",
-
-  // Included with next plugin
-  "eslint-config-next",
 
   // Out of Scope
   "@wordpress/eslint-plugin",
@@ -54,9 +54,10 @@ const rejected = new Set([
 
   // Monorepo stuffs
   "@nx/eslint",
+  "@nrwl/linter",
   "eslint-config-turbo",
 
-  // Not maintained / No recomended rules and largely irrelevant
+  // Not maintained / No recommended rules and largely irrelevant
   "eslint-plugin-babel",
 
   // Irrelevant?

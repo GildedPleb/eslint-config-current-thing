@@ -1,11 +1,12 @@
-- Programatic API for conflicts.
-  - Might not be feasible because of multiple conflicts
-  - Might not be worth it because some configs will literally never be usurped, aka prettier
-  - Would then be worth adding a bunch of rejected configs/plugins
 - Add commit linting in similar fashion
   - Stories:
     - I install this config, I get full commit linting with it.
   - Lint all rules on staged files, when the rest of the repo has no rules active.
-- Add all the VUE configs
-- Audit all existing configs to apply overrides, files, and all sorts of nuance
--
+- Add all the VUE configs.
+- Audit all existing configs to apply overrides, files, and all sorts of nuance.
+- Once audit is complete, open up all out-of-scope configs.
+
+- Programmatic API for conflicts.
+  - Might not be feasible because of multiple conflicts
+  - Might not be worth it because some configs will literally never be usurped, aka prettier
+  - Would then be worth adding a bunch of rejected configs/plugins

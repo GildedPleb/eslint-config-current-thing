@@ -9,7 +9,7 @@ export default {
       "@eslint-community/eslint-comments": comments,
       "eslint-comments": commentsOld,
     },
-    // CommentsOld (mysticatea/eslint-plugin-eslint-comments) intentioanlly
+    // CommentsOld (mysticatea/eslint-plugin-eslint-comments) intentionally
     // left out: it has the most downloads, but is out of date / not maintained.
     ${RULES}
   }`,

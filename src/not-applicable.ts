@@ -12,7 +12,7 @@ const notApplicable = new Set([
   "@typescript-eslint/typescript-estree",
   "@typescript-eslint/utils",
   "@typescript-eslint/visitor-keys",
-  "conventional-changelog-eslint",
+  "prettier-linter-helpers",
   "eslint",
   "eslint-etc",
   "eslint-import-resolver-node",
@@ -22,18 +22,27 @@ const notApplicable = new Set([
   "eslint-webpack-plugin",
   "ignore",
   "jsx-ast-utils",
-  "lint-staged",
+  "fork-ts-checker-webpack-plugin",
   "prettier-eslint",
   "prettier-eslint-cli",
   "vite-plugin-eslint",
   "eslint-formatter-pretty",
   "eslint-snapshot-test",
+  "@codemirror/lint",
+  "unified-lint-rule",
+  "node-sarif-builder",
+  "typescript-eslint-language-service",
+  "@redocly/cli",
+  "@redocly/openapi-core",
 
   // Included with Airbnb
   "eslint-config-airbnb-base",
 
   // Automatically included
   "globals",
+
+  // Included with next plugin
+  "eslint-config-next",
 ]);
 
 export default notApplicable;

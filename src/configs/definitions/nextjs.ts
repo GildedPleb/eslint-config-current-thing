@@ -18,7 +18,7 @@ export default {
   ],
   rules: `nextjs.configs.recommended.rules,
     ...nextjs.configs["core-web-vitals"].rules,
-    // Irrelevant for broad JS, and polutes logs when it doesn't apply.
+    // Irrelevant for broad JS, and pollutes logs when it doesn't apply.
     "@next/next/no-html-link-for-pages": 0`,
 } satisfies Config;
 // EOF

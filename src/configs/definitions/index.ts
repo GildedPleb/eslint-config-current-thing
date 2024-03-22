@@ -37,7 +37,7 @@ import reactRefresh from "./react-refresh";
 import regexp from "./regexp";
 import security from "./security";
 import shopify from "./shopify";
-import sonajs from "./sonarjs";
+import sonarjs from "./sonarjs";
 import sort from "./sort-class";
 import standard from "./standard";
 import standardJsx from "./standard-jsx";
@@ -69,7 +69,7 @@ const packages: Config[] = [
   comments,
   security,
   tsdoc,
-  sonajs,
+  sonarjs,
   node,
   unicorn,
   jsdoc,

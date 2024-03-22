@@ -1,9 +1,9 @@
 import currentThing from "./src/config.js";
-// import pathmark from "eslint-plugin-pathmark"
+// import pathMark from "eslint-plugin-pathmark"
 
 export default [
   ...currentThing(),
-  // pathmark.configs.flat,
+  // pathMark.configs.flat,
 ];
 
 // export default [...currentThing({ disable: ["eslint-config-airbnb-base"] })];

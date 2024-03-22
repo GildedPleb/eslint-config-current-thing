@@ -151,7 +151,7 @@ The following section is generated according to spec.
 
 Generated on ${new Date().toLocaleDateString()}, downloads for the previous ${LAST_DAY_INTERVAL} days.
 
-${newPackages.map(({ count, name }) => `- ${count} downloads, [${name}](https://www.npmjs.com/package/${name})`).join("\n")}
+${newPackages.map(({ count, name }) => `- ${count.toLocaleString()} downloads, [${name}](https://www.npmjs.com/package/${name})${count < MINIMUMS ? " - Not Yet Eligible" : ""}`).join("\n")}
 
 ## Rule Count
 

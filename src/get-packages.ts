@@ -11,6 +11,7 @@ const searchTerms = [
   "eslint%20config",
   "eslint-plugin",
   "eslint-config",
+  // "lint",
 ];
 
 /**
@@ -26,24 +27,24 @@ async function fetchEslintPlugins() {
 
   const pluginNames = await fetchNPMURLs(searchTerms);
 
-  const downloadlist: Array<{ count: number; name: string }> = [];
+  const downloadList: Array<{ count: number; name: string }> = [];
   for await (const pluginName of pluginNames) {
     const downloads = await getDownloadCount(pluginName);
 
     if (
-      downloads > MINIMUMS &&
+      downloads > MINIMUMS / 2 &&
       !installed.has(pluginName) &&
       !rejected.has(pluginName) &&
       !notApplicable.has(pluginName)
     ) {
-      downloadlist.push({ count: downloads, name: pluginName });
+      downloadList.push({ count: downloads, name: pluginName });
       console.log(`Adding "${pluginName}"...`);
     }
   }
 
-  return downloadlist
+  return downloadList
     .sort((first, second) => second.count - first.count)
-    .map((pack) => ({ ...pack, count: pack.count.toLocaleString() }));
+    .map((pack) => ({ ...pack, count: pack.count }));
 }
 
 export default fetchEslintPlugins;
