@@ -11,6 +11,7 @@ export default {
   packages: [
     { name: "google", package: "eslint-config-google", requiresImport: true },
   ],
+  requiredPlugins: [],
   rules: `google.rules`,
 } satisfies Config;
 // EOF
