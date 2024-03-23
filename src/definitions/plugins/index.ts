@@ -8,6 +8,8 @@ import emotion from "./emotion";
 import es from "./es";
 import flowtype from "./flowtype";
 import functional from "./functional";
+import header from "./header";
+import i18next from "./i18next";
 
 export interface Plugin {
   name: string;
@@ -28,6 +30,8 @@ const plugins: Plugin[] = [
   es,
   flowtype,
   functional,
+  header,
+  i18next,
 ];
 
 export default plugins;

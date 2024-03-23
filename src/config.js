@@ -15,6 +15,9 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import babelPlugin from "@babel/eslint-plugin";
+// Import esX from "eslint-plugin-es-x";
+// import es from "eslint-plugin-es";
+// import i18next from "eslint-plugin-i18next";
 import { rules as emotion } from "@emotion/eslint-plugin";
 import { FlatCompat } from "@eslint/eslintrc";
 import eslint from "@eslint/js";
@@ -48,8 +51,6 @@ import commentsOld from "eslint-plugin-eslint-comments";
 import flowtype from "eslint-plugin-flowtype";
 import ftFlow from "eslint-plugin-ft-flow";
 import functional from "eslint-plugin-functional";
-// Import esX from "eslint-plugin-es-x";
-// import es from "eslint-plugin-es";
 import header from "eslint-plugin-header";
 import i18next from "eslint-plugin-i18next";
 import importPlugin from "eslint-plugin-import";
@@ -145,6 +146,8 @@ const configGen = ({
       flowtype,
       "ft-flow": ftFlow,
       functional,
+      header,
+      i18next,
     },
   },
 
@@ -329,7 +332,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { i18next },
           rules: {
             ...i18next.configs.recommended.rules,
             ...("eslint-plugin-i18next" in override
@@ -450,27 +452,6 @@ const configGen = ({
           rules: {
             ...("eslint-plugin-sort-class-members" in override
               ? override["eslint-plugin-sort-class-members"]
-              : {}),
-          },
-        },
-      ]),
-
-  /*
-    Header
-    1,120,860 monthly downloads
-    ESLint plugin to ensure that files begin with given comment
-    https://github.com/Stuk/eslint-plugin-header#readme
-  */
-  ...(disable.includes("eslint-plugin-header") || threshold > 1_120_860
-    ? []
-    : [
-        {
-          files,
-          plugins: { header },
-          // No added rule as too customizable, but "header/header" is now available.
-          rules: {
-            ...("eslint-plugin-header" in override
-              ? override["eslint-plugin-header"]
               : {}),
           },
         },

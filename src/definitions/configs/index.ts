@@ -14,7 +14,6 @@ import eslint from "./eslint";
 import flowtype from "./flowtype";
 import functional from "./functional";
 import google from "./google";
-import header from "./header";
 import i18next from "./i18next";
 import index from "./import";
 import importSort from "./import-sort";
@@ -113,7 +112,6 @@ const configs: Config[] = [
   perfectionist,
   noOnlyTest,
   es,
-  header,
   i18next,
   emotion,
   cssModules,

@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { i18next },
     ${RULES}
   }`,
   name: "i18n",
@@ -13,11 +12,10 @@ export default {
     {
       name: "i18next",
       package: "eslint-plugin-i18next",
-      requiresImport: true,
+      requiresImport: false,
     },
   ],
-  rules: `{
-    ...i18next.configs.recommended.rules
-  }`,
+  requiredPlugins: ["i18next"],
+  rules: `i18next.configs.recommended.rules`,
 } satisfies Config;
 // EOF
