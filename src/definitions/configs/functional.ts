@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { functional },
     // "Strick", "Recommended", and "Lite" punch far above their weight and are not added.
     ${RULES}
   }`,
@@ -14,9 +13,10 @@ export default {
     {
       name: "functional",
       package: "eslint-plugin-functional",
-      requiresImport: true,
+      requiresImport: false,
     },
   ],
+  requiredPlugins: ["functional"],
   rules: `functional.configs["external-typescript-recommended"].rules,
     ...functional.configs.stylistic.rules,
     ...functional.configs["no-other-paradigms"].rules,

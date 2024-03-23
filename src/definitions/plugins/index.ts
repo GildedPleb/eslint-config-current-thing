@@ -7,6 +7,7 @@ import cssModules from "./css-modules";
 import emotion from "./emotion";
 import es from "./es";
 import flowtype from "./flowtype";
+import functional from "./functional";
 
 export interface Plugin {
   name: string;
@@ -26,6 +27,7 @@ const plugins: Plugin[] = [
   emotion,
   es,
   flowtype,
+  functional,
 ];
 
 export default plugins;
