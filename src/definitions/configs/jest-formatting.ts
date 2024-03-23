@@ -4,8 +4,15 @@ import type { Config } from ".";
 
 export default {
   definitions: `{
-    files,
-    plugins: { "jest-formatting": jestFormatting },
+    files: [
+      '**/*.test.*',
+      '**/*_test.*',
+      '**/*Test.*',
+      '**/*.spec.*',
+      '**/*_spec.*',
+      '**/*Spec.*',
+      '**/__tests__/*',
+    ],
     ${RULES}
   }`,
   name: "Jest Formatting",
@@ -13,9 +20,10 @@ export default {
     {
       name: "jestFormatting",
       package: "eslint-plugin-jest-formatting",
-      requiresImport: true,
+      requiresImport: false,
     },
   ],
+  requiredPlugins: ["jest-formatting"],
   rules: `jestFormatting.configs.recommended.overrides[0].rules`,
 } satisfies Config;
 // EOF

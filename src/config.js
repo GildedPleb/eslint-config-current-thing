@@ -97,7 +97,8 @@ import unicorn from "eslint-plugin-unicorn";
 import vue from "eslint-plugin-vue";
 import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
 import globals from "globals";
-// Import jestDom from "eslint-plugin-jest-dom";
+// Import jestFormatting from "eslint-plugin-jest-formatting";
+// import jestDom from "eslint-plugin-jest-dom";
 import tseslint from "typescript-eslint";
 
 const filename = fileURLToPath(import.meta.url);
@@ -153,6 +154,7 @@ const configGen = ({
       i18next,
       import: importPlugin,
       "jest-dom": jestDom,
+      "jest-formatting": jestFormatting,
       "simple-import-sort": importSort,
     },
   },
@@ -580,8 +582,15 @@ const configGen = ({
     ? []
     : [
         {
-          files,
-          plugins: { "jest-formatting": jestFormatting },
+          files: [
+            "**/*.test.*",
+            "**/*_test.*",
+            "**/*Test.*",
+            "**/*.spec.*",
+            "**/*_spec.*",
+            "**/*Spec.*",
+            "**/__tests__/*",
+          ],
           rules: {
             ...jestFormatting.configs.recommended.overrides[0].rules,
             ...("eslint-plugin-jest-formatting" in override

@@ -882,6 +882,7 @@
     "simple-import-sort:eslint-plugin-simple-import-sort@12.0.0",
     "import",
     "jest-dom",
+    "jest-formatting",
     "regexp:eslint-plugin-regexp@2.3.0",
     "@stylistic",
     "@shopify",
@@ -892,7 +893,6 @@
     "sort-class-members:eslint-plugin-sort-class-members@1.20.0",
     "tsdoc",
     "tailwindcss",
-    "jest-formatting",
     "security:eslint-plugin-security@2.1.1",
     "sonarjs",
     "no-only-tests",
@@ -4300,24 +4300,6 @@
       1
     ],
     "compat/compat": [
-      2
-    ],
-    "jest-formatting/padding-around-after-all-blocks": [
-      2
-    ],
-    "jest-formatting/padding-around-after-each-blocks": [
-      2
-    ],
-    "jest-formatting/padding-around-before-all-blocks": [
-      2
-    ],
-    "jest-formatting/padding-around-before-each-blocks": [
-      2
-    ],
-    "jest-formatting/padding-around-describe-blocks": [
-      2
-    ],
-    "jest-formatting/padding-around-test-blocks": [
       2
     ],
     "react/jsx-boolean-value": [
