@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { "css-modules": cssModules },
     ${RULES}
   }`,
   name: "CSS Modules",
@@ -13,11 +12,10 @@ export default {
     {
       name: "cssModules",
       package: "eslint-plugin-css-modules",
-      requiresImport: true,
+      requiresImport: false,
     },
   ],
-  rules: `{
-    ...cssModules.configs.recommended.rules
-  }`,
+  requiredPlugins: ["css-modules"],
+  rules: `cssModules.configs.recommended.rules`,
 } satisfies Config;
 // EOF

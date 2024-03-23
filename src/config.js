@@ -75,7 +75,8 @@ import sonarjs from "eslint-plugin-sonarjs";
 import sortClassMembers from "eslint-plugin-sort-class-members";
 import storybook from "eslint-plugin-storybook";
 import tailwindcss from "eslint-plugin-tailwindcss";
-// Import airbnb from "eslint-config-airbnb";
+// Import cssModules from "eslint-plugin-css-modules";
+// import airbnb from "eslint-config-airbnb";
 // import airbnbBase from "eslint-config-airbnb-base";
 // import airbnbTypescript from "eslint-config-airbnb-typescript";
 // import cra from "eslint-config-react-app";
@@ -129,6 +130,7 @@ const configGen = ({
       "@babel": babelPlugin,
       "@eslint-community/eslint-comments": comments,
       compat: comp,
+      "css-modules": cssModules,
       "eslint-comments": commentsOld,
     },
   },
@@ -165,7 +167,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { "css-modules": cssModules },
           rules: {
             ...cssModules.configs.recommended.rules,
             ...("eslint-plugin-css-modules" in override
@@ -1228,7 +1229,6 @@ const configGen = ({
         {
           files: ["**/*.ts?(x)"],
           languageOptions: {
-            // Parser: typescriptParser,
             globals: {
               browser: true,
               commonjs: true,

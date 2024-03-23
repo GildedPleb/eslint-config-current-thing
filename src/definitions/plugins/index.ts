@@ -3,6 +3,7 @@
 import babel from "./babel";
 import comments from "./comments";
 import compat from "./compat";
+import cssModules from "./css-modules";
 
 export interface Plugin {
   name: string;
@@ -14,7 +15,7 @@ export interface Plugin {
   }>;
 }
 
-const plugins: Plugin[] = [babel, comments, compat];
+const plugins: Plugin[] = [babel, comments, compat, cssModules];
 
 export default plugins;
 // EOF
