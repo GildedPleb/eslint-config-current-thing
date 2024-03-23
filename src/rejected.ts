@@ -44,7 +44,6 @@ const rejected = new Set([
   "eslint-plugin-cypress",
   "eslint-plugin-mocha",
   "eslint-plugin-qunit",
-  "eslint-plugin-testing-library",
   "eslint-plugin-chai-friendly",
   "eslint-plugin-jasmine",
   "eslint-plugin-playwright",

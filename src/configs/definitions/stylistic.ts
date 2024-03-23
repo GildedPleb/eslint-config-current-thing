@@ -24,6 +24,7 @@ export default {
     "@stylistic/multiline-ternary": 0,
     "@stylistic/operator-linebreak": 0,
     "@stylistic/quotes": 0,
+    "@stylistic/quote-props": 0,
   }`,
 } satisfies Config;
 // EOF

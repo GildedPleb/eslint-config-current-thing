@@ -4,8 +4,8 @@
       "mode": "typescript"
     },
     "react": {
-      "pragma": "React",
-      "version": "detect"
+      "version": "detect",
+      "pragma": "React"
     },
     "import/parsers": {
       "@typescript-eslint/parser": [
@@ -830,6 +830,10 @@
       "Map": true,
       "Promise": true,
       "Set": true,
+      "commonjs": true,
+      "es6": true,
+      "jest": false,
+      "node": true,
       "afterAll": false,
       "afterEach": false,
       "beforeAll": false,
@@ -838,7 +842,6 @@
       "expect": false,
       "fit": false,
       "it": false,
-      "jest": false,
       "test": false,
       "xdescribe": false,
       "xit": false,
@@ -846,6 +849,9 @@
     },
     "parser": "typescript-eslint/parser@7.3.1",
     "parserOptions": {
+      "sourceType": "module",
+      "requireConfigFile": false,
+      "ecmaVersion": 2018,
       "ecmaFeatures": {
         "jsx": true
       },
@@ -861,8 +867,8 @@
     "@shopify/typescript",
     "you-dont-need-lodash-underscore",
     "i18next",
-    "functional",
     "@emotion",
+    "functional",
     "perfectionist:eslint-plugin-perfectionist",
     "no-unsanitized",
     "sort-class-members:eslint-plugin-sort-class-members@1.20.0",
@@ -887,7 +893,7 @@
     "promise",
     "@next/next",
     "flowtype",
-    "es-x",
+    "es-x:eslint-plugin-es-x@7.6.0",
     "es",
     "n:eslint-plugin-n@16.6.2",
     "node",
@@ -1375,8 +1381,7 @@
       }
     ],
     "@stylistic/quote-props": [
-      2,
-      "consistent-as-needed"
+      0
     ],
     "@stylistic/quotes": [
       0
@@ -2766,11 +2771,17 @@
     "no-unused-vars": [
       0,
       {
-        "args": "none"
+        "args": "none",
+        "ignoreRestSiblings": true
       }
     ],
     "no-use-before-define": [
-      0
+      0,
+      {
+        "functions": false,
+        "classes": false,
+        "variables": false
+      }
     ],
     "eslint-comments/disable-enable-pair": [
       2,
@@ -3974,6 +3985,21 @@
     "i18next/no-literal-string": [
       2
     ],
+    "@emotion/jsx-import": [
+      2
+    ],
+    "@emotion/no-vanilla": [
+      2
+    ],
+    "@emotion/import-from-emotion": [
+      2
+    ],
+    "@emotion/styled-import": [
+      2
+    ],
+    "@emotion/pkg-renaming": [
+      2
+    ],
     "@typescript-eslint/switch-exhaustiveness-check": [
       2
     ],
@@ -3997,21 +4023,6 @@
     ],
     "functional/no-loop-statements": [
       0
-    ],
-    "@emotion/jsx-import": [
-      2
-    ],
-    "@emotion/no-vanilla": [
-      2
-    ],
-    "@emotion/import-from-emotion": [
-      2
-    ],
-    "@emotion/styled-import": [
-      2
-    ],
-    "@emotion/pkg-renaming": [
-      2
     ],
     "perfectionist/sort-imports": [
       0
@@ -5564,6 +5575,9 @@
       2
     ],
     "@next/next/no-script-component-in-head": [
+      2
+    ],
+    "es-x/no-arraybuffer-prototype-transfer": [
       2
     ],
     "es-x/no-atomics-waitasync": [

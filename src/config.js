@@ -16,9 +16,6 @@ import { fileURLToPath } from "node:url";
 
 import babelPlugin from "@babel/eslint-plugin";
 import { rules as emotion } from "@emotion/eslint-plugin";
-// Import airbnb from "eslint-config-airbnb";
-// import airbnbBase from "eslint-config-airbnb-base";
-// import airbnbTypescript from "eslint-config-airbnb-typescript";
 import { FlatCompat } from "@eslint/eslintrc";
 import eslint from "@eslint/js";
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
@@ -29,11 +26,11 @@ import reactNativeConfig from "@react-native-community/eslint-config";
 import shopify from "@shopify/eslint-plugin";
 // Import vueParser from "vue-eslint-parser";
 import stylistic from "@stylistic/eslint-plugin";
+import restrictedGlobals from "confusing-browser-globals";
 import google from "eslint-config-google";
 // Import standard from "eslint-config-standard";
 import standardTS from "eslint-config-love";
 import prettierConfig from "eslint-config-prettier";
-import cra from "eslint-config-react-app";
 import standardJsx from "eslint-config-standard-jsx";
 import standardReact from "eslint-config-standard-react";
 import xo from "eslint-config-xo";
@@ -60,6 +57,7 @@ import node from "eslint-plugin-node";
 import perfectionist from "eslint-plugin-perfectionist";
 import prettier from "eslint-plugin-prettier";
 import promise from "eslint-plugin-promise";
+// Import cra from "eslint-config-react-app";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 // Import reactPerf from "eslint-plugin-react-perf";
@@ -74,6 +72,12 @@ import sonarjs from "eslint-plugin-sonarjs";
 import sortClassMembers from "eslint-plugin-sort-class-members";
 import storybook from "eslint-plugin-storybook";
 import tailwindcss from "eslint-plugin-tailwindcss";
+// Import airbnb from "eslint-config-airbnb";
+// import airbnbBase from "eslint-config-airbnb-base";
+// import airbnbTypescript from "eslint-config-airbnb-typescript";
+// import cra from "eslint-config-react-app";
+// import cra from "eslint-config-react-app";
+import testingLibrary from "eslint-plugin-testing-library";
 import tsdoc from "eslint-plugin-tsdoc";
 import unicorn from "eslint-plugin-unicorn";
 import vue from "eslint-plugin-vue";
@@ -116,7 +120,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     React Performance
-    334,193 monthly downloads
+    348,572 monthly downloads
     Performance-minded React linting rules for ESLint
     https://github.com/cvazac/eslint-plugin-react-perf#readme
 
@@ -135,7 +139,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
   */
   /*
     CSS Modules
-    444,315 monthly downloads
+    463,563 monthly downloads
     Checks that you are using the existent css/scss/less classes, no more no less
     undefined
   */
@@ -156,7 +160,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Standard React
-    488,538 monthly downloads
+    509,822 monthly downloads
     JavaScript Standard Style React/JSX support - ESLint Shareable Config
     https://github.com/standard/eslint-config-standard-react
   */
@@ -176,7 +180,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Regular Expressions
-    577,985 monthly downloads
+    607,037 monthly downloads
     ESLint plugin for finding RegExp mistakes and RegExp style guide violations.
     https://github.com/ota-meshi/eslint-plugin-regexp#readme
   */
@@ -197,7 +201,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Stylistic
-    588,169 monthly downloads
+    620,022 monthly downloads
     Stylistic rules for ESLint, works for both JavaScript and TypeScript.
     https://github.com/eslint-stylistic/eslint-stylistic#readme
   */
@@ -215,6 +219,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
             "@stylistic/brace-style": 0,
             "@stylistic/multiline-ternary": 0,
             "@stylistic/operator-linebreak": 0,
+            "@stylistic/quote-props": 0,
             "@stylistic/quotes": 0,
             ...("@stylistic/eslint-plugin" in override
               ? override["@stylistic/eslint-plugin"]
@@ -225,7 +230,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Shopify
-    634,810 monthly downloads
+    677,353 monthly downloads
     Shopify's ESLint rules and configs.
     https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
   */
@@ -261,8 +266,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
       ]),
 
   /*
-    You Dont Need Lodash
-    655,540 monthly downloads
+    You Don't Need Lodash
+    682,426 monthly downloads
     Check methods you can use natively without lodash/underscore
     https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore.git
   */
@@ -283,7 +288,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     I18n
-    681,055 monthly downloads
+    709,199 monthly downloads
     ESLint plugin for i18n
     https://github.com/edvardchen/eslint-plugin-i18next#readme
   */
@@ -303,33 +308,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
       ]),
 
   /*
-    Functional
-    788,162 monthly downloads
-    ESLint rules to promote functional programming in TypeScript.
-    https://github.com/eslint-functional/eslint-plugin-functional#readme
-  */
-  ...(disable.includes("eslint-plugin-functional")
-    ? []
-    : [
-        {
-          files,
-          plugins: { functional },
-          // "Strick", "Recommended", and "Lite" punch far above their weight and are not added.
-          rules: {
-            ...functional.configs["external-typescript-recommended"].rules,
-            ...functional.configs.stylistic.rules,
-            ...functional.configs["no-other-paradigms"].rules,
-            "functional/no-loop-statements": 0,
-            ...("eslint-plugin-functional" in override
-              ? override["eslint-plugin-functional"]
-              : {}),
-          },
-        },
-      ]),
-
-  /*
     Emotion CSS
-    790,876 monthly downloads
+    821,659 monthly downloads
     ESLint rules for emotion
     https://github.com/emotion-js/emotion/tree/main#readme
   */
@@ -353,8 +333,33 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
       ]),
 
   /*
+    Functional
+    839,621 monthly downloads
+    ESLint rules to promote functional programming in TypeScript.
+    https://github.com/eslint-functional/eslint-plugin-functional#readme
+  */
+  ...(disable.includes("eslint-plugin-functional")
+    ? []
+    : [
+        {
+          files,
+          plugins: { functional },
+          // "Strick", "Recommended", and "Lite" punch far above their weight and are not added.
+          rules: {
+            ...functional.configs["external-typescript-recommended"].rules,
+            ...functional.configs.stylistic.rules,
+            ...functional.configs["no-other-paradigms"].rules,
+            "functional/no-loop-statements": 0,
+            ...("eslint-plugin-functional" in override
+              ? override["eslint-plugin-functional"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
     Perfectionist
-    825,915 monthly downloads
+    862,161 monthly downloads
     ESLint plugin for sorting various data such as objects, imports, types, enums, JSX props, etc.
     https://eslint-plugin-perfectionist.azat.io
   */
@@ -379,7 +384,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     No Unsanitized
-    968,906 monthly downloads
+    1,015,495 monthly downloads
     ESLint rule to disallow unsanitized code
     https://github.com/mozilla/eslint-plugin-no-unsanitized/
   */
@@ -400,7 +405,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Sort Class Members
-    969,218 monthly downloads
+    1,027,275 monthly downloads
     ESLint rule for enforcing consistent ES6 class member order.
     https://github.com/bryanrsmith/eslint-plugin-sort-class-members
   */
@@ -421,7 +426,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Header
-    1,074,445 monthly downloads
+    1,120,860 monthly downloads
     ESLint plugin to ensure that files begin with given comment
     https://github.com/Stuk/eslint-plugin-header#readme
   */
@@ -442,7 +447,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     XO
-    1,118,160 monthly downloads
+    1,164,159 monthly downloads
     ESLint shareable config for XO
     https://github.com/xojs/eslint-config-xo#readme
   */
@@ -461,8 +466,28 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
       ]),
 
   /*
+    Google
+    1,694,429 monthly downloads
+    ESLint shareable config for the Google style
+    https://github.com/google/eslint-config-google#readme
+  */
+  ...(disable.includes("eslint-config-google")
+    ? []
+    : [
+        {
+          files,
+          rules: {
+            ...google.rules,
+            ...("eslint-config-google" in override
+              ? override["eslint-config-google"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
     Babel
-    1,619,900 monthly downloads
+    1,700,734 monthly downloads
     Companion rules for @babel/eslint-parser
     https://babel.dev/
   */
@@ -483,28 +508,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
       ]),
 
   /*
-    Google
-    1,630,303 monthly downloads
-    ESLint shareable config for the Google style
-    https://github.com/google/eslint-config-google#readme
-  */
-  ...(disable.includes("eslint-config-google")
-    ? []
-    : [
-        {
-          files,
-          rules: {
-            ...google.rules,
-            ...("eslint-config-google" in override
-              ? override["eslint-config-google"]
-              : {}),
-          },
-        },
-      ]),
-
-  /*
     TSDoc
-    1,854,848 monthly downloads
+    1,940,514 monthly downloads
     An ESLint plugin that validates TypeScript doc comments
     https://tsdoc.org/
   */
@@ -525,7 +530,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Tailwind CSS
-    1,868,000 monthly downloads
+    1,950,628 monthly downloads
     Rules enforcing best practices while using Tailwind CSS
     https://github.com/francoismassart/eslint-plugin-tailwindcss
   */
@@ -546,7 +551,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Compat
-    2,008,439 monthly downloads
+    2,087,341 monthly downloads
     Lint browser compatibility of API used
     https://github.com/amilajack/eslint-plugin-compat#readme
   */
@@ -572,7 +577,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Jest Formatting
-    2,191,467 monthly downloads
+    2,296,785 monthly downloads
     ESLint rules for formatting jest tests
     https://github.com/dangreenisrael/eslint-plugin-jest-formatting#readme
   */
@@ -593,7 +598,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Standard JSX
-    2,311,844 monthly downloads
+    2,405,871 monthly downloads
     JavaScript Standard Style JSX support - ESLint Shareable Config
     https://github.com/standard/eslint-config-standard-jsx
   */
@@ -613,7 +618,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Security
-    3,438,261 monthly downloads
+    3,587,887 monthly downloads
     Security rules for eslint
     https://github.com/eslint-community/eslint-plugin-security#readme
   */
@@ -634,7 +639,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     SonarJS
-    3,931,460 monthly downloads
+    4,099,473 monthly downloads
     SonarJS rules for ESLint
     https://github.com/SonarSource/eslint-plugin-sonarjs
   */
@@ -658,7 +663,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Jest Dom
-    4,056,491 monthly downloads
+    4,231,492 monthly downloads
     ESLint plugin to follow best practices and anticipate common mistakes when writing tests with jest-dom
     https://github.com/testing-library/eslint-plugin-jest-dom#readme
   */
@@ -679,7 +684,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     No Only Tests
-    4,185,740 monthly downloads
+    4,360,552 monthly downloads
     ESLint rule for .only blocks in mocha tests
     https://github.com/levibuzolic/no-only-tests#readme
   */
@@ -700,7 +705,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     React Native Config
-    4,352,224 monthly downloads
+    4,526,938 monthly downloads
     ESLint config for React Native / ESLint config for React Native / ESLint rules for @react-native/eslint-config
     https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native-community#readme / https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native#readme / https://github.com/facebook/react-native/tree/HEAD/packages/eslint-plugin-react-native#readme
   */
@@ -734,7 +739,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     React Native
-    4,957,594 monthly downloads
+    5,158,275 monthly downloads
     React Native specific linting rules for ESLint
     https://github.com/intellicode/eslint-plugin-react-native
   */
@@ -760,7 +765,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     React Refresh
-    5,221,950 monthly downloads
+    5,456,295 monthly downloads
     Validate that your components can safely be updated with fast refresh
     https://github.com/ArnaudBarre/eslint-plugin-react-refresh#readme
   */
@@ -781,7 +786,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     JSDoc
-    7,559,507 monthly downloads
+    7,904,285 monthly downloads
     JSDoc linting rules for ESLint.
     https://github.com/gajus/eslint-plugin-jsdoc#readme
   */
@@ -814,7 +819,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Simple Import Sort
-    8,028,684 monthly downloads
+    8,371,180 monthly downloads
     Easy autofixable import sorting
     https://github.com/lydell/eslint-plugin-simple-import-sort#readme
   */
@@ -836,7 +841,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     AirBnb-Typescript
-    8,523,798 monthly downloads
+    8,868,447 monthly downloads
     Airbnb's ESLint config with TypeScript support
     https://github.com/iamturns/eslint-config-airbnb-typescript
   */
@@ -858,7 +863,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Unicorn
-    8,887,906 monthly downloads
+    9,279,552 monthly downloads
     More than 100 powerful ESLint rules
     https://github.com/sindresorhus/eslint-plugin-unicorn#readme
   */
@@ -879,7 +884,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Comments
-    9,087,686 monthly downloads
+    9,495,032 monthly downloads
     Additional ESLint rules for ESLint directive comments. / Additional ESLint rules for ESLint directive comments.
     https://github.com/eslint-community/eslint-plugin-eslint-comments#readme / https://github.com/mysticatea/eslint-plugin-eslint-comments#readme
   */
@@ -909,7 +914,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Storybook
-    9,553,948 monthly downloads
+    9,960,695 monthly downloads
     Best practice rules for Storybook
     https://github.com/storybookjs/eslint-plugin-storybook#readme
   */
@@ -930,7 +935,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Standard
-    11,838,068 monthly downloads
+    12,342,688 monthly downloads
     JavaScript Standard Style - ESLint Shareable Config / A TypeScript ESLint config that loves you
     https://github.com/standard/eslint-config-standard / https://github.com/mightyiam/eslint-config-love#readme
   */
@@ -957,7 +962,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     AirBnb
-    14,994,509 monthly downloads
+    15,609,261 monthly downloads
     Airbnb's ESLint config, following our styleguide
     https://github.com/airbnb/javascript
   */
@@ -980,7 +985,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Create React App
-    17,667,637 monthly downloads
+    18,397,264 monthly downloads
     ESLint configuration used by Create React App
     https://github.com/facebook/create-react-app#readme
   */
@@ -989,11 +994,361 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     : [
         {
           files,
+          languageOptions: {
+            globals: {
+              browser: true,
+              commonjs: true,
+              es6: true,
+              jest: true,
+              node: true,
+            },
+            parserOptions: {
+              ecmaFeatures: {
+                jsx: true,
+              },
+              ecmaVersion: 2018,
+              requireConfigFile: false,
+              sourceType: "module",
+            },
+          },
           rules: {
-            "react/jsx-uses-react": "warn",
-            "react/jsx-uses-vars": "warn",
-            ...cra.rules,
-            ...cra.overrides[0].rules,
+            "array-callback-return": 1,
+            "default-case": [1, { commentPattern: "^no default$" }],
+
+            "dot-location": [1, "property"],
+            eqeqeq: [1, "smart"],
+            // https://github.com/gajus/eslint-plugin-flowtype
+            "flowtype/define-flow-type": 1,
+            "flowtype/require-valid-file-annotation": 1,
+            "flowtype/use-flow-type": 1,
+            "getter-return": 1,
+            // https://github.com/benmosher/eslint-plugin-import/tree/master/docs/rules
+            "import/first": 2,
+            "import/no-amd": 2,
+            "import/no-anonymous-default-export": 1,
+            "import/no-webpack-loader-syntax": 2,
+            // https://github.com/evcohen/eslint-plugin-jsx-a11y/tree/master/docs/rules
+            "jsx-a11y/alt-text": 1,
+            "jsx-a11y/anchor-has-content": 1,
+            "jsx-a11y/anchor-is-valid": [
+              1,
+              {
+                aspects: ["noHref", "invalidHref"],
+              },
+            ],
+            "jsx-a11y/aria-activedescendant-has-tabindex": 1,
+            "jsx-a11y/aria-props": 1,
+            "jsx-a11y/aria-proptypes": 1,
+            "jsx-a11y/aria-role": [1, { ignoreNonDOM: true }],
+            "jsx-a11y/aria-unsupported-elements": 1,
+            "jsx-a11y/heading-has-content": 1,
+            "jsx-a11y/iframe-has-title": 1,
+            "jsx-a11y/img-redundant-alt": 1,
+            "jsx-a11y/no-access-key": 1,
+            "jsx-a11y/no-distracting-elements": 1,
+            "jsx-a11y/no-redundant-roles": 1,
+            "jsx-a11y/role-has-required-aria-props": 1,
+            "jsx-a11y/role-supports-aria-props": 1,
+            "jsx-a11y/scope": 1,
+            "new-parens": 1,
+            "no-array-constructor": 1,
+            "no-caller": 1,
+            "no-cond-assign": [1, "except-parens"],
+            "no-const-assign": 1,
+            "no-control-regex": 1,
+            "no-delete-var": 1,
+            "no-dupe-args": 1,
+            "no-dupe-class-members": 1,
+            "no-dupe-keys": 1,
+            "no-duplicate-case": 1,
+            "no-empty-character-class": 1,
+            "no-empty-pattern": 1,
+            "no-eval": 1,
+            "no-ex-assign": 1,
+            "no-extend-native": 1,
+            "no-extra-bind": 1,
+            "no-extra-label": 1,
+            "no-fallthrough": 1,
+            "no-func-assign": 1,
+            "no-global-assign": 1,
+            "no-implied-eval": 1,
+            "no-invalid-regexp": 1,
+            "no-iterator": 1,
+            "no-label-var": 1,
+            "no-labels": [1, { allowLoop: true, allowSwitch: false }],
+            "no-lone-blocks": 1,
+            "no-loop-func": 1,
+            "no-mixed-operators": [
+              1,
+              {
+                allowSamePrecedence: false,
+                groups: [
+                  ["&", "|", "^", "~", "<<", ">>", ">>>"],
+                  ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
+                  ["&&", "||"],
+                  ["in", "instanceof"],
+                ],
+              },
+            ],
+            "no-multi-str": 1,
+            "no-new-func": 1,
+            "no-new-object": 1,
+            "no-new-symbol": 1,
+            "no-new-wrappers": 1,
+            "no-obj-calls": 1,
+            "no-octal": 1,
+            "no-octal-escape": 1,
+            "no-redeclare": 1,
+            "no-regex-spaces": 1,
+            "no-restricted-globals": ["error", ...restrictedGlobals],
+            "no-restricted-properties": [
+              2,
+              {
+                message:
+                  "Please use import() instead. More info: https://facebook.github.io/create-react-app/docs/code-splitting",
+                object: "require",
+                property: "ensure",
+              },
+              {
+                message:
+                  "Please use import() instead. More info: https://facebook.github.io/create-react-app/docs/code-splitting",
+                object: "System",
+                property: "import",
+              },
+            ],
+            "no-restricted-syntax": [1, "WithStatement"],
+            "no-script-url": 1,
+            "no-self-assign": 1,
+            "no-self-compare": 1,
+            "no-sequences": 1,
+            "no-shadow-restricted-names": 1,
+            "no-sparse-arrays": 1,
+            "no-template-curly-in-string": 1,
+            "no-this-before-super": 1,
+
+            "no-throw-literal": 1,
+            "no-undef": 2,
+            "no-unreachable": 1,
+            "no-unsafe-negation": 1,
+
+            "no-unused-expressions": [
+              2,
+              {
+                allowShortCircuit: true,
+                allowTaggedTemplates: true,
+                allowTernary: true,
+              },
+            ],
+            "no-unused-labels": 1,
+            "no-unused-vars": [
+              1,
+              {
+                args: "none",
+                ignoreRestSiblings: true,
+              },
+            ],
+            "no-use-before-define": [
+              1,
+              {
+                classes: false,
+                functions: false,
+                variables: false,
+              },
+            ],
+            "no-useless-computed-key": 1,
+            "no-useless-concat": 1,
+            "no-useless-constructor": 1,
+
+            // Disabled because of undesirable warnings
+            // See https://github.com/facebook/create-react-app/issues/5204 for
+            // blockers until its re-enabled
+            "no-useless-escape": 1,
+            "no-useless-rename": [
+              1,
+              {
+                ignoreDestructuring: false,
+                ignoreExport: false,
+                ignoreImport: false,
+              },
+            ],
+            "no-whitespace-before-property": 1,
+            "no-with": 1,
+            // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
+            "react/forbid-foreign-prop-types": [1, { allowInPropTypes: true }],
+
+            "react/jsx-no-comment-textnodes": 1,
+            "react/jsx-no-duplicate-props": 1,
+            "react/jsx-no-target-blank": 1,
+            "react/jsx-no-undef": 2,
+            "react/jsx-pascal-case": [
+              1,
+              {
+                allowAllCaps: true,
+                ignore: [],
+              },
+            ],
+            "react/jsx-uses-react": 1,
+            "react/jsx-uses-vars": 1,
+            "react/no-danger-with-children": 1,
+            // "react/no-deprecated": 1,
+            "react/no-direct-mutation-state": 1,
+            "react/no-is-mounted": 1,
+            "react/no-typos": 2,
+            "react/require-render-return": 2,
+            "react/style-prop-object": 1,
+            "react-hooks/exhaustive-deps": 1,
+            // https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks
+            "react-hooks/rules-of-hooks": 2,
+            "require-yield": 1,
+            "rest-spread-spacing": [1, "never"],
+
+            strict: [1, "never"],
+
+            "unicode-bom": [1, "never"],
+            "use-isnan": 1,
+            "valid-typeof": 1,
+            ...("eslint-config-react-app" in override
+              ? override["eslint-config-react-app"]
+              : {}),
+          },
+          settings: {
+            react: {
+              version: "detect",
+            },
+          },
+        },
+      ]),
+
+  /*
+    Create React App TS
+    18,397,264 monthly downloads
+    ESLint configuration used by Create React App
+    https://github.com/facebook/create-react-app#readme
+  */
+  ...(disable.includes("eslint-config-react-app")
+    ? []
+    : [
+        {
+          files: ["**/*.ts?(x)"],
+          languageOptions: {
+            // Parser: typescriptParser,
+            globals: {
+              browser: true,
+              commonjs: true,
+              es6: true,
+              jest: true,
+              node: true,
+            },
+            parserOptions: {
+              ecmaFeatures: {
+                jsx: true,
+              },
+              sourceType: "module",
+            },
+          },
+          rules: {
+            // Add TypeScript specific rules (and turn off ESLint equivalents)
+            "@typescript-eslint/consistent-type-assertions": "warn",
+            "@typescript-eslint/no-array-constructor": "warn",
+            "@typescript-eslint/no-redeclare": "warn",
+            "@typescript-eslint/no-unused-expressions": [
+              "error",
+              {
+                allowShortCircuit: true,
+                allowTaggedTemplates: true,
+                allowTernary: true,
+              },
+            ],
+            "@typescript-eslint/no-unused-vars": [
+              "warn",
+              {
+                args: "none",
+                ignoreRestSiblings: true,
+              },
+            ],
+            "@typescript-eslint/no-use-before-define": [
+              "warn",
+              {
+                classes: false,
+                functions: false,
+                typedefs: false,
+                variables: false,
+              },
+            ],
+            "@typescript-eslint/no-useless-constructor": "warn",
+            // TypeScript's noFallthroughCasesInSwitch option is more robust (#6906)
+            "default-case": "off",
+            "no-array-constructor": "off",
+            // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/291)
+            "no-dupe-class-members": "off",
+            "no-redeclare": "off",
+            // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/477)
+            "no-undef": "off",
+            "no-unused-expressions": "off",
+            "no-unused-vars": "off",
+            "no-use-before-define": "off",
+            "no-useless-constructor": "off",
+            ...("eslint-config-react-app" in override
+              ? override["eslint-config-react-app"]
+              : {}),
+          },
+          settings: {
+            react: {
+              version: "detect",
+            },
+          },
+        },
+      ]),
+
+  /*
+    Create React App Jest
+    18,397,264 monthly downloads
+    ESLint configuration used by Create React App
+    https://github.com/facebook/create-react-app#readme
+  */
+  ...(disable.includes("eslint-config-react-app")
+    ? []
+    : [
+        {
+          files: ["**/__tests__/**/*", "**/*.{spec,test}.*"],
+          languageOptions: {
+            globals: {
+              "jest/globals": true,
+            },
+          },
+          rules: {
+            // https://github.com/jest-community/eslint-plugin-jest
+            "jest/no-conditional-expect": "error",
+            "jest/no-identical-title": "error",
+            "jest/no-interpolation-in-snapshots": "error",
+            "jest/no-jasmine-globals": "error",
+            "jest/no-jest-import": "error",
+            "jest/no-mocks-import": "error",
+            "jest/valid-describe-callback": "error",
+            "jest/valid-expect": "error",
+            "jest/valid-expect-in-promise": "error",
+            "jest/valid-title": "warn",
+
+            // https://github.com/testing-library/eslint-plugin-testing-library
+            "testing-library/await-async-query": "error",
+            "testing-library/await-async-utils": "error",
+            "testing-library/no-await-sync-query": "error",
+            "testing-library/no-container": "error",
+            "testing-library/no-debugging-utils": "error",
+            "testing-library/no-dom-import": ["error", "react"],
+            "testing-library/no-node-access": "error",
+            "testing-library/no-promise-in-fire-event": "error",
+            "testing-library/no-render-in-setup": "error",
+            "testing-library/no-unnecessary-act": "error",
+            "testing-library/no-wait-for-empty-callback": "error",
+            "testing-library/no-wait-for-multiple-assertions": "error",
+            "testing-library/no-wait-for-side-effects": "error",
+            "testing-library/no-wait-for-snapshot": "error",
+            "testing-library/prefer-find-by": "error",
+            "testing-library/prefer-presence-queries": "error",
+            "testing-library/prefer-query-by-disappearance": "error",
+            "testing-library/prefer-screen-queries": "error",
+            "testing-library/render-result-naming-convention": "error",
             ...("eslint-config-react-app" in override
               ? override["eslint-config-react-app"]
               : {}),
@@ -1003,7 +1358,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Promises
-    18,022,244 monthly downloads
+    18,798,500 monthly downloads
     Enforce best practices for JavaScript promises
     https://github.com/eslint-community/eslint-plugin-promise
   */
@@ -1024,7 +1379,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     NextJS
-    18,615,938 monthly downloads
+    19,406,495 monthly downloads
     ESLint plugin for Next.js.
     https://github.com/vercel/next.js#readme
   */
@@ -1048,7 +1403,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Flowtype
-    19,414,427 monthly downloads
+    20,215,152 monthly downloads
     Flowtype linting rules for ESLint.
     https://github.com/gajus/eslint-plugin-flowtype#readme
   */
@@ -1068,8 +1423,32 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
       ]),
 
   /*
+    Testing Library
+    22,673,022 monthly downloads
+    ESLint plugin to follow best practices and anticipate common mistakes when writing tests with Testing Library
+    https://github.com/testing-library/eslint-plugin-testing-library
+  */
+  ...(disable.includes("eslint-plugin-testing-library")
+    ? []
+    : [
+        {
+          files: [
+            "**/__tests__/**/*.[jt]s?(x)",
+            "**/?(*.)+(spec|test).[jt]s?(x)",
+          ],
+          plugins: { "testing-library": testingLibrary },
+          rules: {
+            ...testingLibrary.configs.react.rules,
+            ...("eslint-plugin-testing-library" in override
+              ? override["eslint-plugin-testing-library"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
     ES-X
-    23,232,790 monthly downloads
+    24,245,343 monthly downloads
     ESLint plugin about ECMAScript syntactic features. / ESLint plugin about ECMAScript syntactic features.
     https://github.com/eslint-community/eslint-plugin-es-x#readme / https://github.com/mysticatea/eslint-plugin-es#readme
   */
@@ -1094,7 +1473,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Node.js
-    23,621,388 monthly downloads
+    24,638,647 monthly downloads
     Additional ESLint's rules for Node.js / Additional ESLint's rules for Node.js
     https://github.com/eslint-community/eslint-plugin-n#readme / https://github.com/mysticatea/eslint-plugin-node#readme
   */
@@ -1129,7 +1508,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Vue
-    25,584,677 monthly downloads
+    26,661,346 monthly downloads
     Official ESLint plugin for Vue.js / The ESLint custom parser for `.vue` files.
     https://eslint.vuejs.org / https://github.com/vuejs/vue-eslint-parser#readme
   */
@@ -1160,7 +1539,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     AirBnb Base
-    27,146,820 monthly downloads
+    28,267,351 monthly downloads
     Airbnb's base JS ESLint config, following our styleguide
     https://github.com/airbnb/javascript
   */
@@ -1182,7 +1561,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Jest
-    41,744,998 monthly downloads
+    43,521,375 monthly downloads
     ESLint rules for Jest
     https://github.com/jest-community/eslint-plugin-jest#readme
   */
@@ -1220,7 +1599,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     JSX A11y
-    51,862,138 monthly downloads
+    54,043,225 monthly downloads
     Static AST checker for accessibility rules on JSX elements.
     https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#readme
   */
@@ -1241,7 +1620,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     React Hooks
-    59,077,211 monthly downloads
+    61,574,950 monthly downloads
     ESLint rules for React Hooks
     https://reactjs.org/
   */
@@ -1262,7 +1641,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     React
-    72,459,810 monthly downloads
+    75,560,402 monthly downloads
     React specific linting rules for ESLint
     https://github.com/jsx-eslint/eslint-plugin-react
   */
@@ -1297,7 +1676,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     ESLint
-    87,316,876 monthly downloads
+    91,016,393 monthly downloads
     ESLint JavaScript language implementation
     https://eslint.org
   */
@@ -1315,7 +1694,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Import
-    120,439,119 monthly downloads
+    125,565,357 monthly downloads
     Import with sanity. / This plugin adds `TypeScript` support to `eslint-plugin-import`
     https://github.com/import-js/eslint-plugin-import / https://github.com/import-js/eslint-import-resolver-typescript#readme
   */
@@ -1378,7 +1757,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     Prettier
-    134,578,854 monthly downloads
+    140,268,241 monthly downloads
     Runs prettier as an eslint rule / Turns off all rules that are unnecessary or might conflict with Prettier.
     https://github.com/prettier/eslint-plugin-prettier#readme / https://github.com/prettier/eslint-config-prettier#readme
   */
@@ -1404,7 +1783,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
 
   /*
     TypeScript
-    233,836,452 monthly downloads
+    243,736,556 monthly downloads
     Tooling which enables you to use TypeScript with ESLint / An ESLint custom parser which leverages TypeScript ESTree / TypeScript plugin for ESLint
     https://github.com/typescript-eslint/typescript-eslint#readme / https://github.com/typescript-eslint/typescript-eslint#readme / https://github.com/typescript-eslint/typescript-eslint#readme
   */

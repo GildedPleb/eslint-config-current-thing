@@ -40,6 +40,7 @@ ${[
 ].join(`
 `)}
 import globals from "globals";
+import restrictedGlobals from 'confusing-browser-globals';
 
 const filename = fileURLToPath(import.meta.url);
 const baseDirectory = path.dirname(filename);

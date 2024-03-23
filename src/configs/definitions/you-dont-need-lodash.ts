@@ -8,7 +8,7 @@ export default {
     plugins: { "you-dont-need-lodash-underscore": youDontNeedLodash },
     ${RULES}
   }`,
-  name: "You Dont Need Lodash",
+  name: "You Don't Need Lodash",
   packages: [
     {
       name: "youDontNeedLodash",

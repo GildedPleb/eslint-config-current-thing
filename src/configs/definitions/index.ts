@@ -6,6 +6,8 @@ import babel from "./babel";
 import comments from "./comments";
 import compat from "./compat";
 import createReactApp from "./create-react-app";
+import createReactAppJest from "./create-react-app-jest";
+import createReactAppTs from "./create-react-app-ts";
 import cssModules from "./css-modules";
 import emotion from "./emotion";
 import es from "./es";
@@ -45,6 +47,7 @@ import standardReact from "./standard-react";
 import storybook from "./storybook";
 import stylistic from "./stylistic";
 import tailwindConfig from "./tailwind-config";
+import testingLibrary from "./testing-library";
 import ts from "./ts";
 import tsdoc from "./tsdoc";
 import unicorn from "./unicorn";
@@ -118,6 +121,9 @@ const packages: Config[] = [
   airbnb,
   airbnbBase,
   airbnbTs,
+  createReactAppTs,
+  createReactAppJest,
+  testingLibrary,
 ];
 
 export default packages;

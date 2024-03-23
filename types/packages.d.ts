@@ -47,4 +47,5 @@ declare module "eslint-plugin-header";
 declare module "eslint-plugin-i18next";
 declare module "@emotion/eslint-plugin";
 declare module "eslint-plugin-css-modules";
+declare module "eslint-plugin-testing-library";
 // EOF
