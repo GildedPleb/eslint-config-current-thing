@@ -6,6 +6,7 @@ import compat from "./compat";
 import cssModules from "./css-modules";
 import emotion from "./emotion";
 import es from "./es";
+import flowtype from "./flowtype";
 
 export interface Plugin {
   name: string;
@@ -17,7 +18,15 @@ export interface Plugin {
   }>;
 }
 
-const plugins: Plugin[] = [babel, comments, compat, cssModules, emotion, es];
+const plugins: Plugin[] = [
+  babel,
+  comments,
+  compat,
+  cssModules,
+  emotion,
+  es,
+  flowtype,
+];
 
 export default plugins;
 // EOF

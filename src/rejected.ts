@@ -48,9 +48,6 @@ const rejected = new Set([
   "eslint-plugin-jasmine",
   "eslint-plugin-playwright",
 
-  // Less popular type framework
-  "eslint-plugin-ft-flow",
-
   // Monorepo stuffs
   "@nx/eslint",
   "@nrwl/linter",

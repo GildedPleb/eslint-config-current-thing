@@ -16,7 +16,7 @@ export default {
       parserOptions: {
         sourceType: "module",
         requireConfigFile: false,
-        ecmaVersion: 2018,
+        ecmaVersion: latest,
         ecmaFeatures: {
           jsx: true,
         },

@@ -48,4 +48,5 @@ declare module "eslint-plugin-i18next";
 declare module "@emotion/eslint-plugin";
 declare module "eslint-plugin-css-modules";
 declare module "eslint-plugin-testing-library";
+declare module "eslint-plugin-ft-flow";
 // EOF

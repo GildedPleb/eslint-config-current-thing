@@ -32,6 +32,8 @@ import google from "eslint-config-google";
 import standardTS from "eslint-config-love";
 import prettierConfig from "eslint-config-prettier";
 import standardJsx from "eslint-config-standard-jsx";
+// Import flowtype from "eslint-plugin-flowtype";
+// import ftFlow from "eslint-plugin-ft-flow";
 import standardReact from "eslint-config-standard-react";
 import xo from "eslint-config-xo";
 import comp from "eslint-plugin-compat";
@@ -41,6 +43,7 @@ import es from "eslint-plugin-es";
 import esX from "eslint-plugin-es-x";
 import commentsOld from "eslint-plugin-eslint-comments";
 import flowtype from "eslint-plugin-flowtype";
+import ftFlow from "eslint-plugin-ft-flow";
 // Import importResolver from "eslint-import-resolver-typescript";
 // import comp from "eslint-plugin-compat";
 import functional from "eslint-plugin-functional";
@@ -138,6 +141,8 @@ const configGen = ({
       es,
       "es-x": esX,
       "eslint-comments": commentsOld,
+      flowtype,
+      "ft-flow": ftFlow,
     },
   },
 
@@ -1405,21 +1410,35 @@ const configGen = ({
 
   /*
     Flowtype
-    20,215,152 monthly downloads
-    Flowtype linting rules for ESLint.
-    https://github.com/gajus/eslint-plugin-flowtype#readme
+    22,540,881 monthly downloads
+    Flowtype linting rules for ESLint. / Flowtype linting rules for ESLint by flow-typed
+    https://github.com/gajus/eslint-plugin-flowtype#readme / https://github.com/flow-typed/eslint-plugin-ft-flow#readme
   */
-  ...(disable.includes("eslint-plugin-flowtype") || threshold > 20_215_152
+  ...(disable.includes("eslint-plugin-flowtype") ||
+  disable.includes("eslint-plugin-ft-flow") ||
+  threshold > 22_540_881
     ? []
     : [
         {
           files,
-          plugins: { flowtype },
           // No rules as they conflict with Typescript
           rules: {
+            ...flowtype.configs.recommended.rules,
+            ...ftFlow.configs.recommended.rules,
             ...("eslint-plugin-flowtype" in override
               ? override["eslint-plugin-flowtype"]
               : {}),
+            ...("eslint-plugin-ft-flow" in override
+              ? override["eslint-plugin-ft-flow"]
+              : {}),
+          },
+          settings: {
+            flowtype: {
+              onlyFilesWithFlowAnnotation: true,
+            },
+            "ft-flow": {
+              onlyFilesWithFlowAnnotation: true,
+            },
           },
         },
       ]),

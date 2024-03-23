@@ -7,6 +7,12 @@
       "version": "detect",
       "pragma": "React"
     },
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
+    },
+    "ft-flow": {
+      "onlyFilesWithFlowAnnotation": true
+    },
     "import/parsers": {
       "@typescript-eslint/parser": [
         ".ts",
@@ -868,6 +874,8 @@
     "@emotion",
     "es-x:eslint-plugin-es-x@7.6.0",
     "es",
+    "flowtype",
+    "ft-flow",
     "regexp:eslint-plugin-regexp@2.3.0",
     "@stylistic",
     "@shopify",
@@ -894,7 +902,6 @@
     "unicorn:eslint-plugin-unicorn@51.0.1",
     "promise",
     "@next/next",
-    "flowtype",
     "n:eslint-plugin-n@16.6.2",
     "node",
     "vue:eslint-plugin-vue@9.23.0",
@@ -5510,7 +5517,7 @@
       1
     ],
     "flowtype/require-valid-file-annotation": [
-      1
+      0
     ],
     "flowtype/use-flow-type": [
       1
@@ -5577,6 +5584,111 @@
     ],
     "@next/next/no-script-component-in-head": [
       2
+    ],
+    "flowtype/boolean-style": [
+      0,
+      "boolean"
+    ],
+    "flowtype/delimiter-dangle": [
+      0
+    ],
+    "flowtype/generic-spacing": [
+      0,
+      "never"
+    ],
+    "flowtype/no-mixed": [
+      0
+    ],
+    "flowtype/no-types-missing-file-annotation": [
+      2
+    ],
+    "flowtype/no-weak-types": [
+      0
+    ],
+    "flowtype/require-parameter-type": [
+      0
+    ],
+    "flowtype/require-readonly-react-props": [
+      0
+    ],
+    "flowtype/require-return-type": [
+      0
+    ],
+    "flowtype/semi": [
+      0
+    ],
+    "flowtype/space-after-type-colon": [
+      0,
+      "always"
+    ],
+    "flowtype/space-before-generic-bracket": [
+      0,
+      "never"
+    ],
+    "flowtype/space-before-type-colon": [
+      0,
+      "never"
+    ],
+    "flowtype/type-id-match": [
+      0
+    ],
+    "flowtype/union-intersection-spacing": [
+      0,
+      "always"
+    ],
+    "ft-flow/boolean-style": [
+      2,
+      "boolean"
+    ],
+    "ft-flow/delimiter-dangle": [
+      0
+    ],
+    "ft-flow/generic-spacing": [
+      2,
+      "never"
+    ],
+    "ft-flow/no-mixed": [
+      0
+    ],
+    "ft-flow/no-types-missing-file-annotation": [
+      2
+    ],
+    "ft-flow/no-weak-types": [
+      0
+    ],
+    "ft-flow/require-parameter-type": [
+      0
+    ],
+    "ft-flow/require-readonly-react-props": [
+      0
+    ],
+    "ft-flow/require-return-type": [
+      0
+    ],
+    "ft-flow/require-valid-file-annotation": [
+      0
+    ],
+    "ft-flow/semi": [
+      0
+    ],
+    "ft-flow/space-after-type-colon": [
+      2,
+      "always"
+    ],
+    "ft-flow/space-before-generic-bracket": [
+      2,
+      "never"
+    ],
+    "ft-flow/space-before-type-colon": [
+      2,
+      "never"
+    ],
+    "ft-flow/type-id-match": [
+      0
+    ],
+    "ft-flow/union-intersection-spacing": [
+      2,
+      "always"
     ],
     "es-x/no-arraybuffer-prototype-transfer": [
       2
@@ -6263,15 +6375,6 @@
     "babel/semi": [
       0
     ],
-    "flowtype/boolean-style": [
-      0
-    ],
-    "flowtype/delimiter-dangle": [
-      0
-    ],
-    "flowtype/generic-spacing": [
-      0
-    ],
     "flowtype/object-type-curly-spacing": [
       0
     ],
@@ -6279,21 +6382,6 @@
       0
     ],
     "flowtype/quotes": [
-      0
-    ],
-    "flowtype/semi": [
-      0
-    ],
-    "flowtype/space-after-type-colon": [
-      0
-    ],
-    "flowtype/space-before-generic-bracket": [
-      0
-    ],
-    "flowtype/space-before-type-colon": [
-      0
-    ],
-    "flowtype/union-intersection-spacing": [
       0
     ],
     "react/jsx-child-element-spacing": [
