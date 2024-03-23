@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { "simple-import-sort": importSort },
     ${RULES}
   }`,
   name: "Simple Import Sort",
@@ -13,9 +12,10 @@ export default {
     {
       name: "importSort",
       package: "eslint-plugin-simple-import-sort",
-      requiresImport: true,
+      requiresImport: false,
     },
   ],
+  requiredPlugins: ["simple-import-sort"],
   rules: `{
     "simple-import-sort/imports": 2,
     "simple-import-sort/exports": 2,

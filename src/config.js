@@ -20,6 +20,7 @@ import babelPlugin from "@babel/eslint-plugin";
 // import i18next from "eslint-plugin-i18next";
 import { rules as emotion } from "@emotion/eslint-plugin";
 import { FlatCompat } from "@eslint/eslintrc";
+// Import importSort from "eslint-plugin-simple-import-sort";
 import eslint from "@eslint/js";
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
 import nextjs from "@next/eslint-plugin-next";
@@ -148,6 +149,7 @@ const configGen = ({
       functional,
       header,
       i18next,
+      "simple-import-sort": importSort,
     },
   },
 
@@ -819,7 +821,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { "simple-import-sort": importSort },
           rules: {
             "simple-import-sort/exports": 2,
             "simple-import-sort/imports": 2,
