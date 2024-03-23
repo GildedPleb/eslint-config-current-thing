@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { "@emotion": {rules: emotion} },
     ${RULES}
   }`,
   name: "Emotion CSS",
@@ -16,6 +15,7 @@ export default {
       requiresImport: true,
     },
   ],
+  requiredPlugins: ["emotion"],
   rules: `{
     "@emotion/jsx-import": 2,
     "@emotion/no-vanilla": 2,

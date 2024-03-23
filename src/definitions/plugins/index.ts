@@ -4,6 +4,7 @@ import babel from "./babel";
 import comments from "./comments";
 import compat from "./compat";
 import cssModules from "./css-modules";
+import emotion from "./emotion";
 
 export interface Plugin {
   name: string;
@@ -15,7 +16,7 @@ export interface Plugin {
   }>;
 }
 
-const plugins: Plugin[] = [babel, comments, compat, cssModules];
+const plugins: Plugin[] = [babel, comments, compat, cssModules, emotion];
 
 export default plugins;
 // EOF

@@ -16,6 +16,7 @@ import { fileURLToPath } from "node:url";
 
 import babelPlugin from "@babel/eslint-plugin";
 import { rules as emotion } from "@emotion/eslint-plugin";
+// Import { rules: emotion } from "@emotion/eslint-plugin";
 import { FlatCompat } from "@eslint/eslintrc";
 import eslint from "@eslint/js";
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
@@ -128,6 +129,7 @@ const configGen = ({
   {
     plugins: {
       "@babel": babelPlugin,
+      "@emotion": { rules: emotion },
       "@eslint-community/eslint-comments": comments,
       compat: comp,
       "css-modules": cssModules,
@@ -337,7 +339,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { "@emotion": { rules: emotion } },
           rules: {
             "@emotion/import-from-emotion": 2,
             "@emotion/jsx-import": 2,
