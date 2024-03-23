@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { compat: comp },
     languageOptions: {
       globals: {
         browser: true,
@@ -15,8 +14,9 @@ export default {
   }`,
   name: "Compat",
   packages: [
-    { name: "comp", package: "eslint-plugin-compat", requiresImport: true },
+    { name: "comp", package: "eslint-plugin-compat", requiresImport: false },
   ],
+  requiredPlugins: ["compat"],
   rules: `comp.configs.recommended.rules`,
 } satisfies Config;
 // EOF

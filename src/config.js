@@ -34,13 +34,14 @@ import prettierConfig from "eslint-config-prettier";
 import standardJsx from "eslint-config-standard-jsx";
 import standardReact from "eslint-config-standard-react";
 import xo from "eslint-config-xo";
-// Import importResolver from "eslint-import-resolver-typescript";
 import comp from "eslint-plugin-compat";
 import cssModules from "eslint-plugin-css-modules";
 import es from "eslint-plugin-es";
 import esX from "eslint-plugin-es-x";
 import commentsOld from "eslint-plugin-eslint-comments";
 import flowtype from "eslint-plugin-flowtype";
+// Import importResolver from "eslint-import-resolver-typescript";
+// import comp from "eslint-plugin-compat";
 import functional from "eslint-plugin-functional";
 import header from "eslint-plugin-header";
 import i18next from "eslint-plugin-i18next";
@@ -127,6 +128,7 @@ const configGen = ({
     plugins: {
       "@babel": babelPlugin,
       "@eslint-community/eslint-comments": comments,
+      compat: comp,
       "eslint-comments": commentsOld,
     },
   },
@@ -560,7 +562,6 @@ const configGen = ({
               browser: true,
             },
           },
-          plugins: { compat: comp },
           rules: {
             ...comp.configs.recommended.rules,
             ...("eslint-plugin-compat" in override
