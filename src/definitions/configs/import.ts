@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { import: importPlugin },
     settings: {
       "import/parsers": {
         "@typescript-eslint/parser": [".ts", ".tsx"],
@@ -49,7 +48,7 @@ export default {
     {
       name: "importPlugin",
       package: "eslint-plugin-import",
-      requiresImport: true,
+      requiresImport: false,
     },
     {
       name: "importResolver",
@@ -57,6 +56,7 @@ export default {
       requiresImport: false,
     },
   ],
+  requiredPlugins: ["import"],
   rules: `importPlugin.configs.recommended.rules,
     ...importPlugin.configs.typescript.rules,
     "import/order": 0`,

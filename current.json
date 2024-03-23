@@ -880,6 +880,7 @@
     "header",
     "i18next",
     "simple-import-sort:eslint-plugin-simple-import-sort@12.0.0",
+    "import",
     "regexp:eslint-plugin-regexp@2.3.0",
     "@stylistic",
     "@shopify",
@@ -909,7 +910,6 @@
     "jsx-a11y",
     "react-hooks",
     "react",
-    "import",
     "prettier:eslint-plugin-prettier@5.1.3",
     "@typescript-eslint:@typescript-eslint/eslint-plugin@7.3.1",
     "pathmark"

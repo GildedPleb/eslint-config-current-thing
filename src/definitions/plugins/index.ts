@@ -10,6 +10,7 @@ import flowtype from "./flowtype";
 import functional from "./functional";
 import header from "./header";
 import i18next from "./i18next";
+import importPlugin from "./import";
 import importSort from "./import-sort";
 
 export interface Plugin {
@@ -34,6 +35,7 @@ const plugins: Plugin[] = [
   header,
   i18next,
   importSort,
+  importPlugin,
 ];
 
 export default plugins;
