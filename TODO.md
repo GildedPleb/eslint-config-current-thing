@@ -1,11 +1,12 @@
+- Audit all existing configs to apply overrides, files, and all sorts of nuance.
+  - remove the npm WARNings
+- add the rule count to the tag "around 1000 rules:
+- Once audit is complete, open up all out-of-scope configs.
 - Add commit linting in similar fashion
   - Stories:
     - I install this config, I get full commit linting with it.
   - Lint all rules on staged files, when the rest of the repo has no rules active.
 - Add all the VUE configs.
-- Audit all existing configs to apply overrides, files, and all sorts of nuance.
-- Once audit is complete, open up all out-of-scope configs.
-
 - Programmatic API for conflicts.
   - Might not be feasible because of multiple conflicts
   - Might not be worth it because some configs will literally never be usurped, aka prettier

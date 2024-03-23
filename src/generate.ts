@@ -28,12 +28,10 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 ${[
-  ...configs.flatMap(({ count, packages }) =>
+  ...configs.flatMap(({ packages }) =>
     packages.map(
       ({ name, package: pack, requiresImport }) =>
-        `${
-          count > MINIMUMS && requiresImport ? "" : "// "
-        }import ${name} from "${pack}";`,
+        `${requiresImport ? "" : "// "}import ${name} from "${pack}";`,
     ),
   ),
   'import { FlatCompat } from "@eslint/eslintrc";',
@@ -48,12 +46,12 @@ const compat = new FlatCompat({ baseDirectory });
 
 const files = ["**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}"];
 
-const defaultOptions = { disable: [], override: {} };
+const defaultOptions = { disable: [], override: {}, threshold: ${MINIMUMS} };
 
 /**
- * @param {{ disable: string[], override: Record<string, Record<string, number | string>> }} default - Options
+ * @param {{ disable: string[], override: Record<string, Record<string, number | string>>, threshold: number }} default - Options
  */
-const configGen = ({ disable = [], override = {} } = defaultOptions) => [
+const configGen = ({ disable = [], override = {}, threshold = ${MINIMUMS} } = defaultOptions) => [
   {
     ignores: [
       "**/eslint.config.js",
@@ -102,7 +100,7 @@ ${configs
 
       const definition = `...(${packages
         .map(({ package: pack }) => `disable.includes("${pack}")`)
-        .join(` || `)}
+        .join(` || `)} || threshold > ${count}
     ? []
     : [
         ${definitions.replace(
@@ -124,9 +122,9 @@ ${configs
     ${count.toLocaleString()} monthly downloads
     ${description}
     ${homepage}
-${count > MINIMUMS ? "  */" : ""}
+  */
   ${definition},
-${count > MINIMUMS ? "" : "  */"}`;
+`;
     },
   ).join(`
 `)}];

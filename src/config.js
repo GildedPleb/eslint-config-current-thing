@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/22/2024
+  Generated on 3/23/2024
 */
 
 import path from "node:path";
@@ -60,8 +60,8 @@ import promise from "eslint-plugin-promise";
 // Import cra from "eslint-config-react-app";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
-// Import reactPerf from "eslint-plugin-react-perf";
 import reactNative from "eslint-plugin-react-native";
+import reactPerf from "eslint-plugin-react-perf";
 // Import typescriptParser from "@typescript-eslint/parser";
 // import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import reactRefresh from "eslint-plugin-react-refresh";
@@ -91,12 +91,16 @@ const compat = new FlatCompat({ baseDirectory });
 
 const files = ["**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}"];
 
-const defaultOptions = { disable: [], override: {} };
+const defaultOptions = { disable: [], override: {}, threshold: 400_000 };
 
 /**
- * @param {{ disable: string[], override: Record<string, Record<string, number | string>> }} default - Options
+ * @param {{ disable: string[], override: Record<string, Record<string, number | string>>, threshold: number }} default - Options
  */
-const configGen = ({ disable = [], override = {} } = defaultOptions) => [
+const configGen = ({
+  disable = [],
+  override = {},
+  threshold = 400_000,
+} = defaultOptions) => [
   {
     ignores: [
       "**/eslint.config.js",
@@ -123,27 +127,29 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     348,572 monthly downloads
     Performance-minded React linting rules for ESLint
     https://github.com/cvazac/eslint-plugin-react-perf#readme
-
-  ...(disable.includes("eslint-plugin-react-perf")
+  */
+  ...(disable.includes("eslint-plugin-react-perf") || threshold > 348_572
     ? []
     : [
         {
-    files,
-    plugins: { "react-perf": reactPerf },
-    rules: {
+          files,
+          plugins: { "react-perf": reactPerf },
+          rules: {
             ...reactPerf.configs.recommended.rules,
-               ...("eslint-plugin-react-perf" in override ? override["eslint-plugin-react-perf"] : {})
+            ...("eslint-plugin-react-perf" in override
+              ? override["eslint-plugin-react-perf"]
+              : {}),
           },
-  }
+        },
       ]),
-  */
+
   /*
     CSS Modules
     463,563 monthly downloads
     Checks that you are using the existent css/scss/less classes, no more no less
     undefined
   */
-  ...(disable.includes("eslint-plugin-css-modules")
+  ...(disable.includes("eslint-plugin-css-modules") || threshold > 463_563
     ? []
     : [
         {
@@ -164,7 +170,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     JavaScript Standard Style React/JSX support - ESLint Shareable Config
     https://github.com/standard/eslint-config-standard-react
   */
-  ...(disable.includes("eslint-config-standard-react")
+  ...(disable.includes("eslint-config-standard-react") || threshold > 509_822
     ? []
     : [
         {
@@ -184,7 +190,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint plugin for finding RegExp mistakes and RegExp style guide violations.
     https://github.com/ota-meshi/eslint-plugin-regexp#readme
   */
-  ...(disable.includes("eslint-plugin-regexp")
+  ...(disable.includes("eslint-plugin-regexp") || threshold > 607_037
     ? []
     : [
         {
@@ -205,7 +211,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Stylistic rules for ESLint, works for both JavaScript and TypeScript.
     https://github.com/eslint-stylistic/eslint-stylistic#readme
   */
-  ...(disable.includes("@stylistic/eslint-plugin")
+  ...(disable.includes("@stylistic/eslint-plugin") || threshold > 620_022
     ? []
     : [
         {
@@ -234,7 +240,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Shopify's ESLint rules and configs.
     https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
   */
-  ...(disable.includes("@shopify/eslint-plugin")
+  ...(disable.includes("@shopify/eslint-plugin") || threshold > 677_353
     ? []
     : [
         {
@@ -271,7 +277,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Check methods you can use natively without lodash/underscore
     https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore.git
   */
-  ...(disable.includes("eslint-plugin-you-dont-need-lodash-underscore")
+  ...(disable.includes("eslint-plugin-you-dont-need-lodash-underscore") ||
+  threshold > 682_426
     ? []
     : [
         {
@@ -292,7 +299,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint plugin for i18n
     https://github.com/edvardchen/eslint-plugin-i18next#readme
   */
-  ...(disable.includes("eslint-plugin-i18next")
+  ...(disable.includes("eslint-plugin-i18next") || threshold > 709_199
     ? []
     : [
         {
@@ -313,7 +320,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint rules for emotion
     https://github.com/emotion-js/emotion/tree/main#readme
   */
-  ...(disable.includes("@emotion/eslint-plugin")
+  ...(disable.includes("@emotion/eslint-plugin") || threshold > 821_659
     ? []
     : [
         {
@@ -338,7 +345,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint rules to promote functional programming in TypeScript.
     https://github.com/eslint-functional/eslint-plugin-functional#readme
   */
-  ...(disable.includes("eslint-plugin-functional")
+  ...(disable.includes("eslint-plugin-functional") || threshold > 839_621
     ? []
     : [
         {
@@ -363,7 +370,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint plugin for sorting various data such as objects, imports, types, enums, JSX props, etc.
     https://eslint-plugin-perfectionist.azat.io
   */
-  ...(disable.includes("eslint-plugin-perfectionist")
+  ...(disable.includes("eslint-plugin-perfectionist") || threshold > 862_161
     ? []
     : [
         {
@@ -388,7 +395,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint rule to disallow unsanitized code
     https://github.com/mozilla/eslint-plugin-no-unsanitized/
   */
-  ...(disable.includes("eslint-plugin-no-unsanitized")
+  ...(disable.includes("eslint-plugin-no-unsanitized") || threshold > 1_015_495
     ? []
     : [
         {
@@ -409,7 +416,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint rule for enforcing consistent ES6 class member order.
     https://github.com/bryanrsmith/eslint-plugin-sort-class-members
   */
-  ...(disable.includes("eslint-plugin-sort-class-members")
+  ...(disable.includes("eslint-plugin-sort-class-members") ||
+  threshold > 1_027_275
     ? []
     : [
         {
@@ -430,7 +438,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint plugin to ensure that files begin with given comment
     https://github.com/Stuk/eslint-plugin-header#readme
   */
-  ...(disable.includes("eslint-plugin-header")
+  ...(disable.includes("eslint-plugin-header") || threshold > 1_120_860
     ? []
     : [
         {
@@ -451,7 +459,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint shareable config for XO
     https://github.com/xojs/eslint-config-xo#readme
   */
-  ...(disable.includes("eslint-config-xo")
+  ...(disable.includes("eslint-config-xo") || threshold > 1_164_159
     ? []
     : [
         {
@@ -471,7 +479,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint shareable config for the Google style
     https://github.com/google/eslint-config-google#readme
   */
-  ...(disable.includes("eslint-config-google")
+  ...(disable.includes("eslint-config-google") || threshold > 1_694_429
     ? []
     : [
         {
@@ -491,7 +499,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Companion rules for @babel/eslint-parser
     https://babel.dev/
   */
-  ...(disable.includes("@babel/eslint-plugin")
+  ...(disable.includes("@babel/eslint-plugin") || threshold > 1_700_734
     ? []
     : [
         {
@@ -513,7 +521,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     An ESLint plugin that validates TypeScript doc comments
     https://tsdoc.org/
   */
-  ...(disable.includes("eslint-plugin-tsdoc")
+  ...(disable.includes("eslint-plugin-tsdoc") || threshold > 1_940_514
     ? []
     : [
         {
@@ -534,7 +542,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Rules enforcing best practices while using Tailwind CSS
     https://github.com/francoismassart/eslint-plugin-tailwindcss
   */
-  ...(disable.includes("eslint-plugin-tailwindcss")
+  ...(disable.includes("eslint-plugin-tailwindcss") || threshold > 1_950_628
     ? []
     : [
         {
@@ -555,7 +563,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Lint browser compatibility of API used
     https://github.com/amilajack/eslint-plugin-compat#readme
   */
-  ...(disable.includes("eslint-plugin-compat")
+  ...(disable.includes("eslint-plugin-compat") || threshold > 2_087_341
     ? []
     : [
         {
@@ -581,7 +589,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint rules for formatting jest tests
     https://github.com/dangreenisrael/eslint-plugin-jest-formatting#readme
   */
-  ...(disable.includes("eslint-plugin-jest-formatting")
+  ...(disable.includes("eslint-plugin-jest-formatting") || threshold > 2_296_785
     ? []
     : [
         {
@@ -602,7 +610,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     JavaScript Standard Style JSX support - ESLint Shareable Config
     https://github.com/standard/eslint-config-standard-jsx
   */
-  ...(disable.includes("eslint-config-standard-jsx")
+  ...(disable.includes("eslint-config-standard-jsx") || threshold > 2_405_871
     ? []
     : [
         {
@@ -622,7 +630,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Security rules for eslint
     https://github.com/eslint-community/eslint-plugin-security#readme
   */
-  ...(disable.includes("eslint-plugin-security")
+  ...(disable.includes("eslint-plugin-security") || threshold > 3_587_887
     ? []
     : [
         {
@@ -643,7 +651,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     SonarJS rules for ESLint
     https://github.com/SonarSource/eslint-plugin-sonarjs
   */
-  ...(disable.includes("eslint-plugin-sonarjs")
+  ...(disable.includes("eslint-plugin-sonarjs") || threshold > 4_099_473
     ? []
     : [
         {
@@ -667,7 +675,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint plugin to follow best practices and anticipate common mistakes when writing tests with jest-dom
     https://github.com/testing-library/eslint-plugin-jest-dom#readme
   */
-  ...(disable.includes("eslint-plugin-jest-dom")
+  ...(disable.includes("eslint-plugin-jest-dom") || threshold > 4_231_492
     ? []
     : [
         {
@@ -688,7 +696,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint rule for .only blocks in mocha tests
     https://github.com/levibuzolic/no-only-tests#readme
   */
-  ...(disable.includes("eslint-plugin-no-only-tests")
+  ...(disable.includes("eslint-plugin-no-only-tests") || threshold > 4_360_552
     ? []
     : [
         {
@@ -711,7 +719,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
   */
   ...(disable.includes("@react-native-community/eslint-config") ||
   disable.includes("@react-native/eslint-config") ||
-  disable.includes("@react-native/eslint-plugin")
+  disable.includes("@react-native/eslint-plugin") ||
+  threshold > 4_526_938
     ? []
     : [
         {
@@ -743,7 +752,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     React Native specific linting rules for ESLint
     https://github.com/intellicode/eslint-plugin-react-native
   */
-  ...(disable.includes("eslint-plugin-react-native")
+  ...(disable.includes("eslint-plugin-react-native") || threshold > 5_158_275
     ? []
     : [
         {
@@ -769,7 +778,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Validate that your components can safely be updated with fast refresh
     https://github.com/ArnaudBarre/eslint-plugin-react-refresh#readme
   */
-  ...(disable.includes("eslint-plugin-react-refresh")
+  ...(disable.includes("eslint-plugin-react-refresh") || threshold > 5_456_295
     ? []
     : [
         {
@@ -790,7 +799,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     JSDoc linting rules for ESLint.
     https://github.com/gajus/eslint-plugin-jsdoc#readme
   */
-  ...(disable.includes("eslint-plugin-jsdoc")
+  ...(disable.includes("eslint-plugin-jsdoc") || threshold > 7_904_285
     ? []
     : [
         {
@@ -823,7 +832,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Easy autofixable import sorting
     https://github.com/lydell/eslint-plugin-simple-import-sort#readme
   */
-  ...(disable.includes("eslint-plugin-simple-import-sort")
+  ...(disable.includes("eslint-plugin-simple-import-sort") ||
+  threshold > 8_371_180
     ? []
     : [
         {
@@ -845,7 +855,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Airbnb's ESLint config with TypeScript support
     https://github.com/iamturns/eslint-config-airbnb-typescript
   */
-  ...(disable.includes("eslint-config-airbnb-typescript")
+  ...(disable.includes("eslint-config-airbnb-typescript") ||
+  threshold > 8_868_447
     ? []
     : [
         {
@@ -867,7 +878,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     More than 100 powerful ESLint rules
     https://github.com/sindresorhus/eslint-plugin-unicorn#readme
   */
-  ...(disable.includes("eslint-plugin-unicorn")
+  ...(disable.includes("eslint-plugin-unicorn") || threshold > 9_279_552
     ? []
     : [
         {
@@ -889,7 +900,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     https://github.com/eslint-community/eslint-plugin-eslint-comments#readme / https://github.com/mysticatea/eslint-plugin-eslint-comments#readme
   */
   ...(disable.includes("@eslint-community/eslint-plugin-eslint-comments") ||
-  disable.includes("eslint-plugin-eslint-comments")
+  disable.includes("eslint-plugin-eslint-comments") ||
+  threshold > 9_495_032
     ? []
     : [
         {
@@ -918,7 +930,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Best practice rules for Storybook
     https://github.com/storybookjs/eslint-plugin-storybook#readme
   */
-  ...(disable.includes("eslint-plugin-storybook")
+  ...(disable.includes("eslint-plugin-storybook") || threshold > 9_960_695
     ? []
     : [
         {
@@ -940,7 +952,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     https://github.com/standard/eslint-config-standard / https://github.com/mightyiam/eslint-config-love#readme
   */
   ...(disable.includes("eslint-config-standard") ||
-  disable.includes("eslint-config-love")
+  disable.includes("eslint-config-love") ||
+  threshold > 12_342_688
     ? []
     : [
         {
@@ -966,7 +979,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Airbnb's ESLint config, following our styleguide
     https://github.com/airbnb/javascript
   */
-  ...(disable.includes("eslint-config-airbnb")
+  ...(disable.includes("eslint-config-airbnb") || threshold > 15_609_261
     ? []
     : [
         {
@@ -989,7 +1002,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint configuration used by Create React App
     https://github.com/facebook/create-react-app#readme
   */
-  ...(disable.includes("eslint-config-react-app")
+  ...(disable.includes("eslint-config-react-app") || threshold > 18_397_264
     ? []
     : [
         {
@@ -1225,7 +1238,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint configuration used by Create React App
     https://github.com/facebook/create-react-app#readme
   */
-  ...(disable.includes("eslint-config-react-app")
+  ...(disable.includes("eslint-config-react-app") || threshold > 18_397_264
     ? []
     : [
         {
@@ -1306,7 +1319,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint configuration used by Create React App
     https://github.com/facebook/create-react-app#readme
   */
-  ...(disable.includes("eslint-config-react-app")
+  ...(disable.includes("eslint-config-react-app") || threshold > 18_397_264
     ? []
     : [
         {
@@ -1362,7 +1375,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Enforce best practices for JavaScript promises
     https://github.com/eslint-community/eslint-plugin-promise
   */
-  ...(disable.includes("eslint-plugin-promise")
+  ...(disable.includes("eslint-plugin-promise") || threshold > 18_798_500
     ? []
     : [
         {
@@ -1383,7 +1396,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint plugin for Next.js.
     https://github.com/vercel/next.js#readme
   */
-  ...(disable.includes("@next/eslint-plugin-next")
+  ...(disable.includes("@next/eslint-plugin-next") || threshold > 19_406_495
     ? []
     : [
         {
@@ -1407,7 +1420,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Flowtype linting rules for ESLint.
     https://github.com/gajus/eslint-plugin-flowtype#readme
   */
-  ...(disable.includes("eslint-plugin-flowtype")
+  ...(disable.includes("eslint-plugin-flowtype") || threshold > 20_215_152
     ? []
     : [
         {
@@ -1428,7 +1441,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint plugin to follow best practices and anticipate common mistakes when writing tests with Testing Library
     https://github.com/testing-library/eslint-plugin-testing-library
   */
-  ...(disable.includes("eslint-plugin-testing-library")
+  ...(disable.includes("eslint-plugin-testing-library") ||
+  threshold > 22_673_022
     ? []
     : [
         {
@@ -1453,7 +1467,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     https://github.com/eslint-community/eslint-plugin-es-x#readme / https://github.com/mysticatea/eslint-plugin-es#readme
   */
   ...(disable.includes("eslint-plugin-es-x") ||
-  disable.includes("eslint-plugin-es")
+  disable.includes("eslint-plugin-es") ||
+  threshold > 24_245_343
     ? []
     : [
         {
@@ -1478,7 +1493,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     https://github.com/eslint-community/eslint-plugin-n#readme / https://github.com/mysticatea/eslint-plugin-node#readme
   */
   ...(disable.includes("eslint-plugin-n") ||
-  disable.includes("eslint-plugin-node")
+  disable.includes("eslint-plugin-node") ||
+  threshold > 24_638_647
     ? []
     : [
         {
@@ -1513,7 +1529,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     https://eslint.vuejs.org / https://github.com/vuejs/vue-eslint-parser#readme
   */
   ...(disable.includes("eslint-plugin-vue") ||
-  disable.includes("vue-eslint-parser")
+  disable.includes("vue-eslint-parser") ||
+  threshold > 26_661_346
     ? []
     : [
         {
@@ -1543,7 +1560,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Airbnb's base JS ESLint config, following our styleguide
     https://github.com/airbnb/javascript
   */
-  ...(disable.includes("eslint-config-airbnb-base")
+  ...(disable.includes("eslint-config-airbnb-base") || threshold > 28_267_351
     ? []
     : [
         {
@@ -1565,7 +1582,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint rules for Jest
     https://github.com/jest-community/eslint-plugin-jest#readme
   */
-  ...(disable.includes("eslint-plugin-jest")
+  ...(disable.includes("eslint-plugin-jest") || threshold > 43_521_375
     ? []
     : [
         {
@@ -1603,7 +1620,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     Static AST checker for accessibility rules on JSX elements.
     https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#readme
   */
-  ...(disable.includes("eslint-plugin-jsx-a11y")
+  ...(disable.includes("eslint-plugin-jsx-a11y") || threshold > 54_043_225
     ? []
     : [
         {
@@ -1624,7 +1641,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint rules for React Hooks
     https://reactjs.org/
   */
-  ...(disable.includes("eslint-plugin-react-hooks")
+  ...(disable.includes("eslint-plugin-react-hooks") || threshold > 61_574_950
     ? []
     : [
         {
@@ -1645,7 +1662,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     React specific linting rules for ESLint
     https://github.com/jsx-eslint/eslint-plugin-react
   */
-  ...(disable.includes("eslint-plugin-react")
+  ...(disable.includes("eslint-plugin-react") || threshold > 75_560_402
     ? []
     : [
         {
@@ -1680,7 +1697,7 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     ESLint JavaScript language implementation
     https://eslint.org
   */
-  ...(disable.includes("@eslint/js")
+  ...(disable.includes("@eslint/js") || threshold > 91_016_393
     ? []
     : [
         {
@@ -1699,7 +1716,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     https://github.com/import-js/eslint-plugin-import / https://github.com/import-js/eslint-import-resolver-typescript#readme
   */
   ...(disable.includes("eslint-plugin-import") ||
-  disable.includes("eslint-import-resolver-typescript")
+  disable.includes("eslint-import-resolver-typescript") ||
+  threshold > 125_565_357
     ? []
     : [
         {
@@ -1762,7 +1780,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
     https://github.com/prettier/eslint-plugin-prettier#readme / https://github.com/prettier/eslint-config-prettier#readme
   */
   ...(disable.includes("eslint-plugin-prettier") ||
-  disable.includes("eslint-config-prettier")
+  disable.includes("eslint-config-prettier") ||
+  threshold > 140_268_241
     ? []
     : [
         {
@@ -1789,7 +1808,8 @@ const configGen = ({ disable = [], override = {} } = defaultOptions) => [
   */
   ...(disable.includes("typescript-eslint") ||
   disable.includes("@typescript-eslint/parser") ||
-  disable.includes("@typescript-eslint/eslint-plugin")
+  disable.includes("@typescript-eslint/eslint-plugin") ||
+  threshold > 243_736_556
     ? []
     : [
         ...tseslint.config(...tseslint.configs.recommendedTypeChecked, {

@@ -29,9 +29,10 @@ Presently, it combines these configs (and their plugins, submodules, etc.):
 | ES/ES-X        | Header   | i18next       | Emotion       | CSS Modules      |
 
 The winning (and thus supported) high-level architecture is:
-| Types | FrontEnd | Testing |
-| ----- | -------- | ------- |
-|`Typescript` | `React` / `React Native`| `Jest`
+
+| Types        | FrontEnd                 | Testing |
+| ------------ | ------------------------ | ------- |
+| `Typescript` | `React` / `React Native` | `Jest`  |
 
 Meaning, in many cases, using this config without these frameworks (by disabling them) or with competing frameworks, probably means you are gunna have a bad time.
 
@@ -105,7 +106,7 @@ export default [
 
 ### Options
 
-Presently, there are two options: `disable` and `override`.
+Presently, there are three options: `disable`, `override`, and `threshold`.
 
 #### `disable`
 
@@ -135,11 +136,27 @@ export default [
 
 `disable` takes precedence over `override`.
 
+#### `threshold`
+
+`threshold` can be passed to the options object to set the popularity threshold for packages. Defaulting to 400,000 downloads per month.
+
+```js
+export default [
+  ...currentThing({
+    threshold: 1_000_000,
+  }),
+];
+```
+
+This would only include packages that exceed 1,000,000 downloads per month, and thus would constitute a more lenient linting config as less rules will be activated.
+
+**WARNING: `threshold` may have unintended consequences as various configs are interdependent** (TODO: This need not be so, fixing it merely means separating configs and plugins, which is in the works).
+
 ### Choke Out Problems
 
 There are around 1000 rules in this config, and they are completely overwhelming.
 
-1. Try easing into them with [nibble](https://github.com/IanVS/eslint-nibble) (though, we have no idea if it works with flat config).
+1. Try easing into them by setting a high `threshold`.
 1. Importantly, the config is also exported as a plain JS object called `JSONConfig`. As such, you can pick off rules to disable in `eslint.config.js`, like below, and choke out the problems in your code by slowly allowing more rules in:
 
 ```js
@@ -184,9 +201,11 @@ export default [
 
 ### 1. Additions
 
-**For a plugin/config/rule-set to be added, it needs to have more than 400,000 monthly downloads (or 4 consecutive weeks above 100,000 weekly downloads).** This is to prevent spam, bloat, needless PRs, and arguments about minutia. Yes, it's arbitrary (and it can be spoofed/is [naively calculated](https://blog.npmjs.org/post/92574016600/numeric-precision-matters-how-npm-download-counts-work.html)), but it seems to be a good heuristic for the cutoff between generally used configs and niche configs.
+**For a CONFIG to be added, it needs to have around 400,000 monthly downloads (or 4 consecutive weeks above 100,000 weekly downloads).** This is to prevent spam, bloat, needless PRs, and arguments about minutia. But it's also variable as configs change popularity. Yes, it's arbitrary (and it can be spoofed/is [naively calculated](https://blog.npmjs.org/post/92574016600/numeric-precision-matters-how-npm-download-counts-work.html)), but it seems to be a good heuristic for the cutoff between generally used configs and niche configs.
 
-To determine if your preferred config is eligible, visit the NPM page and check the weekly download count.
+**For a PLUGIN to be added, it needs to be included in an added config.** This is to ensure that configs work as intended.
+
+To determine if your preferred config is eligible, visit the NPM page and check the weekly download count, or scroll to the bottom to see a list of packages presently under consideration.
 
 You can always extend/disable this config to meet your own needs. However, if you think a config should be included, and it passes the `monthly count test` (and is not garbage/has stars/contributors, etc.), open a PR or Issue, and it will be added. When adding a rule, the `recommended` version of that rule will be unashamedly used with as little alterations as possible (however, if it has serious conflicts with higher priority rules we will find workarounds, e.g. even "lite" FP rules break everything popular).
 
@@ -264,7 +283,7 @@ See [rejected](./src/rejected.ts) and [not-applicable](./src/not-applicable.ts) 
 
 The following section is generated according to spec.
 
-Generated on 3/22/2024, downloads for the previous 28 days.
+Generated on 3/23/2024, downloads for the previous 28 days.
 
 - 90,465,088 downloads, [eslint-module-utils](https://www.npmjs.com/package/eslint-module-utils)
 - 36,109,245 downloads, [lint-staged](https://www.npmjs.com/package/lint-staged)
