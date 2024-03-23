@@ -16,6 +16,7 @@ export default {
   packages: [
     { name: "cra", package: "eslint-config-react-app", requiresImport: false },
   ],
+  requiredPlugins: ["jest", "testing-library"],
   rules: `{
     // https://github.com/jest-community/eslint-plugin-jest
     'jest/no-conditional-expect': 'error',

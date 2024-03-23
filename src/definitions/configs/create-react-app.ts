@@ -33,6 +33,7 @@ export default {
   packages: [
     { name: "cra", package: "eslint-config-react-app", requiresImport: false },
   ],
+  requiredPlugins: ["react", "react-hooks", "import", "jsx-a11y", "flowtype"],
   rules: `{
     "react/jsx-uses-vars": 1,
     "react/jsx-uses-react": 1,

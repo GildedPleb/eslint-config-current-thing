@@ -6,7 +6,6 @@ export default {
   definitions: `{
     files: ['**/*.ts?(x)'],
     languageOptions: {
-      // parser: typescriptParser,
       globals: {
         browser: true,
         commonjs: true,
@@ -32,6 +31,7 @@ export default {
   packages: [
     { name: "cra", package: "eslint-config-react-app", requiresImport: false },
   ],
+  requiredPlugins: ["@typescript-eslint"],
   rules: `{
     // TypeScript's noFallthroughCasesInSwitch option is more robust (#6906)
     'default-case': 'off',
