@@ -15,6 +15,7 @@ export default {
       requiresImport: false,
     },
   ],
+  requiredPlugins: ["jsx-a11y", "import", "react", "react-hooks"],
   rules: `{
     ...compat.extends("airbnb")[0].rules,
     ...compat.extends("airbnb/hooks")[0].rules,

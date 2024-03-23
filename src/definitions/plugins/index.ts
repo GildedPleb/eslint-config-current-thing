@@ -1,19 +1,19 @@
 // PathMark: ./src/definitions/plugins/index.ts
 
 import babel from "./babel";
+import comments from "./comments";
 
 export interface Plugin {
-  definitions: `${"..." | "{"}${string}${")" | "}"}`;
   name: string;
   packages: Array<{
+    key: string;
     name: string;
     package: string;
     requiresImport: boolean;
   }>;
-  usedBy: string[];
 }
 
-const packages: Plugin[] = [babel];
+const plugins: Plugin[] = [babel, comments];
 
-export default packages;
+export default plugins;
 // EOF

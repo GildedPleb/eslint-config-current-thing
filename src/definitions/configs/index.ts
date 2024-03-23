@@ -1,5 +1,4 @@
 // PathMark: ./src/definitions/configs/index.ts
-import babel from "../plugins/babel";
 import airbnb from "./airbnb";
 import airbnbBase from "./airbnb-base";
 import airbnbTs from "./airbnb-ts";
@@ -64,10 +63,11 @@ export interface Config {
     package: string;
     requiresImport: boolean;
   }>;
+  requiredPlugins?: string[];
   rules?: string;
 }
 
-const packages: Config[] = [
+const configs: Config[] = [
   xo,
   comments,
   security,
@@ -83,7 +83,6 @@ const packages: Config[] = [
   index,
   compat,
   functional,
-  babel,
   shopify,
   sort,
   youDontNeedLodash,
@@ -126,5 +125,5 @@ const packages: Config[] = [
   testingLibrary,
 ];
 
-export default packages;
+export default configs;
 // EOF

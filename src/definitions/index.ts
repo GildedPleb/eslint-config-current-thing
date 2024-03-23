@@ -1,7 +1,7 @@
 // PathMark: ./src/definitions/index.ts
 import { getDownloadCount, getInfo } from "../npm";
 import type { Config } from "./configs";
-import definitions from "./configs";
+import configs from "./configs";
 
 export interface PopulatedConfig extends Config {
   count: number;
@@ -11,7 +11,7 @@ export interface PopulatedConfig extends Config {
 
 const configsWithCount: PopulatedConfig[] = [];
 
-for await (const config of definitions) {
+for await (const config of configs) {
   console.log(`Getting info for "${config.name}"...`);
   let count = 0;
   let description = "";
@@ -30,5 +30,7 @@ for await (const config of definitions) {
   configsWithCount.push({ ...config, count, description, homepage });
 }
 
-export default configsWithCount;
+export { configsWithCount as configs };
+export { default as plugins } from "./plugins";
+
 // EOF

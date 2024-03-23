@@ -66,6 +66,8 @@ import reactPerf from "eslint-plugin-react-perf";
 // import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import reactRefresh from "eslint-plugin-react-refresh";
 import regexp from "eslint-plugin-regexp";
+// Import comments from "@eslint-community/eslint-plugin-eslint-comments";
+// import commentsOld from "eslint-plugin-eslint-comments";
 import security from "eslint-plugin-security";
 import importSort from "eslint-plugin-simple-import-sort";
 import sonarjs from "eslint-plugin-sonarjs";
@@ -119,6 +121,13 @@ const configGen = ({
         ...globals.browser,
         ...globals.node,
       },
+    },
+  },
+  {
+    plugins: {
+      "@babel": babelPlugin,
+      "@eslint-community/eslint-comments": comments,
+      "eslint-comments": commentsOld,
     },
   },
 
@@ -488,28 +497,6 @@ const configGen = ({
             ...google.rules,
             ...("eslint-config-google" in override
               ? override["eslint-config-google"]
-              : {}),
-          },
-        },
-      ]),
-
-  /*
-    Babel
-    1,700,734 monthly downloads
-    Companion rules for @babel/eslint-parser
-    https://babel.dev/
-  */
-  ...(disable.includes("@babel/eslint-plugin") || threshold > 1_700_734
-    ? []
-    : [
-        {
-          files,
-          plugins: { "@babel": babelPlugin },
-          // Shopify utilizes these rules, so deferring to that config.
-          // No recommendations given / defaults are all set to 0.
-          rules: {
-            ...("@babel/eslint-plugin" in override
-              ? override["@babel/eslint-plugin"]
               : {}),
           },
         },
@@ -906,10 +893,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: {
-            "@eslint-community/eslint-comments": comments,
-            "eslint-comments": commentsOld,
-          },
           // CommentsOld (mysticatea/eslint-plugin-eslint-comments) intentionally
           // left out: it has the most downloads, but is out of date / not maintained.
           rules: {

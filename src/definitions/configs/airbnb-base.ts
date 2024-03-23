@@ -15,6 +15,7 @@ export default {
       requiresImport: false,
     },
   ],
+  requiredPlugins: ["import"],
   rules: `{
     ...compat.extends("airbnb-base")[0].rules,
     // Added to modernize this infrequently updated, but oft used config

@@ -16,17 +16,17 @@ This is a meta-config of many configs. The basic idea is that Linting is usually
 
 Presently, it combines these configs (and their plugins, submodules, etc.):
 
-|                |          |               |               |                  |
-| -------------- | -------- | ------------- | ------------- | ---------------- |
-| AirBnB         | Babel    | Comments      | Compat        | Create React App |
-| ESLint         | Flowtype | Functional    | Google        | Import-sort      |
-| Import         | Jest     | JSDoc         | JSX A11y      | NextJS           |
-| Node           | Prettier | Promises      | React Hooks   | React Native     |
-| React Perf     | React    | Security      | Shopify       | SonarJS          |
-| Sort Classes   | Standard | TSDoc         | Typescript    | Unicorn          |
-| You Don't Need | XO       | React-Refresh | Vue           | Stylistic        |
-| Storybook      | Regexp   | Tailwind      | Perfectionist | No-Only-Tests    |
-| ES/ES-X        | Header   | i18next       | Emotion       | CSS Modules      |
+|                |          |               |               |                                 |
+| -------------- | -------- | ------------- | ------------- | ------------------------------- |
+| AirBnB         | Babel    | Comments      | Compat        | Create React App (Now Ejected!) |
+| ESLint         | Flowtype | Functional    | Google        | Import-sort                     |
+| Import         | Jest     | JSDoc         | JSX A11y      | NextJS                          |
+| Node           | Prettier | Promises      | React Hooks   | React Native                    |
+| React Perf     | React    | Security      | Shopify       | SonarJS                         |
+| Sort Classes   | Standard | TSDoc         | Typescript    | Unicorn                         |
+| You Don't Need | XO       | React-Refresh | Vue           | Stylistic                       |
+| Storybook      | Regexp   | Tailwind      | Perfectionist | No-Only-Tests                   |
+| ES/ES-X        | Header   | i18next       | Emotion       | CSS Modules                     |
 
 The winning (and thus supported) high-level architecture is:
 

@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 import JSONConfig from "../current.json" assert { type: "json" };
 import { LAST_DAY_INTERVAL, MINIMUMS, README_SLUG, RULES } from "./constants";
-import configs from "./definitions";
+import { configs, plugins } from "./definitions";
 import fetchEslintPlugins from "./get-packages";
 
 const filename = fileURLToPath(import.meta.url);
@@ -27,16 +27,21 @@ const generateCode = `// PathMark: ./src/config.js
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-${[
-  ...configs.flatMap(({ packages }) =>
-    packages.map(
-      ({ name, package: pack, requiresImport }) =>
-        `${requiresImport ? "" : "// "}import ${name} from "${pack}";`,
-    ),
+${configs.flatMap(({ packages }) =>
+  packages.map(
+    ({ name, package: pack, requiresImport }) =>
+      `${requiresImport ? "" : "// "}import ${name} from "${pack}";`,
   ),
-  'import { FlatCompat } from "@eslint/eslintrc";',
-].join(`
+).join(`
 `)}
+${plugins.flatMap(({ packages }) =>
+  packages.map(
+    ({ name, package: pack, requiresImport }) =>
+      `${requiresImport ? "" : "// "}import ${name} from "${pack}";`,
+  ),
+).join(`
+`)}
+import { FlatCompat } from "@eslint/eslintrc";
 import globals from "globals";
 import restrictedGlobals from 'confusing-browser-globals';
 
@@ -72,35 +77,51 @@ const configGen = ({ disable = [], override = {}, threshold = ${MINIMUMS} } = de
       },
     },
   },
+  {
+    plugins: {
+      ${plugins.flatMap(({ packages }) =>
+        packages.map(({ key, name }) => `"${key}": ${name},`),
+      ).join(`
+      `)}
+    },
+  },
 
-${configs
-  .sort((first, second) => first.count - second.count)
-  .map(
-    ({ count, definitions, description, homepage, name, packages, rules }) => {
-      if (rules !== undefined && !definitions.includes(RULES)) {
-        const message = `Formatting Error: ${name} includes a 'rules' key but does not define were those rules should be placed inline.`;
-        throw new Error(message);
-      }
+  ${configs
+    .sort((first, second) => first.count - second.count)
+    .map(
+      ({
+        count,
+        definitions,
+        description,
+        homepage,
+        name,
+        packages,
+        rules,
+      }) => {
+        if (rules !== undefined && !definitions.includes(RULES)) {
+          const message = `Formatting Error: ${name} includes a 'rules' key but does not define were those rules should be placed inline.`;
+          throw new Error(message);
+        }
 
-      if (
-        definitions.includes("rules: ") &&
-        name !== "Shopify" &&
-        name !== "Emotion CSS"
-      ) {
-        const message = `Formatting Error: ${name}.definitions includes a 'rules' key when it should use the 'RULES' replacement inline placeholder. See other config definitions for examples.`;
-        throw new Error(message);
-      }
+        if (
+          definitions.includes("rules: ") &&
+          name !== "Shopify" &&
+          name !== "Emotion CSS"
+        ) {
+          const message = `Formatting Error: ${name}.definitions includes a 'rules' key when it should use the 'RULES' replacement inline placeholder. See other config definitions for examples.`;
+          throw new Error(message);
+        }
 
-      if (!definitions.includes(RULES)) {
-        const message = `Formatting Error: ${name}.definitions does not include a 'RULES' inline market to show were rules should be added as a placeholder. See other config definitions for examples.`;
-        throw new Error(message);
-      }
+        if (!definitions.includes(RULES)) {
+          const message = `Formatting Error: ${name}.definitions does not include a 'RULES' inline market to show were rules should be added as a placeholder. See other config definitions for examples.`;
+          throw new Error(message);
+        }
 
-      const parsedRules = rules === undefined ? "" : `...${rules},`;
+        const parsedRules = rules === undefined ? "" : `...${rules},`;
 
-      const definition = `...(${packages
-        .map(({ package: pack }) => `disable.includes("${pack}")`)
-        .join(` || `)} || threshold > ${count}
+        const definition = `...(${packages
+          .map(({ package: pack }) => `disable.includes("${pack}")`)
+          .join(` || `)} || threshold > ${count}
     ? []
     : [
         ${definitions.replace(
@@ -117,7 +138,7 @@ ${configs
         )}
       ])`;
 
-      return `  /*
+        return `  /*
     ${name}
     ${count.toLocaleString()} monthly downloads
     ${description}
@@ -125,8 +146,8 @@ ${configs
   */
   ${definition},
 `;
-    },
-  ).join(`
+      },
+    ).join(`
 `)}];
 
 export default configGen;
