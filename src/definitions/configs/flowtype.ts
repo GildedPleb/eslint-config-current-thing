@@ -7,13 +7,15 @@ export default {
     files,
     settings: {
       flowtype: {
-        onlyFilesWithFlowAnnotation: true
+        onlyFilesWithFlowAnnotation: false
       },
       "ft-flow": {
-        onlyFilesWithFlowAnnotation: true
+        onlyFilesWithFlowAnnotation: false
       }
     },
     // No rules as they conflict with Typescript
+    // ...flowtype.configs.recommended.rules,
+    // ...ftFlow.configs.recommended.rules,
     ${RULES}
   }`,
   name: "Flowtype",
@@ -30,9 +32,5 @@ export default {
     },
   ],
   requiredPlugins: ["flowtype", "ft-flow"],
-  rules: `{
-    ...flowtype.configs.recommended.rules,
-    ...ftFlow.configs.recommended.rules,
-  }`,
 } satisfies Config;
 // EOF

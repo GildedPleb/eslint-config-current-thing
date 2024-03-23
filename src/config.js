@@ -23,6 +23,9 @@ import nextjs from "@next/eslint-plugin-next";
 import rnConfig from "@react-native/eslint-config";
 import rnPlugin from "@react-native/eslint-plugin";
 import reactNativeConfig from "@react-native-community/eslint-config";
+// Import importResolver from "eslint-import-resolver-typescript";
+// import comp from "eslint-plugin-compat";
+// import functional from "eslint-plugin-functional";
 import shopify from "@shopify/eslint-plugin";
 // Import vueParser from "vue-eslint-parser";
 import stylistic from "@stylistic/eslint-plugin";
@@ -44,8 +47,6 @@ import esX from "eslint-plugin-es-x";
 import commentsOld from "eslint-plugin-eslint-comments";
 import flowtype from "eslint-plugin-flowtype";
 import ftFlow from "eslint-plugin-ft-flow";
-// Import importResolver from "eslint-import-resolver-typescript";
-// import comp from "eslint-plugin-compat";
 import functional from "eslint-plugin-functional";
 // Import esX from "eslint-plugin-es-x";
 // import es from "eslint-plugin-es";
@@ -143,6 +144,7 @@ const configGen = ({
       "eslint-comments": commentsOld,
       flowtype,
       "ft-flow": ftFlow,
+      functional,
     },
   },
 
@@ -372,7 +374,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { functional },
           // "Strick", "Recommended", and "Lite" punch far above their weight and are not added.
           rules: {
             ...functional.configs["external-typescript-recommended"].rules,
@@ -1014,7 +1015,7 @@ const configGen = ({
               ecmaFeatures: {
                 jsx: true,
               },
-              ecmaVersion: 2018,
+              ecmaVersion: "latest",
               requireConfigFile: false,
               sourceType: "module",
             },
@@ -1421,10 +1422,8 @@ const configGen = ({
     : [
         {
           files,
-          // No rules as they conflict with Typescript
+          // ...ftFlow.configs.recommended.rules,
           rules: {
-            ...flowtype.configs.recommended.rules,
-            ...ftFlow.configs.recommended.rules,
             ...("eslint-plugin-flowtype" in override
               ? override["eslint-plugin-flowtype"]
               : {}),
@@ -1432,12 +1431,14 @@ const configGen = ({
               ? override["eslint-plugin-ft-flow"]
               : {}),
           },
+          // No rules as they conflict with Typescript
+          // ...flowtype.configs.recommended.rules,
           settings: {
             flowtype: {
-              onlyFilesWithFlowAnnotation: true,
+              onlyFilesWithFlowAnnotation: false,
             },
             "ft-flow": {
-              onlyFilesWithFlowAnnotation: true,
+              onlyFilesWithFlowAnnotation: false,
             },
           },
         },
