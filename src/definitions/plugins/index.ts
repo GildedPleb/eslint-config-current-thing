@@ -12,6 +12,7 @@ import header from "./header";
 import i18next from "./i18next";
 import importPlugin from "./import";
 import importSort from "./import-sort";
+import jest from "./jest";
 import jestDom from "./jest-dom";
 import jestFormatting from "./jest-formatting";
 
@@ -40,6 +41,7 @@ const plugins: Plugin[] = [
   importPlugin,
   jestDom,
   jestFormatting,
+  jest,
 ];
 
 export default plugins;

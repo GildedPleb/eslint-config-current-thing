@@ -39,6 +39,7 @@ import google from "eslint-config-google";
 // Import standard from "eslint-config-standard";
 import standardTS from "eslint-config-love";
 import prettierConfig from "eslint-config-prettier";
+// Import jest from "eslint-plugin-jest";
 import standardJsx from "eslint-config-standard-jsx";
 // Import flowtype from "eslint-plugin-flowtype";
 // import ftFlow from "eslint-plugin-ft-flow";
@@ -153,6 +154,7 @@ const configGen = ({
       header,
       i18next,
       import: importPlugin,
+      jest,
       "jest-dom": jestDom,
       "jest-formatting": jestFormatting,
       "simple-import-sort": importSort,
@@ -1606,9 +1608,8 @@ const configGen = ({
               xtest: false,
             },
           },
-          plugins: { jest },
           rules: {
-            ...jest.configs.recommended.rules,
+            ...jest.configs["flat/recommended"].rules,
             ...("eslint-plugin-jest" in override
               ? override["eslint-plugin-jest"]
               : {}),

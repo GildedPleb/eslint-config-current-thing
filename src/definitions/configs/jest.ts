@@ -22,13 +22,13 @@ export default {
         xtest: false,
       },
     },
-    plugins: { jest },
     ${RULES}
   }`,
   name: "Jest",
   packages: [
-    { name: "jest", package: "eslint-plugin-jest", requiresImport: true },
+    { name: "jest", package: "eslint-plugin-jest", requiresImport: false },
   ],
-  rules: `jest.configs.recommended.rules`,
+  requiredPlugins: ["jest"],
+  rules: `jest.configs['flat/recommended'].rules`,
 } satisfies Config;
 // EOF
