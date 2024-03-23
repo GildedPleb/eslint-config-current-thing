@@ -16,7 +16,6 @@ import { fileURLToPath } from "node:url";
 
 import babelPlugin from "@babel/eslint-plugin";
 import { rules as emotion } from "@emotion/eslint-plugin";
-// Import { rules: emotion } from "@emotion/eslint-plugin";
 import { FlatCompat } from "@eslint/eslintrc";
 import eslint from "@eslint/js";
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
@@ -38,12 +37,15 @@ import xo from "eslint-config-xo";
 import comp from "eslint-plugin-compat";
 import cssModules from "eslint-plugin-css-modules";
 import es from "eslint-plugin-es";
+// Import { rules: emotion } from "@emotion/eslint-plugin";
 import esX from "eslint-plugin-es-x";
 import commentsOld from "eslint-plugin-eslint-comments";
 import flowtype from "eslint-plugin-flowtype";
 // Import importResolver from "eslint-import-resolver-typescript";
 // import comp from "eslint-plugin-compat";
 import functional from "eslint-plugin-functional";
+// Import esX from "eslint-plugin-es-x";
+// import es from "eslint-plugin-es";
 import header from "eslint-plugin-header";
 import i18next from "eslint-plugin-i18next";
 import importPlugin from "eslint-plugin-import";
@@ -133,6 +135,8 @@ const configGen = ({
       "@eslint-community/eslint-comments": comments,
       compat: comp,
       "css-modules": cssModules,
+      es,
+      "es-x": esX,
       "eslint-comments": commentsOld,
     },
   },
@@ -1458,7 +1462,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { es, "es-x": esX },
           rules: {
             ...esX.configs["no-new-in-esnext"].rules,
             ...("eslint-plugin-es-x" in override
