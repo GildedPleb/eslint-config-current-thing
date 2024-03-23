@@ -12,6 +12,7 @@ import header from "./header";
 import i18next from "./i18next";
 import importPlugin from "./import";
 import importSort from "./import-sort";
+import jestDom from "./jest-dom";
 
 export interface Plugin {
   name: string;
@@ -36,6 +37,7 @@ const plugins: Plugin[] = [
   i18next,
   importSort,
   importPlugin,
+  jestDom,
 ];
 
 export default plugins;

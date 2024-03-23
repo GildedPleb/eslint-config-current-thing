@@ -97,6 +97,7 @@ import unicorn from "eslint-plugin-unicorn";
 import vue from "eslint-plugin-vue";
 import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
 import globals from "globals";
+// Import jestDom from "eslint-plugin-jest-dom";
 import tseslint from "typescript-eslint";
 
 const filename = fileURLToPath(import.meta.url);
@@ -151,6 +152,7 @@ const configGen = ({
       header,
       i18next,
       import: importPlugin,
+      "jest-dom": jestDom,
       "simple-import-sort": importSort,
     },
   },
@@ -665,7 +667,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { "jest-dom": jestDom },
           rules: {
             ...jestDom.configs.recommended.rules,
             ...("eslint-plugin-jest-dom" in override

@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { "jest-dom": jestDom },
     ${RULES}
   }`,
   name: "Jest Dom",
@@ -13,9 +12,10 @@ export default {
     {
       name: "jestDom",
       package: "eslint-plugin-jest-dom",
-      requiresImport: true,
+      requiresImport: false,
     },
   ],
+  requiredPlugins: ["jest-dom"],
   rules: `jestDom.configs.recommended.rules`,
 } satisfies Config;
 // EOF
