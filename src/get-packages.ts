@@ -1,6 +1,6 @@
 // PathMark: ./src/get-packages.ts
-import definitions from "./configs/definitions";
 import { MINIMUMS } from "./constants";
+import definitions from "./definitions/configs";
 import notApplicable from "./not-applicable";
 import { fetchNPMURLs, getDownloadCount } from "./npm";
 import rejected from "./rejected";

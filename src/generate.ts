@@ -4,8 +4,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import JSONConfig from "../current.json" assert { type: "json" };
-import configs from "./configs";
 import { LAST_DAY_INTERVAL, MINIMUMS, README_SLUG, RULES } from "./constants";
+import configs from "./definitions";
 import fetchEslintPlugins from "./get-packages";
 
 const filename = fileURLToPath(import.meta.url);
