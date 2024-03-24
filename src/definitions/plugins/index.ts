@@ -20,6 +20,7 @@ import jsxA11y from "./jsx-a11y";
 import nextjs from "./nextjs";
 import noOnlyTest from "./no-only-test";
 import node from "./node";
+import perfectionist from "./perfectionist";
 
 export interface Plugin {
   name: string;
@@ -52,6 +53,7 @@ const plugins: Plugin[] = [
   nextjs,
   noOnlyTest,
   node,
+  perfectionist,
 ];
 
 export default plugins;

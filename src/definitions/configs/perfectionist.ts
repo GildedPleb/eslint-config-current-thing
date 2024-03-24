@@ -5,9 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: {
-      perfectionist: perfectionist
-    },
     ${RULES}
   }`,
   name: "Perfectionist",
@@ -15,9 +12,10 @@ export default {
     {
       name: "perfectionist",
       package: "eslint-plugin-perfectionist",
-      requiresImport: true,
+      requiresImport: false,
     },
   ],
+  requiredPlugins: ["perfectionist"],
   rules: `{
     ...perfectionist.configs["recommended-natural"].rules,
     "perfectionist/sort-imports": 0,

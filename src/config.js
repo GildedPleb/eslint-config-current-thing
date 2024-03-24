@@ -17,7 +17,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import babelPlugin from "@babel/eslint-plugin";
-// Import noOnlyTest from "eslint-plugin-no-only-tests";
+// Import perfectionist from "eslint-plugin-perfectionist";
+// import noOnlyTest from "eslint-plugin-no-only-tests";
 // import esX from "eslint-plugin-es-x";
 // import es from "eslint-plugin-es";
 // import i18next from "eslint-plugin-i18next";
@@ -171,6 +172,7 @@ const configGen = ({
       n: nNode,
       "no-only-tests": noOnlyTest,
       node,
+      perfectionist,
       "simple-import-sort": importSort,
     },
   },
@@ -424,9 +426,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: {
-            perfectionist,
-          },
           rules: {
             ...perfectionist.configs["recommended-natural"].rules,
             "perfectionist/sort-imports": 0,

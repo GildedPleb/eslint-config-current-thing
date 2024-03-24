@@ -21,6 +21,7 @@ export default {
     { name: "nNode", package: "eslint-plugin-n", requiresImport: false },
     { name: "node", package: "eslint-plugin-node", requiresImport: false },
   ],
+  requiredPlugins: ["node", "n"],
   rules: `{
     // there are no recommended ways to use "node", as the "n" rule obsoletes
     // it, but "node" is still used by the Shopify config.
