@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { "react-perf": reactPerf },
     ${RULES}
   }`,
   name: "React Performance",
@@ -13,9 +12,10 @@ export default {
     {
       name: "reactPerf",
       package: "eslint-plugin-react-perf",
-      requiresImport: true,
+      requiresImport: false,
     },
   ],
+  requiredPlugins: ["react-perf"],
   rules: `reactPerf.configs.recommended.rules`,
 } satisfies Config;
 // EOF

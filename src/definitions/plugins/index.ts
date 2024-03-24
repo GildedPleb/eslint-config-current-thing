@@ -26,6 +26,7 @@ import promises from "./promises";
 import reactHooks from "./react-hooks";
 import reactNative from "./react-native";
 import reactNativeIndie from "./react-native-indie";
+import reactPerf from "./react-perf";
 
 export interface Plugin {
   name: string;
@@ -64,6 +65,7 @@ const plugins: Plugin[] = [
   reactHooks,
   reactNative,
   reactNativeIndie,
+  reactPerf,
 ];
 
 export default plugins;

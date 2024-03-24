@@ -29,7 +29,8 @@ import eslint from "@eslint/js";
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
 import nextjs from "@next/eslint-plugin-next";
 import rnPlugin from "@react-native/eslint-plugin";
-// Import rnPlugin from "@react-native/eslint-plugin";
+// Import reactPerf from "eslint-plugin-react-perf";
+// import rnPlugin from "@react-native/eslint-plugin";
 import reactNativeConfig from "@react-native-community/eslint-config";
 // Import importPlugin from "eslint-plugin-import";
 // import importResolver from "eslint-import-resolver-typescript";
@@ -183,6 +184,7 @@ const configGen = ({
       promise,
       "react-hooks": reactHooks,
       "react-native": reactNativeIndie,
+      "react-perf": reactPerf,
       "simple-import-sort": importSort,
     },
   },
@@ -198,7 +200,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { "react-perf": reactPerf },
           rules: {
             ...reactPerf.configs.recommended.rules,
             ...("eslint-plugin-react-perf" in override

@@ -896,6 +896,7 @@
     "react-hooks",
     "@react-native",
     "react-native",
+    "react-perf",
     "regexp:eslint-plugin-regexp@2.3.0",
     "@stylistic",
     "@shopify",
