@@ -27,7 +27,7 @@ export default {
     },
     ${RULES}
   }`,
-  name: "Create React App TS",
+  name: "Create React App - TS",
   packages: [
     { name: "cra", package: "eslint-config-react-app", requiresImport: false },
   ],

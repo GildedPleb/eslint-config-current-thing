@@ -31,6 +31,9 @@ import reactPerf from "./react-perf";
 import reactRefresh from "./react-refresh";
 import regexp from "./regexp";
 import security from "./security";
+import shopify from "./shopify";
+import shopifyJest from "./shopify-jest";
+import shopifyTs from "./shopify-ts";
 
 export interface Plugin {
   name: string;
@@ -74,6 +77,9 @@ const plugins: Plugin[] = [
   react,
   regexp,
   security,
+  shopify,
+  shopifyJest,
+  shopifyTs,
 ];
 
 export default plugins;

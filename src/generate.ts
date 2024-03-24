@@ -30,16 +30,14 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 ${configs.flatMap(({ packages }) =>
-  packages.map(
-    ({ name, package: pack, requiresImport }) =>
-      `${requiresImport ? "" : "// "}import ${name} from "${pack}";`,
+  packages.map(({ name, package: pack, requiresImport }) =>
+    requiresImport ? `import ${name} from "${pack}";` : "",
   ),
 ).join(`
 `)}
 ${plugins.flatMap(({ packages }) =>
-  packages.map(
-    ({ name, package: pack, requiresImport }) =>
-      `${requiresImport ? "" : "// "}import ${name} from "${pack}";`,
+  packages.map(({ name, package: pack, requiresImport }) =>
+    requiresImport ? `import ${name} from "${pack}";` : "",
   ),
 ).join(`
 `)}
@@ -107,7 +105,7 @@ const configGen = ({ disable = [], override = {}, threshold = ${MINIMUMS} } = de
 
         if (
           definitions.includes("rules: ") &&
-          name !== "Shopify" &&
+          !name.includes("Shopify") &&
           name !== "Emotion CSS"
         ) {
           const message = `Formatting Error: ${name}.definitions includes a 'rules' key when it should use the 'RULES' replacement inline placeholder. See other config definitions for examples.`;

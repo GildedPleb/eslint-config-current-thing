@@ -10,60 +10,32 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/23/2024
+  Generated on 3/24/2024
 */
 
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import babelPlugin from "@babel/eslint-plugin";
-// Import perfectionist from "eslint-plugin-perfectionist";
-// import noOnlyTest from "eslint-plugin-no-only-tests";
-// import esX from "eslint-plugin-es-x";
-// import es from "eslint-plugin-es";
-// import i18next from "eslint-plugin-i18next";
 import { rules as emotion } from "@emotion/eslint-plugin";
 import { FlatCompat } from "@eslint/eslintrc";
-// Import importSort from "eslint-plugin-simple-import-sort";
 import eslint from "@eslint/js";
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
 import nextjs from "@next/eslint-plugin-next";
 import rnPlugin from "@react-native/eslint-plugin";
-// Import reactPerf from "eslint-plugin-react-perf";
-// import rnPlugin from "@react-native/eslint-plugin";
 import reactNativeConfig from "@react-native-community/eslint-config";
-// Import importPlugin from "eslint-plugin-import";
-// import importResolver from "eslint-import-resolver-typescript";
-// import comp from "eslint-plugin-compat";
-// import functional from "eslint-plugin-functional";
 import shopify from "@shopify/eslint-plugin";
-// Import vueParser from "vue-eslint-parser";
 import stylistic from "@stylistic/eslint-plugin";
 import restrictedGlobals from "confusing-browser-globals";
 import google from "eslint-config-google";
-// Import jsdoc from "eslint-plugin-jsdoc";
-// import standard from "eslint-config-standard";
 import standardTS from "eslint-config-love";
-// Import nextjs from "@next/eslint-plugin-next";
-// import promise from "eslint-plugin-promise";
-// import prettier from "eslint-plugin-prettier";
 import prettierConfig from "eslint-config-prettier";
-// Import rnConfig from "@react-native/eslint-config";
-// import reactNativeIndie from "eslint-plugin-react-native";
-// import jest from "eslint-plugin-jest";
 import standardJsx from "eslint-config-standard-jsx";
-// Import cra from "eslint-config-react-app";
-// import react from "eslint-plugin-react";
-// import reactHooks from "eslint-plugin-react-hooks";
-// import jsxA11y from "eslint-plugin-jsx-a11y";
-// import flowtype from "eslint-plugin-flowtype";
-// import ftFlow from "eslint-plugin-ft-flow";
 import standardReact from "eslint-config-standard-react";
 import xo from "eslint-config-xo";
 import comp from "eslint-plugin-compat";
 import cssModules from "eslint-plugin-css-modules";
 import es from "eslint-plugin-es";
-// Import { rules: emotion } from "@emotion/eslint-plugin";
 import esX from "eslint-plugin-es-x";
 import commentsOld from "eslint-plugin-eslint-comments";
 import flowtype from "eslint-plugin-flowtype";
@@ -94,31 +66,14 @@ import security from "eslint-plugin-security";
 import importSort from "eslint-plugin-simple-import-sort";
 import sonarjs from "eslint-plugin-sonarjs";
 import sortClassMembers from "eslint-plugin-sort-class-members";
-// Import regexp from "eslint-plugin-regexp";
 import storybook from "eslint-plugin-storybook";
 import tailwindcss from "eslint-plugin-tailwindcss";
-// Import cssModules from "eslint-plugin-css-modules";
-// import airbnb from "eslint-config-airbnb";
-// import airbnbBase from "eslint-config-airbnb-base";
-// import airbnbTypescript from "eslint-config-airbnb-typescript";
-// import cra from "eslint-config-react-app";
-// import cra from "eslint-config-react-app";
 import testingLibrary from "eslint-plugin-testing-library";
-// Import comments from "@eslint-community/eslint-plugin-eslint-comments";
-// import commentsOld from "eslint-plugin-eslint-comments";
-// import security from "eslint-plugin-security";
 import tsdoc from "eslint-plugin-tsdoc";
-// Import nNode from "eslint-plugin-n";
-// import node from "eslint-plugin-node";
 import unicorn from "eslint-plugin-unicorn";
-// Import typescriptParser from "@typescript-eslint/parser";
-// import typescriptPlugin from "@typescript-eslint/eslint-plugin";
-// import reactRefresh from "eslint-plugin-react-refresh";
 import vue from "eslint-plugin-vue";
 import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
 import globals from "globals";
-// Import jestFormatting from "eslint-plugin-jest-formatting";
-// import jestDom from "eslint-plugin-jest-dom";
 import tseslint from "typescript-eslint";
 
 const filename = fileURLToPath(import.meta.url);
@@ -164,6 +119,23 @@ const configGen = ({
       "@eslint-community/eslint-comments": comments,
       "@next/next": nextjs,
       "@react-native": rnPlugin,
+      "@shopify": shopify,
+      "@shopify/jest": {
+        rules: Object.fromEntries(
+          Object.entries(shopify.rules).map(([key, value]) => {
+            if (key.startsWith("jest/")) return [key.slice(5), value];
+            return [key, value];
+          }),
+        ),
+      },
+      "@shopify/typescript": {
+        rules: Object.fromEntries(
+          Object.entries(shopify.rules).map(([key, value]) => {
+            if (key.startsWith("typescript/")) return [key.slice(11), value];
+            return [key, value];
+          }),
+        ),
+      },
       compat: comp,
       "css-modules": cssModules,
       es,
@@ -307,7 +279,27 @@ const configGen = ({
       ]),
 
   /*
-    Shopify
+    Shopify - TS
+    678,124 monthly downloads
+    Shopify's ESLint rules and configs.
+    https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
+  */
+  ...(disable.includes("@shopify/eslint-plugin") || threshold > 678_124
+    ? []
+    : [
+        {
+          files: ["*.ts", "*.tsx"],
+          rules: {
+            ...shopify.configs.typescript.overrides[0].rules,
+            ...("@shopify/eslint-plugin" in override
+              ? override["@shopify/eslint-plugin"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
+    Shopify - Core
     678,124 monthly downloads
     Shopify's ESLint rules and configs.
     https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
@@ -317,24 +309,262 @@ const configGen = ({
     : [
         {
           files,
-          plugins: {
-            "@shopify": shopify,
-            "@shopify/typescript": {
-              config: shopify.configs,
-              rules: Object.fromEntries(
-                Object.entries(shopify.rules).map(([key, value]) => [
-                  key.startsWith("typescript/") ? key.slice(11) : key,
-                  value,
-                ]),
-              ),
+          rules: {
+            ...shopify.configs.core.rules,
+            ...("@shopify/eslint-plugin" in override
+              ? override["@shopify/eslint-plugin"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
+    Shopify - ESNext
+    678,124 monthly downloads
+    Shopify's ESLint rules and configs.
+    https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
+  */
+  ...(disable.includes("@shopify/eslint-plugin") || threshold > 678_124
+    ? []
+    : [
+        {
+          files,
+          rules: {
+            ...shopify.configs.esnext.rules,
+            ...("@shopify/eslint-plugin" in override
+              ? override["@shopify/eslint-plugin"]
+              : {}),
+          },
+          settings: {
+            "import/ignore": ["node_modules", ".s?css"],
+          },
+        },
+      ]),
+
+  /*
+    Shopify - Jest
+    678,124 monthly downloads
+    Shopify's ESLint rules and configs.
+    https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
+  */
+  ...(disable.includes("@shopify/eslint-plugin") || threshold > 678_124
+    ? []
+    : [
+        {
+          files: [
+            "**/*.test.*",
+            "**/*_test.*",
+            "**/*Test.*",
+            "**/*.spec.*",
+            "**/*_spec.*",
+            "**/*Spec.*",
+            "**/__tests__/*",
+          ],
+          languageOptions: {
+            globals: {
+              "jest/globals": true,
             },
           },
           rules: {
-            ...shopify.configs.core.rules,
-            ...shopify.configs.esnext.rules,
+            ...shopify.configs.jest.rules,
+            ...("@shopify/eslint-plugin" in override
+              ? override["@shopify/eslint-plugin"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
+    Shopify - Node
+    678,124 monthly downloads
+    Shopify's ESLint rules and configs.
+    https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
+  */
+  ...(disable.includes("@shopify/eslint-plugin") || threshold > 678_124
+    ? []
+    : [
+        {
+          files,
+          rules: {
             ...shopify.configs.node.rules,
+            ...("@shopify/eslint-plugin" in override
+              ? override["@shopify/eslint-plugin"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
+    Shopify - Prettier
+    678,124 monthly downloads
+    Shopify's ESLint rules and configs.
+    https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
+  */
+  ...(disable.includes("@shopify/eslint-plugin") || threshold > 678_124
+    ? []
+    : [
+        {
+          files,
+          rules: {
             ...shopify.configs.prettier.rules,
-            ...shopify.configs.typescript.overrides[0].rules,
+            ...("@shopify/eslint-plugin" in override
+              ? override["@shopify/eslint-plugin"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
+    Shopify - Prettier TS
+    678,124 monthly downloads
+    Shopify's ESLint rules and configs.
+    https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
+  */
+  ...(disable.includes("@shopify/eslint-plugin") || threshold > 678_124
+    ? []
+    : [
+        {
+          files: ["*.ts", "*.tsx"],
+          rules: {
+            ...shopify.configs.prettier.overrides[0].rules,
+            ...("@shopify/eslint-plugin" in override
+              ? override["@shopify/eslint-plugin"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
+    Shopify - Polaris
+    678,124 monthly downloads
+    Shopify's ESLint rules and configs.
+    https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
+  */
+  ...(disable.includes("@shopify/eslint-plugin") || threshold > 678_124
+    ? []
+    : [
+        {
+          files,
+          rules: {
+            ...shopify.configs.polaris.rules,
+            ...("@shopify/eslint-plugin" in override
+              ? override["@shopify/eslint-plugin"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
+    Shopify - React
+    678,124 monthly downloads
+    Shopify's ESLint rules and configs.
+    https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
+  */
+  ...(disable.includes("@shopify/eslint-plugin") || threshold > 678_124
+    ? []
+    : [
+        {
+          files,
+          languageOptions: {
+            parserOptions: {
+              ecmaFeatures: {
+                jsx: true,
+              },
+              sourceType: "module",
+            },
+          },
+          rules: {
+            ...shopify.configs.react.rules,
+            ...("@shopify/eslint-plugin" in override
+              ? override["@shopify/eslint-plugin"]
+              : {}),
+          },
+          settings: {
+            react: {
+              version: "detect",
+            },
+          },
+        },
+      ]),
+
+  /*
+    Shopify - React TS
+    678,124 monthly downloads
+    Shopify's ESLint rules and configs.
+    https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
+  */
+  ...(disable.includes("@shopify/eslint-plugin") || threshold > 678_124
+    ? []
+    : [
+        {
+          files: ["*.ts", "*.tsx"],
+          languageOptions: {
+            parserOptions: {
+              ecmaFeatures: {
+                jsx: true,
+              },
+              sourceType: "module",
+            },
+          },
+          rules: {
+            ...shopify.configs.react.overrides[0].rules,
+            ...("@shopify/eslint-plugin" in override
+              ? override["@shopify/eslint-plugin"]
+              : {}),
+          },
+          settings: {
+            react: {
+              version: "detect",
+            },
+          },
+        },
+      ]),
+
+  /*
+    Shopify - React Test
+    678,124 monthly downloads
+    Shopify's ESLint rules and configs.
+    https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
+  */
+  ...(disable.includes("@shopify/eslint-plugin") || threshold > 678_124
+    ? []
+    : [
+        {
+          files: ["*.test.*"],
+          languageOptions: {
+            parserOptions: {
+              ecmaFeatures: {
+                jsx: true,
+              },
+              sourceType: "module",
+            },
+          },
+          rules: {
+            ...shopify.configs.react.overrides[1].rules,
+            ...("@shopify/eslint-plugin" in override
+              ? override["@shopify/eslint-plugin"]
+              : {}),
+          },
+          settings: {
+            react: {
+              version: "detect",
+            },
+          },
+        },
+      ]),
+
+  /*
+    Shopify - TS Type Check
+    678,124 monthly downloads
+    Shopify's ESLint rules and configs.
+    https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
+  */
+  ...(disable.includes("@shopify/eslint-plugin") || threshold > 678_124
+    ? []
+    : [
+        {
+          files: ["*.ts", "*.tsx"],
+          rules: {
             ...shopify.configs["typescript-type-checking"].overrides[0].rules,
             ...("@shopify/eslint-plugin" in override
               ? override["@shopify/eslint-plugin"]
@@ -450,6 +680,27 @@ const configGen = ({
             "perfectionist/sort-named-imports": 0,
             ...("eslint-plugin-perfectionist" in override
               ? override["eslint-plugin-perfectionist"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
+    React Native Plugin
+    1,005,937 monthly downloads
+    ESLint rules for @react-native/eslint-config
+    https://github.com/facebook/react-native/tree/HEAD/packages/eslint-plugin-react-native#readme
+  */
+  ...(disable.includes("@react-native/eslint-plugin") || threshold > 1_005_937
+    ? []
+    : [
+        {
+          files,
+          // Not added in any config
+          rules: {
+            "@react-native/platform-colors": 1,
+            ...("@react-native/eslint-plugin" in override
+              ? override["@react-native/eslint-plugin"]
               : {}),
           },
         },
@@ -654,6 +905,90 @@ const configGen = ({
       ]),
 
   /*
+    React Native Config
+    3,505,615 monthly downloads
+    ESLint config for React Native / ESLint config for React Native
+    https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native-community#readme / https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native#readme
+  */
+  ...(disable.includes("@react-native-community/eslint-config") ||
+  disable.includes("@react-native/eslint-config") ||
+  threshold > 3_505_615
+    ? []
+    : [
+        {
+          files,
+          languageOptions: {
+            globals: reactNativeConfig.globals,
+          },
+          rules: {
+            ...reactNativeConfig.rules,
+            // Deprecated rule format needs to be overwritten
+            quotes: [
+              0,
+              "single",
+              { allowTemplateLiterals: true, avoidEscape: true },
+            ],
+            ...("@react-native-community/eslint-config" in override
+              ? override["@react-native-community/eslint-config"]
+              : {}),
+            ...("@react-native/eslint-config" in override
+              ? override["@react-native/eslint-config"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
+    React Native Config - Flowtype
+    3,505,615 monthly downloads
+    ESLint config for React Native / ESLint config for React Native
+    https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native-community#readme / https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native#readme
+  */
+  ...(disable.includes("@react-native-community/eslint-config") ||
+  disable.includes("@react-native/eslint-config") ||
+  threshold > 3_505_615
+    ? []
+    : [
+        {
+          files: ["*.js"],
+          rules: {
+            ...reactNativeConfig.overrides[0].rules,
+            ...("@react-native-community/eslint-config" in override
+              ? override["@react-native-community/eslint-config"]
+              : {}),
+            ...("@react-native/eslint-config" in override
+              ? override["@react-native/eslint-config"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
+    React Native Config - Typescript
+    3,505,615 monthly downloads
+    ESLint config for React Native / ESLint config for React Native
+    https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native-community#readme / https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native#readme
+  */
+  ...(disable.includes("@react-native-community/eslint-config") ||
+  disable.includes("@react-native/eslint-config") ||
+  threshold > 3_505_615
+    ? []
+    : [
+        {
+          files: ["*.ts", "*.tsx"],
+          rules: {
+            ...reactNativeConfig.overrides[1].rules,
+            ...("@react-native-community/eslint-config" in override
+              ? override["@react-native-community/eslint-config"]
+              : {}),
+            ...("@react-native/eslint-config" in override
+              ? override["@react-native/eslint-config"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
     Security
     3,584,432 monthly downloads
     Security rules for eslint
@@ -738,45 +1073,6 @@ const configGen = ({
       ]),
 
   /*
-    React Native Config
-    4,511,552 monthly downloads
-    ESLint rules for @react-native/eslint-config / ESLint config for React Native / ESLint config for React Native
-    https://github.com/facebook/react-native/tree/HEAD/packages/eslint-plugin-react-native#readme / https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native-community#readme / https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native#readme
-  */
-  ...(disable.includes("@react-native/eslint-plugin") ||
-  disable.includes("@react-native-community/eslint-config") ||
-  disable.includes("@react-native/eslint-config") ||
-  threshold > 4_511_552
-    ? []
-    : [
-        {
-          files,
-          rules: {
-            ...reactNativeConfig.overrides[1].rules,
-            ...reactNativeConfig.overrides[2].rules,
-            ...reactNativeConfig.rules,
-            // Not added in any config
-            "@react-native/platform-colors": 1,
-            // Deprecated style needs to be overwritten
-            quotes: [
-              0,
-              "single",
-              { allowTemplateLiterals: true, avoidEscape: true },
-            ],
-            ...("@react-native/eslint-plugin" in override
-              ? override["@react-native/eslint-plugin"]
-              : {}),
-            ...("@react-native-community/eslint-config" in override
-              ? override["@react-native-community/eslint-config"]
-              : {}),
-            ...("@react-native/eslint-config" in override
-              ? override["@react-native/eslint-config"]
-              : {}),
-          },
-        },
-      ]),
-
-  /*
     React Native (Independent Plugin/Config)
     5,142,744 monthly downloads
     React Native specific linting rules for ESLint
@@ -788,9 +1084,7 @@ const configGen = ({
         {
           files,
           languageOptions: {
-            globals: {
-              ...reactNativeIndie.environments["react-native"].globals,
-            },
+            globals: reactNativeIndie.environments["react-native"].globals,
           },
           rules: {
             ...reactNativeIndie.configs.all.rules,
@@ -1255,7 +1549,7 @@ const configGen = ({
       ]),
 
   /*
-    Create React App TS
+    Create React App - TS
     18,399,658 monthly downloads
     ESLint configuration used by Create React App
     https://github.com/facebook/create-react-app#readme
@@ -1335,7 +1629,7 @@ const configGen = ({
       ]),
 
   /*
-    Create React App Jest
+    Create React App - Jest
     18,399,658 monthly downloads
     ESLint configuration used by Create React App
     https://github.com/facebook/create-react-app#readme
@@ -1356,7 +1650,6 @@ const configGen = ({
             "jest/no-identical-title": "error",
             "jest/no-interpolation-in-snapshots": "error",
             "jest/no-jasmine-globals": "error",
-            "jest/no-jest-import": "error",
             "jest/no-mocks-import": "error",
             "jest/valid-describe-callback": "error",
             "jest/valid-expect": "error",
@@ -1364,17 +1657,16 @@ const configGen = ({
             "jest/valid-title": "warn",
 
             // https://github.com/testing-library/eslint-plugin-testing-library
-            "testing-library/await-async-query": "error",
+            "testing-library/await-async-queries": "error",
             "testing-library/await-async-utils": "error",
-            "testing-library/no-await-sync-query": "error",
+            "testing-library/no-await-sync-queries": "error",
             "testing-library/no-container": "error",
             "testing-library/no-debugging-utils": "error",
             "testing-library/no-dom-import": ["error", "react"],
             "testing-library/no-node-access": "error",
             "testing-library/no-promise-in-fire-event": "error",
-            "testing-library/no-render-in-setup": "error",
+            "testing-library/no-render-in-lifecycle": "error",
             "testing-library/no-unnecessary-act": "error",
-            "testing-library/no-wait-for-empty-callback": "error",
             "testing-library/no-wait-for-multiple-assertions": "error",
             "testing-library/no-wait-for-side-effects": "error",
             "testing-library/no-wait-for-snapshot": "error",

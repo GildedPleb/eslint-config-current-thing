@@ -39,7 +39,18 @@ import reactPerf from "./react-perf";
 import reactRefresh from "./react-refresh";
 import regexp from "./regexp";
 import security from "./security";
-import shopify from "./shopify";
+import shopifyCore from "./shopify-core";
+import shopifyEsnext from "./shopify-esnext";
+import shopifyJest from "./shopify-jest";
+import shopifyNode from "./shopify-node";
+import shopifyPolaris from "./shopify-polaris";
+import shopifyPrettier from "./shopify-prettier";
+import shopifyPrettierTs from "./shopify-prettier-ts";
+import shopifyReact from "./shopify-react";
+import shopifyReactTest from "./shopify-react-test";
+import shopifyReactTs from "./shopify-react-ts";
+import shopifyTs from "./shopify-ts";
+import shopifyTsTypeCheck from "./shopify-ts-type-check";
 import sonarjs from "./sonarjs";
 import sort from "./sort-class";
 import standard from "./standard";
@@ -85,7 +96,7 @@ const configs: Config[] = [
   index,
   compat,
   functional,
-  shopify,
+  shopifyTs,
   sort,
   youDontNeedLodash,
   google,
@@ -124,9 +135,20 @@ const configs: Config[] = [
   createReactAppTs,
   createReactAppJest,
   testingLibrary,
+  shopifyCore,
+  shopifyEsnext,
+  shopifyJest,
   reactNativeFt,
   reactNativePlug,
   reactNativeTs,
+  shopifyNode,
+  shopifyPrettier,
+  shopifyPrettierTs,
+  shopifyPolaris,
+  shopifyReact,
+  shopifyReactTs,
+  shopifyReactTest,
+  shopifyTsTypeCheck,
 ];
 
 export default configs;
