@@ -90,8 +90,6 @@ import reactNativeIndie from "eslint-plugin-react-native";
 import reactPerf from "eslint-plugin-react-perf";
 import reactRefresh from "eslint-plugin-react-refresh";
 import regexp from "eslint-plugin-regexp";
-// Import comments from "@eslint-community/eslint-plugin-eslint-comments";
-// import commentsOld from "eslint-plugin-eslint-comments";
 import security from "eslint-plugin-security";
 import importSort from "eslint-plugin-simple-import-sort";
 import sonarjs from "eslint-plugin-sonarjs";
@@ -106,6 +104,9 @@ import tailwindcss from "eslint-plugin-tailwindcss";
 // import cra from "eslint-config-react-app";
 // import cra from "eslint-config-react-app";
 import testingLibrary from "eslint-plugin-testing-library";
+// Import comments from "@eslint-community/eslint-plugin-eslint-comments";
+// import commentsOld from "eslint-plugin-eslint-comments";
+// import security from "eslint-plugin-security";
 import tsdoc from "eslint-plugin-tsdoc";
 // Import nNode from "eslint-plugin-n";
 // import node from "eslint-plugin-node";
@@ -191,6 +192,7 @@ const configGen = ({
       "react-perf": reactPerf,
       "react-refresh": reactRefresh,
       regexp,
+      security,
       "simple-import-sort": importSort,
     },
   },
@@ -662,7 +664,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { security },
           rules: {
             ...security.configs.recommended.rules,
             ...("eslint-plugin-security" in override

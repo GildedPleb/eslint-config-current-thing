@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { security },
     ${RULES}
   }`,
   name: "Security",
@@ -13,9 +12,10 @@ export default {
     {
       name: "security",
       package: "eslint-plugin-security",
-      requiresImport: true,
+      requiresImport: false,
     },
   ],
+  requiredPlugins: ["security"],
   rules: `security.configs.recommended.rules`,
 } satisfies Config;
 // EOF
