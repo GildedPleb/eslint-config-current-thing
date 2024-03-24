@@ -31,7 +31,7 @@ import promises from "./promises";
 import react from "./react";
 import reactHooks from "./react-hooks";
 import reactNative from "./react-native";
-import reactNativeConfig from "./react-native-config";
+import reactNativeIndie from "./react-native-indie";
 import reactPerf from "./react-perf";
 import reactRefresh from "./react-refresh";
 import regexp from "./regexp";
@@ -97,7 +97,7 @@ const configs: Config[] = [
   standardReact,
   reactPerf,
   reactNative,
-  reactNativeConfig,
+  reactNativeIndie,
   jest,
   standardJsx,
   jestFormatting,

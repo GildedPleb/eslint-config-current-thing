@@ -894,6 +894,8 @@
     "prettier:eslint-plugin-prettier@5.1.3",
     "promise",
     "react-hooks",
+    "@react-native",
+    "react-native",
     "regexp:eslint-plugin-regexp@2.3.0",
     "@stylistic",
     "@shopify",
@@ -905,8 +907,6 @@
     "tailwindcss",
     "security:eslint-plugin-security@2.1.1",
     "sonarjs",
-    "@react-native",
-    "react-native",
     "react-refresh",
     "unicorn:eslint-plugin-unicorn@51.0.1",
     "vue:eslint-plugin-vue@9.23.0",
@@ -4694,6 +4694,9 @@
     ],
     "jest/valid-expect": [
       2
+    ],
+    "@react-native/platform-colors": [
+      1
     ],
     "react-native/no-unused-styles": [
       2

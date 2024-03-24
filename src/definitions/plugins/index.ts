@@ -24,6 +24,8 @@ import perfectionist from "./perfectionist";
 import prettier from "./prettier";
 import promises from "./promises";
 import reactHooks from "./react-hooks";
+import reactNative from "./react-native";
+import reactNativeIndie from "./react-native-indie";
 
 export interface Plugin {
   name: string;
@@ -60,6 +62,8 @@ const plugins: Plugin[] = [
   prettier,
   promises,
   reactHooks,
+  reactNative,
+  reactNativeIndie,
 ];
 
 export default plugins;

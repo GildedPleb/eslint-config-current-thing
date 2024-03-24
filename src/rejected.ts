@@ -58,6 +58,9 @@ const rejected = new Set([
 
   // Irrelevant?
   "eslint-plugin-local-rules",
+
+  // Throws error in NPM and is literally the exact same as @react-native-community/eslint-config
+  "@react-native/eslint-config",
 ]);
 
 export default rejected;

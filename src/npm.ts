@@ -23,9 +23,9 @@ interface Stats {
  * @param name - The name of the package.
  */
 export async function getInfo(name: string): Promise<Info> {
-  const request = `${BASE_URL}/${name}`;
-  const responce = await fetch(request);
-  return (await responce.json()) as Info;
+  const request = `${BASE_URL}/${name.trim()}`;
+  const response = await fetch(request);
+  return (await response.json()) as Info;
 }
 
 const getDate = (date: Date) => date.toISOString().split("T")[0];
@@ -37,7 +37,7 @@ const getDate = (date: Date) => date.toISOString().split("T")[0];
 export async function getDownloadCount(name: string) {
   const date = new Date();
   date.setDate(date.getDate() - LAST_DAY_INTERVAL);
-  const request = `${BASE_API}/${getDate(date)}:${getDate(new Date())}/${name}`;
+  const request = `${BASE_API}/${getDate(date)}:${getDate(new Date())}/${name.trim()}`;
   const response = await fetch(request);
   const parsed = (await response.json()) as Stats;
   return parsed.downloads;

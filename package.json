@@ -19,7 +19,6 @@
     "@eslint/js": "^8.57.0",
     "@next/eslint-plugin-next": "^14.1.4",
     "@react-native-community/eslint-config": "^3.2.0",
-    "@react-native/eslint-config": "^0.75.0-main",
     "@react-native/eslint-plugin": "^0.75.0-main",
     "@shopify/eslint-plugin": "^44.0.0",
     "@stylistic/eslint-plugin": "^1.7.0",
