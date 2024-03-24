@@ -898,6 +898,7 @@
     "react-native",
     "react-perf",
     "react-refresh",
+    "react",
     "regexp:eslint-plugin-regexp@2.3.0",
     "@stylistic",
     "@shopify",
@@ -911,7 +912,6 @@
     "sonarjs",
     "unicorn:eslint-plugin-unicorn@51.0.1",
     "vue:eslint-plugin-vue@9.23.0",
-    "react",
     "@typescript-eslint:@typescript-eslint/eslint-plugin@7.3.1",
     "pathmark"
   ],

@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { react },
     settings: {
       react: {
         "pragma": "React",
@@ -24,8 +23,9 @@ export default {
   }`,
   name: "React",
   packages: [
-    { name: "react", package: "eslint-plugin-react", requiresImport: true },
+    { name: "react", package: "eslint-plugin-react", requiresImport: false },
   ],
+  requiredPlugins: ["react"],
   rules: `react.configs.recommended.rules`,
 } satisfies Config;
 // EOF

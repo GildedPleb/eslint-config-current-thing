@@ -52,7 +52,9 @@ import prettierConfig from "eslint-config-prettier";
 // import reactNativeIndie from "eslint-plugin-react-native";
 // import jest from "eslint-plugin-jest";
 import standardJsx from "eslint-config-standard-jsx";
-// Import reactHooks from "eslint-plugin-react-hooks";
+// Import cra from "eslint-config-react-app";
+// import react from "eslint-plugin-react";
+// import reactHooks from "eslint-plugin-react-hooks";
 // import jsxA11y from "eslint-plugin-jsx-a11y";
 // import flowtype from "eslint-plugin-flowtype";
 // import ftFlow from "eslint-plugin-ft-flow";
@@ -82,7 +84,6 @@ import node from "eslint-plugin-node";
 import perfectionist from "eslint-plugin-perfectionist";
 import prettier from "eslint-plugin-prettier";
 import promise from "eslint-plugin-promise";
-// Import cra from "eslint-config-react-app";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactNativeIndie from "eslint-plugin-react-native";
@@ -183,6 +184,7 @@ const configGen = ({
       perfectionist,
       prettier,
       promise,
+      react,
       "react-hooks": reactHooks,
       "react-native": reactNativeIndie,
       "react-perf": reactPerf,
@@ -1703,7 +1705,6 @@ const configGen = ({
               },
             },
           },
-          plugins: { react },
           rules: {
             ...react.configs.recommended.rules,
             ...("eslint-plugin-react" in override

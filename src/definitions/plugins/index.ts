@@ -23,6 +23,7 @@ import node from "./node";
 import perfectionist from "./perfectionist";
 import prettier from "./prettier";
 import promises from "./promises";
+import react from "./react";
 import reactHooks from "./react-hooks";
 import reactNative from "./react-native";
 import reactNativeIndie from "./react-native-indie";
@@ -68,6 +69,7 @@ const plugins: Plugin[] = [
   reactNativeIndie,
   reactPerf,
   reactRefresh,
+  react,
 ];
 
 export default plugins;
