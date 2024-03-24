@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { regexp: regexp },
     ${RULES}
   }`,
   name: "Regular Expressions",
@@ -13,11 +12,10 @@ export default {
     {
       name: "regexp",
       package: "eslint-plugin-regexp",
-      requiresImport: true,
+      requiresImport: false,
     },
   ],
-  rules: `{
-    ...regexp.configs["flat/recommended"].rules,
-  }`,
+  requiredPlugins: ["regexp"],
+  rules: `regexp.configs["flat/recommended"].rules`,
 } satisfies Config;
 // EOF

@@ -29,6 +29,7 @@ import reactNative from "./react-native";
 import reactNativeIndie from "./react-native-indie";
 import reactPerf from "./react-perf";
 import reactRefresh from "./react-refresh";
+import regexp from "./regexp";
 
 export interface Plugin {
   name: string;
@@ -70,6 +71,7 @@ const plugins: Plugin[] = [
   reactPerf,
   reactRefresh,
   react,
+  regexp,
 ];
 
 export default plugins;

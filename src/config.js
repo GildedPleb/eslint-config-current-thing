@@ -96,6 +96,7 @@ import security from "eslint-plugin-security";
 import importSort from "eslint-plugin-simple-import-sort";
 import sonarjs from "eslint-plugin-sonarjs";
 import sortClassMembers from "eslint-plugin-sort-class-members";
+// Import regexp from "eslint-plugin-regexp";
 import storybook from "eslint-plugin-storybook";
 import tailwindcss from "eslint-plugin-tailwindcss";
 // Import cssModules from "eslint-plugin-css-modules";
@@ -189,6 +190,7 @@ const configGen = ({
       "react-native": reactNativeIndie,
       "react-perf": reactPerf,
       "react-refresh": reactRefresh,
+      regexp,
       "simple-import-sort": importSort,
     },
   },
@@ -264,7 +266,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { regexp },
           rules: {
             ...regexp.configs["flat/recommended"].rules,
             ...("eslint-plugin-regexp" in override
