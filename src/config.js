@@ -43,6 +43,7 @@ import google from "eslint-config-google";
 // Import jsdoc from "eslint-plugin-jsdoc";
 // import standard from "eslint-config-standard";
 import standardTS from "eslint-config-love";
+// Import prettier from "eslint-plugin-prettier";
 import prettierConfig from "eslint-config-prettier";
 // Import jest from "eslint-plugin-jest";
 import standardJsx from "eslint-config-standard-jsx";
@@ -173,6 +174,7 @@ const configGen = ({
       "no-only-tests": noOnlyTest,
       node,
       perfectionist,
+      prettier,
       "simple-import-sort": importSort,
     },
   },
@@ -1800,7 +1802,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { prettier },
           rules: {
             "prettier/prettier": 2,
             ...prettierConfig.rules,

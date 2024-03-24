@@ -21,6 +21,7 @@ import nextjs from "./nextjs";
 import noOnlyTest from "./no-only-test";
 import node from "./node";
 import perfectionist from "./perfectionist";
+import prettier from "./prettier";
 
 export interface Plugin {
   name: string;
@@ -54,6 +55,7 @@ const plugins: Plugin[] = [
   noOnlyTest,
   node,
   perfectionist,
+  prettier,
 ];
 
 export default plugins;

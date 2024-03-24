@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { prettier },
     ${RULES}
   }`,
   name: "Prettier",
@@ -13,7 +12,7 @@ export default {
     {
       name: "prettier",
       package: "eslint-plugin-prettier",
-      requiresImport: true,
+      requiresImport: false,
     },
     {
       name: "prettierConfig",
@@ -21,6 +20,7 @@ export default {
       requiresImport: true,
     },
   ],
+  requiredPlugins: ["prettier"],
   rules: `{
     "prettier/prettier": 2,
     ...prettierConfig.rules,
