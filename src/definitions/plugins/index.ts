@@ -15,6 +15,7 @@ import importSort from "./import-sort";
 import jest from "./jest";
 import jestDom from "./jest-dom";
 import jestFormatting from "./jest-formatting";
+import jsdoc from "./jsdoc";
 
 export interface Plugin {
   name: string;
@@ -42,6 +43,7 @@ const plugins: Plugin[] = [
   jestDom,
   jestFormatting,
   jest,
+  jsdoc,
 ];
 
 export default plugins;

@@ -18,6 +18,7 @@ const generateCode = `// PathMark: ./src/config.js
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable sonarjs/no-duplicate-string */
+/* eslint-disable jsdoc/no-types */
 
 /*
   This file is fully generated, to edit it change ./generate.ts

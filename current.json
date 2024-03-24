@@ -884,6 +884,7 @@
     "jest-dom",
     "jest-formatting",
     "jest:eslint-plugin-jest@27.9.0",
+    "jsdoc",
     "regexp:eslint-plugin-regexp@2.3.0",
     "@stylistic",
     "@shopify",
@@ -900,7 +901,6 @@
     "@react-native",
     "react-native",
     "react-refresh",
-    "jsdoc",
     "unicorn:eslint-plugin-unicorn@51.0.1",
     "promise",
     "@next/next",
@@ -4745,7 +4745,10 @@
       0
     ],
     "jsdoc/check-tag-names": [
-      1
+      1,
+      {
+        "typed": true
+      }
     ],
     "jsdoc/check-types": [
       1
@@ -4796,10 +4799,10 @@
       0
     ],
     "jsdoc/no-types": [
-      0
+      1
     ],
     "jsdoc/no-undefined-types": [
-      1
+      0
     ],
     "jsdoc/require-asterisk-prefix": [
       0
@@ -4853,7 +4856,7 @@
       1
     ],
     "jsdoc/require-property-type": [
-      1
+      0
     ],
     "jsdoc/require-returns": [
       0

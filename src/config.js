@@ -5,6 +5,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable sonarjs/no-duplicate-string */
+/* eslint-disable jsdoc/no-types */
 
 /*
   This file is fully generated, to edit it change ./generate.ts
@@ -36,7 +37,8 @@ import shopify from "@shopify/eslint-plugin";
 import stylistic from "@stylistic/eslint-plugin";
 import restrictedGlobals from "confusing-browser-globals";
 import google from "eslint-config-google";
-// Import standard from "eslint-config-standard";
+// Import jsdoc from "eslint-plugin-jsdoc";
+// import standard from "eslint-config-standard";
 import standardTS from "eslint-config-love";
 import prettierConfig from "eslint-config-prettier";
 // Import jest from "eslint-plugin-jest";
@@ -157,6 +159,7 @@ const configGen = ({
       jest,
       "jest-dom": jestDom,
       "jest-formatting": jestFormatting,
+      jsdoc,
       "simple-import-sort": importSort,
     },
   },
@@ -801,9 +804,8 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { jsdoc },
           rules: {
-            ...jsdoc.configs.recommended.rules,
+            ...jsdoc.configs["flat/recommended-typescript"].rules,
             "jsdoc/check-param-names": [
               2,
               { checkDestructured: false, enableFixer: false },

@@ -5,15 +5,15 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { jsdoc },
     settings: { jsdoc: { mode: "typescript" } },
     ${RULES}
   }`,
   name: "JSDoc",
   packages: [
-    { name: "jsdoc", package: "eslint-plugin-jsdoc", requiresImport: true },
+    { name: "jsdoc", package: "eslint-plugin-jsdoc", requiresImport: false },
   ],
-  rules: `jsdoc.configs.recommended.rules,
+  requiredPlugins: ["jsdoc"],
+  rules: `jsdoc.configs['flat/recommended-typescript'].rules,
     // Rules needed for TSDoc Compatibility
     "jsdoc/require-param-type": 0,
     "jsdoc/check-param-names": [
