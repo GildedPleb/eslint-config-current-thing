@@ -6,6 +6,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable sonarjs/no-duplicate-string */
 /* eslint-disable jsdoc/no-types */
+/* eslint-disable id-length */
 
 /*
   This file is fully generated, to edit it change ./generate.ts
@@ -99,6 +100,8 @@ import tailwindcss from "eslint-plugin-tailwindcss";
 // import cra from "eslint-config-react-app";
 import testingLibrary from "eslint-plugin-testing-library";
 import tsdoc from "eslint-plugin-tsdoc";
+// Import nNode from "eslint-plugin-n";
+// import node from "eslint-plugin-node";
 import unicorn from "eslint-plugin-unicorn";
 import vue from "eslint-plugin-vue";
 import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
@@ -165,7 +168,9 @@ const configGen = ({
       "jest-formatting": jestFormatting,
       jsdoc,
       "jsx-a11y": jsxA11y,
+      n: nNode,
       "no-only-tests": noOnlyTest,
+      node,
       "simple-import-sort": importSort,
     },
   },
@@ -1508,15 +1513,19 @@ const configGen = ({
     : [
         {
           files,
-          plugins: {
-            // eslint-disable-next-line id-length
-            n: nNode,
-            node,
+          languageOptions: {
+            globals: {
+              __dirname: false,
+              __filename: false,
+              exports: false,
+              module: false,
+              require: false,
+            },
           },
           rules: {
             // There are no recommended ways to use "node", as the "n" rule obsoletes
             // it, but "node" is still used by the Shopify config.
-            ...nNode.configs["recommended-module"].rules,
+            ...nNode.configs["flat/recommended-module"].rules,
             // Typescript handles this
             "n/no-missing-import": 0,
             // Typescript handles this

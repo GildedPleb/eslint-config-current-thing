@@ -19,6 +19,7 @@ import jsdoc from "./jsdoc";
 import jsxA11y from "./jsx-a11y";
 import nextjs from "./nextjs";
 import noOnlyTest from "./no-only-test";
+import node from "./node";
 
 export interface Plugin {
   name: string;
@@ -50,6 +51,7 @@ const plugins: Plugin[] = [
   jsxA11y,
   nextjs,
   noOnlyTest,
+  node,
 ];
 
 export default plugins;

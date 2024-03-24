@@ -5,22 +5,26 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: {
-      // eslint-disable-next-line id-length
-      n: nNode,
-      node,
+    languageOptions: {
+      globals: {
+        __dirname: false,
+        __filename: false,
+        exports: false,
+        module: false,
+        require: false,
+      },
     },
     ${RULES}
   }`,
   name: "Node.js",
   packages: [
-    { name: "nNode", package: "eslint-plugin-n", requiresImport: true },
-    { name: "node", package: "eslint-plugin-node", requiresImport: true },
+    { name: "nNode", package: "eslint-plugin-n", requiresImport: false },
+    { name: "node", package: "eslint-plugin-node", requiresImport: false },
   ],
   rules: `{
     // there are no recommended ways to use "node", as the "n" rule obsoletes
     // it, but "node" is still used by the Shopify config.
-    ...nNode.configs["recommended-module"].rules,
+    ...nNode.configs["flat/recommended-module"].rules,
     // Typescript handles this
     "n/no-missing-import": 0,
     // Typescript handles this
