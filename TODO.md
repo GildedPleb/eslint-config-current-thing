@@ -1,5 +1,7 @@
 - Audit all existing configs to apply overrides, files, and all sorts of nuance.
-  - remove the npm WARNings
+- make it so that you can add sub-modules which disable the submodule but still lookup the main package
+- Audit the TEST files glob patterns.
+- Add a bunch of other "obsolete" plugins.
 - add the rule count to the tag "around 1000 rules:
 - Once audit is complete, open up all out-of-scope configs.
 - Add commit linting in similar fashion

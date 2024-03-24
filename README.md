@@ -203,7 +203,9 @@ export default [
 
 **For a CONFIG to be added, it needs to have around 400,000 monthly downloads (or 4 consecutive weeks above 100,000 weekly downloads).** This is to prevent spam, bloat, needless PRs, and arguments about minutia. But it's also variable as configs change popularity. Yes, it's arbitrary (and it can be spoofed/is [naively calculated](https://blog.npmjs.org/post/92574016600/numeric-precision-matters-how-npm-download-counts-work.html)), but it seems to be a good heuristic for the cutoff between generally used configs and niche configs.
 
-**For a PLUGIN to be added, it needs to be included in an added config.** This is to ensure that configs work as intended.
+**For a PLUGIN to be added, it needs to be included in an added config, or meet similar config quality standards.** This is to ensure that configs work as intended.
+
+In short, it should be easy for a plugin to get added and stay added, but hard for a config.
 
 To determine if your preferred config is eligible, visit the NPM page and check the weekly download count, or scroll to the bottom to see a list of packages presently under consideration.
 
@@ -283,30 +285,31 @@ See [rejected](./src/rejected.ts) and [not-applicable](./src/not-applicable.ts) 
 
 The following section is generated according to spec.
 
-Generated on 3/23/2024, downloads for the previous 28 days.
+Generated on 3/24/2024, downloads for the previous 28 days.
 
-- 90,465,088 downloads, [eslint-module-utils](https://www.npmjs.com/package/eslint-module-utils)
-- 36,109,245 downloads, [lint-staged](https://www.npmjs.com/package/lint-staged)
-- 6,353,690 downloads, [@angular-eslint/eslint-plugin](https://www.npmjs.com/package/@angular-eslint/eslint-plugin)
-- 6,125,842 downloads, [@angular-eslint/eslint-plugin-template](https://www.npmjs.com/package/@angular-eslint/eslint-plugin-template)
-- 4,330,403 downloads, [conventional-changelog-eslint](https://www.npmjs.com/package/conventional-changelog-eslint)
-- 3,269,858 downloads, [@vue/eslint-config-typescript](https://www.npmjs.com/package/@vue/eslint-config-typescript)
-- 2,508,768 downloads, [@vue/eslint-config-prettier](https://www.npmjs.com/package/@vue/eslint-config-prettier)
-- 836,518 downloads, [eslint-plugin-nuxt](https://www.npmjs.com/package/eslint-plugin-nuxt)
-- 790,710 downloads, [eslint-plugin-vuejs-accessibility](https://www.npmjs.com/package/eslint-plugin-vuejs-accessibility)
-- 527,487 downloads, [@vue/eslint-config-airbnb](https://www.npmjs.com/package/@vue/eslint-config-airbnb)
-- 391,169 downloads, [@ngdaddy/eslint-config](https://www.npmjs.com/package/@ngdaddy/eslint-config) - Not Yet Eligible
-- 384,415 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
-- 346,024 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
-- 318,247 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
-- 300,014 downloads, [@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config) - Not Yet Eligible
-- 298,826 downloads, [@rushstack/eslint-plugin-security](https://www.npmjs.com/package/@rushstack/eslint-plugin-security) - Not Yet Eligible
-- 267,679 downloads, [eslint-plugin-minecraft-linting](https://www.npmjs.com/package/eslint-plugin-minecraft-linting) - Not Yet Eligible
-- 253,241 downloads, [eslint-define-config](https://www.npmjs.com/package/eslint-define-config) - Not Yet Eligible
-- 245,856 downloads, [eslint-plugin-canonical](https://www.npmjs.com/package/eslint-plugin-canonical) - Not Yet Eligible
-- 243,575 downloads, [eslint-plugin-react-redux](https://www.npmjs.com/package/eslint-plugin-react-redux) - Not Yet Eligible
-- 204,362 downloads, [@eslint-types/typescript-eslint](https://www.npmjs.com/package/@eslint-types/typescript-eslint) - Not Yet Eligible
+- 89,536,270 downloads, [eslint-module-utils](https://www.npmjs.com/package/eslint-module-utils)
+- 35,806,590 downloads, [lint-staged](https://www.npmjs.com/package/lint-staged)
+- 6,308,387 downloads, [@angular-eslint/eslint-plugin](https://www.npmjs.com/package/@angular-eslint/eslint-plugin)
+- 6,083,116 downloads, [@angular-eslint/eslint-plugin-template](https://www.npmjs.com/package/@angular-eslint/eslint-plugin-template)
+- 4,294,397 downloads, [conventional-changelog-eslint](https://www.npmjs.com/package/conventional-changelog-eslint)
+- 3,243,427 downloads, [@vue/eslint-config-typescript](https://www.npmjs.com/package/@vue/eslint-config-typescript)
+- 2,482,639 downloads, [@vue/eslint-config-prettier](https://www.npmjs.com/package/@vue/eslint-config-prettier)
+- 1,108,613 downloads, [eslint-plugin-header](https://www.npmjs.com/package/eslint-plugin-header)
+- 829,476 downloads, [eslint-plugin-nuxt](https://www.npmjs.com/package/eslint-plugin-nuxt)
+- 785,441 downloads, [eslint-plugin-vuejs-accessibility](https://www.npmjs.com/package/eslint-plugin-vuejs-accessibility)
+- 522,990 downloads, [@vue/eslint-config-airbnb](https://www.npmjs.com/package/@vue/eslint-config-airbnb)
+- 381,875 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
+- 348,575 downloads, [@ngdaddy/eslint-config](https://www.npmjs.com/package/@ngdaddy/eslint-config) - Not Yet Eligible
+- 341,422 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
+- 320,538 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
+- 296,801 downloads, [@rushstack/eslint-plugin-security](https://www.npmjs.com/package/@rushstack/eslint-plugin-security) - Not Yet Eligible
+- 295,644 downloads, [@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config) - Not Yet Eligible
+- 265,744 downloads, [eslint-plugin-minecraft-linting](https://www.npmjs.com/package/eslint-plugin-minecraft-linting) - Not Yet Eligible
+- 247,993 downloads, [eslint-define-config](https://www.npmjs.com/package/eslint-define-config) - Not Yet Eligible
+- 243,877 downloads, [eslint-plugin-canonical](https://www.npmjs.com/package/eslint-plugin-canonical) - Not Yet Eligible
+- 240,718 downloads, [eslint-plugin-react-redux](https://www.npmjs.com/package/eslint-plugin-react-redux) - Not Yet Eligible
+- 200,803 downloads, [@eslint-types/typescript-eslint](https://www.npmjs.com/package/@eslint-types/typescript-eslint) - Not Yet Eligible
 
 ## Rule Count
 
-1363
+1376

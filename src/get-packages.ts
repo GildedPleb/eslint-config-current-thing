@@ -5,7 +5,7 @@ import notApplicable from "./not-applicable";
 import { fetchNPMURLs, getDownloadCount } from "./npm";
 import rejected from "./rejected";
 
-const searchTerms = [
+const searchTerms: string[] = [
   "eslint",
   "eslint%20plugin",
   "eslint%20config",

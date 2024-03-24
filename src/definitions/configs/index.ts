@@ -75,6 +75,7 @@ export interface Config {
     name: string;
     package: string;
     requiresImport: boolean;
+    subModule?: string;
   }>;
   requiredPlugins?: string[];
   rules?: string;
