@@ -18,6 +18,7 @@ import jestFormatting from "./jest-formatting";
 import jsdoc from "./jsdoc";
 import jsxA11y from "./jsx-a11y";
 import nextjs from "./nextjs";
+import noOnlyTest from "./no-only-test";
 
 export interface Plugin {
   name: string;
@@ -48,6 +49,7 @@ const plugins: Plugin[] = [
   jsdoc,
   jsxA11y,
   nextjs,
+  noOnlyTest,
 ];
 
 export default plugins;

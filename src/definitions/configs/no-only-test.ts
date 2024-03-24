@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { "no-only-tests": noOnlyTest },
     ${RULES}
   }`,
   name: "No Only Tests",
@@ -13,11 +12,10 @@ export default {
     {
       name: "noOnlyTest",
       package: "eslint-plugin-no-only-tests",
-      requiresImport: true,
+      requiresImport: false,
     },
   ],
-  rules: `{
-    "no-only-tests/no-only-tests": 2
-  }`,
+  requiredPlugins: ["no-only-tests"],
+  rules: `{ "no-only-tests/no-only-tests": 2 }`,
 } satisfies Config;
 // EOF

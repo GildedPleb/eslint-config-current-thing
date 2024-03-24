@@ -16,7 +16,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import babelPlugin from "@babel/eslint-plugin";
-// Import esX from "eslint-plugin-es-x";
+// Import noOnlyTest from "eslint-plugin-no-only-tests";
+// import esX from "eslint-plugin-es-x";
 // import es from "eslint-plugin-es";
 // import i18next from "eslint-plugin-i18next";
 import { rules as emotion } from "@emotion/eslint-plugin";
@@ -164,6 +165,7 @@ const configGen = ({
       "jest-formatting": jestFormatting,
       jsdoc,
       "jsx-a11y": jsxA11y,
+      "no-only-tests": noOnlyTest,
       "simple-import-sort": importSort,
     },
   },
@@ -705,7 +707,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { "no-only-tests": noOnlyTest },
           rules: {
             "no-only-tests/no-only-tests": 2,
             ...("eslint-plugin-no-only-tests" in override
