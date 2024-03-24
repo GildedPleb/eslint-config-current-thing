@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { "react-refresh": reactRefresh },
     ${RULES}
   }`,
   name: "React Refresh",
@@ -13,7 +12,7 @@ export default {
     {
       name: "reactRefresh",
       package: "eslint-plugin-react-refresh",
-      requiresImport: true,
+      requiresImport: false,
     },
   ],
   rules: `{ "react-refresh/only-export-components": "warn" }`,

@@ -87,8 +87,6 @@ import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactNativeIndie from "eslint-plugin-react-native";
 import reactPerf from "eslint-plugin-react-perf";
-// Import typescriptParser from "@typescript-eslint/parser";
-// import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import reactRefresh from "eslint-plugin-react-refresh";
 import regexp from "eslint-plugin-regexp";
 // Import comments from "@eslint-community/eslint-plugin-eslint-comments";
@@ -110,6 +108,9 @@ import tsdoc from "eslint-plugin-tsdoc";
 // Import nNode from "eslint-plugin-n";
 // import node from "eslint-plugin-node";
 import unicorn from "eslint-plugin-unicorn";
+// Import typescriptParser from "@typescript-eslint/parser";
+// import typescriptPlugin from "@typescript-eslint/eslint-plugin";
+// import reactRefresh from "eslint-plugin-react-refresh";
 import vue from "eslint-plugin-vue";
 import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
 import globals from "globals";
@@ -185,6 +186,7 @@ const configGen = ({
       "react-hooks": reactHooks,
       "react-native": reactNativeIndie,
       "react-perf": reactPerf,
+      "react-refresh": reactRefresh,
       "simple-import-sort": importSort,
     },
   },
@@ -806,7 +808,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { "react-refresh": reactRefresh },
           rules: {
             "react-refresh/only-export-components": "warn",
             ...("eslint-plugin-react-refresh" in override
