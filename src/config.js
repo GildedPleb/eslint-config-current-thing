@@ -43,7 +43,8 @@ import standardTS from "eslint-config-love";
 import prettierConfig from "eslint-config-prettier";
 // Import jest from "eslint-plugin-jest";
 import standardJsx from "eslint-config-standard-jsx";
-// Import flowtype from "eslint-plugin-flowtype";
+// Import jsxA11y from "eslint-plugin-jsx-a11y";
+// import flowtype from "eslint-plugin-flowtype";
 // import ftFlow from "eslint-plugin-ft-flow";
 import standardReact from "eslint-config-standard-react";
 import xo from "eslint-config-xo";
@@ -160,6 +161,7 @@ const configGen = ({
       "jest-dom": jestDom,
       "jest-formatting": jestFormatting,
       jsdoc,
+      "jsx-a11y": jsxA11y,
       "simple-import-sort": importSort,
     },
   },
@@ -1630,7 +1632,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { "jsx-a11y": jsxA11y },
           rules: {
             ...jsxA11y.configs.recommended.rules,
             ...("eslint-plugin-jsx-a11y" in override

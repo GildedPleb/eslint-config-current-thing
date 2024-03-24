@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { "jsx-a11y": jsxA11y },
     ${RULES}
   }`,
   name: "JSX A11y",
@@ -13,7 +12,7 @@ export default {
     {
       name: "jsxA11y",
       package: "eslint-plugin-jsx-a11y",
-      requiresImport: true,
+      requiresImport: false,
     },
   ],
   rules: `jsxA11y.configs.recommended.rules`,
