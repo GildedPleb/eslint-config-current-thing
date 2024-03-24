@@ -31,7 +31,10 @@ import promises from "./promises";
 import react from "./react";
 import reactHooks from "./react-hooks";
 import reactNative from "./react-native";
+import reactNativeFt from "./react-native-ft";
 import reactNativeIndie from "./react-native-indie";
+import reactNativePlug from "./react-native-plug";
+import reactNativeTs from "./react-native-ts";
 import reactPerf from "./react-perf";
 import reactRefresh from "./react-refresh";
 import regexp from "./regexp";
@@ -121,6 +124,9 @@ const configs: Config[] = [
   createReactAppTs,
   createReactAppJest,
   testingLibrary,
+  reactNativeFt,
+  reactNativePlug,
+  reactNativeTs,
 ];
 
 export default configs;

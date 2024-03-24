@@ -6,9 +6,7 @@ export default {
   definitions: `{
     files,
     languageOptions: {
-      globals: {
-        ...reactNativeIndie.environments["react-native"].globals
-      },
+      globals: reactNativeIndie.environments["react-native"].globals,
     },
     ${RULES}
   }`,
@@ -20,6 +18,7 @@ export default {
       requiresImport: false,
     },
   ],
+  requiredPlugins: ["react-native"],
   rules: `reactNativeIndie.configs.all.rules`,
 } satisfies Config;
 // EOF

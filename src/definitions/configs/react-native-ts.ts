@@ -1,0 +1,26 @@
+// PathMark: ./src/definitions/configs/react-native-ts.ts
+import { RULES } from "../../constants";
+import type { Config } from ".";
+
+export default {
+  definitions: `{
+    files: ['*.ts', '*.tsx'],
+    ${RULES}
+  }`,
+  name: "React Native Config - Typescript",
+  packages: [
+    {
+      name: "reactNativeConfig",
+      package: "@react-native-community/eslint-config",
+      requiresImport: false,
+    },
+    {
+      name: "rnConfig",
+      package: "@react-native/eslint-config",
+      requiresImport: false,
+    },
+  ],
+  requiredPlugins: ["@typescript-eslint/eslint-plugin"],
+  rules: `reactNativeConfig.overrides[1].rules`,
+} satisfies Config;
+// EOF
