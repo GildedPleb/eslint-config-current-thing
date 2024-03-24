@@ -6,8 +6,9 @@
   "scripts": {
     "test": "npm run predeploy && npm run lint",
     "current": "npx eslint --print-config src/generate.ts > current.json",
+    "current:test": "npx eslint --print-config test/basic.test.js > current-test.json",
     "lint": "npx eslint --fix -c ./eslint.config.js --max-warnings 0 .",
-    "generate": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/generate.ts && npm run current && npx eslint --fix src/config.js",
+    "generate": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/generate.ts && npm run current && npm run current:test && npx eslint --fix src/config.js test/basic.test.js",
     "predeploy": "npx update-browserslist-db@latest -y"
   },
   "license": "MIT",
