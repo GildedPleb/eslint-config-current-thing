@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { "react-hooks": reactHooks },
     ${RULES}
   }`,
   name: "React Hooks",
@@ -13,9 +12,10 @@ export default {
     {
       name: "reactHooks",
       package: "eslint-plugin-react-hooks",
-      requiresImport: true,
+      requiresImport: false,
     },
   ],
+  requiredPlugins: ["react-hooks"],
   rules: `reactHooks.configs.recommended.rules`,
 } satisfies Config;
 // EOF

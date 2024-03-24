@@ -49,7 +49,8 @@ import standardTS from "eslint-config-love";
 import prettierConfig from "eslint-config-prettier";
 // Import jest from "eslint-plugin-jest";
 import standardJsx from "eslint-config-standard-jsx";
-// Import jsxA11y from "eslint-plugin-jsx-a11y";
+// Import reactHooks from "eslint-plugin-react-hooks";
+// import jsxA11y from "eslint-plugin-jsx-a11y";
 // import flowtype from "eslint-plugin-flowtype";
 // import ftFlow from "eslint-plugin-ft-flow";
 import standardReact from "eslint-config-standard-react";
@@ -177,6 +178,7 @@ const configGen = ({
       perfectionist,
       prettier,
       promise,
+      "react-hooks": reactHooks,
       "simple-import-sort": importSort,
     },
   },
@@ -1664,7 +1666,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { "react-hooks": reactHooks },
           rules: {
             ...reactHooks.configs.recommended.rules,
             ...("eslint-plugin-react-hooks" in override

@@ -893,6 +893,7 @@
     "perfectionist:eslint-plugin-perfectionist",
     "prettier:eslint-plugin-prettier@5.1.3",
     "promise",
+    "react-hooks",
     "regexp:eslint-plugin-regexp@2.3.0",
     "@stylistic",
     "@shopify",
@@ -909,7 +910,6 @@
     "react-refresh",
     "unicorn:eslint-plugin-unicorn@51.0.1",
     "vue:eslint-plugin-vue@9.23.0",
-    "react-hooks",
     "react",
     "@typescript-eslint:@typescript-eslint/eslint-plugin@7.3.1",
     "pathmark"

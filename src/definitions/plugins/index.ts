@@ -23,6 +23,7 @@ import node from "./node";
 import perfectionist from "./perfectionist";
 import prettier from "./prettier";
 import promises from "./promises";
+import reactHooks from "./react-hooks";
 
 export interface Plugin {
   name: string;
@@ -58,6 +59,7 @@ const plugins: Plugin[] = [
   perfectionist,
   prettier,
   promises,
+  reactHooks,
 ];
 
 export default plugins;
