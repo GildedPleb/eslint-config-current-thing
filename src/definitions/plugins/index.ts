@@ -22,6 +22,7 @@ import noOnlyTest from "./no-only-test";
 import node from "./node";
 import perfectionist from "./perfectionist";
 import prettier from "./prettier";
+import promises from "./promises";
 
 export interface Plugin {
   name: string;
@@ -56,6 +57,7 @@ const plugins: Plugin[] = [
   node,
   perfectionist,
   prettier,
+  promises,
 ];
 
 export default plugins;

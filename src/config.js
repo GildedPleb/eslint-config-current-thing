@@ -43,7 +43,9 @@ import google from "eslint-config-google";
 // Import jsdoc from "eslint-plugin-jsdoc";
 // import standard from "eslint-config-standard";
 import standardTS from "eslint-config-love";
-// Import prettier from "eslint-plugin-prettier";
+// Import nextjs from "@next/eslint-plugin-next";
+// import promise from "eslint-plugin-promise";
+// import prettier from "eslint-plugin-prettier";
 import prettierConfig from "eslint-config-prettier";
 // Import jest from "eslint-plugin-jest";
 import standardJsx from "eslint-config-standard-jsx";
@@ -75,7 +77,6 @@ import unsanitized from "eslint-plugin-no-unsanitized";
 import node from "eslint-plugin-node";
 import perfectionist from "eslint-plugin-perfectionist";
 import prettier from "eslint-plugin-prettier";
-// Import nextjs from "@next/eslint-plugin-next";
 import promise from "eslint-plugin-promise";
 // Import cra from "eslint-config-react-app";
 import react from "eslint-plugin-react";
@@ -175,6 +176,7 @@ const configGen = ({
       node,
       perfectionist,
       prettier,
+      promise,
       "simple-import-sort": importSort,
     },
   },
@@ -1384,7 +1386,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { promise },
           rules: {
             ...promise.configs.recommended.rules,
             ...("eslint-plugin-promise" in override
