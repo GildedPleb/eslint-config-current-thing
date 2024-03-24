@@ -15,6 +15,7 @@ export default {
       requiresImport: false,
     },
   ],
+  requiredPlugins: ["@next/next"],
   rules: `nextjs.configs.recommended.rules,
     // Irrelevant for broad JS, and pollutes logs when it doesn't apply.
     "@next/next/no-html-link-for-pages": 0`,
