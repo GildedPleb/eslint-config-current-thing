@@ -17,6 +17,7 @@ import jestDom from "./jest-dom";
 import jestFormatting from "./jest-formatting";
 import jsdoc from "./jsdoc";
 import jsxA11y from "./jsx-a11y";
+import nextjs from "./nextjs";
 
 export interface Plugin {
   name: string;
@@ -46,6 +47,7 @@ const plugins: Plugin[] = [
   jest,
   jsdoc,
   jsxA11y,
+  nextjs,
 ];
 
 export default plugins;

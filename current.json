@@ -886,6 +886,7 @@
     "jest:eslint-plugin-jest@27.9.0",
     "jsdoc",
     "jsx-a11y",
+    "@next/next",
     "regexp:eslint-plugin-regexp@2.3.0",
     "@stylistic",
     "@shopify",
@@ -904,7 +905,6 @@
     "react-refresh",
     "unicorn:eslint-plugin-unicorn@51.0.1",
     "promise",
-    "@next/next",
     "n:eslint-plugin-n@16.6.2",
     "node",
     "vue:eslint-plugin-vue@9.23.0",
@@ -5541,7 +5541,7 @@
       1
     ],
     "@next/next/no-sync-scripts": [
-      2
+      1
     ],
     "@next/next/no-title-in-document-head": [
       1

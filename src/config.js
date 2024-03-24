@@ -71,6 +71,7 @@ import unsanitized from "eslint-plugin-no-unsanitized";
 import node from "eslint-plugin-node";
 import perfectionist from "eslint-plugin-perfectionist";
 import prettier from "eslint-plugin-prettier";
+// Import nextjs from "@next/eslint-plugin-next";
 import promise from "eslint-plugin-promise";
 // Import cra from "eslint-config-react-app";
 import react from "eslint-plugin-react";
@@ -146,6 +147,7 @@ const configGen = ({
       "@babel": babelPlugin,
       "@emotion": { rules: emotion },
       "@eslint-community/eslint-comments": comments,
+      "@next/next": nextjs,
       compat: comp,
       "css-modules": cssModules,
       es,
@@ -1396,10 +1398,8 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { "@next/next": nextjs },
           rules: {
             ...nextjs.configs.recommended.rules,
-            ...nextjs.configs["core-web-vitals"].rules,
             // Irrelevant for broad JS, and pollutes logs when it doesn't apply.
             "@next/next/no-html-link-for-pages": 0,
             ...("@next/eslint-plugin-next" in override
