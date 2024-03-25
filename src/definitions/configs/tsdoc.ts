@@ -5,13 +5,13 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { tsdoc },
     ${RULES}
   }`,
   name: "TSDoc",
   packages: [
-    { name: "tsdoc", package: "eslint-plugin-tsdoc", requiresImport: true },
+    { name: "tsdoc", package: "eslint-plugin-tsdoc", requiresImport: false },
   ],
+  requiredPlugins: ["tsdoc"],
   rules: `{ "tsdoc/syntax": 2 }`,
 } satisfies Config;
 // EOF

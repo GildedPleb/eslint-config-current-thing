@@ -41,6 +41,7 @@ import stylistic from "./stylistic";
 import tailwindPlugin from "./tailwind-plugin";
 import testingLibrary from "./testing-library";
 import ts from "./ts";
+import tsdoc from "./tsdoc";
 
 export interface Plugin {
   name: string;
@@ -94,6 +95,7 @@ const plugins: Plugin[] = [
   tailwindPlugin,
   testingLibrary,
   ts,
+  tsdoc,
 ];
 
 export default plugins;

@@ -178,6 +178,7 @@ const configGen = ({
       storybook,
       tailwindcss,
       "testing-library": testingLibrary,
+      tsdoc,
     },
   },
 
@@ -800,7 +801,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { tsdoc },
           rules: {
             "tsdoc/syntax": 2,
             ...("eslint-plugin-tsdoc" in override
