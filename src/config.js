@@ -73,6 +73,7 @@ import tailwindcss from "eslint-plugin-tailwindcss";
 import testingLibrary from "eslint-plugin-testing-library";
 import tsdoc from "eslint-plugin-tsdoc";
 import unicorn from "eslint-plugin-unicorn";
+import unusedImports from "eslint-plugin-unused-imports";
 import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
 import globals from "globals";
 import tseslint from "typescript-eslint";
@@ -194,6 +195,7 @@ const configGen = ({
         "testing-library": testingLibrary,
         tsdoc,
         unicorn,
+        "unused-imports": unusedImports,
         "you-dont-need-lodash-underscore": youDontNeedLodash,
       },
     },
@@ -1305,6 +1307,39 @@ const configGen = ({
               "no-restricted-syntax": [0, { selector: "ForOfStatement" }],
               ...("eslint-config-airbnb-typescript" in override
                 ? override["eslint-config-airbnb-typescript"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+    No Unused Imports
+    9,136,953 monthly downloads
+    Report and remove unused es6 modules
+    https://github.com/sweepline/eslint-plugin-unused-imports
+    Requires: unused-imports
+  */
+    ...(disable.includes("eslint-plugin-unused-imports") ||
+    threshold > 9_136_953
+      ? []
+      : [
+          {
+            files,
+            rules: {
+              "@typescript-eslint/no-unused-vars": 0,
+              "no-unused-vars": 0,
+              "unused-imports/no-unused-imports": 2,
+              "unused-imports/no-unused-vars": [
+                "warn",
+                {
+                  args: "after-used",
+                  argsIgnorePattern: "^_",
+                  vars: "all",
+                  varsIgnorePattern: "^_",
+                },
+              ],
+              ...("eslint-plugin-unused-imports" in override
+                ? override["eslint-plugin-unused-imports"]
                 : {}),
             },
           },

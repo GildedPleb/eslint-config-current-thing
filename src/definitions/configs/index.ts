@@ -64,6 +64,7 @@ import ts from "./ts";
 import tsdoc from "./tsdoc";
 import unicorn from "./unicorn";
 import unsanitized from "./unsanitized";
+import unusedImports from "./unused-imports";
 import xo from "./xo";
 import youDontNeedLodash from "./you-dont-need-lodash";
 
@@ -149,6 +150,7 @@ const configs: Config[] = [
   shopifyTsTypeCheck,
   standardTs,
   storybookMain,
+  unusedImports,
 ];
 
 export default configs;

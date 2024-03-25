@@ -903,7 +903,9 @@
     "tsdoc",
     "unicorn:eslint-plugin-unicorn@51.0.1",
     "no-unsanitized",
-    "you-dont-need-lodash-underscore"
+    "unused-imports",
+    "you-dont-need-lodash-underscore",
+    "pathmark"
   ],
   "rules": {
     "css-modules/no-unused-class": [
@@ -5478,6 +5480,18 @@
     "@typescript-eslint/require-await": [
       2
     ],
+    "unused-imports/no-unused-imports": [
+      2
+    ],
+    "unused-imports/no-unused-vars": [
+      1,
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
     "unicorn/better-regex": [
       2
     ],
@@ -6227,6 +6241,15 @@
     ],
     "@typescript-eslint/prefer-as-const": [
       2
+    ],
+    "pathmark/add-eof": [
+      1
+    ],
+    "pathmark/add-path": [
+      1
+    ],
+    "pathmark/check-path": [
+      1
     ]
   }
 }
