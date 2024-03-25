@@ -911,11 +911,11 @@
     "storybook",
     "@stylistic",
     "tailwindcss",
+    "testing-library",
     "you-dont-need-lodash-underscore",
     "no-unsanitized",
     "tsdoc",
     "unicorn:eslint-plugin-unicorn@51.0.1",
-    "testing-library",
     "vue:eslint-plugin-vue@9.23.0",
     "@typescript-eslint:@typescript-eslint/eslint-plugin@7.3.1",
     "pathmark"

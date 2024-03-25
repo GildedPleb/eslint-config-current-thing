@@ -172,6 +172,7 @@ const configGen = ({
       "sort-class-members": sortClassMembers,
       storybook,
       tailwindcss,
+      "testing-library": testingLibrary,
     },
   },
 
@@ -1827,7 +1828,6 @@ const configGen = ({
             "**/__tests__/**/*.[jt]s?(x)",
             "**/?(*.)+(spec|test).[jt]s?(x)",
           ],
-          plugins: { "testing-library": testingLibrary },
           rules: {
             ...testingLibrary.configs.react.rules,
             ...("eslint-plugin-testing-library" in override

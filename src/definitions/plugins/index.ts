@@ -39,6 +39,7 @@ import sortClass from "./sort-class";
 import storybook from "./storybook";
 import stylistic from "./stylistic";
 import tailwindPlugin from "./tailwind-plugin";
+import testingLibrary from "./testing-library";
 
 export interface Plugin {
   name: string;
@@ -90,6 +91,7 @@ const plugins: Plugin[] = [
   storybook,
   stylistic,
   tailwindPlugin,
+  testingLibrary,
 ];
 
 export default plugins;

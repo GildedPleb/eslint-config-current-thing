@@ -910,6 +910,7 @@
     "storybook",
     "@stylistic",
     "tailwindcss",
+    "testing-library",
     "you-dont-need-lodash-underscore",
     "no-unsanitized",
     "tsdoc",

@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
-    plugins: { "testing-library": testingLibrary },
     ${RULES}
   }`,
   name: "Testing Library",
@@ -13,7 +12,7 @@ export default {
     {
       name: "testingLibrary",
       package: "eslint-plugin-testing-library",
-      requiresImport: true,
+      requiresImport: false,
     },
   ],
   rules: `testingLibrary.configs.react.rules`,
