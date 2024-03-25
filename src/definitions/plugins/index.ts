@@ -35,6 +35,7 @@ import shopify from "./shopify";
 import shopifyJest from "./shopify-jest";
 import shopifyTs from "./shopify-ts";
 import sonarjs from "./sonarjs";
+import sortClass from "./sort-class";
 
 export interface Plugin {
   name: string;
@@ -82,6 +83,7 @@ const plugins: Plugin[] = [
   shopifyJest,
   shopifyTs,
   sonarjs,
+  sortClass,
 ];
 
 export default plugins;

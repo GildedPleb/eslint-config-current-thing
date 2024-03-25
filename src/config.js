@@ -167,6 +167,7 @@ const configGen = ({
       security,
       "simple-import-sort": importSort,
       sonarjs,
+      "sort-class-members": sortClassMembers,
     },
   },
 
@@ -723,28 +724,6 @@ const configGen = ({
             ...unsanitized.configs.DOM.rules,
             ...("eslint-plugin-no-unsanitized" in override
               ? override["eslint-plugin-no-unsanitized"]
-              : {}),
-          },
-        },
-      ]),
-
-  /*
-    Sort Class Members
-    1,028,312 monthly downloads
-    ESLint rule for enforcing consistent ES6 class member order.
-    https://github.com/bryanrsmith/eslint-plugin-sort-class-members
-  */
-  ...(disable.includes("eslint-plugin-sort-class-members") ||
-  threshold > 1_028_312
-    ? []
-    : [
-        {
-          files,
-          plugins: { "sort-class-members": sortClassMembers },
-          // There are no recommended ways to use this rule, but Shopify has opinions about it.
-          rules: {
-            ...("eslint-plugin-sort-class-members" in override
-              ? override["eslint-plugin-sort-class-members"]
               : {}),
           },
         },

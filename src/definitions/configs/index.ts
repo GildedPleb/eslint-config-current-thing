@@ -52,7 +52,6 @@ import shopifyReactTs from "./shopify-react-ts";
 import shopifyTs from "./shopify-ts";
 import shopifyTsTypeCheck from "./shopify-ts-type-check";
 import sonarjs from "./sonarjs";
-import sort from "./sort-class";
 import standard from "./standard";
 import standardJsx from "./standard-jsx";
 import standardReact from "./standard-react";
@@ -98,7 +97,6 @@ const configs: Config[] = [
   compat,
   functional,
   shopifyTs,
-  sort,
   youDontNeedLodash,
   google,
   importSort,
