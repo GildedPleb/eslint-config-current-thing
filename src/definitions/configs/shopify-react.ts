@@ -28,6 +28,7 @@ export default {
     },
   ],
   requiredPlugins: ["react", "jsx-a11y", "react-hooks", "@shopify"],
-  rules: `shopify.configs.react.rules`,
+  rules: `shopify.configs.react.rules,
+  "react/jsx-filename-extension": [2, {extensions: [".jsx", ".tsx"]}]`,
 } satisfies Config;
 // EOF

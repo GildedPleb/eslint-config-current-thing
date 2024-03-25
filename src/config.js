@@ -294,7 +294,6 @@ const configGen = ({
             // All conflict with Prettier:
             "@stylistic/arrow-parens": 0,
             "@stylistic/brace-style": 0,
-            "@stylistic/jsx-one-expression-per-line": 0,
             "@stylistic/multiline-ternary": 0,
             "@stylistic/operator-linebreak": 0,
             "@stylistic/quote-props": 0,
@@ -502,6 +501,10 @@ const configGen = ({
           },
           rules: {
             ...shopify.configs.react.rules,
+            "react/jsx-filename-extension": [
+              2,
+              { extensions: [".jsx", ".tsx"] },
+            ],
             ...("@shopify/eslint-plugin" in override
               ? override["@shopify/eslint-plugin"]
               : {}),
@@ -2143,7 +2146,16 @@ const configGen = ({
               ".(coffee|scss|css|less|hbs|svg|json)$",
             ],
             "import/parsers": {
-              "@typescript-eslint/parser": [".ts", ".tsx"],
+              "@typescript-eslint/parser": [
+                ".ts",
+                ".tsx",
+                ".js",
+                ".jsx",
+                ".mjs",
+                ".cjs",
+                ".mts",
+                ".cts",
+              ],
             },
             "import/resolver": {
               node: {

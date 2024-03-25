@@ -7,7 +7,16 @@ export default {
     files,
     settings: {
       "import/parsers": {
-        "@typescript-eslint/parser": [".ts", ".tsx"],
+        "@typescript-eslint/parser": [
+          ".ts",
+          ".tsx",
+          ".js",
+          ".jsx",
+          ".mjs",
+          ".cjs",
+          ".mts",
+          ".cts",
+        ],
       },
       "import/resolver": {
         typescript: { alwaysTryTypes: true },

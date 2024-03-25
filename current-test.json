@@ -20,7 +20,13 @@
     "import/parsers": {
       "@typescript-eslint/parser": [
         ".ts",
-        ".tsx"
+        ".tsx",
+        ".js",
+        ".jsx",
+        ".mjs",
+        ".cjs",
+        ".mts",
+        ".cts"
       ]
     },
     "import/resolver": {
@@ -1536,7 +1542,10 @@
       }
     ],
     "@stylistic/jsx-one-expression-per-line": [
-      0
+      2,
+      {
+        "allow": "single-child"
+      }
     ],
     "@stylistic/jsx-quotes": [
       2
@@ -3828,7 +3837,8 @@
       2,
       {
         "extensions": [
-          ".js"
+          ".jsx",
+          ".tsx"
         ]
       }
     ],
