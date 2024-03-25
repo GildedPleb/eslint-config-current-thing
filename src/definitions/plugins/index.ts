@@ -38,6 +38,7 @@ import sonarjs from "./sonarjs";
 import sortClass from "./sort-class";
 import storybook from "./storybook";
 import stylistic from "./stylistic";
+import tailwindPlugin from "./tailwind-plugin";
 
 export interface Plugin {
   name: string;
@@ -88,6 +89,7 @@ const plugins: Plugin[] = [
   sortClass,
   storybook,
   stylistic,
+  tailwindPlugin,
 ];
 
 export default plugins;

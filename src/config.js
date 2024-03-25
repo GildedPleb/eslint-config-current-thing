@@ -171,6 +171,7 @@ const configGen = ({
       sonarjs,
       "sort-class-members": sortClassMembers,
       storybook,
+      tailwindcss,
     },
   },
 
@@ -818,7 +819,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { tailwindcss },
           rules: {
             ...tailwindcss.configs.recommended.rules,
             ...("eslint-plugin-tailwindcss" in override

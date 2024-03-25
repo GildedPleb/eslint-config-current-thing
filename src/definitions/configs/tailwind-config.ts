@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { tailwindcss },
     ${RULES}
   }`,
   name: "Tailwind CSS",
@@ -13,11 +12,9 @@ export default {
     {
       name: "tailwindcss",
       package: "eslint-plugin-tailwindcss",
-      requiresImport: true,
+      requiresImport: false,
     },
   ],
-  rules: `{
-    ...tailwindcss.configs.recommended.rules,
-  }`,
+  rules: `tailwindcss.configs.recommended.rules`,
 } satisfies Config;
 // EOF
