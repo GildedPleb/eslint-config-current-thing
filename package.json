@@ -35,6 +35,7 @@
     "eslint-config-standard-jsx": "^11.0.0",
     "eslint-config-standard-react": "^13.0.0",
     "eslint-config-xo": "^0.44.0",
+    "eslint-define-config": "^2.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-compat": "^4.2.0",
     "eslint-plugin-css-modules": "^2.12.0",

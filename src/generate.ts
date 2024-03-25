@@ -44,6 +44,7 @@ ${plugins.flatMap(({ packages }) =>
 import { FlatCompat } from "@eslint/eslintrc";
 import globals from "globals";
 import restrictedGlobals from 'confusing-browser-globals';
+import { defineFlatConfig } from 'eslint-define-config';
 
 const filename = fileURLToPath(import.meta.url);
 const baseDirectory = path.dirname(filename);
@@ -56,7 +57,13 @@ const defaultOptions = { disable: [], override: {}, threshold: ${MINIMUMS} };
 /**
  * @param {{ disable: string[], override: Record<string, Record<string, number | string>>, threshold: number }} default - Options
  */
-const configGen = ({ disable = [], override = {}, threshold = ${MINIMUMS} } = defaultOptions) => [
+const configGen = ({
+  disable = [],
+  override = {},
+  threshold = 400_000,
+} = defaultOptions) =>
+  // @ts-expect-error type mismatching here is expected because the return is defined as a literal type, on literal types.
+  defineFlatConfig([
   {
     ignores: [
       "**/eslint.config.js",
@@ -152,7 +159,7 @@ const configGen = ({ disable = [], override = {}, threshold = ${MINIMUMS} } = de
 `;
       },
     ).join(`
-`)}];
+`)}]);
 
 export default configGen;
 // EOF

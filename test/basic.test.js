@@ -3,8 +3,8 @@
 /* eslint-disable tsdoc/syntax */
 // PathMark: ./test/basic.test.js
 const multiply = (
-  /** @type { number} */ first,
-  /** @type { number} */ second,
+  /** @type { number } */ first,
+  /** @type { number } */ second,
 ) => first * second;
 
 describe("multiply function", () => {
