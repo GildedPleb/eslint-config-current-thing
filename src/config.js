@@ -37,6 +37,7 @@ import xo from "eslint-config-xo";
 import { defineFlatConfig } from "eslint-define-config";
 import comp from "eslint-plugin-compat";
 import cssModules from "eslint-plugin-css-modules";
+import deprecation from "eslint-plugin-deprecation";
 import es from "eslint-plugin-es";
 import esX from "eslint-plugin-es-x";
 import commentsOld from "eslint-plugin-eslint-comments";
@@ -159,6 +160,7 @@ const configGen = ({
         "@typescript-eslint": tseslint.plugin,
         compat: comp,
         "css-modules": cssModules,
+        deprecation,
         es,
         "es-x": esX,
         "eslint-comments": commentsOld,
@@ -876,6 +878,27 @@ const configGen = ({
               ...comp.configs.recommended.rules,
               ...("eslint-plugin-compat" in override
                 ? override["eslint-plugin-compat"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+    Deprecation
+    2,103,900 monthly downloads
+    ESLint rule that reports usage of deprecated code
+    https://github.com/gund/eslint-plugin-deprecation#readme
+    Requires: deprecation
+  */
+    ...(disable.includes("eslint-plugin-deprecation") || threshold > 2_103_900
+      ? []
+      : [
+          {
+            files,
+            rules: {
+              ...deprecation.configs.recommended.rules,
+              ...("eslint-plugin-deprecation" in override
+                ? override["eslint-plugin-deprecation"]
                 : {}),
             },
           },
