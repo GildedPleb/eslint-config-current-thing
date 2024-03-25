@@ -1,6 +1,7 @@
 // PathMark: ./src/get-packages.ts
 import { MINIMUMS } from "./constants";
-import definitions from "./definitions/configs";
+import configs from "./definitions/configs";
+import plugins from "./definitions/plugins";
 import notApplicable from "./not-applicable";
 import { fetchNPMURLs, getDownloadCount } from "./npm";
 import rejected from "./rejected";
@@ -18,11 +19,14 @@ const searchTerms: string[] = [
  * Uses the NPM API results to find and coalesce all applicable NPM packages
  */
 async function fetchEslintPlugins() {
-  const installed = new Set(
-    definitions.flatMap((config) =>
+  const installed = new Set([
+    ...configs.flatMap((config) =>
       config.packages.map(({ package: pack }) => pack),
     ),
-  );
+    ...plugins.flatMap((config) =>
+      config.packages.map(({ package: pack }) => pack),
+    ),
+  ]);
   console.log("\nGetting packages, this could take a loooong time... \n");
 
   const pluginNames = await fetchNPMURLs(searchTerms);

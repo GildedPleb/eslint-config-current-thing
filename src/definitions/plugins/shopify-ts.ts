@@ -8,11 +8,10 @@ export default {
       key: "@shopify/typescript",
       name: `{
         rules: Object.fromEntries(
-          Object.entries(shopify.rules).map(([key, value]) => {
-            if (key.startsWith("typescript/"))
-              return [key.slice(11), value];
-            return [key, value];
-          })
+          Object.entries(shopify.rules).map(([key, value]) => [
+            key.startsWith("typescript/") ? key.slice(11) : key,
+            value,
+          ]),
         ),
       }`,
       package: "@shopify/eslint-plugin",

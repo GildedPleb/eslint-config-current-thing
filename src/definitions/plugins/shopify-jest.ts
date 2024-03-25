@@ -8,11 +8,10 @@ export default {
       key: "@shopify/jest",
       name: `{
         rules: Object.fromEntries(
-          Object.entries(shopify.rules).map(([key, value]) => {
-            if (key.startsWith("jest/"))
-              return [key.slice(5), value];
-            return [key, value];
-          })
+          Object.entries(shopify.rules).map(([key, value]) => [
+            key.startsWith("jest/") ? key.slice(5) : key,
+            value,
+          ]),
         ),
       }`,
       package: "@shopify/eslint-plugin",
