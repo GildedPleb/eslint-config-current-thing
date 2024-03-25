@@ -4,7 +4,13 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import JSONConfig from "../current.json" assert { type: "json" };
-import { LAST_DAY_INTERVAL, MINIMUMS, README_SLUG, RULES } from "./constants";
+import {
+  COUNT_SLUG,
+  LAST_DAY_INTERVAL,
+  MINIMUMS,
+  README_SLUG,
+  RULES,
+} from "./constants";
 import { configs, plugins } from "./definitions";
 import fetchEslintPlugins from "./get-packages";
 
@@ -193,6 +199,8 @@ try {
 
 const newPackages = await fetchEslintPlugins();
 
+const ruleCount = `${COUNT_SLUG} ${Object.keys((JSONConfig as { rules: Record<string, unknown> }).rules).length} rules.`;
+
 const underConsideration = `${README_SLUG}
 
 The following section is generated according to spec.
@@ -200,23 +208,30 @@ The following section is generated according to spec.
 Generated on ${new Date().toLocaleDateString()}, downloads for the previous ${LAST_DAY_INTERVAL} days.
 
 ${newPackages.map(({ count, name }) => `- ${count.toLocaleString()} downloads, [${name}](https://www.npmjs.com/package/${name})${count < MINIMUMS ? " - Not Yet Eligible" : ""}`).join("\n")}
-
-## Rule Count
-
-${Object.keys((JSONConfig as { rules: Record<string, unknown> }).rules).length}
 `;
 
 const readmePath = path.join(dirname, "../README.md");
 try {
   const data = fs.readFileSync(readmePath, "utf8");
-  const sectionStart = data.indexOf(README_SLUG);
-  const updatedContent =
-    sectionStart === -1
-      ? `${data}\n${underConsideration}`
-      : data.slice(0, Math.max(0, sectionStart)) + underConsideration;
+  const countStart = data.indexOf(COUNT_SLUG);
+  if (countStart === -1) {
+    console.log(
+      "COUNT_SLUG not found. Please check the README.md for the correct COUNT_SLUG.",
+    );
+  } else {
+    const endOfLineIndex = data.indexOf("\n", countStart);
+    const updatedCountContent =
+      data.slice(0, countStart) + ruleCount + data.slice(endOfLineIndex);
 
-  fs.writeFileSync(readmePath, updatedContent, "utf8");
-  console.log("\nREADME.md has been updated successfully.");
+    const sectionStart = updatedCountContent.indexOf(README_SLUG);
+    const updatedContent =
+      sectionStart === -1
+        ? `${updatedCountContent}\n${underConsideration}`
+        : `${updatedCountContent.slice(0, Math.max(0, sectionStart))}${underConsideration}`;
+
+    fs.writeFileSync(readmePath, updatedContent, "utf8");
+    console.log("\nREADME.md has been updated successfully.");
+  }
 } catch (error) {
   console.error("Error processing the README.md file:", error);
   throw new Error("Failed");

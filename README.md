@@ -38,7 +38,11 @@ Meaning, in many cases, using this config without these frameworks (by disabling
 
 ---
 
-Unsurprisingly, it is incredibly strict with around 1000 rules.
+<!-- Generated do not edit! -->
+
+Unsurprisingly, it is incredibly strict with 1245 rules.
+
+<!-- End Generated do not edit! -->
 
 Surprisingly, _it works_.
 
@@ -156,7 +160,7 @@ This would only include packages that exceed 1,000,000 downloads per month, and 
 
 ### Choke Out Problems
 
-There are around 1000 rules in this config, and they are completely overwhelming.
+There are a crazy amount of rules in this config, and they are completely overwhelming.
 
 1. Try easing into them by setting a high `threshold`.
 1. Importantly, the config is also exported as a plain JS object called `JSONConfig`. As such, you can pick off rules to disable in `eslint.config.js`, like below, and choke out the problems in your code by slowly allowing more rules in:
@@ -301,7 +305,3 @@ Generated on 3/25/2024, downloads for the previous 28 days.
 - 246,035 downloads, [eslint-plugin-canonical](https://www.npmjs.com/package/eslint-plugin-canonical) - Not Yet Eligible
 - 242,620 downloads, [eslint-plugin-react-redux](https://www.npmjs.com/package/eslint-plugin-react-redux) - Not Yet Eligible
 - 204,053 downloads, [@eslint-types/typescript-eslint](https://www.npmjs.com/package/@eslint-types/typescript-eslint) - Not Yet Eligible
-
-## Rule Count
-
-1272

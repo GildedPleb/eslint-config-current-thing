@@ -5,5 +5,6 @@ export const BASE_URL = "https://registry.npmjs.org";
 export const LAST_DAY_INTERVAL = 28;
 export const MINIMUMS = 400_000;
 export const README_SLUG = "## We are considering adding these configs";
+export const COUNT_SLUG = "Unsurprisingly, it is incredibly strict with";
 export const README_PATH = "../README.md";
 // EOF
