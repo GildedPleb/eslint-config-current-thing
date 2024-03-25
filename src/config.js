@@ -169,6 +169,7 @@ const configGen = ({
       "simple-import-sort": importSort,
       sonarjs,
       "sort-class-members": sortClassMembers,
+      storybook,
     },
   },
 
@@ -1287,9 +1288,28 @@ const configGen = ({
     : [
         {
           files: storybook.configs.recommended.overrides[0].files,
-          plugins: { storybook },
           rules: {
             ...storybook.configs.recommended.overrides[0].rules,
+            ...("eslint-plugin-storybook" in override
+              ? override["eslint-plugin-storybook"]
+              : {}),
+          },
+        },
+      ]),
+
+  /*
+    Storybook - Main
+    9,956,224 monthly downloads
+    Best practice rules for Storybook
+    https://github.com/storybookjs/eslint-plugin-storybook#readme
+  */
+  ...(disable.includes("eslint-plugin-storybook") || threshold > 9_956_224
+    ? []
+    : [
+        {
+          files: storybook.configs.recommended.overrides[1].files,
+          rules: {
+            ...storybook.configs.recommended.overrides[1].rules,
             ...("eslint-plugin-storybook" in override
               ? override["eslint-plugin-storybook"]
               : {}),
@@ -1371,6 +1391,7 @@ const configGen = ({
                 jsx: true,
               },
               ecmaVersion: "latest",
+              sourceType: "module",
             },
           },
           rules: {

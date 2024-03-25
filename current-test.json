@@ -908,6 +908,7 @@
     "@shopify/typescript",
     "sonarjs",
     "sort-class-members:eslint-plugin-sort-class-members@1.20.0",
+    "storybook",
     "@stylistic",
     "you-dont-need-lodash-underscore",
     "no-unsanitized",

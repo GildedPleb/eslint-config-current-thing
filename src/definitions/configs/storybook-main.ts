@@ -1,13 +1,13 @@
-// PathMark: ./src/definitions/configs/storybook.ts
+// PathMark: ./src/definitions/configs/storybook-main.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
   definitions: `{
-    files: storybook.configs.recommended.overrides[0].files,
+    files: storybook.configs.recommended.overrides[1].files,
     ${RULES}
   }`,
-  name: "Storybook",
+  name: "Storybook - Main",
   packages: [
     {
       name: "storybook",
@@ -15,7 +15,7 @@ export default {
       requiresImport: false,
     },
   ],
-  requiredPlugins: ["storybook", "react-hooks", "import"],
-  rules: `storybook.configs.recommended.overrides[0].rules`,
+  requiredPlugins: ["storybook"],
+  rules: `storybook.configs.recommended.overrides[1].rules`,
 } satisfies Config;
 // EOF

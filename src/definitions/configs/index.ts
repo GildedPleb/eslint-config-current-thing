@@ -57,6 +57,7 @@ import standardJsx from "./standard-jsx";
 import standardReact from "./standard-react";
 import standardTs from "./standard-ts";
 import storybook from "./storybook";
+import storybookMain from "./storybook-main";
 import stylistic from "./stylistic";
 import tailwindConfig from "./tailwind-config";
 import testingLibrary from "./testing-library";
@@ -150,6 +151,7 @@ const configs: Config[] = [
   shopifyReactTest,
   shopifyTsTypeCheck,
   standardTs,
+  storybookMain,
 ];
 
 export default configs;
