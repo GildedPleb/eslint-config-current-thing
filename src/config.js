@@ -137,6 +137,7 @@ const configGen = ({
           ]),
         ),
       },
+      "@stylistic": stylistic,
       compat: comp,
       "css-modules": cssModules,
       es,
@@ -278,7 +279,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { "@stylistic": stylistic },
           rules: {
             ...stylistic.configs.customize({ quotes: "double", semi: true })
               .rules,

@@ -37,6 +37,7 @@ import shopifyTs from "./shopify-ts";
 import sonarjs from "./sonarjs";
 import sortClass from "./sort-class";
 import storybook from "./storybook";
+import stylistic from "./stylistic";
 
 export interface Plugin {
   name: string;
@@ -86,6 +87,7 @@ const plugins: Plugin[] = [
   sonarjs,
   sortClass,
   storybook,
+  stylistic,
 ];
 
 export default plugins;
