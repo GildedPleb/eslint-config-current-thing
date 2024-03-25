@@ -42,6 +42,7 @@ import tailwindPlugin from "./tailwind-plugin";
 import testingLibrary from "./testing-library";
 import ts from "./ts";
 import tsdoc from "./tsdoc";
+import unicorn from "./unicorn";
 
 export interface Plugin {
   name: string;
@@ -96,6 +97,7 @@ const plugins: Plugin[] = [
   testingLibrary,
   ts,
   tsdoc,
+  unicorn,
 ];
 
 export default plugins;

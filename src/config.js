@@ -179,6 +179,7 @@ const configGen = ({
       tailwindcss,
       "testing-library": testingLibrary,
       tsdoc,
+      unicorn,
     },
   },
 
@@ -1258,7 +1259,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { unicorn },
           rules: {
             ...unicorn.configs.recommended.rules,
             ...("eslint-plugin-unicorn" in override

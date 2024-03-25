@@ -914,9 +914,9 @@
     "testing-library",
     "@typescript-eslint:@typescript-eslint/eslint-plugin@7.3.1",
     "tsdoc",
+    "unicorn:eslint-plugin-unicorn@51.0.1",
     "you-dont-need-lodash-underscore",
     "no-unsanitized",
-    "unicorn:eslint-plugin-unicorn@51.0.1",
     "vue:eslint-plugin-vue@9.23.0",
     "pathmark"
   ],

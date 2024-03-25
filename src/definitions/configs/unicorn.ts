@@ -5,13 +5,17 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { unicorn },
     ${RULES}
   }`,
   name: "Unicorn",
   packages: [
-    { name: "unicorn", package: "eslint-plugin-unicorn", requiresImport: true },
+    {
+      name: "unicorn",
+      package: "eslint-plugin-unicorn",
+      requiresImport: false,
+    },
   ],
+  requiredPlugins: ["unicorn"],
   rules: `unicorn.configs.recommended.rules`,
 } satisfies Config;
 // EOF
