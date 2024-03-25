@@ -33,10 +33,6 @@ const rejected = new Set([
   "@tanstack/eslint-plugin-query",
   "eslint-plugin-ember",
   "@backstage/eslint-plugin",
-  "eslint-plugin-mdx",
-  "eslint-plugin-inclusive-language",
-  "eslint-plugin-spellcheck",
-
   // Fork of import
   "eslint-plugin-i",
 
