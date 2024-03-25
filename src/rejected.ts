@@ -50,8 +50,10 @@ const rejected = new Set([
 
   // Monorepo stuffs
   "@nx/eslint",
+  "@nx/linter",
   "@nrwl/linter",
   "eslint-config-turbo",
+  "@nrwl/eslint-plugin-nx",
 
   // Not maintained / No recommended rules and largely irrelevant
   "eslint-plugin-babel",
@@ -61,6 +63,18 @@ const rejected = new Set([
 
   // Throws WARN in NPM and is literally the exact same as @react-native-community/eslint-config
   "@react-native/eslint-config",
+
+  // Less popular frameworks than React + ecosystem
+  "@angular-eslint/eslint-plugin",
+  "@angular-eslint/eslint-plugin-template",
+  "@vue/eslint-config-typescript",
+  "@vue/eslint-config-prettier",
+  "eslint-plugin-nuxt",
+  "eslint-plugin-vuejs-accessibility",
+  "@vue/eslint-config-airbnb",
+  "@ngdaddy/eslint-config",
+  "eslint-plugin-vue",
+  "vue-eslint-parser",
 ]);
 
 export default rejected;

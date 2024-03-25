@@ -285,20 +285,11 @@ See [rejected](./src/rejected.ts) and [not-applicable](./src/not-applicable.ts) 
 
 The following section is generated according to spec.
 
-Generated on 3/24/2024, downloads for the previous 28 days.
+Generated on 3/25/2024, downloads for the previous 28 days.
 
-- 90,575,248 downloads, [eslint-module-utils](https://www.npmjs.com/package/eslint-module-utils)
 - 36,129,389 downloads, [lint-staged](https://www.npmjs.com/package/lint-staged)
-- 6,351,456 downloads, [@angular-eslint/eslint-plugin](https://www.npmjs.com/package/@angular-eslint/eslint-plugin)
-- 6,124,204 downloads, [@angular-eslint/eslint-plugin-template](https://www.npmjs.com/package/@angular-eslint/eslint-plugin-template)
 - 4,339,351 downloads, [conventional-changelog-eslint](https://www.npmjs.com/package/conventional-changelog-eslint)
-- 3,273,376 downloads, [@vue/eslint-config-typescript](https://www.npmjs.com/package/@vue/eslint-config-typescript)
-- 2,504,901 downloads, [@vue/eslint-config-prettier](https://www.npmjs.com/package/@vue/eslint-config-prettier)
-- 836,829 downloads, [eslint-plugin-nuxt](https://www.npmjs.com/package/eslint-plugin-nuxt)
-- 790,261 downloads, [eslint-plugin-vuejs-accessibility](https://www.npmjs.com/package/eslint-plugin-vuejs-accessibility)
-- 526,733 downloads, [@vue/eslint-config-airbnb](https://www.npmjs.com/package/@vue/eslint-config-airbnb)
 - 387,032 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
-- 348,575 downloads, [@ngdaddy/eslint-config](https://www.npmjs.com/package/@ngdaddy/eslint-config) - Not Yet Eligible
 - 344,564 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
 - 325,164 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
 - 299,987 downloads, [@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config) - Not Yet Eligible
@@ -311,4 +302,4 @@ Generated on 3/24/2024, downloads for the previous 28 days.
 
 ## Rule Count
 
-1373
+1272
