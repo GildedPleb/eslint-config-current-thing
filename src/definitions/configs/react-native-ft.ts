@@ -15,6 +15,7 @@ export default {
       package: "@react-native-community/eslint-config",
       requiresImport: false,
     },
+    // Throws WARN in NPM and is literally the exact same as @react-native-community/eslint-config, not installed
     {
       name: "rnConfig",
       package: "@react-native/eslint-config",

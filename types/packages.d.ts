@@ -33,7 +33,6 @@ declare module "eslint-plugin-sort-class-members";
 declare module "eslint-plugin-unicorn";
 declare module "eslint-plugin-you-dont-need-lodash-underscore";
 declare module "eslint-plugin-react-refresh";
-declare module "@react-native/eslint-config";
 declare module "eslint-plugin-tailwindcss";
 declare module "eslint-plugin-regexp";
 declare module "eslint-plugin-storybook";

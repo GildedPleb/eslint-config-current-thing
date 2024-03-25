@@ -22,6 +22,12 @@ export default {
       package: "@react-native/eslint-config",
       requiresImport: false,
     },
+    // These globals exist in the other packages
+    {
+      name: "rnGlobals",
+      package: "eslint-plugin-react-native-globals",
+      requiresImport: false,
+    },
   ],
   requiredPlugins: [
     "eslint-comments",

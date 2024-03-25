@@ -35,6 +35,9 @@ const notApplicable = new Set([
   "@redocly/cli",
   "@redocly/openapi-core",
   "eslint-module-utils",
+  "lint-staged",
+  "conventional-changelog-eslint",
+  "eslint-define-config",
 
   // Included with Airbnb
   "eslint-config-airbnb-base",

@@ -748,28 +748,6 @@ const configGen = ({
         ]),
 
     /*
-    React Native Plugin
-    1,005,816 monthly downloads
-    ESLint rules for @react-native/eslint-config
-    https://github.com/facebook/react-native/tree/HEAD/packages/eslint-plugin-react-native#readme
-    Requires: @react-native
-  */
-    ...(disable.includes("@react-native/eslint-plugin") || threshold > 1_005_816
-      ? []
-      : [
-          {
-            files,
-            // Not added in any config
-            rules: {
-              "@react-native/platform-colors": 1,
-              ...("@react-native/eslint-plugin" in override
-                ? override["@react-native/eslint-plugin"]
-                : {}),
-            },
-          },
-        ]),
-
-    /*
     No Unsanitized
     1,016,567 monthly downloads
     ESLint rule to disallow unsanitized code
@@ -1003,35 +981,27 @@ const configGen = ({
         ]),
 
     /*
-    React Native Config
-    3,499,859 monthly downloads
-    ESLint config for React Native / ESLint config for React Native
-    https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native-community#readme / https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native#readme
-    Requires: eslint-comments, react, react-hooks, react-native, jest
+    React Native Plugin
+    3,129,542 monthly downloads
+    ESLint rules for @react-native/eslint-config / ESLint rules for @react-native-community/eslint-config
+    https://github.com/facebook/react-native/tree/HEAD/packages/eslint-plugin-react-native#readme / https://github.com/facebook/react-native#readme
+    Requires: @react-native
   */
-    ...(disable.includes("@react-native-community/eslint-config") ||
-    disable.includes("@react-native/eslint-config") ||
-    threshold > 3_499_859
+    ...(disable.includes("@react-native/eslint-plugin") ||
+    disable.includes("@react-native-community/eslint-plugin") ||
+    threshold > 3_129_542
       ? []
       : [
           {
             files,
-            languageOptions: {
-              globals: reactNativeConfig.globals,
-            },
+            // Not added in any config
             rules: {
-              ...reactNativeConfig.rules,
-              // Deprecated rule format needs to be overwritten
-              quotes: [
-                0,
-                "single",
-                { allowTemplateLiterals: true, avoidEscape: true },
-              ],
-              ...("@react-native-community/eslint-config" in override
-                ? override["@react-native-community/eslint-config"]
+              "@react-native/platform-colors": 1,
+              ...("@react-native/eslint-plugin" in override
+                ? override["@react-native/eslint-plugin"]
                 : {}),
-              ...("@react-native/eslint-config" in override
-                ? override["@react-native/eslint-config"]
+              ...("@react-native-community/eslint-plugin" in override
+                ? override["@react-native-community/eslint-plugin"]
                 : {}),
             },
           },
@@ -1216,6 +1186,45 @@ const configGen = ({
               "react-refresh/only-export-components": "warn",
               ...("eslint-plugin-react-refresh" in override
                 ? override["eslint-plugin-react-refresh"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+    React Native Config
+    7,382,894 monthly downloads
+    ESLint config for React Native / ESLint config for React Native / ESLint Environment for React Native
+    https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native-community#readme / https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native#readme / https://github.com/satya164/eslint-plugin-react-native-globals#readme
+    Requires: eslint-comments, react, react-hooks, react-native, jest
+  */
+    ...(disable.includes("@react-native-community/eslint-config") ||
+    disable.includes("@react-native/eslint-config") ||
+    disable.includes("eslint-plugin-react-native-globals") ||
+    threshold > 7_382_894
+      ? []
+      : [
+          {
+            files,
+            languageOptions: {
+              globals: reactNativeConfig.globals,
+            },
+            rules: {
+              ...reactNativeConfig.rules,
+              // Deprecated rule format needs to be overwritten
+              quotes: [
+                0,
+                "single",
+                { allowTemplateLiterals: true, avoidEscape: true },
+              ],
+              ...("@react-native-community/eslint-config" in override
+                ? override["@react-native-community/eslint-config"]
+                : {}),
+              ...("@react-native/eslint-config" in override
+                ? override["@react-native/eslint-config"]
+                : {}),
+              ...("eslint-plugin-react-native-globals" in override
+                ? override["eslint-plugin-react-native-globals"]
                 : {}),
             },
           },

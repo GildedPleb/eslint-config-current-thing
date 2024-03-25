@@ -92,7 +92,7 @@
       "BatteryManager": false,
       "BeforeUnloadEvent": false,
       "BiquadFilterNode": false,
-      "Blob": false,
+      "Blob": true,
       "BlobEvent": false,
       "blur": false,
       "BroadcastChannel": false,
@@ -201,7 +201,7 @@
       "EventTarget": false,
       "external": false,
       "fetch": false,
-      "File": false,
+      "File": true,
       "FileList": false,
       "FileReader": false,
       "find": false,
@@ -779,7 +779,7 @@
       "WebGLTransformFeedback": false,
       "WebGLUniformLocation": false,
       "WebGLVertexArrayObject": false,
-      "WebSocket": false,
+      "WebSocket": true,
       "WheelEvent": false,
       "window": "readonly",
       "Window": false,
@@ -831,13 +831,13 @@
       "require": false,
       "setImmediate": true,
       "browser": true,
-      "__DEV__": false,
-      "__fbBatchedBridgeConfig": false,
-      "ErrorUtils": false,
+      "__DEV__": true,
       "escape": false,
       "Map": true,
       "Promise": true,
       "Set": true,
+      "__fbBatchedBridgeConfig": false,
+      "ErrorUtils": false,
       "commonjs": true,
       "es6": true,
       "jest": true,
@@ -4426,9 +4426,6 @@
         "ignore-case": false
       }
     ],
-    "@react-native/platform-colors": [
-      1
-    ],
     "no-unsanitized/property": [
       2,
       {},
@@ -5068,37 +5065,7 @@
         "ignoreStatic": false
       }
     ],
-    "no-negated-in-lhs": [
-      1
-    ],
-    "no-reserved-keys": [
-      0
-    ],
-    "no-native-reassign": [
-      0
-    ],
-    "space-in-brackets": [
-      0
-    ],
-    "react/no-unstable-nested-components": [
-      1
-    ],
-    "react/wrap-multilines": [
-      0
-    ],
-    "react-native/no-inline-styles": [
-      2
-    ],
-    "jest/no-disabled-tests": [
-      1
-    ],
-    "jest/no-focused-tests": [
-      1
-    ],
-    "jest/no-identical-title": [
-      1
-    ],
-    "jest/valid-expect": [
+    "@react-native/platform-colors": [
       1
     ],
     "security/detect-buffer-noassert": [
@@ -5242,6 +5209,9 @@
     "react-native/no-unused-styles": [
       2
     ],
+    "react-native/no-inline-styles": [
+      1
+    ],
     "react-native/no-color-literals": [
       2
     ],
@@ -5258,6 +5228,36 @@
       2
     ],
     "react-refresh/only-export-components": [
+      1
+    ],
+    "no-negated-in-lhs": [
+      1
+    ],
+    "no-reserved-keys": [
+      0
+    ],
+    "no-native-reassign": [
+      0
+    ],
+    "space-in-brackets": [
+      0
+    ],
+    "react/no-unstable-nested-components": [
+      1
+    ],
+    "react/wrap-multilines": [
+      0
+    ],
+    "jest/no-disabled-tests": [
+      1
+    ],
+    "jest/no-focused-tests": [
+      1
+    ],
+    "jest/no-identical-title": [
+      1
+    ],
+    "jest/valid-expect": [
       1
     ],
     "jsdoc/check-access": [

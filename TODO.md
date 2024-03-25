@@ -1,3 +1,2 @@
 - Add a bunch of other "obsolete" plugins.
-- add the rule count to the tag "around 1000 rules:
 - Once audit is complete, open up all out-of-scope configs.

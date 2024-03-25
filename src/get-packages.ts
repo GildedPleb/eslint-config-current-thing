@@ -36,7 +36,7 @@ async function fetchEslintPlugins() {
     const downloads = await getDownloadCount(pluginName);
 
     if (
-      downloads > MINIMUMS / 2 &&
+      downloads > MINIMUMS / 4 &&
       !installed.has(pluginName) &&
       !rejected.has(pluginName) &&
       !notApplicable.has(pluginName)

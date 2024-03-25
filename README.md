@@ -40,7 +40,7 @@ Meaning, in many cases, using this config without these frameworks (by disabling
 
 <!-- Generated do not edit! -->
 
-Unsurprisingly, it is incredibly strict with 1245 rules.
+Unsurprisingly, it is incredibly strict with 1242 rules.
 
 <!-- End Generated do not edit! -->
 
@@ -293,15 +293,27 @@ The following section is generated according to spec.
 
 Generated on 3/25/2024, downloads for the previous 28 days.
 
-- 36,129,389 downloads, [lint-staged](https://www.npmjs.com/package/lint-staged)
-- 4,339,351 downloads, [conventional-changelog-eslint](https://www.npmjs.com/package/conventional-changelog-eslint)
-- 387,032 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
-- 344,564 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
-- 325,164 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
-- 299,987 downloads, [@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config) - Not Yet Eligible
-- 299,449 downloads, [@rushstack/eslint-plugin-security](https://www.npmjs.com/package/@rushstack/eslint-plugin-security) - Not Yet Eligible
-- 266,371 downloads, [eslint-plugin-minecraft-linting](https://www.npmjs.com/package/eslint-plugin-minecraft-linting) - Not Yet Eligible
-- 252,192 downloads, [eslint-define-config](https://www.npmjs.com/package/eslint-define-config) - Not Yet Eligible
-- 246,035 downloads, [eslint-plugin-canonical](https://www.npmjs.com/package/eslint-plugin-canonical) - Not Yet Eligible
-- 242,620 downloads, [eslint-plugin-react-redux](https://www.npmjs.com/package/eslint-plugin-react-redux) - Not Yet Eligible
-- 204,053 downloads, [@eslint-types/typescript-eslint](https://www.npmjs.com/package/@eslint-types/typescript-eslint) - Not Yet Eligible
+- 9,136,953 downloads, [eslint-plugin-unused-imports](https://www.npmjs.com/package/eslint-plugin-unused-imports)
+- 2,103,900 downloads, [eslint-plugin-deprecation](https://www.npmjs.com/package/eslint-plugin-deprecation)
+- 1,220,747 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
+- 1,049,298 downloads, [eslint-plugin-sort-keys-fix](https://www.npmjs.com/package/eslint-plugin-sort-keys-fix)
+- 696,599 downloads, [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file)
+- 387,032 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript)
+- 344,564 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe)
+- 325,164 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y)
+- 299,987 downloads, [@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config)
+- 299,449 downloads, [@rushstack/eslint-plugin-security](https://www.npmjs.com/package/@rushstack/eslint-plugin-security)
+- 266,371 downloads, [eslint-plugin-minecraft-linting](https://www.npmjs.com/package/eslint-plugin-minecraft-linting)
+- 246,035 downloads, [eslint-plugin-canonical](https://www.npmjs.com/package/eslint-plugin-canonical)
+- 242,620 downloads, [eslint-plugin-react-redux](https://www.npmjs.com/package/eslint-plugin-react-redux)
+- 204,053 downloads, [@eslint-types/typescript-eslint](https://www.npmjs.com/package/@eslint-types/typescript-eslint)
+- 177,781 downloads, [eslint-plugin-i18n-json](https://www.npmjs.com/package/eslint-plugin-i18n-json) - Not Yet Eligible
+- 177,100 downloads, [@eslint-types/unicorn](https://www.npmjs.com/package/@eslint-types/unicorn) - Not Yet Eligible
+- 175,142 downloads, [eslint-plugin-lit-a11y](https://www.npmjs.com/package/eslint-plugin-lit-a11y) - Not Yet Eligible
+- 173,230 downloads, [@antfu/eslint-define-config](https://www.npmjs.com/package/@antfu/eslint-define-config) - Not Yet Eligible
+- 171,108 downloads, [@eslint-types/jsdoc](https://www.npmjs.com/package/@eslint-types/jsdoc) - Not Yet Eligible
+- 165,950 downloads, [eslint-plugin-sort-exports](https://www.npmjs.com/package/eslint-plugin-sort-exports) - Not Yet Eligible
+- 161,370 downloads, [@backstage/eslint-plugin](https://www.npmjs.com/package/@backstage/eslint-plugin) - Not Yet Eligible
+- 118,260 downloads, [tslint-to-eslint-config](https://www.npmjs.com/package/tslint-to-eslint-config) - Not Yet Eligible
+- 116,905 downloads, [eslint-plugin-security-node](https://www.npmjs.com/package/eslint-plugin-security-node) - Not Yet Eligible
+- 109,939 downloads, [eslint-plugin-sort-annotation](https://www.npmjs.com/package/eslint-plugin-sort-annotation) - Not Yet Eligible

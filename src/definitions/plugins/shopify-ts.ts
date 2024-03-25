@@ -2,7 +2,7 @@
 import type { Plugin } from ".";
 
 export default {
-  name: "Shopify - Core",
+  name: "Shopify - TS",
   packages: [
     {
       key: "@shopify/typescript",
