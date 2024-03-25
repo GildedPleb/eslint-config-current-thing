@@ -20,7 +20,8 @@ export default {
     },
     ${RULES}
   }`,
-  name: "Shopify - Jest",
+  name: "Shopify",
+  nameSecondary: "Jest",
   packages: [
     {
       name: "shopify",

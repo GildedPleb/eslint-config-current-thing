@@ -10,7 +10,8 @@ export default {
     },
     ${RULES}
   }`,
-  name: "Shopify - ESNext",
+  name: "Shopify",
+  nameSecondary: "ESNext",
   packages: [
     {
       name: "shopify",

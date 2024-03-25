@@ -7,7 +7,8 @@ export default {
     files: ['*.ts', '*.tsx'],
     ${RULES}
   }`,
-  name: "React Native Config - Typescript",
+  name: "React Native Config",
+  nameSecondary: "TS",
   packages: [
     {
       name: "reactNativeConfig",

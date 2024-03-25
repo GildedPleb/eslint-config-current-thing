@@ -12,7 +12,8 @@ export default {
     },
     ${RULES}
   }`,
-  name: "Create React App - Jest",
+  name: "Create React App",
+  nameSecondary: "Jest",
   packages: [
     { name: "cra", package: "eslint-config-react-app", requiresImport: false },
   ],

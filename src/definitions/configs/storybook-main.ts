@@ -7,7 +7,8 @@ export default {
     files: storybook.configs.recommended.overrides[1].files,
     ${RULES}
   }`,
-  name: "Storybook - Main",
+  name: "Storybook",
+  nameSecondary: "Main",
   packages: [
     {
       name: "storybook",

@@ -14,6 +14,8 @@ export default {
         require: false,
       },
     },
+    // there are no recommended ways to use "node", as the "n" rule obsoletes
+    // it, but "node" is still used by the Shopify config.
     ${RULES}
   }`,
   name: "Node.js",
@@ -22,14 +24,10 @@ export default {
     { name: "node", package: "eslint-plugin-node", requiresImport: false },
   ],
   requiredPlugins: ["node", "n"],
-  rules: `{
-    // there are no recommended ways to use "node", as the "n" rule obsoletes
-    // it, but "node" is still used by the Shopify config.
-    ...nNode.configs["flat/recommended-module"].rules,
+  rules: `nNode.configs["flat/recommended-module"].rules,
     // Typescript handles this
     "n/no-missing-import": 0,
     // Typescript handles this
-    "n/no-unpublished-import": 0,
-  }`,
+    "n/no-unpublished-import": 0`,
 } satisfies Config;
 // EOF

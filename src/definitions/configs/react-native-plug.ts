@@ -17,8 +17,6 @@ export default {
     },
   ],
   requiredPlugins: ["@react-native"],
-  rules: `{
-    "@react-native/platform-colors": 1
-  }`,
+  rules: `{ "@react-native/platform-colors": 1 }`,
 } satisfies Config;
 // EOF

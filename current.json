@@ -11,12 +11,6 @@
     "jsdoc": {
       "mode": "typescript"
     },
-    "flowtype": {
-      "onlyFilesWithFlowAnnotation": false
-    },
-    "ft-flow": {
-      "onlyFilesWithFlowAnnotation": false
-    },
     "import/parsers": {
       "@typescript-eslint/parser": [
         ".ts",

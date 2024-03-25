@@ -20,10 +20,18 @@ export default {
       requiresImport: true,
     },
   ],
-  requiredPlugins: ["prettier"],
-  rules: `{
-    "prettier/prettier": 2,
-    ...prettierConfig.rules,
-  }`,
+  requiredPlugins: [
+    "prettier",
+    "@typescript-eslint",
+    "@babel",
+    "vue",
+    "unicorn",
+    "babel",
+    "flowtype",
+    "react",
+    "standard",
+  ],
+  rules: `prettierConfig.rules,
+    "prettier/prettier": 2`,
 } satisfies Config;
 // EOF

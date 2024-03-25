@@ -11,7 +11,6 @@ import cssModules from "./css-modules";
 import emotion from "./emotion";
 import es from "./es";
 import eslint from "./eslint";
-import flowtype from "./flowtype";
 import functional from "./functional";
 import google from "./google";
 import i18next from "./i18next";
@@ -71,6 +70,7 @@ import youDontNeedLodash from "./you-dont-need-lodash";
 export interface Config {
   definitions: `${"..." | "{"}${string}${")" | "}"}`;
   name: string;
+  nameSecondary?: string;
   packages: Array<{
     name: string;
     package: string;
@@ -107,7 +107,6 @@ const configs: Config[] = [
   react,
   reactHooks,
   jsxA11y,
-  flowtype,
   standardReact,
   reactPerf,
   reactNative,

@@ -16,7 +16,8 @@ export default {
     },
     ${RULES}
   }`,
-  name: "React Native Config - Jest",
+  name: "React Native Config",
+  nameSecondary: "Jest",
   packages: [
     {
       name: "reactNativeConfig",

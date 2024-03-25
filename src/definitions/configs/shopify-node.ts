@@ -7,7 +7,8 @@ export default {
     files,
     ${RULES}
   }`,
-  name: "Shopify - Node",
+  name: "Shopify",
+  nameSecondary: "Node",
   packages: [
     {
       name: "shopify",

@@ -7,7 +7,9 @@ export default {
     files: ['*.ts', '*.tsx'],
     ${RULES}
   }`,
-  name: "Shopify - TS Type Check",
+  name: "Shopify",
+  nameSecondary: "TS/TypeCheck",
+
   packages: [
     {
       name: "shopify",

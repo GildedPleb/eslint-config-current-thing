@@ -108,6 +108,8 @@ export default [
 
 Presently, there are three options: `disable`, `override`, and `threshold`.
 
+For `disable` and `override` a few configs will have internal configs or overrides, for instance `shopify` has a config for `esnext`, `react`, and others. These can be targeted via adding a secondary namespace, ie, `@shopify/eslint-plugin/jest` (all lowercase, but look up in the source def for exact targets).
+
 #### `disable`
 
 To disable the entirety of a particular config, that config must be named via its package name, like so:

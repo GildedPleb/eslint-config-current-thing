@@ -7,7 +7,8 @@ export default {
     files: ['*.js'],
     ${RULES}
   }`,
-  name: "React Native Config - Flowtype",
+  name: "React Native Config",
+  nameSecondary: "Flowtype",
   packages: [
     {
       name: "reactNativeConfig",

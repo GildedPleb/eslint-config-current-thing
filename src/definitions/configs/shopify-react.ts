@@ -19,7 +19,8 @@ export default {
     },
     ${RULES}
   }`,
-  name: "Shopify - React",
+  name: "Shopify",
+  nameSecondary: "React",
   packages: [
     {
       name: "shopify",

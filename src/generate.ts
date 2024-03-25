@@ -106,6 +106,7 @@ const configGen = ({
         description,
         homepage,
         name,
+        nameSecondary,
         packages,
         requiredPlugins,
         rules,
@@ -130,9 +131,12 @@ const configGen = ({
         }
 
         const parsedRules = rules === undefined ? "" : `...${rules},`;
+        const hasSecondary =
+          nameSecondary !== undefined && nameSecondary !== "";
+        const second = hasSecondary ? `/${nameSecondary.toLowerCase()}` : "";
 
         const definition = `...(${packages
-          .map(({ package: pack }) => `disable.includes("${pack}")`)
+          .map(({ package: pack }) => `disable.includes("${pack}${second}")`)
           .join(` || `)} || threshold > ${count}
     ? []
     : [
@@ -143,7 +147,7 @@ const configGen = ({
                ${packages
                  .map(
                    ({ package: pack }) =>
-                     `...("${pack}" in override ? override["${pack}"] : {})`,
+                     `...("${pack}${second}" in override ? override["${pack}${second}"] : {})`,
                  )
                  .join(`, `)}
           },`,
@@ -151,7 +155,7 @@ const configGen = ({
       ])`;
 
         return `  /*
-    ${name}
+    ${name}${hasSecondary ? ` - ${nameSecondary}` : ""}
     ${count.toLocaleString()} monthly downloads
     ${description}
     ${homepage}

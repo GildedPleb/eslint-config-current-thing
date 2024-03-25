@@ -1,5 +1,3 @@
-- Audit all existing configs to apply overrides, files, and all sorts of nuance.
-- make it so that you can add sub-modules which disable the submodule but still lookup the main package
 - Audit the TEST files glob patterns.
 - Add a bunch of other "obsolete" plugins.
 - add the rule count to the tag "around 1000 rules:
@@ -8,7 +6,6 @@
   - Stories:
     - I install this config, I get full commit linting with it.
   - Lint all rules on staged files, when the rest of the repo has no rules active.
-- Add all the VUE configs.
 - Programmatic API for conflicts.
   - Might not be feasible because of multiple conflicts
   - Might not be worth it because some configs will literally never be usurped, aka prettier

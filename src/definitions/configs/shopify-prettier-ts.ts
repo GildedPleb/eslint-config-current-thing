@@ -7,7 +7,8 @@ export default {
     files: ['*.ts', '*.tsx'],
     ${RULES}
   }`,
-  name: "Shopify - Prettier TS",
+  name: "Shopify",
+  nameSecondary: "Prettier/TS",
   packages: [
     {
       name: "shopify",
