@@ -72,7 +72,6 @@ import tailwindcss from "eslint-plugin-tailwindcss";
 import testingLibrary from "eslint-plugin-testing-library";
 import tsdoc from "eslint-plugin-tsdoc";
 import unicorn from "eslint-plugin-unicorn";
-import vue from "eslint-plugin-vue";
 import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
 import globals from "globals";
 import tseslint from "typescript-eslint";
@@ -1916,38 +1915,6 @@ const configGen = ({
               : {}),
             ...("eslint-plugin-node" in override
               ? override["eslint-plugin-node"]
-              : {}),
-          },
-        },
-      ]),
-
-  /*
-    Vue
-    26,684,547 monthly downloads
-    Official ESLint plugin for Vue.js / The ESLint custom parser for `.vue` files.
-    https://eslint.vuejs.org / https://github.com/vuejs/vue-eslint-parser#readme
-  */
-  ...(disable.includes("eslint-plugin-vue") ||
-  disable.includes("vue-eslint-parser") ||
-  threshold > 26_684_547
-    ? []
-    : [
-        {
-          files: [...files, "**/*.vue"],
-          plugins: { vue },
-          rules: {
-            ...vue.configs.base.rules,
-            ...vue.configs.essential.rules,
-            ...vue.configs.recommended.rules,
-            ...vue.configs["strongly-recommended"].rules,
-            ...vue.configs["vue3-essential"].rules,
-            ...vue.configs["vue3-recommended"].rules,
-            ...vue.configs["vue3-strongly-recommended"].rules,
-            ...("eslint-plugin-vue" in override
-              ? override["eslint-plugin-vue"]
-              : {}),
-            ...("vue-eslint-parser" in override
-              ? override["vue-eslint-parser"]
               : {}),
           },
         },
