@@ -75,9 +75,13 @@ const configGen = ({ disable = [], override = {}, threshold = ${MINIMUMS} } = de
         ...globals.browser,
         ...globals.node,
       },
+      parser: tseslint.parser,
+      parserOptions: {
+        project: true,
+        sourceType: "module",
+        ecmaVersion: "latest",
+      },
     },
-  },
-  {
     plugins: {
       ${plugins.flatMap(({ packages }) =>
         packages.map(({ key, name }) => `"${key}": ${name},`),

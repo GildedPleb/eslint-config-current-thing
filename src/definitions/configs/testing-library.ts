@@ -15,6 +15,7 @@ export default {
       requiresImport: false,
     },
   ],
+  requiredPlugins: ["testing-library"],
   rules: `testingLibrary.configs.react.rules`,
 } satisfies Config;
 // EOF

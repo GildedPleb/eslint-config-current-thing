@@ -857,12 +857,12 @@
     },
     "parser": "typescript-eslint/parser@7.3.1",
     "parserOptions": {
+      "project": true,
       "sourceType": "module",
       "ecmaVersion": "latest",
       "ecmaFeatures": {
         "jsx": true
-      },
-      "project": true
+      }
     }
   },
   "plugins": [
@@ -911,12 +911,12 @@
     "@stylistic",
     "tailwindcss",
     "testing-library",
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.3.1",
     "you-dont-need-lodash-underscore",
     "no-unsanitized",
     "tsdoc",
     "unicorn:eslint-plugin-unicorn@51.0.1",
     "vue:eslint-plugin-vue@9.23.0",
-    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.3.1",
     "pathmark"
   ],
   "rules": {

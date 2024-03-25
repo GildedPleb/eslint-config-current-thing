@@ -15,6 +15,7 @@ export default {
       requiresImport: false,
     },
   ],
+  requiredPlugins: ["@stylistic"],
   rules: `stylistic.configs.customize({ quotes: "double", semi: true }).rules,
     // All conflict with Prettier:
     "@stylistic/arrow-parens": 0,

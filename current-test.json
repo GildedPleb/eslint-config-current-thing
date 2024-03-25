@@ -858,12 +858,12 @@
     },
     "parser": "typescript-eslint/parser@7.3.1",
     "parserOptions": {
+      "project": true,
       "sourceType": "module",
       "ecmaVersion": "latest",
       "ecmaFeatures": {
         "jsx": true
-      },
-      "project": true
+      }
     }
   },
   "plugins": [
@@ -912,12 +912,12 @@
     "@stylistic",
     "tailwindcss",
     "testing-library",
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.3.1",
     "you-dont-need-lodash-underscore",
     "no-unsanitized",
     "tsdoc",
     "unicorn:eslint-plugin-unicorn@51.0.1",
     "vue:eslint-plugin-vue@9.23.0",
-    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.3.1",
     "pathmark"
   ],
   "rules": {
@@ -1703,7 +1703,7 @@
       0
     ],
     "no-implied-eval": [
-      0
+      2
     ],
     "no-invalid-this": [
       0
@@ -2490,7 +2490,7 @@
       }
     ],
     "no-array-constructor": [
-      0
+      1
     ],
     "no-continue": [
       0
@@ -2859,7 +2859,7 @@
       0
     ],
     "no-unused-vars": [
-      0,
+      2,
       {
         "args": "none",
         "ignoreRestSiblings": true
@@ -4644,7 +4644,7 @@
       2
     ],
     "no-loss-of-precision": [
-      0
+      2
     ],
     "no-promise-executor-return": [
       2
@@ -5673,7 +5673,7 @@
       2
     ],
     "@typescript-eslint/require-await": [
-      2
+      0
     ],
     "unicorn/better-regex": [
       2
@@ -6794,39 +6794,6 @@
     ],
     "react/jsx-space-before-closing": [
       0
-    ],
-    "@typescript-eslint/no-duplicate-enum-values": [
-      2
-    ],
-    "@typescript-eslint/no-duplicate-type-constituents": [
-      2
-    ],
-    "@typescript-eslint/no-explicit-any": [
-      2
-    ],
-    "@typescript-eslint/no-redundant-type-constituents": [
-      2
-    ],
-    "@typescript-eslint/no-unsafe-assignment": [
-      2
-    ],
-    "@typescript-eslint/no-unsafe-call": [
-      2
-    ],
-    "@typescript-eslint/no-unsafe-declaration-merging": [
-      2
-    ],
-    "@typescript-eslint/no-unsafe-enum-comparison": [
-      2
-    ],
-    "@typescript-eslint/no-unsafe-member-access": [
-      2
-    ],
-    "@typescript-eslint/no-unsafe-return": [
-      2
-    ],
-    "@typescript-eslint/prefer-as-const": [
-      2
     ],
     "pathmark/add-eof": [
       1

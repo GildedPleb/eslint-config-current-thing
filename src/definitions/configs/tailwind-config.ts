@@ -15,6 +15,7 @@ export default {
       requiresImport: false,
     },
   ],
+  requiredPlugins: ["tailwindcss"],
   rules: `tailwindcss.configs.recommended.rules`,
 } satisfies Config;
 // EOF

@@ -111,9 +111,13 @@ const configGen = ({
         ...globals.browser,
         ...globals.node,
       },
+      parser: tseslint.parser,
+      parserOptions: {
+        ecmaVersion: "latest",
+        project: true,
+        sourceType: "module",
+      },
     },
-  },
-  {
     plugins: {
       "@babel": babelPlugin,
       "@emotion": { rules: emotion },
@@ -138,6 +142,7 @@ const configGen = ({
         ),
       },
       "@stylistic": stylistic,
+      "@typescript-eslint": tseslint.plugin,
       compat: comp,
       "css-modules": cssModules,
       es,
@@ -232,8 +237,6 @@ const configGen = ({
               ecmaFeatures: {
                 jsx: true,
               },
-              ecmaVersion: "latest",
-              sourceType: "module",
             },
           },
           rules: {
@@ -490,8 +493,6 @@ const configGen = ({
               ecmaFeatures: {
                 jsx: true,
               },
-              ecmaVersion: "latest",
-              sourceType: "module",
             },
           },
           rules: {
@@ -898,8 +899,6 @@ const configGen = ({
               ecmaFeatures: {
                 jsx: true,
               },
-              ecmaVersion: "latest",
-              sourceType: "module",
             },
           },
           rules: {
@@ -933,6 +932,24 @@ const configGen = ({
             ...standardTS.rules,
             // Types can be inferred by typescript
             "@typescript-eslint/explicit-function-return-type": 0,
+            // "allowNullableObject: false," auto-fixes type `object | undefined` poorly.
+            // When checking a nullable object, `if (obj)...` it auto-fixes to `if (obj != null)...`.
+            // This violates both the "unicorn/no-null" rule and the "eqeqeq" rule, causing unneeded further corrections.
+            // See: https://eslint.org/docs/latest/rules/eqeqeq
+            //      https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v45.0.2/docs/rules/no-null.md
+            //      https://typescript-eslint.io/rules/strict-boolean-expressions/#fixes-and-suggestions
+            "@typescript-eslint/strict-boolean-expressions": [
+              2,
+              {
+                allowAny: false,
+                allowNullableBoolean: false,
+                allowNullableNumber: false,
+                allowNullableObject: true,
+                allowNullableString: false,
+                allowNumber: false,
+                allowString: false,
+              },
+            ],
             ...("eslint-config-standard-with-typescript" in override
               ? override["eslint-config-standard-with-typescript"]
               : {}),
@@ -1391,8 +1408,6 @@ const configGen = ({
               ecmaFeatures: {
                 jsx: true,
               },
-              ecmaVersion: "latest",
-              sourceType: "module",
             },
           },
           rules: {
@@ -2049,8 +2064,6 @@ const configGen = ({
               ecmaFeatures: {
                 jsx: true,
               },
-              ecmaVersion: "latest",
-              sourceType: "module",
             },
           },
           rules: {
@@ -2187,27 +2200,11 @@ const configGen = ({
   threshold > 243_820_428
     ? []
     : [
-        ...tseslint.config(...tseslint.configs.recommendedTypeChecked, {
-          languageOptions: { parserOptions: { project: true } },
+        {
+          files: ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"],
           rules: {
-            // "allowNullableObject: false," auto-fixes type `object | undefined` poorly.
-            // When checking a nullable object, `if (obj)...` it auto-fixes to `if (obj != null)...`.
-            // This violates both the "unicorn/no-null" rule and the "eqeqeq" rule, causing unneeded further corrections.
-            // See: https://eslint.org/docs/latest/rules/eqeqeq
-            //      https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v45.0.2/docs/rules/no-null.md
-            //      https://typescript-eslint.io/rules/strict-boolean-expressions/#fixes-and-suggestions
-            "@typescript-eslint/strict-boolean-expressions": [
-              2,
-              {
-                allowAny: false,
-                allowNullableBoolean: false,
-                allowNullableNumber: false,
-                allowNullableObject: true,
-                allowNullableString: false,
-                allowNumber: false,
-                allowString: false,
-              },
-            ],
+            ...tseslint.configs.recommendedTypeChecked[1].rules,
+            ...tseslint.configs.recommendedTypeChecked[2].rules,
             ...("typescript-eslint" in override
               ? override["typescript-eslint"]
               : {}),
@@ -2218,7 +2215,7 @@ const configGen = ({
               ? override["@typescript-eslint/eslint-plugin"]
               : {}),
           },
-        }),
+        },
       ]),
 ];
 

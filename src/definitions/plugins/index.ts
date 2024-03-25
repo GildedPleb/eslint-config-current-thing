@@ -40,6 +40,7 @@ import storybook from "./storybook";
 import stylistic from "./stylistic";
 import tailwindPlugin from "./tailwind-plugin";
 import testingLibrary from "./testing-library";
+import ts from "./ts";
 
 export interface Plugin {
   name: string;
@@ -92,6 +93,7 @@ const plugins: Plugin[] = [
   stylistic,
   tailwindPlugin,
   testingLibrary,
+  ts,
 ];
 
 export default plugins;
