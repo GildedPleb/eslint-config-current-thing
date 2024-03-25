@@ -43,6 +43,7 @@ import testingLibrary from "./testing-library";
 import ts from "./ts";
 import tsdoc from "./tsdoc";
 import unicorn from "./unicorn";
+import unsanitized from "./unsanitized";
 
 export interface Plugin {
   name: string;
@@ -98,6 +99,7 @@ const plugins: Plugin[] = [
   ts,
   tsdoc,
   unicorn,
+  unsanitized,
 ];
 
 export default plugins;

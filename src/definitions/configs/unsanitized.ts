@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    plugins: { "no-unsanitized": unsanitized },
     ${RULES}
   }`,
   name: "No Unsanitized",
@@ -13,9 +12,10 @@ export default {
     {
       name: "unsanitized",
       package: "eslint-plugin-no-unsanitized",
-      requiresImport: true,
+      requiresImport: false,
     },
   ],
+  requiredPlugins: ["no-unsanitized"],
   rules: `unsanitized.configs.DOM.rules`,
 } satisfies Config;
 // EOF

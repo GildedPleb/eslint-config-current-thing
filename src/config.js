@@ -161,6 +161,7 @@ const configGen = ({
       "jsx-a11y": jsxA11y,
       n: nNode,
       "no-only-tests": noOnlyTest,
+      "no-unsanitized": unsanitized,
       node,
       perfectionist,
       prettier,
@@ -741,7 +742,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { "no-unsanitized": unsanitized },
           rules: {
             ...unsanitized.configs.DOM.rules,
             ...("eslint-plugin-no-unsanitized" in override

@@ -914,8 +914,8 @@
     "@typescript-eslint:@typescript-eslint/eslint-plugin@7.3.1",
     "tsdoc",
     "unicorn:eslint-plugin-unicorn@51.0.1",
-    "you-dont-need-lodash-underscore",
     "no-unsanitized",
+    "you-dont-need-lodash-underscore",
     "vue:eslint-plugin-vue@9.23.0",
     "pathmark"
   ],
@@ -1535,10 +1535,7 @@
       }
     ],
     "@stylistic/jsx-one-expression-per-line": [
-      2,
-      {
-        "allow": "single-child"
-      }
+      0
     ],
     "@stylistic/jsx-quotes": [
       2
