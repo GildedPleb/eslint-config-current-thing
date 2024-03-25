@@ -37,7 +37,6 @@ export default {
   rules: `{
     "react/jsx-uses-vars": 1,
     "react/jsx-uses-react": 1,
-
     "array-callback-return": 1,
     "default-case": [1, { commentPattern: "^no default$" }],
     "dot-location": [1, "property"],

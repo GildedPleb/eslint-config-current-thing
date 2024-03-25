@@ -34,6 +34,7 @@ import security from "./security";
 import shopify from "./shopify";
 import shopifyJest from "./shopify-jest";
 import shopifyTs from "./shopify-ts";
+import sonarjs from "./sonarjs";
 
 export interface Plugin {
   name: string;
@@ -80,6 +81,7 @@ const plugins: Plugin[] = [
   shopify,
   shopifyJest,
   shopifyTs,
+  sonarjs,
 ];
 
 export default plugins;

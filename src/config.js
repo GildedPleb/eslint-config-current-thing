@@ -10,7 +10,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/24/2024
+  Generated on 3/25/2024
 */
 
 import path from "node:path";
@@ -166,6 +166,7 @@ const configGen = ({
       regexp,
       security,
       "simple-import-sort": importSort,
+      sonarjs,
     },
   },
 
@@ -1019,7 +1020,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { sonarjs },
           rules: {
             ...sonarjs.configs.recommended.rules,
             // Complexity can not be simplified to a linear scale. If it could, it
@@ -1343,7 +1343,6 @@ const configGen = ({
           rules: {
             "array-callback-return": 1,
             "default-case": [1, { commentPattern: "^no default$" }],
-
             "dot-location": [1, "property"],
             eqeqeq: [1, "smart"],
             // https://github.com/gajus/eslint-plugin-flowtype
