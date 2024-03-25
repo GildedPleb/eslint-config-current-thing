@@ -12,7 +12,8 @@ export default {
     },
     languageOptions: {
       parserOptions: {
-        sourceType: 'module',
+        sourceType: "module",
+        ecmaVersion: "latest",
         ecmaFeatures: {
           jsx: true,
         },

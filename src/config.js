@@ -30,6 +30,7 @@ import restrictedGlobals from "confusing-browser-globals";
 import google from "eslint-config-google";
 import standardTS from "eslint-config-love";
 import prettierConfig from "eslint-config-prettier";
+import standard from "eslint-config-standard";
 import standardJsx from "eslint-config-standard-jsx";
 import standardReact from "eslint-config-standard-react";
 import xo from "eslint-config-xo";
@@ -222,11 +223,25 @@ const configGen = ({
     : [
         {
           files,
+          languageOptions: {
+            parserOptions: {
+              ecmaFeatures: {
+                jsx: true,
+              },
+              ecmaVersion: "latest",
+              sourceType: "module",
+            },
+          },
           rules: {
             ...standardReact.rules,
             ...("eslint-config-standard-react" in override
               ? override["eslint-config-standard-react"]
               : {}),
+          },
+          settings: {
+            react: {
+              version: "detect",
+            },
           },
         },
       ]),
@@ -472,6 +487,7 @@ const configGen = ({
               ecmaFeatures: {
                 jsx: true,
               },
+              ecmaVersion: "latest",
               sourceType: "module",
             },
           },
@@ -875,10 +891,51 @@ const configGen = ({
     : [
         {
           files,
+          languageOptions: {
+            parserOptions: {
+              ecmaFeatures: {
+                jsx: true,
+              },
+              ecmaVersion: "latest",
+              sourceType: "module",
+            },
+          },
           rules: {
             ...standardJsx.rules,
             ...("eslint-config-standard-jsx" in override
               ? override["eslint-config-standard-jsx"]
+              : {}),
+          },
+          settings: {
+            react: {
+              version: "detect",
+            },
+          },
+        },
+      ]),
+
+  /*
+    Standard
+    2,649,383 monthly downloads
+    An ESLint Shareable Config for JavaScript Standard Style with TypeScript support / A TypeScript ESLint config that loves you
+    https://github.com/mightyiam/eslint-config-standard-with-typescript#readme / https://github.com/mightyiam/eslint-config-love#readme
+  */
+  ...(disable.includes("eslint-config-standard-with-typescript") ||
+  disable.includes("eslint-config-love") ||
+  threshold > 2_649_383
+    ? []
+    : [
+        {
+          files,
+          rules: {
+            ...standardTS.rules,
+            // Types can be inferred by typescript
+            "@typescript-eslint/explicit-function-return-type": 0,
+            ...("eslint-config-standard-with-typescript" in override
+              ? override["eslint-config-standard-with-typescript"]
+              : {}),
+            ...("eslint-config-love" in override
+              ? override["eslint-config-love"]
               : {}),
           },
         },
@@ -1242,27 +1299,26 @@ const configGen = ({
 
   /*
     Standard
-    12,335,596 monthly downloads
-    JavaScript Standard Style - ESLint Shareable Config / A TypeScript ESLint config that loves you
-    https://github.com/standard/eslint-config-standard / https://github.com/mightyiam/eslint-config-love#readme
+    12,330,703 monthly downloads
+    JavaScript Standard Style - ESLint Shareable Config
+    https://github.com/standard/eslint-config-standard
   */
-  ...(disable.includes("eslint-config-standard") ||
-  disable.includes("eslint-config-love") ||
-  threshold > 12_335_596
+  ...(disable.includes("eslint-config-standard") || threshold > 12_330_703
     ? []
     : [
         {
           files,
+          languageOptions: {
+            globals: {
+              document: "readonly",
+              navigator: "readonly",
+              window: "readonly",
+            },
+          },
           rules: {
-            ...compat.extends("standard")[0].rules,
-            ...standardTS.rules,
-            // Types can be inferred by typescript
-            "@typescript-eslint/explicit-function-return-type": 0,
+            ...standard.rules,
             ...("eslint-config-standard" in override
               ? override["eslint-config-standard"]
-              : {}),
-            ...("eslint-config-love" in override
-              ? override["eslint-config-love"]
               : {}),
           },
         },
@@ -1315,8 +1371,6 @@ const configGen = ({
                 jsx: true,
               },
               ecmaVersion: "latest",
-              requireConfigFile: false,
-              sourceType: "module",
             },
           },
           rules: {
@@ -1970,11 +2024,12 @@ const configGen = ({
         {
           files,
           languageOptions: {
-            ecmaVersion: "latest",
             parserOptions: {
               ecmaFeatures: {
                 jsx: true,
               },
+              ecmaVersion: "latest",
+              sourceType: "module",
             },
           },
           rules: {

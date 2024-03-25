@@ -5,6 +5,13 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
+    languageOptions: {
+      globals: {
+        "document": "readonly",
+        "navigator": "readonly",
+        "window": "readonly",
+      },
+    },
     ${RULES}
   }`,
   name: "Standard",
@@ -12,17 +19,10 @@ export default {
     {
       name: "standard",
       package: "eslint-config-standard",
-      requiresImport: false,
-    },
-    {
-      name: "standardTS",
-      package: "eslint-config-love",
       requiresImport: true,
     },
   ],
-  rules: `compat.extends("standard")[0].rules,
-    ...standardTS.rules,
-    // types can be inferred by typescript
-    "@typescript-eslint/explicit-function-return-type": 0`,
+  requiredPlugins: ["import", "n", "promise"],
+  rules: `standard.rules`,
 } satisfies Config;
 // EOF

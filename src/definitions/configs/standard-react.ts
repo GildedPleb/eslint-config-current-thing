@@ -5,6 +5,20 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
+    languageOptions: {
+      parserOptions: {
+        sourceType: "module",
+        ecmaVersion: "latest",
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
     ${RULES}
   }`,
   name: "Standard React",
@@ -15,6 +29,7 @@ export default {
       requiresImport: true,
     },
   ],
+  requiredPlugins: ["react", "react-hooks"],
   rules: `standardReact.rules`,
 } satisfies Config;
 // EOF

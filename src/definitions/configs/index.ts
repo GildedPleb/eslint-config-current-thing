@@ -55,6 +55,7 @@ import sonarjs from "./sonarjs";
 import standard from "./standard";
 import standardJsx from "./standard-jsx";
 import standardReact from "./standard-react";
+import standardTs from "./standard-ts";
 import storybook from "./storybook";
 import stylistic from "./stylistic";
 import tailwindConfig from "./tailwind-config";
@@ -148,6 +149,7 @@ const configs: Config[] = [
   shopifyReactTs,
   shopifyReactTest,
   shopifyTsTypeCheck,
+  standardTs,
 ];
 
 export default configs;
