@@ -15,6 +15,7 @@ export default {
       requiresImport: false,
     },
   ],
+  requiredPlugins: ["jsxA11y"],
   rules: `jsxA11y.configs.recommended.rules`,
 } satisfies Config;
 // EOF

@@ -44,6 +44,7 @@ import ts from "./ts";
 import tsdoc from "./tsdoc";
 import unicorn from "./unicorn";
 import unsanitized from "./unsanitized";
+import youDontNeedLodash from "./you-dont-need-lodash";
 
 export interface Plugin {
   name: string;
@@ -100,6 +101,7 @@ const plugins: Plugin[] = [
   tsdoc,
   unicorn,
   unsanitized,
+  youDontNeedLodash,
 ];
 
 export default plugins;

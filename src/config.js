@@ -181,6 +181,7 @@ const configGen = ({
       "testing-library": testingLibrary,
       tsdoc,
       unicorn,
+      "you-dont-need-lodash-underscore": youDontNeedLodash,
     },
   },
 
@@ -293,6 +294,7 @@ const configGen = ({
             // All conflict with Prettier:
             "@stylistic/arrow-parens": 0,
             "@stylistic/brace-style": 0,
+            "@stylistic/jsx-one-expression-per-line": 0,
             "@stylistic/multiline-ternary": 0,
             "@stylistic/operator-linebreak": 0,
             "@stylistic/quote-props": 0,
@@ -610,7 +612,6 @@ const configGen = ({
     : [
         {
           files,
-          plugins: { "you-dont-need-lodash-underscore": youDontNeedLodash },
           rules: {
             ...youDontNeedLodash.configs.compatible.rules,
             ...("eslint-plugin-you-dont-need-lodash-underscore" in override
