@@ -840,20 +840,8 @@
       "Set": true,
       "commonjs": true,
       "es6": true,
-      "jest": false,
-      "node": true,
-      "afterAll": false,
-      "afterEach": false,
-      "beforeAll": false,
-      "beforeEach": false,
-      "describe": false,
-      "expect": false,
-      "fit": false,
-      "it": false,
-      "test": false,
-      "xdescribe": false,
-      "xit": false,
-      "xtest": false
+      "jest": true,
+      "node": true
     },
     "parser": "typescript-eslint/parser@7.3.1",
     "parserOptions": {
@@ -5106,13 +5094,13 @@
       1
     ],
     "jest/no-focused-tests": [
-      2
+      1
     ],
     "jest/no-identical-title": [
-      2
+      1
     ],
     "jest/valid-expect": [
-      2
+      1
     ],
     "security/detect-buffer-noassert": [
       1
@@ -5250,42 +5238,6 @@
       2
     ],
     "sonarjs/prefer-while": [
-      2
-    ],
-    "jest-dom/prefer-checked": [
-      2
-    ],
-    "jest-dom/prefer-empty": [
-      2
-    ],
-    "jest-dom/prefer-enabled-disabled": [
-      2
-    ],
-    "jest-dom/prefer-focus": [
-      2
-    ],
-    "jest-dom/prefer-in-document": [
-      2
-    ],
-    "jest-dom/prefer-required": [
-      2
-    ],
-    "jest-dom/prefer-to-have-attribute": [
-      2
-    ],
-    "jest-dom/prefer-to-have-class": [
-      2
-    ],
-    "jest-dom/prefer-to-have-style": [
-      2
-    ],
-    "jest-dom/prefer-to-have-text-content": [
-      2
-    ],
-    "jest-dom/prefer-to-have-value": [
-      2
-    ],
-    "no-only-tests/no-only-tests": [
       2
     ],
     "react-native/no-unused-styles": [
@@ -6026,51 +5978,6 @@
       2
     ],
     "n/shebang": [
-      2
-    ],
-    "jest/expect-expect": [
-      1
-    ],
-    "jest/no-alias-methods": [
-      2
-    ],
-    "jest/no-commented-out-tests": [
-      1
-    ],
-    "jest/no-conditional-expect": [
-      2
-    ],
-    "jest/no-deprecated-functions": [
-      2
-    ],
-    "jest/no-done-callback": [
-      2
-    ],
-    "jest/no-export": [
-      2
-    ],
-    "jest/no-interpolation-in-snapshots": [
-      2
-    ],
-    "jest/no-jasmine-globals": [
-      2
-    ],
-    "jest/no-mocks-import": [
-      2
-    ],
-    "jest/no-standalone-expect": [
-      2
-    ],
-    "jest/no-test-prefixes": [
-      2
-    ],
-    "jest/valid-describe-callback": [
-      2
-    ],
-    "jest/valid-expect-in-promise": [
-      2
-    ],
-    "jest/valid-title": [
       2
     ],
     "jsx-a11y/anchor-ambiguous-text": [

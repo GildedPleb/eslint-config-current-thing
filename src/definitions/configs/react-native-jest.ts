@@ -4,10 +4,7 @@ import type { Config } from ".";
 
 export default {
   definitions: `{
-    files: [
-      '*.{spec,test}.{js,ts,tsx}',
-      '**/__{mocks,tests}__/**/*.{js,ts,tsx}',
-    ],
+    files: testFiles,
     languageOptions: {
       globals: {
         "jest/globals": true,

@@ -4,7 +4,7 @@
   "description": "Lint The Current Thing",
   "main": "index.js",
   "scripts": {
-    "test": "npm run predeploy && npm run lint",
+    "test": "npm run predeploy && npm run lint && npx jest",
     "current": "npx eslint --print-config src/generate.ts > current.json",
     "current:test": "npx eslint --print-config test/basic.test.js > current-test.json",
     "lint": "npx eslint --fix -c ./eslint.config.js --max-warnings 0 .",

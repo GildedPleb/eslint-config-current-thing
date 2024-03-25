@@ -4,7 +4,7 @@ import type { Config } from ".";
 
 export default {
   definitions: `{
-    files,
+    files: testFiles,
     ${RULES}
   }`,
   name: "Jest Dom",

@@ -4,7 +4,7 @@ import type { Config } from ".";
 
 export default {
   definitions: `{
-    files: ['*.test.*'],
+    files: testFiles,
     settings: {
       react: {
         version: "detect",

@@ -83,6 +83,17 @@ const compat = new FlatCompat({ baseDirectory });
 
 const files = ["**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}"];
 
+const testFiles = [
+  "**/*.test.*",
+  "**/*_test.*",
+  "**/*Test.*",
+  "**/*.spec.*",
+  "**/*_spec.*",
+  "**/*Spec.*",
+  "**/__{mocks,tests}__/**/*",
+  "**/*.{spec,test}.[jt]s?(x)",
+];
+
 const defaultOptions = { disable: [], override: {}, threshold: 400_000 };
 
 /**
@@ -389,15 +400,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: [
-              "**/*.test.*",
-              "**/*_test.*",
-              "**/*Test.*",
-              "**/*.spec.*",
-              "**/*_spec.*",
-              "**/*Spec.*",
-              "**/__tests__/*",
-            ],
+            files: testFiles,
             languageOptions: {
               globals: {
                 "jest/globals": true,
@@ -583,7 +586,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: ["*.test.*"],
+            files: testFiles,
             languageOptions: {
               parserOptions: {
                 ecmaFeatures: {
@@ -910,15 +913,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: [
-              "**/*.test.*",
-              "**/*_test.*",
-              "**/*Test.*",
-              "**/*.spec.*",
-              "**/*_spec.*",
-              "**/*Spec.*",
-              "**/__tests__/*",
-            ],
+            files: testFiles,
             rules: {
               ...jestFormatting.configs.recommended.overrides[0].rules,
               ...("eslint-plugin-jest-formatting" in override
@@ -1150,7 +1145,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: testFiles,
             rules: {
               ...jestDom.configs.recommended.rules,
               ...("eslint-plugin-jest-dom" in override
@@ -1171,7 +1166,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: testFiles,
             rules: {
               "no-only-tests/no-only-tests": 2,
               ...("eslint-plugin-no-only-tests" in override
@@ -1779,7 +1774,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: ["**/__tests__/**/*", "**/*.{spec,test}.*"],
+            files: testFiles,
             languageOptions: {
               globals: {
                 "jest/globals": true,
@@ -1879,10 +1874,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: [
-              "**/__tests__/**/*.[jt]s?(x)",
-              "**/?(*.)+(spec|test).[jt]s?(x)",
-            ],
+            files: testFiles,
             rules: {
               ...testingLibrary.configs.react.rules,
               ...("eslint-plugin-testing-library" in override
@@ -1993,7 +1985,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: testFiles,
             languageOptions: {
               globals: {
                 afterAll: false,

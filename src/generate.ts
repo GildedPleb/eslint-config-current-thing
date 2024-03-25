@@ -52,6 +52,17 @@ const compat = new FlatCompat({ baseDirectory });
 
 const files = ["**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}"];
 
+const testFiles = [
+  "**/*.test.*",
+  "**/*_test.*",
+  "**/*Test.*",
+  "**/*.spec.*",
+  "**/*_spec.*",
+  "**/*Spec.*",
+  "**/__{mocks,tests}__/**/*",
+  "**/*.{spec,test}.[jt]s?(x)",
+];
+
 const defaultOptions = { disable: [], override: {}, threshold: ${MINIMUMS} };
 
 /**

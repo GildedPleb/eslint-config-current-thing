@@ -4193,6 +4193,9 @@
     "jsx-a11y/tabindex-no-positive": [
       2
     ],
+    "shopify/jsx-no-hardcoded-content": [
+      0
+    ],
     "you-dont-need-lodash-underscore/concat": [
       2
     ],

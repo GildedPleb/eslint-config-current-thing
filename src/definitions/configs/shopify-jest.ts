@@ -4,15 +4,7 @@ import type { Config } from ".";
 
 export default {
   definitions: `{
-    files: [
-      '**/*.test.*',
-      '**/*_test.*',
-      '**/*Test.*',
-      '**/*.spec.*',
-      '**/*_spec.*',
-      '**/*Spec.*',
-      '**/__tests__/*',
-    ],
+    files: testFiles,
     languageOptions: {
       globals: {
         "jest/globals": true,
