@@ -1,9 +1,10 @@
 // PathMark: ./src/get-packages.ts
-import { MINIMUMS } from "./constants";
-import configs from "./definitions/configs";
-import plugins from "./definitions/plugins";
+import { MINIMUMS } from "../constants";
+import configs from "../definitions/configs";
+import plugins from "../definitions/plugins";
+import { fetchNPMURLs, getDownloadCount } from "../npm";
+import investigating from "./investigating";
 import notApplicable from "./not-applicable";
-import { fetchNPMURLs, getDownloadCount } from "./npm";
 import rejected from "./rejected";
 
 const searchTerms: string[] = [
@@ -31,12 +32,17 @@ async function fetchEslintPlugins() {
 
   const pluginNames = await fetchNPMURLs(searchTerms);
 
-  const filteredNames = pluginNames.filter(
-    (pluginName) =>
-      !installed.has(pluginName) &&
-      !rejected.has(pluginName) &&
-      !notApplicable.has(pluginName),
-  );
+  const filteredNames = [
+    ...new Set([
+      ...pluginNames.filter(
+        (pluginName) =>
+          !installed.has(pluginName) &&
+          !rejected.has(pluginName) &&
+          !notApplicable.has(pluginName),
+      ),
+      ...investigating,
+    ]),
+  ];
 
   const downloadList: Array<{ count: number; name: string }> = [];
   for await (const pluginName of filteredNames) {

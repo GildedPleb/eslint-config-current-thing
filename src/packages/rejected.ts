@@ -33,6 +33,9 @@ const rejected = new Set([
   "@tanstack/eslint-plugin-query",
   "eslint-plugin-ember",
   "@backstage/eslint-plugin",
+  "eslint-plugin-mdx",
+  "eslint-plugin-inclusive-language",
+  "eslint-plugin-spellcheck",
 
   // Fork of import
   "eslint-plugin-i",
@@ -44,6 +47,7 @@ const rejected = new Set([
   "eslint-plugin-chai-friendly",
   "eslint-plugin-jasmine",
   "eslint-plugin-playwright",
+  "eslint-plugin-vitest",
 
   // Monorepo stuffs
   "@nx/eslint",

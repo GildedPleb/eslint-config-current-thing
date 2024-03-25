@@ -12,7 +12,7 @@ import {
   RULES,
 } from "./constants";
 import { configs, plugins } from "./definitions";
-import fetchEslintPlugins from "./get-packages";
+import fetchEslintPlugins from "./packages/get-packages";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -207,7 +207,7 @@ The following section is generated according to spec.
 
 Generated on ${new Date().toLocaleDateString()}, downloads for the previous ${LAST_DAY_INTERVAL} days.
 
-${newPackages.map(({ count, name }) => `- ${count.toLocaleString()} downloads, [${name}](https://www.npmjs.com/package/${name})${count < MINIMUMS / 2 ? " - Not Yet Eligible" : ""}`).join("\n")}
+${newPackages.map(({ count, name }) => `- ${count.toLocaleString()} downloads, [${name}](https://www.npmjs.com/package/${name})${count < MINIMUMS ? " - Not Yet Eligible" : ""}`).join("\n")}
 `;
 
 const readmePath = path.join(dirname, "../README.md");
