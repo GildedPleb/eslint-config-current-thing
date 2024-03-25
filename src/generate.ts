@@ -107,6 +107,7 @@ const configGen = ({
         homepage,
         name,
         packages,
+        requiredPlugins,
         rules,
       }) => {
         if (rules !== undefined && !definitions.includes(RULES)) {
@@ -154,6 +155,7 @@ const configGen = ({
     ${count.toLocaleString()} monthly downloads
     ${description}
     ${homepage}
+    Requires: ${requiredPlugins.length > 0 ? requiredPlugins.join(", ") : "(None)"}
   */
   ${definition},
 `;

@@ -171,7 +171,10 @@ export default {
     "import/no-webpack-loader-syntax": 2,
 
     // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
-    "react/forbid-foreign-prop-types": [1, { allowInPropTypes: true }],
+    "react/forbid-foreign-prop-types": [
+      1,
+      { allowInPropTypes: true },
+    ],
     "react/jsx-no-comment-textnodes": 1,
     "react/jsx-no-duplicate-props": 1,
     "react/jsx-no-target-blank": 1,
