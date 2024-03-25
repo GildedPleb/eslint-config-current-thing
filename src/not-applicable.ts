@@ -38,6 +38,11 @@ const notApplicable = new Set([
   "lint-staged",
   "conventional-changelog-eslint",
   "eslint-define-config",
+  "@eslint-types/jsdoc",
+  "tslint-to-eslint-config",
+  "@eslint-types/jsdoc",
+  "@eslint-types/unicorn",
+  "@eslint-types/typescript-eslint",
 
   // Included with Airbnb
   "eslint-config-airbnb-base",

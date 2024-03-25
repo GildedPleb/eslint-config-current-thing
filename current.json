@@ -905,8 +905,7 @@
     "unicorn:eslint-plugin-unicorn@51.0.1",
     "no-unsanitized",
     "unused-imports",
-    "you-dont-need-lodash-underscore",
-    "pathmark"
+    "you-dont-need-lodash-underscore"
   ],
   "rules": {
     "css-modules/no-unused-class": [
@@ -6245,15 +6244,6 @@
     ],
     "@typescript-eslint/prefer-as-const": [
       2
-    ],
-    "pathmark/add-eof": [
-      1
-    ],
-    "pathmark/add-path": [
-      1
-    ],
-    "pathmark/check-path": [
-      1
     ]
   }
 }

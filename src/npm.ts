@@ -1,4 +1,6 @@
 // PathMark: ./src/npm.ts
+import memoize from "fast-memoize";
+
 import { BASE_API, BASE_URL, LAST_DAY_INTERVAL } from "./constants";
 
 interface Info {
@@ -22,19 +24,22 @@ interface Stats {
  * Gets the info for a given npm package
  * @param name - The name of the package.
  */
-export async function getInfo(name: string): Promise<Info> {
+async function getInfoLong(name: string): Promise<Info> {
   const request = `${BASE_URL}/${name.trim()}`;
   const response = await fetch(request);
   return (await response.json()) as Info;
 }
 
-const getDate = (date: Date) => date.toISOString().split("T")[0];
+export const getInfo = memoize(getInfoLong);
 
+const getDateLong = (date: Date) => date.toISOString().split("T")[0];
+
+const getDate = memoize(getDateLong);
 /**
  * Gets the download count for a given npm package
  * @param name - The name of the package.
  */
-export async function getDownloadCount(name: string) {
+async function getDownloadCountLong(name: string) {
   const date = new Date();
   date.setDate(date.getDate() - LAST_DAY_INTERVAL);
   const request = `${BASE_API}/${getDate(date)}:${getDate(new Date())}/${name.trim()}`;
@@ -43,11 +48,13 @@ export async function getDownloadCount(name: string) {
   return parsed.downloads;
 }
 
+export const getDownloadCount = memoize(getDownloadCountLong);
+
 /**
  * Searches NPM for the given list of searches
  * @param searchStrings  - a list of NPM search strings
  */
-export async function fetchNPMURLs(searchStrings: string[]) {
+async function fetchNPMURLsLong(searchStrings: string[]) {
   const pluginNames: string[] = [];
   for await (const search of searchStrings) {
     const url = `${BASE_URL}/-/v1/search?text=${search}&size=500`;
@@ -59,4 +66,7 @@ export async function fetchNPMURLs(searchStrings: string[]) {
 
   return [...new Set(pluginNames)];
 }
+
+export const fetchNPMURLs = memoize(fetchNPMURLsLong);
+
 // EOF

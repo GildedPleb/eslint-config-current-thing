@@ -31,16 +31,18 @@ async function fetchEslintPlugins() {
 
   const pluginNames = await fetchNPMURLs(searchTerms);
 
-  const downloadList: Array<{ count: number; name: string }> = [];
-  for await (const pluginName of pluginNames) {
-    const downloads = await getDownloadCount(pluginName);
-
-    if (
-      downloads > MINIMUMS / 4 &&
+  const filteredNames = pluginNames.filter(
+    (pluginName) =>
       !installed.has(pluginName) &&
       !rejected.has(pluginName) &&
-      !notApplicable.has(pluginName)
-    ) {
+      !notApplicable.has(pluginName),
+  );
+
+  const downloadList: Array<{ count: number; name: string }> = [];
+  for await (const pluginName of filteredNames) {
+    const downloads = await getDownloadCount(pluginName);
+
+    if (downloads > MINIMUMS / 8) {
       downloadList.push({ count: downloads, name: pluginName });
       console.log(`Adding "${pluginName}"...`);
     }
