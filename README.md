@@ -16,17 +16,18 @@ This is a meta-config of many configs. The basic idea is that Linting is usually
 
 Presently, it combines these configs (and their plugins, submodules, etc.):
 
-|                |          |               |               |                                 |
-| -------------- | -------- | ------------- | ------------- | ------------------------------- |
-| AirBnB         | Babel    | Comments      | Compat        | Create React App (Now Ejected!) |
-| ESLint         | Flowtype | Functional    | Google        | Import-sort                     |
-| Import         | Jest     | JSDoc         | JSX A11y      | NextJS                          |
-| Node           | Prettier | Promises      | React Hooks   | React Native                    |
-| React Perf     | React    | Security      | Shopify       | SonarJS                         |
-| Sort Classes   | Standard | TSDoc         | Typescript    | Unicorn                         |
-| You Don't Need | XO       | React-Refresh | Vue           | Stylistic                       |
-| Storybook      | Regexp   | Tailwind      | Perfectionist | No-Only-Tests                   |
-| ES/ES-X        | Header   | i18next       | Emotion       | CSS Modules                     |
+|                 |                       |                |               |                                 |
+| --------------- | --------------------- | -------------- | ------------- | ------------------------------- |
+| AirBnB          | Babel                 | Comments       | Compat        | Create React App (Now Ejected!) |
+| CSS Modules     | Emotion               | ES/ES-X        | ESLint        | Flowtype                        |
+| Functional      | Google                | Header         | i18next       | Import                          |
+| Import-sort     | Jest                  | JSDoc          | JSX A11y      | NextJS                          |
+| Node            | No-Only-Tests         | No-unsanitized | Perfectionist | Prettier                        |
+| Promises        | React                 | React Hooks    | React Native  | React Perf                      |
+| React-Refresh   | Regexp                | Security       | Shopify       | SonarJS                         |
+| Sort Classes    | Standard              | Storybook      | Stylistic     | Tailwind                        |
+| Testing-Library | TSDoc                 | Typescript     | Unicorn       | Unused-Imports                  |
+| XO              | You Don't Need Lodash |                |               |                                 |
 
 The winning (and thus supported) high-level architecture is:
 
