@@ -3,7 +3,7 @@ import memoize from "fast-memoize";
 
 import { BASE_API, BASE_URL, LAST_DAY_INTERVAL } from "./constants";
 
-interface Info {
+export interface Info {
   description: string;
   homepage: string;
 }
@@ -44,8 +44,14 @@ async function getDownloadCountLong(name: string) {
   date.setDate(date.getDate() - LAST_DAY_INTERVAL);
   const request = `${BASE_API}/${getDate(date)}:${getDate(new Date())}/${name.trim()}`;
   const response = await fetch(request);
-  const parsed = (await response.json()) as Stats;
-  return parsed.downloads;
+  try {
+    const parsed = (await response.json()) as Stats;
+
+    return parsed.downloads;
+  } catch {
+    console.log("failed for:", { request, response });
+    return 0;
+  }
 }
 
 export const getDownloadCount = memoize(getDownloadCountLong);
@@ -57,11 +63,16 @@ export const getDownloadCount = memoize(getDownloadCountLong);
 async function fetchNPMURLsLong(searchStrings: string[]) {
   const pluginNames: string[] = [];
   for await (const search of searchStrings) {
+    console.log("Searching for ...", search);
     const url = `${BASE_URL}/-/v1/search?text=${search}&size=500`;
     const searchResponse = await fetch(url);
-    const searchData = (await searchResponse.json()) as NpmSearchResult;
-    const names = searchData.objects.map((object) => object.package.name);
-    pluginNames.push(...names);
+    try {
+      const searchData = (await searchResponse.json()) as NpmSearchResult;
+      const names = searchData.objects.map((object) => object.package.name);
+      pluginNames.push(...names);
+    } catch {
+      console.log("failed with:", { searchResponse, url });
+    }
   }
 
   return [...new Set(pluginNames)];

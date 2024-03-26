@@ -1,11 +1,29 @@
 // PathMark: ./src/get-packages.ts
-import { MINIMUMS } from "../constants";
+
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Level } from "level";
+
 import configs from "../definitions/configs";
 import plugins from "../definitions/plugins";
 import { fetchNPMURLs, getDownloadCount } from "../npm";
 import investigating from "./investigating";
-import notApplicable from "./not-applicable";
 import rejected from "./rejected";
+
+const database = new Level("./package-cache", { valueEncoding: "json" });
+const installed = new Set([
+  ...configs.flatMap((config) =>
+    config.packages.map(({ package: pack }) => pack),
+  ),
+  ...plugins.flatMap((config) =>
+    config.packages.map(({ package: pack }) => pack),
+  ),
+]);
+
+interface Populated {
+  count: number;
+  date: string;
+  name: string;
+}
 
 const searchTerms: string[] = [
   "eslint",
@@ -13,50 +31,209 @@ const searchTerms: string[] = [
   "eslint%20config",
   "eslint-plugin",
   "eslint-config",
-  // "lint",
+  "lint",
+  "lint%20plugin",
+  "lint%20config",
+  "eslint%20rules",
+  "eslint%20extension",
+  "javascript%20linter",
+  "typescript%20eslint",
+  "react%20eslint",
+  "node%20eslint",
+  "eslint%20preset",
+  "eslint%20airbnb",
+  "eslint%20google",
+  "eslint%20standard",
+  "eslint%20prettier",
+  "eslint%20security",
+  "eslint%20accessibility",
+  "eslint%20performance",
+  "eslint%20best%20practices",
+  "custom%20eslint",
+  "eslint%20for%20specific%20language",
+  "eslint%20framework-specific",
+  "eslint%20code%20quality",
+  "eslint%20code%20style",
+  "dynamic%20eslint%20config",
+  "eslint%20auto-fix",
+  "eslint%20IDE%20integration",
+  "eslint%20CI%20integration",
+  "eslint%20git%20hooks",
+  "eslint%20complexity",
+  "eslint%20dependency%20management",
+  "eslint%20environmental%20config",
+  "eslint%20multi-language%20support",
+  "eslint%20project%20structure",
+  "eslint%20migration",
+  "eslint%20plugin%20development",
+  "eslint%20debugging",
+  "eslint%20tutorial",
+  "eslint%20community",
+  "eslint%20facebook",
+  "eslint%20google",
+  "eslint%20airbnb",
+  "eslint%20amazon",
+  "eslint%20microsoft",
+  "eslint%20netflix",
+  "eslint%20apple",
+  "eslint%20twitter",
+  "eslint%20github",
+  "eslint%20gitlab",
+  "eslint%20linkedin",
+  "eslint%20uber",
+  "eslint%20stripe",
+  "eslint%20paypal",
+  "eslint%20dropbox",
+  "eslint%20spotify",
+  "eslint%20slack",
+  "eslint%20salesforce",
+  "eslint%20adobe",
+  "eslint%20oracle",
+  "eslint%20sap",
+  "eslint%20ibm",
+  "eslint%20intel",
+  "eslint%20nvidia",
+  "eslint%20finance%20coding%20standards",
+  "eslint%20healthcare%20compliance",
+  "eslint%20e-commerce%20best%20practices",
+  "eslint%20agile%20development",
+  "eslint%20test%20driven%20development",
+  "eslint%20behavior%20driven%20development",
+  "eslint%20functional%20programming",
+  "eslint%20object%20oriented%20best%20practices",
+  "eslint%20reactive%20programming",
+  "eslint%20esnext",
+  "eslint%20async%20await",
+  "eslint%20decorators",
+  "eslint%20microservices%20architecture",
+  "eslint%20progressive%20web%20apps",
+  "eslint%20serverless%20functions",
+  "eslint%20web%20security",
+  "eslint%20performance%20optimization",
+  "eslint%20community%20configs",
+  "eslint%20graphql",
+  "eslint%20webassembly",
+  "eslint%20wasm",
+  "eslint%20dockerfile",
+  "eslint%20kubernetes",
+  "eslint%20blockchain",
+  "eslint%20ai%20machine%20learning",
+  "eslint%20internet%20of%20things",
+  "eslint%20virtual%20reality",
+  "eslint%20augmented%20reality",
+  "eslint%20game%20development",
+  "eslint%20cybersecurity",
+  "eslint%20data%20science",
+  "eslint%20edge%20computing",
+  "eslint%20cloud%20native",
+  "eslint%20devops%20practices",
+  "eslint%20low%20code%20no%20code",
+  "eslint%20ethical%20coding",
+  "eslint%20sustainability",
+  "eslint%20digital%20accessibility",
 ];
+
+/**
+ *
+ */
+async function getExisting(): Promise<Populated[]> {
+  const downloads: Populated[] = [];
+
+  try {
+    // Assuming plugins are stored with keys prefixed by 'plugin-'
+    const stream = database.iterator({
+      gte: "plugin-",
+      lte: "plugin-\u00FF",
+    });
+
+    for await (const [, value] of stream) {
+      downloads.push(JSON.parse(value) as Populated);
+    }
+
+    return downloads;
+  } catch (error) {
+    console.error("Error accessing the LevelDB database:", error);
+    throw new Error("Failed");
+  }
+}
+
+/**
+ *
+ * @param dateString - formatted like "3/15/24"
+ */
+function isMoreThan7DaysInThePast(dateString: string) {
+  const givenDate = new Date(dateString).getTime();
+  const currentDate = Date.now();
+  const timeDiff = currentDate - givenDate;
+  const daysDiff = timeDiff / (1000 * 60 * 60 * 24);
+  return daysDiff > 7;
+}
 
 /**
  * Uses the NPM API results to find and coalesce all applicable NPM packages
  */
 async function fetchEslintPlugins() {
-  const installed = new Set([
-    ...configs.flatMap((config) =>
-      config.packages.map(({ package: pack }) => pack),
-    ),
-    ...plugins.flatMap((config) =>
-      config.packages.map(({ package: pack }) => pack),
-    ),
-  ]);
-  console.log("\nGetting packages, this could take a loooong time... \n");
+  console.log("Checking lists...");
+  for (const pack of investigating) {
+    if (installed.has(pack))
+      console.log(`--> ALERT! investigating "${pack}" already INSTALLED`);
 
-  const pluginNames = await fetchNPMURLs(searchTerms);
+    if (rejected.has(pack))
+      console.log(`--> ALERT! investigating "${pack}" already REJECTED`);
+  }
 
-  const filteredNames = [
+  console.log("Getting full list...");
+  const searchedPluginNames = await fetchNPMURLs(searchTerms);
+  const currentKnown = await getExisting();
+  const everythingList = [
     ...new Set([
-      ...pluginNames.filter(
-        (pluginName) =>
-          !installed.has(pluginName) &&
-          !rejected.has(pluginName) &&
-          !notApplicable.has(pluginName),
-      ),
+      ...searchedPluginNames,
       ...investigating,
+      ...currentKnown.map(({ name }) => name),
     ]),
   ];
+  console.log("Filtering full list...");
+  const filteredList = everythingList.filter(
+    (pluginName) => !installed.has(pluginName) && !rejected.has(pluginName),
+  );
 
-  const downloadList: Array<{ count: number; name: string }> = [];
-  for await (const pluginName of filteredNames) {
-    const downloads = await getDownloadCount(pluginName);
+  console.log("Checking cache...");
+  const populated: Populated[] = [];
+  const unpopulated: Populated[] = [];
 
-    if (downloads > MINIMUMS / 8) {
-      downloadList.push({ count: downloads, name: pluginName });
-      console.log(`Adding "${pluginName}"...`);
+  for (const known of filteredList) {
+    const exists = currentKnown.filter(({ name }) => name === known);
+    if (
+      exists.length === 1 &&
+      !isMoreThan7DaysInThePast(exists[0].date) &&
+      "count" in exists[0]
+    ) {
+      populated.push(exists[0]);
+    } else {
+      console.log("Found cache miss", known);
+      unpopulated.push({
+        count: 0,
+        date: new Date().toLocaleDateString(),
+        name: known,
+      });
     }
   }
 
-  return downloadList
+  console.log("\nGetting packages, this could take a loooong time... \n");
+
+  for await (const plugin of unpopulated) {
+    const downloads = await getDownloadCount(plugin.name);
+    populated.push({ ...plugin, count: downloads ?? 0 });
+    console.log(`Adding "${plugin.name}"... ${downloads}`);
+  }
+
+  for await (const plugin of populated)
+    await database.put(`plugin-${plugin.name}`, JSON.stringify(plugin));
+
+  return populated
+    .filter((item) => item.count)
     .sort((first, second) => second.count - first.count)
-    .map((pack) => ({ ...pack, count: pack.count }));
+    .slice(0, 40);
 }
 
 export default fetchEslintPlugins;

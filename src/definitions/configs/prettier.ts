@@ -19,6 +19,16 @@ export default {
       package: "eslint-config-prettier",
       requiresImport: true,
     },
+    {
+      name: "prettierTypes",
+      package: "@types/eslint-config-prettier",
+      requiresImport: false,
+    },
+    {
+      name: "prettierTypes",
+      package: "@types/eslint-plugin-prettier",
+      requiresImport: false,
+    },
   ],
   requiredPlugins: [
     "prettier",

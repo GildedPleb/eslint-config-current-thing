@@ -1,4 +1,7 @@
 // PathMark: ./src/rejected.ts
+
+// These are actual project that are either ESlint configs or plugins
+
 const rejected = new Set([
   // Obsoleted by Typescript -- Should consider adding back
   // "eslint-plugin-unused-imports",
@@ -20,19 +23,23 @@ const rejected = new Set([
   // "eslint-plugin-sort-keys-fix",
   // "eslint-plugin-typescript-sort-keys",
 
+  // Included with next plugin
+  "eslint-config-next",
+
   // Out of Scope
   "@wordpress/eslint-plugin",
-  "eslint-plugin-html",
-  "eslint-plugin-json",
-  "jsonc-eslint-parser",
-  "eslint-plugin-jsonc",
-  "eslint-plugin-markdown",
-  "eslint-plugin-yml",
-  "yaml-eslint-parser",
-  "@graphql-eslint/eslint-plugin",
+  // "eslint-plugin-html",
+  // "eslint-plugin-json",
+  // "jsonc-eslint-parser",
+  // "eslint-plugin-jsonc",
+  // "eslint-plugin-markdown",
+  // "eslint-plugin-yml",
+  // "yaml-eslint-parser",
+  // "@graphql-eslint/eslint-plugin",
   "@tanstack/eslint-plugin-query",
   "eslint-plugin-ember",
   "@backstage/eslint-plugin",
+
   // Fork of import
   "eslint-plugin-i",
 
@@ -44,13 +51,7 @@ const rejected = new Set([
   "eslint-plugin-jasmine",
   "eslint-plugin-playwright",
   "eslint-plugin-vitest",
-
-  // Monorepo stuffs
-  "@nx/eslint",
-  "@nx/linter",
-  "@nrwl/linter",
-  "eslint-config-turbo",
-  "@nrwl/eslint-plugin-nx",
+  "eslint-plugin-vitest",
 
   // Not maintained / No recommended rules and largely irrelevant
   "eslint-plugin-babel",
@@ -69,9 +70,137 @@ const rejected = new Set([
   "@ngdaddy/eslint-config",
   "eslint-plugin-vue",
   "vue-eslint-parser",
+  "@vue/eslint-config-standard",
+  "eslint-plugin-prettier-vue",
 
   // OOMKills everything. Insane that people still use this garbage.
   "eslint-plugin-deprecation",
+
+  // Plugin for linting plugins
+  "eslint-plugin-eslint-plugin",
+
+  // Included with Airbnb
+  "eslint-config-airbnb-base",
+
+  // NOT APPLICABLE
+  // Typescript-eslint sub-modules
+  "@typescript-eslint/scope-manager",
+  "@typescript-eslint/type-utils",
+  "@typescript-eslint/types",
+  "@typescript-eslint/typescript-estree",
+  "@typescript-eslint/utils",
+  "@typescript-eslint/visitor-keys",
+  "typescript-eslint-language-service",
+  "@typescript-eslint/experimental-utils",
+  "@typescript-eslint/eslint-plugin-tslint",
+  "@typescript-eslint/rule-tester",
+
+  // ES Lint submodules
+  "eslint",
+  "eslint-etc",
+  "eslint-import-resolver-node",
+  "eslint-scope",
+  "eslint-visitor-keys",
+  "eslint-webpack-plugin",
+  "@eslint-community/eslint-utils",
+  "@eslint-community/regexpp",
+  "@eslint/eslintrc",
+  "eslint-formatter-pretty",
+  "eslint-snapshot-test",
+  "eslint-module-utils",
+  "@types/eslint-scope",
+  "eslint-compat-utils",
+  "eslint-template-visitor",
+
+  // Various
+  "@babel/eslint-parser",
+  "@rushstack/eslint-patch",
+  "ignore",
+  "jsx-ast-utils",
+  "fork-ts-checker-webpack-plugin",
+  "@codemirror/lint",
+  "unified-lint-rule",
+  "node-sarif-builder",
+  "@redocly/cli",
+  "@redocly/openapi-core",
+  "lint-staged",
+  "conventional-changelog-eslint",
+  "tslint-to-eslint-config",
+  "knip",
+  "@biomejs/biome",
+  "@mapbox/jsonlint-lines-primitives",
+  "cspell",
+  "doiuse",
+  "markdownlint",
+  "remark-lint",
+  "remark-preset-lint-recommended",
+  "standard-engine",
+  "standard",
+  "flowbite",
+  "gherkin-lint",
+
+  // Stylistic
+  "@stylistic/eslint-plugin-ts",
+  "@stylistic/eslint-plugin-jsx",
+
+  // Prettier Stuffs
+  "prettier-eslint",
+  "prettier-eslint-cli",
+  "vite-plugin-eslint",
+  "prettier-linter-helpers",
+
+  // ES Lint types
+  "@eslint-types/jsdoc",
+  "@eslint-types/unicorn",
+  "@eslint-types/typescript-eslint",
+  "@eslint-types/jsdoc",
+  "eslint-define-config",
+  "@types/eslint",
+
+  // Could be useful but not really?
+  "eslint-import-resolver-alias",
+
+  // Automatically included
+  "globals",
+
+  // Stylelint
+  "stylelint",
+  "stylelint-scss",
+  "stylelint-order",
+  "stylelint-config-prettier",
+  "stylelint-config-sass-guidelines",
+  "stylelint-processor-styled-components",
+  "stylelint-webpack-plugin",
+  "stylelint-declaration-strict-value",
+  "stylelint-config-prettier-scss",
+  "stylelint-declaration-block-no-ignored-properties",
+  "nx-stylelint",
+  "@gitlab/stylelint-config",
+  "stylelint-config-twbs-bootstrap",
+
+  // Commitlint
+  "@commitlint/resolve-extends",
+  "@commitlint/execute-rule",
+  "@commitlint/lint",
+  "@commitlint/ensure",
+  "@commitlint/parse",
+  "@commitlint/rules",
+  "@commitlint/is-ignored",
+  "@commitlint/message",
+  "@commitlint/cli",
+  "@commitlint/to-lines",
+  "@commitlint/top-level",
+  "commitlint",
+
+  // Monorepo stuffs
+  "@nx/eslint",
+  "@nx/linter",
+  "@nrwl/linter",
+  "eslint-config-turbo",
+  "@nrwl/eslint-plugin-nx",
+  "@nx/eslint-plugin",
+  "@nx/next",
+  "syncpack",
 ]);
 
 export default rejected;
