@@ -23,6 +23,7 @@ const investigating = new Set([
   "eslint-plugin-total-functions",
   "eslint-plugin-validate-jsx-nesting",
   "eslint-plugin-deprecate",
+  "eslint-config-current-thing",
 ]);
 
 export default investigating;

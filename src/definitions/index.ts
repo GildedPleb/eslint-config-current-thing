@@ -2,6 +2,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Level } from "level";
 
+import { isMoreThan1DaysInThePast } from "../helpers";
 import { getDownloadCount, getInfo, type Info } from "../npm";
 import type { Config } from "./configs";
 import configs from "./configs";
@@ -18,18 +19,6 @@ export interface PopulatedConfig extends Config {
   count: number;
   description: string;
   homepage: string;
-}
-
-/**
- *
- * @param dateString - formatted like "3/15/24"
- */
-function isMoreThan1DaysInThePast(dateString: string) {
-  const givenDate = new Date(dateString).getTime();
-  const currentDate = Date.now();
-  const timeDiff = currentDate - givenDate;
-  const daysDiff = timeDiff / (1000 * 60 * 60 * 24);
-  return daysDiff > 1;
 }
 
 const configsWithCount: PopulatedConfig[] = [];

@@ -59,19 +59,27 @@ const rejected = new Set([
   // Irrelevant?
   "eslint-plugin-local-rules",
 
-  // Less popular frameworks than React + ecosystem
-  "@angular-eslint/eslint-plugin",
-  "@angular-eslint/eslint-plugin-template",
+  //  Vue
   "@vue/eslint-config-typescript",
   "@vue/eslint-config-prettier",
   "eslint-plugin-nuxt",
   "eslint-plugin-vuejs-accessibility",
   "@vue/eslint-config-airbnb",
-  "@ngdaddy/eslint-config",
   "eslint-plugin-vue",
   "vue-eslint-parser",
   "@vue/eslint-config-standard",
   "eslint-plugin-prettier-vue",
+
+  // Angular
+  "@angular-eslint/eslint-plugin",
+  "@angular-eslint/eslint-plugin-template",
+  "@ngdaddy/eslint-config",
+  "@nrwl/angular",
+  "@nx/angular",
+
+  // Svelte
+  "svelte-eslint-parser",
+  "eslint-plugin-svelte",
 
   // OOMKills everything. Insane that people still use this garbage.
   "eslint-plugin-deprecation",

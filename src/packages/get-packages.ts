@@ -5,6 +5,7 @@ import { Level } from "level";
 
 import configs from "../definitions/configs";
 import plugins from "../definitions/plugins";
+import { isMoreThan7DaysInThePast } from "../helpers";
 import { fetchNPMURLs, getDownloadCount } from "../npm";
 import investigating from "./investigating";
 import rejected from "./rejected";
@@ -131,6 +132,26 @@ const searchTerms: string[] = [
   "eslint%20ethical%20coding",
   "eslint%20sustainability",
   "eslint%20digital%20accessibility",
+  "eslint%20quantum%20computing",
+  "eslint%20metaverse",
+  "eslint%20noSQL%20databases",
+  "eslint%20flutter",
+  "eslint%20svelte",
+  "eslint%20crypto",
+  "eslint%20web3",
+  "eslint%20solidity",
+  "eslint%20nft",
+  "eslint%20zero%20trust%20security",
+  "eslint%20material%20ui",
+  "eslint%20tailwind%20css",
+  "eslint%20microfrontends",
+  "eslint%20serverless%20architecture",
+  "eslint%20api%20first%20development",
+  "eslint%20continuous%20integration",
+  "eslint%20continuous%20delivery",
+  "eslint%20accessibility%20standards",
+  "eslint%20content%20security%20policy",
+  "eslint%20ethical%20hacking",
 ];
 
 /**
@@ -155,18 +176,6 @@ async function getExisting(): Promise<Populated[]> {
     console.error("Error accessing the LevelDB database:", error);
     throw new Error("Failed");
   }
-}
-
-/**
- *
- * @param dateString - formatted like "3/15/24"
- */
-function isMoreThan7DaysInThePast(dateString: string) {
-  const givenDate = new Date(dateString).getTime();
-  const currentDate = Date.now();
-  const timeDiff = currentDate - givenDate;
-  const daysDiff = timeDiff / (1000 * 60 * 60 * 24);
-  return daysDiff > 7;
 }
 
 /**

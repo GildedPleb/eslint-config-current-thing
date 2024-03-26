@@ -107,4 +107,5 @@ dist
 
 # cache
 package-cache
+packages-search
 packages-installed

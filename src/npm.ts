@@ -1,7 +1,12 @@
 // PathMark: ./src/npm.ts
 import memoize from "fast-memoize";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Level } from "level";
 
 import { BASE_API, BASE_URL, LAST_DAY_INTERVAL } from "./constants";
+import { isMoreThan1DaysInThePast } from "./helpers";
+
+const database = new Level("./packages-search", { valueEncoding: "json" });
 
 export interface Info {
   description: string;
@@ -18,6 +23,12 @@ interface NpmSearchResult {
 
 interface Stats {
   downloads: number;
+}
+
+interface SearchEntry {
+  date: string;
+  result: string[];
+  url: string;
 }
 
 /**
@@ -65,13 +76,28 @@ async function fetchNPMURLsLong(searchStrings: string[]) {
   for await (const search of searchStrings) {
     console.log("Searching for ...", search);
     const url = `${BASE_URL}/-/v1/search?text=${search}&size=500`;
-    const searchResponse = await fetch(url);
     try {
-      const searchData = (await searchResponse.json()) as NpmSearchResult;
-      const names = searchData.objects.map((object) => object.package.name);
-      pluginNames.push(...names);
+      const previous = await database.get(`search-${url}`);
+      const { date, result } = JSON.parse(previous) as SearchEntry;
+      if (isMoreThan1DaysInThePast(date)) throw new Error("Data too old");
+      pluginNames.push(...result);
     } catch {
-      console.log("failed with:", { searchResponse, url });
+      const searchResponse = await fetch(url);
+      try {
+        const searchData = (await searchResponse.json()) as NpmSearchResult;
+        const names = searchData.objects.map((object) => object.package.name);
+        pluginNames.push(...names);
+        await database.put(
+          `search-${url}`,
+          JSON.stringify({
+            date: new Date().toLocaleDateString(),
+            result: names,
+            url,
+          }),
+        );
+      } catch {
+        console.log("failed with:", { searchResponse, url });
+      }
     }
   }
 
