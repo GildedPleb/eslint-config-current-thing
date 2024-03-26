@@ -860,7 +860,6 @@
     "eslint-comments",
     "compat",
     "css-modules",
-    "deprecation",
     "@emotion",
     "es-x:eslint-plugin-es-x@7.6.0",
     "es",
@@ -4551,9 +4550,6 @@
       1
     ],
     "compat/compat": [
-      2
-    ],
-    "deprecation/deprecation": [
       2
     ],
     "react/jsx-curly-newline": [

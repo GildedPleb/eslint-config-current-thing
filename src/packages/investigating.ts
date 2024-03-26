@@ -24,6 +24,7 @@ const investigating = new Set([
   "eslint-plugin-styled-components-a11y",
   "eslint-plugin-total-functions",
   "eslint-plugin-validate-jsx-nesting",
+  "eslint-plugin-deprecate",
 ]);
 
 export default investigating;

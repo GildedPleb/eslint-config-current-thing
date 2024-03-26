@@ -292,6 +292,7 @@ The following section is generated according to spec.
 Generated on 3/25/2024, downloads for the previous 28 days.
 
 - 3,558,760 downloads, [eslint-import-resolver-alias](https://www.npmjs.com/package/eslint-import-resolver-alias)
+- 2,002,020 downloads, [eslint-plugin-deprecation](https://www.npmjs.com/package/eslint-plugin-deprecation)
 - 1,538,581 downloads, [eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest)
 - 1,169,429 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 1,003,148 downloads, [eslint-plugin-sort-keys-fix](https://www.npmjs.com/package/eslint-plugin-sort-keys-fix)
@@ -299,6 +300,7 @@ Generated on 3/25/2024, downloads for the previous 28 days.
 - 665,057 downloads, [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file)
 - 517,107 downloads, [eslint-plugin-ssr-friendly](https://www.npmjs.com/package/eslint-plugin-ssr-friendly)
 - 454,756 downloads, [eslint-plugin-no-use-extend-native](https://www.npmjs.com/package/eslint-plugin-no-use-extend-native)
+- 372,172 downloads, [eslint-plugin-deprecate](https://www.npmjs.com/package/eslint-plugin-deprecate) - Not Yet Eligible
 - 366,548 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
 - 326,666 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
 - 315,498 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible

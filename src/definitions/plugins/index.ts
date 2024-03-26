@@ -4,7 +4,7 @@ import babel from "./babel";
 import comments from "./comments";
 import compat from "./compat";
 import cssModules from "./css-modules";
-import deprecation from "./deprecation";
+// Import deprecation from "./deprecation";
 import emotion from "./emotion";
 import es from "./es";
 import flowtype from "./flowtype";
@@ -63,7 +63,7 @@ const plugins: Plugin[] = [
   comments,
   compat,
   cssModules,
-  deprecation,
+  // Deprecation,
   emotion,
   es,
   flowtype,

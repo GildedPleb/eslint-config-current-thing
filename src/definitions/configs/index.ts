@@ -8,7 +8,7 @@ import createReactApp from "./create-react-app";
 import createReactAppJest from "./create-react-app-jest";
 import createReactAppTs from "./create-react-app-ts";
 import cssModules from "./css-modules";
-import deprecation from "./deprecation";
+// Import deprecation from "./deprecation";
 import emotion from "./emotion";
 import es from "./es";
 import eslint from "./eslint";
@@ -152,7 +152,7 @@ const configs: Config[] = [
   standardTs,
   storybookMain,
   unusedImports,
-  deprecation,
+  // Deprecation,
 ];
 
 export default configs;
