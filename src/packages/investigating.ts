@@ -1,4 +1,4 @@
-// PathMark: ./src/investigating.ts
+// PathMark: ./src/packages/investigating.ts
 const investigating = new Set([
   "eslint-plugin-mdx",
   "eslint-plugin-inclusive-language",

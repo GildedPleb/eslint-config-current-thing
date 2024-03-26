@@ -1,4 +1,4 @@
-// PathMark: ./src/rejected.ts
+// PathMark: ./src/packages/rejected.ts
 
 // These are actual project that are either ESlint configs or plugins
 

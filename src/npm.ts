@@ -1,4 +1,5 @@
 // PathMark: ./src/npm.ts
+// eslint-disable-next-line import/no-extraneous-dependencies
 import memoize from "fast-memoize";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Level } from "level";
