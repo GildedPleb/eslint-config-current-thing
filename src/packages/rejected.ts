@@ -69,6 +69,9 @@ const rejected = new Set([
   "@ngdaddy/eslint-config",
   "eslint-plugin-vue",
   "vue-eslint-parser",
+
+  // OOMKills everything. Insane that people still use this garbage.
+  "eslint-plugin-deprecation",
 ]);
 
 export default rejected;
