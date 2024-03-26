@@ -1,2 +1,0 @@
-- Add a bunch of other "obsolete" plugins.
-- Once audit is complete, open up all out-of-scope configs.
