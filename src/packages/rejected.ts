@@ -39,6 +39,9 @@ const rejected = new Set([
   "@tanstack/eslint-plugin-query",
   "eslint-plugin-ember",
   "@backstage/eslint-plugin",
+  "html-validate",
+  "eslint-watch",
+  "@ianvs/eslint-stats",
 
   // Fork of import
   "eslint-plugin-i",
@@ -59,7 +62,7 @@ const rejected = new Set([
   // Irrelevant?
   "eslint-plugin-local-rules",
 
-  //  Vue
+  // Vue
   "@vue/eslint-config-typescript",
   "@vue/eslint-config-prettier",
   "eslint-plugin-nuxt",
@@ -76,6 +79,7 @@ const rejected = new Set([
   "@ngdaddy/eslint-config",
   "@nrwl/angular",
   "@nx/angular",
+  "@ngdaddy/eslint-plugin",
 
   // Svelte
   "svelte-eslint-parser",
@@ -90,7 +94,6 @@ const rejected = new Set([
   // Included with Airbnb
   "eslint-config-airbnb-base",
 
-  // NOT APPLICABLE
   // Typescript-eslint sub-modules
   "@typescript-eslint/scope-manager",
   "@typescript-eslint/type-utils",
@@ -102,6 +105,7 @@ const rejected = new Set([
   "@typescript-eslint/experimental-utils",
   "@typescript-eslint/eslint-plugin-tslint",
   "@typescript-eslint/rule-tester",
+  "tslint-to-eslint-config",
 
   // ES Lint submodules
   "eslint",
@@ -128,12 +132,11 @@ const rejected = new Set([
   "fork-ts-checker-webpack-plugin",
   "@codemirror/lint",
   "unified-lint-rule",
-  "node-sarif-builder",
   "@redocly/cli",
   "@redocly/openapi-core",
   "lint-staged",
+  "@types/lint-staged",
   "conventional-changelog-eslint",
-  "tslint-to-eslint-config",
   "knip",
   "@biomejs/biome",
   "@mapbox/jsonlint-lines-primitives",
@@ -146,6 +149,11 @@ const rejected = new Set([
   "standard",
   "flowbite",
   "gherkin-lint",
+  "@axe-core/react",
+
+  // Sarif
+  "node-sarif-builder",
+  "@microsoft/eslint-formatter-sarif",
 
   // Stylistic
   "@stylistic/eslint-plugin-ts",
@@ -209,6 +217,8 @@ const rejected = new Set([
   "@nx/eslint-plugin",
   "@nx/next",
   "syncpack",
+  "@rushstack/eslint-plugin",
+  "@rushstack/eslint-plugin-security",
 ]);
 
 export default rejected;

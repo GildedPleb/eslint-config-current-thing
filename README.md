@@ -299,7 +299,6 @@ Generated on 3/26/2024, downloads for the previous 28 days.
 - 2,076,307 downloads, [@graphql-eslint/eslint-plugin](https://www.npmjs.com/package/@graphql-eslint/eslint-plugin)
 - 1,977,759 downloads, [eslint-plugin-markdown](https://www.npmjs.com/package/eslint-plugin-markdown)
 - 1,923,943 downloads, [eslint-plugin-html](https://www.npmjs.com/package/eslint-plugin-html)
-- 1,339,969 downloads, [@microsoft/eslint-formatter-sarif](https://www.npmjs.com/package/@microsoft/eslint-formatter-sarif)
 - 1,296,003 downloads, [eslint-plugin-jsonc](https://www.npmjs.com/package/eslint-plugin-jsonc)
 - 1,278,482 downloads, [@microsoft/eslint-plugin-sdl](https://www.npmjs.com/package/@microsoft/eslint-plugin-sdl)
 - 1,252,678 downloads, [eslint-plugin-yml](https://www.npmjs.com/package/eslint-plugin-yml)
@@ -311,7 +310,6 @@ Generated on 3/26/2024, downloads for the previous 28 days.
 - 719,923 downloads, [npm-package-json-lint](https://www.npmjs.com/package/npm-package-json-lint)
 - 699,515 downloads, [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file)
 - 691,915 downloads, [eslint-import-resolver-custom-alias](https://www.npmjs.com/package/eslint-import-resolver-custom-alias)
-- 602,449 downloads, [eslint-watch](https://www.npmjs.com/package/eslint-watch)
 - 554,160 downloads, [eslint-plugin-react-prefer-function-component](https://www.npmjs.com/package/eslint-plugin-react-prefer-function-component)
 - 546,703 downloads, [eslint-plugin-ssr-friendly](https://www.npmjs.com/package/eslint-plugin-ssr-friendly)
 - 545,708 downloads, [eslint-plugin-ava](https://www.npmjs.com/package/eslint-plugin-ava)
@@ -319,7 +317,6 @@ Generated on 3/26/2024, downloads for the previous 28 days.
 - 480,068 downloads, [eslint-plugin-no-use-extend-native](https://www.npmjs.com/package/eslint-plugin-no-use-extend-native)
 - 445,310 downloads, [eslint-plugin-local](https://www.npmjs.com/package/eslint-plugin-local)
 - 441,666 downloads, [eslint-config-xo-space](https://www.npmjs.com/package/eslint-config-xo-space)
-- 418,936 downloads, [@ianvs/eslint-stats](https://www.npmjs.com/package/@ianvs/eslint-stats)
 - 404,030 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard)
 - 402,463 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc)
 - 387,509 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
@@ -327,10 +324,13 @@ Generated on 3/26/2024, downloads for the previous 28 days.
 - 384,127 downloads, [eslint-plugin-deprecate](https://www.npmjs.com/package/eslint-plugin-deprecate) - Not Yet Eligible
 - 382,401 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
 - 376,749 downloads, [json-fixer](https://www.npmjs.com/package/json-fixer) - Not Yet Eligible
-- 366,388 downloads, [@rushstack/eslint-plugin](https://www.npmjs.com/package/@rushstack/eslint-plugin) - Not Yet Eligible
 - 365,903 downloads, [eslint-plugin-regex](https://www.npmjs.com/package/eslint-plugin-regex) - Not Yet Eligible
 - 362,663 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu) - Not Yet Eligible
-- 354,820 downloads, [html-validate](https://www.npmjs.com/package/html-validate) - Not Yet Eligible
 - 340,689 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
 - 339,603 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
 - 338,391 downloads, [xo](https://www.npmjs.com/package/xo) - Not Yet Eligible
+- 328,992 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
+- 312,244 downloads, [eslint-plugin-no-secrets](https://www.npmjs.com/package/eslint-plugin-no-secrets) - Not Yet Eligible
+- 307,145 downloads, [@salesforce/eslint-plugin-lightning](https://www.npmjs.com/package/@salesforce/eslint-plugin-lightning) - Not Yet Eligible
+- 301,614 downloads, [@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config) - Not Yet Eligible
+- 289,326 downloads, [eslint-plugin-array-func](https://www.npmjs.com/package/eslint-plugin-array-func) - Not Yet Eligible
