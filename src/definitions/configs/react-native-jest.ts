@@ -13,6 +13,7 @@ export default {
     },
     ${RULES}
   }`,
+  id: "rn",
   name: "React Native Config",
   nameSecondary: "Jest",
   packages: [

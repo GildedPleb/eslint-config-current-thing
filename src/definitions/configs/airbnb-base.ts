@@ -3,10 +3,14 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  conflicts: {
+    "import/order": ["import-sort"],
+  },
   definitions: `{
     files,
     ${RULES}
   }`,
+  id: "airbnb-base",
   name: "AirBnb Base",
   packages: [
     {

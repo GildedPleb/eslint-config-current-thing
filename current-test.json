@@ -1271,6 +1271,37 @@
     "react-hooks/exhaustive-deps": [
       1
     ],
+    "functional/functional-parameters": [
+      0,
+      {
+        "enforceParameterCount": {
+          "ignoreLambdaExpression": true,
+          "ignoreIIFE": true,
+          "ignoreGettersAndSetters": true
+        }
+      }
+    ],
+    "functional/no-classes": [
+      0
+    ],
+    "functional/no-conditional-statements": [
+      0,
+      {
+        "allowReturningBranches": true
+      }
+    ],
+    "functional/no-expression-statements": [
+      0
+    ],
+    "functional/no-return-void": [
+      0
+    ],
+    "functional/no-throw-statements": [
+      0,
+      {
+        "allowInAsyncFunctions": true
+      }
+    ],
     "no-control-regex": [
       2
     ],
@@ -3221,6 +3252,9 @@
     "import/group-exports": [
       0
     ],
+    "simple-import-sort/imports": [
+      2
+    ],
     "jest/expect-expect": [
       1
     ],
@@ -4729,11 +4763,91 @@
     "i18next/no-literal-string": [
       2
     ],
-    "@typescript-eslint/prefer-readonly": [
+    "functional/immutable-data": [
+      0
+    ],
+    "functional/no-let": [
+      0,
+      {
+        "allowInForLoopInit": true
+      }
+    ],
+    "functional/no-loop-statements": [
+      0
+    ],
+    "functional/no-mixed-types": [
       2
     ],
-    "@typescript-eslint/switch-exhaustiveness-check": [
-      2
+    "functional/no-this-expressions": [
+      0
+    ],
+    "functional/no-try-statements": [
+      0
+    ],
+    "functional/prefer-immutable-types": [
+      0,
+      {
+        "enforcement": "None",
+        "ignoreInferredTypes": true,
+        "parameters": {
+          "enforcement": "ReadonlyDeep"
+        }
+      }
+    ],
+    "functional/type-declaration-immutability": [
+      2,
+      {
+        "rules": [
+          {
+            "identifiers": [
+              "^I?Immutable.+"
+            ],
+            "immutability": 5,
+            "comparator": 1
+          },
+          {
+            "identifiers": [
+              "^I?ReadonlyDeep.+"
+            ],
+            "immutability": 4,
+            "comparator": 1
+          },
+          {
+            "identifiers": [
+              "^I?Readonly.+"
+            ],
+            "immutability": 3,
+            "comparator": 1,
+            "fixer": [
+              {
+                "pattern": "^(Array|Map|Set)<(.+)>$",
+                "replace": "Readonly$1<$2>"
+              },
+              {
+                "pattern": "^(.+)$",
+                "replace": "Readonly<$1>"
+              }
+            ]
+          },
+          {
+            "identifiers": [
+              "^I?Mutable.+"
+            ],
+            "immutability": 2,
+            "comparator": -1,
+            "fixer": [
+              {
+                "pattern": "^Readonly(Array|Map|Set)<(.+)>$",
+                "replace": "$1<$2>"
+              },
+              {
+                "pattern": "^Readonly<(.+)>$",
+                "replace": "$1"
+              }
+            ]
+          }
+        ]
+      }
     ],
     "functional/prefer-property-signatures": [
       2
@@ -4744,17 +4858,11 @@
     "functional/readonly-type": [
       2
     ],
-    "functional/no-classes": [
+    "@typescript-eslint/prefer-readonly": [
       2
     ],
-    "functional/no-mixed-types": [
+    "@typescript-eslint/switch-exhaustiveness-check": [
       2
-    ],
-    "functional/no-this-expressions": [
-      2
-    ],
-    "functional/no-loop-statements": [
-      0
     ],
     "@emotion/jsx-import": [
       2
@@ -5948,9 +6056,6 @@
     ],
     "jsdoc/valid-types": [
       1
-    ],
-    "simple-import-sort/imports": [
-      2
     ],
     "simple-import-sort/exports": [
       2

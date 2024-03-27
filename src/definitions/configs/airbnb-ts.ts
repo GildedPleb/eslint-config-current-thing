@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "airbnb-ts",
   name: "AirBnb-Typescript",
   packages: [
     {

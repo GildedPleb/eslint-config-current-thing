@@ -214,6 +214,12 @@ const configGen = ({
             files,
             rules: {
               ...reactPerf.configs.recommended.rules,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               ...("eslint-plugin-react-perf" in override
                 ? override["eslint-plugin-react-perf"]
                 : {}),
@@ -235,6 +241,7 @@ const configGen = ({
             files,
             rules: {
               ...cssModules.configs.recommended.rules,
+
               ...("eslint-plugin-css-modules" in override
                 ? override["eslint-plugin-css-modules"]
                 : {}),
@@ -263,6 +270,12 @@ const configGen = ({
             },
             rules: {
               ...standardReact.rules,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               ...("eslint-config-standard-react" in override
                 ? override["eslint-config-standard-react"]
                 : {}),
@@ -289,6 +302,7 @@ const configGen = ({
             files,
             rules: {
               ...regexp.configs["flat/recommended"].rules,
+
               ...("eslint-plugin-regexp" in override
                 ? override["eslint-plugin-regexp"]
                 : {}),
@@ -310,6 +324,7 @@ const configGen = ({
             files: ["*.ts", "*.tsx"],
             rules: {
               ...shopify.configs.typescript.overrides[0].rules,
+
               ...("@shopify/eslint-plugin/ts" in override
                 ? override["@shopify/eslint-plugin/ts"]
                 : {}),
@@ -331,6 +346,7 @@ const configGen = ({
             files,
             rules: {
               ...shopify.configs.core.rules,
+
               ...("@shopify/eslint-plugin/core" in override
                 ? override["@shopify/eslint-plugin/core"]
                 : {}),
@@ -352,6 +368,7 @@ const configGen = ({
             files,
             rules: {
               ...shopify.configs.esnext.rules,
+              "simple-import-sort/imports": 0,
               ...("@shopify/eslint-plugin/esnext" in override
                 ? override["@shopify/eslint-plugin/esnext"]
                 : {}),
@@ -381,6 +398,7 @@ const configGen = ({
             },
             rules: {
               ...shopify.configs.jest.rules,
+
               ...("@shopify/eslint-plugin/jest" in override
                 ? override["@shopify/eslint-plugin/jest"]
                 : {}),
@@ -402,6 +420,7 @@ const configGen = ({
             files,
             rules: {
               ...shopify.configs.node.rules,
+
               ...("@shopify/eslint-plugin/node" in override
                 ? override["@shopify/eslint-plugin/node"]
                 : {}),
@@ -424,6 +443,7 @@ const configGen = ({
             files,
             rules: {
               ...shopify.configs.prettier.rules,
+
               ...("@shopify/eslint-plugin/prettier" in override
                 ? override["@shopify/eslint-plugin/prettier"]
                 : {}),
@@ -446,6 +466,7 @@ const configGen = ({
             files: ["*.ts", "*.tsx"],
             rules: {
               ...shopify.configs.prettier.overrides[0].rules,
+
               ...("@shopify/eslint-plugin/prettier/ts" in override
                 ? override["@shopify/eslint-plugin/prettier/ts"]
                 : {}),
@@ -468,6 +489,12 @@ const configGen = ({
             files,
             rules: {
               ...shopify.configs.polaris.rules,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               ...("@shopify/eslint-plugin/polaris" in override
                 ? override["@shopify/eslint-plugin/polaris"]
                 : {}),
@@ -496,6 +523,12 @@ const configGen = ({
             },
             rules: {
               ...shopify.configs.react.rules,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               "react/jsx-filename-extension": [
                 2,
                 { extensions: [".jsx", ".tsx"] },
@@ -535,6 +568,12 @@ const configGen = ({
             },
             rules: {
               ...shopify.configs.react.overrides[0].rules,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               ...("@shopify/eslint-plugin/react/ts" in override
                 ? override["@shopify/eslint-plugin/react/ts"]
                 : {}),
@@ -570,6 +609,12 @@ const configGen = ({
             },
             rules: {
               ...shopify.configs.react.overrides[1].rules,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               ...("@shopify/eslint-plugin/react/test" in override
                 ? override["@shopify/eslint-plugin/react/test"]
                 : {}),
@@ -597,6 +642,7 @@ const configGen = ({
             files: ["*.ts", "*.tsx"],
             rules: {
               ...shopify.configs["typescript-type-checking"].overrides[0].rules,
+
               ...("@shopify/eslint-plugin/ts/typecheck" in override
                 ? override["@shopify/eslint-plugin/ts/typecheck"]
                 : {}),
@@ -626,6 +672,7 @@ const configGen = ({
               "@stylistic/operator-linebreak": 0,
               "@stylistic/quote-props": 0,
               "@stylistic/quotes": 0,
+
               ...("@stylistic/eslint-plugin" in override
                 ? override["@stylistic/eslint-plugin"]
                 : {}),
@@ -648,6 +695,7 @@ const configGen = ({
             files,
             rules: {
               ...youDontNeedLodash.configs.compatible.rules,
+
               ...("eslint-plugin-you-dont-need-lodash-underscore" in override
                 ? override["eslint-plugin-you-dont-need-lodash-underscore"]
                 : {}),
@@ -656,7 +704,7 @@ const configGen = ({
         ]),
 
     /*
-    I18n
+    Internationalization (i18n)
     687,743 monthly downloads
     ESLint plugin for i18n
     https://github.com/edvardchen/eslint-plugin-i18next#readme
@@ -669,6 +717,7 @@ const configGen = ({
             files,
             rules: {
               ...i18next.configs.recommended.rules,
+
               ...("eslint-plugin-i18next" in override
                 ? override["eslint-plugin-i18next"]
                 : {}),
@@ -688,14 +737,57 @@ const configGen = ({
       : [
           {
             files,
-            // "Strick", "Recommended", and "Lite" punch far above their weight and are not added.
             rules: {
-              ...functional.configs["external-typescript-recommended"].rules,
-              ...functional.configs.stylistic.rules,
-              ...functional.configs["no-other-paradigms"].rules,
-              "functional/no-loop-statements": 0,
+              ...functional.configs["external-vanilla-recommended"].rules,
+              ...functional.configs.recommended.rules,
+
               ...("eslint-plugin-functional" in override
                 ? override["eslint-plugin-functional"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+    Functional - Stylistic
+    780,407 monthly downloads
+    ESLint rules to promote functional programming in TypeScript.
+    https://github.com/eslint-functional/eslint-plugin-functional#readme
+    Requires: functional
+  */
+    ...(disable.includes("eslint-plugin-functional/stylistic") ||
+    threshold > 780_407
+      ? []
+      : [
+          {
+            files,
+            rules: {
+              ...functional.configs.stylistic.rules,
+
+              ...("eslint-plugin-functional/stylistic" in override
+                ? override["eslint-plugin-functional/stylistic"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+    Functional - TS
+    780,407 monthly downloads
+    ESLint rules to promote functional programming in TypeScript.
+    https://github.com/eslint-functional/eslint-plugin-functional#readme
+    Requires: @typescript-eslint
+  */
+    ...(disable.includes("eslint-plugin-functional/ts") || threshold > 780_407
+      ? []
+      : [
+          {
+            files,
+            rules: {
+              ...functional.configs["external-typescript-recommended"].rules,
+
+              ...("eslint-plugin-functional/ts" in override
+                ? override["eslint-plugin-functional/ts"]
                 : {}),
             },
           },
@@ -719,6 +811,7 @@ const configGen = ({
               "@emotion/no-vanilla": 2,
               "@emotion/pkg-renaming": 2,
               "@emotion/styled-import": 2,
+
               ...("@emotion/eslint-plugin" in override
                 ? override["@emotion/eslint-plugin"]
                 : {}),
@@ -742,6 +835,7 @@ const configGen = ({
               ...perfectionist.configs["recommended-natural"].rules,
               "perfectionist/sort-imports": 0,
               "perfectionist/sort-named-imports": 0,
+
               ...("eslint-plugin-perfectionist" in override
                 ? override["eslint-plugin-perfectionist"]
                 : {}),
@@ -764,6 +858,7 @@ const configGen = ({
             files,
             rules: {
               ...unsanitized.configs.DOM.rules,
+
               ...("eslint-plugin-no-unsanitized" in override
                 ? override["eslint-plugin-no-unsanitized"]
                 : {}),
@@ -785,6 +880,7 @@ const configGen = ({
             files,
             rules: {
               ...xo.rules,
+
               ...("eslint-config-xo" in override
                 ? override["eslint-config-xo"]
                 : {}),
@@ -806,6 +902,7 @@ const configGen = ({
             files,
             rules: {
               ...google.rules,
+
               ...("eslint-config-google" in override
                 ? override["eslint-config-google"]
                 : {}),
@@ -827,6 +924,7 @@ const configGen = ({
             files,
             rules: {
               "tsdoc/syntax": 2,
+
               ...("eslint-plugin-tsdoc" in override
                 ? override["eslint-plugin-tsdoc"]
                 : {}),
@@ -848,6 +946,7 @@ const configGen = ({
             files,
             rules: {
               ...tailwindcss.configs.recommended.rules,
+
               ...("eslint-plugin-tailwindcss" in override
                 ? override["eslint-plugin-tailwindcss"]
                 : {}),
@@ -874,6 +973,7 @@ const configGen = ({
             },
             rules: {
               ...comp.configs.recommended.rules,
+
               ...("eslint-plugin-compat" in override
                 ? override["eslint-plugin-compat"]
                 : {}),
@@ -896,6 +996,11 @@ const configGen = ({
             files: testFiles,
             rules: {
               ...jestFormatting.configs.recommended.overrides[0].rules,
+              "functional/functional-parameters": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               ...("eslint-plugin-jest-formatting" in override
                 ? override["eslint-plugin-jest-formatting"]
                 : {}),
@@ -924,6 +1029,12 @@ const configGen = ({
             },
             rules: {
               ...standardJsx.rules,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               ...("eslint-config-standard-jsx" in override
                 ? override["eslint-config-standard-jsx"]
                 : {}),
@@ -972,6 +1083,7 @@ const configGen = ({
                   allowString: false,
                 },
               ],
+
               ...("eslint-config-standard-with-typescript" in override
                 ? override["eslint-config-standard-with-typescript"]
                 : {}),
@@ -999,6 +1111,12 @@ const configGen = ({
             // Not added in any config
             rules: {
               "@react-native/platform-colors": 1,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               ...("@react-native/eslint-plugin" in override
                 ? override["@react-native/eslint-plugin"]
                 : {}),
@@ -1025,6 +1143,12 @@ const configGen = ({
             files: ["*.js"],
             rules: {
               ...reactNativeConfig.overrides[0].rules,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               ...("@react-native-community/eslint-config/flowtype" in override
                 ? override["@react-native-community/eslint-config/flowtype"]
                 : {}),
@@ -1051,6 +1175,12 @@ const configGen = ({
             files: ["*.ts", "*.tsx"],
             rules: {
               ...reactNativeConfig.overrides[1].rules,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               ...("@react-native-community/eslint-config/ts" in override
                 ? override["@react-native-community/eslint-config/ts"]
                 : {}),
@@ -1075,6 +1205,7 @@ const configGen = ({
             files,
             rules: {
               ...security.configs.recommended.rules,
+
               ...("eslint-plugin-security" in override
                 ? override["eslint-plugin-security"]
                 : {}),
@@ -1099,6 +1230,7 @@ const configGen = ({
               // Complexity can not be simplified to a linear scale. If it could, it
               // would be simple, not complex.
               "sonarjs/cognitive-complexity": 0,
+
               ...("eslint-plugin-sonarjs" in override
                 ? override["eslint-plugin-sonarjs"]
                 : {}),
@@ -1120,6 +1252,11 @@ const configGen = ({
             files: testFiles,
             rules: {
               ...jestDom.configs.recommended.rules,
+              "functional/functional-parameters": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               ...("eslint-plugin-jest-dom" in override
                 ? override["eslint-plugin-jest-dom"]
                 : {}),
@@ -1140,6 +1277,11 @@ const configGen = ({
           {
             files: testFiles,
             rules: {
+              "functional/functional-parameters": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               "no-only-tests/no-only-tests": 2,
               ...("eslint-plugin-no-only-tests" in override
                 ? override["eslint-plugin-no-only-tests"]
@@ -1165,6 +1307,12 @@ const configGen = ({
             },
             rules: {
               ...reactNativeIndie.configs.all.rules,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               ...("eslint-plugin-react-native" in override
                 ? override["eslint-plugin-react-native"]
                 : {}),
@@ -1185,6 +1333,12 @@ const configGen = ({
           {
             files,
             rules: {
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               "react-refresh/only-export-components": "warn",
               ...("eslint-plugin-react-refresh" in override
                 ? override["eslint-plugin-react-refresh"]
@@ -1213,6 +1367,12 @@ const configGen = ({
             },
             rules: {
               ...reactNativeConfig.rules,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               // Deprecated rule format needs to be overwritten
               quotes: [
                 0,
@@ -1257,6 +1417,7 @@ const configGen = ({
               "jsdoc/require-returns-type": 0,
               // Presently not implemented in TSDocs https://github.com/microsoft/tsdoc/issues/234
               "jsdoc/require-yields": 0,
+
               ...("eslint-plugin-jsdoc" in override
                 ? override["eslint-plugin-jsdoc"]
                 : {}),
@@ -1279,6 +1440,7 @@ const configGen = ({
           {
             files,
             rules: {
+              "import/order": 0,
               "simple-import-sort/exports": 2,
               "simple-import-sort/imports": 2,
               ...("eslint-plugin-simple-import-sort" in override
@@ -1303,6 +1465,7 @@ const configGen = ({
             files,
             rules: {
               ...compat.extends("airbnb-typescript")[0].rules,
+
               ...("eslint-config-airbnb-typescript" in override
                 ? override["eslint-config-airbnb-typescript"]
                 : {}),
@@ -1336,6 +1499,7 @@ const configGen = ({
                   varsIgnorePattern: "^_",
                 },
               ],
+
               ...("eslint-plugin-unused-imports" in override
                 ? override["eslint-plugin-unused-imports"]
                 : {}),
@@ -1358,6 +1522,8 @@ const configGen = ({
             // We have more fine grained regex rules with RegExp Package
             rules: {
               ...unicorn.configs.recommended.rules,
+              "functional/no-loop-statements": 0,
+              "functional/prefer-immutable-types": 0,
               "unicorn/better-regex": 0,
               ...("eslint-plugin-unicorn" in override
                 ? override["eslint-plugin-unicorn"]
@@ -1384,6 +1550,7 @@ const configGen = ({
             // left out: it has the most downloads, but is out of date / not maintained.
             rules: {
               ...comments.configs.recommended.rules,
+
               ...("@eslint-community/eslint-plugin-eslint-comments" in override
                 ? override["@eslint-community/eslint-plugin-eslint-comments"]
                 : {}),
@@ -1408,6 +1575,12 @@ const configGen = ({
             files: storybook.configs.recommended.overrides[0].files,
             rules: {
               ...storybook.configs.recommended.overrides[0].rules,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               ...("eslint-plugin-storybook" in override
                 ? override["eslint-plugin-storybook"]
                 : {}),
@@ -1430,6 +1603,7 @@ const configGen = ({
             files: storybook.configs.recommended.overrides[1].files,
             rules: {
               ...storybook.configs.recommended.overrides[1].rules,
+
               ...("eslint-plugin-storybook/main" in override
                 ? override["eslint-plugin-storybook/main"]
                 : {}),
@@ -1458,6 +1632,7 @@ const configGen = ({
             },
             rules: {
               ...standard.rules,
+
               ...("eslint-config-standard" in override
                 ? override["eslint-config-standard"]
                 : {}),
@@ -1480,6 +1655,12 @@ const configGen = ({
             rules: {
               ...compat.extends("airbnb")[0].rules,
               ...compat.extends("airbnb/hooks")[0].rules,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               ...("eslint-config-airbnb" in override
                 ? override["eslint-config-airbnb"]
                 : {}),
@@ -1522,6 +1703,12 @@ const configGen = ({
               "flowtype/define-flow-type": 1,
               "flowtype/require-valid-file-annotation": 1,
               "flowtype/use-flow-type": 1,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               "getter-return": 1,
               // https://github.com/benmosher/eslint-plugin-import/tree/master/docs/rules
               "import/first": 2,
@@ -1620,18 +1807,18 @@ const configGen = ({
               "no-restricted-syntax": [1, "WithStatement"],
               "no-script-url": 1,
               "no-self-assign": 1,
+
               "no-self-compare": 1,
               "no-sequences": 1,
               "no-shadow-restricted-names": 1,
               "no-sparse-arrays": 1,
+
               "no-template-curly-in-string": 1,
               "no-this-before-super": 1,
-
               "no-throw-literal": 1,
               "no-undef": 2,
               "no-unreachable": 1,
               "no-unsafe-negation": 1,
-
               "no-unused-expressions": [
                 2,
                 {
@@ -1640,6 +1827,10 @@ const configGen = ({
                   allowTernary: true,
                 },
               ],
+
+              // Disabled because of undesirable warnings
+              // See https://github.com/facebook/create-react-app/issues/5204 for
+              // blockers until its re-enabled
               "no-unused-labels": 1,
               "no-unused-vars": [
                 1,
@@ -1658,11 +1849,8 @@ const configGen = ({
               ],
               "no-useless-computed-key": 1,
               "no-useless-concat": 1,
-              "no-useless-constructor": 1,
 
-              // Disabled because of undesirable warnings
-              // See https://github.com/facebook/create-react-app/issues/5204 for
-              // blockers until its re-enabled
+              "no-useless-constructor": 1,
               "no-useless-escape": 1,
               "no-useless-rename": [
                 1,
@@ -1679,7 +1867,6 @@ const configGen = ({
                 1,
                 { allowInPropTypes: true },
               ],
-
               "react/jsx-no-comment-textnodes": 1,
               "react/jsx-no-duplicate-props": 1,
               "react/jsx-no-target-blank": 1,
@@ -1698,16 +1885,16 @@ const configGen = ({
               "react/no-direct-mutation-state": 1,
               "react/no-is-mounted": 1,
               "react/no-typos": 2,
+
               "react/require-render-return": 2,
+
               "react/style-prop-object": 1,
               "react-hooks/exhaustive-deps": 1,
               // https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks
               "react-hooks/rules-of-hooks": 2,
               "require-yield": 1,
               "rest-spread-spacing": [1, "never"],
-
               strict: [1, "never"],
-
               "unicode-bom": [1, "never"],
               "use-isnan": 1,
               "valid-typeof": 1,
@@ -1782,6 +1969,12 @@ const configGen = ({
               "@typescript-eslint/no-useless-constructor": "warn",
               // TypeScript's noFallthroughCasesInSwitch option is more robust (#6906)
               "default-case": "off",
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               "no-array-constructor": "off",
               // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/291)
               "no-dupe-class-members": "off",
@@ -1823,17 +2016,23 @@ const configGen = ({
               },
             },
             rules: {
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               // https://github.com/jest-community/eslint-plugin-jest
               "jest/no-conditional-expect": "error",
               "jest/no-identical-title": "error",
               "jest/no-interpolation-in-snapshots": "error",
+
               "jest/no-jasmine-globals": "error",
               "jest/no-mocks-import": "error",
               "jest/valid-describe-callback": "error",
               "jest/valid-expect": "error",
               "jest/valid-expect-in-promise": "error",
               "jest/valid-title": "warn",
-
               // https://github.com/testing-library/eslint-plugin-testing-library
               "testing-library/await-async-queries": "error",
               "testing-library/await-async-utils": "error",
@@ -1874,6 +2073,9 @@ const configGen = ({
             files,
             rules: {
               ...promise.configs.recommended.rules,
+              "functional/immutable-data": 0,
+              "functional/no-let": 0,
+              "functional/no-throw-statements": 0,
               ...("eslint-plugin-promise" in override
                 ? override["eslint-plugin-promise"]
                 : {}),
@@ -1897,6 +2099,7 @@ const configGen = ({
               ...nextjs.configs.recommended.rules,
               // Irrelevant for broad JS, and pollutes logs when it doesn't apply.
               "@next/next/no-html-link-for-pages": 0,
+
               ...("@next/eslint-plugin-next" in override
                 ? override["@next/eslint-plugin-next"]
                 : {}),
@@ -1919,6 +2122,11 @@ const configGen = ({
             files: testFiles,
             rules: {
               ...testingLibrary.configs.react.rules,
+              "functional/functional-parameters": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               ...("eslint-plugin-testing-library" in override
                 ? override["eslint-plugin-testing-library"]
                 : {}),
@@ -1942,6 +2150,7 @@ const configGen = ({
             files,
             rules: {
               ...esX.configs["no-new-in-esnext"].rules,
+
               ...("eslint-plugin-es-x" in override
                 ? override["eslint-plugin-es-x"]
                 : {}),
@@ -1979,6 +2188,8 @@ const configGen = ({
             // it, but "node" is still used by the Shopify config.
             rules: {
               ...nNode.configs["flat/recommended-module"].rules,
+              "functional/no-conditional-statements": 0,
+              "functional/no-throw-statements": 0,
               // Typescript handles this
               "n/no-missing-import": 0,
               // Typescript handles this
@@ -2007,6 +2218,7 @@ const configGen = ({
             files,
             rules: {
               ...compat.extends("airbnb-base")[0].rules,
+
               ...("eslint-config-airbnb-base" in override
                 ? override["eslint-config-airbnb-base"]
                 : {}),
@@ -2045,6 +2257,11 @@ const configGen = ({
             },
             rules: {
               ...jest.configs["flat/recommended"].rules,
+              "functional/functional-parameters": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               ...("eslint-plugin-jest" in override
                 ? override["eslint-plugin-jest"]
                 : {}),
@@ -2053,7 +2270,7 @@ const configGen = ({
         ]),
 
     /*
-    JSX A11y
+    JSX Accessibility (JSX A11y)
     53,135,545 monthly downloads
     Static AST checker for accessibility rules on JSX elements.
     https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#readme
@@ -2066,6 +2283,7 @@ const configGen = ({
             files,
             rules: {
               ...jsxA11y.configs.recommended.rules,
+
               ...("eslint-plugin-jsx-a11y" in override
                 ? override["eslint-plugin-jsx-a11y"]
                 : {}),
@@ -2087,6 +2305,12 @@ const configGen = ({
             files,
             rules: {
               ...reactHooks.configs.recommended.rules,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               ...("eslint-plugin-react-hooks" in override
                 ? override["eslint-plugin-react-hooks"]
                 : {}),
@@ -2115,6 +2339,12 @@ const configGen = ({
             },
             rules: {
               ...react.configs.recommended.rules,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               ...("eslint-plugin-react" in override
                 ? override["eslint-plugin-react"]
                 : {}),
@@ -2142,6 +2372,7 @@ const configGen = ({
             files,
             rules: {
               ...eslint.configs.recommended.rules,
+
               ...("@eslint/js" in override ? override["@eslint/js"] : {}),
             },
           },
@@ -2163,8 +2394,7 @@ const configGen = ({
             files,
             rules: {
               ...importPlugin.configs.recommended.rules,
-              ...importPlugin.configs.typescript.rules,
-              "import/order": 0,
+
               ...("eslint-plugin-import" in override
                 ? override["eslint-plugin-import"]
                 : {}),
@@ -2221,6 +2451,33 @@ const configGen = ({
         ]),
 
     /*
+    Import - ts
+    123,777,262 monthly downloads
+    Import with sanity. / This plugin adds `TypeScript` support to `eslint-plugin-import`
+    https://github.com/import-js/eslint-plugin-import / https://github.com/import-js/eslint-import-resolver-typescript#readme
+    Requires: import
+  */
+    ...(disable.includes("eslint-plugin-import/ts") ||
+    disable.includes("eslint-import-resolver-typescript/ts") ||
+    threshold > 123_777_262
+      ? []
+      : [
+          {
+            files,
+            rules: {
+              ...importPlugin.configs.typescript.rules,
+
+              ...("eslint-plugin-import/ts" in override
+                ? override["eslint-plugin-import/ts"]
+                : {}),
+              ...("eslint-import-resolver-typescript/ts" in override
+                ? override["eslint-import-resolver-typescript/ts"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
     Prettier
     139,407,428 monthly downloads
     Runs prettier as an eslint rule / Turns off all rules that are unnecessary or might conflict with Prettier. / TypeScript definitions for eslint-config-prettier / TypeScript definitions for eslint-plugin-prettier
@@ -2238,6 +2495,12 @@ const configGen = ({
             files,
             rules: {
               ...prettierConfig.rules,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
               "prettier/prettier": 2,
               ...("eslint-plugin-prettier" in override
                 ? override["eslint-plugin-prettier"]
@@ -2273,6 +2536,7 @@ const configGen = ({
             rules: {
               ...tseslint.configs.recommendedTypeChecked[1].rules,
               ...tseslint.configs.recommendedTypeChecked[2].rules,
+              "functional/no-conditional-statements": 0,
               ...("typescript-eslint" in override
                 ? override["typescript-eslint"]
                 : {}),

@@ -124,6 +124,7 @@ const configGen = ({
         homepage,
         name,
         nameSecondary,
+        overrides,
         packages,
         requiredPlugins,
         rules,
@@ -161,6 +162,8 @@ const configGen = ({
           RULES,
           `rules: {
             ${parsedRules}
+            ${overrides.map((rule) => `"${rule}": 0,`).join(`
+            `)}
                ${packages
                  .map(
                    ({ package: pack }) =>

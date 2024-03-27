@@ -1,23 +1,23 @@
-// PathMark: ./src/definitions/configs/shopify-ts.ts
+// PathMark: ./src/definitions/configs/functional.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
   definitions: `{
-    files: ['*.ts', '*.tsx'],
+    files,
     ${RULES}
   }`,
-  id: "shopify",
-  name: "Shopify",
+  id: "fn",
+  name: "Functional",
   nameSecondary: "TS",
   packages: [
     {
-      name: "shopify",
-      package: "@shopify/eslint-plugin",
+      name: "functional",
+      package: "eslint-plugin-functional",
       requiresImport: false,
     },
   ],
   requiredPlugins: ["@typescript-eslint"],
-  rules: `shopify.configs.typescript.overrides[0].rules`,
+  rules: `functional.configs["external-typescript-recommended"].rules`,
 } satisfies Config;
 // EOF

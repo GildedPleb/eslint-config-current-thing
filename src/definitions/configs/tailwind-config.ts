@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "tailwind",
   name: "Tailwind CSS",
   packages: [
     {

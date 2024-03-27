@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "css-modules",
   name: "CSS Modules",
   packages: [
     {

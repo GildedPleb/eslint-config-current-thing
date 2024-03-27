@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "no-lodash",
   name: "You Don't Need Lodash",
   packages: [
     {

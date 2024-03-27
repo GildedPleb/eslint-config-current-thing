@@ -7,6 +7,7 @@ export default {
     files: ['*.ts', '*.tsx'],
     ${RULES}
   }`,
+  id: "shopify",
   name: "Shopify",
   nameSecondary: "Prettier/TS",
   packages: [

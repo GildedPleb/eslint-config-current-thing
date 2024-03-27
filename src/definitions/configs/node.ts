@@ -18,6 +18,7 @@ export default {
     // it, but "node" is still used by the Shopify config.
     ${RULES}
   }`,
+  id: "node",
   name: "Node.js",
   packages: [
     { name: "nNode", package: "eslint-plugin-n", requiresImport: false },

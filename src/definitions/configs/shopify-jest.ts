@@ -12,6 +12,7 @@ export default {
     },
     ${RULES}
   }`,
+  id: "shopify",
   name: "Shopify",
   nameSecondary: "Jest",
   packages: [

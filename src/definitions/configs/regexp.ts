@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "regexp",
   name: "Regular Expressions",
   packages: [
     {

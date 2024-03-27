@@ -26,6 +26,7 @@ export default {
     },
     ${RULES}
   }`,
+  id: "cra",
   name: "Create React App",
   packages: [
     { name: "cra", package: "eslint-config-react-app", requiresImport: false },

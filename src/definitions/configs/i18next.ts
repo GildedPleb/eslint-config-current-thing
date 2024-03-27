@@ -7,7 +7,8 @@ export default {
     files,
     ${RULES}
   }`,
-  name: "i18n",
+  id: "i18n",
+  name: "Internationalization (i18n)",
   packages: [
     {
       name: "i18next",

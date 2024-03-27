@@ -24,6 +24,7 @@ export default {
     },
     ${RULES}
   }`,
+  id: "jest",
   name: "Jest",
   packages: [
     { name: "jest", package: "eslint-plugin-jest", requiresImport: false },

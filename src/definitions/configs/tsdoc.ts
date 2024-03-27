@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "tsdoc",
   name: "TSDoc",
   packages: [
     { name: "tsdoc", package: "eslint-plugin-tsdoc", requiresImport: false },

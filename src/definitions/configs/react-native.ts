@@ -10,6 +10,7 @@ export default {
     },
     ${RULES}
   }`,
+  id: "rn",
   name: "React Native Config",
   packages: [
     {

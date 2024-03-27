@@ -20,6 +20,7 @@ export default {
     },
     ${RULES}
   }`,
+  id: "shopify",
   name: "Shopify",
   nameSecondary: "React/TS",
   packages: [

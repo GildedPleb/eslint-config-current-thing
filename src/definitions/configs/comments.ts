@@ -9,6 +9,7 @@ export default {
     // left out: it has the most downloads, but is out of date / not maintained.
     ${RULES}
   }`,
+  id: "comments",
   name: "Comments",
   packages: [
     {

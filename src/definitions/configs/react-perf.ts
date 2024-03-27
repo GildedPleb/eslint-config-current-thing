@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "react-perf",
   name: "React Performance",
   packages: [
     {

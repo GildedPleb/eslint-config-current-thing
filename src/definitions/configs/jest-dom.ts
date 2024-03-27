@@ -7,6 +7,7 @@ export default {
     files: testFiles,
     ${RULES}
   }`,
+  id: "jest-dom",
   name: "Jest Dom",
   packages: [
     {

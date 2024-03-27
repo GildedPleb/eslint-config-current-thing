@@ -19,6 +19,7 @@ export default {
     },
     ${RULES}
   }`,
+  id: "standard-react",
   name: "Standard React",
   packages: [
     {

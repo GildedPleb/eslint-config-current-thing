@@ -8,6 +8,7 @@ export default {
     settings: { jsdoc: { mode: "typescript" } },
     ${RULES}
   }`,
+  id: "jsdoc",
   name: "JSDoc",
   packages: [
     { name: "jsdoc", package: "eslint-plugin-jsdoc", requiresImport: false },

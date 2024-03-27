@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "nextjs",
   name: "NextJS",
   packages: [
     {

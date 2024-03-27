@@ -7,6 +7,7 @@ export default {
     files: testFiles,
     ${RULES}
   }`,
+  id: "jest-format",
   name: "Jest Formatting",
   packages: [
     {

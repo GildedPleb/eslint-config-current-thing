@@ -20,6 +20,7 @@ export default {
     },
     ${RULES}
   }`,
+  id: "react",
   name: "React",
   packages: [
     { name: "react", package: "eslint-plugin-react", requiresImport: false },

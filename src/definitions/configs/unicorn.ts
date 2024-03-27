@@ -8,6 +8,7 @@ export default {
     // We have more fine grained regex rules with RegExp Package
     ${RULES}
   }`,
+  id: "unicorn",
   name: "Unicorn",
   packages: [
     {

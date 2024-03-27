@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "es-x",
   name: "ES-X",
   packages: [
     { name: "esX", package: "eslint-plugin-es-x", requiresImport: false },

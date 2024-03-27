@@ -3,6 +3,9 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  conflicts: {
+    "import/order": ["import-sort"],
+  },
   definitions: `{
     files,
     settings: {
@@ -10,6 +13,7 @@ export default {
     },
     ${RULES}
   }`,
+  id: "shopify",
   name: "Shopify",
   nameSecondary: "ESNext",
   packages: [

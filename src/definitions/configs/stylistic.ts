@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "stylistic",
   name: "Stylistic",
   packages: [
     {

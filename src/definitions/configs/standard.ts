@@ -14,6 +14,7 @@ export default {
     },
     ${RULES}
   }`,
+  id: "standard",
   name: "Standard",
   packages: [
     {

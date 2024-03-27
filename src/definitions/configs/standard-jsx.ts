@@ -19,6 +19,7 @@ export default {
     },
     ${RULES}
   }`,
+  id: "standard-jsx",
   name: "Standard JSX",
   packages: [
     {

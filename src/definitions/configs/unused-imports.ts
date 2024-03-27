@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "unused-imports",
   name: "No Unused Imports",
   packages: [
     {

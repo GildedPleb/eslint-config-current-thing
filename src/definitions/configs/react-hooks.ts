@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "react-hooks",
   name: "React Hooks",
   packages: [
     {

@@ -7,6 +7,7 @@ export default {
     files: testFiles,
     ${RULES}
   }`,
+  id: "testing-library",
   name: "Testing Library",
   packages: [
     {

@@ -12,10 +12,13 @@ import emotion from "./emotion";
 import es from "./es";
 import eslint from "./eslint";
 import functional from "./functional";
+import functionalStylistic from "./functional-stylistic";
+import functionalTs from "./functional-ts";
 import google from "./google";
 import i18next from "./i18next";
 import index from "./import";
 import importSort from "./import-sort";
+import importTs from "./import-ts";
 import jest from "./jest";
 import jestDom from "./jest-dom";
 import jestFormatting from "./jest-formatting";
@@ -69,7 +72,9 @@ import xo from "./xo";
 import youDontNeedLodash from "./you-dont-need-lodash";
 
 export interface Config {
+  conflicts?: Record<string, string[]>;
   definitions: `${"..." | "{"}${string}${")" | "}"}`;
+  id: string;
   name: string;
   nameSecondary?: string;
   packages: Array<{
@@ -151,6 +156,9 @@ const configs: Config[] = [
   standardTs,
   storybookMain,
   unusedImports,
+  functionalStylistic,
+  functionalTs,
+  importTs,
 ];
 
 export default configs;

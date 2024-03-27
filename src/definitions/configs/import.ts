@@ -52,6 +52,7 @@ export default {
     },
     ${RULES}
   }`,
+  id: "import",
   name: "Import",
   packages: [
     {
@@ -66,8 +67,6 @@ export default {
     },
   ],
   requiredPlugins: ["import"],
-  rules: `importPlugin.configs.recommended.rules,
-    ...importPlugin.configs.typescript.rules,
-    "import/order": 0`,
+  rules: `importPlugin.configs.recommended.rules`,
 } satisfies Config;
 // EOF

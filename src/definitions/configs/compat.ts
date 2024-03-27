@@ -12,6 +12,7 @@ export default {
     },
     ${RULES}
   }`,
+  id: "compat",
   name: "Compat",
   packages: [
     { name: "comp", package: "eslint-plugin-compat", requiresImport: false },

@@ -7,6 +7,7 @@ export default {
     files: testFiles,
     ${RULES}
   }`,
+  id: "no-only-test",
   name: "No Only Tests",
   packages: [
     {

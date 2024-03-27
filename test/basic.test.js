@@ -7,6 +7,24 @@ const multiply = (
   /** @type { number } */ second,
 ) => first * second;
 
+/**
+ *
+ */
+class TestCLass {
+  /**
+   *
+   * @param number - number
+   */
+  constructor(/** @type { number } */ number) {
+    this.num = number ?? 0;
+  }
+
+  /** */
+  getNum() {
+    return this.num;
+  }
+}
+
 describe("multiply function", () => {
   it("multiplies two numbers correctly", () => {
     expect(multiply(2, 3)).toBe(6);
@@ -33,6 +51,13 @@ describe("multiply function", () => {
     expect(multiply(1_000_000_000, 1_000_000_000)).toBe(
       1_000_000_000_000_000_000,
     );
+  });
+});
+
+describe("test class", () => {
+  it("returns number", () => {
+    const t = new TestCLass(4);
+    expect(t.getNum()).toBe(4);
   });
 });
 // EOF

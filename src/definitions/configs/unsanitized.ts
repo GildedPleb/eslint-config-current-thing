@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "unsanitized",
   name: "No Unsanitized",
   packages: [
     {

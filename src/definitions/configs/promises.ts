@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "promises",
   name: "Promises",
   packages: [
     {

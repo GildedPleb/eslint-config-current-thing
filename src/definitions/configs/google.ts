@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "google",
   name: "Google",
   packages: [
     { name: "google", package: "eslint-config-google", requiresImport: true },

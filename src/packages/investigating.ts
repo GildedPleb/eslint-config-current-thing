@@ -125,6 +125,7 @@ const investigating = new Set([
   "eslint-plugin-eslint-remote-tester",
   "eslint-plugin-eslint-doc-generator",
   "eslint-plugin-eslint-docgen",
+  "eslint-plugin-optimize-regex",
 ]);
 
 export default investigating;

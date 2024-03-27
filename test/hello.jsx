@@ -7,6 +7,8 @@
 // PathMark: ./test/hello.jsx
 import * as React from "react";
 
+const Nine = () => <div>{9}</div>;
+
 /**
  *
  * @param root0 - Children
@@ -18,6 +20,7 @@ function HiddenMessage({ /** @type { React.ReactNode } */ children }) {
   return (
     <>
       <label htmlFor="toggle">{title}</label>
+      <Nine />
       <input
         checked={showMessage}
         id="toggle"

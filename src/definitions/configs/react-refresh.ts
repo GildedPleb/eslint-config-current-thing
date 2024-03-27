@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "react-refresh",
   name: "React Refresh",
   packages: [
     {

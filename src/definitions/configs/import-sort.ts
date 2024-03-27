@@ -3,10 +3,14 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  conflicts: {
+    "simple-import-sort/imports": ["shopify/esnext"],
+  },
   definitions: `{
     files,
     ${RULES}
   }`,
+  id: "import-sort",
   name: "Simple Import Sort",
   packages: [
     {

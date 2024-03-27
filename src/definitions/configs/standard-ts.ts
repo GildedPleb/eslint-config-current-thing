@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "standard-ts",
   name: "Standard",
   packages: [
     {

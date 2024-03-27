@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "shopify",
   name: "Shopify",
   nameSecondary: "Core",
   packages: [

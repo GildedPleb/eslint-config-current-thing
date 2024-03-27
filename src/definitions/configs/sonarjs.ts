@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "sonarjs",
   name: "SonarJS",
   packages: [
     {

@@ -12,6 +12,7 @@ export default {
     },
     ${RULES}
   }`,
+  id: "cra",
   name: "Create React App",
   nameSecondary: "Jest",
   packages: [

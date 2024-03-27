@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "emotion-css",
   name: "Emotion CSS",
   packages: [
     {

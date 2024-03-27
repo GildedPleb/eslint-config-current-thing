@@ -7,6 +7,7 @@ export default {
     files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts'],
     ${RULES}
   }`,
+  id: "ts",
   name: "TypeScript",
   packages: [
     { name: "tseslint", package: "typescript-eslint", requiresImport: true },

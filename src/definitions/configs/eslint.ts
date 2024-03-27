@@ -7,6 +7,7 @@ export default {
     files,
     ${RULES}
   }`,
+  id: "eslint",
   name: "ESLint",
   packages: [{ name: "eslint", package: "@eslint/js", requiresImport: true }],
   requiredPlugins: [],
