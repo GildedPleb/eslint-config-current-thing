@@ -16,8 +16,6 @@ export default {
     },
   ],
   requiredPlugins: ["@typescript-eslint", "import"],
-  rules: `compat.extends("airbnb-typescript")[0].rules,
-    // Added to modernize this infrequently updated, but oft used config
-    "no-restricted-syntax": [0, { selector: "ForOfStatement" }]`,
+  rules: `compat.extends("airbnb-typescript")[0].rules`,
 } satisfies Config;
 // EOF

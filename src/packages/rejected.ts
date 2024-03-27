@@ -3,6 +3,9 @@
 // These are actual project that are either ESlint configs or plugins
 
 const rejected = new Set([
+  // Purely obsolete
+  "eslint-plugin-lodash",
+
   // Obsoleted by Typescript -- Should consider adding back
   // "eslint-plugin-unused-imports",
 

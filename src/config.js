@@ -10,7 +10,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/26/2024
+  Generated on 3/27/2024
 */
 
 import path from "node:path";
@@ -202,12 +202,12 @@ const configGen = ({
 
     /*
     React Performance
-    350,629 monthly downloads
+    347,422 monthly downloads
     Performance-minded React linting rules for ESLint
     https://github.com/cvazac/eslint-plugin-react-perf#readme
     Requires: react-perf
   */
-    ...(disable.includes("eslint-plugin-react-perf") || threshold > 350_629
+    ...(disable.includes("eslint-plugin-react-perf") || threshold > 347_422
       ? []
       : [
           {
@@ -223,12 +223,12 @@ const configGen = ({
 
     /*
     CSS Modules
-    473,770 monthly downloads
+    468,524 monthly downloads
     Checks that you are using the existent css/scss/less classes, no more no less
     undefined
     Requires: css-modules
   */
-    ...(disable.includes("eslint-plugin-css-modules") || threshold > 473_770
+    ...(disable.includes("eslint-plugin-css-modules") || threshold > 468_524
       ? []
       : [
           {
@@ -244,12 +244,12 @@ const configGen = ({
 
     /*
     Standard React
-    511,667 monthly downloads
+    505,423 monthly downloads
     JavaScript Standard Style React/JSX support - ESLint Shareable Config
     https://github.com/standard/eslint-config-standard-react
     Requires: react, react-hooks
   */
-    ...(disable.includes("eslint-config-standard-react") || threshold > 511_667
+    ...(disable.includes("eslint-config-standard-react") || threshold > 505_423
       ? []
       : [
           {
@@ -277,12 +277,12 @@ const configGen = ({
 
     /*
     Regular Expressions
-    608,343 monthly downloads
+    601,229 monthly downloads
     ESLint plugin for finding RegExp mistakes and RegExp style guide violations.
     https://github.com/ota-meshi/eslint-plugin-regexp#readme
     Requires: regexp
   */
-    ...(disable.includes("eslint-plugin-regexp") || threshold > 608_343
+    ...(disable.includes("eslint-plugin-regexp") || threshold > 601_229
       ? []
       : [
           {
@@ -297,42 +297,13 @@ const configGen = ({
         ]),
 
     /*
-    Stylistic
-    647,032 monthly downloads
-    Stylistic rules for ESLint, works for both JavaScript and TypeScript.
-    https://github.com/eslint-stylistic/eslint-stylistic#readme
-    Requires: @stylistic
-  */
-    ...(disable.includes("@stylistic/eslint-plugin") || threshold > 647_032
-      ? []
-      : [
-          {
-            files,
-            rules: {
-              ...stylistic.configs.customize({ quotes: "double", semi: true })
-                .rules,
-              // All conflict with Prettier:
-              "@stylistic/arrow-parens": 0,
-              "@stylistic/brace-style": 0,
-              "@stylistic/multiline-ternary": 0,
-              "@stylistic/operator-linebreak": 0,
-              "@stylistic/quote-props": 0,
-              "@stylistic/quotes": 0,
-              ...("@stylistic/eslint-plugin" in override
-                ? override["@stylistic/eslint-plugin"]
-                : {}),
-            },
-          },
-        ]),
-
-    /*
     Shopify - TS
-    649,194 monthly downloads
+    628,028 monthly downloads
     Shopify's ESLint rules and configs.
     https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
     Requires: @typescript-eslint
   */
-    ...(disable.includes("@shopify/eslint-plugin/ts") || threshold > 649_194
+    ...(disable.includes("@shopify/eslint-plugin/ts") || threshold > 628_028
       ? []
       : [
           {
@@ -348,12 +319,12 @@ const configGen = ({
 
     /*
     Shopify - Core
-    649,194 monthly downloads
+    628,028 monthly downloads
     Shopify's ESLint rules and configs.
     https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
     Requires: @shopify, eslint-comments
   */
-    ...(disable.includes("@shopify/eslint-plugin/core") || threshold > 649_194
+    ...(disable.includes("@shopify/eslint-plugin/core") || threshold > 628_028
       ? []
       : [
           {
@@ -369,12 +340,12 @@ const configGen = ({
 
     /*
     Shopify - ESNext
-    649,194 monthly downloads
+    628,028 monthly downloads
     Shopify's ESLint rules and configs.
     https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
     Requires: @babel/eslint-plugin, promise, sort-class-members, import
   */
-    ...(disable.includes("@shopify/eslint-plugin/esnext") || threshold > 649_194
+    ...(disable.includes("@shopify/eslint-plugin/esnext") || threshold > 628_028
       ? []
       : [
           {
@@ -393,12 +364,12 @@ const configGen = ({
 
     /*
     Shopify - Jest
-    649,194 monthly downloads
+    628,028 monthly downloads
     Shopify's ESLint rules and configs.
     https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
     Requires: jest, jest-formatting, @shopify
   */
-    ...(disable.includes("@shopify/eslint-plugin/jest") || threshold > 649_194
+    ...(disable.includes("@shopify/eslint-plugin/jest") || threshold > 628_028
       ? []
       : [
           {
@@ -419,12 +390,12 @@ const configGen = ({
 
     /*
     Shopify - Node
-    649,194 monthly downloads
+    628,028 monthly downloads
     Shopify's ESLint rules and configs.
     https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
     Requires: @shopify
   */
-    ...(disable.includes("@shopify/eslint-plugin/node") || threshold > 649_194
+    ...(disable.includes("@shopify/eslint-plugin/node") || threshold > 628_028
       ? []
       : [
           {
@@ -440,13 +411,13 @@ const configGen = ({
 
     /*
     Shopify - Prettier
-    649,194 monthly downloads
+    628,028 monthly downloads
     Shopify's ESLint rules and configs.
     https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
     Requires: prettier, @babel/eslint-plugin, @shopify
   */
     ...(disable.includes("@shopify/eslint-plugin/prettier") ||
-    threshold > 649_194
+    threshold > 628_028
       ? []
       : [
           {
@@ -462,13 +433,13 @@ const configGen = ({
 
     /*
     Shopify - Prettier/TS
-    649,194 monthly downloads
+    628,028 monthly downloads
     Shopify's ESLint rules and configs.
     https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
     Requires: prettier, @typescript-eslint
   */
     ...(disable.includes("@shopify/eslint-plugin/prettier/ts") ||
-    threshold > 649_194
+    threshold > 628_028
       ? []
       : [
           {
@@ -484,13 +455,13 @@ const configGen = ({
 
     /*
     Shopify - Polaris
-    649,194 monthly downloads
+    628,028 monthly downloads
     Shopify's ESLint rules and configs.
     https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
     Requires: @shopify
   */
     ...(disable.includes("@shopify/eslint-plugin/polaris") ||
-    threshold > 649_194
+    threshold > 628_028
       ? []
       : [
           {
@@ -506,12 +477,12 @@ const configGen = ({
 
     /*
     Shopify - React
-    649,194 monthly downloads
+    628,028 monthly downloads
     Shopify's ESLint rules and configs.
     https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
     Requires: react, jsx-a11y, react-hooks, @shopify
   */
-    ...(disable.includes("@shopify/eslint-plugin/react") || threshold > 649_194
+    ...(disable.includes("@shopify/eslint-plugin/react") || threshold > 628_028
       ? []
       : [
           {
@@ -543,13 +514,13 @@ const configGen = ({
 
     /*
     Shopify - React/TS
-    649,194 monthly downloads
+    628,028 monthly downloads
     Shopify's ESLint rules and configs.
     https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
     Requires: react
   */
     ...(disable.includes("@shopify/eslint-plugin/react/ts") ||
-    threshold > 649_194
+    threshold > 628_028
       ? []
       : [
           {
@@ -578,13 +549,13 @@ const configGen = ({
 
     /*
     Shopify - React/Test
-    649,194 monthly downloads
+    628,028 monthly downloads
     Shopify's ESLint rules and configs.
     https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
     Requires: @shopify
   */
     ...(disable.includes("@shopify/eslint-plugin/react/test") ||
-    threshold > 649_194
+    threshold > 628_028
       ? []
       : [
           {
@@ -613,13 +584,13 @@ const configGen = ({
 
     /*
     Shopify - TS/TypeCheck
-    649,194 monthly downloads
+    628,028 monthly downloads
     Shopify's ESLint rules and configs.
     https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
     Requires: @typescript-eslint
   */
     ...(disable.includes("@shopify/eslint-plugin/ts/typecheck") ||
-    threshold > 649_194
+    threshold > 628_028
       ? []
       : [
           {
@@ -634,14 +605,43 @@ const configGen = ({
         ]),
 
     /*
+    Stylistic
+    654,568 monthly downloads
+    Stylistic rules for ESLint, works for both JavaScript and TypeScript.
+    https://github.com/eslint-stylistic/eslint-stylistic#readme
+    Requires: @stylistic
+  */
+    ...(disable.includes("@stylistic/eslint-plugin") || threshold > 654_568
+      ? []
+      : [
+          {
+            files,
+            rules: {
+              ...stylistic.configs.customize({ quotes: "double", semi: true })
+                .rules,
+              // All conflict with Prettier:
+              "@stylistic/arrow-parens": 0,
+              "@stylistic/brace-style": 0,
+              "@stylistic/multiline-ternary": 0,
+              "@stylistic/operator-linebreak": 0,
+              "@stylistic/quote-props": 0,
+              "@stylistic/quotes": 0,
+              ...("@stylistic/eslint-plugin" in override
+                ? override["@stylistic/eslint-plugin"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
     You Don't Need Lodash
-    679,983 monthly downloads
+    665,517 monthly downloads
     Check methods you can use natively without lodash/underscore
     https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore.git
     Requires: you-dont-need-lodash-underscore
   */
     ...(disable.includes("eslint-plugin-you-dont-need-lodash-underscore") ||
-    threshold > 679_983
+    threshold > 665_517
       ? []
       : [
           {
@@ -657,12 +657,12 @@ const configGen = ({
 
     /*
     I18n
-    703,742 monthly downloads
+    687,743 monthly downloads
     ESLint plugin for i18n
     https://github.com/edvardchen/eslint-plugin-i18next#readme
     Requires: i18next
   */
-    ...(disable.includes("eslint-plugin-i18next") || threshold > 703_742
+    ...(disable.includes("eslint-plugin-i18next") || threshold > 687_743
       ? []
       : [
           {
@@ -678,12 +678,12 @@ const configGen = ({
 
     /*
     Functional
-    804,575 monthly downloads
+    780,407 monthly downloads
     ESLint rules to promote functional programming in TypeScript.
     https://github.com/eslint-functional/eslint-plugin-functional#readme
     Requires: functional
   */
-    ...(disable.includes("eslint-plugin-functional") || threshold > 804_575
+    ...(disable.includes("eslint-plugin-functional") || threshold > 780_407
       ? []
       : [
           {
@@ -703,12 +703,12 @@ const configGen = ({
 
     /*
     Emotion CSS
-    808,731 monthly downloads
+    784,675 monthly downloads
     ESLint rules for emotion
     https://github.com/emotion-js/emotion/tree/main#readme
     Requires: emotion
   */
-    ...(disable.includes("@emotion/eslint-plugin") || threshold > 808_731
+    ...(disable.includes("@emotion/eslint-plugin") || threshold > 784_675
       ? []
       : [
           {
@@ -728,12 +728,12 @@ const configGen = ({
 
     /*
     Perfectionist
-    856,142 monthly downloads
+    848,690 monthly downloads
     ESLint plugin for sorting various data such as objects, imports, types, enums, JSX props, etc.
     https://eslint-plugin-perfectionist.azat.io
     Requires: perfectionist
   */
-    ...(disable.includes("eslint-plugin-perfectionist") || threshold > 856_142
+    ...(disable.includes("eslint-plugin-perfectionist") || threshold > 848_690
       ? []
       : [
           {
@@ -751,13 +751,13 @@ const configGen = ({
 
     /*
     No Unsanitized
-    1,018,953 monthly downloads
+    1,008,525 monthly downloads
     ESLint rule to disallow unsanitized code
     https://github.com/mozilla/eslint-plugin-no-unsanitized/
     Requires: no-unsanitized
   */
     ...(disable.includes("eslint-plugin-no-unsanitized") ||
-    threshold > 1_018_953
+    threshold > 1_008_525
       ? []
       : [
           {
@@ -773,12 +773,12 @@ const configGen = ({
 
     /*
     XO
-    1,161,470 monthly downloads
+    1,152,974 monthly downloads
     ESLint shareable config for XO
     https://github.com/xojs/eslint-config-xo#readme
     Requires: (None)
   */
-    ...(disable.includes("eslint-config-xo") || threshold > 1_161_470
+    ...(disable.includes("eslint-config-xo") || threshold > 1_152_974
       ? []
       : [
           {
@@ -794,12 +794,12 @@ const configGen = ({
 
     /*
     Google
-    1,686,261 monthly downloads
+    1,668,466 monthly downloads
     ESLint shareable config for the Google style
     https://github.com/google/eslint-config-google#readme
     Requires: (None)
   */
-    ...(disable.includes("eslint-config-google") || threshold > 1_686_261
+    ...(disable.includes("eslint-config-google") || threshold > 1_668_466
       ? []
       : [
           {
@@ -815,12 +815,12 @@ const configGen = ({
 
     /*
     TSDoc
-    1,953,650 monthly downloads
+    1,923,125 monthly downloads
     An ESLint plugin that validates TypeScript doc comments
     https://tsdoc.org/
     Requires: tsdoc
   */
-    ...(disable.includes("eslint-plugin-tsdoc") || threshold > 1_953_650
+    ...(disable.includes("eslint-plugin-tsdoc") || threshold > 1_923_125
       ? []
       : [
           {
@@ -836,12 +836,12 @@ const configGen = ({
 
     /*
     Tailwind CSS
-    1,958,288 monthly downloads
+    1,940,554 monthly downloads
     Rules enforcing best practices while using Tailwind CSS
     https://github.com/francoismassart/eslint-plugin-tailwindcss
     Requires: tailwindcss
   */
-    ...(disable.includes("eslint-plugin-tailwindcss") || threshold > 1_958_288
+    ...(disable.includes("eslint-plugin-tailwindcss") || threshold > 1_940_554
       ? []
       : [
           {
@@ -857,12 +857,12 @@ const configGen = ({
 
     /*
     Compat
-    2,081,874 monthly downloads
+    2,049,293 monthly downloads
     Lint browser compatibility of API used
     https://github.com/amilajack/eslint-plugin-compat#readme
     Requires: compat
   */
-    ...(disable.includes("eslint-plugin-compat") || threshold > 2_081_874
+    ...(disable.includes("eslint-plugin-compat") || threshold > 2_049_293
       ? []
       : [
           {
@@ -883,13 +883,13 @@ const configGen = ({
 
     /*
     Jest Formatting
-    2,280,048 monthly downloads
+    2,236,839 monthly downloads
     ESLint rules for formatting jest tests
     https://github.com/dangreenisrael/eslint-plugin-jest-formatting#readme
     Requires: jest-formatting
   */
     ...(disable.includes("eslint-plugin-jest-formatting") ||
-    threshold > 2_280_048
+    threshold > 2_236_839
       ? []
       : [
           {
@@ -905,12 +905,12 @@ const configGen = ({
 
     /*
     Standard JSX
-    2,406,343 monthly downloads
+    2,378,157 monthly downloads
     JavaScript Standard Style JSX support - ESLint Shareable Config
     https://github.com/standard/eslint-config-standard-jsx
     Requires: react
   */
-    ...(disable.includes("eslint-config-standard-jsx") || threshold > 2_406_343
+    ...(disable.includes("eslint-config-standard-jsx") || threshold > 2_378_157
       ? []
       : [
           {
@@ -938,14 +938,14 @@ const configGen = ({
 
     /*
     Standard
-    2,668,290 monthly downloads
+    2,648,001 monthly downloads
     An ESLint Shareable Config for JavaScript Standard Style with TypeScript support / A TypeScript ESLint config that loves you
     https://github.com/mightyiam/eslint-config-standard-with-typescript#readme / https://github.com/mightyiam/eslint-config-love#readme
     Requires: @typescript-eslint
   */
     ...(disable.includes("eslint-config-standard-with-typescript") ||
     disable.includes("eslint-config-love") ||
-    threshold > 2_668_290
+    threshold > 2_648_001
       ? []
       : [
           {
@@ -984,14 +984,14 @@ const configGen = ({
 
     /*
     React Native Plugin
-    3,100,482 monthly downloads
+    3,049,750 monthly downloads
     ESLint rules for @react-native/eslint-config / ESLint rules for @react-native-community/eslint-config
     https://github.com/facebook/react-native/tree/HEAD/packages/eslint-plugin-react-native#readme / https://github.com/facebook/react-native#readme
     Requires: @react-native
   */
     ...(disable.includes("@react-native/eslint-plugin") ||
     disable.includes("@react-native-community/eslint-plugin") ||
-    threshold > 3_100_482
+    threshold > 3_049_750
       ? []
       : [
           {
@@ -1011,14 +1011,14 @@ const configGen = ({
 
     /*
     React Native Config - Flowtype
-    3,461,066 monthly downloads
+    3,397,765 monthly downloads
     ESLint config for React Native / ESLint config for React Native
     https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native-community#readme / https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native#readme
     Requires: ft-flow
   */
     ...(disable.includes("@react-native-community/eslint-config/flowtype") ||
     disable.includes("@react-native/eslint-config/flowtype") ||
-    threshold > 3_461_066
+    threshold > 3_397_765
       ? []
       : [
           {
@@ -1037,14 +1037,14 @@ const configGen = ({
 
     /*
     React Native Config - TS
-    3,461,066 monthly downloads
+    3,397,765 monthly downloads
     ESLint config for React Native / ESLint config for React Native
     https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native-community#readme / https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native#readme
     Requires: @typescript-eslint/eslint-plugin
   */
     ...(disable.includes("@react-native-community/eslint-config/ts") ||
     disable.includes("@react-native/eslint-config/ts") ||
-    threshold > 3_461_066
+    threshold > 3_397_765
       ? []
       : [
           {
@@ -1063,12 +1063,12 @@ const configGen = ({
 
     /*
     Security
-    3,585,134 monthly downloads
+    3,537,947 monthly downloads
     Security rules for eslint
     https://github.com/eslint-community/eslint-plugin-security#readme
     Requires: security
   */
-    ...(disable.includes("eslint-plugin-security") || threshold > 3_585_134
+    ...(disable.includes("eslint-plugin-security") || threshold > 3_537_947
       ? []
       : [
           {
@@ -1084,12 +1084,12 @@ const configGen = ({
 
     /*
     SonarJS
-    4,097,223 monthly downloads
+    4,044,772 monthly downloads
     SonarJS rules for ESLint
     https://github.com/SonarSource/eslint-plugin-sonarjs
     Requires: sonarjs
   */
-    ...(disable.includes("eslint-plugin-sonarjs") || threshold > 4_097_223
+    ...(disable.includes("eslint-plugin-sonarjs") || threshold > 4_044_772
       ? []
       : [
           {
@@ -1108,12 +1108,12 @@ const configGen = ({
 
     /*
     Jest Dom
-    4,234,670 monthly downloads
+    4,178,246 monthly downloads
     ESLint plugin to follow best practices and anticipate common mistakes when writing tests with jest-dom
     https://github.com/testing-library/eslint-plugin-jest-dom#readme
     Requires: jest-dom
   */
-    ...(disable.includes("eslint-plugin-jest-dom") || threshold > 4_234_670
+    ...(disable.includes("eslint-plugin-jest-dom") || threshold > 4_178_246
       ? []
       : [
           {
@@ -1129,12 +1129,12 @@ const configGen = ({
 
     /*
     No Only Tests
-    4,348,216 monthly downloads
+    4,292,183 monthly downloads
     ESLint rule for .only blocks in mocha tests
     https://github.com/levibuzolic/no-only-tests#readme
     Requires: no-only-tests
   */
-    ...(disable.includes("eslint-plugin-no-only-tests") || threshold > 4_348_216
+    ...(disable.includes("eslint-plugin-no-only-tests") || threshold > 4_292_183
       ? []
       : [
           {
@@ -1150,12 +1150,12 @@ const configGen = ({
 
     /*
     React Native (Independent Plugin/Config)
-    5,070,183 monthly downloads
+    4,972,271 monthly downloads
     React Native specific linting rules for ESLint
     https://github.com/intellicode/eslint-plugin-react-native
     Requires: react-native
   */
-    ...(disable.includes("eslint-plugin-react-native") || threshold > 5_070_183
+    ...(disable.includes("eslint-plugin-react-native") || threshold > 4_972_271
       ? []
       : [
           {
@@ -1174,12 +1174,12 @@ const configGen = ({
 
     /*
     React Refresh
-    5,482,719 monthly downloads
+    5,445,299 monthly downloads
     Validate that your components can safely be updated with fast refresh
     https://github.com/ArnaudBarre/eslint-plugin-react-refresh#readme
     Requires: react-refresh
   */
-    ...(disable.includes("eslint-plugin-react-refresh") || threshold > 5_482_719
+    ...(disable.includes("eslint-plugin-react-refresh") || threshold > 5_445_299
       ? []
       : [
           {
@@ -1195,7 +1195,7 @@ const configGen = ({
 
     /*
     React Native Config
-    7,299,893 monthly downloads
+    7,164,403 monthly downloads
     ESLint config for React Native / ESLint config for React Native / ESLint Environment for React Native
     https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native-community#readme / https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native#readme / https://github.com/satya164/eslint-plugin-react-native-globals#readme
     Requires: eslint-comments, react, react-hooks, react-native, jest
@@ -1203,7 +1203,7 @@ const configGen = ({
     ...(disable.includes("@react-native-community/eslint-config") ||
     disable.includes("@react-native/eslint-config") ||
     disable.includes("eslint-plugin-react-native-globals") ||
-    threshold > 7_299_893
+    threshold > 7_164_403
       ? []
       : [
           {
@@ -1234,12 +1234,12 @@ const configGen = ({
 
     /*
     JSDoc
-    7,871,263 monthly downloads
+    7,748,424 monthly downloads
     JSDoc linting rules for ESLint.
     https://github.com/gajus/eslint-plugin-jsdoc#readme
     Requires: jsdoc
   */
-    ...(disable.includes("eslint-plugin-jsdoc") || threshold > 7_871_263
+    ...(disable.includes("eslint-plugin-jsdoc") || threshold > 7_748_424
       ? []
       : [
           {
@@ -1267,13 +1267,13 @@ const configGen = ({
 
     /*
     Simple Import Sort
-    8,376,919 monthly downloads
+    8,273,409 monthly downloads
     Easy autofixable import sorting
     https://github.com/lydell/eslint-plugin-simple-import-sort#readme
     Requires: simple-import-sort
   */
     ...(disable.includes("eslint-plugin-simple-import-sort") ||
-    threshold > 8_376_919
+    threshold > 8_273_409
       ? []
       : [
           {
@@ -1290,21 +1290,19 @@ const configGen = ({
 
     /*
     AirBnb-Typescript
-    8,856,462 monthly downloads
+    8,732,012 monthly downloads
     Airbnb's ESLint config with TypeScript support
     https://github.com/iamturns/eslint-config-airbnb-typescript
     Requires: @typescript-eslint, import
   */
     ...(disable.includes("eslint-config-airbnb-typescript") ||
-    threshold > 8_856_462
+    threshold > 8_732_012
       ? []
       : [
           {
             files,
             rules: {
               ...compat.extends("airbnb-typescript")[0].rules,
-              // Added to modernize this infrequently updated, but oft used config
-              "no-restricted-syntax": [0, { selector: "ForOfStatement" }],
               ...("eslint-config-airbnb-typescript" in override
                 ? override["eslint-config-airbnb-typescript"]
                 : {}),
@@ -1314,13 +1312,13 @@ const configGen = ({
 
     /*
     No Unused Imports
-    9,157,342 monthly downloads
+    9,065,632 monthly downloads
     Report and remove unused es6 modules
     https://github.com/sweepline/eslint-plugin-unused-imports
     Requires: unused-imports
   */
     ...(disable.includes("eslint-plugin-unused-imports") ||
-    threshold > 9_157_342
+    threshold > 9_065_632
       ? []
       : [
           {
@@ -1347,12 +1345,12 @@ const configGen = ({
 
     /*
     Unicorn
-    9,324,063 monthly downloads
+    9,226,492 monthly downloads
     More than 100 powerful ESLint rules
     https://github.com/sindresorhus/eslint-plugin-unicorn#readme
     Requires: unicorn
   */
-    ...(disable.includes("eslint-plugin-unicorn") || threshold > 9_324_063
+    ...(disable.includes("eslint-plugin-unicorn") || threshold > 9_226_492
       ? []
       : [
           {
@@ -1370,14 +1368,14 @@ const configGen = ({
 
     /*
     Comments
-    9,407,365 monthly downloads
+    9,242,725 monthly downloads
     Additional ESLint rules for ESLint directive comments. / Additional ESLint rules for ESLint directive comments.
     https://github.com/eslint-community/eslint-plugin-eslint-comments#readme / https://github.com/mysticatea/eslint-plugin-eslint-comments#readme
     Requires: eslint-comments, @eslint-community/eslint-comments
   */
     ...(disable.includes("@eslint-community/eslint-plugin-eslint-comments") ||
     disable.includes("eslint-plugin-eslint-comments") ||
-    threshold > 9_407_365
+    threshold > 9_242_725
       ? []
       : [
           {
@@ -1398,12 +1396,12 @@ const configGen = ({
 
     /*
     Storybook
-    9,951,165 monthly downloads
+    9,816,261 monthly downloads
     Best practice rules for Storybook
     https://github.com/storybookjs/eslint-plugin-storybook#readme
     Requires: storybook, react-hooks, import
   */
-    ...(disable.includes("eslint-plugin-storybook") || threshold > 9_951_165
+    ...(disable.includes("eslint-plugin-storybook") || threshold > 9_816_261
       ? []
       : [
           {
@@ -1419,13 +1417,13 @@ const configGen = ({
 
     /*
     Storybook - Main
-    9,951,165 monthly downloads
+    9,816,261 monthly downloads
     Best practice rules for Storybook
     https://github.com/storybookjs/eslint-plugin-storybook#readme
     Requires: storybook
   */
     ...(disable.includes("eslint-plugin-storybook/main") ||
-    threshold > 9_951_165
+    threshold > 9_816_261
       ? []
       : [
           {
@@ -1441,12 +1439,12 @@ const configGen = ({
 
     /*
     Standard
-    12,332,667 monthly downloads
+    12,190,821 monthly downloads
     JavaScript Standard Style - ESLint Shareable Config
     https://github.com/standard/eslint-config-standard
     Requires: import, n, promise
   */
-    ...(disable.includes("eslint-config-standard") || threshold > 12_332_667
+    ...(disable.includes("eslint-config-standard") || threshold > 12_190_821
       ? []
       : [
           {
@@ -1469,12 +1467,12 @@ const configGen = ({
 
     /*
     AirBnb
-    15,551,106 monthly downloads
+    15,312,381 monthly downloads
     Airbnb's ESLint config, following our styleguide
     https://github.com/airbnb/javascript
     Requires: jsx-a11y, import, react, react-hooks
   */
-    ...(disable.includes("eslint-config-airbnb") || threshold > 15_551_106
+    ...(disable.includes("eslint-config-airbnb") || threshold > 15_312_381
       ? []
       : [
           {
@@ -1482,8 +1480,6 @@ const configGen = ({
             rules: {
               ...compat.extends("airbnb")[0].rules,
               ...compat.extends("airbnb/hooks")[0].rules,
-              // Added to modernize this infrequently updated, but oft used config
-              "no-restricted-syntax": [0, { selector: "ForOfStatement" }],
               ...("eslint-config-airbnb" in override
                 ? override["eslint-config-airbnb"]
                 : {}),
@@ -1493,12 +1489,12 @@ const configGen = ({
 
     /*
     Create React App
-    18,299,855 monthly downloads
+    18,045,409 monthly downloads
     ESLint configuration used by Create React App
     https://github.com/facebook/create-react-app#readme
     Requires: react, react-hooks, import, jsx-a11y, flowtype
   */
-    ...(disable.includes("eslint-config-react-app") || threshold > 18_299_855
+    ...(disable.includes("eslint-config-react-app") || threshold > 18_045_409
       ? []
       : [
           {
@@ -1729,12 +1725,12 @@ const configGen = ({
 
     /*
     Create React App - TS
-    18,299,855 monthly downloads
+    18,045,409 monthly downloads
     ESLint configuration used by Create React App
     https://github.com/facebook/create-react-app#readme
     Requires: @typescript-eslint
   */
-    ...(disable.includes("eslint-config-react-app/ts") || threshold > 18_299_855
+    ...(disable.includes("eslint-config-react-app/ts") || threshold > 18_045_409
       ? []
       : [
           {
@@ -1810,13 +1806,13 @@ const configGen = ({
 
     /*
     Create React App - Jest
-    18,299,855 monthly downloads
+    18,045,409 monthly downloads
     ESLint configuration used by Create React App
     https://github.com/facebook/create-react-app#readme
     Requires: jest, testing-library
   */
     ...(disable.includes("eslint-config-react-app/jest") ||
-    threshold > 18_299_855
+    threshold > 18_045_409
       ? []
       : [
           {
@@ -1866,12 +1862,12 @@ const configGen = ({
 
     /*
     Promises
-    18,753,000 monthly downloads
+    18,497,914 monthly downloads
     Enforce best practices for JavaScript promises
     https://github.com/eslint-community/eslint-plugin-promise
     Requires: promise
   */
-    ...(disable.includes("eslint-plugin-promise") || threshold > 18_753_000
+    ...(disable.includes("eslint-plugin-promise") || threshold > 18_497_914
       ? []
       : [
           {
@@ -1887,12 +1883,12 @@ const configGen = ({
 
     /*
     NextJS
-    19,478,855 monthly downloads
+    19,259,942 monthly downloads
     ESLint plugin for Next.js.
     https://github.com/vercel/next.js#readme
     Requires: @next/next
   */
-    ...(disable.includes("@next/eslint-plugin-next") || threshold > 19_478_855
+    ...(disable.includes("@next/eslint-plugin-next") || threshold > 19_259_942
       ? []
       : [
           {
@@ -1910,13 +1906,13 @@ const configGen = ({
 
     /*
     Testing Library
-    22,609,130 monthly downloads
+    22,287,614 monthly downloads
     ESLint plugin to follow best practices and anticipate common mistakes when writing tests with Testing Library
     https://github.com/testing-library/eslint-plugin-testing-library
     Requires: testing-library
   */
     ...(disable.includes("eslint-plugin-testing-library") ||
-    threshold > 22_609_130
+    threshold > 22_287_614
       ? []
       : [
           {
@@ -1932,14 +1928,14 @@ const configGen = ({
 
     /*
     ES-X
-    24,205,425 monthly downloads
+    23,904,490 monthly downloads
     ESLint plugin about ECMAScript syntactic features. / ESLint plugin about ECMAScript syntactic features.
     https://github.com/eslint-community/eslint-plugin-es-x#readme / https://github.com/mysticatea/eslint-plugin-es#readme
     Requires: es, es-x
   */
     ...(disable.includes("eslint-plugin-es-x") ||
     disable.includes("eslint-plugin-es") ||
-    threshold > 24_205_425
+    threshold > 23_904_490
       ? []
       : [
           {
@@ -1958,14 +1954,14 @@ const configGen = ({
 
     /*
     Node.js
-    24,580,953 monthly downloads
+    24,270,791 monthly downloads
     Additional ESLint's rules for Node.js / Additional ESLint's rules for Node.js
     https://github.com/eslint-community/eslint-plugin-n#readme / https://github.com/mysticatea/eslint-plugin-node#readme
     Requires: node, n
   */
     ...(disable.includes("eslint-plugin-n") ||
     disable.includes("eslint-plugin-node") ||
-    threshold > 24_580_953
+    threshold > 24_270_791
       ? []
       : [
           {
@@ -1999,20 +1995,18 @@ const configGen = ({
 
     /*
     AirBnb Base
-    28,178,886 monthly downloads
+    27,773,282 monthly downloads
     Airbnb's base JS ESLint config, following our styleguide
     https://github.com/airbnb/javascript
     Requires: import
   */
-    ...(disable.includes("eslint-config-airbnb-base") || threshold > 28_178_886
+    ...(disable.includes("eslint-config-airbnb-base") || threshold > 27_773_282
       ? []
       : [
           {
             files,
             rules: {
               ...compat.extends("airbnb-base")[0].rules,
-              // Added to modernize this infrequently updated, but oft used config
-              "no-restricted-syntax": [0, { selector: "ForOfStatement" }],
               ...("eslint-config-airbnb-base" in override
                 ? override["eslint-config-airbnb-base"]
                 : {}),
@@ -2022,12 +2016,12 @@ const configGen = ({
 
     /*
     Jest
-    43,307,757 monthly downloads
+    42,637,013 monthly downloads
     ESLint rules for Jest
     https://github.com/jest-community/eslint-plugin-jest#readme
     Requires: jest
   */
-    ...(disable.includes("eslint-plugin-jest") || threshold > 43_307_757
+    ...(disable.includes("eslint-plugin-jest") || threshold > 42_637_013
       ? []
       : [
           {
@@ -2060,12 +2054,12 @@ const configGen = ({
 
     /*
     JSX A11y
-    53,900,637 monthly downloads
+    53,135,545 monthly downloads
     Static AST checker for accessibility rules on JSX elements.
     https://github.com/jsx-eslint/eslint-plugin-jsx-a11y#readme
     Requires: jsxA11y
   */
-    ...(disable.includes("eslint-plugin-jsx-a11y") || threshold > 53_900_637
+    ...(disable.includes("eslint-plugin-jsx-a11y") || threshold > 53_135_545
       ? []
       : [
           {
@@ -2081,12 +2075,12 @@ const configGen = ({
 
     /*
     React Hooks
-    61,494,570 monthly downloads
+    60,674,980 monthly downloads
     ESLint rules for React Hooks
     https://reactjs.org/
     Requires: react-hooks
   */
-    ...(disable.includes("eslint-plugin-react-hooks") || threshold > 61_494_570
+    ...(disable.includes("eslint-plugin-react-hooks") || threshold > 60_674_980
       ? []
       : [
           {
@@ -2102,12 +2096,12 @@ const configGen = ({
 
     /*
     React
-    75,632,051 monthly downloads
+    74,728,491 monthly downloads
     React specific linting rules for ESLint
     https://github.com/jsx-eslint/eslint-plugin-react
     Requires: react
   */
-    ...(disable.includes("eslint-plugin-react") || threshold > 75_632_051
+    ...(disable.includes("eslint-plugin-react") || threshold > 74_728_491
       ? []
       : [
           {
@@ -2136,12 +2130,12 @@ const configGen = ({
 
     /*
     ESLint
-    90,806,584 monthly downloads
+    89,641,748 monthly downloads
     ESLint JavaScript language implementation
     https://eslint.org
     Requires: (None)
   */
-    ...(disable.includes("@eslint/js") || threshold > 90_806_584
+    ...(disable.includes("@eslint/js") || threshold > 89_641_748
       ? []
       : [
           {
@@ -2155,14 +2149,14 @@ const configGen = ({
 
     /*
     Import
-    125,427,701 monthly downloads
+    123,777,262 monthly downloads
     Import with sanity. / This plugin adds `TypeScript` support to `eslint-plugin-import`
     https://github.com/import-js/eslint-plugin-import / https://github.com/import-js/eslint-import-resolver-typescript#readme
     Requires: import
   */
     ...(disable.includes("eslint-plugin-import") ||
     disable.includes("eslint-import-resolver-typescript") ||
-    threshold > 125_427_701
+    threshold > 123_777_262
       ? []
       : [
           {
@@ -2228,7 +2222,7 @@ const configGen = ({
 
     /*
     Prettier
-    141,310,223 monthly downloads
+    139,407,428 monthly downloads
     Runs prettier as an eslint rule / Turns off all rules that are unnecessary or might conflict with Prettier. / TypeScript definitions for eslint-config-prettier / TypeScript definitions for eslint-plugin-prettier
     https://github.com/prettier/eslint-plugin-prettier#readme / https://github.com/prettier/eslint-config-prettier#readme / https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/eslint-config-prettier / https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/eslint-plugin-prettier
     Requires: prettier, @typescript-eslint, @babel, vue, unicorn, babel, flowtype, react, standard
@@ -2237,7 +2231,7 @@ const configGen = ({
     disable.includes("eslint-config-prettier") ||
     disable.includes("@types/eslint-config-prettier") ||
     disable.includes("@types/eslint-plugin-prettier") ||
-    threshold > 141_310_223
+    threshold > 139_407_428
       ? []
       : [
           {
@@ -2263,7 +2257,7 @@ const configGen = ({
 
     /*
     TypeScript
-    243,512,020 monthly downloads
+    240,441,343 monthly downloads
     Tooling which enables you to use TypeScript with ESLint / An ESLint custom parser which leverages TypeScript ESTree / TypeScript plugin for ESLint
     https://github.com/typescript-eslint/typescript-eslint#readme / https://github.com/typescript-eslint/typescript-eslint#readme / https://github.com/typescript-eslint/typescript-eslint#readme
     Requires: @typescript-eslint
@@ -2271,7 +2265,7 @@ const configGen = ({
     ...(disable.includes("typescript-eslint") ||
     disable.includes("@typescript-eslint/parser") ||
     disable.includes("@typescript-eslint/eslint-plugin") ||
-    threshold > 243_512_020
+    threshold > 240_441_343
       ? []
       : [
           {

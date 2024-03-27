@@ -17,8 +17,6 @@ export default {
   ],
   requiredPlugins: ["jsx-a11y", "import", "react", "react-hooks"],
   rules: `compat.extends("airbnb")[0].rules,
-    ...compat.extends("airbnb/hooks")[0].rules,
-    // Added to modernize this infrequently updated, but oft used config
-    "no-restricted-syntax": [0, { selector: "ForOfStatement" }]`,
+    ...compat.extends("airbnb/hooks")[0].rules`,
 } satisfies Config;
 // EOF
