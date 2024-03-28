@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/functional.ts
+// PathMark: ./src/definitions/configs/functional-ts.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

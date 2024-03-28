@@ -1,3 +1,4 @@
+// PathMark: ./src/definitions/configs/id-groups.ts
 export const testIds = [
   "jest",
   "cra/jest",
@@ -30,3 +31,4 @@ export const reactIds = [
   "standard-jsx",
   "storybook",
 ];
+// EOF
