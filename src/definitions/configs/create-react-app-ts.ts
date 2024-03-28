@@ -4,7 +4,7 @@ import type { Config } from ".";
 
 export default {
   definitions: `{
-    files: ['**/*.ts?(x)'],
+    files: tsFiles,
     languageOptions: {
       globals: {
         browser: true,

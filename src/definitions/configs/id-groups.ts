@@ -1,4 +1,4 @@
-export const tesIds = [
+export const testIds = [
   "jest",
   "cra/jest",
   "jest-dom",

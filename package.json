@@ -6,14 +6,17 @@
   "files": [
     "index.js",
     "src/config.js",
-    "current.json"
+    "current-ts.json",
+    "current-js.json",
+    "current-test.json"
   ],
   "scripts": {
     "test": "npm run predeploy && npm run lint && npx jest",
-    "current": "npx eslint --print-config src/generate.ts > current.json",
+    "current:ts": "npx eslint --print-config src/generate.ts > current-ts.json",
+    "current:js": "npx eslint --print-config src/config.js > current-js.json",
     "current:test": "npx eslint --print-config test/basic.test.js > current-test.json",
-    "lint": "npx eslint --fix -c ./eslint.config.js --max-warnings 0 .",
-    "generate": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/generate.ts && npm run current && npm run current:test && npx eslint --fix src/config.js test/basic.test.js",
+    "lint": "npx eslint --fix -c ./eslint.config.js --max-warnings 0 . --cache",
+    "generate": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/generate.ts && npm run current:ts && npm run current:js && npm run current:test && npm run lint",
     "predeploy": "npx update-browserslist-db@latest -y"
   },
   "license": "MIT",

@@ -1,11 +1,11 @@
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
-/* eslint-disable jsdoc/check-tag-names */
-/* eslint-disable tsdoc/syntax */
 // PathMark: ./test/basic.test.js
-const multiply = (
-  /** @type { number } */ first,
-  /** @type { number } */ second,
-) => first * second;
+/**
+ * @param {number} first - numberator
+ * @param {number} second - denominator
+ * @returns {number} - returning a number
+ */
+const multiply = (first, second) => first * second;
 
 /**
  *
@@ -13,13 +13,15 @@ const multiply = (
 class TestCLass {
   /**
    *
-   * @param number - number
+   * @param {number} number - hello
    */
-  constructor(/** @type { number } */ number) {
+  constructor(number) {
     this.num = number ?? 0;
   }
 
-  /** */
+  /**
+   * @returns {number} sdfg
+   */
   getNum() {
     return this.num;
   }

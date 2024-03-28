@@ -4,7 +4,7 @@ import type { Config } from ".";
 
 export default {
   definitions: `{
-    files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts'],
+    files: tsFiles,
     ${RULES}
   }`,
   id: "ts",

@@ -51,7 +51,7 @@ const getDate = memoize(getDateLong);
  * Gets the download count for a given npm package
  * @param name - The name of the package.
  */
-async function getDownloadCountLong(name: string) {
+async function getDownloadCountLong(name: string): Promise<number | undefined> {
   const date = new Date();
   date.setDate(date.getDate() - LAST_DAY_INTERVAL);
   const request = `${BASE_API}/${getDate(date)}:${getDate(new Date())}/${name.trim()}`;

@@ -1,28 +1,28 @@
 // PathMark: ./src/definitions/configs/functional.ts
 import { RULES } from "../../constants";
 import { type Config } from ".";
-import { reactIds, tesIds } from "./id-groups";
+import { reactIds, testIds } from "./id-groups";
 
 export default {
   conflicts: {
-    "functional/functional-parameters": [...tesIds, ...reactIds],
+    "functional/functional-parameters": [...testIds, ...reactIds],
     "functional/immutable-data": ["promises"],
     "functional/no-classes": reactIds,
     "functional/no-conditional-statements": [
-      ...tesIds,
+      ...testIds,
       ...reactIds,
       "node",
       "ts",
     ],
-    "functional/no-expression-statements": [...tesIds, ...reactIds],
+    "functional/no-expression-statements": [...testIds, ...reactIds],
     "functional/no-let": ["promises"],
     "functional/no-loop-statements": ["unicorn"],
-    "functional/no-return-void": [...tesIds, ...reactIds],
+    "functional/no-return-void": [...testIds, ...reactIds],
     "functional/no-throw-statements": [
       "promises",
       "node",
       ...reactIds,
-      ...tesIds,
+      ...testIds,
     ],
     "functional/prefer-immutable-types": ["unicorn"],
   },

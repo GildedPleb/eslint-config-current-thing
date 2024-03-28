@@ -3,7 +3,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import JSONConfig from "../current.json" assert { type: "json" };
+import JSONConfigJs from "../current-js.json" assert { type: "json" };
+import JSONConfigTest from "../current-test.json" assert { type: "json" };
+import JSONConfigTs from "../current-ts.json" assert { type: "json" };
 import {
   COUNT_SLUG,
   LAST_DAY_INTERVAL,
@@ -56,7 +58,9 @@ const filename = fileURLToPath(import.meta.url);
 const baseDirectory = path.dirname(filename);
 const compat = new FlatCompat({ baseDirectory });
 
-const files = ["**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}"];
+const jsFiles = ['**/*.js', '**/*.jsx', '**/*.mjs', '**/*.cjs'];
+const tsFiles = ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"];
+const files = [...jsFiles, ...tsFiles];
 
 const testFiles = [
   "**/*.test.*",
@@ -73,6 +77,7 @@ const defaultOptions = { disable: [], override: {}, threshold: ${MINIMUMS} };
 
 /**
  * @param {{ disable: string[], override: Record<string, Record<string, number | string>>, threshold: number }} default - Options
+ * @returns { import("eslint-define-config").FlatESLintConfig[] } an ESLint Flat Config list
  */
 const configGen = ({
   disable = [],
@@ -202,7 +207,17 @@ try {
 
 const newPackages = await fetchEslintPlugins();
 
-const ruleCount = `${COUNT_SLUG} ${Object.keys((JSONConfig as { rules: Record<string, unknown> }).rules).length} rules.`;
+const tsRuleCount = Object.keys(
+  (JSONConfigTs as { rules: Record<string, unknown> }).rules,
+).length;
+const jsRuleCount = Object.keys(
+  (JSONConfigJs as { rules: Record<string, unknown> }).rules,
+).length;
+const testRuleCount = Object.keys(
+  (JSONConfigTest as { rules: Record<string, unknown> }).rules,
+).length;
+
+const ruleCount = `${COUNT_SLUG} popularity-based opinions on ${tsRuleCount} typescript rules, ${jsRuleCount} javascript rules, and ${testRuleCount} testing rules.`;
 
 const underConsideration = `${README_SLUG}
 

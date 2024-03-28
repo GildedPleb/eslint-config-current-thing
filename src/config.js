@@ -82,7 +82,9 @@ const filename = fileURLToPath(import.meta.url);
 const baseDirectory = path.dirname(filename);
 const compat = new FlatCompat({ baseDirectory });
 
-const files = ["**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}"];
+const jsFiles = ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.cjs"];
+const tsFiles = ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"];
+const files = [...jsFiles, ...tsFiles];
 
 const testFiles = [
   "**/*.test.*",
@@ -99,6 +101,7 @@ const defaultOptions = { disable: [], override: {}, threshold: 400_000 };
 
 /**
  * @param {{ disable: string[], override: Record<string, Record<string, number | string>>, threshold: number }} default - Options
+ * @returns { import("eslint-define-config").FlatESLintConfig[] } an ESLint Flat Config list
  */
 const configGen = ({
   disable = [],
@@ -321,7 +324,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: ["*.ts", "*.tsx"],
+            files: tsFiles,
             rules: {
               ...shopify.configs.typescript.overrides[0].rules,
 
@@ -463,7 +466,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: ["*.ts", "*.tsx"],
+            files: tsFiles,
             rules: {
               ...shopify.configs.prettier.overrides[0].rules,
 
@@ -557,7 +560,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: ["*.ts", "*.tsx"],
+            files: tsFiles,
             languageOptions: {
               parserOptions: {
                 ecmaFeatures: {
@@ -639,7 +642,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: ["*.ts", "*.tsx"],
+            files: tsFiles,
             rules: {
               ...shopify.configs["typescript-type-checking"].overrides[0].rules,
 
@@ -782,7 +785,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: tsFiles,
             rules: {
               ...functional.configs["external-typescript-recommended"].rules,
 
@@ -921,7 +924,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: tsFiles,
             rules: {
               "tsdoc/syntax": 2,
 
@@ -1060,7 +1063,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: tsFiles,
             rules: {
               ...standardTS.rules,
               // Types can be inferred by typescript
@@ -1172,7 +1175,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: ["*.ts", "*.tsx"],
+            files: tsFiles,
             rules: {
               ...reactNativeConfig.overrides[1].rules,
               "functional/functional-parameters": 0,
@@ -1403,26 +1406,14 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: jsFiles,
             rules: {
-              ...jsdoc.configs["flat/recommended-typescript"].rules,
-              "jsdoc/check-param-names": [
-                2,
-                { checkDestructured: false, enableFixer: false },
-              ],
-              "jsdoc/require-param": [2, { checkDestructured: false }],
-              // Rules needed for TSDoc Compatibility
-              "jsdoc/require-param-type": 0,
-              "jsdoc/require-returns": 0,
-              "jsdoc/require-returns-type": 0,
-              // Presently not implemented in TSDocs https://github.com/microsoft/tsdoc/issues/234
-              "jsdoc/require-yields": 0,
+              ...jsdoc.configs["flat/recommended"].rules,
 
               ...("eslint-plugin-jsdoc" in override
                 ? override["eslint-plugin-jsdoc"]
                 : {}),
             },
-            settings: { jsdoc: { mode: "typescript" } },
           },
         ]),
 
@@ -1462,7 +1453,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: tsFiles,
             rules: {
               ...compat.extends("airbnb-typescript")[0].rules,
 
@@ -1921,7 +1912,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: ["**/*.ts?(x)"],
+            files: tsFiles,
             languageOptions: {
               globals: {
                 browser: true,
@@ -2463,7 +2454,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: tsFiles,
             rules: {
               ...importPlugin.configs.typescript.rules,
 
@@ -2532,7 +2523,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"],
+            files: tsFiles,
             rules: {
               ...tseslint.configs.recommendedTypeChecked[1].rules,
               ...tseslint.configs.recommendedTypeChecked[2].rules,
