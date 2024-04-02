@@ -22,7 +22,7 @@ export default {
   }`,
   id: "shopify",
   name: "Shopify",
-  nameSecondary: "React/TS",
+  nameSecondary: "React-TS",
   packages: [
     {
       name: "shopify",

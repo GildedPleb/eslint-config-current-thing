@@ -21,12 +21,7 @@ const dirname = path.dirname(filename);
 
 const generateCode = `// PathMark: ./src/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
-/* eslint-disable tsdoc/syntax */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable sonarjs/no-duplicate-string */
-/* eslint-disable jsdoc/no-types */
 /* eslint-disable id-length */
 
 /*
@@ -37,17 +32,21 @@ const generateCode = `// PathMark: ./src/config.js
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-${configs.flatMap(({ packages }) =>
-  packages.map(({ name, package: pack, requiresImport }) =>
-    requiresImport ? `import ${name} from "${pack}";` : "",
-  ),
-).join(`
+${configs
+  .flatMap(({ packages }) =>
+    packages.map(({ name, package: pack, requiresImport }) =>
+      requiresImport ? `import ${name} from "${pack}";` : "",
+    ),
+  )
+  .filter(Boolean).join(`
 `)}
-${plugins.flatMap(({ packages }) =>
-  packages.map(({ name, package: pack, requiresImport }) =>
-    requiresImport ? `import ${name} from "${pack}";` : "",
-  ),
-).join(`
+${plugins
+  .flatMap(({ packages }) =>
+    packages.map(({ name, package: pack, requiresImport }) =>
+      requiresImport ? `import ${name} from "${pack}";` : "",
+    ),
+  )
+  .filter(Boolean).join(`
 `)}
 import { FlatCompat } from "@eslint/eslintrc";
 import globals from "globals";
@@ -58,7 +57,7 @@ const filename = fileURLToPath(import.meta.url);
 const baseDirectory = path.dirname(filename);
 const compat = new FlatCompat({ baseDirectory });
 
-const jsFiles = ['**/*.js', '**/*.jsx', '**/*.mjs', '**/*.cjs'];
+const jsFiles = ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.cjs"];
 const tsFiles = ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"];
 const files = [...jsFiles, ...tsFiles];
 

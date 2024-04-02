@@ -6,7 +6,7 @@ export const testIds = [
   "jest-format",
   "no-only-test",
   "testing-library",
-  "shopify/react/test",
+  "shopify/react-test",
 ];
 export const reactIds = [
   "airbnb",
@@ -23,9 +23,9 @@ export const reactIds = [
   "rn/ts",
   "rn/flowtype",
   "rn-p",
-  "shopify/react/ts",
+  "shopify/react-ts",
   "shopify/react",
-  "shopify/react/test",
+  "shopify/react-test",
   "shopify/polaris",
   "standard-react",
   "standard-jsx",

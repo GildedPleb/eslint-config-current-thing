@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/shopify-ts-type-check.ts
+// PathMark: ./src/definitions/configs/shopify-ts-typecheck.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
@@ -9,7 +9,7 @@ export default {
   }`,
   id: "shopify",
   name: "Shopify",
-  nameSecondary: "TS/TypeCheck",
+  nameSecondary: "TS-TypeCheck",
   packages: [
     {
       name: "shopify",

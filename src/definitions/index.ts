@@ -81,11 +81,11 @@ const ids = new Set<string>();
 for (const config of configsWithCount) {
   const hasSecondary =
     config.nameSecondary !== undefined && config.nameSecondary !== "";
-  const second = hasSecondary ? `/${config.nameSecondary?.toLowerCase()}` : "";
+  const second = hasSecondary ? `-${config.nameSecondary?.toLowerCase()}` : "";
   const id = `${config.id}${second}`;
-  if (ids.has(id)) {
+  if (id.includes("/")) throw new Error(`Ids must NOT include "/" got "${id}"`);
+  if (ids.has(id))
     throw new Error(`Ids must be unique. "${id}" has duplicates`);
-  }
 
   ids.add(id);
 }

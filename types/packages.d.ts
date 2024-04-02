@@ -1,3 +1,5 @@
+// eslint-disable-next-line @eslint-community/eslint-comments/disable-enable-pair
+/* eslint-disable functional/no-mixed-types */
 // PathMark: ./types/packages.d.ts
 declare module "@babel/eslint-plugin";
 declare module "@eslint-community/eslint-plugin-eslint-comments";
@@ -49,4 +51,114 @@ declare module "eslint-plugin-testing-library";
 declare module "eslint-plugin-ft-flow";
 declare module "eslint-config-standard";
 declare module "eslint-plugin-unused-imports";
+declare module "eslint/use-at-your-own-risk" {
+  interface ParserOptions {
+    allowReserved?: boolean;
+    ecmaFeatures?: {
+      globalReturn?: boolean;
+      impliedStrict?: boolean;
+      jsx?: boolean;
+    };
+    ecmaVersion?:
+      | 3
+      | 5
+      | 6
+      | 7
+      | 8
+      | 9
+      | 10
+      | 11
+      | 12
+      | 13
+      | 14
+      | 15
+      | 2015
+      | 2016
+      | 2017
+      | 2018
+      | 2019
+      | 2020
+      | 2021
+      | 2022
+      | 2023
+      | 2024;
+    sourceType?: "module" | "script";
+  }
+
+  interface OverrideConfigData extends Omit<ConfigData, "overrides"> {
+    excludedFiles?: string | string[];
+    files: string | string[];
+  }
+
+  interface LintMessage {
+    column: number | undefined;
+    endColumn?: number;
+    endLine?: number;
+    fatal?: boolean;
+    fix?: {
+      range: [number, number];
+      text: string;
+    };
+    line: number | undefined;
+    message: string;
+    messageId?: string;
+    nodeType?: null | string;
+    ruleId: null | string;
+    severity: 0 | 1 | 2;
+    suggestions?: SuggestionResult[];
+  }
+
+  interface SuggestionResult {
+    desc: string;
+    fix: {
+      range: [number, number];
+      text: string;
+    };
+    messageId?: string;
+  }
+
+  interface LintResult {
+    errorCount: number;
+    fatalErrorCount: number;
+    filePath: string;
+    fixableErrorCount: number;
+    fixableWarningCount: number;
+    messages?: LintMessage[];
+    output?: string;
+    source?: string;
+    warningCount: number;
+  }
+
+  type Rule = number | number[] | string | string[];
+  interface ConfigData {
+    env?: Record<string, boolean>;
+    extends?: string | string[];
+    ignorePatterns?: string | string[];
+    noInlineConfig?: boolean;
+    parser?: string;
+    parserOptions?: ParserOptions;
+    plugins?: string[];
+    processor?: string;
+    reportUnusedDisableDirectives?: boolean;
+    root?: boolean;
+    rules?: Record<string, Rule>;
+  }
+
+  interface ESLintOptions {
+    fix: boolean;
+    overrideConfig?: ConfigData;
+    overrideConfigFile?: boolean | string;
+  }
+
+  /** */
+  export class FlatESLint {
+    constructor(options?: ESLintOptions);
+    calculateConfigForFile(filePath: string): Promise<ConfigData | undefined>;
+    lintText(
+      code: string,
+      options?: { filePath?: string; warnIgnored?: boolean },
+    ): Promise<LintResult[]>;
+  }
+}
+
 // EOF

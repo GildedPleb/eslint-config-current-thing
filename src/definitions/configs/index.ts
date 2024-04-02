@@ -52,7 +52,7 @@ import shopifyReact from "./shopify-react";
 import shopifyReactTest from "./shopify-react-test";
 import shopifyReactTs from "./shopify-react-ts";
 import shopifyTs from "./shopify-ts";
-import shopifyTsTypeCheck from "./shopify-ts-type-check";
+import shopifyTsTypeCheck from "./shopify-ts-typecheck";
 import sonarjs from "./sonarjs";
 import standard from "./standard";
 import standardJsx from "./standard-jsx";

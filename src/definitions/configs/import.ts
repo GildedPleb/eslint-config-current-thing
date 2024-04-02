@@ -52,7 +52,7 @@ export default {
     },
     ${RULES}
   }`,
-  id: "import",
+  id: "import-js",
   name: "Import",
   packages: [
     {

@@ -9,7 +9,7 @@ export default {
   }`,
   id: "shopify",
   name: "Shopify",
-  nameSecondary: "Prettier/TS",
+  nameSecondary: "Prettier-TS",
   packages: [
     {
       name: "shopify",

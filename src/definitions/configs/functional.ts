@@ -30,7 +30,7 @@ export default {
     files,
     ${RULES}
   }`,
-  id: "fn",
+  id: "functional",
   name: "Functional",
   packages: [
     {

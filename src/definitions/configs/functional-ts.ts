@@ -7,7 +7,7 @@ export default {
     files: tsFiles,
     ${RULES}
   }`,
-  id: "fn",
+  id: "functional",
   name: "Functional",
   nameSecondary: "TS",
   packages: [

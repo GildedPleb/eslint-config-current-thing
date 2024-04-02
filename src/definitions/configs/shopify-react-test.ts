@@ -22,7 +22,7 @@ export default {
   }`,
   id: "shopify",
   name: "Shopify",
-  nameSecondary: "React/Test",
+  nameSecondary: "React-Test",
   packages: [
     {
       name: "shopify",
