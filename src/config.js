@@ -2588,7 +2588,6 @@ const configGen = ({
             rules: {
               ...tseslint.configs.recommendedTypeChecked[1].rules,
               ...tseslint.configs.recommendedTypeChecked[2].rules,
-              "@typescript-eslint/indent": 0,
               "functional/no-conditional-statements": 0,
               ...("typescript-eslint" in override
                 ? override["typescript-eslint"]
