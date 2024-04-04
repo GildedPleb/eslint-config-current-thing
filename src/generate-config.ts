@@ -13,6 +13,7 @@ const dirname = path.dirname(filename);
 const generateCode = `// PathMark: ./src/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable sonarjs/no-duplicate-string */
+/* eslint-disable sonarjs/cognitive-complexity */
 /* eslint-disable id-length */
 
 /*

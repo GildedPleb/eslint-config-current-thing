@@ -31,42 +31,49 @@ export function isMoreThanRandomDaysInThePast(dateString: string): boolean {
   return daysDiff > Math.random() * 100;
 }
 
+const ADD = "[~~~+]";
+const SUB = "[~~~-]";
+
+const parseDif = (results: diff.Change[]): string => {
+  let accumulatedString = "";
+
+  for (const part of results) {
+    // Use color coding to mark added and removed parts
+    const color =
+      part.added === true ? "green" : part.removed === true ? "red" : "grey";
+    // eslint-disable-next-line security/detect-object-injection
+    accumulatedString += chalk[color](part.value);
+    if (color === "green") accumulatedString += ADD;
+    if (color === "red") accumulatedString += SUB;
+  }
+
+  return accumulatedString;
+};
+
 /**
  * Print the diff of two string inputs by line
  */
 export function printDiffLines(oldString: string, newString: string): void {
   const diffResult = diff.diffChars(oldString, newString);
 
-  let accumulatedString = "";
-
-  for (const part of diffResult) {
-    // Use color coding to mark added and removed parts
-    const color =
-      part.added === true ? "green" : part.removed === true ? "red" : "grey";
-    // eslint-disable-next-line security/detect-object-injection
-    accumulatedString += chalk[color](part.value);
-    if (color === "green") accumulatedString += "[~~~+]";
-    if (color === "red") accumulatedString += "[~~~-]";
-  }
-
   // Split the accumulated string into lines
-  const lines = accumulatedString.split("\n");
+  const lines = parseDif(diffResult).split("\n");
 
   // Filter and print lines with differences
   for (const [index, line] of lines.entries()) {
     let changes = "";
     let pad = "   ";
     let editedLine = line;
-    if (line.includes("[~~~+]")) {
+    if (line.includes(ADD)) {
       changes += chalk.green("+");
       pad = pad.slice(1);
-      editedLine = editedLine.replaceAll("[~~~+]", "");
+      editedLine = editedLine.replaceAll(ADD, "");
     }
 
-    if (line.includes("[~~~-]")) {
+    if (line.includes(SUB)) {
       changes += chalk.red("-");
       pad = pad.slice(1);
-      editedLine = editedLine.replaceAll("[~~~-]", "");
+      editedLine = editedLine.replaceAll(SUB, "");
     }
 
     if (changes !== "") {

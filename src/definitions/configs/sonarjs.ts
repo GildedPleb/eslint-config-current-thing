@@ -17,9 +17,6 @@ export default {
     },
   ],
   requiredPlugins: ["sonarjs"],
-  rules: `...sonarjs.configs.recommended.rules,
-    // Complexity can not be simplified to a linear scale. If it could, it
-    // would be simple, not complex.
-    "sonarjs/cognitive-complexity": 0,`,
+  rules: `...sonarjs.configs.recommended.rules,`,
 } satisfies Config;
 // EOF

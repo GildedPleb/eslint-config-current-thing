@@ -7,8 +7,7 @@
 /* eslint-disable id-length */
 
 /*
-  This file is fully generated, to edit it change ./generate.ts
-  Generated on 4/4/2024
+  This file is fully generated, to edit it change ./generate-conflicts.ts
 */
 
 import path from "node:path";
