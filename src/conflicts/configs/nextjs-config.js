@@ -206,8 +206,6 @@ const configGen = ({
             files,
             rules: {
               ...nextjs.configs.recommended.rules,
-              // Irrelevant for broad JS, and pollutes logs when it doesn't apply.
-              "@next/next/no-html-link-for-pages": 0,
               ...("@next/eslint-plugin-next" in override
                 ? override["@next/eslint-plugin-next"]
                 : {}),

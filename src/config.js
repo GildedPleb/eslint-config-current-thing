@@ -2119,8 +2119,6 @@ const configGen = ({
             files,
             rules: {
               ...nextjs.configs.recommended.rules,
-              // Irrelevant for broad JS, and pollutes logs when it doesn't apply.
-              "@next/next/no-html-link-for-pages": 0,
 
               ...("@next/eslint-plugin-next" in override
                 ? override["@next/eslint-plugin-next"]
@@ -2390,7 +2388,7 @@ const configGen = ({
             files,
             rules: {
               ...eslint.configs.recommended.rules,
-
+              "@next/next/no-html-link-for-pages": 0,
               ...("@eslint/js" in override ? override["@eslint/js"] : {}),
             },
           },
@@ -2536,6 +2534,7 @@ const configGen = ({
               "unicorn/no-nested-ternary": 0,
               "wrap-iife": 0,
               ...prettierConfig.rules,
+              "@next/next/no-html-link-for-pages": 0,
               "functional/functional-parameters": 0,
               "functional/no-classes": 0,
               "functional/no-conditional-statements": 0,
@@ -2577,6 +2576,7 @@ const configGen = ({
             rules: {
               ...tseslint.configs.recommendedTypeChecked[1].rules,
               ...tseslint.configs.recommendedTypeChecked[2].rules,
+              "@next/next/no-html-link-for-pages": 0,
               "functional/no-conditional-statements": 0,
               ...("typescript-eslint" in override
                 ? override["typescript-eslint"]

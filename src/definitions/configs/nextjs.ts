@@ -3,6 +3,9 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  conflicts: {
+    "@next/next/no-html-link-for-pages": ["ts", "prettier", "eslint"],
+  },
   definitions: `{
     files,
     ${RULES}
@@ -17,8 +20,6 @@ export default {
     },
   ],
   requiredPlugins: ["@next/next"],
-  rules: `...nextjs.configs.recommended.rules,
-    // Irrelevant for broad JS, and pollutes logs when it doesn't apply.
-    "@next/next/no-html-link-for-pages": 0,`,
+  rules: `...nextjs.configs.recommended.rules,`,
 } satisfies Config;
 // EOF
