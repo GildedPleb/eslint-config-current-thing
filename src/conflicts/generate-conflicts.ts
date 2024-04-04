@@ -68,8 +68,7 @@ for (const configContext of configs) {
 /* eslint-disable id-length */
 
 /*
-  This file is fully generated, to edit it change ./generate.ts
-  Generated on ${new Date().toLocaleDateString()}
+  This file is fully generated, to edit it change ./generate-conflicts.ts
 */
 
 import path from "node:path";

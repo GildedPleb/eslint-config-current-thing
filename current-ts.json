@@ -1322,6 +1322,10 @@
       0,
       "always"
     ],
+    "@stylistic/semi": [
+      0,
+      "never"
+    ],
     "@typescript-eslint/block-spacing": [
       0,
       "always"
@@ -1361,7 +1365,13 @@
       0
     ],
     "@typescript-eslint/explicit-function-return-type": [
-      0
+      2,
+      {
+        "allowExpressions": true,
+        "allowHigherOrderFunctions": true,
+        "allowTypedFunctionExpressions": true,
+        "allowDirectConstAssertionInArrowFunctions": true
+      }
     ],
     "@typescript-eslint/explicit-member-accessibility": [
       0
@@ -1692,13 +1702,13 @@
     "@typescript-eslint/strict-boolean-expressions": [
       2,
       {
-        "allowAny": false,
-        "allowNullableBoolean": false,
-        "allowNullableNumber": false,
-        "allowNullableObject": true,
-        "allowNullableString": false,
+        "allowString": false,
         "allowNumber": false,
-        "allowString": false
+        "allowNullableObject": false,
+        "allowNullableBoolean": false,
+        "allowNullableString": false,
+        "allowNullableNumber": false,
+        "allowAny": false
       }
     ],
     "@typescript-eslint/triple-slash-reference": [
@@ -2040,10 +2050,6 @@
     "@stylistic/operator-linebreak": [
       0,
       "before"
-    ],
-    "@stylistic/semi": [
-      0,
-      "never"
     ],
     "@typescript-eslint/comma-dangle": [
       0,

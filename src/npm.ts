@@ -44,7 +44,7 @@ async function getInfoLong(name: string): Promise<Info> {
 
 export const getInfo = memoize(getInfoLong);
 
-const getDateLong = (date: Date) => date.toISOString().split("T")[0];
+const getDateLong = (date: Date): string => date.toISOString().split("T")[0];
 
 const getDate = memoize(getDateLong);
 
@@ -73,7 +73,7 @@ export const getDownloadCount = memoize(getDownloadCountLong);
  * Searches NPM for the given list of searches
  * @param searchStrings  - a list of NPM search strings
  */
-async function fetchNPMURLsLong(searchStrings: string[]) {
+async function fetchNPMURLsLong(searchStrings: string[]): Promise<string[]> {
   const pluginNames: string[] = [];
   for await (const search of searchStrings) {
     console.log("Searching for ...", search);

@@ -1,12 +1,7 @@
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
-/* eslint-disable sonarjs/no-unused-collection */
 /* eslint-disable security/detect-object-injection */
 /* eslint-disable no-extra-label */
 /* eslint-disable no-labels */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 // PathMark: ./src/conflicts/get-incompatibles.ts
 
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -28,6 +23,7 @@ import inconsistentKeys from "./code-samples/inconsistent-keys";
 import jsCodeToLint from "./code-samples/javascript";
 import testCodeToLint from "./code-samples/js.test";
 import jsxCodeToLint from "./code-samples/jsx";
+import tsCodeToLintObjectNull from "./code-samples/object-null";
 import regexCodeToLint from "./code-samples/regex";
 import tsxCodeToLint from "./code-samples/tsx";
 import tsCodeToLint from "./code-samples/typescript";
@@ -120,9 +116,13 @@ const fileList: FileList[] = [
     filePath: "./src/conflicts/code-samples/inconsistent-keys.js",
     short: "inconsistent-keys",
   },
+  {
+    def: tsCodeToLintObjectNull,
+    filePath: "./src/conflicts/code-samples/object-null.ts",
+    short: "object-null",
+  },
 ];
 
-// Const filePath = "./src/conflicts/code-samples/javascript.js";
 for await (const { def: codeToLint, filePath, short } of fileList) {
   const database = new Level(`./conflict-cache-${short}`, {
     valueEncoding: "json",
@@ -187,13 +187,6 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
     // ************************************************************************* //
     // Lets figure out the specific rules that conflict of conflicting configs.  //
     // ************************************************************************* //
-    //
-    // However, it might make more sense to compare 1 rule to the entire active config,
-    // as some rules might produce patterns that interfere with the config as a whole, but not with a particular rule.
-    // after all, the winning config will have ALL RULES turned on, so, an inferior rule, which conflicts,
-    // wouldn't just conflict with the one rule, but the entire configuration as it exists.
-    //
-    // The upshot being: 2n vs n * n
 
     for await (const lint of linters) {
       const { config1, config2, currentCheck, es1, es2, json1, json2 } = lint;
@@ -213,7 +206,10 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
 
       mid: for await (const [ruleName, ruleSetting] of json1RuleList) {
         if (isRuleOff(ruleSetting)) continue mid;
-        const jsonOneRule = JSON.parse(JSON.stringify(json1));
+        const jsonOneRule = JSON.parse(JSON.stringify(json1)) as Record<
+          string,
+          Record<string, Rule>
+        >;
         jsonOneRule.rules = { [ruleName]: ruleSetting };
         const innerKeyHash = hashObject({
           codeToLint,
@@ -279,7 +275,10 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
 
       mid: for await (const [ruleName, rule1Setting] of json2RuleList) {
         if (isRuleOff(rule1Setting)) continue mid;
-        const jsonOneRule = JSON.parse(JSON.stringify(json2));
+        const jsonOneRule = JSON.parse(JSON.stringify(json2)) as Record<
+          string,
+          Record<string, Rule>
+        >;
         jsonOneRule.rules = { [ruleName]: rule1Setting };
         const innerKeyHash = hashObject({
           codeToLint,
@@ -371,7 +370,10 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
         json1RuleSetting,
       ] of json1RulesList) {
         if (isRuleOff(json1RuleSetting)) continue mid;
-        const json1OneRule = JSON.parse(JSON.stringify(json1));
+        const json1OneRule = JSON.parse(JSON.stringify(json1)) as Record<
+          string,
+          Record<string, Rule>
+        >;
         json1OneRule.rules = { [json1RuleName]: json1RuleSetting };
         json1RulesZeroed[json1RuleName] = json1RuleSetting;
         const [es1OneRule] = await getLinter(filePath, path1, json1RulesZeroed);
@@ -388,7 +390,10 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
             continue inner;
           }
 
-          const json2OneRule = JSON.parse(JSON.stringify(json2));
+          const json2OneRule = JSON.parse(JSON.stringify(json2)) as Record<
+            string,
+            Record<string, Rule>
+          >;
           json2OneRule.rules = { [json2RuleName]: json2RuleSetting };
           const innerKeyHash = hashObject({
             codeToLint,

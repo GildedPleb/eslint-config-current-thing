@@ -7,6 +7,7 @@ const incompatibles: ConflictCache = {
   },
   "airbnb-ts": {
     "@babel/object-curly-spacing": 0,
+    "@stylistic/semi": 0,
     "prettier/prettier": 0,
   },
   google: {
@@ -17,6 +18,7 @@ const incompatibles: ConflictCache = {
     "@stylistic/operator-linebreak": 0,
     "@stylistic/semi": 0,
     "@typescript-eslint/object-curly-spacing": 0,
+    "@typescript-eslint/semi": 0,
     "prettier/prettier": 0,
   },
   prettier: {
@@ -51,6 +53,7 @@ const incompatibles: ConflictCache = {
   rn: {
     "@stylistic/semi": 0,
     "@typescript-eslint/comma-dangle": 0,
+    "@typescript-eslint/semi": 0,
   },
   "shopify-core": {
     "@stylistic/brace-style": 0,
@@ -63,8 +66,11 @@ const incompatibles: ConflictCache = {
   "shopify-esnext": {
     "@stylistic/arrow-parens": 0,
     "@stylistic/object-curly-spacing": 0,
+    "@stylistic/semi": 0,
     "@typescript-eslint/object-curly-spacing": 0,
+    "@typescript-eslint/semi": 0,
     "prettier/prettier": 0,
+    semi: 0,
   },
   "shopify-prettier": {
     "@stylistic/arrow-parens": 0,
@@ -80,29 +86,35 @@ const incompatibles: ConflictCache = {
     "@stylistic/brace-style": 0,
     "@stylistic/member-delimiter-style": 0,
     "@stylistic/object-curly-spacing": 0,
+    "@stylistic/semi": 0,
     "@typescript-eslint/block-spacing": 0,
     "prettier/prettier": 0,
     "unicorn/no-nested-ternary": 0,
   },
   standard: {
+    "@babel/semi": 0,
     "@stylistic/comma-dangle": 0,
     "@stylistic/quote-props": 0,
     "@typescript-eslint/comma-dangle": 0,
+    "@typescript-eslint/semi": 0,
     "prettier/prettier": 0,
   },
   "standard-jsx": {
     "prettier/prettier": 0,
   },
   "standard-ts": {
+    "@babel/semi": 0,
     "@stylistic/comma-dangle": 0,
     "prettier/prettier": 0,
   },
   stylistic: {
     "@babel/object-curly-spacing": 0,
+    "@babel/semi": 0,
     "@typescript-eslint/brace-style": 0,
     "@typescript-eslint/comma-dangle": 0,
     "@typescript-eslint/member-delimiter-style": 0,
     "@typescript-eslint/object-curly-spacing": 0,
+    "@typescript-eslint/semi": 0,
     "arrow-parens": 0,
     "brace-style": 0,
     "comma-dangle": 0,
@@ -128,6 +140,7 @@ const incompatibles: ConflictCache = {
     "@typescript-eslint/comma-dangle": 0,
     "@typescript-eslint/indent": 0,
     "@typescript-eslint/object-curly-spacing": 0,
+    "@typescript-eslint/semi": 0,
     "indent-legacy": 0,
     "prettier/prettier": 0,
   },

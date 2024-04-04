@@ -230,7 +230,7 @@ async function getExisting(): Promise<Populated[]> {
 /**
  * Uses the NPM API results to find and coalesce all applicable NPM packages
  */
-async function fetchEslintPlugins() {
+async function fetchEslintPlugins(): Promise<Populated[]> {
   console.log("Checking lists...");
   for (const pack of investigating) {
     if (installed.has(pack)) {

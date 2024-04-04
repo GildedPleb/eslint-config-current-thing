@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 4/3/2024
+  Generated on 4/4/2024
 */
 
 import path from "node:path";
@@ -208,26 +208,6 @@ const configGen = ({
             files: tsFiles,
             rules: {
               ...standardTS.rules,
-              // Types can be inferred by typescript
-              "@typescript-eslint/explicit-function-return-type": 0,
-              // "allowNullableObject: false," auto-fixes type `object | undefined` poorly.
-              // When checking a nullable object, `if (obj)...` it auto-fixes to `if (obj != null)...`.
-              // This violates both the "unicorn/no-null" rule and the "eqeqeq" rule, causing unneeded further corrections.
-              // See: https://eslint.org/docs/latest/rules/eqeqeq
-              //      https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v45.0.2/docs/rules/no-null.md
-              //      https://typescript-eslint.io/rules/strict-boolean-expressions/#fixes-and-suggestions
-              "@typescript-eslint/strict-boolean-expressions": [
-                2,
-                {
-                  allowAny: false,
-                  allowNullableBoolean: false,
-                  allowNullableNumber: false,
-                  allowNullableObject: true,
-                  allowNullableString: false,
-                  allowNumber: false,
-                  allowString: false,
-                },
-              ],
               ...("eslint-config-standard-with-typescript" in override
                 ? override["eslint-config-standard-with-typescript"]
                 : {}),

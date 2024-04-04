@@ -11,7 +11,7 @@ import * as diff from "diff";
  *
  * @param dateString - formatted like "3/15/24"
  */
-export function isMoreThan1DaysInThePast(dateString: string) {
+export function isMoreThan1DaysInThePast(dateString: string): boolean {
   const givenDate = new Date(dateString).getTime();
   const currentDate = Date.now();
   const timeDiff = currentDate - givenDate;
@@ -23,7 +23,7 @@ export function isMoreThan1DaysInThePast(dateString: string) {
  *
  * @param dateString - formatted like "3/15/24"
  */
-export function isMoreThanRandomDaysInThePast(dateString: string) {
+export function isMoreThanRandomDaysInThePast(dateString: string): boolean {
   const givenDate = new Date(dateString).getTime();
   const currentDate = Date.now();
   const timeDiff = currentDate - givenDate;
@@ -34,7 +34,7 @@ export function isMoreThanRandomDaysInThePast(dateString: string) {
 /**
  * Print the diff of two string inputs by line
  */
-export function printDiffLines(oldString: string, newString: string) {
+export function printDiffLines(oldString: string, newString: string): void {
   const diffResult = diff.diffChars(oldString, newString);
 
   let accumulatedString = "";

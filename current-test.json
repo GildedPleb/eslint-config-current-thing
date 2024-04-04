@@ -2679,6 +2679,9 @@
     "@typescript-eslint/object-curly-spacing": [
       0
     ],
+    "@typescript-eslint/semi": [
+      0
+    ],
     "arrow-body-style": [
       2
     ],
@@ -6119,9 +6122,6 @@
       2
     ],
     "@typescript-eslint/quotes": [
-      0
-    ],
-    "@typescript-eslint/semi": [
       0
     ],
     "@typescript-eslint/space-before-function-paren": [

@@ -1,7 +1,6 @@
 // PathMark: ./src/conflicts/helpers.ts
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable security/detect-object-injection */
-// eslint-disable-next-line import/no-extraneous-dependencies
 import ESLint from "eslint/use-at-your-own-risk";
 
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -27,7 +26,7 @@ export async function getLinter(
   const eslint = new FlatESLint({
     fix: true,
     overrideConfigFile: fileLocationConfig1,
-    ...(rules ? { overrideConfig: { rules } } : {}),
+    ...(rules === undefined ? {} : { overrideConfig: { rules } }),
   });
   const json = await eslint.calculateConfigForFile(filePath);
   return [eslint, json];
@@ -80,7 +79,7 @@ export async function getSimpleDiff(
   return [output1, output2];
 }
 
-export const isRuleOff = (rule: Rule) =>
+export const isRuleOff = (rule: Rule): boolean =>
   typeof rule === "number" || typeof rule === "string"
     ? rule === 0 || rule === "off"
     : rule[0] === "off" || rule[0] === 0;
@@ -89,7 +88,7 @@ export const isRuleOff = (rule: Rule) =>
 export function mergeIncompatible(
   newRules: ConflictCache,
   oldRules: ConflictCache,
-) {
+): Record<string, Record<string, Rule>> {
   const fullList = { ...oldRules };
   for (const newRule of Object.keys(newRules)) {
     fullList[newRule] =
@@ -105,7 +104,11 @@ export function mergeIncompatible(
 }
 
 /** */
-export function add0Rule(list: ConflictCache, name: string, rule: string) {
+export function add0Rule(
+  list: ConflictCache,
+  name: string,
+  rule: string,
+): Record<string, Record<string, Rule>> {
   const newList = { ...list };
   newList[name] =
     name in list
