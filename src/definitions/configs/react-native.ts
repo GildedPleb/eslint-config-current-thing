@@ -39,6 +39,6 @@ export default {
   ],
   rules: `...reactNativeConfig.rules,
     // Deprecated rule format needs to be overwritten
-    quotes: [0, "single", { "avoidEscape": true, "allowTemplateLiterals": true }],`,
+    quotes: [0, "single", { "allowTemplateLiterals": true, "avoidEscape": true }],`,
 } satisfies Config;
 // EOF

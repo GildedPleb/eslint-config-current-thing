@@ -22,6 +22,7 @@
     "generate:readme": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/generate-readme.ts && npm run lint",
     "generate:conflicts": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/conflicts/generate-conflicts.ts && npm run lint",
     "generate:incompatibles":  "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/conflicts/get-incompatibles.ts && npm run lint",
+    "generate": "npm run generate:conflicts && npm run generate:incompatibles && npm run generate:configs && npm run generate:readme",
     "predeploy": "npx update-browserslist-db@latest -y"
   },
   "license": "MIT",
