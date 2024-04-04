@@ -4350,6 +4350,9 @@
     "jsx-a11y/tabindex-no-positive": [
       2
     ],
+    "unicorn/better-regex": [
+      2
+    ],
     "prefer-regex-literals": [
       2,
       {
@@ -4534,7 +4537,7 @@
       2
     ],
     "regexp/strict": [
-      2
+      0
     ],
     "regexp/use-ignore-case": [
       2
@@ -5852,9 +5855,6 @@
     ],
     "@eslint-community/eslint-comments/no-unused-enable": [
       2
-    ],
-    "unicorn/better-regex": [
-      0
     ],
     "unicorn/catch-error-name": [
       2

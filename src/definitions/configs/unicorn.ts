@@ -5,7 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    // We have more fine grained regex rules with RegExp Package
     ${RULES}
   }`,
   id: "unicorn",
@@ -18,7 +17,6 @@ export default {
     },
   ],
   requiredPlugins: ["unicorn"],
-  rules: `...unicorn.configs.recommended.rules,
-    "unicorn/better-regex": 0,`,
+  rules: `...unicorn.configs.recommended.rules,`,
 } satisfies Config;
 // EOF

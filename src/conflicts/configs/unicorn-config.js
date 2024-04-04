@@ -203,10 +203,8 @@ const configGen = ({
       : [
           {
             files,
-            // We have more fine grained regex rules with RegExp Package
             rules: {
               ...unicorn.configs.recommended.rules,
-              "unicorn/better-regex": 0,
               ...("eslint-plugin-unicorn" in override
                 ? override["eslint-plugin-unicorn"]
                 : {}),

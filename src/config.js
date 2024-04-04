@@ -661,6 +661,7 @@ const configGen = ({
           {
             files,
             rules: {
+              "unicorn/better-regex": 0,
               ...regexp.configs["flat/recommended"].rules,
 
               ...("eslint-plugin-regexp" in override
@@ -1589,14 +1590,13 @@ const configGen = ({
       : [
           {
             files,
-            // We have more fine grained regex rules with RegExp Package
             rules: {
               "@typescript-eslint/no-extra-parens": 0,
               "prettier/prettier": 0,
+              "regexp/strict": 0,
               ...unicorn.configs.recommended.rules,
               "functional/no-loop-statements": 0,
               "functional/prefer-immutable-types": 0,
-              "unicorn/better-regex": 0,
               ...("eslint-plugin-unicorn" in override
                 ? override["eslint-plugin-unicorn"]
                 : {}),

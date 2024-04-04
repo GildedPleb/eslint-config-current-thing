@@ -45,6 +45,9 @@ const incompatibles: ConflictCache = {
     "unicorn/no-nested-ternary": 0,
     "wrap-iife": 0,
   },
+  regexp: {
+    "unicorn/better-regex": 0,
+  },
   rn: {
     "@stylistic/semi": 0,
     "@typescript-eslint/comma-dangle": 0,
@@ -113,6 +116,7 @@ const incompatibles: ConflictCache = {
   unicorn: {
     "@typescript-eslint/no-extra-parens": 0,
     "prettier/prettier": 0,
+    "regexp/strict": 0,
   },
   xo: {
     "@stylistic/arrow-parens": 0,

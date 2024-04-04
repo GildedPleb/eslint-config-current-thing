@@ -309,7 +309,7 @@ Generated on 4/3/2024, downloads for the previous 28 days.
 - 966,478 downloads, [eslint-plugin-graphql](https://www.npmjs.com/package/eslint-plugin-graphql)
 - 958,540 downloads, [eslint-plugin-sort-keys-fix](https://www.npmjs.com/package/eslint-plugin-sort-keys-fix)
 - 903,486 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
-- 875,143 downloads, [eslint-plugin-mdx](https://www.npmjs.com/package/eslint-plugin-mdx)
+- 842,640 downloads, [eslint-plugin-mdx](https://www.npmjs.com/package/eslint-plugin-mdx)
 - 699,515 downloads, [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file)
 - 666,539 downloads, [npm-package-json-lint](https://www.npmjs.com/package/npm-package-json-lint)
 - 665,220 downloads, [eslint-import-resolver-custom-alias](https://www.npmjs.com/package/eslint-import-resolver-custom-alias)
@@ -321,12 +321,12 @@ Generated on 4/3/2024, downloads for the previous 28 days.
 - 474,825 downloads, [eslint-plugin-no-use-extend-native](https://www.npmjs.com/package/eslint-plugin-no-use-extend-native)
 - 430,290 downloads, [eslint-plugin-local](https://www.npmjs.com/package/eslint-plugin-local)
 - 427,008 downloads, [eslint-config-xo-space](https://www.npmjs.com/package/eslint-config-xo-space)
-- 394,896 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
 - 382,164 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard) - Not Yet Eligible
 - 378,123 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc) - Not Yet Eligible
 - 376,749 downloads, [json-fixer](https://www.npmjs.com/package/json-fixer) - Not Yet Eligible
 - 368,098 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
 - 359,772 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu) - Not Yet Eligible
+- 358,735 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
 - 352,945 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
 - 346,892 downloads, [eslint-plugin-deprecate](https://www.npmjs.com/package/eslint-plugin-deprecate) - Not Yet Eligible
 - 340,689 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible

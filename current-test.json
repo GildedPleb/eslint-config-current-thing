@@ -4002,6 +4002,9 @@
     "shopify/jsx-no-hardcoded-content": [
       0
     ],
+    "unicorn/better-regex": [
+      2
+    ],
     "prefer-regex-literals": [
       2,
       {
@@ -4186,7 +4189,7 @@
       2
     ],
     "regexp/strict": [
-      2
+      0
     ],
     "regexp/use-ignore-case": [
       2
@@ -5546,9 +5549,6 @@
       2
     ],
     "@typescript-eslint/no-extra-parens": [
-      0
-    ],
-    "unicorn/better-regex": [
       0
     ],
     "unicorn/catch-error-name": [
