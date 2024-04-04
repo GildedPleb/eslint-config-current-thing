@@ -4626,6 +4626,7 @@
         "type": "natural",
         "order": "asc",
         "ignore-case": false,
+        "optionality-order": "ignore",
         "groups": [],
         "partition-by-new-line": false
       }
