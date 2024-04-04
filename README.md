@@ -299,8 +299,8 @@ Generated on 4/4/2024, downloads for the previous 28 days.
 
 - 5,771,207 downloads, [jsonc-eslint-parser](https://www.npmjs.com/package/jsonc-eslint-parser)
 - 2,520,805 downloads, [yaml-eslint-parser](https://www.npmjs.com/package/yaml-eslint-parser)
-- 2,028,915 downloads, [@graphql-eslint/eslint-plugin](https://www.npmjs.com/package/@graphql-eslint/eslint-plugin)
 - 1,920,786 downloads, [eslint-plugin-markdown](https://www.npmjs.com/package/eslint-plugin-markdown)
+- 1,910,343 downloads, [@graphql-eslint/eslint-plugin](https://www.npmjs.com/package/@graphql-eslint/eslint-plugin)
 - 1,861,374 downloads, [eslint-plugin-html](https://www.npmjs.com/package/eslint-plugin-html)
 - 1,271,250 downloads, [@microsoft/eslint-plugin-sdl](https://www.npmjs.com/package/@microsoft/eslint-plugin-sdl)
 - 1,269,297 downloads, [eslint-plugin-jsonc](https://www.npmjs.com/package/eslint-plugin-jsonc)
@@ -316,7 +316,7 @@ Generated on 4/4/2024, downloads for the previous 28 days.
 - 555,693 downloads, [gulp-eslint](https://www.npmjs.com/package/gulp-eslint)
 - 531,032 downloads, [eslint-plugin-ava](https://www.npmjs.com/package/eslint-plugin-ava)
 - 523,940 downloads, [ember-template-lint](https://www.npmjs.com/package/ember-template-lint)
-- 512,605 downloads, [eslint-plugin-react-prefer-function-component](https://www.npmjs.com/package/eslint-plugin-react-prefer-function-component)
+- 494,434 downloads, [eslint-plugin-react-prefer-function-component](https://www.npmjs.com/package/eslint-plugin-react-prefer-function-component)
 - 493,149 downloads, [eslint-formatter-gitlab](https://www.npmjs.com/package/eslint-formatter-gitlab)
 - 470,800 downloads, [eslint-plugin-ssr-friendly](https://www.npmjs.com/package/eslint-plugin-ssr-friendly)
 - 448,077 downloads, [eslint-plugin-no-use-extend-native](https://www.npmjs.com/package/eslint-plugin-no-use-extend-native)

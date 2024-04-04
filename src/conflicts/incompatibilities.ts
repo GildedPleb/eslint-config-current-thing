@@ -22,8 +22,14 @@ const incompatibles: ConflictCache = {
     "jsdoc/check-tag-names": 0,
     "prettier/prettier": 0,
   },
+  "import-sort": {
+    "perfectionist/sort-named-imports": 0,
+  },
   jsdoc: {
     "valid-jsdoc": 0,
+  },
+  perfectionist: {
+    "simple-import-sort/imports": 0,
   },
   prettier: {
     "@babel/object-curly-spacing": 0,

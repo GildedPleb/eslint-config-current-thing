@@ -4162,7 +4162,41 @@
       }
     ],
     "perfectionist/sort-imports": [
-      0
+      0,
+      {
+        "groups": [
+          "type",
+          [
+            "builtin",
+            "external"
+          ],
+          "internal-type",
+          "internal",
+          [
+            "parent-type",
+            "sibling-type",
+            "index-type"
+          ],
+          [
+            "parent",
+            "sibling",
+            "index"
+          ],
+          "object",
+          "unknown"
+        ],
+        "custom-groups": {
+          "value": {},
+          "type": {}
+        },
+        "newlines-between": "always",
+        "internal-pattern": [
+          "~/**"
+        ],
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
     ],
     "perfectionist/sort-classes": [
       2,
@@ -4242,7 +4276,12 @@
       }
     ],
     "perfectionist/sort-named-imports": [
-      0
+      0,
+      {
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
     ],
     "perfectionist/sort-object-types": [
       2,

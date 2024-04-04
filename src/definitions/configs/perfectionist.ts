@@ -3,6 +3,9 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  conflicts: {
+    "perfectionist/sort-imports": ["import-sort"],
+  },
   definitions: `{
     files,
     ${RULES}
@@ -17,8 +20,6 @@ export default {
     },
   ],
   requiredPlugins: ["perfectionist"],
-  rules: `...perfectionist.configs["recommended-natural"].rules,
-    "perfectionist/sort-imports": 0,
-    "perfectionist/sort-named-imports": 0,`,
+  rules: `...perfectionist.configs["recommended-natural"].rules,`,
 } satisfies Config;
 // EOF

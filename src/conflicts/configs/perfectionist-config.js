@@ -206,8 +206,6 @@ const configGen = ({
             files,
             rules: {
               ...perfectionist.configs["recommended-natural"].rules,
-              "perfectionist/sort-imports": 0,
-              "perfectionist/sort-named-imports": 0,
               ...("eslint-plugin-perfectionist" in override
                 ? override["eslint-plugin-perfectionist"]
                 : {}),

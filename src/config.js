@@ -868,9 +868,8 @@ const configGen = ({
           {
             files,
             rules: {
+              "simple-import-sort/imports": 0,
               ...perfectionist.configs["recommended-natural"].rules,
-              "perfectionist/sort-imports": 0,
-              "perfectionist/sort-named-imports": 0,
 
               ...("eslint-plugin-perfectionist" in override
                 ? override["eslint-plugin-perfectionist"]
@@ -1469,6 +1468,8 @@ const configGen = ({
             files,
             rules: {
               "import/order": 0,
+              "perfectionist/sort-imports": 0,
+              "perfectionist/sort-named-imports": 0,
               "simple-import-sort/exports": 2,
               "simple-import-sort/imports": 2,
               ...("eslint-plugin-simple-import-sort" in override
