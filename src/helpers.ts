@@ -53,7 +53,11 @@ const parseDif = (results: diff.Change[]): string => {
 /**
  * Print the diff of two string inputs by line
  */
-export function printDiffLines(oldString: string, newString: string): void {
+export function printDiffLines(
+  oldString: string | undefined,
+  newString: string | undefined,
+): void {
+  if (oldString === undefined || newString === undefined) return;
   const diffResult = diff.diffChars(oldString, newString);
 
   // Split the accumulated string into lines

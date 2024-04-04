@@ -49,8 +49,10 @@ const filename = fileURLToPath(import.meta.url);
 const baseDirectory = path.dirname(filename);
 const compat = new FlatCompat({ baseDirectory });
 
-const jsFiles = ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.cjs"];
-const tsFiles = ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"];
+const jsxFiles = ["**/*.jsx"];
+const tsxFiles = ["**/*.tsx"];
+const jsFiles = ["**/*.js", ...jsxFiles, "**/*.mjs", "**/*.cjs"];
+const tsFiles = ["**/*.ts", ...tsxFiles, "**/*.mts", "**/*.cts"];
 const files = [...jsFiles, ...tsFiles];
 
 const testFiles = [

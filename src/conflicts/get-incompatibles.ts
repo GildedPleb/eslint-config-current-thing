@@ -1,4 +1,5 @@
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable max-depth */
 /* eslint-disable security/detect-object-injection */
 /* eslint-disable no-extra-label */
 /* eslint-disable no-labels */
@@ -123,6 +124,27 @@ const fileList: FileList[] = [
   },
 ];
 
+const SKIP_CACHE = new Error("Skipping the cache.");
+
+const compatible = (
+  output1: string | undefined,
+  output2: string | undefined,
+): boolean =>
+  output1 === undefined || output2 === undefined || output1 === output2;
+
+const getCache = async (
+  database: Level,
+  key: string,
+): Promise<ConflictCache | undefined> => {
+  try {
+    if (skipCache) throw SKIP_CACHE;
+    const previous = await database.get(`conflicts-${key}`);
+    return JSON.parse(previous) as ConflictCache;
+  } catch {}
+
+  return undefined;
+};
+
 for await (const { def: codeToLint, filePath, short } of fileList) {
   const database = new Level(`./conflict-cache-${short}`, {
     valueEncoding: "json",
@@ -130,367 +152,327 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
 
   const opt = { filePath };
   console.log("\n\nProcessing filetype:", chalk.red(filePath), "\n");
+  const linters = [];
 
-  try {
-    const linters = [];
+  for await (const [config1, config2] of combinations) {
+    const { location: config1Path, name: name1 } = config1;
+    const { location: config2Path, name: name2 } = config2;
+    const currentCheck = `${chalk.green(short)}: ${chalk.blue(name1)} ${chalk.blue("-vs-")} ${chalk.blue(name2)}`;
+    const [es1, json1] = await getLinter(filePath, config1Path);
+    const [es2, json2] = await getLinter(filePath, config2Path);
+    const keyHash = hashObject({ codeToLint, filePath, json1, json2 });
+    const hasCache = await getCache(database, keyHash);
 
-    for await (const [config1, config2] of combinations) {
-      const { location: config1Path, name: name1 } = config1;
-      const { location: config2Path, name: name2 } = config2;
-      const currentCheck = `${chalk.green(short)}: ${chalk.blue(name1)} ${chalk.blue("-vs-")} ${chalk.blue(name2)}`;
-      const [es1, json1] = await getLinter(filePath, config1Path);
-      const [es2, json2] = await getLinter(filePath, config2Path);
-      const keyHash = hashObject({ codeToLint, filePath, json1, json2 });
-      let fullConfig: ConflictCache = {};
-
-      try {
-        if (skipCache) throw new Error("Skipping the cache.");
-        const previous = await database.get(`conflicts-${keyHash}`);
-        fullConfig = JSON.parse(previous) as ConflictCache;
-        console.log(`${currentCheck} - Cache Hit. No need to process further.`);
-      } catch {
-        const [output1, output2] = await getDiff(opt, codeToLint, es1, es2);
-        if (
-          output1 === undefined ||
-          output2 === undefined ||
-          output1 === output2 ||
-          json1?.rules === undefined ||
-          json2?.rules === undefined ||
-          Object.keys(json1.rules).length === 0 ||
-          Object.keys(json2.rules).length === 0
-        ) {
-          console.log(`${currentCheck} - No conflicts!`);
-          await database.put(`conflicts-${keyHash}`, JSON.stringify({}));
-          continue;
-        }
-
-        console.log(
-          `${currentCheck} - Superficially incompatible, ${chalk.red("queueing")}:`,
-        );
-
-        printDiffLines(output1, output2);
-        linters.push({
-          config1,
-          config2,
-          currentCheck,
-          es1,
-          es2,
-          json1,
-          json2,
-          keyHash,
-        });
-      }
-
-      fullConflictList = mergeIncompatible(fullConfig, fullConflictList);
+    if (hasCache !== undefined) {
+      console.log(`${currentCheck} - Cache Hit. No need to process further.`);
+      fullConflictList = mergeIncompatible(hasCache, fullConflictList);
+      continue;
     }
 
-    // ************************************************************************* //
-    // Lets figure out the specific rules that conflict of conflicting configs.  //
-    // ************************************************************************* //
+    const [output1, output2] = await getDiff(opt, codeToLint, es1, es2);
+    if (
+      compatible(output1, output2) ||
+      json1?.rules === undefined ||
+      json2?.rules === undefined ||
+      Object.keys(json1.rules).length === 0 ||
+      Object.keys(json2.rules).length === 0
+    ) {
+      console.log(`${currentCheck} - No conflicts!`);
+      await database.put(`conflicts-${keyHash}`, JSON.stringify({}));
+      continue;
+    }
 
-    for await (const lint of linters) {
-      const { config1, config2, currentCheck, es1, es2, json1, json2 } = lint;
-      const { location: config1Path, name: name1 } = config1;
-      const { location: config2Path, name: name2 } = config2;
-      const json1Rules = json1.rules ?? {};
-      const json2Rules = json2.rules ?? {};
-      const json1RuleList = Object.entries(json1Rules);
-      const json1RulesZeroed = Object.fromEntries(
-        json1RuleList.map(([rule]) => [rule, 0 as Rule]),
-      );
-      const json2RuleList = Object.entries(json2Rules);
-      const json2RulesZeroed = Object.fromEntries(
-        json2RuleList.map(([rule]) => [rule, 0 as Rule]),
-      );
-      let conflictList: ConflictCache = {};
+    console.log(
+      `${currentCheck} - Superficially incompatible, ${chalk.red("queueing")}:`,
+    );
 
-      mid: for await (const [ruleName, ruleSetting] of json1RuleList) {
-        if (isRuleOff(ruleSetting)) continue mid;
-        const jsonOneRule = JSON.parse(JSON.stringify(json1)) as Record<
-          string,
-          Record<string, Rule>
-        >;
-        jsonOneRule.rules = { [ruleName]: ruleSetting };
-        const innerKeyHash = hashObject({
-          codeToLint,
-          filePath,
-          json: json2,
-          jsonOneRule,
-        });
-        let innerConfigList: ConflictCache = {};
-        // Console.log({ innerKeyHash });
-        try {
-          if (skipCache) throw new Error("Skipping the cache.");
-          const previous = await database.get(`conflicts-${innerKeyHash}`);
-          innerConfigList = JSON.parse(previous) as ConflictCache;
-        } catch {
-          json1RulesZeroed[ruleName] = ruleSetting;
-          const [es1OneRule] = await getLinter(
-            filePath,
-            config1Path,
-            json1RulesZeroed,
-          );
-          readline.cursorTo(process.stdout, 0);
-          const out = `${currentCheck} - Now checking: ${name2} -vs- ${name1}/${ruleName}`;
-          process.stdout.write(out.padEnd(150, " "));
-          const [output1, output2] = await getSimpleDiff(
-            opt,
-            codeToLint,
-            es2,
-            es1OneRule,
-          );
-          if (
-            output1 === undefined ||
-            output2 === undefined ||
-            output1 === output2
-          ) {
-            json1RulesZeroed[ruleName] = 0;
-            if (!skipCache) {
-              await database.put(
-                `conflicts-${innerKeyHash}`,
-                JSON.stringify(innerConfigList),
-              );
-            }
+    printDiffLines(output1, output2);
+    linters.push({
+      config1,
+      config2,
+      currentCheck,
+      es1,
+      es2,
+      json1,
+      json2,
+      keyHash,
+    });
+  }
 
-            continue mid;
-          }
+  // ************************************************************************* //
+  // Lets figure out the specific rules that conflict of conflicting configs.  //
+  // ************************************************************************* //
 
-          console.log(`\nConfig incompatible with rule:`);
-          printDiffLines(output1, output2);
-          if (!(ruleName in json2Rules)) {
-            innerConfigList = add0Rule(innerConfigList, name2, ruleName);
-          }
+  for await (const lint of linters) {
+    const { config1, config2, currentCheck, es1, es2, json1, json2 } = lint;
+    const { location: config1Path, name: name1 } = config1;
+    const { location: config2Path, name: name2 } = config2;
+    const json1Rules = json1.rules ?? {};
+    const json2Rules = json2.rules ?? {};
+    const json1RuleList = Object.entries(json1Rules);
+    const json1RulesZeroed = Object.fromEntries(
+      json1RuleList.map(([rule]) => [rule, 0 as Rule]),
+    );
+    const json2RuleList = Object.entries(json2Rules);
+    const json2RulesZeroed = Object.fromEntries(
+      json2RuleList.map(([rule]) => [rule, 0 as Rule]),
+    );
+    let conflictList: ConflictCache = {};
 
-          if (!skipCache) {
-            await database.put(
-              `conflicts-${innerKeyHash}`,
-              JSON.stringify(innerConfigList),
-            );
-          }
-        }
+    mid: for await (const [ruleName, ruleSetting] of json1RuleList) {
+      if (isRuleOff(ruleSetting) || ruleName in json2Rules) continue mid;
+      const jsonOneRule = JSON.parse(JSON.stringify(json1)) as Record<
+        string,
+        Record<string, Rule>
+      >;
+      jsonOneRule.rules = { [ruleName]: ruleSetting };
+      const innerKeyHash = hashObject({
+        codeToLint,
+        filePath,
+        json: json2,
+        jsonOneRule,
+      });
 
-        conflictList = mergeIncompatible(innerConfigList, conflictList);
-        json1RulesZeroed[ruleName] = 0;
+      const hasCache = await getCache(database, innerKeyHash);
+      if (hasCache !== undefined) {
+        conflictList = mergeIncompatible(hasCache, conflictList);
+        continue mid;
       }
 
-      mid: for await (const [ruleName, rule1Setting] of json2RuleList) {
-        if (isRuleOff(rule1Setting)) continue mid;
-        const jsonOneRule = JSON.parse(JSON.stringify(json2)) as Record<
-          string,
-          Record<string, Rule>
-        >;
-        jsonOneRule.rules = { [ruleName]: rule1Setting };
-        const innerKeyHash = hashObject({
-          codeToLint,
-          filePath,
-          json: json1,
-          jsonOneRule,
-        });
-        let innerConfigList: ConflictCache = {};
-        try {
-          if (skipCache) throw new Error("Skipping the cache");
-          const previous = await database.get(`conflicts-${innerKeyHash}`);
-          innerConfigList = JSON.parse(previous) as ConflictCache;
-        } catch {
-          json2RulesZeroed[ruleName] = rule1Setting;
-          const [es2OneRule] = await getLinter(
-            filePath,
-            config2Path,
-            json2RulesZeroed,
-          );
-          readline.cursorTo(process.stdout, 0);
-          const out = `${currentCheck} - Now checking: ${name1} -vs- ${name2}/${ruleName}`;
-          process.stdout.write(out.padEnd(150, " "));
-          const [output1, output2] = await getSimpleDiff(
-            opt,
-            codeToLint,
-            es1,
-            es2OneRule,
-          );
-          if (
-            output1 === undefined ||
-            output2 === undefined ||
-            output1 === output2
-          ) {
-            if (!skipCache) {
-              await database.put(
-                `conflicts-${innerKeyHash}`,
-                JSON.stringify(innerConfigList),
-              );
-            }
-
-            json2RulesZeroed[ruleName] = 0;
-            continue mid;
-          }
-
-          console.log(`\nConfig incompatible with rule:`);
-          printDiffLines(output1, output2);
-          if (!(ruleName in json1Rules)) {
-            conflictList = add0Rule(conflictList, name1, ruleName);
-          }
-
-          if (!skipCache) {
-            await database.put(
-              `conflicts-${innerKeyHash}`,
-              JSON.stringify(innerConfigList),
-            );
-          }
-        }
-
-        conflictList = mergeIncompatible(innerConfigList, conflictList);
-        json2RulesZeroed[ruleName] = 0;
-      }
-
-      const out = `\n${currentCheck} - Finished Mid Processing.`;
-      process.stdout.write(out.padEnd(150, " "));
+      json1RulesZeroed[ruleName] = ruleSetting;
+      const [es1OneRule] = await getLinter(
+        filePath,
+        config1Path,
+        json1RulesZeroed,
+      );
       readline.cursorTo(process.stdout, 0);
-      fullConflictList = mergeIncompatible(conflictList, fullConflictList);
-    }
-
-    let upToDate = false;
-
-    // For each config compare the set:
-    for await (const lint of linters) {
-      const { config1, config2, currentCheck, json1, json2, keyHash } = lint;
-      const { location: path1, name: name1 } = config1;
-      const { location: path2, name: name2 } = config2;
-      const json1Rules = json1.rules ?? {};
-      const json2Rules = json2.rules ?? {};
-      const json1RulesList = Object.entries(json1Rules);
-      const json1RulesZeroed = Object.fromEntries(
-        json1RulesList.map(([rule]) => [rule, 0 as Rule]),
+      const out = `${currentCheck} - Now checking: ${name2} -vs- ${name1}/${ruleName}`;
+      process.stdout.write(out.padEnd(150, " "));
+      const [output1, output2] = await getSimpleDiff(
+        opt,
+        codeToLint,
+        es2,
+        es1OneRule,
       );
-      const json2RulesList = Object.entries(json2Rules);
-      const json2Rules0ed = Object.fromEntries(
-        json2RulesList.map(([rule]) => [rule, 0 as Rule]),
-      );
-      let temporaryList: ConflictCache = {};
-      mid: for await (const [
-        json1RuleName,
-        json1RuleSetting,
-      ] of json1RulesList) {
-        if (isRuleOff(json1RuleSetting)) continue mid;
-        const json1OneRule = JSON.parse(JSON.stringify(json1)) as Record<
-          string,
-          Record<string, Rule>
-        >;
-        json1OneRule.rules = { [json1RuleName]: json1RuleSetting };
-        json1RulesZeroed[json1RuleName] = json1RuleSetting;
-        const [es1OneRule] = await getLinter(filePath, path1, json1RulesZeroed);
-        inner: for await (const [
-          json2RuleName,
-          json2RuleSetting,
-        ] of json2RulesList) {
-          readline.cursorTo(process.stdout, 0);
 
-          if (isRuleOff(json2RuleSetting)) continue inner;
-          if (json2RuleName === json1RuleName) {
-            const out = `${currentCheck} - Same/same skipping: ${json1RuleName}`;
-            process.stdout.write(out.padEnd(150, " "));
-            continue inner;
-          }
-
-          const json2OneRule = JSON.parse(JSON.stringify(json2)) as Record<
-            string,
-            Record<string, Rule>
-          >;
-          json2OneRule.rules = { [json2RuleName]: json2RuleSetting };
-          const innerKeyHash = hashObject({
-            codeToLint,
-            filePath,
-            json1OneRule,
-            json2OneRule,
-          });
-          const innerKeyHash2 = hashObject({
-            codeToLint,
-            filePath,
-            json1OneRule: json2OneRule,
-            json2OneRule: json1OneRule,
-          });
-          let innerConfigList: ConflictCache = {};
-          try {
-            if (skipCache) throw new Error("Skipping the cache");
-            const previous = await database.get(`conflicts-${innerKeyHash}`);
-            innerConfigList = JSON.parse(previous) as ConflictCache;
-            const out = `${upToDate ? "\n" : ""}${currentCheck} - Inner Cache Hit: ${json1RuleName} -vs- ${json2RuleName}`;
-            process.stdout.write(out.padEnd(150, " "));
-          } catch {
-            upToDate = true;
-            const out = `${currentCheck} - Now checking: ${json1RuleName} -vs- ${json2RuleName}`;
-            process.stdout.write(out.padEnd(150, " "));
-            json2Rules0ed[json2RuleName] = json2RuleSetting;
-            const [es2OneRule] = await getLinter(
-              filePath,
-              path2,
-              json2Rules0ed,
-            );
-            const [output1, output2] = await getDiff(
-              opt,
-              codeToLint,
-              es1OneRule,
-              es2OneRule,
-            );
-            if (
-              output1 === undefined ||
-              output2 === undefined ||
-              output1 === output2
-            ) {
-              json2Rules0ed[json2RuleName] = 0;
-              if (!skipCache) {
-                await database.put(
-                  `conflicts-${innerKeyHash}`,
-                  JSON.stringify(innerConfigList),
-                );
-                await database.put(
-                  `conflicts-${innerKeyHash2}`,
-                  JSON.stringify(innerConfigList),
-                );
-              }
-
-              continue inner;
-            }
-
-            console.log(`\nRules incompatible:`);
-            printDiffLines(output1, output2);
-            if (!(json2RuleName in json1Rules)) {
-              innerConfigList = add0Rule(innerConfigList, name1, json2RuleName);
-            }
-
-            if (!(json1RuleName in json2Rules)) {
-              innerConfigList = add0Rule(innerConfigList, name2, json1RuleName);
-            }
-
-            json2Rules0ed[json2RuleName] = 0;
-            if (!skipCache) {
-              await database.put(
-                `conflicts-${innerKeyHash}`,
-                JSON.stringify(innerConfigList),
-              );
-              await database.put(
-                `conflicts-${innerKeyHash2}`,
-                JSON.stringify(innerConfigList),
-              );
-            }
-          }
-
-          temporaryList = mergeIncompatible(innerConfigList, temporaryList);
+      if (compatible(output1, output2)) {
+        json1RulesZeroed[ruleName] = 0;
+        if (!skipCache) {
+          await database.put(`conflicts-${innerKeyHash}`, JSON.stringify({}));
         }
 
-        json1RulesZeroed[json1RuleName] = 0;
+        continue mid;
       }
 
-      fullConflictList = mergeIncompatible(temporaryList, fullConflictList);
+      console.log(`\nConfig incompatible with rule:`);
+      printDiffLines(output1, output2);
+
+      const innerConfigList = add0Rule({}, name2, ruleName);
+
       if (!skipCache) {
         await database.put(
-          `conflicts-${keyHash}`,
-          JSON.stringify(temporaryList),
+          `conflicts-${innerKeyHash}`,
+          JSON.stringify(innerConfigList),
         );
       }
 
-      console.log(`\n${currentCheck} - Processing finished.`);
+      conflictList = mergeIncompatible(innerConfigList, conflictList);
+      json1RulesZeroed[ruleName] = 0;
     }
-  } catch (error) {
-    console.error("Error during ESLint setup or linting process:", error);
+
+    mid: for await (const [ruleName, rule1Setting] of json2RuleList) {
+      if (isRuleOff(rule1Setting) || ruleName in json1Rules) continue mid;
+      const jsonOneRule = JSON.parse(JSON.stringify(json2)) as Record<
+        string,
+        Record<string, Rule>
+      >;
+      jsonOneRule.rules = { [ruleName]: rule1Setting };
+      const innerKeyHash = hashObject({
+        codeToLint,
+        filePath,
+        json: json1,
+        jsonOneRule,
+      });
+
+      const hasCache = await getCache(database, innerKeyHash);
+      if (hasCache !== undefined) {
+        conflictList = mergeIncompatible(hasCache, conflictList);
+        continue mid;
+      }
+
+      json2RulesZeroed[ruleName] = rule1Setting;
+      const [es2OneRule] = await getLinter(
+        filePath,
+        config2Path,
+        json2RulesZeroed,
+      );
+      readline.cursorTo(process.stdout, 0);
+      const out = `${currentCheck} - Now checking: ${name1} -vs- ${name2}/${ruleName}`;
+      process.stdout.write(out.padEnd(150, " "));
+      const [output1, output2] = await getSimpleDiff(
+        opt,
+        codeToLint,
+        es1,
+        es2OneRule,
+      );
+      if (compatible(output1, output2)) {
+        if (!skipCache) {
+          await database.put(`conflicts-${innerKeyHash}`, JSON.stringify({}));
+        }
+
+        json2RulesZeroed[ruleName] = 0;
+        continue mid;
+      }
+
+      console.log(`\nConfig incompatible with rule:`);
+      printDiffLines(output1, output2);
+
+      const innerConfigList: ConflictCache = add0Rule({}, name1, ruleName);
+      if (!skipCache) {
+        await database.put(
+          `conflicts-${innerKeyHash}`,
+          JSON.stringify(innerConfigList),
+        );
+      }
+
+      conflictList = mergeIncompatible(innerConfigList, conflictList);
+      json2RulesZeroed[ruleName] = 0;
+    }
+
+    const out = `\n${currentCheck} - Finished Mid Processing.`;
+    process.stdout.write(out.padEnd(150, " "));
+    readline.cursorTo(process.stdout, 0);
+    fullConflictList = mergeIncompatible(conflictList, fullConflictList);
+  }
+
+  let upToDate = false;
+
+  // For each config compare the set:
+  for await (const lint of linters) {
+    const { config1, config2, currentCheck, json1, json2, keyHash } = lint;
+    const { location: path1, name: name1 } = config1;
+    const { location: path2, name: name2 } = config2;
+    const json1Rules = json1.rules ?? {};
+    const json2Rules = json2.rules ?? {};
+    const json1RulesList = Object.entries(json1Rules);
+    const json1RulesZeroed = Object.fromEntries(
+      json1RulesList.map(([rule]) => [rule, 0 as Rule]),
+    );
+    const json2RulesList = Object.entries(json2Rules);
+    const json2Rules0ed = Object.fromEntries(
+      json2RulesList.map(([rule]) => [rule, 0 as Rule]),
+    );
+    let temporaryList: ConflictCache = {};
+    mid: for await (const [json1RuleName, json1RuleSetting] of json1RulesList) {
+      if (isRuleOff(json1RuleSetting)) continue mid;
+      const json1OneRule = JSON.parse(JSON.stringify(json1)) as Record<
+        string,
+        Record<string, Rule>
+      >;
+      json1OneRule.rules = { [json1RuleName]: json1RuleSetting };
+      json1RulesZeroed[json1RuleName] = json1RuleSetting;
+      const [es1OneRule] = await getLinter(filePath, path1, json1RulesZeroed);
+      inner: for await (const [
+        json2RuleName,
+        json2RuleSetting,
+      ] of json2RulesList) {
+        readline.cursorTo(process.stdout, 0);
+
+        if (isRuleOff(json2RuleSetting)) continue inner;
+        if (json2RuleName === json1RuleName) {
+          const out = `${currentCheck} - Same/same skipping: ${json1RuleName}`;
+          process.stdout.write(out.padEnd(150, " "));
+          continue inner;
+        }
+
+        const json2OneRule = JSON.parse(JSON.stringify(json2)) as Record<
+          string,
+          Record<string, Rule>
+        >;
+        json2OneRule.rules = { [json2RuleName]: json2RuleSetting };
+        const innerKeyHash = hashObject({
+          codeToLint,
+          filePath,
+          json1OneRule,
+          json2OneRule,
+        });
+        const innerKeyHash2 = hashObject({
+          codeToLint,
+          filePath,
+          json1OneRule: json2OneRule,
+          json2OneRule: json1OneRule,
+        });
+
+        const hasCache = await getCache(database, innerKeyHash);
+        if (hasCache !== undefined) {
+          temporaryList = mergeIncompatible(hasCache, temporaryList);
+          const out = `${upToDate ? "\n" : ""}${currentCheck} - Inner Cache Hit: ${json1RuleName} -vs- ${json2RuleName}`;
+          process.stdout.write(out.padEnd(150, " "));
+          continue inner;
+        }
+
+        upToDate = true;
+        const out = `${currentCheck} - Now checking: ${json1RuleName} -vs- ${json2RuleName}`;
+        process.stdout.write(out.padEnd(150, " "));
+        json2Rules0ed[json2RuleName] = json2RuleSetting;
+        const [es2OneRule] = await getLinter(filePath, path2, json2Rules0ed);
+        const [output1, output2] = await getDiff(
+          opt,
+          codeToLint,
+          es1OneRule,
+          es2OneRule,
+        );
+
+        if (compatible(output1, output2)) {
+          json2Rules0ed[json2RuleName] = 0;
+          if (!skipCache) {
+            await database.put(`conflicts-${innerKeyHash}`, JSON.stringify({}));
+            await database.put(
+              `conflicts-${innerKeyHash2}`,
+              JSON.stringify({}),
+            );
+          }
+
+          continue inner;
+        }
+
+        console.log(`\nRules incompatible:`);
+        printDiffLines(output1, output2);
+
+        let innerConfigList: ConflictCache = {};
+
+        if (!(json2RuleName in json1Rules)) {
+          innerConfigList = add0Rule(innerConfigList, name1, json2RuleName);
+        }
+
+        if (!(json1RuleName in json2Rules)) {
+          innerConfigList = add0Rule(innerConfigList, name2, json1RuleName);
+        }
+
+        json2Rules0ed[json2RuleName] = 0;
+        if (!skipCache) {
+          await database.put(
+            `conflicts-${innerKeyHash}`,
+            JSON.stringify(innerConfigList),
+          );
+          await database.put(
+            `conflicts-${innerKeyHash2}`,
+            JSON.stringify(innerConfigList),
+          );
+        }
+
+        temporaryList = mergeIncompatible(innerConfigList, temporaryList);
+      }
+
+      json1RulesZeroed[json1RuleName] = 0;
+    }
+
+    fullConflictList = mergeIncompatible(temporaryList, fullConflictList);
+    if (!skipCache) {
+      await database.put(`conflicts-${keyHash}`, JSON.stringify(temporaryList));
+    }
+
+    console.log(`\n${currentCheck} - Processing finished.`);
   }
 }
 

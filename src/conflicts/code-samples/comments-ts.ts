@@ -141,6 +141,13 @@ let someVariable: string = "value"; // This is a comment that goes on and on and
  */
 function incompleteJsDoc(username: string, password: string): void {}
 
+/**
+ * @param {number} first - numberator
+ * @param {number} second - denominator
+ * @return {number} - returning a number using the RETURN key not RETURNS
+ */
+const multiply = (first, second) => first * second;
+
 
 `;
 

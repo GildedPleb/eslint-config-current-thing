@@ -41,7 +41,7 @@ Meaning, in many cases, using this config without these frameworks (by disabling
 
 <!-- Generated do not edit! -->
 
-Unsurprisingly, it is incredibly strict with popularity-based opinions on 1219 typescript rules, 1171 javascript rules, and 1246 testing rules.
+Unsurprisingly, it is incredibly strict with popularity-based opinions on 1078 typescript rules, 1029 javascript rules, and 1108 testing rules.
 
 <!-- End Generated do not edit! -->
 
@@ -302,8 +302,8 @@ Generated on 4/4/2024, downloads for the previous 28 days.
 - 2,028,915 downloads, [@graphql-eslint/eslint-plugin](https://www.npmjs.com/package/@graphql-eslint/eslint-plugin)
 - 1,920,786 downloads, [eslint-plugin-markdown](https://www.npmjs.com/package/eslint-plugin-markdown)
 - 1,861,374 downloads, [eslint-plugin-html](https://www.npmjs.com/package/eslint-plugin-html)
+- 1,271,250 downloads, [@microsoft/eslint-plugin-sdl](https://www.npmjs.com/package/@microsoft/eslint-plugin-sdl)
 - 1,269,297 downloads, [eslint-plugin-jsonc](https://www.npmjs.com/package/eslint-plugin-jsonc)
-- 1,261,921 downloads, [@microsoft/eslint-plugin-sdl](https://www.npmjs.com/package/@microsoft/eslint-plugin-sdl)
 - 1,203,244 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 1,173,097 downloads, [eslint-plugin-yml](https://www.npmjs.com/package/eslint-plugin-yml)
 - 966,478 downloads, [eslint-plugin-graphql](https://www.npmjs.com/package/eslint-plugin-graphql)
@@ -315,6 +315,7 @@ Generated on 4/4/2024, downloads for the previous 28 days.
 - 665,220 downloads, [eslint-import-resolver-custom-alias](https://www.npmjs.com/package/eslint-import-resolver-custom-alias)
 - 555,693 downloads, [gulp-eslint](https://www.npmjs.com/package/gulp-eslint)
 - 531,032 downloads, [eslint-plugin-ava](https://www.npmjs.com/package/eslint-plugin-ava)
+- 523,940 downloads, [ember-template-lint](https://www.npmjs.com/package/ember-template-lint)
 - 512,605 downloads, [eslint-plugin-react-prefer-function-component](https://www.npmjs.com/package/eslint-plugin-react-prefer-function-component)
 - 493,149 downloads, [eslint-formatter-gitlab](https://www.npmjs.com/package/eslint-formatter-gitlab)
 - 470,800 downloads, [eslint-plugin-ssr-friendly](https://www.npmjs.com/package/eslint-plugin-ssr-friendly)
@@ -327,6 +328,7 @@ Generated on 4/4/2024, downloads for the previous 28 days.
 - 366,972 downloads, [json-fixer](https://www.npmjs.com/package/json-fixer) - Not Yet Eligible
 - 358,735 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
 - 352,945 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
+- 351,906 downloads, [lockfile-lint-api](https://www.npmjs.com/package/lockfile-lint-api) - Not Yet Eligible
 - 346,892 downloads, [eslint-plugin-deprecate](https://www.npmjs.com/package/eslint-plugin-deprecate) - Not Yet Eligible
 - 340,689 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
 - 339,603 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
@@ -335,5 +337,3 @@ Generated on 4/4/2024, downloads for the previous 28 days.
 - 326,744 downloads, [xo](https://www.npmjs.com/package/xo) - Not Yet Eligible
 - 316,316 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
 - 310,258 downloads, [eslint-plugin-diff](https://www.npmjs.com/package/eslint-plugin-diff) - Not Yet Eligible
-- 301,575 downloads, [eslint-plugin-angular](https://www.npmjs.com/package/eslint-plugin-angular) - Not Yet Eligible
-- 300,101 downloads, [@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config) - Not Yet Eligible

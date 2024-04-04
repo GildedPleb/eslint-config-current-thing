@@ -19,7 +19,11 @@ const incompatibles: ConflictCache = {
     "@stylistic/semi": 0,
     "@typescript-eslint/object-curly-spacing": 0,
     "@typescript-eslint/semi": 0,
+    "jsdoc/check-tag-names": 0,
     "prettier/prettier": 0,
+  },
+  jsdoc: {
+    "valid-jsdoc": 0,
   },
   prettier: {
     "@babel/object-curly-spacing": 0,
@@ -39,7 +43,6 @@ const incompatibles: ConflictCache = {
     "generator-star-spacing": 0,
     indent: 0,
     "indent-legacy": 0,
-    "jsx-quotes": 0,
     "object-curly-spacing": 0,
     "operator-linebreak": 0,
     quotes: 0,
@@ -51,9 +54,7 @@ const incompatibles: ConflictCache = {
     "unicorn/better-regex": 0,
   },
   rn: {
-    "@stylistic/semi": 0,
     "@typescript-eslint/comma-dangle": 0,
-    "@typescript-eslint/semi": 0,
   },
   "shopify-core": {
     "@stylistic/brace-style": 0,

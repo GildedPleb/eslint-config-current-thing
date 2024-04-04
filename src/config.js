@@ -78,8 +78,10 @@ const filename = fileURLToPath(import.meta.url);
 const baseDirectory = path.dirname(filename);
 const compat = new FlatCompat({ baseDirectory });
 
-const jsFiles = ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.cjs"];
-const tsFiles = ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"];
+const jsxFiles = ["**/*.jsx"];
+const tsxFiles = ["**/*.tsx"];
+const jsFiles = ["**/*.js", ...jsxFiles, "**/*.mjs", "**/*.cjs"];
+const tsFiles = ["**/*.ts", ...tsxFiles, "**/*.mts", "**/*.cts"];
 const files = [...jsFiles, ...tsFiles];
 
 const testFiles = [
@@ -210,7 +212,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: [...jsxFiles, ...tsxFiles],
             rules: {
               ...reactPerf.configs.recommended.rules,
               "functional/functional-parameters": 0,
@@ -237,7 +239,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: [...jsxFiles, ...tsxFiles],
             rules: {
               ...cssModules.configs.recommended.rules,
 
@@ -259,7 +261,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: [...jsxFiles, ...tsxFiles],
             languageOptions: {
               parserOptions: {
                 ecmaFeatures: {
@@ -518,7 +520,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: [...jsxFiles, ...tsxFiles],
             languageOptions: {
               parserOptions: {
                 ecmaFeatures: {
@@ -562,7 +564,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: tsFiles,
+            files: tsxFiles,
             languageOptions: {
               parserOptions: {
                 ecmaFeatures: {
@@ -710,7 +712,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: [...jsxFiles, ...tsxFiles],
             rules: {
               ...i18next.configs.recommended.rules,
 
@@ -838,7 +840,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: [...jsxFiles, ...tsxFiles],
             rules: {
               "@emotion/import-from-emotion": 2,
               "@emotion/jsx-import": 2,
@@ -954,6 +956,7 @@ const configGen = ({
               "@stylistic/semi": 0,
               "@typescript-eslint/object-curly-spacing": 0,
               "@typescript-eslint/semi": 0,
+              "jsdoc/check-tag-names": 0,
               "prettier/prettier": 0,
               ...google.rules,
 
@@ -978,7 +981,7 @@ const configGen = ({
             files: tsFiles,
             rules: {
               "tsdoc/syntax": 2,
-
+              "valid-jsdoc": 0,
               ...("eslint-plugin-tsdoc" in override
                 ? override["eslint-plugin-tsdoc"]
                 : {}),
@@ -997,7 +1000,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: [...jsxFiles, ...tsxFiles],
             rules: {
               ...tailwindcss.configs.recommended.rules,
 
@@ -1073,7 +1076,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: [...jsxFiles, ...tsxFiles],
             languageOptions: {
               parserOptions: {
                 ecmaFeatures: {
@@ -1145,7 +1148,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: [...jsxFiles, ...tsxFiles],
             // Not added in any config
             rules: {
               "@react-native/platform-colors": 1,
@@ -1210,7 +1213,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: tsFiles,
+            files: tsxFiles,
             rules: {
               ...reactNativeConfig.overrides[1].rules,
               "functional/functional-parameters": 0,
@@ -1336,7 +1339,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: [...jsxFiles, ...tsxFiles],
             languageOptions: {
               globals: reactNativeIndie.environments["react-native"].globals,
             },
@@ -1366,7 +1369,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: [...jsxFiles, ...tsxFiles],
             rules: {
               "functional/functional-parameters": 0,
               "functional/no-classes": 0,
@@ -1396,14 +1399,12 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: [...jsxFiles, ...tsxFiles],
             languageOptions: {
               globals: reactNativeConfig.globals,
             },
             rules: {
-              "@stylistic/semi": 0,
               "@typescript-eslint/comma-dangle": 0,
-              "@typescript-eslint/semi": 0,
               ...reactNativeConfig.rules,
               "functional/functional-parameters": 0,
               "functional/no-classes": 0,
@@ -1443,6 +1444,7 @@ const configGen = ({
           {
             files: jsFiles,
             rules: {
+              "valid-jsdoc": 0,
               ...jsdoc.configs["flat/recommended"].rules,
 
               ...("eslint-plugin-jsdoc" in override
@@ -1717,7 +1719,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: [...jsxFiles, ...tsxFiles],
             languageOptions: {
               globals: {
                 browser: true,
@@ -1944,7 +1946,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: tsFiles,
+            files: tsxFiles,
             languageOptions: {
               globals: {
                 browser: true,
@@ -2299,7 +2301,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: [...jsxFiles, ...tsxFiles],
             rules: {
               ...jsxA11y.configs.recommended.rules,
 
@@ -2321,7 +2323,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: [...jsxFiles, ...tsxFiles],
             rules: {
               ...reactHooks.configs.recommended.rules,
               "functional/functional-parameters": 0,
@@ -2348,7 +2350,7 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: [...jsxFiles, ...tsxFiles],
             languageOptions: {
               parserOptions: {
                 ecmaFeatures: {
@@ -2530,7 +2532,6 @@ const configGen = ({
               "generator-star-spacing": 0,
               indent: 0,
               "indent-legacy": 0,
-              "jsx-quotes": 0,
               "object-curly-spacing": 0,
               "operator-linebreak": 0,
               quotes: 0,

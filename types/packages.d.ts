@@ -85,9 +85,13 @@ declare module "eslint/use-at-your-own-risk" {
     sourceType?: "module" | "script";
   }
 
-  interface OverrideConfigData extends Omit<ConfigData, "overrides"> {
-    excludedFiles?: string | string[];
-    files: string | string[];
+  interface SuggestionResult {
+    desc: string;
+    fix: {
+      range: [number, number];
+      text: string;
+    };
+    messageId?: string;
   }
 
   interface LintMessage {
@@ -106,15 +110,6 @@ declare module "eslint/use-at-your-own-risk" {
     ruleId: null | string;
     severity: 0 | 1 | 2;
     suggestions?: SuggestionResult[];
-  }
-
-  interface SuggestionResult {
-    desc: string;
-    fix: {
-      range: [number, number];
-      text: string;
-    };
-    messageId?: string;
   }
 
   interface LintResult {
@@ -142,6 +137,11 @@ declare module "eslint/use-at-your-own-risk" {
     reportUnusedDisableDirectives?: boolean;
     root?: boolean;
     rules?: Record<string, Rule>;
+  }
+
+  interface OverrideConfigData extends Omit<ConfigData, "overrides"> {
+    excludedFiles?: string | string[];
+    files: string | string[];
   }
 
   interface ESLintOptions {

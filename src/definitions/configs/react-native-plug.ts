@@ -4,7 +4,7 @@ import type { Config } from ".";
 
 export default {
   definitions: `{
-    files,
+    files: [...jsxFiles, ...tsxFiles],
     // Not added in any config
     ${RULES}
   }`,
@@ -18,7 +18,7 @@ export default {
     },
     // This package is an exact copy of the one above. It is not imported and it is updated infrequently.
     {
-      name: "rnPluginCOmmunity",
+      name: "rnPluginCommunity",
       package: "@react-native-community/eslint-plugin",
       requiresImport: false,
     },

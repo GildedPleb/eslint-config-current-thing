@@ -3,6 +3,9 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  conflicts: {
+    "valid-jsdoc": ["tsdoc"],
+  },
   definitions: `{
     files,
     ${RULES}
