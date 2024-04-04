@@ -219,10 +219,6 @@ const configGen = ({
             // it, but "node" is still used by the Shopify config.
             rules: {
               ...nNode.configs["flat/recommended-module"].rules,
-              // Typescript handles this
-              "n/no-missing-import": 0,
-              // Typescript handles this
-              "n/no-unpublished-import": 0,
               ...("eslint-plugin-n" in override
                 ? override["eslint-plugin-n"]
                 : {}),

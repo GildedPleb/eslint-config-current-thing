@@ -3,6 +3,9 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  conflicts: {
+    "n/no-missing-import": ["import-js"],
+  },
   definitions: `{
     files,
     languageOptions: {
@@ -25,10 +28,6 @@ export default {
     { name: "node", package: "eslint-plugin-node", requiresImport: false },
   ],
   requiredPlugins: ["node", "n"],
-  rules: `...nNode.configs["flat/recommended-module"].rules,
-    // Typescript handles this
-    "n/no-missing-import": 0,
-    // Typescript handles this
-    "n/no-unpublished-import": 0,`,
+  rules: `...nNode.configs["flat/recommended-module"].rules,`,
 } satisfies Config;
 // EOF

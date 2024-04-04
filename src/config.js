@@ -2212,10 +2212,6 @@ const configGen = ({
               ...nNode.configs["flat/recommended-module"].rules,
               "functional/no-conditional-statements": 0,
               "functional/no-throw-statements": 0,
-              // Typescript handles this
-              "n/no-missing-import": 0,
-              // Typescript handles this
-              "n/no-unpublished-import": 0,
               ...("eslint-plugin-n" in override
                 ? override["eslint-plugin-n"]
                 : {}),
@@ -2416,7 +2412,7 @@ const configGen = ({
             files,
             rules: {
               ...importPlugin.configs.recommended.rules,
-
+              "n/no-missing-import": 0,
               ...("eslint-plugin-import" in override
                 ? override["eslint-plugin-import"]
                 : {}),
