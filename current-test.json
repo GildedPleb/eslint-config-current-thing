@@ -3784,7 +3784,7 @@
             ],
             "immutability": 3,
             "comparator": 1,
-            "fixer": [
+            "suggestions": [
               {
                 "pattern": "^(Array|Map|Set)<(.+)>$",
                 "replace": "Readonly$1<$2>"
@@ -3801,7 +3801,7 @@
             ],
             "immutability": 2,
             "comparator": -1,
-            "fixer": [
+            "suggestions": [
               {
                 "pattern": "^Readonly(Array|Map|Set)<(.+)>$",
                 "replace": "$1<$2>"
