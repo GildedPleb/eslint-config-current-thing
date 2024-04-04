@@ -255,9 +255,9 @@ export default configGen();
   try {
     // eslint-disable-next-line security/detect-non-literal-fs-filename
     fs.writeFileSync(outputPath, generateCode, "utf8");
-    console.log("\n./config.js has been updated successfully.");
+    console.log(`\n.${outputPath} has been updated successfully.`);
   } catch (error) {
-    console.error("Error processing the ./config.js file:", error);
+    console.error(`Error processing the ${outputPath} file:`, error);
     throw new Error("Failed");
   }
 

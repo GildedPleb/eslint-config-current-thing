@@ -3642,6 +3642,9 @@
     "you-dont-need-lodash-underscore/cast-array": [
       2
     ],
+    "you-dont-need-lodash-underscore/clone-deep": [
+      2
+    ],
     "you-dont-need-lodash-underscore/is-function": [
       2
     ],
