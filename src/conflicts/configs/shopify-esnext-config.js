@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/config.js
+// PathMark: ./src/conflicts/configs/shopify-esnext-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -198,7 +198,7 @@ const configGen = ({
       www.nope.com
       Requires: @babel/eslint-plugin, promise, sort-class-members, import
     */
-    ...(disable.includes("@shopify/eslint-plugin/esnext") ||
+    ...(disable.includes("@shopify/eslint-plugin-esnext") ||
     threshold > 1_000_000
       ? []
       : [

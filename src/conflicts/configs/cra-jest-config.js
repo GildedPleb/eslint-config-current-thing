@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/config.js
+// PathMark: ./src/conflicts/configs/cra-jest-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -198,7 +198,7 @@ const configGen = ({
       www.nope.com
       Requires: jest, testing-library
     */
-    ...(disable.includes("eslint-config-react-app/jest") ||
+    ...(disable.includes("eslint-config-react-app-jest") ||
     threshold > 1_000_000
       ? []
       : [

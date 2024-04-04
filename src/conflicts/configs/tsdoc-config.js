@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/config.js
+// PathMark: ./src/conflicts/configs/tsdoc-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -204,7 +204,6 @@ const configGen = ({
           {
             files: tsFiles,
             rules: {
-              "require-jsdoc": 0,
               "tsdoc/syntax": 2,
               ...("eslint-plugin-tsdoc" in override
                 ? override["eslint-plugin-tsdoc"]

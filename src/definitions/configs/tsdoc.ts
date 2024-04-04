@@ -13,7 +13,6 @@ export default {
     { name: "tsdoc", package: "eslint-plugin-tsdoc", requiresImport: false },
   ],
   requiredPlugins: ["tsdoc"],
-  rules: `"tsdoc/syntax": 2,
-    "require-jsdoc": 0,`,
+  rules: `"tsdoc/syntax": 2,`,
 } satisfies Config;
 // EOF

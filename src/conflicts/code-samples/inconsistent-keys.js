@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/code-samples/javascript.js
+// PathMark: ./src/conflicts/code-samples/inconsistent-keys.js
 
 /*
      !!! DO NOT EDIT !!!
@@ -24,3 +24,4 @@ const a = {
 `;
 
 export default jsCodeToLint;
+// EOF

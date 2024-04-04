@@ -41,7 +41,7 @@ Meaning, in many cases, using this config without these frameworks (by disabling
 
 <!-- Generated do not edit! -->
 
-Unsurprisingly, it is incredibly strict with popularity-based opinions on 1219 typescript rules, 1171 javascript rules, and 1246 testing rules.
+Unsurprisingly, it is incredibly strict with popularity-based opinions on 1222 typescript rules, 1174 javascript rules, and 1249 testing rules.
 
 <!-- End Generated do not edit! -->
 
@@ -325,12 +325,12 @@ Generated on 4/3/2024, downloads for the previous 28 days.
 - 378,123 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc) - Not Yet Eligible
 - 376,749 downloads, [json-fixer](https://www.npmjs.com/package/json-fixer) - Not Yet Eligible
 - 368,098 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
-- 359,772 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu) - Not Yet Eligible
 - 358,735 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
 - 352,945 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
 - 346,892 downloads, [eslint-plugin-deprecate](https://www.npmjs.com/package/eslint-plugin-deprecate) - Not Yet Eligible
 - 340,689 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
 - 339,603 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
+- 337,941 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu) - Not Yet Eligible
 - 332,239 downloads, [eslint-plugin-diff](https://www.npmjs.com/package/eslint-plugin-diff) - Not Yet Eligible
 - 326,744 downloads, [xo](https://www.npmjs.com/package/xo) - Not Yet Eligible
 - 321,717 downloads, [eslint-plugin-testcafe](https://www.npmjs.com/package/eslint-plugin-testcafe) - Not Yet Eligible

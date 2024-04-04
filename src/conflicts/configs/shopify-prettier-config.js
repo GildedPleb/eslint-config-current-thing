@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/config.js
+// PathMark: ./src/conflicts/configs/shopify-prettier-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -198,7 +198,7 @@ const configGen = ({
       www.nope.com
       Requires: prettier, @babel/eslint-plugin, @shopify
     */
-    ...(disable.includes("@shopify/eslint-plugin/prettier") ||
+    ...(disable.includes("@shopify/eslint-plugin-prettier") ||
     threshold > 1_000_000
       ? []
       : [

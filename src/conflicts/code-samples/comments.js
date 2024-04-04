@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/code-samples/javascript.js
+// PathMark: ./src/conflicts/code-samples/comments.js
 
 /*
      !!! DO NOT EDIT !!!
@@ -142,3 +142,4 @@ function incompleteJsDoc(username, password) {}
 `;
 
 export default jsCodeToLint;
+// EOF

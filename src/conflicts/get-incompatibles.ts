@@ -7,7 +7,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-// PathMark: ./src/conflicts/get-conflicts.ts
+// PathMark: ./src/conflicts/get-incompatibles.ts
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import fs from "node:fs";

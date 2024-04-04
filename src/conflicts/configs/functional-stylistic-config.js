@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/config.js
+// PathMark: ./src/conflicts/configs/functional-stylistic-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -198,7 +198,7 @@ const configGen = ({
       www.nope.com
       Requires: functional
     */
-    ...(disable.includes("eslint-plugin-functional/stylistic") ||
+    ...(disable.includes("eslint-plugin-functional-stylistic") ||
     threshold > 1_000_000
       ? []
       : [

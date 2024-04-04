@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/config.js
+// PathMark: ./src/conflicts/configs/shopify-jest-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -198,7 +198,7 @@ const configGen = ({
       www.nope.com
       Requires: jest, jest-formatting, @shopify
     */
-    ...(disable.includes("@shopify/eslint-plugin/jest") || threshold > 1_000_000
+    ...(disable.includes("@shopify/eslint-plugin-jest") || threshold > 1_000_000
       ? []
       : [
           {

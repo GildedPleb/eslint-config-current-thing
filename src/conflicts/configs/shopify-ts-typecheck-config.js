@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/config.js
+// PathMark: ./src/conflicts/configs/shopify-ts-typecheck-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -198,7 +198,7 @@ const configGen = ({
       www.nope.com
       Requires: @typescript-eslint
     */
-    ...(disable.includes("@shopify/eslint-plugin/ts-typecheck") ||
+    ...(disable.includes("@shopify/eslint-plugin-ts-typecheck") ||
     threshold > 1_000_000
       ? []
       : [

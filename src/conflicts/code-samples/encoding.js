@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/code-samples/javascript.js
+// PathMark: ./src/conflicts/code-samples/encoding.js
 
 /*
      !!! DO NOT EDIT !!!
@@ -63,3 +63,4 @@ const encoded = encoder.encode("Hello World"); // Modern approach: Use TextEncod
 `;
 
 export default jsCodeToLint;
+// EOF

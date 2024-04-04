@@ -968,7 +968,6 @@ const configGen = ({
           {
             files: tsFiles,
             rules: {
-              "require-jsdoc": 0,
               "tsdoc/syntax": 2,
 
               ...("eslint-plugin-tsdoc" in override

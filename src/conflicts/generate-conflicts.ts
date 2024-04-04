@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/generate.ts
+// PathMark: ./src/conflicts/generate-conflicts.ts
 
 // TODO: it would be good to get this generator to always be in line with the main generator, but i'm not sure its worth it...
 import fs from "node:fs";
@@ -51,7 +51,15 @@ const filePathConfigName: string[][] = [];
 const configs: PopulatedConfig[] = configsWithCount;
 // EOF
 for (const configContext of configs) {
-  const generateCode = `// PathMark: ./src/conflicts/config.js
+  const hasSecondary =
+    configContext.nameSecondary !== undefined &&
+    configContext.nameSecondary !== "";
+  const second = hasSecondary
+    ? `-${configContext.nameSecondary?.toLowerCase()}`
+    : "";
+  const relative = `./configs/${configContext.id}${second}-config.js`;
+
+  const generateCode = `// PathMark: ./src/conflicts/${relative.slice(2)}
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -200,8 +208,7 @@ const configGen = ({
               .split("\n")
               .map((line, index) => (index === 0 ? line : `          ${line}`))
               .join("\n");
-      const hasSecondary = nameSecondary !== undefined && nameSecondary !== "";
-      const second = hasSecondary ? `/${nameSecondary.toLowerCase()}` : "";
+      const second2 = hasSecondary ? `/${nameSecondary?.toLowerCase()}` : "";
 
       const definition = `  ...(${packages
         .map(({ package: pack }) => `disable.includes("${pack}${second}")`)
@@ -218,8 +225,8 @@ const configGen = ({
                   ${parsedRules}
                   ${packages.map(
                     ({ package: pack }) =>
-                      `...("${pack}${second}" in override
-                    ? override["${pack}${second}"]
+                      `...("${pack}${second2}" in override
+                    ? override["${pack}${second2}"]
                     : {}),`,
                   ).join(`
                   `)}
@@ -243,15 +250,6 @@ const configGen = ({
 export default configGen();
 // EOF
 `;
-
-  const hasSecondary =
-    configContext.nameSecondary !== undefined &&
-    configContext.nameSecondary !== "";
-  const second = hasSecondary
-    ? `-${configContext.nameSecondary?.toLowerCase()}`
-    : "";
-
-  const relative = `./configs/${configContext.id}${second}-config.js`;
   const outputPath = path.join(dirname, relative);
   try {
     // eslint-disable-next-line security/detect-non-literal-fs-filename

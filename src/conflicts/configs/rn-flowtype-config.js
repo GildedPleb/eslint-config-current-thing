@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/config.js
+// PathMark: ./src/conflicts/configs/rn-flowtype-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -199,8 +199,8 @@ const configGen = ({
       www.nope.com
       Requires: ft-flow
     */
-    ...(disable.includes("@react-native-community/eslint-config/flowtype") ||
-    disable.includes("@react-native/eslint-config/flowtype") ||
+    ...(disable.includes("@react-native-community/eslint-config-flowtype") ||
+    disable.includes("@react-native/eslint-config-flowtype") ||
     threshold > 1_000_000
       ? []
       : [
