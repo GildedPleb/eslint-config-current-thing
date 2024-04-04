@@ -18,6 +18,6 @@ export default {
     },
   ],
   requiredPlugins: ["@typescript-eslint"],
-  rules: `functional.configs["external-typescript-recommended"].rules`,
+  rules: `...functional.configs["external-typescript-recommended"].rules,`,
 } satisfies Config;
 // EOF

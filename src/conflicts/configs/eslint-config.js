@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/eslint-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -193,13 +193,13 @@ const configGen = ({
     },
 
     /*
-    ESLint
-    89,309,288 monthly downloads
-    ESLint JavaScript language implementation
-    https://eslint.org
-    Requires: (None)
-  */
-    ...(disable.includes("@eslint/js") || threshold > 89_309_288
+      ESLint
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: (None)
+    */
+    ...(disable.includes("@eslint/js") || threshold > 1_000_000
       ? []
       : [
           {

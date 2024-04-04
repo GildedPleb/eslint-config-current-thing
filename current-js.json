@@ -8,6 +8,19 @@
       "node_modules",
       ".(coffee|scss|css|less|hbs|svg|json)$"
     ],
+    "import/core-modules": [],
+    "import/extensions": [
+      ".js",
+      ".mjs",
+      ".jsx",
+      ".ts",
+      ".tsx",
+      ".d.ts"
+    ],
+    "import/external-module-folders": [
+      "node_modules",
+      "node_modules/@types"
+    ],
     "import/parsers": {
       "@typescript-eslint/parser": [
         ".ts",
@@ -21,9 +34,6 @@
       ]
     },
     "import/resolver": {
-      "typescript": {
-        "alwaysTryTypes": true
-      },
       "node": {
         "extensions": [
           ".mjs",
@@ -34,21 +44,11 @@
           ".tsx",
           ".d.ts"
         ]
+      },
+      "typescript": {
+        "alwaysTryTypes": true
       }
-    },
-    "import/extensions": [
-      ".js",
-      ".mjs",
-      ".jsx",
-      ".ts",
-      ".tsx",
-      ".d.ts"
-    ],
-    "import/core-modules": [],
-    "import/external-module-folders": [
-      "node_modules",
-      "node_modules/@types"
-    ]
+    }
   },
   "languageOptions": {
     "ecmaVersion": "latest",
@@ -1158,9 +1158,9 @@
     },
     "parser": "typescript-eslint/parser@7.4.0",
     "parserOptions": {
+      "ecmaVersion": "latest",
       "project": true,
       "sourceType": "module",
-      "ecmaVersion": "latest",
       "ecmaFeatures": {
         "jsx": true
       }
@@ -1169,53 +1169,53 @@
   "plugins": [
     "@",
     "@babel:@babel/eslint-plugin@7.23.5",
+    "@emotion",
     "@eslint-community/eslint-comments",
-    "eslint-comments",
+    "@next/next",
+    "@react-native",
+    "@shopify",
+    "@shopify/jest",
+    "@shopify/typescript",
+    "@stylistic",
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.4.0",
     "compat",
     "css-modules",
-    "@emotion",
-    "es-x:eslint-plugin-es-x@7.6.0",
     "es",
+    "es-x:eslint-plugin-es-x@7.6.0",
+    "eslint-comments",
     "flowtype",
     "ft-flow",
     "functional",
     "header",
     "i18next",
-    "simple-import-sort:eslint-plugin-simple-import-sort@12.0.0",
     "import",
+    "jest:eslint-plugin-jest@27.9.0",
     "jest-dom",
     "jest-formatting",
-    "jest:eslint-plugin-jest@27.9.0",
     "jsdoc",
     "jsx-a11y",
-    "@next/next",
-    "no-only-tests",
     "n:eslint-plugin-n@16.6.2",
+    "no-only-tests",
+    "no-unsanitized",
     "node",
     "perfectionist:eslint-plugin-perfectionist",
     "prettier:eslint-plugin-prettier@5.1.3",
     "promise",
+    "react",
     "react-hooks",
-    "@react-native",
     "react-native",
     "react-perf",
     "react-refresh",
-    "react",
     "regexp:eslint-plugin-regexp@2.4.0",
     "security:eslint-plugin-security@2.1.1",
-    "@shopify",
-    "@shopify/jest",
-    "@shopify/typescript",
+    "simple-import-sort:eslint-plugin-simple-import-sort@12.0.0",
     "sonarjs",
     "sort-class-members:eslint-plugin-sort-class-members@1.20.0",
     "storybook",
-    "@stylistic",
     "tailwindcss",
     "testing-library",
-    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.4.0",
     "tsdoc",
     "unicorn:eslint-plugin-unicorn@51.0.1",
-    "no-unsanitized",
     "unused-imports",
     "you-dont-need-lodash-underscore"
   ],
@@ -1285,6 +1285,31 @@
       {
         "allowInAsyncFunctions": true
       }
+    ],
+    "@stylistic/brace-style": [
+      0,
+      "stroustrup",
+      {
+        "allowSingleLine": true
+      }
+    ],
+    "@stylistic/object-curly-spacing": [
+      0,
+      "always"
+    ],
+    "@stylistic/operator-linebreak": [
+      0,
+      "before"
+    ],
+    "@stylistic/semi": [
+      0,
+      "never"
+    ],
+    "@typescript-eslint/comma-dangle": [
+      0
+    ],
+    "prettier/prettier": [
+      2
     ],
     "accessor-pairs": [
       0,
@@ -2237,6 +2262,7 @@
     "no-mixed-operators": [
       0,
       {
+        "allowSamePrecedence": false,
         "groups": [
           [
             "&",
@@ -2265,8 +2291,7 @@
             "in",
             "instanceof"
           ]
-        ],
-        "allowSamePrecedence": false
+        ]
       }
     ],
     "no-mixed-spaces-and-tabs": [
@@ -2599,8 +2624,8 @@
     "no-use-before-define": [
       1,
       {
-        "functions": false,
         "classes": false,
+        "functions": false,
         "variables": false
       }
     ],
@@ -2629,6 +2654,16 @@
       0
     ],
     "eslint-comments/no-use": [
+      0
+    ],
+    "@stylistic/arrow-parens": [
+      0,
+      "as-needed",
+      {
+        "requireForBlockBody": true
+      }
+    ],
+    "@typescript-eslint/object-curly-spacing": [
       0
     ],
     "arrow-body-style": [
@@ -2692,8 +2727,8 @@
       1,
       {
         "ignoreDestructuring": false,
-        "ignoreImport": false,
-        "ignoreExport": false
+        "ignoreExport": false,
+        "ignoreImport": false
       }
     ],
     "no-var": [
@@ -3154,8 +3189,69 @@
     "node/no-callback-literal": [
       2
     ],
-    "prettier/prettier": [
+    "@stylistic/indent": [
+      0,
+      2,
+      {
+        "ArrayExpression": 1,
+        "CallExpression": {
+          "arguments": 1
+        },
+        "flatTernaryExpressions": false,
+        "FunctionDeclaration": {
+          "body": 1,
+          "parameters": 1
+        },
+        "FunctionExpression": {
+          "body": 1,
+          "parameters": 1
+        },
+        "ignoreComments": false,
+        "ignoredNodes": [
+          "TemplateLiteral *",
+          "JSXElement",
+          "JSXElement > *",
+          "JSXAttribute",
+          "JSXIdentifier",
+          "JSXNamespacedName",
+          "JSXMemberExpression",
+          "JSXSpreadAttribute",
+          "JSXExpressionContainer",
+          "JSXOpeningElement",
+          "JSXClosingElement",
+          "JSXFragment",
+          "JSXOpeningFragment",
+          "JSXClosingFragment",
+          "JSXText",
+          "JSXEmptyExpression",
+          "JSXSpreadChild",
+          "TSUnionType",
+          "TSIntersectionType",
+          "TSTypeParameterInstantiation",
+          "FunctionExpression > .params[decorators.length > 0]",
+          "FunctionExpression > .params > :matches(Decorator, :not(:first-child))",
+          "ClassBody.body > PropertyDefinition[decorators.length > 0] > .key"
+        ],
+        "ImportDeclaration": 1,
+        "MemberExpression": 1,
+        "ObjectExpression": 1,
+        "offsetTernaryExpressions": true,
+        "outerIIFEBody": 1,
+        "SwitchCase": 1,
+        "VariableDeclarator": 1
+      }
+    ],
+    "@stylistic/indent-binary-ops": [
+      2,
       2
+    ],
+    "@stylistic/quotes": [
+      0,
+      "single",
+      {
+        "allowTemplateLiterals": true,
+        "avoidEscape": false
+      }
     ],
     "react/boolean-prop-naming": [
       0
@@ -4234,16 +4330,15 @@
     "functional/readonly-type": [
       2
     ],
+    "@typescript-eslint/brace-style": [
+      0
+    ],
+    "@typescript-eslint/member-delimiter-style": [
+      0
+    ],
     "@stylistic/array-bracket-spacing": [
       2,
       "never"
-    ],
-    "@stylistic/arrow-parens": [
-      2,
-      "as-needed",
-      {
-        "requireForBlockBody": true
-      }
     ],
     "@stylistic/arrow-spacing": [
       2,
@@ -4256,15 +4351,8 @@
       2,
       "always"
     ],
-    "@stylistic/brace-style": [
-      2,
-      "stroustrup",
-      {
-        "allowSingleLine": true
-      }
-    ],
     "@stylistic/comma-dangle": [
-      2,
+      0,
       "always-multiline"
     ],
     "@stylistic/comma-spacing": [
@@ -4290,62 +4378,6 @@
       "property"
     ],
     "@stylistic/eol-last": [
-      2
-    ],
-    "@stylistic/indent": [
-      2,
-      2,
-      {
-        "ArrayExpression": 1,
-        "CallExpression": {
-          "arguments": 1
-        },
-        "flatTernaryExpressions": false,
-        "FunctionDeclaration": {
-          "body": 1,
-          "parameters": 1
-        },
-        "FunctionExpression": {
-          "body": 1,
-          "parameters": 1
-        },
-        "ignoreComments": false,
-        "ignoredNodes": [
-          "TemplateLiteral *",
-          "JSXElement",
-          "JSXElement > *",
-          "JSXAttribute",
-          "JSXIdentifier",
-          "JSXNamespacedName",
-          "JSXMemberExpression",
-          "JSXSpreadAttribute",
-          "JSXExpressionContainer",
-          "JSXOpeningElement",
-          "JSXClosingElement",
-          "JSXFragment",
-          "JSXOpeningFragment",
-          "JSXClosingFragment",
-          "JSXText",
-          "JSXEmptyExpression",
-          "JSXSpreadChild",
-          "TSUnionType",
-          "TSIntersectionType",
-          "TSTypeParameterInstantiation",
-          "FunctionExpression > .params[decorators.length > 0]",
-          "FunctionExpression > .params > :matches(Decorator, :not(:first-child))",
-          "ClassBody.body > PropertyDefinition[decorators.length > 0] > .key"
-        ],
-        "ImportDeclaration": 1,
-        "MemberExpression": 1,
-        "ObjectExpression": 1,
-        "offsetTernaryExpressions": true,
-        "outerIIFEBody": 1,
-        "SwitchCase": 1,
-        "VariableDeclarator": 1
-      }
-    ],
-    "@stylistic/indent-binary-ops": [
-      2,
       2
     ],
     "@stylistic/key-spacing": [
@@ -4377,7 +4409,7 @@
       }
     ],
     "@stylistic/member-delimiter-style": [
-      2,
+      0,
       {
         "multiline": {
           "delimiter": "none",
@@ -4460,14 +4492,6 @@
     "@stylistic/no-whitespace-before-property": [
       2
     ],
-    "@stylistic/object-curly-spacing": [
-      2,
-      "always"
-    ],
-    "@stylistic/operator-linebreak": [
-      2,
-      "before"
-    ],
     "@stylistic/padded-blocks": [
       2,
       {
@@ -4477,22 +4501,10 @@
       }
     ],
     "@stylistic/quote-props": [
-      2,
+      0,
       "consistent-as-needed"
     ],
-    "@stylistic/quotes": [
-      2,
-      "single",
-      {
-        "allowTemplateLiterals": true,
-        "avoidEscape": false
-      }
-    ],
     "@stylistic/rest-spread-spacing": [
-      2,
-      "never"
-    ],
-    "@stylistic/semi": [
       2,
       "never"
     ],
@@ -4626,7 +4638,7 @@
       }
     ],
     "@stylistic/jsx-one-expression-per-line": [
-      2,
+      0,
       {
         "allow": "single-child"
       }
@@ -4655,19 +4667,19 @@
         "return": "parens-new-line"
       }
     ],
+    "@emotion/import-from-emotion": [
+      2
+    ],
     "@emotion/jsx-import": [
       2
     ],
     "@emotion/no-vanilla": [
       2
     ],
-    "@emotion/import-from-emotion": [
+    "@emotion/pkg-renaming": [
       2
     ],
     "@emotion/styled-import": [
-      2
-    ],
-    "@emotion/pkg-renaming": [
       2
     ],
     "perfectionist/sort-imports": [
@@ -4849,6 +4861,9 @@
           ]
         }
       }
+    ],
+    "@typescript-eslint/indent": [
+      0
     ],
     "no-empty-static-block": [
       2
@@ -5310,10 +5325,10 @@
     "unused-imports/no-unused-vars": [
       1,
       {
-        "vars": "all",
-        "varsIgnorePattern": "^_",
         "args": "after-used",
-        "argsIgnorePattern": "^_"
+        "argsIgnorePattern": "^_",
+        "vars": "all",
+        "varsIgnorePattern": "^_"
       }
     ],
     "@eslint-community/eslint-comments/disable-enable-pair": [
@@ -5330,6 +5345,9 @@
     ],
     "@eslint-community/eslint-comments/no-unused-enable": [
       2
+    ],
+    "@typescript-eslint/no-extra-parens": [
+      0
     ],
     "unicorn/better-regex": [
       0
@@ -5826,10 +5844,16 @@
     "jsx-a11y/autocomplete-valid": [
       2
     ],
-    "@typescript-eslint/lines-around-comment": [
+    "@typescript-eslint/quotes": [
       0
     ],
-    "@typescript-eslint/quotes": [
+    "@typescript-eslint/semi": [
+      0
+    ],
+    "@typescript-eslint/space-before-function-paren": [
+      0
+    ],
+    "@typescript-eslint/lines-around-comment": [
       0
     ],
     "babel/quotes": [
@@ -5844,19 +5868,10 @@
     "@typescript-eslint/block-spacing": [
       0
     ],
-    "@typescript-eslint/brace-style": [
-      0
-    ],
-    "@typescript-eslint/comma-dangle": [
-      0
-    ],
     "@typescript-eslint/comma-spacing": [
       0
     ],
     "@typescript-eslint/func-call-spacing": [
-      0
-    ],
-    "@typescript-eslint/indent": [
       0
     ],
     "@typescript-eslint/key-spacing": [
@@ -5865,25 +5880,10 @@
     "@typescript-eslint/keyword-spacing": [
       0
     ],
-    "@typescript-eslint/member-delimiter-style": [
-      0
-    ],
-    "@typescript-eslint/no-extra-parens": [
-      0
-    ],
     "@typescript-eslint/no-extra-semi": [
       0
     ],
-    "@typescript-eslint/object-curly-spacing": [
-      0
-    ],
-    "@typescript-eslint/semi": [
-      0
-    ],
     "@typescript-eslint/space-before-blocks": [
-      0
-    ],
-    "@typescript-eslint/space-before-function-paren": [
       0
     ],
     "@typescript-eslint/space-infix-ops": [

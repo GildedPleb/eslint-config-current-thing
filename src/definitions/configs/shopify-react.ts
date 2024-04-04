@@ -5,11 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    settings: {
-      react: {
-        version: "detect",
-      },
-    },
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {
@@ -18,6 +13,11 @@ export default {
       },
     },
     ${RULES}
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
   }`,
   id: "shopify",
   name: "Shopify",
@@ -30,7 +30,7 @@ export default {
     },
   ],
   requiredPlugins: ["react", "jsx-a11y", "react-hooks", "@shopify"],
-  rules: `shopify.configs.react.rules,
-  "react/jsx-filename-extension": [2, {extensions: [".jsx", ".tsx"]}]`,
+  rules: `...shopify.configs.react.rules,
+    "react/jsx-filename-extension": [2, {extensions: [".jsx", ".tsx"] }],`,
 } satisfies Config;
 // EOF

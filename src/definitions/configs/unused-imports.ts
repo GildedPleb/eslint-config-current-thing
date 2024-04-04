@@ -17,19 +17,9 @@ export default {
     },
   ],
   requiredPlugins: ["unused-imports"],
-  rules: `{
-    "no-unused-vars": 0,
+  rules: `"no-unused-vars": 0,
     "@typescript-eslint/no-unused-vars": 0,
     "unused-imports/no-unused-imports": 2,
-    "unused-imports/no-unused-vars": [
-        "warn",
-        {
-            "vars": "all",
-            "varsIgnorePattern": "^_",
-            "args": "after-used",
-            "argsIgnorePattern": "^_",
-        },
-    ],
-}`,
+    "unused-imports/no-unused-vars": [1,   { args: "after-used", argsIgnorePattern: "^_", vars: "all", varsIgnorePattern: "^_" }],`,
 } satisfies Config;
 // EOF

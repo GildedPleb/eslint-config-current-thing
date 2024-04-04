@@ -18,6 +18,6 @@ export default {
     },
   ],
   requiredPlugins: ["functional"],
-  rules: `functional.configs.stylistic.rules`,
+  rules: `...functional.configs.stylistic.rules,`,
 } satisfies Config;
 // EOF

@@ -233,11 +233,13 @@ async function getExisting(): Promise<Populated[]> {
 async function fetchEslintPlugins() {
   console.log("Checking lists...");
   for (const pack of investigating) {
-    if (installed.has(pack))
+    if (installed.has(pack)) {
       console.log(`--> ALERT! investigating "${pack}" already INSTALLED`);
+    }
 
-    if (rejected.has(pack))
+    if (rejected.has(pack)) {
       console.log(`--> ALERT! investigating "${pack}" already REJECTED`);
+    }
   }
 
   console.log("Getting full list...");
@@ -285,8 +287,9 @@ async function fetchEslintPlugins() {
     console.log(`Adding "${plugin.name}"... ${downloads}`);
   }
 
-  for await (const plugin of populated)
+  for await (const plugin of populated) {
     await database.put(`plugin-${plugin.name}`, JSON.stringify(plugin));
+  }
 
   return populated
     .filter((item) => item.count)

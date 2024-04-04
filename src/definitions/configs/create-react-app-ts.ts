@@ -14,18 +14,17 @@ export default {
         node: true,
       },
       parserOptions: {
-        sourceType: 'module',
         ecmaFeatures: {
           jsx: true,
         },
       },
     },
+    ${RULES}
     settings: {
       react: {
-        version: 'detect',
+        version: "detect",
       },
     },
-    ${RULES}
   }`,
   id: "cra",
   name: "Create React App",
@@ -34,48 +33,43 @@ export default {
     { name: "cra", package: "eslint-config-react-app", requiresImport: false },
   ],
   requiredPlugins: ["@typescript-eslint"],
-  rules: `{
-    // TypeScript's noFallthroughCasesInSwitch option is more robust (#6906)
-    'default-case': 'off',
-    // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/291)
-    'no-dupe-class-members': 'off',
-    // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/477)
-    'no-undef': 'off',
-    // Add TypeScript specific rules (and turn off ESLint equivalents)
-    '@typescript-eslint/consistent-type-assertions': 'warn',
-    'no-array-constructor': 'off',
-    '@typescript-eslint/no-array-constructor': 'warn',
-    'no-redeclare': 'off',
-    '@typescript-eslint/no-redeclare': 'warn',
-    'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': [
-      'warn',
-      {
-        functions: false,
-        classes: false,
-        variables: false,
-        typedefs: false,
-      },
-    ],
-    'no-unused-expressions': 'off',
-    '@typescript-eslint/no-unused-expressions': [
-      'error',
+  rules: `"@typescript-eslint/consistent-type-assertions": 1,
+    "@typescript-eslint/no-array-constructor": 1,
+    "@typescript-eslint/no-redeclare": 1,
+    "@typescript-eslint/no-unused-expressions": [
+      2,
       {
         allowShortCircuit: true,
-        allowTernary: true,
         allowTaggedTemplates: true,
+        allowTernary: true,
       },
     ],
-    'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': [
-      'warn',
+    "@typescript-eslint/no-unused-vars": [
+      1,
       {
-        args: 'none',
+        args: "none",
         ignoreRestSiblings: true,
       },
     ],
-    'no-useless-constructor': 'off',
-    '@typescript-eslint/no-useless-constructor': 'warn',
-  }`,
+    "@typescript-eslint/no-use-before-define": [
+      1,
+      {
+        classes: false,
+        functions: false,
+        typedefs: false,
+        variables: false,
+      },
+    ],
+    "@typescript-eslint/no-useless-constructor": 1,
+
+    "default-case": 0,
+    "no-dupe-class-members": 0,
+    "no-undef": 0,
+    "no-array-constructor": 0,
+    "no-redeclare": 0,
+    "no-use-before-define": 0,
+    "no-unused-expressions": 0,
+    "no-unused-vars": 0,
+    "no-useless-constructor": 0,`,
 } satisfies Config;
 // EOF

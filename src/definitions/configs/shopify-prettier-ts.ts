@@ -18,6 +18,6 @@ export default {
     },
   ],
   requiredPlugins: ["prettier", "@typescript-eslint"],
-  rules: `shopify.configs.prettier.overrides[0].rules`,
+  rules: `...shopify.configs.prettier.overrides[0].rules,`,
 } satisfies Config;
 // EOF

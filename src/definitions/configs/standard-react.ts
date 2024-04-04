@@ -5,11 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    settings: {
-      react: {
-        version: "detect",
-      },
-    },
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {
@@ -18,6 +13,11 @@ export default {
       },
     },
     ${RULES}
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
   }`,
   id: "standard-react",
   name: "Standard React",
@@ -29,6 +29,6 @@ export default {
     },
   ],
   requiredPlugins: ["react", "react-hooks"],
-  rules: `standardReact.rules`,
+  rules: `...standardReact.rules,`,
 } satisfies Config;
 // EOF

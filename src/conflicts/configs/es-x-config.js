@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/es-x-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,15 +192,15 @@ const configGen = ({
     },
 
     /*
-    ES-X
-    23,826,362 monthly downloads
-    ESLint plugin about ECMAScript syntactic features. / ESLint plugin about ECMAScript syntactic features.
-    https://github.com/eslint-community/eslint-plugin-es-x#readme / https://github.com/mysticatea/eslint-plugin-es#readme
-    Requires: es, es-x
-  */
+      ES-X
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: es, es-x
+    */
     ...(disable.includes("eslint-plugin-es-x") ||
     disable.includes("eslint-plugin-es") ||
-    threshold > 23_826_362
+    threshold > 1_000_000
       ? []
       : [
           {

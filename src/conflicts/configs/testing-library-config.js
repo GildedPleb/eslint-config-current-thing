@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/testing-library-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,14 +192,14 @@ const configGen = ({
     },
 
     /*
-    Testing Library
-    22,103,607 monthly downloads
-    ESLint plugin to follow best practices and anticipate common mistakes when writing tests with Testing Library
-    https://github.com/testing-library/eslint-plugin-testing-library
-    Requires: testing-library
-  */
+      Testing Library
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: testing-library
+    */
     ...(disable.includes("eslint-plugin-testing-library") ||
-    threshold > 22_103_607
+    threshold > 1_000_000
       ? []
       : [
           {

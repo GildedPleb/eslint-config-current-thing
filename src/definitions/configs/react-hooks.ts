@@ -17,6 +17,6 @@ export default {
     },
   ],
   requiredPlugins: ["react-hooks"],
-  rules: `reactHooks.configs.recommended.rules`,
+  rules: `...reactHooks.configs.recommended.rules,`,
 } satisfies Config;
 // EOF

@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/standard-jsx-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -193,13 +193,13 @@ const configGen = ({
     },
 
     /*
-    Standard JSX
-    2,361,049 monthly downloads
-    JavaScript Standard Style JSX support - ESLint Shareable Config
-    https://github.com/standard/eslint-config-standard-jsx
-    Requires: react
-  */
-    ...(disable.includes("eslint-config-standard-jsx") || threshold > 2_361_049
+      Standard JSX
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: react
+    */
+    ...(disable.includes("eslint-config-standard-jsx") || threshold > 1_000_000
       ? []
       : [
           {

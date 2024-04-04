@@ -20,6 +20,6 @@ export default {
     },
   ],
   requiredPlugins: ["import"],
-  rules: `compat.extends("airbnb-base")[0].rules`,
+  rules: `...compat.extends("airbnb-base")[0].rules,`,
 } satisfies Config;
 // EOF

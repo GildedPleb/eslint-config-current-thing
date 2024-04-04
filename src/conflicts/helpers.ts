@@ -1,3 +1,4 @@
+// PathMark: ./src/conflicts/helpers.ts
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable security/detect-object-injection */
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -115,3 +116,4 @@ export function add0Rule(list: ConflictCache, name: string, rule: string) {
       : { [rule]: 0 };
   return newList;
 }
+// EOF

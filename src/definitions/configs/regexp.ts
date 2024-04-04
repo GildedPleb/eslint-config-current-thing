@@ -17,6 +17,6 @@ export default {
     },
   ],
   requiredPlugins: ["regexp"],
-  rules: `regexp.configs["flat/recommended"].rules`,
+  rules: `...regexp.configs["flat/recommended"].rules,`,
 } satisfies Config;
 // EOF

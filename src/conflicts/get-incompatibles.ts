@@ -10,7 +10,10 @@
 // PathMark: ./src/conflicts/get-conflicts.ts
 
 // eslint-disable-next-line import/no-extraneous-dependencies
+import fs from "node:fs";
+import path from "node:path";
 import readline from "node:readline";
+import { fileURLToPath } from "node:url";
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import chalk from "chalk";
@@ -18,8 +21,15 @@ import chalk from "chalk";
 import { Level } from "level";
 
 import { hashObject, printDiffLines } from "../helpers";
+import commentsJsCodeToLint from "./code-samples/comments";
+import commentsTsCodeToLint from "./code-samples/comments-ts";
+import encCodeToLint from "./code-samples/encoding";
+import inconsistentKeys from "./code-samples/inconsistent-keys";
 import jsCodeToLint from "./code-samples/javascript";
+import testCodeToLint from "./code-samples/js.test";
 import jsxCodeToLint from "./code-samples/jsx";
+import regexCodeToLint from "./code-samples/regex";
+import tsxCodeToLint from "./code-samples/tsx";
 import tsCodeToLint from "./code-samples/typescript";
 import configList from "./configs";
 import {
@@ -32,12 +42,13 @@ import {
 } from "./helpers";
 import { type Combinations, type ConflictCache, type Rule } from "./types";
 
-const skipCache = process.argv.slice(1)[0] === "skipCache";
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
+
+const skipCache = process.argv.slice(2)[0] === "skipCache";
 if (skipCache) {
   console.log(chalk.inverse("Skipping the Cache for this run."));
 }
-
-const database = new Level("./conflict-cache", { valueEncoding: "json" });
 
 const combinations: Combinations = [];
 for (let index = 0; index < configList.length; index++) {
@@ -52,14 +63,71 @@ for (let index = 0; index < configList.length; index++) {
 
 let fullConflictList: ConflictCache = {};
 
-const fileList = [
-  { def: jsCodeToLint, path: "./src/conflicts/code-samples/javascript.js" },
-  { def: tsCodeToLint, path: "./src/conflicts/code-samples/typescript.ts" },
-  { def: jsxCodeToLint, path: "./src/conflicts/code-samples/jsx.jsx" },
+interface FileList {
+  def: string;
+  filePath: string;
+  short: string;
+}
+
+const fileList: FileList[] = [
+  {
+    def: jsCodeToLint,
+    filePath: "./src/conflicts/code-samples/javascript.js",
+    short: "js",
+  },
+  {
+    def: tsCodeToLint,
+    filePath: "./src/conflicts/code-samples/typescript.ts",
+    short: "ts",
+  },
+  {
+    def: jsxCodeToLint,
+    filePath: "./src/conflicts/code-samples/jsx.jsx",
+    short: "jsx",
+  },
+  {
+    def: tsxCodeToLint,
+    filePath: "./src/conflicts/code-samples/tsx.tsx",
+    short: "tsx",
+  },
+  {
+    def: testCodeToLint,
+    filePath: "./src/conflicts/code-samples/js.test.js",
+    short: "test",
+  },
+  {
+    def: regexCodeToLint,
+    filePath: "./src/conflicts/code-samples/regex.js",
+    short: "regex",
+  },
+  {
+    def: encCodeToLint,
+    filePath: "./src/conflicts/code-samples/encoding.js",
+    short: "encoding",
+  },
+  {
+    def: commentsJsCodeToLint,
+    filePath: "./src/conflicts/code-samples/comments.js",
+    short: "comments-js",
+  },
+  {
+    def: commentsTsCodeToLint,
+    filePath: "./src/conflicts/code-samples/comments-ts.ts",
+    short: "comments-ts",
+  },
+  {
+    def: inconsistentKeys,
+    filePath: "./src/conflicts/code-samples/inconsistent-keys.js",
+    short: "inconsistent-keys",
+  },
 ];
+
 // Const filePath = "./src/conflicts/code-samples/javascript.js";
-for await (const { def: codeToLint, path } of fileList) {
-  const filePath = path;
+for await (const { def: codeToLint, filePath, short } of fileList) {
+  const database = new Level(`./conflict-cache-${short}`, {
+    valueEncoding: "json",
+  });
+
   const opt = { filePath };
   console.log("\n\nProcessing filetype:", chalk.red(filePath), "\n");
 
@@ -69,7 +137,7 @@ for await (const { def: codeToLint, path } of fileList) {
     for await (const [config1, config2] of combinations) {
       const { location: config1Path, name: name1 } = config1;
       const { location: config2Path, name: name2 } = config2;
-      const currentCheck = chalk.blue(`${name1} -vs- ${name2}`);
+      const currentCheck = `${chalk.green(short)}: ${chalk.blue(name1)} ${chalk.blue("-vs-")} ${chalk.blue(name2)}`;
       const [es1, json1] = await getLinter(filePath, config1Path);
       const [es2, json2] = await getLinter(filePath, config2Path);
       const keyHash = hashObject({ codeToLint, filePath, json1, json2 });
@@ -167,7 +235,7 @@ for await (const { def: codeToLint, path } of fileList) {
             json1RulesZeroed,
           );
           readline.cursorTo(process.stdout, 0);
-          const out = `${currentCheck} - Now checking: ${name2} -vs- ${ruleName}`;
+          const out = `${currentCheck} - Now checking: ${name2} -vs- ${name1}/${ruleName}`;
           process.stdout.write(out.padEnd(150, " "));
           const [output1, output2] = await getSimpleDiff(
             opt,
@@ -181,23 +249,28 @@ for await (const { def: codeToLint, path } of fileList) {
             output1 === output2
           ) {
             json1RulesZeroed[ruleName] = 0;
-            if (!skipCache)
+            if (!skipCache) {
               await database.put(
                 `conflicts-${innerKeyHash}`,
                 JSON.stringify(innerConfigList),
               );
+            }
+
             continue mid;
           }
 
           console.log(`\nConfig incompatible with rule:`);
           printDiffLines(output1, output2);
-          if (!(ruleName in json2Rules))
+          if (!(ruleName in json2Rules)) {
             innerConfigList = add0Rule(innerConfigList, name2, ruleName);
-          if (!skipCache)
+          }
+
+          if (!skipCache) {
             await database.put(
               `conflicts-${innerKeyHash}`,
               JSON.stringify(innerConfigList),
             );
+          }
         }
 
         conflictList = mergeIncompatible(innerConfigList, conflictList);
@@ -227,7 +300,7 @@ for await (const { def: codeToLint, path } of fileList) {
             json2RulesZeroed,
           );
           readline.cursorTo(process.stdout, 0);
-          const out = `${currentCheck} - Now checking: ${name1} -vs- ${ruleName}`;
+          const out = `${currentCheck} - Now checking: ${name1} -vs- ${name2}/${ruleName}`;
           process.stdout.write(out.padEnd(150, " "));
           const [output1, output2] = await getSimpleDiff(
             opt,
@@ -240,34 +313,44 @@ for await (const { def: codeToLint, path } of fileList) {
             output2 === undefined ||
             output1 === output2
           ) {
-            if (!skipCache)
+            if (!skipCache) {
               await database.put(
                 `conflicts-${innerKeyHash}`,
                 JSON.stringify(innerConfigList),
               );
+            }
+
             json2RulesZeroed[ruleName] = 0;
             continue mid;
           }
 
           console.log(`\nConfig incompatible with rule:`);
           printDiffLines(output1, output2);
-          if (!(ruleName in json1Rules))
+          if (!(ruleName in json1Rules)) {
             conflictList = add0Rule(conflictList, name1, ruleName);
-          if (!skipCache)
+          }
+
+          if (!skipCache) {
             await database.put(
               `conflicts-${innerKeyHash}`,
               JSON.stringify(innerConfigList),
             );
+          }
         }
 
         conflictList = mergeIncompatible(innerConfigList, conflictList);
         json2RulesZeroed[ruleName] = 0;
       }
 
+      const out = `\n${currentCheck} - Finished Mid Processing.`;
+      process.stdout.write(out.padEnd(150, " "));
+      readline.cursorTo(process.stdout, 0);
       fullConflictList = mergeIncompatible(conflictList, fullConflictList);
     }
 
-    // For each config compare set:
+    let upToDate = false;
+
+    // For each config compare the set:
     for await (const lint of linters) {
       const { config1, config2, currentCheck, json1, json2, keyHash } = lint;
       const { location: path1, name: name1 } = config1;
@@ -296,12 +379,12 @@ for await (const { def: codeToLint, path } of fileList) {
           json2RuleName,
           json2RuleSetting,
         ] of json2RulesList) {
+          readline.cursorTo(process.stdout, 0);
+
           if (isRuleOff(json2RuleSetting)) continue inner;
           if (json2RuleName === json1RuleName) {
-            console.log(
-              `\n${currentCheck} - Same/same skipping:`,
-              json1RuleName,
-            );
+            const out = `${currentCheck} - Same/same skipping: ${json1RuleName}`;
+            process.stdout.write(out.padEnd(150, " "));
             continue inner;
           }
 
@@ -320,14 +403,14 @@ for await (const { def: codeToLint, path } of fileList) {
             json2OneRule: json1OneRule,
           });
           let innerConfigList: ConflictCache = {};
-          readline.cursorTo(process.stdout, 0);
           try {
             if (skipCache) throw new Error("Skipping the cache");
             const previous = await database.get(`conflicts-${innerKeyHash}`);
             innerConfigList = JSON.parse(previous) as ConflictCache;
-            const out = `${currentCheck} - Inner Cache Hit: ${json1RuleName} -vs- ${json2RuleName}`;
+            const out = `${upToDate ? "\n" : ""}${currentCheck} - Inner Cache Hit: ${json1RuleName} -vs- ${json2RuleName}`;
             process.stdout.write(out.padEnd(150, " "));
           } catch {
+            upToDate = true;
             const out = `${currentCheck} - Now checking: ${json1RuleName} -vs- ${json2RuleName}`;
             process.stdout.write(out.padEnd(150, " "));
             json2Rules0ed[json2RuleName] = json2RuleSetting;
@@ -364,10 +447,14 @@ for await (const { def: codeToLint, path } of fileList) {
 
             console.log(`\nRules incompatible:`);
             printDiffLines(output1, output2);
-            if (!(json2RuleName in json1Rules))
+            if (!(json2RuleName in json1Rules)) {
               innerConfigList = add0Rule(innerConfigList, name1, json2RuleName);
-            if (!(json1RuleName in json2Rules))
+            }
+
+            if (!(json1RuleName in json2Rules)) {
               innerConfigList = add0Rule(innerConfigList, name2, json1RuleName);
+            }
+
             json2Rules0ed[json2RuleName] = 0;
             if (!skipCache) {
               await database.put(
@@ -394,6 +481,8 @@ for await (const { def: codeToLint, path } of fileList) {
           JSON.stringify(temporaryList),
         );
       }
+
+      console.log(`\n${currentCheck} - Processing finished.`);
     }
   } catch (error) {
     console.error("Error during ESLint setup or linting process:", error);
@@ -401,5 +490,26 @@ for await (const { def: codeToLint, path } of fileList) {
 }
 
 console.log({ fullConflictList });
+
+const generateCode = `// PathMark: ./src/conflicts/incompatibilities.ts
+import { type ConflictCache } from "./types";
+
+const incompatibles: ConflictCache = ${JSON.stringify(fullConflictList, undefined, 2)};
+
+export default incompatibles;
+// EOF
+`;
+
+const relative = `./incompatibilities.ts`;
+const outputPath = path.join(dirname, relative);
+
+try {
+  // eslint-disable-next-line security/detect-non-literal-fs-filename
+  fs.writeFileSync(outputPath, generateCode, "utf8");
+  console.log("\n./incompatibilities.js has been updated successfully.");
+} catch (error) {
+  console.error("Error processing the ./incompatibilities.js file:", error);
+  throw new Error("Failed");
+}
 
 // EOF

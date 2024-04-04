@@ -6,6 +6,7 @@
 import * as React from "react";
 
 const Nine = () => <div>{9}</div>;
+
 /**
  *
  * @param {object} props - props

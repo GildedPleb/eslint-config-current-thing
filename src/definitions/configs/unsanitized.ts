@@ -17,6 +17,6 @@ export default {
     },
   ],
   requiredPlugins: ["no-unsanitized"],
-  rules: `unsanitized.configs.DOM.rules`,
+  rules: `...unsanitized.configs.DOM.rules,`,
 } satisfies Config;
 // EOF

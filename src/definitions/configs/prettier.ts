@@ -18,7 +18,7 @@ export default {
     {
       name: "prettierConfig",
       package: "eslint-config-prettier",
-      requiresImport: false,
+      requiresImport: true,
     },
     {
       name: "prettierTypes",
@@ -42,6 +42,7 @@ export default {
     "react",
     "standard",
   ],
-  rules: `"prettier/prettier": 2`,
+  rules: `...prettierConfig.rules,
+    "prettier/prettier": 2,`,
 } satisfies Config;
 // EOF

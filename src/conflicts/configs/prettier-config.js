@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/prettier-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -22,6 +22,7 @@ import nextjs from "@next/eslint-plugin-next";
 import rnPlugin from "@react-native/eslint-plugin";
 import shopify from "@shopify/eslint-plugin";
 import stylistic from "@stylistic/eslint-plugin";
+import prettierConfig from "eslint-config-prettier";
 import { defineFlatConfig } from "eslint-define-config";
 import comp from "eslint-plugin-compat";
 import cssModules from "eslint-plugin-css-modules";
@@ -192,23 +193,23 @@ const configGen = ({
     },
 
     /*
-    Prettier
-    138,614,175 monthly downloads
-    Runs prettier as an eslint rule / Turns off all rules that are unnecessary or might conflict with Prettier. / TypeScript definitions for eslint-config-prettier / TypeScript definitions for eslint-plugin-prettier
-    https://github.com/prettier/eslint-plugin-prettier#readme / https://github.com/prettier/eslint-config-prettier#readme / https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/eslint-config-prettier / https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/eslint-plugin-prettier
-    Requires: prettier, @typescript-eslint, @babel, vue, unicorn, babel, flowtype, react, standard
-  */
+      Prettier
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: prettier, @typescript-eslint, @babel, vue, unicorn, babel, flowtype, react, standard
+    */
     ...(disable.includes("eslint-plugin-prettier") ||
     disable.includes("eslint-config-prettier") ||
     disable.includes("@types/eslint-config-prettier") ||
     disable.includes("@types/eslint-plugin-prettier") ||
-    threshold > 138_614_175
+    threshold > 1_000_000
       ? []
       : [
           {
             files,
             rules: {
-              // ...prettierConfig.rules,
+              ...prettierConfig.rules,
               "prettier/prettier": 2,
               ...("eslint-plugin-prettier" in override
                 ? override["eslint-plugin-prettier"]

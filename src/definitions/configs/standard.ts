@@ -7,9 +7,9 @@ export default {
     files,
     languageOptions: {
       globals: {
-        "document": "readonly",
-        "navigator": "readonly",
-        "window": "readonly",
+        document: "readonly",
+        navigator: "readonly",
+        window: "readonly",
       },
     },
     ${RULES}
@@ -24,6 +24,6 @@ export default {
     },
   ],
   requiredPlugins: ["import", "n", "promise"],
-  rules: `standard.rules`,
+  rules: `...standard.rules,`,
 } satisfies Config;
 // EOF

@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/cra-ts-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,13 +192,13 @@ const configGen = ({
     },
 
     /*
-    Create React App - TS
-    17,884,579 monthly downloads
-    ESLint configuration used by Create React App
-    https://github.com/facebook/create-react-app#readme
-    Requires: @typescript-eslint
-  */
-    ...(disable.includes("eslint-config-react-app/ts") || threshold > 17_884_579
+      Create React App - TS
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: @typescript-eslint
+    */
+    ...(disable.includes("eslint-config-react-app/ts") || threshold > 1_000_000
       ? []
       : [
           {
@@ -215,16 +215,14 @@ const configGen = ({
                 ecmaFeatures: {
                   jsx: true,
                 },
-                sourceType: "module",
               },
             },
             rules: {
-              // Add TypeScript specific rules (and turn off ESLint equivalents)
-              "@typescript-eslint/consistent-type-assertions": "warn",
-              "@typescript-eslint/no-array-constructor": "warn",
-              "@typescript-eslint/no-redeclare": "warn",
+              "@typescript-eslint/consistent-type-assertions": 1,
+              "@typescript-eslint/no-array-constructor": 1,
+              "@typescript-eslint/no-redeclare": 1,
               "@typescript-eslint/no-unused-expressions": [
-                "error",
+                2,
                 {
                   allowShortCircuit: true,
                   allowTaggedTemplates: true,
@@ -232,14 +230,14 @@ const configGen = ({
                 },
               ],
               "@typescript-eslint/no-unused-vars": [
-                "warn",
+                1,
                 {
                   args: "none",
                   ignoreRestSiblings: true,
                 },
               ],
               "@typescript-eslint/no-use-before-define": [
-                "warn",
+                1,
                 {
                   classes: false,
                   functions: false,
@@ -247,19 +245,17 @@ const configGen = ({
                   variables: false,
                 },
               ],
-              "@typescript-eslint/no-useless-constructor": "warn",
-              // TypeScript's noFallthroughCasesInSwitch option is more robust (#6906)
-              "default-case": "off",
-              "no-array-constructor": "off",
-              // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/291)
-              "no-dupe-class-members": "off",
-              "no-redeclare": "off",
-              // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/477)
-              "no-undef": "off",
-              "no-unused-expressions": "off",
-              "no-unused-vars": "off",
-              "no-use-before-define": "off",
-              "no-useless-constructor": "off",
+              "@typescript-eslint/no-useless-constructor": 1,
+
+              "default-case": 0,
+              "no-array-constructor": 0,
+              "no-dupe-class-members": 0,
+              "no-redeclare": 0,
+              "no-undef": 0,
+              "no-unused-expressions": 0,
+              "no-unused-vars": 0,
+              "no-use-before-define": 0,
+              "no-useless-constructor": 0,
               ...("eslint-config-react-app/ts" in override
                 ? override["eslint-config-react-app/ts"]
                 : {}),

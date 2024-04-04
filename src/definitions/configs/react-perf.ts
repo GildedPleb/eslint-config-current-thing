@@ -17,6 +17,6 @@ export default {
     },
   ],
   requiredPlugins: ["react-perf"],
-  rules: `reactPerf.configs.recommended.rules`,
+  rules: `...reactPerf.configs.recommended.rules,`,
 } satisfies Config;
 // EOF

@@ -1,3 +1,4 @@
+// PathMark: ./src/conflicts/types.ts
 export type Combinations = Array<
   Array<{
     location: string;
@@ -62,3 +63,4 @@ export interface IFlatESLint {
     options?: { filePath?: string; warnIgnored?: boolean },
   ) => Promise<LintResult[]>;
 }
+// EOF

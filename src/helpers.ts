@@ -6,6 +6,7 @@ import { createHash } from "node:crypto";
 import chalk from "chalk";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import * as diff from "diff";
+
 /**
  *
  * @param dateString - formatted like "3/15/24"
@@ -42,6 +43,7 @@ export function printDiffLines(oldString: string, newString: string) {
     // Use color coding to mark added and removed parts
     const color =
       part.added === true ? "green" : part.removed === true ? "red" : "grey";
+    // eslint-disable-next-line security/detect-object-injection
     accumulatedString += chalk[color](part.value);
     if (color === "green") accumulatedString += "[~~~+]";
     if (color === "red") accumulatedString += "[~~~-]";
@@ -67,10 +69,11 @@ export function printDiffLines(oldString: string, newString: string) {
       editedLine = editedLine.replaceAll("[~~~-]", "");
     }
 
-    if (changes !== "")
+    if (changes !== "") {
       console.log(
         `${pad}${changes} ${String(index + 1).padStart(3, " ")}: ${editedLine}`,
       );
+    }
   }
 }
 

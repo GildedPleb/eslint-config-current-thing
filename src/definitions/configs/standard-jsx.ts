@@ -5,11 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    settings: {
-      react: {
-        version: "detect",
-      },
-    },
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {
@@ -18,6 +13,11 @@ export default {
       },
     },
     ${RULES}
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
   }`,
   id: "standard-jsx",
   name: "Standard JSX",
@@ -29,6 +29,6 @@ export default {
     },
   ],
   requiredPlugins: ["react"],
-  rules: `standardJsx.rules`,
+  rules: `...standardJsx.rules,`,
 } satisfies Config;
 // EOF

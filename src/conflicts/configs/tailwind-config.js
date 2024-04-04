@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/tailwind-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,13 +192,13 @@ const configGen = ({
     },
 
     /*
-    Tailwind CSS
-    1,953,117 monthly downloads
-    Rules enforcing best practices while using Tailwind CSS
-    https://github.com/francoismassart/eslint-plugin-tailwindcss
-    Requires: tailwindcss
-  */
-    ...(disable.includes("eslint-plugin-tailwindcss") || threshold > 1_953_117
+      Tailwind CSS
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: tailwindcss
+    */
+    ...(disable.includes("eslint-plugin-tailwindcss") || threshold > 1_000_000
       ? []
       : [
           {

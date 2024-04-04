@@ -17,12 +17,10 @@ export default {
     },
   ],
   requiredPlugins: ["emotion"],
-  rules: `{
+  rules: `"@emotion/import-from-emotion": 2,
     "@emotion/jsx-import": 2,
     "@emotion/no-vanilla": 2,
-    "@emotion/import-from-emotion": 2,
-    "@emotion/styled-import": 2,
     "@emotion/pkg-renaming": 2,
-  }`,
+    "@emotion/styled-import": 2,`,
 } satisfies Config;
 // EOF

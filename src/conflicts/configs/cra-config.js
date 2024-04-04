@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/cra-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -193,13 +193,13 @@ const configGen = ({
     },
 
     /*
-    Create React App
-    17,884,579 monthly downloads
-    ESLint configuration used by Create React App
-    https://github.com/facebook/create-react-app#readme
-    Requires: react, react-hooks, import, jsx-a11y, flowtype
-  */
-    ...(disable.includes("eslint-config-react-app") || threshold > 17_884_579
+      Create React App
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: react, react-hooks, import, jsx-a11y, flowtype
+    */
+    ...(disable.includes("eslint-config-react-app") || threshold > 1_000_000
       ? []
       : [
           {
@@ -222,18 +222,15 @@ const configGen = ({
               "array-callback-return": 1,
               "default-case": [1, { commentPattern: "^no default$" }],
               "dot-location": [1, "property"],
-              'eqeqeq': [1, 'smart'],
-              // https://github.com/gajus/eslint-plugin-flowtype
+              eqeqeq: [1, "smart"],
               "flowtype/define-flow-type": 1,
               "flowtype/require-valid-file-annotation": 1,
               "flowtype/use-flow-type": 1,
               "getter-return": 1,
-              // https://github.com/benmosher/eslint-plugin-import/tree/master/docs/rules
               "import/first": 2,
               "import/no-amd": 2,
               "import/no-anonymous-default-export": 1,
               "import/no-webpack-loader-syntax": 2,
-              // https://github.com/evcohen/eslint-plugin-jsx-a11y/tree/master/docs/rules
               "jsx-a11y/alt-text": 1,
               "jsx-a11y/anchor-has-content": 1,
               "jsx-a11y/anchor-is-valid": [
@@ -331,12 +328,10 @@ const configGen = ({
               "no-sparse-arrays": 1,
               "no-template-curly-in-string": 1,
               "no-this-before-super": 1,
-
               "no-throw-literal": 1,
               "no-undef": 2,
               "no-unreachable": 1,
               "no-unsafe-negation": 1,
-
               "no-unused-expressions": [
                 2,
                 {
@@ -364,10 +359,6 @@ const configGen = ({
               "no-useless-computed-key": 1,
               "no-useless-concat": 1,
               "no-useless-constructor": 1,
-
-              // Disabled because of undesirable warnings
-              // See https://github.com/facebook/create-react-app/issues/5204 for
-              // blockers until its re-enabled
               "no-useless-escape": 1,
               "no-useless-rename": [
                 1,
@@ -379,12 +370,10 @@ const configGen = ({
               ],
               "no-whitespace-before-property": 1,
               "no-with": 1,
-              // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
               "react/forbid-foreign-prop-types": [
                 1,
                 { allowInPropTypes: true },
               ],
-
               "react/jsx-no-comment-textnodes": 1,
               "react/jsx-no-duplicate-props": 1,
               "react/jsx-no-target-blank": 1,
@@ -399,20 +388,16 @@ const configGen = ({
               "react/jsx-uses-react": 1,
               "react/jsx-uses-vars": 1,
               "react/no-danger-with-children": 1,
-              // "react/no-deprecated": 1,
               "react/no-direct-mutation-state": 1,
               "react/no-is-mounted": 1,
               "react/no-typos": 2,
               "react/require-render-return": 2,
               "react/style-prop-object": 1,
               "react-hooks/exhaustive-deps": 1,
-              // https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks
               "react-hooks/rules-of-hooks": 2,
               "require-yield": 1,
               "rest-spread-spacing": [1, "never"],
-
-              'strict': [1, 'never'],
-
+              strict: [1, "never"],
               "unicode-bom": [1, "never"],
               "use-isnan": 1,
               "valid-typeof": 1,

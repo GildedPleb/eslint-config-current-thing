@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/perfectionist-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,13 +192,13 @@ const configGen = ({
     },
 
     /*
-    Perfectionist
-    856,197 monthly downloads
-    ESLint plugin for sorting various data such as objects, imports, types, enums, JSX props, etc.
-    https://eslint-plugin-perfectionist.azat.io
-    Requires: perfectionist
-  */
-    ...(disable.includes("eslint-plugin-perfectionist") || threshold > 856_197
+      Perfectionist
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: perfectionist
+    */
+    ...(disable.includes("eslint-plugin-perfectionist") || threshold > 1_000_000
       ? []
       : [
           {

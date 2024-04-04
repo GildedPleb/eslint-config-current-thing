@@ -14,6 +14,6 @@ export default {
     { name: "es", package: "eslint-plugin-es", requiresImport: false },
   ],
   requiredPlugins: ["es", "es-x"],
-  rules: `esX.configs["no-new-in-esnext"].rules`,
+  rules: `...esX.configs["no-new-in-esnext"].rules,`,
 } satisfies Config;
 // EOF

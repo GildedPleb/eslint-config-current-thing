@@ -29,6 +29,6 @@ export default {
     },
   ],
   requiredPlugins: ["react-native"],
-  rules: `reactNativeConfig.overrides[2].rules`,
+  rules: `...reactNativeConfig.overrides[2].rules,`,
 } satisfies Config;
 // EOF

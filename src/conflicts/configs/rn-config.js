@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/rn-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -193,16 +193,16 @@ const configGen = ({
     },
 
     /*
-    React Native Config
-    7,052,107 monthly downloads
-    ESLint config for React Native / ESLint config for React Native / ESLint Environment for React Native
-    https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native-community#readme / https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native#readme / https://github.com/satya164/eslint-plugin-react-native-globals#readme
-    Requires: eslint-comments, react, react-hooks, react-native, jest
-  */
+      React Native Config
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: eslint-comments, react, react-hooks, react-native, jest
+    */
     ...(disable.includes("@react-native-community/eslint-config") ||
     disable.includes("@react-native/eslint-config") ||
     disable.includes("eslint-plugin-react-native-globals") ||
-    threshold > 7_052_107
+    threshold > 1_000_000
       ? []
       : [
           {

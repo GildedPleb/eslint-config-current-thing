@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/comments-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,15 +192,15 @@ const configGen = ({
     },
 
     /*
-    Comments
-    9,170,115 monthly downloads
-    Additional ESLint rules for ESLint directive comments. / Additional ESLint rules for ESLint directive comments.
-    https://github.com/eslint-community/eslint-plugin-eslint-comments#readme / https://github.com/mysticatea/eslint-plugin-eslint-comments#readme
-    Requires: eslint-comments, @eslint-community/eslint-comments
-  */
+      Comments
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: eslint-comments, @eslint-community/eslint-comments
+    */
     ...(disable.includes("@eslint-community/eslint-plugin-eslint-comments") ||
     disable.includes("eslint-plugin-eslint-comments") ||
-    threshold > 9_170_115
+    threshold > 1_000_000
       ? []
       : [
           {

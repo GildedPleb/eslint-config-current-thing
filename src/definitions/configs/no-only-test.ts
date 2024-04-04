@@ -17,6 +17,6 @@ export default {
     },
   ],
   requiredPlugins: ["no-only-tests"],
-  rules: `{ "no-only-tests/no-only-tests": 2 }`,
+  rules: `"no-only-tests/no-only-tests": 2,`,
 } satisfies Config;
 // EOF

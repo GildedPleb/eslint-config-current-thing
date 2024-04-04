@@ -18,6 +18,6 @@ export default {
     },
   ],
   requiredPlugins: ["@typescript-eslint"],
-  rules: `shopify.configs.typescript.overrides[0].rules`,
+  rules: `...shopify.configs.typescript.overrides[0].rules,`,
 } satisfies Config;
 // EOF

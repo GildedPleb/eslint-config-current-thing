@@ -17,6 +17,6 @@ export default {
     },
   ],
   requiredPlugins: ["jest-formatting"],
-  rules: `jestFormatting.configs.recommended.overrides[0].rules`,
+  rules: `...jestFormatting.configs.recommended.overrides[0].rules,`,
 } satisfies Config;
 // EOF

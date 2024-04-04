@@ -23,6 +23,6 @@ export default {
     },
   ],
   requiredPlugins: ["@typescript-eslint/eslint-plugin"],
-  rules: `reactNativeConfig.overrides[1].rules`,
+  rules: `...reactNativeConfig.overrides[1].rules,`,
 } satisfies Config;
 // EOF

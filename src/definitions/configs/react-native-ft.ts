@@ -4,7 +4,7 @@ import type { Config } from ".";
 
 export default {
   definitions: `{
-    files: ['*.js'],
+    files: ["*.js"],
     ${RULES}
   }`,
   id: "rn",
@@ -24,6 +24,6 @@ export default {
     },
   ],
   requiredPlugins: ["ft-flow"],
-  rules: `reactNativeConfig.overrides[0].rules`,
+  rules: `...reactNativeConfig.overrides[0].rules,`,
 } satisfies Config;
 // EOF

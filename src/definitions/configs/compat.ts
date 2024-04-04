@@ -8,7 +8,7 @@ export default {
     languageOptions: {
       globals: {
         browser: true,
-      }
+      },
     },
     ${RULES}
   }`,
@@ -18,6 +18,6 @@ export default {
     { name: "comp", package: "eslint-plugin-compat", requiresImport: false },
   ],
   requiredPlugins: ["compat"],
-  rules: `comp.configs.recommended.rules`,
+  rules: `...comp.configs.recommended.rules,`,
 } satisfies Config;
 // EOF

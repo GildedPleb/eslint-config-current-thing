@@ -17,6 +17,6 @@ export default {
     },
   ],
   requiredPlugins: ["react-refresh"],
-  rules: `{ "react-refresh/only-export-components": "warn" }`,
+  rules: `"react-refresh/only-export-components": 1,`,
 } satisfies Config;
 // EOF

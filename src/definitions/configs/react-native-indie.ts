@@ -20,6 +20,6 @@ export default {
     },
   ],
   requiredPlugins: ["react-native"],
-  rules: `reactNativeIndie.configs.all.rules`,
+  rules: `...reactNativeIndie.configs.all.rules,`,
 } satisfies Config;
 // EOF

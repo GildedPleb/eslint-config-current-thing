@@ -22,8 +22,8 @@ export default {
     },
   ],
   requiredPlugins: ["@typescript-eslint"],
-  rules: `standardTS.rules,
-    // types can be inferred by typescript
+  rules: `...standardTS.rules,
+    // Types can be inferred by typescript
     "@typescript-eslint/explicit-function-return-type": 0,
     // "allowNullableObject: false," auto-fixes type \`object | undefined\` poorly.
     // When checking a nullable object, \`if (obj)...\` it auto-fixes to \`if (obj != null)...\`.
@@ -34,14 +34,14 @@ export default {
     "@typescript-eslint/strict-boolean-expressions": [
       2,
       {
-        allowString: false,
-        allowNumber: false,
-        allowNullableObject: true,
-        allowNullableBoolean: false,
-        allowNullableString: false,
-        allowNullableNumber: false,
         allowAny: false,
+        allowNullableBoolean: false,
+        allowNullableNumber: false,
+        allowNullableObject: true,
+        allowNullableString: false,
+        allowNumber: false,
+        allowString: false,
       },
-    ]`,
+    ],`,
 } satisfies Config;
 // EOF

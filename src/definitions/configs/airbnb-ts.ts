@@ -17,6 +17,6 @@ export default {
     },
   ],
   requiredPlugins: ["@typescript-eslint", "import"],
-  rules: `compat.extends("airbnb-typescript")[0].rules`,
+  rules: `...compat.extends("airbnb-typescript")[0].rules,`,
 } satisfies Config;
 // EOF

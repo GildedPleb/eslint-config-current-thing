@@ -17,6 +17,6 @@ export default {
     },
   ],
   requiredPlugins: ["you-dont-need-lodash-underscore"],
-  rules: `youDontNeedLodash.configs.compatible.rules`,
+  rules: `...youDontNeedLodash.configs.compatible.rules,`,
 } satisfies Config;
 // EOF

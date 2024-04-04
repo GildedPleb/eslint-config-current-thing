@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/unused-imports-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,14 +192,14 @@ const configGen = ({
     },
 
     /*
-    No Unused Imports
-    9,062,360 monthly downloads
-    Report and remove unused es6 modules
-    https://github.com/sweepline/eslint-plugin-unused-imports
-    Requires: unused-imports
-  */
+      No Unused Imports
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: unused-imports
+    */
     ...(disable.includes("eslint-plugin-unused-imports") ||
-    threshold > 9_062_360
+    threshold > 1_000_000
       ? []
       : [
           {
@@ -209,7 +209,7 @@ const configGen = ({
               "no-unused-vars": 0,
               "unused-imports/no-unused-imports": 2,
               "unused-imports/no-unused-vars": [
-                "warn",
+                1,
                 {
                   args: "after-used",
                   argsIgnorePattern: "^_",

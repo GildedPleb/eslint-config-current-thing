@@ -13,6 +13,6 @@ export default {
     { name: "jsdoc", package: "eslint-plugin-jsdoc", requiresImport: false },
   ],
   requiredPlugins: ["jsdoc"],
-  rules: `jsdoc.configs['flat/recommended'].rules`,
+  rules: `...jsdoc.configs['flat/recommended'].rules,`,
 } satisfies Config;
 // EOF

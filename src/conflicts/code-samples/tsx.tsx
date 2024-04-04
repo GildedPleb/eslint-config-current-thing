@@ -1,3 +1,4 @@
+// PathMark: ./src/conflicts/code-samples/tsx.tsx
 /*
      !!! DO NOT EDIT !!!
 
@@ -10,8 +11,9 @@
 
 const codeToLint = `
 import * as React from "react";
+import React, { Fragment, memo, createContext, Component, useContext, useEffect, useRef, useState, useReducer, forwardRef, useImperativeHandle, lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import { createContext, useContext, useEffect, useRef, useState, useReducer, forwardRef, useImperativeHandle, lazy, Suspense } from 'react';
+
 interface GreetingProps {
   name: string;
 }
@@ -176,7 +178,6 @@ const TextInputWithFocusButton = forwardRef<HTMLInputElement, TextInputWithFocus
   }));
   return <input ref={inputRef} type="text" />;
 });
-import { lazy, Suspense, memo, Fragment } from 'react';
 const LazyComponent = lazy(() => import('./LazyComponent'));
 const SuspenseWrapper: React.FC = () => (
   <Suspense fallback={<div>Loading...</div>}>
@@ -218,6 +219,126 @@ interface RefComponentProps {
 const RefComponent = forwardRef<HTMLDivElement, RefComponentProps>((props, ref) => {
   return <div ref={ref}>{/* content */}</div>;
 });
+
+const MisusedFragmentShorthand: React.FC = () => {
+  return (
+    <>
+      {/* This usage is not necessarily a TypeScript issue but a React pattern to be aware of */}
+      <Fragment key="key1">Fragment 1</Fragment>
+      <Fragment key="key2">Fragment 2</Fragment>
+    </>
+  );
+};
+class LegacyStringRefsComponent extends Component {
+  private myRef: React.RefObject<HTMLDivElement>;
+  constructor(props: {}) {
+    super(props);
+    this.myRef = React.createRef<HTMLDivElement>();
+  }
+  componentDidMount() {
+    console.log(this.myRef.current); // Accessing the ref
+  }
+  render() {
+    return <div ref={this.myRef}>Legacy String Refs</div>;
+  }
+}
+interface DirectStateMutationState {
+  count: number;
+}
+class DirectStateMutation extends Component<{}, DirectStateMutationState> {
+  state: DirectStateMutationState = { count: 0 };
+  increment = () => {
+    this.setState(({ count }) => ({ count: count + 1 }));
+  };
+  render() {
+    return <button onClick={this.increment}>Increment</button>;
+  }
+}
+function withPropLogger<T>(WrappedComponent: React.ComponentType<T>) {
+  return class extends Component<T> {
+    componentDidUpdate(prevProps: T) {
+      console.log('Current props:', this.props);
+      console.log('Previous props:', prevProps);
+    }
+    render() {
+      return <WrappedComponent {...this.props} />;
+    }
+  };
+}
+function useAdvancedCustomHook(): [number, React.Dispatch<React.SetStateAction<number>>] {
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    setValue(value => value + 1);
+  }, []);
+  return [value, setValue];
+}
+interface ThemeContextType {
+  theme: string;
+  setTheme: React.Dispatch<React.SetStateAction<string>>;
+}
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [theme, setTheme] = useState('light');
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+interface FancyInputProps {
+  // Any additional props
+}
+const FancyInput = forwardRef<HTMLInputElement, FancyInputProps>((props, ref) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+  useImperativeHandle(ref, () => ({
+    focus: () => {
+      inputRef.current?.focus();
+    }
+  }));
+  return <input ref={inputRef} type="text" />;
+});
+interface ButtonProps {
+  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+}
+const Button: React.FC<ButtonProps> = ({ onClick }) => {
+  return <button onClick={onClick}>Click Me</button>;
+};
+interface ListProps<T> {
+  items: T[];
+  renderItem: (item: T) => React.ReactNode;
+}
+function List<T>(props: ListProps<T>): React.ReactElement {
+  return (
+    <ul>
+      {props.items.map((item, index) => (
+        <li key={index}>{props.renderItem(item)}</li>
+      ))}
+    </ul>
+  );
+}
+interface FormState {
+  name: string;
+}
+const Form: React.FC = () => {
+  const [formData, setFormData] = useState<FormState>({ name: '' });
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, name: event.target.value });
+  };
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    console.log(formData);
+  };
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Name:
+        <input type="text" value={formData.name} onChange={handleChange} />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
 
 
 `;

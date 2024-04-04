@@ -24,6 +24,6 @@ export default {
     },
   ],
   requiredPlugins: ["eslint-comments", "@eslint-community/eslint-comments"],
-  rules: `comments.configs.recommended.rules`,
+  rules: `...comments.configs.recommended.rules,`,
 } satisfies Config;
 // EOF

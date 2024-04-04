@@ -17,6 +17,6 @@ export default {
     },
   ],
   requiredPlugins: ["storybook", "react-hooks", "import"],
-  rules: `storybook.configs.recommended.overrides[0].rules`,
+  rules: `...storybook.configs.recommended.overrides[0].rules,`,
 } satisfies Config;
 // EOF

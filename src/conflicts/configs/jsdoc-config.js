@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/jsdoc-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,13 +192,13 @@ const configGen = ({
     },
 
     /*
-    JSDoc
-    7,720,099 monthly downloads
-    JSDoc linting rules for ESLint.
-    https://github.com/gajus/eslint-plugin-jsdoc#readme
-    Requires: jsdoc
-  */
-    ...(disable.includes("eslint-plugin-jsdoc") || threshold > 7_720_099
+      JSDoc
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: jsdoc
+    */
+    ...(disable.includes("eslint-plugin-jsdoc") || threshold > 1_000_000
       ? []
       : [
           {

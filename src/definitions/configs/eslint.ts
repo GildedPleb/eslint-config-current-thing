@@ -11,6 +11,6 @@ export default {
   name: "ESLint",
   packages: [{ name: "eslint", package: "@eslint/js", requiresImport: true }],
   requiredPlugins: [],
-  rules: `eslint.configs.recommended.rules`,
+  rules: `...eslint.configs.recommended.rules,`,
 } satisfies Config;
 // EOF

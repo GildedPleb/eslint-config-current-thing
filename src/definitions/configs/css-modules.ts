@@ -17,6 +17,6 @@ export default {
     },
   ],
   requiredPlugins: ["css-modules"],
-  rules: `cssModules.configs.recommended.rules`,
+  rules: `...cssModules.configs.recommended.rules,`,
 } satisfies Config;
 // EOF

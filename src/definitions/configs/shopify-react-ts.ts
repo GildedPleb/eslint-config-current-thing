@@ -5,20 +5,19 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files: tsFiles,
-    settings: {
-      react: {
-        version: "detect",
-      },
-    },
     languageOptions: {
       parserOptions: {
-        sourceType: 'module',
         ecmaFeatures: {
           jsx: true,
         },
       },
     },
     ${RULES}
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
   }`,
   id: "shopify",
   name: "Shopify",
@@ -31,6 +30,6 @@ export default {
     },
   ],
   requiredPlugins: ["react"],
-  rules: `shopify.configs.react.overrides[0].rules`,
+  rules: `...shopify.configs.react.overrides[0].rules,`,
 } satisfies Config;
 // EOF

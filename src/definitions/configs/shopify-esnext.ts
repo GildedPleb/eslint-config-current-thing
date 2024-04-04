@@ -8,10 +8,10 @@ export default {
   },
   definitions: `{
     files,
-    settings: {
-      'import/ignore': ['node_modules', '\\.s?css'],
-    },
     ${RULES}
+    settings: {
+      "import/ignore": ["node_modules", "\\.s?css"],
+    },
   }`,
   id: "shopify",
   name: "Shopify",
@@ -29,6 +29,6 @@ export default {
     "sort-class-members",
     "import",
   ],
-  rules: `shopify.configs.esnext.rules`,
+  rules: `...shopify.configs.esnext.rules,`,
 } satisfies Config;
 // EOF

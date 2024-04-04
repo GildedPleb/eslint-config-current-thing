@@ -18,6 +18,6 @@ export default {
     },
   ],
   requiredPlugins: ["@shopify", "eslint-comments"],
-  rules: `shopify.configs.core.rules`,
+  rules: `...shopify.configs.core.rules,`,
 } satisfies Config;
 // EOF

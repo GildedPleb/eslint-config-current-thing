@@ -17,6 +17,6 @@ export default {
     },
   ],
   requiredPlugins: ["jest-dom"],
-  rules: `jestDom.configs.recommended.rules`,
+  rules: `...jestDom.configs.recommended.rules,`,
 } satisfies Config;
 // EOF

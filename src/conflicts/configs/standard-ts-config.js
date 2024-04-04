@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/standard-ts-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -193,15 +193,15 @@ const configGen = ({
     },
 
     /*
-    Standard
-    2,690,396 monthly downloads
-    An ESLint Shareable Config for JavaScript Standard Style with TypeScript support / A TypeScript ESLint config that loves you
-    https://github.com/mightyiam/eslint-config-standard-with-typescript#readme / https://github.com/mightyiam/eslint-config-love#readme
-    Requires: @typescript-eslint
-  */
+      Standard
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: @typescript-eslint
+    */
     ...(disable.includes("eslint-config-standard-with-typescript") ||
     disable.includes("eslint-config-love") ||
-    threshold > 2_690_396
+    threshold > 1_000_000
       ? []
       : [
           {

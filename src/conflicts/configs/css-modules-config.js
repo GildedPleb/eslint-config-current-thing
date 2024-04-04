@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/css-modules-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,13 +192,13 @@ const configGen = ({
     },
 
     /*
-    CSS Modules
-    470,794 monthly downloads
-    Checks that you are using the existent css/scss/less classes, no more no less
-    undefined
-    Requires: css-modules
-  */
-    ...(disable.includes("eslint-plugin-css-modules") || threshold > 470_794
+      CSS Modules
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: css-modules
+    */
+    ...(disable.includes("eslint-plugin-css-modules") || threshold > 1_000_000
       ? []
       : [
           {

@@ -20,9 +20,7 @@ export default {
     },
   ],
   requiredPlugins: ["simple-import-sort"],
-  rules: `{
-    "simple-import-sort/imports": 2,
-    "simple-import-sort/exports": 2,
-  }`,
+  rules: `"simple-import-sort/imports": 2,
+    "simple-import-sort/exports": 2,`,
 } satisfies Config;
 // EOF

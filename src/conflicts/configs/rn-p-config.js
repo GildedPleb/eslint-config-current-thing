@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/rn-p-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,15 +192,15 @@ const configGen = ({
     },
 
     /*
-    React Native Plugin
-    3,007,767 monthly downloads
-    ESLint rules for @react-native/eslint-config / ESLint rules for @react-native-community/eslint-config
-    https://github.com/facebook/react-native/tree/HEAD/packages/eslint-plugin-react-native#readme / https://github.com/facebook/react-native#readme
-    Requires: @react-native
-  */
+      React Native Plugin
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: @react-native
+    */
     ...(disable.includes("@react-native/eslint-plugin") ||
     disable.includes("@react-native-community/eslint-plugin") ||
-    threshold > 3_007_767
+    threshold > 1_000_000
       ? []
       : [
           {

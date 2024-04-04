@@ -18,6 +18,6 @@ export default {
     },
   ],
   requiredPlugins: ["storybook"],
-  rules: `storybook.configs.recommended.overrides[1].rules`,
+  rules: `...storybook.configs.recommended.overrides[1].rules,`,
 } satisfies Config;
 // EOF

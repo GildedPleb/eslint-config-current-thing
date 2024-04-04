@@ -84,8 +84,9 @@ for (const config of configsWithCount) {
   const second = hasSecondary ? `-${config.nameSecondary?.toLowerCase()}` : "";
   const id = `${config.id}${second}`;
   if (id.includes("/")) throw new Error(`Ids must NOT include "/" got "${id}"`);
-  if (ids.has(id))
+  if (ids.has(id)) {
     throw new Error(`Ids must be unique. "${id}" has duplicates`);
+  }
 
   ids.add(id);
 }
@@ -105,14 +106,17 @@ for await (const config of configsWithCount) {
   const badRules = Object.entries(config.conflicts ?? {});
   for (const [rule, conflictingConfigs] of badRules) {
     for (const externalConfig of new Set(conflictingConfigs)) {
-      if (!(externalConfig in configsMapped))
+      if (!(externalConfig in configsMapped)) {
         throw new Error(
           `Must provide valid keys. Key does not exist: ${externalConfig}. Valid keys: ${Object.keys(configsMapped).join(", ")}.`,
         );
+      }
+
       // eslint-disable-next-line security/detect-object-injection
-      if (!configsMapped[externalConfig].overrides.includes(rule))
+      if (!configsMapped[externalConfig].overrides.includes(rule)) {
         // eslint-disable-next-line security/detect-object-injection
         configsMapped[externalConfig].overrides.push(rule);
+      }
     }
   }
 }

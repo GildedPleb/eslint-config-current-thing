@@ -47,6 +47,7 @@ export const getInfo = memoize(getInfoLong);
 const getDateLong = (date: Date) => date.toISOString().split("T")[0];
 
 const getDate = memoize(getDateLong);
+
 /**
  * Gets the download count for a given npm package
  * @param name - The name of the package.

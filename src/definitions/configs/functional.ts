@@ -40,7 +40,7 @@ export default {
     },
   ],
   requiredPlugins: ["functional"],
-  rules: `functional.configs["external-vanilla-recommended"].rules,
-    ...functional.configs.recommended.rules`,
+  rules: `...functional.configs["external-vanilla-recommended"].rules,
+    ...functional.configs.recommended.rules,`,
 } satisfies Config;
 // EOF

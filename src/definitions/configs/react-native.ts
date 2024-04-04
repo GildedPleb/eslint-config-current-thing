@@ -37,8 +37,8 @@ export default {
     "react-native",
     "jest",
   ],
-  rules: `reactNativeConfig.rules,
+  rules: `...reactNativeConfig.rules,
     // Deprecated rule format needs to be overwritten
-    quotes: [0, "single", { "avoidEscape": true, "allowTemplateLiterals": true }]`,
+    quotes: [0, "single", { "avoidEscape": true, "allowTemplateLiterals": true }],`,
 } satisfies Config;
 // EOF

@@ -17,6 +17,6 @@ export default {
     },
   ],
   requiredPlugins: ["i18next"],
-  rules: `i18next.configs.recommended.rules`,
+  rules: `...i18next.configs.recommended.rules,`,
 } satisfies Config;
 // EOF

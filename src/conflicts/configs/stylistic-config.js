@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/stylistic-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,28 +192,19 @@ const configGen = ({
     },
 
     /*
-    Stylistic
-    681,611 monthly downloads
-    Stylistic rules for ESLint, works for both JavaScript and TypeScript.
-    https://github.com/eslint-stylistic/eslint-stylistic#readme
-    Requires: @stylistic
-  */
-    ...(disable.includes("@stylistic/eslint-plugin") || threshold > 681_611
+      Stylistic
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: @stylistic
+    */
+    ...(disable.includes("@stylistic/eslint-plugin") || threshold > 1_000_000
       ? []
       : [
           {
             files,
             rules: {
-              // ...stylistic.configs.customize({ quotes: "double", semi: true })
-              //   .rules,
               ...stylistic.configs["recommended-flat"].rules,
-              // All conflict with Prettier:
-              // "@stylistic/arrow-parens": 0,
-              // "@stylistic/brace-style": 0,
-              // "@stylistic/multiline-ternary": 0,
-              // "@stylistic/operator-linebreak": 0,
-              // "@stylistic/quote-props": 0,
-              // "@stylistic/quotes": 0,
               ...("@stylistic/eslint-plugin" in override
                 ? override["@stylistic/eslint-plugin"]
                 : {}),

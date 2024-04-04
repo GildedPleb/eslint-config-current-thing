@@ -5,7 +5,25 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
+    ${RULES}
     settings: {
+      "import/core-modules": [],
+      "import/extensions": [
+        ".js",
+        ".mjs",
+        ".jsx",
+        ".ts",
+        ".tsx",
+        ".d.ts",
+      ],
+      "import/external-module-folders": [
+        "node_modules",
+        "node_modules/@types",
+      ],
+      "import/ignore": [
+        "node_modules",
+        ".(coffee|scss|css|less|hbs|svg|json)$",
+      ],
       "import/parsers": {
         "@typescript-eslint/parser": [
           ".ts",
@@ -19,7 +37,6 @@ export default {
         ],
       },
       "import/resolver": {
-        typescript: { alwaysTryTypes: true },
         node: {
           extensions: [
             ".mjs",
@@ -28,29 +45,12 @@ export default {
             ".json",
             ".ts",
             ".tsx",
-            ".d.ts"
-          ]
+            ".d.ts",
+          ],
         },
+        typescript: { alwaysTryTypes: true },
       },
-      "import/extensions": [
-        ".js",
-        ".mjs",
-        ".jsx",
-        ".ts",
-        ".tsx",
-        ".d.ts"
-      ],
-      "import/core-modules": [],
-      "import/ignore": [
-        "node_modules",
-        "\\.(coffee|scss|css|less|hbs|svg|json)$"
-      ],
-      "import/external-module-folders": [
-        "node_modules",
-        "node_modules/@types"
-      ],
     },
-    ${RULES}
   }`,
   id: "import-js",
   name: "Import",
@@ -67,6 +67,6 @@ export default {
     },
   ],
   requiredPlugins: ["import"],
-  rules: `importPlugin.configs.recommended.rules`,
+  rules: `...importPlugin.configs.recommended.rules,`,
 } satisfies Config;
 // EOF

@@ -23,6 +23,6 @@ export default {
     },
   ],
   requiredPlugins: ["import"],
-  rules: `importPlugin.configs.typescript.rules`,
+  rules: `...importPlugin.configs.typescript.rules,`,
 } satisfies Config;
 // EOF

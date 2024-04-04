@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/ts-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,16 +192,16 @@ const configGen = ({
     },
 
     /*
-    TypeScript
-    239,300,329 monthly downloads
-    Tooling which enables you to use TypeScript with ESLint / An ESLint custom parser which leverages TypeScript ESTree / TypeScript plugin for ESLint
-    https://github.com/typescript-eslint/typescript-eslint#readme / https://github.com/typescript-eslint/typescript-eslint#readme / https://github.com/typescript-eslint/typescript-eslint#readme
-    Requires: @typescript-eslint
-  */
+      TypeScript
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: @typescript-eslint
+    */
     ...(disable.includes("typescript-eslint") ||
     disable.includes("@typescript-eslint/parser") ||
     disable.includes("@typescript-eslint/eslint-plugin") ||
-    threshold > 239_300_329
+    threshold > 1_000_000
       ? []
       : [
           {
@@ -209,6 +209,7 @@ const configGen = ({
             rules: {
               ...tseslint.configs.recommendedTypeChecked[1].rules,
               ...tseslint.configs.recommendedTypeChecked[2].rules,
+              "@typescript-eslint/indent": 0,
               ...("typescript-eslint" in override
                 ? override["typescript-eslint"]
                 : {}),

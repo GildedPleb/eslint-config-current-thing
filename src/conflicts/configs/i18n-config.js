@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/i18n-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,13 +192,13 @@ const configGen = ({
     },
 
     /*
-    Internationalization (i18n)
-    673,866 monthly downloads
-    ESLint plugin for i18n
-    https://github.com/edvardchen/eslint-plugin-i18next#readme
-    Requires: i18next
-  */
-    ...(disable.includes("eslint-plugin-i18next") || threshold > 673_866
+      Internationalization (i18n)
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: i18next
+    */
+    ...(disable.includes("eslint-plugin-i18next") || threshold > 1_000_000
       ? []
       : [
           {

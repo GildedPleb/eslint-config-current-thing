@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/no-lodash-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,14 +192,14 @@ const configGen = ({
     },
 
     /*
-    You Don't Need Lodash
-    659,036 monthly downloads
-    Check methods you can use natively without lodash/underscore
-    https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore.git
-    Requires: you-dont-need-lodash-underscore
-  */
+      You Don't Need Lodash
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: you-dont-need-lodash-underscore
+    */
     ...(disable.includes("eslint-plugin-you-dont-need-lodash-underscore") ||
-    threshold > 659_036
+    threshold > 1_000_000
       ? []
       : [
           {

@@ -17,6 +17,6 @@ export default {
     },
   ],
   requiredPlugins: ["security"],
-  rules: `security.configs.recommended.rules`,
+  rules: `...security.configs.recommended.rules,`,
 } satisfies Config;
 // EOF

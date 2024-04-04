@@ -1,28 +1,17 @@
 // PathMark: ./src/conflicts/generate.ts
+
+// TODO: it would be good to get this generator to always be in line with the main generator, but i'm not sure its worth it...
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { Level } from "level";
 
 import { MINIMUMS, RULES } from "../constants";
 import type { Config } from "../definitions/configs";
 import rawConfigs from "../definitions/configs";
 import plugins from "../definitions/plugins";
-import { isMoreThan1DaysInThePast } from "../helpers";
-import { getDownloadCount, getInfo, type Info } from "../npm";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
-
-const database = new Level("../packages-installed", { valueEncoding: "json" });
-
-interface DatabaseEntry {
-  count: number;
-  date: string;
-  info: Info;
-}
 
 export interface PopulatedConfig extends Config {
   count: number;
@@ -34,50 +23,9 @@ const configsWithCount: PopulatedConfig[] = [];
 
 for await (const config of rawConfigs) {
   console.log(`Getting info for "${config.name}"...`);
-  let count = 0;
-  let description = "";
-  let homepage = "";
-  for await (const { package: pack } of config.packages) {
-    try {
-      const previous = await database.get(`installed-${pack}`);
-
-      const {
-        count: packCount,
-        date,
-        info,
-      } = JSON.parse(previous) as DatabaseEntry;
-
-      if (isMoreThan1DaysInThePast(date)) throw new Error("Data too old");
-
-      count += packCount;
-      description =
-        description === ""
-          ? info.description
-          : `${description} / ${info.description}`;
-      homepage =
-        homepage === "" ? info.homepage : `${homepage} / ${info.homepage}`;
-    } catch {
-      const packCount = await getDownloadCount(pack);
-      const info = await getInfo(pack);
-
-      await database.put(
-        `installed-${pack}`,
-        JSON.stringify({
-          count: packCount ?? 0,
-          date: new Date().toLocaleDateString(),
-          info,
-        }),
-      );
-
-      count += packCount ?? 0;
-      description =
-        description === ""
-          ? info.description
-          : `${description} / ${info.description}`;
-      homepage =
-        homepage === "" ? info.homepage : `${homepage} / ${info.homepage}`;
-    }
-  }
+  const count = 1_000_000;
+  const description = "Purply for generating conflicts";
+  const homepage = "www.nope.com";
 
   configsWithCount.push({ ...config, count, description, homepage });
 }
@@ -193,15 +141,23 @@ const configGen = ({
       },
       parser: tseslint.parser,
       parserOptions: {
+        ecmaVersion: "latest",
         project: true,
         sourceType: "module",
-        ecmaVersion: "latest",
       },
     },
     plugins: {
-      ${plugins.flatMap(({ packages }) =>
-        packages.map(({ key, name }) => `"${key}": ${name},`),
-      ).join(`
+      ${plugins
+        .flatMap(({ packages }) =>
+          packages.map(
+            ({ key, name }) =>
+              `"${key}": ${name
+                .split("\n")
+                .map((line, index) => (index === 0 ? line : `  ${line}`))
+                .join("\n")},`,
+          ),
+        )
+        .sort().join(`
       `)}
     },
   },
@@ -237,36 +193,47 @@ const configGen = ({
         throw new Error(message);
       }
 
-      const parsedRules = rules === undefined ? "" : `...${rules},`;
+      const parsedRules =
+        rules === undefined
+          ? ""
+          : rules
+              .split("\n")
+              .map((line, index) => (index === 0 ? line : `          ${line}`))
+              .join("\n");
       const hasSecondary = nameSecondary !== undefined && nameSecondary !== "";
       const second = hasSecondary ? `/${nameSecondary.toLowerCase()}` : "";
 
-      const definition = `...(${packages
+      const definition = `  ...(${packages
         .map(({ package: pack }) => `disable.includes("${pack}${second}")`)
         .join(` || `)} || threshold > ${count}
-    ? []
-    : [
-        ${definitions.replace(
-          RULES,
-          `rules: {
-            ${parsedRules}
-               ${packages
-                 .map(
-                   ({ package: pack }) =>
-                     `...("${pack}${second}" in override ? override["${pack}${second}"] : {})`,
-                 )
-                 .join(`, `)}
-          },`,
-        )}
-      ])`;
+      ? []
+      : [
+  ${definitions
+    .split("\n")
+    .map((line) => `        ${line}`)
+    .join("\n")
+    .replace(
+      RULES,
+      `rules: {
+                  ${parsedRules}
+                  ${packages.map(
+                    ({ package: pack }) =>
+                      `...("${pack}${second}" in override
+                    ? override["${pack}${second}"]
+                    : {}),`,
+                  ).join(`
+                  `)}
+                },`,
+    )},
+            ])`;
 
-      return `  /*
-    ${name}${hasSecondary ? ` - ${nameSecondary}` : ""}
-    ${count.toLocaleString()} monthly downloads
-    ${description}
-    ${homepage}
-    Requires: ${requiredPlugins.length > 0 ? requiredPlugins.join(", ") : "(None)"}
-  */
+      return `    /*
+      ${name}${hasSecondary ? ` - ${nameSecondary}` : ""}
+      ${count.toLocaleString()} monthly downloads
+      ${description}
+      ${homepage}
+      Requires: ${requiredPlugins.length > 0 ? requiredPlugins.join(", ") : "(None)"}
+    */
   ${definition},
 `;
     },

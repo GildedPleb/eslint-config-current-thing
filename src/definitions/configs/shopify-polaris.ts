@@ -18,6 +18,6 @@ export default {
     },
   ],
   requiredPlugins: ["@shopify"],
-  rules: `shopify.configs.polaris.rules`,
+  rules: `...shopify.configs.polaris.rules,`,
 } satisfies Config;
 // EOF

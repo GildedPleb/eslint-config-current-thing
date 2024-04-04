@@ -1,3 +1,4 @@
+// PathMark: ./src/conflicts/code-samples/jsx.jsx
 /*
      !!! DO NOT EDIT !!!
 
@@ -10,10 +11,12 @@
 
 const codeToLint = `
 import * as React from "react";
+import React, { createContext, forwardRef, lazy, Suspense, useContext, useEffect, useImperativeHandle, useReducer, useRef, useState, Fragment, memo, Component } from 'react';
+import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types'; // Import PropTypes for prop type validation
+import Greeting, { Button } from './components'; // Importing default and named exports
 const Nine = () => <div>{9}</div>;
 export default Nine;
-import React from 'react'; // Import React for JSX syntax support
-import PropTypes from 'prop-types'; // Import PropTypes for prop type validation
 export default function Greeting({ name }) { // Default export
   return <h1>Hello, {name}!</h1>;
 }
@@ -41,7 +44,6 @@ export class Counter extends React.Component { // Exporting a class
     );
   }
 }
-import Greeting, { Button } from './components'; // Importing default and named exports
 React.useEffect(() => {
   import('./Calculator').then(Calculator => { // Dynamic import
     const calc = new Calculator.default();
@@ -66,8 +68,6 @@ DangerouslySetMarkup.propTypes = {
 };
 const style = { backgroundColor: 'blue' }; // Inline style object
 const StyledComponent = () => <div style={style}>Styled Content</div>;
-import React, { useState, useEffect, useRef, useReducer, createContext } from 'react';
-import PropTypes from 'prop-types';
 export class LegacyComponent extends React.Component { // Use of deprecated lifecycle method
   UNSAFE_componentWillMount() {
     console.log('Component will mount');
@@ -153,8 +153,6 @@ const ButtonWithExcessiveUseOfCallback = ({ onClick }) => {
 ButtonWithExcessiveUseOfCallback.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
-import React, { useState, useEffect, useCallback, useMemo, useContext, Fragment } from 'react';
-import PropTypes from 'prop-types';
 const HooksInsideLoop = ({ items }) => {
   items.forEach(item => {
     const [state, setState] = useState(false); // Hook inside a loop
@@ -236,9 +234,6 @@ class DirectStateMutation extends React.Component {
     return <button onClick={() => this.increment()}>Increment</button>;
   }
 }
-import React, { useState, useEffect, forwardRef, useImperativeHandle, lazy, Suspense } from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 const withPropLogger = WrappedComponent => {
   return class extends React.Component {
     componentDidUpdate(prevProps) {

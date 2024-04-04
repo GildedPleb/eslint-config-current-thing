@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/jest-format-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,14 +192,14 @@ const configGen = ({
     },
 
     /*
-    Jest Formatting
-    2,205,914 monthly downloads
-    ESLint rules for formatting jest tests
-    https://github.com/dangreenisrael/eslint-plugin-jest-formatting#readme
-    Requires: jest-formatting
-  */
+      Jest Formatting
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: jest-formatting
+    */
     ...(disable.includes("eslint-plugin-jest-formatting") ||
-    threshold > 2_205_914
+    threshold > 1_000_000
       ? []
       : [
           {

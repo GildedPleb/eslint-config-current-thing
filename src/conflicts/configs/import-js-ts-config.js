@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/import-js-ts-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,15 +192,15 @@ const configGen = ({
     },
 
     /*
-    Import - ts
-    123,251,333 monthly downloads
-    Import with sanity. / This plugin adds `TypeScript` support to `eslint-plugin-import`
-    https://github.com/import-js/eslint-plugin-import / https://github.com/import-js/eslint-import-resolver-typescript#readme
-    Requires: import
-  */
+      Import - ts
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: import
+    */
     ...(disable.includes("eslint-plugin-import/ts") ||
     disable.includes("eslint-import-resolver-typescript/ts") ||
-    threshold > 123_251_333
+    threshold > 1_000_000
       ? []
       : [
           {

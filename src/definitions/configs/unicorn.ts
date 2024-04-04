@@ -18,7 +18,7 @@ export default {
     },
   ],
   requiredPlugins: ["unicorn"],
-  rules: `unicorn.configs.recommended.rules,
-  "unicorn/better-regex": 0`,
+  rules: `...unicorn.configs.recommended.rules,
+    "unicorn/better-regex": 0,`,
 } satisfies Config;
 // EOF

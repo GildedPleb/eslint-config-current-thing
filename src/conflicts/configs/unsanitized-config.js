@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/unsanitized-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,14 +192,14 @@ const configGen = ({
     },
 
     /*
-    No Unsanitized
-    1,004,987 monthly downloads
-    ESLint rule to disallow unsanitized code
-    https://github.com/mozilla/eslint-plugin-no-unsanitized/
-    Requires: no-unsanitized
-  */
+      No Unsanitized
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: no-unsanitized
+    */
     ...(disable.includes("eslint-plugin-no-unsanitized") ||
-    threshold > 1_004_987
+    threshold > 1_000_000
       ? []
       : [
           {

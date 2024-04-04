@@ -5,12 +5,6 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    settings: {
-      react: {
-        "pragma": "React",
-        "version": "detect"
-      },
-    },
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {
@@ -19,6 +13,12 @@ export default {
       },
     },
     ${RULES}
+    settings: {
+      react: {
+        pragma: "React",
+        version: "detect",
+      },
+    },
   }`,
   id: "react",
   name: "React",
@@ -26,6 +26,6 @@ export default {
     { name: "react", package: "eslint-plugin-react", requiresImport: false },
   ],
   requiredPlugins: ["react"],
-  rules: `react.configs.recommended.rules`,
+  rules: `...react.configs.recommended.rules,`,
 } satisfies Config;
 // EOF

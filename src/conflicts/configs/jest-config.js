@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/jest-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,13 +192,13 @@ const configGen = ({
     },
 
     /*
-    Jest
-    42,296,108 monthly downloads
-    ESLint rules for Jest
-    https://github.com/jest-community/eslint-plugin-jest#readme
-    Requires: jest
-  */
-    ...(disable.includes("eslint-plugin-jest") || threshold > 42_296_108
+      Jest
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: jest
+    */
+    ...(disable.includes("eslint-plugin-jest") || threshold > 1_000_000
       ? []
       : [
           {

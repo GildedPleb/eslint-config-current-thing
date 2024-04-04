@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/airbnb-base-config.js
+// PathMark: ./src/conflicts/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -8,7 +8,7 @@
 
 /*
   This file is fully generated, to edit it change ./generate.ts
-  Generated on 3/29/2024
+  Generated on 4/3/2024
 */
 
 import path from "node:path";
@@ -192,13 +192,13 @@ const configGen = ({
     },
 
     /*
-    AirBnb Base
-    27,576,664 monthly downloads
-    Airbnb's base JS ESLint config, following our styleguide
-    https://github.com/airbnb/javascript
-    Requires: import
-  */
-    ...(disable.includes("eslint-config-airbnb-base") || threshold > 27_576_664
+      AirBnb Base
+      1,000,000 monthly downloads
+      Purply for generating conflicts
+      www.nope.com
+      Requires: import
+    */
+    ...(disable.includes("eslint-config-airbnb-base") || threshold > 1_000_000
       ? []
       : [
           {
