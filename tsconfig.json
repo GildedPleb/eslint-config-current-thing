@@ -1,19 +1,17 @@
 {
   "compilerOptions": {
     "incremental": true,
-    "target": "esNext",
+    "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "typeRoots": ["./node_modules/@types", "./types"],
     "allowJs": true,
     "checkJs": true,
     "outDir": "dist",
     "removeComments": false,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true,
     "jsx": "react-jsx",
     "types": ["jest", "node"]
   },

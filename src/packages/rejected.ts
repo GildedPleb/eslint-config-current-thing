@@ -6,39 +6,16 @@ const rejected = new Set([
   // Purely obsolete
   "eslint-plugin-lodash",
 
-  // Obsoleted by Typescript -- Should consider adding back
-  // "eslint-plugin-unused-imports",
-
   // Tslint is a dead project, replaced by @typescript-eslint
   "tslint-config-prettier",
 
   // 'Function' definitions are good.
   "eslint-plugin-prefer-arrow",
 
-  // Obsoleted by Unicorn -- Should consider adding back
-  // "eslint-plugin-filenames",
-  // "eslint-plugin-check-file",
-
-  // Obsoleted by SonarJS -- Should consider adding back
-  // "eslint-plugin-deprecation",
-
-  // Obsolete by perfectionist -- Should consider adding back
-  // "eslint-plugin-sort-keys-fix",
-  // "eslint-plugin-typescript-sort-keys",
-
   // Included with next plugin
   "eslint-config-next",
 
   // Out of Scope
-  "@wordpress/eslint-plugin",
-  // "eslint-plugin-html",
-  // "eslint-plugin-json",
-  // "jsonc-eslint-parser",
-  // "eslint-plugin-jsonc",
-  // "eslint-plugin-markdown",
-  // "eslint-plugin-yml",
-  // "yaml-eslint-parser",
-  // "@graphql-eslint/eslint-plugin",
   "@tanstack/eslint-plugin-query",
   "eslint-plugin-ember",
   "@backstage/eslint-plugin",
@@ -49,17 +26,7 @@ const rejected = new Set([
   // Fork of import
   "eslint-plugin-i",
 
-  // Less popular testing frameworks.
-  "eslint-plugin-cypress",
-  "eslint-plugin-mocha",
-  "eslint-plugin-qunit",
-  "eslint-plugin-chai-friendly",
-  "eslint-plugin-jasmine",
-  "eslint-plugin-playwright",
-  "eslint-plugin-vitest",
-  "eslint-plugin-vitest",
-
-  // Not maintained / No recommended rules and largely irrelevant
+  // This is the not-maintained version of @babel/eslint-plugin, and download counts don't matter of ordering plugins.
   "eslint-plugin-babel",
 
   // Irrelevant?
@@ -88,7 +55,7 @@ const rejected = new Set([
   "svelte-eslint-parser",
   "eslint-plugin-svelte",
 
-  // OOMKills everything. Insane that people still use this garbage.
+  // OOMKills everything. Insane that people still use this.
   "eslint-plugin-deprecation",
 
   // Plugin for linting plugins
@@ -104,10 +71,10 @@ const rejected = new Set([
   "@typescript-eslint/typescript-estree",
   "@typescript-eslint/utils",
   "@typescript-eslint/visitor-keys",
-  "typescript-eslint-language-service",
   "@typescript-eslint/experimental-utils",
   "@typescript-eslint/eslint-plugin-tslint",
   "@typescript-eslint/rule-tester",
+  "typescript-eslint-language-service",
   "tslint-to-eslint-config",
 
   // ES Lint submodules
@@ -153,6 +120,7 @@ const rejected = new Set([
   "flowbite",
   "gherkin-lint",
   "@axe-core/react",
+  "lockfile-lint-api",
 
   // Sarif
   "node-sarif-builder",
@@ -175,9 +143,6 @@ const rejected = new Set([
   "@eslint-types/jsdoc",
   "eslint-define-config",
   "@types/eslint",
-
-  // Could be useful but not really?
-  "eslint-import-resolver-alias",
 
   // Automatically included
   "globals",

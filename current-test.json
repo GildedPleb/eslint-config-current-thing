@@ -1157,7 +1157,7 @@
       "xit": false,
       "xtest": false
     },
-    "parser": "typescript-eslint/parser@7.4.0",
+    "parser": "typescript-eslint/parser@7.5.0",
     "parserOptions": {
       "ecmaVersion": "latest",
       "project": true,
@@ -1178,7 +1178,7 @@
     "@shopify/jest",
     "@shopify/typescript",
     "@stylistic",
-    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.4.0",
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.5.0",
     "compat",
     "css-modules",
     "es",
@@ -1216,7 +1216,7 @@
     "tailwindcss",
     "testing-library",
     "tsdoc",
-    "unicorn:eslint-plugin-unicorn@51.0.1",
+    "unicorn:eslint-plugin-unicorn@52.0.0",
     "unused-imports",
     "you-dont-need-lodash-underscore"
   ],
@@ -1228,17 +1228,9 @@
         "allowSingleLine": true
       }
     ],
-    "@stylistic/object-curly-spacing": [
-      0,
-      "always"
-    ],
     "@stylistic/operator-linebreak": [
       0,
       "before"
-    ],
-    "@stylistic/semi": [
-      0,
-      "never"
     ],
     "@typescript-eslint/comma-dangle": [
       0
@@ -2540,6 +2532,14 @@
         "requireForBlockBody": true
       }
     ],
+    "@stylistic/object-curly-spacing": [
+      0,
+      "always"
+    ],
+    "@stylistic/semi": [
+      0,
+      "never"
+    ],
     "@typescript-eslint/object-curly-spacing": [
       0
     ],
@@ -3223,70 +3223,6 @@
     "node/no-callback-literal": [
       2
     ],
-    "@stylistic/indent": [
-      0,
-      2,
-      {
-        "ArrayExpression": 1,
-        "CallExpression": {
-          "arguments": 1
-        },
-        "flatTernaryExpressions": false,
-        "FunctionDeclaration": {
-          "body": 1,
-          "parameters": 1
-        },
-        "FunctionExpression": {
-          "body": 1,
-          "parameters": 1
-        },
-        "ignoreComments": false,
-        "ignoredNodes": [
-          "TemplateLiteral *",
-          "JSXElement",
-          "JSXElement > *",
-          "JSXAttribute",
-          "JSXIdentifier",
-          "JSXNamespacedName",
-          "JSXMemberExpression",
-          "JSXSpreadAttribute",
-          "JSXExpressionContainer",
-          "JSXOpeningElement",
-          "JSXClosingElement",
-          "JSXFragment",
-          "JSXOpeningFragment",
-          "JSXClosingFragment",
-          "JSXText",
-          "JSXEmptyExpression",
-          "JSXSpreadChild",
-          "TSUnionType",
-          "TSIntersectionType",
-          "TSTypeParameterInstantiation",
-          "FunctionExpression > .params[decorators.length > 0]",
-          "FunctionExpression > .params > :matches(Decorator, :not(:first-child))",
-          "ClassBody.body > PropertyDefinition[decorators.length > 0] > .key"
-        ],
-        "ImportDeclaration": 1,
-        "MemberExpression": 1,
-        "ObjectExpression": 1,
-        "offsetTernaryExpressions": true,
-        "outerIIFEBody": 1,
-        "SwitchCase": 1,
-        "VariableDeclarator": 1
-      }
-    ],
-    "@stylistic/indent-binary-ops": [
-      2,
-      2
-    ],
-    "@stylistic/quotes": [
-      0,
-      "single",
-      {
-        "allowTemplateLiterals": true,
-        "avoidEscape": false
-      }
-    ],
     "functional/functional-parameters": [
       0,
       {
@@ -3877,6 +3813,62 @@
     "@stylistic/eol-last": [
       2
     ],
+    "@stylistic/indent": [
+      0,
+      2,
+      {
+        "ArrayExpression": 1,
+        "CallExpression": {
+          "arguments": 1
+        },
+        "flatTernaryExpressions": false,
+        "FunctionDeclaration": {
+          "body": 1,
+          "parameters": 1
+        },
+        "FunctionExpression": {
+          "body": 1,
+          "parameters": 1
+        },
+        "ignoreComments": false,
+        "ignoredNodes": [
+          "TemplateLiteral *",
+          "JSXElement",
+          "JSXElement > *",
+          "JSXAttribute",
+          "JSXIdentifier",
+          "JSXNamespacedName",
+          "JSXMemberExpression",
+          "JSXSpreadAttribute",
+          "JSXExpressionContainer",
+          "JSXOpeningElement",
+          "JSXClosingElement",
+          "JSXFragment",
+          "JSXOpeningFragment",
+          "JSXClosingFragment",
+          "JSXText",
+          "JSXEmptyExpression",
+          "JSXSpreadChild",
+          "TSUnionType",
+          "TSIntersectionType",
+          "TSTypeParameterInstantiation",
+          "FunctionExpression > .params[decorators.length > 0]",
+          "FunctionExpression > .params > :matches(Decorator, :not(:first-child))",
+          "ClassBody.body > PropertyDefinition[decorators.length > 0] > .key"
+        ],
+        "ImportDeclaration": 1,
+        "MemberExpression": 1,
+        "ObjectExpression": 1,
+        "offsetTernaryExpressions": true,
+        "outerIIFEBody": 1,
+        "SwitchCase": 1,
+        "VariableDeclarator": 1
+      }
+    ],
+    "@stylistic/indent-binary-ops": [
+      0,
+      2
+    ],
     "@stylistic/key-spacing": [
       2,
       {
@@ -4000,6 +3992,14 @@
     "@stylistic/quote-props": [
       0,
       "consistent-as-needed"
+    ],
+    "@stylistic/quotes": [
+      0,
+      "single",
+      {
+        "allowTemplateLiterals": true,
+        "avoidEscape": false
+      }
     ],
     "@stylistic/rest-spread-spacing": [
       2,
@@ -4858,6 +4858,9 @@
     "unicorn/no-abusive-eslint-disable": [
       2
     ],
+    "unicorn/no-anonymous-default-export": [
+      2
+    ],
     "unicorn/no-array-callback-reference": [
       2
     ],
@@ -4874,6 +4877,9 @@
       2
     ],
     "unicorn/no-await-expression-member": [
+      2
+    ],
+    "unicorn/no-await-in-promise-methods": [
       2
     ],
     "unicorn/no-console-spaces": [
@@ -4922,6 +4928,9 @@
       2
     ],
     "unicorn/no-process-exit": [
+      2
+    ],
+    "unicorn/no-single-promise-in-promise-methods": [
       2
     ],
     "unicorn/no-static-only-class": [
@@ -5380,13 +5389,10 @@
     "n/shebang": [
       2
     ],
-    "@typescript-eslint/quotes": [
-      0
-    ],
-    "@typescript-eslint/space-before-function-paren": [
-      0
-    ],
     "@typescript-eslint/lines-around-comment": [
+      0
+    ],
+    "@typescript-eslint/quotes": [
       0
     ],
     "babel/quotes": [
@@ -5417,6 +5423,9 @@
       0
     ],
     "@typescript-eslint/space-before-blocks": [
+      0
+    ],
+    "@typescript-eslint/space-before-function-paren": [
       0
     ],
     "@typescript-eslint/space-infix-ops": [

@@ -1,5 +1,9 @@
 {
   "settings": {
+    "react": {
+      "version": "detect",
+      "pragma": "React"
+    },
     "import/ignore": [
       "node_modules",
       ".(coffee|scss|css|less|hbs|svg|json)$"
@@ -93,7 +97,7 @@
       "BatteryManager": false,
       "BeforeUnloadEvent": false,
       "BiquadFilterNode": false,
-      "Blob": false,
+      "Blob": true,
       "BlobEvent": false,
       "Bluetooth": false,
       "BluetoothCharacteristicProperties": false,
@@ -268,7 +272,7 @@
       "FeaturePolicy": false,
       "FederatedCredential": false,
       "fetch": false,
-      "File": false,
+      "File": true,
       "FileList": false,
       "FileReader": false,
       "FileSystem": false,
@@ -766,7 +770,7 @@
       "PushSubscription": false,
       "PushSubscriptionOptions": false,
       "queryLocalFonts": false,
-      "queueMicrotask": false,
+      "queueMicrotask": true,
       "RadioNodeList": false,
       "Range": false,
       "ReadableByteStreamController": false,
@@ -781,8 +785,8 @@
       "reportError": false,
       "ReportingObserver": false,
       "Request": false,
-      "requestAnimationFrame": false,
-      "requestIdleCallback": false,
+      "requestAnimationFrame": true,
+      "requestIdleCallback": true,
       "resizeBy": false,
       "ResizeObserver": false,
       "ResizeObserverEntry": false,
@@ -1066,7 +1070,7 @@
       "WebGLTransformFeedback": false,
       "WebGLUniformLocation": false,
       "WebGLVertexArrayObject": false,
-      "WebSocket": false,
+      "WebSocket": true,
       "WebTransport": false,
       "WebTransportBidirectionalStream": false,
       "WebTransportDatagramDuplexStream": false,
@@ -1131,20 +1135,35 @@
       "__dirname": false,
       "__filename": false,
       "Buffer": false,
-      "clearImmediate": false,
+      "clearImmediate": true,
       "exports": false,
       "global": false,
       "module": false,
       "process": false,
       "require": false,
-      "setImmediate": false,
-      "browser": true
+      "setImmediate": true,
+      "browser": true,
+      "__DEV__": true,
+      "escape": false,
+      "Map": true,
+      "Promise": true,
+      "Set": true,
+      "__fbBatchedBridgeConfig": false,
+      "ErrorUtils": false,
+      "Intl": false,
+      "commonjs": true,
+      "es6": true,
+      "jest": true,
+      "node": true
     },
     "parser": "typescript-eslint/parser@7.5.0",
     "parserOptions": {
       "ecmaVersion": "latest",
       "project": true,
-      "sourceType": "module"
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
     }
   },
   "plugins": [
@@ -1201,6 +1220,72 @@
     "you-dont-need-lodash-underscore"
   ],
   "rules": {
+    "css-modules/no-unused-class": [
+      2
+    ],
+    "css-modules/no-undef-class": [
+      2
+    ],
+    "react/jsx-no-bind": [
+      0,
+      {
+        "allowArrowFunctions": true,
+        "allowBind": false,
+        "ignoreRefs": true
+      }
+    ],
+    "react/no-did-update-set-state": [
+      1
+    ],
+    "react/no-unknown-property": [
+      2
+    ],
+    "react/no-unused-prop-types": [
+      2
+    ],
+    "react/prop-types": [
+      2
+    ],
+    "react/react-in-jsx-scope": [
+      2
+    ],
+    "react-hooks/rules-of-hooks": [
+      2
+    ],
+    "react-hooks/exhaustive-deps": [
+      1
+    ],
+    "functional/functional-parameters": [
+      0,
+      {
+        "enforceParameterCount": {
+          "ignoreLambdaExpression": true,
+          "ignoreIIFE": true,
+          "ignoreGettersAndSetters": true
+        }
+      }
+    ],
+    "functional/no-classes": [
+      0
+    ],
+    "functional/no-conditional-statements": [
+      0,
+      {
+        "allowReturningBranches": true
+      }
+    ],
+    "functional/no-expression-statements": [
+      0
+    ],
+    "functional/no-return-void": [
+      0
+    ],
+    "functional/no-throw-statements": [
+      0,
+      {
+        "allowInAsyncFunctions": true
+      }
+    ],
     "@stylistic/brace-style": [
       0,
       "stroustrup",
@@ -1604,7 +1689,7 @@
       "getBeforeSet"
     ],
     "max-depth": [
-      1
+      0
     ],
     "max-len": [
       0,
@@ -1616,7 +1701,7 @@
       }
     ],
     "max-params": [
-      1,
+      0,
       {
         "max": 4
       }
@@ -1625,7 +1710,7 @@
       0
     ],
     "no-bitwise": [
-      2
+      1
     ],
     "no-plusplus": [
       0
@@ -1649,7 +1734,8 @@
       2
     ],
     "no-cond-assign": [
-      2
+      2,
+      "except-parens"
     ],
     "no-console": [
       0
@@ -1725,7 +1811,7 @@
       2
     ],
     "no-template-curly-in-string": [
-      2
+      1
     ],
     "no-unreachable": [
       2
@@ -1792,13 +1878,13 @@
       0
     ],
     "@shopify/jsx-no-complex-expressions": [
-      0
+      2
     ],
     "@shopify/jsx-no-hardcoded-content": [
-      0
+      2
     ],
     "@shopify/jsx-prefer-fragment-wrappers": [
-      0
+      2
     ],
     "@shopify/no-ancestor-directory-import": [
       0
@@ -1837,22 +1923,22 @@
       2
     ],
     "@shopify/react-hooks-strict-return": [
-      0
+      2
     ],
     "@shopify/react-initialize-state": [
-      0
+      2
     ],
     "@shopify/react-no-multiple-render-methods": [
-      0
+      2
     ],
     "@shopify/react-prefer-private-members": [
-      0
+      2
     ],
     "@shopify/react-require-autocomplete": [
-      0
+      2
     ],
     "@shopify/react-type-state": [
-      0
+      2
     ],
     "@shopify/restrict-full-import": [
       0
@@ -1879,7 +1965,7 @@
       0
     ],
     "strict": [
-      2,
+      1,
       "never"
     ],
     "array-bracket-newline": [
@@ -1955,7 +2041,7 @@
       }
     ],
     "consistent-this": [
-      2,
+      1,
       "self"
     ],
     "eol-last": [
@@ -1972,11 +2058,11 @@
       }
     ],
     "func-names": [
-      2,
+      0,
       "never"
     ],
     "func-style": [
-      2,
+      0,
       "declaration",
       {
         "allowArrowFunctions": true
@@ -2068,7 +2154,7 @@
     ],
     "jsx-quotes": [
       0,
-      "prefer-single"
+      "prefer-double"
     ],
     "key-spacing": [
       0,
@@ -2114,7 +2200,7 @@
       0
     ],
     "max-nested-callbacks": [
-      1,
+      0,
       4
     ],
     "max-statements-per-line": [
@@ -2154,7 +2240,7 @@
       }
     ],
     "no-array-constructor": [
-      2
+      1
     ],
     "no-continue": [
       0
@@ -2163,12 +2249,22 @@
       0
     ],
     "no-lonely-if": [
-      2
+      0
     ],
     "no-mixed-operators": [
       0,
       {
+        "allowSamePrecedence": false,
         "groups": [
+          [
+            "&",
+            "|",
+            "^",
+            "~",
+            "<<",
+            ">>",
+            ">>>"
+          ],
           [
             "==",
             "!=",
@@ -2187,8 +2283,7 @@
             "in",
             "instanceof"
           ]
-        ],
-        "allowSamePrecedence": true
+        ]
       }
     ],
     "no-mixed-spaces-and-tabs": [
@@ -2212,10 +2307,11 @@
       0
     ],
     "no-new-object": [
-      2
+      1
     ],
     "no-restricted-syntax": [
-      0
+      1,
+      "WithStatement"
     ],
     "no-tabs": [
       0
@@ -2410,7 +2506,7 @@
       "never"
     ],
     "unicode-bom": [
-      2,
+      1,
       "never"
     ],
     "wrap-regex": [
@@ -2423,31 +2519,80 @@
       0
     ],
     "no-catch-shadow": [
-      2
+      1
     ],
     "no-delete-var": [
       2
     ],
     "no-label-var": [
-      2
+      1
     ],
     "no-restricted-globals": [
       2,
+      "addEventListener",
+      "blur",
+      "close",
+      "closed",
+      "confirm",
+      "defaultStatus",
+      "defaultstatus",
       "event",
-      {
-        "name": "atob",
-        "message": "This API is deprecated. Use https://github.com/sindresorhus/uint8array-extras instead."
-      },
-      {
-        "name": "btoa",
-        "message": "This API is deprecated. Use https://github.com/sindresorhus/uint8array-extras instead."
-      }
+      "external",
+      "find",
+      "focus",
+      "frameElement",
+      "frames",
+      "history",
+      "innerHeight",
+      "innerWidth",
+      "length",
+      "location",
+      "locationbar",
+      "menubar",
+      "moveBy",
+      "moveTo",
+      "name",
+      "onblur",
+      "onerror",
+      "onfocus",
+      "onload",
+      "onresize",
+      "onunload",
+      "open",
+      "opener",
+      "opera",
+      "outerHeight",
+      "outerWidth",
+      "pageXOffset",
+      "pageYOffset",
+      "parent",
+      "print",
+      "removeEventListener",
+      "resizeBy",
+      "resizeTo",
+      "screen",
+      "screenLeft",
+      "screenTop",
+      "screenX",
+      "screenY",
+      "scroll",
+      "scrollbars",
+      "scrollBy",
+      "scrollTo",
+      "scrollX",
+      "scrollY",
+      "self",
+      "status",
+      "statusbar",
+      "stop",
+      "toolbar",
+      "top"
     ],
     "no-shadow-restricted-names": [
       2
     ],
     "no-shadow": [
-      2
+      1
     ],
     "no-undef-init": [
       2
@@ -2465,16 +2610,14 @@
       2,
       {
         "args": "none",
-        "caughtErrors": "none",
-        "ignoreRestSiblings": true,
-        "vars": "all"
+        "ignoreRestSiblings": true
       }
     ],
     "no-use-before-define": [
-      2,
+      1,
       {
-        "functions": false,
         "classes": false,
+        "functions": false,
         "variables": false
       }
     ],
@@ -2485,19 +2628,19 @@
       }
     ],
     "eslint-comments/no-aggregating-enable": [
-      2
+      1
     ],
     "eslint-comments/no-duplicate-disable": [
       2
     ],
     "eslint-comments/no-unlimited-disable": [
-      2
+      1
     ],
     "eslint-comments/no-unused-disable": [
-      2
+      1
     ],
     "eslint-comments/no-unused-enable": [
-      2
+      1
     ],
     "eslint-comments/no-restricted-disable": [
       0
@@ -2575,16 +2718,21 @@
       2
     ],
     "no-useless-computed-key": [
-      2,
+      1,
       {
         "enforceForClassMembers": true
       }
     ],
     "no-useless-constructor": [
-      2
+      1
     ],
     "no-useless-rename": [
-      2
+      1,
+      {
+        "ignoreDestructuring": false,
+        "ignoreExport": false,
+        "ignoreImport": false
+      }
     ],
     "no-var": [
       1
@@ -2825,7 +2973,7 @@
       0
     ],
     "import/no-amd": [
-      0
+      2
     ],
     "import/no-nodejs-modules": [
       0
@@ -2885,7 +3033,7 @@
       0
     ],
     "import/no-anonymous-default-export": [
-      2
+      1
     ],
     "import/no-default-export": [
       0
@@ -2906,16 +3054,16 @@
       0
     ],
     "handle-callback-err": [
-      0
+      1
     ],
     "no-mixed-requires": [
-      0
+      1
     ],
     "no-new-require": [
-      0
+      1
     ],
     "no-path-concat": [
-      0
+      1
     ],
     "no-process-exit": [
       0
@@ -2924,7 +3072,7 @@
       0
     ],
     "no-restricted-modules": [
-      0
+      1
     ],
     "no-sync": [
       0
@@ -3044,36 +3192,579 @@
     "node/no-callback-literal": [
       2
     ],
-    "functional/functional-parameters": [
+    "react/boolean-prop-naming": [
+      0
+    ],
+    "react/button-has-type": [
+      2
+    ],
+    "react/display-name": [
+      2,
+      {
+        "ignoreTranspilerName": false
+      }
+    ],
+    "react/default-props-match-prop-types": [
+      2
+    ],
+    "react/destructuring-assignment": [
+      0
+    ],
+    "react/forbid-component-props": [
+      0
+    ],
+    "react/forbid-dom-props": [
+      0
+    ],
+    "react/forbid-elements": [
+      0
+    ],
+    "react/forbid-foreign-prop-types": [
+      1,
+      {
+        "allowInPropTypes": true
+      }
+    ],
+    "react/forbid-prop-types": [
+      2,
+      {
+        "forbid": [
+          "any",
+          "array"
+        ]
+      }
+    ],
+    "react/jsx-fragments": [
+      2,
+      "syntax"
+    ],
+    "react/no-access-state-in-setstate": [
+      2
+    ],
+    "react/no-array-index-key": [
+      2
+    ],
+    "react/no-children-prop": [
+      2
+    ],
+    "react/no-danger": [
+      0
+    ],
+    "react/no-danger-with-children": [
+      2
+    ],
+    "react/no-deprecated": [
+      2
+    ],
+    "react/no-did-mount-set-state": [
+      1
+    ],
+    "react/no-direct-mutation-state": [
+      2
+    ],
+    "react/no-find-dom-node": [
+      2
+    ],
+    "react/no-is-mounted": [
+      2
+    ],
+    "react/no-multi-comp": [
+      0
+    ],
+    "react/no-redundant-should-component-update": [
+      2
+    ],
+    "react/no-render-return-value": [
+      2
+    ],
+    "react/no-set-state": [
+      0
+    ],
+    "react/no-this-in-sfc": [
+      2
+    ],
+    "react/no-typos": [
+      2
+    ],
+    "react/no-string-refs": [
+      2,
+      {
+        "noTemplateLiterals": true
+      }
+    ],
+    "react/no-unescaped-entities": [
+      2,
+      {
+        "forbid": [
+          ">",
+          "}"
+        ]
+      }
+    ],
+    "react/no-unsafe": [
       0,
       {
-        "enforceParameterCount": {
-          "ignoreLambdaExpression": true,
-          "ignoreIIFE": true,
-          "ignoreGettersAndSetters": true
+        "checkAliases": true
+      }
+    ],
+    "react/no-unused-state": [
+      2
+    ],
+    "react/no-will-update-set-state": [
+      2
+    ],
+    "react/prefer-read-only-props": [
+      0
+    ],
+    "react/prefer-es6-class": [
+      2
+    ],
+    "react/prefer-stateless-function": [
+      2,
+      {
+        "ignorePureComponents": true
+      }
+    ],
+    "react/require-default-props": [
+      0
+    ],
+    "react/require-optimization": [
+      0
+    ],
+    "react/require-render-return": [
+      2
+    ],
+    "react/self-closing-comp": [
+      1
+    ],
+    "react/sort-comp": [
+      0
+    ],
+    "react/sort-prop-types": [
+      0
+    ],
+    "react/state-in-constructor": [
+      2,
+      "never"
+    ],
+    "react/style-prop-object": [
+      1
+    ],
+    "react/void-dom-elements-no-children": [
+      2
+    ],
+    "react/jsx-newline": [
+      0
+    ],
+    "react/jsx-no-script-url": [
+      2
+    ],
+    "react/jsx-no-constructed-context-values": [
+      2
+    ],
+    "react/jsx-boolean-value": [
+      0
+    ],
+    "react/jsx-child-element-spacing": [
+      0
+    ],
+    "react/jsx-closing-bracket-location": [
+      0,
+      "tag-aligned"
+    ],
+    "react/jsx-closing-tag-location": [
+      0
+    ],
+    "react/jsx-curly-brace-presence": [
+      2,
+      {
+        "props": "never",
+        "children": "never"
+      }
+    ],
+    "react/jsx-curly-spacing": [
+      0,
+      {
+        "attributes": {
+          "when": "never",
+          "allowMultiline": true
+        },
+        "children": {
+          "when": "never",
+          "allowMultiline": true
         }
       }
     ],
-    "functional/no-classes": [
-      0
-    ],
-    "functional/no-conditional-statements": [
+    "react/jsx-equals-spacing": [
       0,
+      "never"
+    ],
+    "react/jsx-filename-extension": [
+      2,
       {
-        "allowReturningBranches": true
+        "extensions": [
+          ".jsx",
+          ".tsx"
+        ]
       }
     ],
-    "functional/no-expression-statements": [
+    "react/jsx-first-prop-new-line": [
+      0,
+      "multiline-multiprop"
+    ],
+    "react/jsx-handler-names": [
+      2
+    ],
+    "react/jsx-indent-props": [
+      0,
+      2
+    ],
+    "react/jsx-indent": [
+      0,
+      2,
+      {
+        "checkAttributes": false,
+        "indentLogicalExpressions": true
+      }
+    ],
+    "react/jsx-key": [
+      2,
+      {
+        "checkFragmentShorthand": true,
+        "checkKeyMustBeforeSpread": false,
+        "warnOnDuplicates": false
+      }
+    ],
+    "react/jsx-max-depth": [
       0
     ],
-    "functional/no-return-void": [
+    "react/jsx-max-props-per-line": [
       0
     ],
-    "functional/no-throw-statements": [
+    "react/jsx-no-comment-textnodes": [
+      2
+    ],
+    "react/jsx-no-duplicate-props": [
+      2
+    ],
+    "react/jsx-no-literals": [
+      0
+    ],
+    "react/jsx-no-target-blank": [
+      2,
+      {
+        "enforceDynamicLinks": "always",
+        "links": true,
+        "forms": false
+      }
+    ],
+    "react/jsx-no-undef": [
+      2,
+      {
+        "allowGlobals": true
+      }
+    ],
+    "react/jsx-one-expression-per-line": [
+      0
+    ],
+    "react/jsx-pascal-case": [
+      1,
+      {
+        "allowAllCaps": true,
+        "ignore": []
+      }
+    ],
+    "react/jsx-props-no-multi-spaces": [
+      0
+    ],
+    "react/jsx-sort-default-props": [
+      0
+    ],
+    "react/jsx-sort-props": [
+      0
+    ],
+    "react/jsx-sort-prop-types": [
+      0
+    ],
+    "react/jsx-tag-spacing": [
       0,
       {
-        "allowInAsyncFunctions": true
+        "closingSlash": "never",
+        "beforeSelfClosing": "always",
+        "afterOpening": "never",
+        "beforeClosing": "never"
       }
+    ],
+    "react/jsx-uses-react": [
+      2
+    ],
+    "react/jsx-uses-vars": [
+      2
+    ],
+    "react/jsx-wrap-multilines": [
+      0,
+      {
+        "declaration": "parens-new-line",
+        "assignment": "parens-new-line",
+        "return": "parens-new-line",
+        "arrow": "ignore",
+        "condition": "ignore",
+        "logical": "ignore",
+        "prop": "ignore"
+      }
+    ],
+    "react/jsx-props-no-spreading": [
+      0
+    ],
+    "jsx-a11y/accessible-emoji": [
+      2
+    ],
+    "jsx-a11y/alt-text": [
+      2
+    ],
+    "jsx-a11y/anchor-has-content": [
+      2
+    ],
+    "jsx-a11y/anchor-is-valid": [
+      2,
+      {
+        "aspects": [
+          "noHref",
+          "invalidHref"
+        ]
+      }
+    ],
+    "jsx-a11y/aria-activedescendant-has-tabindex": [
+      2
+    ],
+    "jsx-a11y/aria-props": [
+      2
+    ],
+    "jsx-a11y/aria-proptypes": [
+      2
+    ],
+    "jsx-a11y/aria-role": [
+      2,
+      {
+        "ignoreNonDOM": true
+      }
+    ],
+    "jsx-a11y/aria-unsupported-elements": [
+      2
+    ],
+    "jsx-a11y/click-events-have-key-events": [
+      2
+    ],
+    "jsx-a11y/control-has-associated-label": [
+      0,
+      {
+        "ignoreElements": [
+          "audio",
+          "canvas",
+          "embed",
+          "input",
+          "textarea",
+          "tr",
+          "video"
+        ],
+        "ignoreRoles": [
+          "grid",
+          "listbox",
+          "menu",
+          "menubar",
+          "radiogroup",
+          "row",
+          "tablist",
+          "toolbar",
+          "tree",
+          "treegrid"
+        ],
+        "includeRoles": [
+          "alert",
+          "dialog"
+        ]
+      }
+    ],
+    "jsx-a11y/heading-has-content": [
+      2
+    ],
+    "jsx-a11y/html-has-lang": [
+      2
+    ],
+    "jsx-a11y/iframe-has-title": [
+      2
+    ],
+    "jsx-a11y/img-redundant-alt": [
+      2
+    ],
+    "jsx-a11y/interactive-supports-focus": [
+      2,
+      {
+        "tabbable": [
+          "button",
+          "checkbox",
+          "link",
+          "searchbox",
+          "spinbutton",
+          "switch",
+          "textbox"
+        ]
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [
+      2
+    ],
+    "jsx-a11y/label-has-for": [
+      0
+    ],
+    "jsx-a11y/media-has-caption": [
+      2
+    ],
+    "jsx-a11y/lang": [
+      2
+    ],
+    "jsx-a11y/mouse-events-have-key-events": [
+      2
+    ],
+    "jsx-a11y/no-access-key": [
+      2
+    ],
+    "jsx-a11y/no-autofocus": [
+      2
+    ],
+    "jsx-a11y/no-distracting-elements": [
+      2
+    ],
+    "jsx-a11y/no-interactive-element-to-noninteractive-role": [
+      2,
+      {
+        "tr": [
+          "none",
+          "presentation"
+        ],
+        "canvas": [
+          "img"
+        ]
+      }
+    ],
+    "jsx-a11y/no-noninteractive-element-interactions": [
+      2,
+      {
+        "handlers": [
+          "onClick",
+          "onError",
+          "onLoad",
+          "onMouseDown",
+          "onMouseUp",
+          "onKeyPress",
+          "onKeyDown",
+          "onKeyUp"
+        ],
+        "alert": [
+          "onKeyUp",
+          "onKeyDown",
+          "onKeyPress"
+        ],
+        "body": [
+          "onError",
+          "onLoad"
+        ],
+        "dialog": [
+          "onKeyUp",
+          "onKeyDown",
+          "onKeyPress"
+        ],
+        "iframe": [
+          "onError",
+          "onLoad"
+        ],
+        "img": [
+          "onError",
+          "onLoad"
+        ]
+      }
+    ],
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": [
+      2,
+      {
+        "ul": [
+          "listbox",
+          "menu",
+          "menubar",
+          "radiogroup",
+          "tablist",
+          "tree",
+          "treegrid"
+        ],
+        "ol": [
+          "listbox",
+          "menu",
+          "menubar",
+          "radiogroup",
+          "tablist",
+          "tree",
+          "treegrid"
+        ],
+        "li": [
+          "menuitem",
+          "option",
+          "row",
+          "tab",
+          "treeitem"
+        ],
+        "table": [
+          "grid"
+        ],
+        "td": [
+          "gridcell"
+        ],
+        "fieldset": [
+          "radiogroup",
+          "presentation"
+        ]
+      }
+    ],
+    "jsx-a11y/no-noninteractive-tabindex": [
+      2,
+      {
+        "tags": [],
+        "roles": [
+          "tabpanel"
+        ],
+        "allowExpressionValues": true
+      }
+    ],
+    "jsx-a11y/no-onchange": [
+      0
+    ],
+    "jsx-a11y/no-redundant-roles": [
+      2
+    ],
+    "jsx-a11y/no-static-element-interactions": [
+      2,
+      {
+        "allowExpressionValues": true,
+        "handlers": [
+          "onClick",
+          "onMouseDown",
+          "onMouseUp",
+          "onKeyPress",
+          "onKeyDown",
+          "onKeyUp"
+        ]
+      }
+    ],
+    "jsx-a11y/role-has-required-aria-props": [
+      2
+    ],
+    "jsx-a11y/role-supports-aria-props": [
+      2
+    ],
+    "jsx-a11y/scope": [
+      2
+    ],
+    "jsx-a11y/tabindex-no-positive": [
+      2
     ],
     "unicorn/better-regex": [
       2
@@ -3265,6 +3956,9 @@
       0
     ],
     "regexp/use-ignore-case": [
+      2
+    ],
+    "i18next/no-literal-string": [
       2
     ],
     "you-dont-need-lodash-underscore/concat": [
@@ -3579,6 +4273,21 @@
       1
     ],
     "functional/readonly-type": [
+      2
+    ],
+    "@emotion/import-from-emotion": [
+      2
+    ],
+    "@emotion/jsx-import": [
+      2
+    ],
+    "@emotion/no-vanilla": [
+      2
+    ],
+    "@emotion/pkg-renaming": [
+      2
+    ],
+    "@emotion/styled-import": [
       2
     ],
     "@typescript-eslint/brace-style": [
@@ -4271,6 +4980,40 @@
     "compat/compat": [
       2
     ],
+    "tailwindcss/classnames-order": [
+      1
+    ],
+    "tailwindcss/enforces-negative-arbitrary-values": [
+      1
+    ],
+    "tailwindcss/enforces-shorthand": [
+      1
+    ],
+    "tailwindcss/migration-from-tailwind-2": [
+      1
+    ],
+    "tailwindcss/no-arbitrary-value": [
+      0
+    ],
+    "tailwindcss/no-custom-classname": [
+      1
+    ],
+    "tailwindcss/no-contradicting-classname": [
+      2
+    ],
+    "tailwindcss/no-unnecessary-arbitrary-value": [
+      1
+    ],
+    "react/jsx-curly-newline": [
+      0,
+      {
+        "multiline": "consistent",
+        "singleline": "consistent"
+      }
+    ],
+    "@react-native/platform-colors": [
+      1
+    ],
     "security/detect-buffer-noassert": [
       1
     ],
@@ -4408,6 +5151,60 @@
     ],
     "sonarjs/prefer-while": [
       2
+    ],
+    "react-native/no-unused-styles": [
+      2
+    ],
+    "react-native/no-inline-styles": [
+      1
+    ],
+    "react-native/no-color-literals": [
+      2
+    ],
+    "react-native/sort-styles": [
+      2
+    ],
+    "react-native/split-platform-components": [
+      2
+    ],
+    "react-native/no-raw-text": [
+      2
+    ],
+    "react-native/no-single-element-style-arrays": [
+      2
+    ],
+    "react-refresh/only-export-components": [
+      1
+    ],
+    "no-negated-in-lhs": [
+      1
+    ],
+    "no-reserved-keys": [
+      0
+    ],
+    "no-native-reassign": [
+      0
+    ],
+    "space-in-brackets": [
+      0
+    ],
+    "react/no-unstable-nested-components": [
+      1
+    ],
+    "react/wrap-multilines": [
+      0
+    ],
+    "jest/no-disabled-tests": [
+      1
+    ],
+    "jest/no-focused-tests": [
+      1
+    ],
+    "jest/no-identical-title": [
+      1
+    ],
+    "jest/valid-expect": [
+      1
     ],
     "jsdoc/check-access": [
       1
@@ -4962,14 +5759,14 @@
     "default-param-last": [
       2
     ],
-    "no-native-reassign": [
-      0
+    "flowtype/define-flow-type": [
+      1
     ],
-    "react-hooks/rules-of-hooks": [
-      2
+    "flowtype/require-valid-file-annotation": [
+      1
     ],
-    "react-hooks/exhaustive-deps": [
-      2
+    "flowtype/use-flow-type": [
+      1
     ],
     "@next/next/google-font-display": [
       1
@@ -5096,6 +5893,12 @@
     "n/shebang": [
       2
     ],
+    "jsx-a11y/anchor-ambiguous-text": [
+      0
+    ],
+    "jsx-a11y/autocomplete-valid": [
+      2
+    ],
     "@typescript-eslint/lines-around-comment": [
       0
     ],
@@ -5178,51 +5981,6 @@
       0
     ],
     "flowtype/union-intersection-spacing": [
-      0
-    ],
-    "react/jsx-child-element-spacing": [
-      0
-    ],
-    "react/jsx-closing-bracket-location": [
-      0
-    ],
-    "react/jsx-closing-tag-location": [
-      0
-    ],
-    "react/jsx-curly-newline": [
-      0
-    ],
-    "react/jsx-curly-spacing": [
-      0
-    ],
-    "react/jsx-equals-spacing": [
-      0
-    ],
-    "react/jsx-first-prop-new-line": [
-      0
-    ],
-    "react/jsx-indent": [
-      0
-    ],
-    "react/jsx-indent-props": [
-      0
-    ],
-    "react/jsx-max-props-per-line": [
-      0
-    ],
-    "react/jsx-newline": [
-      0
-    ],
-    "react/jsx-one-expression-per-line": [
-      0
-    ],
-    "react/jsx-props-no-multi-spaces": [
-      0
-    ],
-    "react/jsx-tag-spacing": [
-      0
-    ],
-    "react/jsx-wrap-multilines": [
       0
     ],
     "standard/array-bracket-even-spacing": [
@@ -5354,9 +6112,6 @@
     "no-comma-dangle": [
       0
     ],
-    "no-reserved-keys": [
-      0
-    ],
     "no-space-before-semi": [
       0
     ],
@@ -5367,9 +6122,6 @@
       0
     ],
     "space-before-function-parentheses": [
-      0
-    ],
-    "space-in-brackets": [
       0
     ],
     "no-arrow-condition": [

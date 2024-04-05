@@ -119,4 +119,10 @@ export function add0Rule(
       : { [rule]: 0 };
   return newList;
 }
+
+export const compatible = (
+  output1: string | undefined,
+  output2: string | undefined,
+): boolean =>
+  output1 === undefined || output2 === undefined || output1 === output2;
 // EOF
