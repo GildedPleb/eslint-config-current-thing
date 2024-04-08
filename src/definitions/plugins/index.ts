@@ -24,6 +24,7 @@ import nextjs from "./nextjs";
 import noOnlyTest from "./no-only-test";
 import node from "./node";
 import perfectionist from "./perfectionist";
+import playwright from "./playwright";
 import prettier from "./prettier";
 import promises from "./promises";
 import react from "./react";
@@ -110,6 +111,7 @@ const plugins = [
   cypress,
   jsonc,
   mocha,
+  playwright,
 ];
 
 type ExtractNamespace<T> =

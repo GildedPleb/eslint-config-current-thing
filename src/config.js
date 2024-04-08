@@ -55,6 +55,7 @@ import noOnlyTest from "eslint-plugin-no-only-tests";
 import unsanitized from "eslint-plugin-no-unsanitized";
 import node from "eslint-plugin-node";
 import perfectionist from "eslint-plugin-perfectionist";
+import playwright from "eslint-plugin-playwright";
 import prettier from "eslint-plugin-prettier";
 import promise from "eslint-plugin-promise";
 import react from "eslint-plugin-react";
@@ -220,6 +221,7 @@ const configGen = ({
         "no-unsanitized": unsanitized,
         node,
         perfectionist,
+        playwright,
         prettier,
         promise,
         react,
@@ -654,6 +656,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "playwright/no-standalone-expect": 0,
               ...("@shopify/eslint-plugin/react-test" in override
                 ? override["@shopify/eslint-plugin/react-test"]
                 : {}),
@@ -1189,6 +1192,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "playwright/no-standalone-expect": 0,
               ...("eslint-plugin-jest-formatting" in override
                 ? override["eslint-plugin-jest-formatting"]
                 : {}),
@@ -1388,6 +1392,31 @@ const configGen = ({
         ]),
 
     /*
+      Playwright
+      3,513,926 monthly downloads
+      ESLint plugin for Playwright testing.
+      https://github.com/playwright-community/eslint-plugin-playwright#readme
+      Requires: playwright
+    */
+    ...(disable.includes("eslint-plugin-playwright") || threshold > 3_513_926
+      ? []
+      : [
+          {
+            files: testFiles,
+            languageOptions: {
+              globals: globals["shared-node-browser"],
+            },
+            rules: {
+              ...playwright.configs.recommended.rules,
+
+              ...("eslint-plugin-playwright" in override
+                ? override["eslint-plugin-playwright"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
       Mocha
       3,970,291 monthly downloads
       Eslint rules for mocha.
@@ -1453,6 +1482,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "playwright/no-standalone-expect": 0,
               ...("eslint-plugin-jest-dom" in override
                 ? override["eslint-plugin-jest-dom"]
                 : {}),
@@ -1479,6 +1509,7 @@ const configGen = ({
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
               "no-only-tests/no-only-tests": 2,
+              "playwright/no-standalone-expect": 0,
               ...("eslint-plugin-no-only-tests" in override
                 ? override["eslint-plugin-no-only-tests"]
                 : {}),
@@ -2273,6 +2304,7 @@ const configGen = ({
               "jest/valid-expect": 2,
               "jest/valid-expect-in-promise": 2,
               "jest/valid-title": 1,
+              "playwright/no-standalone-expect": 0,
               // https://github.com/testing-library/eslint-plugin-testing-library
               "testing-library/await-async-queries": 2,
               "testing-library/await-async-utils": 2,
@@ -2343,6 +2375,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "playwright/no-standalone-expect": 0,
               ...("eslint-plugin-testing-library" in override
                 ? override["eslint-plugin-testing-library"]
                 : {}),
@@ -2502,6 +2535,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "playwright/no-standalone-expect": 0,
               ...("eslint-plugin-jest" in override
                 ? override["eslint-plugin-jest"]
                 : {}),

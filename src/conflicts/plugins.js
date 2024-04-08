@@ -81,6 +81,8 @@ import node from "eslint-plugin-node";
 // @ts-ignore yes, we need to ignore every import for this to run
 import perfectionist from "eslint-plugin-perfectionist";
 // @ts-ignore yes, we need to ignore every import for this to run
+import playwright from "eslint-plugin-playwright";
+// @ts-ignore yes, we need to ignore every import for this to run
 import prettier from "eslint-plugin-prettier";
 // @ts-ignore yes, we need to ignore every import for this to run
 import promise from "eslint-plugin-promise";
@@ -172,6 +174,7 @@ const plugins = {
   "no-unsanitized": unsanitized,
   node,
   perfectionist,
+  playwright,
   prettier,
   promise,
   react,

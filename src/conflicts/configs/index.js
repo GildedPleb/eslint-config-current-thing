@@ -196,6 +196,10 @@ const configList = [
   },
   { location: "./src/conflicts/configs/jsonc-config.js", name: "jsonc" },
   { location: "./src/conflicts/configs/mocha-config.js", name: "mocha" },
+  {
+    location: "./src/conflicts/configs/playwright-config.js",
+    name: "playwright",
+  },
 ];
 
 export default configList;

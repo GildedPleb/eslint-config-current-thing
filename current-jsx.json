@@ -1201,6 +1201,7 @@
     "no-unsanitized",
     "node",
     "perfectionist:eslint-plugin-perfectionist",
+    "playwright",
     "prettier:eslint-plugin-prettier@5.1.3",
     "promise",
     "react",

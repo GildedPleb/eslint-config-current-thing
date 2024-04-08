@@ -1242,6 +1242,7 @@
     "no-unsanitized",
     "node",
     "perfectionist:eslint-plugin-perfectionist",
+    "playwright",
     "prettier:eslint-plugin-prettier@5.1.3",
     "promise",
     "react",
@@ -3444,6 +3445,9 @@
     "shopify/jsx-no-hardcoded-content": [
       0
     ],
+    "playwright/no-standalone-expect": [
+      0
+    ],
     "unicorn/better-regex": [
       2
     ],
@@ -4546,6 +4550,75 @@
     ],
     "security/detect-bidi-characters": [
       1
+    ],
+    "playwright/expect-expect": [
+      1
+    ],
+    "playwright/max-nested-describe": [
+      1
+    ],
+    "playwright/missing-playwright-await": [
+      2
+    ],
+    "playwright/no-conditional-expect": [
+      1
+    ],
+    "playwright/no-conditional-in-test": [
+      1
+    ],
+    "playwright/no-element-handle": [
+      1
+    ],
+    "playwright/no-eval": [
+      1
+    ],
+    "playwright/no-focused-test": [
+      2
+    ],
+    "playwright/no-force-option": [
+      1
+    ],
+    "playwright/no-nested-step": [
+      1
+    ],
+    "playwright/no-networkidle": [
+      2
+    ],
+    "playwright/no-page-pause": [
+      1
+    ],
+    "playwright/no-skipped-test": [
+      1
+    ],
+    "playwright/no-unsafe-references": [
+      2
+    ],
+    "playwright/no-useless-await": [
+      1
+    ],
+    "playwright/no-useless-not": [
+      1
+    ],
+    "playwright/no-wait-for-selector": [
+      1
+    ],
+    "playwright/no-wait-for-timeout": [
+      1
+    ],
+    "playwright/prefer-web-first-assertions": [
+      2
+    ],
+    "playwright/valid-describe-callback": [
+      2
+    ],
+    "playwright/valid-expect": [
+      2
+    ],
+    "playwright/valid-expect-in-promise": [
+      2
+    ],
+    "playwright/valid-title": [
+      2
     ],
     "mocha/handle-done-callback": [
       2

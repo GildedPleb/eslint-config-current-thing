@@ -41,7 +41,7 @@ Meaning, in many cases, using this config without these frameworks (by disabling
 
 <!-- Generated do not edit! -->
 
-Unsurprisingly, it is incredibly strict with popularity-based opinions on 1135 typescript rules, 1034 javascript rules, and 1140 testing rules.
+Unsurprisingly, it is incredibly strict with popularity-based opinions on 1135 typescript rules, 1034 javascript rules, and 1164 testing rules.
 
 <!-- End Generated do not edit! -->
 
@@ -300,7 +300,6 @@ The following section is generated according to spec.
 
 Generated on 4/8/2024, downloads for the previous 28 days.
 
-- 3,513,208 downloads, [eslint-plugin-playwright](https://www.npmjs.com/package/eslint-plugin-playwright)
 - 3,506,687 downloads, [eslint-plugin-prefer-arrow](https://www.npmjs.com/package/eslint-plugin-prefer-arrow)
 - 2,551,899 downloads, [yaml-eslint-parser](https://www.npmjs.com/package/yaml-eslint-parser)
 - 1,989,051 downloads, [eslint-plugin-json](https://www.npmjs.com/package/eslint-plugin-json)
@@ -340,3 +339,4 @@ Generated on 4/8/2024, downloads for the previous 28 days.
 - 346,019 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc) - Not Yet Eligible
 - 343,248 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
 - 334,315 downloads, [xo](https://www.npmjs.com/package/xo) - Not Yet Eligible
+- 331,869 downloads, [eslint-plugin-testcafe](https://www.npmjs.com/package/eslint-plugin-testcafe) - Not Yet Eligible
