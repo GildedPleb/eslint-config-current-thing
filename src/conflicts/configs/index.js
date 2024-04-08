@@ -200,6 +200,10 @@ const configList = [
     location: "./src/conflicts/configs/playwright-config.js",
     name: "playwright",
   },
+  {
+    location: "./src/conflicts/configs/prefer-arrow-config.js",
+    name: "prefer-arrow",
+  },
 ];
 
 export default configList;

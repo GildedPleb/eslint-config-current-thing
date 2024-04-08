@@ -13,7 +13,6 @@ export const reactIds = [
   "cra",
   "cra/jest",
   "cra/ts",
-  "prettier",
   "react",
   "react-hooks",
   "react-perf",

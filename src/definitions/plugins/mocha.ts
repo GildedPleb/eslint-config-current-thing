@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/plugins/jest.ts
+// PathMark: ./src/definitions/plugins/mocha.ts
 import type { Plugin } from ".";
 
 export default {

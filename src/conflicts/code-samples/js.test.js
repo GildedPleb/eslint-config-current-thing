@@ -9,6 +9,7 @@
     !!! DO NOT EDIT !!!
 
 */
+
 const jsCodeToLint = `
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 // eslint-config: jest-specific, focusing on best practices and avoiding code smells

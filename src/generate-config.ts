@@ -197,7 +197,7 @@ ${configs
       const incompatibleRules =
         incompatibleList.length === 0
           ? ""
-          : Object.entries(incompatibles[`${id}${secondDash}`] ?? {}).map(
+          : incompatibleList.map(
               ([key, value]) => `"${key}": ${value.toString()},`,
             ).join(`
               `);

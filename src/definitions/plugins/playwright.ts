@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/plugins/jest.ts
+// PathMark: ./src/definitions/plugins/playwright.ts
 
 import type { Plugin } from ".";
 

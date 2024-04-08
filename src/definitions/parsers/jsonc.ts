@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/parsers/ts.ts
+// PathMark: ./src/definitions/parsers/jsonc.ts
 import type { Parser } from ".";
 
 export default {

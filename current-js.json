@@ -1183,6 +1183,7 @@
     "node",
     "perfectionist:eslint-plugin-perfectionist",
     "playwright",
+    "prefer-arrow",
     "prettier:eslint-plugin-prettier@5.1.3",
     "promise",
     "react",
@@ -3222,6 +3223,14 @@
       0,
       {
         "allowInAsyncFunctions": true
+      }
+    ],
+    "prefer-arrow/prefer-arrow-functions": [
+      0,
+      {
+        "classPropertiesAllowed": false,
+        "disallowPrototype": true,
+        "singleReturnOnly": false
       }
     ],
     "unicorn/better-regex": [

@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/jest.ts
+// PathMark: ./src/definitions/configs/mocha.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

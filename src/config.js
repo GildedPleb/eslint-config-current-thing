@@ -56,6 +56,7 @@ import unsanitized from "eslint-plugin-no-unsanitized";
 import node from "eslint-plugin-node";
 import perfectionist from "eslint-plugin-perfectionist";
 import playwright from "eslint-plugin-playwright";
+import preferArrow from "eslint-plugin-prefer-arrow";
 import prettier from "eslint-plugin-prettier";
 import promise from "eslint-plugin-promise";
 import react from "eslint-plugin-react";
@@ -222,6 +223,7 @@ const configGen = ({
         node,
         perfectionist,
         playwright,
+        "prefer-arrow": preferArrow,
         prettier,
         promise,
         react,
@@ -264,6 +266,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               ...("eslint-plugin-react-perf" in override
                 ? override["eslint-plugin-react-perf"]
                 : {}),
@@ -538,6 +541,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               ...("@shopify/eslint-plugin/polaris" in override
                 ? override["@shopify/eslint-plugin/polaris"]
                 : {}),
@@ -572,6 +576,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               "react/jsx-filename-extension": [
                 2,
                 { extensions: [".jsx", ".tsx"] },
@@ -616,6 +621,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               ...("@shopify/eslint-plugin/react-ts" in override
                 ? override["@shopify/eslint-plugin/react-ts"]
                 : {}),
@@ -657,6 +663,7 @@ const configGen = ({
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
               "playwright/no-standalone-expect": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               ...("@shopify/eslint-plugin/react-test" in override
                 ? override["@shopify/eslint-plugin/react-test"]
                 : {}),
@@ -719,6 +726,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               ...("eslint-config-standard-react" in override
                 ? override["eslint-config-standard-react"]
                 : {}),
@@ -814,7 +822,7 @@ const configGen = ({
             rules: {
               ...functional.configs["external-vanilla-recommended"].rules,
               ...functional.configs.recommended.rules,
-
+              "prefer-arrow/prefer-arrow-functions": 0,
               ...("eslint-plugin-functional" in override
                 ? override["eslint-plugin-functional"]
                 : {}),
@@ -1228,6 +1236,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               ...("eslint-config-standard-jsx" in override
                 ? override["eslint-config-standard-jsx"]
                 : {}),
@@ -1295,6 +1304,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               ...("@react-native/eslint-plugin" in override
                 ? override["@react-native/eslint-plugin"]
                 : {}),
@@ -1327,6 +1337,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               ...("@react-native-community/eslint-config/flowtype" in override
                 ? override["@react-native-community/eslint-config/flowtype"]
                 : {}),
@@ -1359,6 +1370,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               ...("@react-native-community/eslint-config/ts" in override
                 ? override["@react-native-community/eslint-config/ts"]
                 : {}),
@@ -1386,6 +1398,35 @@ const configGen = ({
 
               ...("eslint-plugin-security" in override
                 ? override["eslint-plugin-security"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Prefer Arrow
+      3,505,959 monthly downloads
+      Prefer arrow functions in most cases
+      https://github.com/TristonJ/eslint-plugin-prefer-arrow#readme
+      Requires: prefer-arrow
+    */
+    ...(disable.includes("eslint-plugin-prefer-arrow") || threshold > 3_505_959
+      ? []
+      : [
+          {
+            files,
+            rules: {
+              "prefer-arrow/prefer-arrow-functions": [
+                1,
+                {
+                  classPropertiesAllowed: false,
+                  disallowPrototype: true,
+                  singleReturnOnly: false,
+                },
+              ],
+
+              ...("eslint-plugin-prefer-arrow" in override
+                ? override["eslint-plugin-prefer-arrow"]
                 : {}),
             },
           },
@@ -1433,6 +1474,7 @@ const configGen = ({
             },
             rules: {
               ...mocha.configs.recommended.rules,
+              "prefer-arrow/prefer-arrow-functions": 0,
               "prefer-arrow-callback": 0,
               ...("eslint-plugin-mocha" in override
                 ? override["eslint-plugin-mocha"]
@@ -1540,6 +1582,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               ...("eslint-plugin-react-native" in override
                 ? override["eslint-plugin-react-native"]
                 : {}),
@@ -1566,6 +1609,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               "react-refresh/only-export-components": 1,
               ...("eslint-plugin-react-refresh" in override
                 ? override["eslint-plugin-react-refresh"]
@@ -1601,6 +1645,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               // Deprecated rule format needs to be overwritten
               quotes: [
                 0,
@@ -1832,6 +1877,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               ...("eslint-plugin-storybook" in override
                 ? override["eslint-plugin-storybook"]
                 : {}),
@@ -1951,6 +1997,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               ...("eslint-config-airbnb" in override
                 ? override["eslint-config-airbnb"]
                 : {}),
@@ -2142,6 +2189,7 @@ const configGen = ({
               ],
               "no-whitespace-before-property": 1,
               "no-with": 1,
+              "prefer-arrow/prefer-arrow-functions": 0,
               "react/forbid-foreign-prop-types": [
                 1,
                 { allowInPropTypes: true },
@@ -2256,6 +2304,7 @@ const configGen = ({
               "no-unused-vars": 0,
               "no-use-before-define": 0,
               "no-useless-constructor": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               ...("eslint-config-react-app/ts" in override
                 ? override["eslint-config-react-app/ts"]
                 : {}),
@@ -2305,6 +2354,7 @@ const configGen = ({
               "jest/valid-expect-in-promise": 2,
               "jest/valid-title": 1,
               "playwright/no-standalone-expect": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               // https://github.com/testing-library/eslint-plugin-testing-library
               "testing-library/await-async-queries": 2,
               "testing-library/await-async-utils": 2,
@@ -2585,6 +2635,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               ...("eslint-plugin-react-hooks" in override
                 ? override["eslint-plugin-react-hooks"]
                 : {}),
@@ -2619,6 +2670,7 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
               ...("eslint-plugin-react" in override
                 ? override["eslint-plugin-react"]
                 : {}),

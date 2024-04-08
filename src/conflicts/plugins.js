@@ -83,6 +83,8 @@ import perfectionist from "eslint-plugin-perfectionist";
 // @ts-ignore yes, we need to ignore every import for this to run
 import playwright from "eslint-plugin-playwright";
 // @ts-ignore yes, we need to ignore every import for this to run
+import preferArrow from "eslint-plugin-prefer-arrow";
+// @ts-ignore yes, we need to ignore every import for this to run
 import prettier from "eslint-plugin-prettier";
 // @ts-ignore yes, we need to ignore every import for this to run
 import promise from "eslint-plugin-promise";
@@ -175,6 +177,7 @@ const plugins = {
   node,
   perfectionist,
   playwright,
+  "prefer-arrow": preferArrow,
   prettier,
   promise,
   react,

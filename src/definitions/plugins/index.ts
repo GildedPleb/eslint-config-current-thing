@@ -25,6 +25,7 @@ import noOnlyTest from "./no-only-test";
 import node from "./node";
 import perfectionist from "./perfectionist";
 import playwright from "./playwright";
+import preferArrow from "./prefer-arrow";
 import prettier from "./prettier";
 import promises from "./promises";
 import react from "./react";
@@ -112,6 +113,7 @@ const plugins = [
   jsonc,
   mocha,
   playwright,
+  preferArrow,
 ];
 
 type ExtractNamespace<T> =
