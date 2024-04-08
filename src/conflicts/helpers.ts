@@ -17,22 +17,35 @@ import {
 // @ts-ignore this needs to be like this or there is a compile error.
 const { FlatESLint } = ESLint;
 
-/** */
+/**
+ *
+ * @param filePath - File Path
+ * @param overrideConfigFile - The location for the file
+ * @param rules - optional additional rules
+ * @returns an eslint instance and the json representation
+ */
 export async function getLinter(
   filePath: string,
-  fileLocationConfig1: string,
+  overrideConfigFile: string,
   rules?: Record<string, Rule>,
 ): Promise<[IFlatESLint, ConfigData | undefined]> {
   const eslint = new FlatESLint({
     fix: true,
-    overrideConfigFile: fileLocationConfig1,
+    overrideConfigFile,
     ...(rules === undefined ? {} : { overrideConfig: { rules } }),
   });
   const json = await eslint.calculateConfigForFile(filePath);
   return [eslint, json];
 }
 
-/** */
+/**
+ * This lints the same file multiple times
+ * @param opt - the options to pass to the configs
+ * @param codeToLint - the code to lint
+ * @param es1 - the eslint instance 1
+ * @param es2 - the eslint instance 2
+ * @returns a tuple of each output
+ */
 export async function getDiff(
   opt: Files,
   codeToLint: string,
@@ -63,7 +76,14 @@ export async function getDiff(
   return [output1, output2];
 }
 
-/** */
+/**
+ * This lints the same file multiple times
+ * @param opt - the options to pass to the configs
+ * @param codeToLint - the code to lint
+ * @param main - the eslint instance 1
+ * @param subRule - the eslint instance 2
+ * @returns a tuple of each output
+ */
 export async function getSimpleDiff(
   opt: Files,
   codeToLint: string,
@@ -84,11 +104,10 @@ export const isRuleOff = (rule: Rule): boolean =>
     ? rule === 0 || rule === "off"
     : rule[0] === "off" || rule[0] === 0;
 
-/** */
-export function mergeIncompatible(
+export const mergeIncompatible = (
   newRules: ConflictCache,
   oldRules: ConflictCache,
-): Record<string, Record<string, Rule>> {
+): Record<string, Record<string, Rule>> => {
   const fullList = { ...oldRules };
   for (const newRule of Object.keys(newRules)) {
     fullList[newRule] =
@@ -101,14 +120,13 @@ export function mergeIncompatible(
   }
 
   return fullList;
-}
+};
 
-/** */
-export function add0Rule(
+export const add0Rule = (
   list: ConflictCache,
   name: string,
   rule: string,
-): Record<string, Record<string, Rule>> {
+): Record<string, Record<string, Rule>> => {
   const newList = { ...list };
   newList[name] =
     name in list
@@ -118,11 +136,12 @@ export function add0Rule(
         }
       : { [rule]: 0 };
   return newList;
-}
+};
 
 export const compatible = (
   output1: string | undefined,
   output2: string | undefined,
 ): boolean =>
   output1 === undefined || output2 === undefined || output1 === output2;
+
 // EOF

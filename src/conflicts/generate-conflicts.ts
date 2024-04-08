@@ -6,6 +6,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { MINIMUMS, RULES } from "../constants";
+import { parsers } from "../definitions";
 import type { Config } from "../definitions/configs";
 import rawConfigs from "../definitions/configs";
 import plugins from "../definitions/plugins";
@@ -76,11 +77,24 @@ import { fileURLToPath } from "node:url";
 
 ${configContext.packages
   .map(({ name, package: pack, requiresImport }) =>
-    requiresImport ? `import ${name} from "${pack}";` : "",
+    requiresImport &&
+    name !== "{ rules as emotion }" &&
+    name !== "reactNativeConfig" &&
+    name !== "tseslint"
+      ? `import ${name} from "${pack}";`
+      : "",
   )
   .filter(Boolean).join(`
 `)}
 ${plugins
+  .flatMap(({ packages }) =>
+    packages.map(({ name, package: pack, requiresImport }) =>
+      requiresImport ? `import ${name} from "${pack}";` : "",
+    ),
+  )
+  .filter(Boolean).join(`
+`)}
+${parsers
   .flatMap(({ packages }) =>
     packages.map(({ name, package: pack, requiresImport }) =>
       requiresImport ? `import ${name} from "${pack}";` : "",
@@ -148,13 +162,31 @@ const configGen = ({
         ...globals.browser,
         ...globals.node,
       },
-      parser: tseslint.parser,
-      parserOptions: {
-        ecmaVersion: "latest",
-        project: true,
-        sourceType: "module",
-      },
     },
+  },
+  /* PARSERS */
+  ${parsers
+    .sort((first, name2) => first.count - name2.count)
+    .map(({ count, definitions, description, homepage, name }) => {
+      if (!definitions.includes("languageOptions:")) {
+        const message = `Formatting Error: ${name} defines a parser definition but does not include a 'languageOptions' key.`;
+        throw new Error(message);
+      }
+
+      return `/*
+    ${name}
+    ${count.toLocaleString()} monthly downloads
+    ${description}
+    ${homepage}
+  */
+  ${definitions
+    .split("\n")
+    .map((line, index) => (index === 0 ? line : `  ${line}`))
+    .join("\n")},`;
+    }).join(`
+  `)}
+  /* PLUGINS */
+  {
     plugins: {
       ${plugins
         .flatMap(({ packages }) =>

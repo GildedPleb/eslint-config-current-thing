@@ -1,3 +1,4 @@
+// PathMark: ./src/packages/searches.ts
 const searchTerms: string[] = [
   ...new Set([
     "eslint",
@@ -176,3 +177,4 @@ const searchTerms: string[] = [
 ];
 
 export default searchTerms;
+// EOF

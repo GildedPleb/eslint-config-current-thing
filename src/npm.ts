@@ -35,6 +35,7 @@ interface SearchEntry {
 /**
  * Gets the info for a given npm package
  * @param name - The name of the package.
+ * @returns a fetch request
  */
 async function getInfoLong(name: string): Promise<Info> {
   const request = `${BASE_URL}/${name.trim()}`;
@@ -51,6 +52,7 @@ const getDate = memoize(getDateLong);
 /**
  * Gets the download count for a given npm package
  * @param name - The name of the package.
+ * @returns download count
  */
 async function getDownloadCountLong(name: string): Promise<number | undefined> {
   const date = new Date();
@@ -72,6 +74,7 @@ export const getDownloadCount = memoize(getDownloadCountLong);
 /**
  * Searches NPM for the given list of searches
  * @param searchStrings  - a list of NPM search strings
+ * @returns search results
  */
 async function fetchNPMURLsLong(searchStrings: string[]): Promise<string[]> {
   const pluginNames: string[] = [];
@@ -84,6 +87,7 @@ async function fetchNPMURLsLong(searchStrings: string[]): Promise<string[]> {
       if (isMoreThanRandomDaysInThePast(date)) throw new Error("Data too old");
       pluginNames.push(...result);
     } catch {
+      console.log(`--> Data too old for search "${search}", refreshing...`);
       const searchResponse = await fetch(url);
       try {
         const searchData = (await searchResponse.json()) as NpmSearchResult;

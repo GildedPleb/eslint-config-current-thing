@@ -1,29 +1,55 @@
-import commentsJsCodeToLint from "./comments";
-import commentsTsCodeToLint from "./comments-ts";
-import encCodeToLint from "./encoding";
-import inconsistentKeys from "./inconsistent-keys";
+// PathMark: ./src/conflicts/code-samples/index.ts
+import importsCodeToLint from "./import-export";
 import jsCodeToLint from "./javascript";
+import jsCodeToLintStyle from "./javascript-style";
 import testCodeToLint from "./js.test";
 import jsxCodeToLint from "./jsx";
-import tsCodeToLintObjectNull from "./object-null";
-import regexCodeToLint from "./regex";
 import tsxCodeToLint from "./tsx";
 import tsCodeToLint from "./typescript";
+import tsCodeToLintStyle from "./typescript-style";
 
 export interface FileList {
+  configs?: string[];
   def: string;
+  exclude?: string[];
   filePath: string;
   short: string;
 }
 
 const fileList: FileList[] = [
   {
+    configs: [
+      "perfectionist",
+      "import-sort",
+      "import-js",
+      "import-js-ts",
+      "unused-imports",
+    ],
+    def: importsCodeToLint,
+    filePath: "./src/conflicts/code-samples/import-export.ts",
+    short: "imports",
+  },
+  {
+    configs: ["prettier", "stylistic"],
+    def: jsCodeToLintStyle,
+    filePath: "./src/conflicts/code-samples/javascript-style.js",
+    short: "js-style",
+  },
+  {
+    configs: ["prettier", "stylistic"],
+    def: tsCodeToLintStyle,
+    filePath: "./src/conflicts/code-samples/typescript-style.ts",
+    short: "ts-style",
+  },
+  {
     def: jsCodeToLint,
+    exclude: ["prettier", "stylistic"],
     filePath: "./src/conflicts/code-samples/javascript.js",
     short: "js",
   },
   {
     def: tsCodeToLint,
+    exclude: ["prettier", "stylistic"],
     filePath: "./src/conflicts/code-samples/typescript.ts",
     short: "ts",
   },
@@ -42,36 +68,7 @@ const fileList: FileList[] = [
     filePath: "./src/conflicts/code-samples/js.test.js",
     short: "test",
   },
-  {
-    def: regexCodeToLint,
-    filePath: "./src/conflicts/code-samples/regex.js",
-    short: "regex",
-  },
-  {
-    def: encCodeToLint,
-    filePath: "./src/conflicts/code-samples/encoding.js",
-    short: "encoding",
-  },
-  {
-    def: commentsJsCodeToLint,
-    filePath: "./src/conflicts/code-samples/comments.js",
-    short: "comments-js",
-  },
-  {
-    def: commentsTsCodeToLint,
-    filePath: "./src/conflicts/code-samples/comments-ts.ts",
-    short: "comments-ts",
-  },
-  {
-    def: inconsistentKeys,
-    filePath: "./src/conflicts/code-samples/inconsistent-keys.js",
-    short: "inconsistent-keys",
-  },
-  {
-    def: tsCodeToLintObjectNull,
-    filePath: "./src/conflicts/code-samples/object-null.ts",
-    short: "object-null",
-  },
 ];
 
 export default fileList;
+// EOF

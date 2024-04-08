@@ -12,11 +12,6 @@ export default {
   packages: [
     { name: "tseslint", package: "typescript-eslint", requiresImport: true },
     {
-      name: "typescriptParser",
-      package: "@typescript-eslint/parser",
-      requiresImport: false,
-    },
-    {
       name: "typescriptPlugin",
       package: "@typescript-eslint/eslint-plugin",
       requiresImport: false,

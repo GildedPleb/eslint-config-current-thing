@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 import incompatibles from "./conflicts/incompatibilities";
 import { MINIMUMS, RULES } from "./constants";
-import { configs, plugins } from "./definitions";
+import { configs, parsers, plugins } from "./definitions";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -40,10 +40,18 @@ ${plugins
   )
   .filter(Boolean).join(`
 `)}
+${parsers
+  .flatMap(({ packages }) =>
+    packages.map(({ name, package: pack, requiresImport }) =>
+      requiresImport ? `import ${name} from "${pack}";` : "",
+    ),
+  )
+  .filter(Boolean).join(`
+`)}
 import { FlatCompat } from "@eslint/eslintrc";
 import globals from "globals";
-import restrictedGlobals from 'confusing-browser-globals';
-import { defineFlatConfig } from 'eslint-define-config';
+import restrictedGlobals from "confusing-browser-globals";
+import { defineFlatConfig } from "eslint-define-config";
 
 const filename = fileURLToPath(import.meta.url);
 const baseDirectory = path.dirname(filename);
@@ -97,13 +105,31 @@ const configGen = ({
           ...globals.browser,
           ...globals.node,
         },
-        parser: tseslint.parser,
-        parserOptions: {
-          ecmaVersion: "latest",
-          project: true,
-          sourceType: "module",
-        },
       },
+    },
+    /* PARSERS */
+    ${parsers
+      .sort((first, second) => first.count - second.count)
+      .map(({ count, definitions, description, homepage, name }) => {
+        if (!definitions.includes("languageOptions:")) {
+          const message = `Formatting Error: ${name} defines a parser definition but does not include a 'languageOptions' key.`;
+          throw new Error(message);
+        }
+
+        return `/*
+      ${name}
+      ${count.toLocaleString()} monthly downloads
+      ${description}
+      ${homepage}
+    */
+    ${definitions
+      .split("\n")
+      .map((line, index) => (index === 0 ? line : `  ${line}`))
+      .join("\n")},`;
+      }).join(`
+    `)}
+    /* PLUGINS */
+    {
       plugins: {
         ${plugins
           .flatMap(({ packages }) =>
@@ -119,7 +145,7 @@ const configGen = ({
         `)}
       },
     },
-
+    /* CONFIGS */
 ${configs
   .sort((first, second) => first.count - second.count)
   .map(

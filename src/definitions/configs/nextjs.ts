@@ -18,6 +18,11 @@ export default {
       package: "@next/eslint-plugin-next",
       requiresImport: false,
     },
+    {
+      name: "nextJsConfig",
+      package: "eslint-config-next",
+      requiresImport: false,
+    },
   ],
   requiredPlugins: ["@next/next"],
   rules: `...nextjs.configs.recommended.rules,`,

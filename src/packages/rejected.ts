@@ -3,17 +3,8 @@
 // These are actual project that are either ESlint configs or plugins
 
 const rejected = new Set([
-  // Purely obsolete
-  "eslint-plugin-lodash",
-
   // Tslint is a dead project, replaced by @typescript-eslint
   "tslint-config-prettier",
-
-  // 'Function' definitions are good.
-  "eslint-plugin-prefer-arrow",
-
-  // Included with next plugin
-  "eslint-config-next",
 
   // Out of Scope
   "@tanstack/eslint-plugin-query",
@@ -32,7 +23,7 @@ const rejected = new Set([
   // Irrelevant?
   "eslint-plugin-local-rules",
 
-  // Vue
+  // Vue -- Hopefully to be added one day when its more popular than react!
   "@vue/eslint-config-typescript",
   "@vue/eslint-config-prettier",
   "eslint-plugin-nuxt",
@@ -43,7 +34,7 @@ const rejected = new Set([
   "@vue/eslint-config-standard",
   "eslint-plugin-prettier-vue",
 
-  // Angular
+  // Angular -- Hopefully to be added one day when its more popular than react!
   "@angular-eslint/eslint-plugin",
   "@angular-eslint/eslint-plugin-template",
   "@ngdaddy/eslint-config",
@@ -51,7 +42,7 @@ const rejected = new Set([
   "@nx/angular",
   "@ngdaddy/eslint-plugin",
 
-  // Svelte
+  // Svelte -- Hopefully to be added one day when its more popular than react!
   "svelte-eslint-parser",
   "eslint-plugin-svelte",
 
@@ -60,9 +51,6 @@ const rejected = new Set([
 
   // Plugin for linting plugins
   "eslint-plugin-eslint-plugin",
-
-  // Included with Airbnb
-  "eslint-config-airbnb-base",
 
   // Typescript-eslint sub-modules
   "@typescript-eslint/scope-manager",
@@ -90,7 +78,6 @@ const rejected = new Set([
   "eslint-formatter-pretty",
   "eslint-snapshot-test",
   "eslint-module-utils",
-  "@types/eslint-scope",
   "eslint-compat-utils",
   "eslint-template-visitor",
 
@@ -121,6 +108,7 @@ const rejected = new Set([
   "gherkin-lint",
   "@axe-core/react",
   "lockfile-lint-api",
+  "gulp-eslint",
 
   // Sarif
   "node-sarif-builder",
@@ -143,6 +131,7 @@ const rejected = new Set([
   "@eslint-types/jsdoc",
   "eslint-define-config",
   "@types/eslint",
+  "@types/eslint-scope",
 
   // Automatically included
   "globals",

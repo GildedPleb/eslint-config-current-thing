@@ -1,4 +1,5 @@
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable no-await-in-loop */
 /* eslint-disable max-depth */
 /* eslint-disable security/detect-object-injection */
 /* eslint-disable no-extra-label */
@@ -13,7 +14,7 @@ import { fileURLToPath } from "node:url";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import chalk from "chalk";
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { Level } from "level";
+import { type BatchOperation, Level } from "level";
 
 import { hashObject, printDiffLines } from "../helpers";
 import fileList from "./code-samples";
@@ -52,28 +53,44 @@ for (let index = 0; index < configList.length; index++) {
 let fullConflictList: ConflictCache = {};
 
 const getCache = async (
-  database: Level,
+  database: Level<string, ConflictCache>,
   key: string,
 ): Promise<ConflictCache | undefined> => {
   try {
     if (skipCache) throw new Error("Skipping the cache.");
-    const previous = await database.get(`conflicts-${key}`);
-    return JSON.parse(previous) as ConflictCache;
+    return await database.get(`conflicts-${key}`);
   } catch {}
 
   return undefined;
 };
 
-for await (const { def: codeToLint, filePath, short } of fileList) {
-  const database = new Level(`./conflict-cache-${short}`, {
-    valueEncoding: "json",
-  });
+for (const { configs, def: codeToLint, exclude, filePath, short } of fileList) {
+  const database = new Level<string, ConflictCache>(
+    `./conflict-cache-${short}`,
+    { valueEncoding: "json" },
+  );
 
   const opt = { filePath };
   console.log("\n\nProcessing filetype:", chalk.red(filePath), "\n");
   const linters = [];
 
-  for await (const [config1, config2] of combinations) {
+  const filtered =
+    configs === undefined
+      ? combinations
+      : combinations.filter(
+          ([config1, config2]) =>
+            configs.includes(config1.name) || configs.includes(config2.name),
+        );
+
+  const excluded =
+    exclude === undefined
+      ? filtered
+      : filtered.filter(
+          ([config1, config2]) =>
+            !exclude.includes(config1.name) && !exclude.includes(config2.name),
+        );
+
+  for (const [config1, config2] of excluded) {
     const { location: config1Path, name: name1 } = config1;
     const { location: config2Path, name: name2 } = config2;
     const currentCheck = `${chalk.green(short)}: ${chalk.blue(name1)} ${chalk.blue("-vs-")} ${chalk.blue(name2)}`;
@@ -97,7 +114,7 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
       Object.keys(json2.rules).length === 0
     ) {
       console.log(`${currentCheck} - No conflicts!`);
-      await database.put(`conflicts-${keyHash}`, JSON.stringify({}));
+      await database.put(`conflicts-${keyHash}`, {});
       continue;
     }
 
@@ -137,7 +154,7 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
   // Lets figure out the specific rules that conflict of conflicting configs.  //
   // ************************************************************************* //
 
-  for await (const lint of linters) {
+  for (const lint of linters) {
     const {
       config1: { location: path1, name: name1 },
       config2: { location: path2, name: name2 },
@@ -150,7 +167,7 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
 
     let conflictList: ConflictCache = {};
 
-    mid: for await (const [ruleName, ruleSetting] of rules1List) {
+    mid: for (const [ruleName, ruleSetting] of rules1List) {
       if (isRuleOff(ruleSetting) || ruleName in rules2) continue mid;
       const jsonOneRule = JSON.parse(JSON.stringify(json1)) as Record<
         string,
@@ -185,7 +202,7 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
       if (compatible(output1, output2)) {
         rules1Zeroed[ruleName] = 0;
         if (!skipCache) {
-          await database.put(`conflicts-${innerKeyHash}`, JSON.stringify({}));
+          await database.put(`conflicts-${innerKeyHash}`, {});
         }
 
         continue mid;
@@ -197,17 +214,14 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
       const innerConfigList = add0Rule({}, name2, ruleName);
 
       if (!skipCache) {
-        await database.put(
-          `conflicts-${innerKeyHash}`,
-          JSON.stringify(innerConfigList),
-        );
+        await database.put(`conflicts-${innerKeyHash}`, innerConfigList);
       }
 
       conflictList = mergeIncompatible(innerConfigList, conflictList);
       rules1Zeroed[ruleName] = 0;
     }
 
-    mid: for await (const [ruleName, rule1Setting] of rules2List) {
+    mid: for (const [ruleName, rule1Setting] of rules2List) {
       if (isRuleOff(rule1Setting) || ruleName in rules1) continue mid;
       const jsonOneRule = JSON.parse(JSON.stringify(json2)) as Record<
         string,
@@ -240,7 +254,7 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
       );
       if (compatible(output1, output2)) {
         if (!skipCache) {
-          await database.put(`conflicts-${innerKeyHash}`, JSON.stringify({}));
+          await database.put(`conflicts-${innerKeyHash}`, {});
         }
 
         rules2Zeroed[ruleName] = 0;
@@ -252,10 +266,7 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
 
       const innerConfigList: ConflictCache = add0Rule({}, name1, ruleName);
       if (!skipCache) {
-        await database.put(
-          `conflicts-${innerKeyHash}`,
-          JSON.stringify(innerConfigList),
-        );
+        await database.put(`conflicts-${innerKeyHash}`, innerConfigList);
       }
 
       conflictList = mergeIncompatible(innerConfigList, conflictList);
@@ -271,7 +282,7 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
   let upToDate = false;
 
   // For each config compare the set:
-  for await (const lint of linters) {
+  for (const lint of linters) {
     const {
       config1: { location: path1, name: name1 },
       config2: { location: path2, name: name2 },
@@ -283,7 +294,7 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
       r2: { rules2, rules2List, rules2Zeroed },
     } = lint;
     let temporaryList: ConflictCache = {};
-    mid: for await (const [json1RuleName, json1RuleSetting] of rules1List) {
+    mid: for (const [json1RuleName, json1RuleSetting] of rules1List) {
       if (isRuleOff(json1RuleSetting)) continue mid;
       const json1OneRule = JSON.parse(JSON.stringify(json1)) as Record<
         string,
@@ -292,7 +303,10 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
       json1OneRule.rules = { [json1RuleName]: json1RuleSetting };
       rules1Zeroed[json1RuleName] = json1RuleSetting;
       const [es1OneRule] = await getLinter(filePath, path1, rules1Zeroed);
-      inner: for await (const [json2RuleName, json2RuleSetting] of rules2List) {
+      const batchOperations: Array<
+        BatchOperation<Level<string, ConflictCache>, string, ConflictCache>
+      > = [];
+      inner: for (const [json2RuleName, json2RuleSetting] of rules2List) {
         readline.cursorTo(process.stdout, 0);
 
         if (isRuleOff(json2RuleSetting)) continue inner;
@@ -306,6 +320,7 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
           string,
           Record<string, Rule>
         >;
+
         json2OneRule.rules = { [json2RuleName]: json2RuleSetting };
         const innerKeyHash = hashObject({
           codeToLint,
@@ -343,10 +358,17 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
         if (compatible(output1, output2)) {
           rules2Zeroed[json2RuleName] = 0;
           if (!skipCache) {
-            await database.put(`conflicts-${innerKeyHash}`, JSON.stringify({}));
-            await database.put(
-              `conflicts-${innerKeyHash2}`,
-              JSON.stringify({}),
+            batchOperations.push(
+              {
+                key: `conflicts-${innerKeyHash}`,
+                type: "put",
+                value: {},
+              },
+              {
+                key: `conflicts-${innerKeyHash2}`,
+                type: "put",
+                value: {},
+              },
             );
           }
 
@@ -367,15 +389,28 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
         }
 
         rules2Zeroed[json2RuleName] = 0;
-        if (!skipCache) {
-          await database.put(
-            `conflicts-${innerKeyHash}`,
-            JSON.stringify(innerConfigList),
+        if (!skipCache)
+          batchOperations.push(
+            {
+              key: `conflicts-${innerKeyHash}`,
+              type: "put",
+              value: innerConfigList,
+            },
+            {
+              key: `conflicts-${innerKeyHash2}`,
+              type: "put",
+              value: innerConfigList,
+            },
           );
-          await database.put(
-            `conflicts-${innerKeyHash2}`,
-            JSON.stringify(innerConfigList),
-          );
+
+        if (batchOperations.length > 0) {
+          await database
+            .batch(batchOperations)
+            // eslint-disable-next-line unicorn/prefer-top-level-await
+            .catch((error) => {
+              console.error(error);
+              throw new Error("Batch failed");
+            });
         }
 
         temporaryList = mergeIncompatible(innerConfigList, temporaryList);
@@ -386,11 +421,13 @@ for await (const { def: codeToLint, filePath, short } of fileList) {
 
     fullConflictList = mergeIncompatible(temporaryList, fullConflictList);
     if (!skipCache) {
-      await database.put(`conflicts-${keyHash}`, JSON.stringify(temporaryList));
+      await database.put(`conflicts-${keyHash}`, temporaryList);
     }
 
     console.log(`\n${currentCheck} - Processing finished.`);
   }
+
+  console.log(filePath, { fullConflictList });
 }
 
 console.log({ fullConflictList });

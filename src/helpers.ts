@@ -10,6 +10,7 @@ import * as diff from "diff";
 /**
  *
  * @param dateString - formatted like "3/15/24"
+ * @returns the outcome
  */
 export function isMoreThan1DaysInThePast(dateString: string): boolean {
   const givenDate = new Date(dateString).getTime();
@@ -20,8 +21,9 @@ export function isMoreThan1DaysInThePast(dateString: string): boolean {
 }
 
 /**
- *
+ * Decides if a cache is invalid
  * @param dateString - formatted like "3/15/24"
+ * @returns the outcome
  */
 export function isMoreThanRandomDaysInThePast(dateString: string): boolean {
   const givenDate = new Date(dateString).getTime();
@@ -52,6 +54,8 @@ const parseDif = (results: diff.Change[]): string => {
 
 /**
  * Print the diff of two string inputs by line
+ * @param oldString - the original string to diff against
+ * @param newString - the new string
  */
 export function printDiffLines(
   oldString: string | undefined,
@@ -88,11 +92,8 @@ export function printDiffLines(
   }
 }
 
-/**
- * Create a hash of a JS object
- */
-export function hashObject(object: object): string {
+export const hashObject = (object: object): string => {
   const jsonString = JSON.stringify(object);
   return createHash("sha256").update(jsonString).digest("hex");
-}
+};
 // EOF

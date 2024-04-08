@@ -117,13 +117,27 @@ const configGen = ({
           ...globals.browser,
           ...globals.node,
         },
+      },
+    },
+    /* PARSERS */
+    /*
+    TypeScript
+    122,591,496 monthly downloads
+    Tooling which enables you to use TypeScript with ESLint / An ESLint custom parser which leverages TypeScript ESTree
+    https://typescript-eslint.io/packages/typescript-eslint / https://typescript-eslint.io/packages/parser
+  */
+    {
+      files,
+      languageOptions: {
         parser: tseslint.parser,
         parserOptions: {
           ecmaVersion: "latest",
           project: true,
-          sourceType: "module",
         },
       },
+    },
+    /* PLUGINS */
+    {
       plugins: {
         "@babel": babelPlugin,
         "@emotion": { rules: emotion },
@@ -199,7 +213,9 @@ const configGen = ({
       www.nope.com
       Requires: @next/next
     */
-    ...(disable.includes("@next/eslint-plugin-next") || threshold > 1_000_000
+    ...(disable.includes("@next/eslint-plugin-next") ||
+    disable.includes("eslint-config-next") ||
+    threshold > 1_000_000
       ? []
       : [
           {
@@ -208,6 +224,9 @@ const configGen = ({
               ...nextjs.configs.recommended.rules,
               ...("@next/eslint-plugin-next" in override
                 ? override["@next/eslint-plugin-next"]
+                : {}),
+              ...("eslint-config-next" in override
+                ? override["eslint-config-next"]
                 : {}),
             },
           },

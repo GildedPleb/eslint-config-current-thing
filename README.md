@@ -41,7 +41,7 @@ Meaning, in many cases, using this config without these frameworks (by disabling
 
 <!-- Generated do not edit! -->
 
-Unsurprisingly, it is incredibly strict with popularity-based opinions on 1082 typescript rules, 1033 javascript rules, and 1112 testing rules.
+Unsurprisingly, it is incredibly strict with popularity-based opinions on 1134 typescript rules, 1033 javascript rules, and 1112 testing rules.
 
 <!-- End Generated do not edit! -->
 
@@ -286,6 +286,7 @@ That said, there are some very compelling reasons to use this config above other
 
 - [Awesome ESLint](https://github.com/dustinspecker/awesome-eslint)
 - [Sheriff ESLint Config](https://www.eslint-config-sheriff.dev/)
+- [Eslint-Config-Hardcore](https://www.npmjs.com/package/eslint-config-hardcore)
 
 ## We will not be adding these configs
 
@@ -297,45 +298,45 @@ See [rejected](./src/rejected.ts) and [not-applicable](./src/not-applicable.ts) 
 
 The following section is generated according to spec.
 
-Generated on 4/5/2024, downloads for the previous 28 days.
+Generated on 4/7/2024, downloads for the previous 28 days.
 
 - 11,146,799 downloads, [eslint-plugin-cypress](https://www.npmjs.com/package/eslint-plugin-cypress)
 - 5,771,207 downloads, [jsonc-eslint-parser](https://www.npmjs.com/package/jsonc-eslint-parser)
 - 3,978,368 downloads, [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha)
 - 3,574,629 downloads, [eslint-import-resolver-alias](https://www.npmjs.com/package/eslint-import-resolver-alias)
-- 3,476,417 downloads, [eslint-plugin-playwright](https://www.npmjs.com/package/eslint-plugin-playwright)
-- 2,520,805 downloads, [yaml-eslint-parser](https://www.npmjs.com/package/yaml-eslint-parser)
-- 1,920,786 downloads, [eslint-plugin-markdown](https://www.npmjs.com/package/eslint-plugin-markdown)
+- 3,513,208 downloads, [eslint-plugin-playwright](https://www.npmjs.com/package/eslint-plugin-playwright)
+- 3,506,687 downloads, [eslint-plugin-prefer-arrow](https://www.npmjs.com/package/eslint-plugin-prefer-arrow)
+- 2,551,899 downloads, [yaml-eslint-parser](https://www.npmjs.com/package/yaml-eslint-parser)
+- 1,989,051 downloads, [eslint-plugin-json](https://www.npmjs.com/package/eslint-plugin-json)
+- 1,952,180 downloads, [eslint-plugin-markdown](https://www.npmjs.com/package/eslint-plugin-markdown)
 - 1,910,343 downloads, [@graphql-eslint/eslint-plugin](https://www.npmjs.com/package/@graphql-eslint/eslint-plugin)
-- 1,861,374 downloads, [eslint-plugin-html](https://www.npmjs.com/package/eslint-plugin-html)
+- 1,862,420 downloads, [eslint-plugin-html](https://www.npmjs.com/package/eslint-plugin-html)
+- 1,676,975 downloads, [eslint-plugin-lodash](https://www.npmjs.com/package/eslint-plugin-lodash)
+- 1,289,747 downloads, [eslint-plugin-jsonc](https://www.npmjs.com/package/eslint-plugin-jsonc)
 - 1,271,250 downloads, [@microsoft/eslint-plugin-sdl](https://www.npmjs.com/package/@microsoft/eslint-plugin-sdl)
-- 1,269,297 downloads, [eslint-plugin-jsonc](https://www.npmjs.com/package/eslint-plugin-jsonc)
+- 1,261,411 downloads, [eslint-plugin-yml](https://www.npmjs.com/package/eslint-plugin-yml)
 - 1,203,244 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
-- 1,173,097 downloads, [eslint-plugin-yml](https://www.npmjs.com/package/eslint-plugin-yml)
 - 1,113,480 downloads, [eslint-plugin-chai-friendly](https://www.npmjs.com/package/eslint-plugin-chai-friendly)
-- 968,655 downloads, [eslint-plugin-graphql](https://www.npmjs.com/package/eslint-plugin-graphql)
-- 958,540 downloads, [eslint-plugin-sort-keys-fix](https://www.npmjs.com/package/eslint-plugin-sort-keys-fix)
+- 996,919 downloads, [eslint-plugin-sort-keys-fix](https://www.npmjs.com/package/eslint-plugin-sort-keys-fix)
+- 974,957 downloads, [eslint-plugin-graphql](https://www.npmjs.com/package/eslint-plugin-graphql)
 - 862,454 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
 - 842,640 downloads, [eslint-plugin-mdx](https://www.npmjs.com/package/eslint-plugin-mdx)
 - 789,933 downloads, [eslint-plugin-jasmine](https://www.npmjs.com/package/eslint-plugin-jasmine)
 - 682,845 downloads, [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file)
-- 666,539 downloads, [npm-package-json-lint](https://www.npmjs.com/package/npm-package-json-lint)
-- 665,220 downloads, [eslint-import-resolver-custom-alias](https://www.npmjs.com/package/eslint-import-resolver-custom-alias)
-- 555,693 downloads, [gulp-eslint](https://www.npmjs.com/package/gulp-eslint)
-- 531,032 downloads, [eslint-plugin-ava](https://www.npmjs.com/package/eslint-plugin-ava)
+- 680,104 downloads, [npm-package-json-lint](https://www.npmjs.com/package/npm-package-json-lint)
+- 670,547 downloads, [eslint-import-resolver-custom-alias](https://www.npmjs.com/package/eslint-import-resolver-custom-alias)
+- 538,057 downloads, [eslint-plugin-ava](https://www.npmjs.com/package/eslint-plugin-ava)
 - 523,940 downloads, [ember-template-lint](https://www.npmjs.com/package/ember-template-lint)
-- 494,434 downloads, [eslint-plugin-react-prefer-function-component](https://www.npmjs.com/package/eslint-plugin-react-prefer-function-component)
-- 493,149 downloads, [eslint-formatter-gitlab](https://www.npmjs.com/package/eslint-formatter-gitlab)
+- 505,761 downloads, [eslint-plugin-react-prefer-function-component](https://www.npmjs.com/package/eslint-plugin-react-prefer-function-component)
+- 500,025 downloads, [eslint-formatter-gitlab](https://www.npmjs.com/package/eslint-formatter-gitlab)
 - 470,800 downloads, [eslint-plugin-ssr-friendly](https://www.npmjs.com/package/eslint-plugin-ssr-friendly)
+- 463,120 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin)
 - 448,077 downloads, [eslint-plugin-no-use-extend-native](https://www.npmjs.com/package/eslint-plugin-no-use-extend-native)
-- 445,202 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin)
 - 427,008 downloads, [eslint-config-xo-space](https://www.npmjs.com/package/eslint-config-xo-space)
-- 395,352 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit) - Not Yet Eligible
-- 382,164 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard) - Not Yet Eligible
-- 378,123 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc) - Not Yet Eligible
-- 371,646 downloads, [eslint-plugin-local](https://www.npmjs.com/package/eslint-plugin-local) - Not Yet Eligible
-- 368,098 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
-- 366,972 downloads, [json-fixer](https://www.npmjs.com/package/json-fixer) - Not Yet Eligible
-- 358,735 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
-- 354,282 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu) - Not Yet Eligible
-- 352,945 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
+- 405,401 downloads, [eslint-plugin-local](https://www.npmjs.com/package/eslint-plugin-local)
+- 394,615 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit) - Not Yet Eligible
+- 379,003 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
+- 376,239 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
+- 372,474 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
+- 372,365 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard) - Not Yet Eligible
+- 368,410 downloads, [json-fixer](https://www.npmjs.com/package/json-fixer) - Not Yet Eligible

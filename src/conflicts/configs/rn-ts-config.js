@@ -118,13 +118,27 @@ const configGen = ({
           ...globals.browser,
           ...globals.node,
         },
+      },
+    },
+    /* PARSERS */
+    /*
+    TypeScript
+    122,591,496 monthly downloads
+    Tooling which enables you to use TypeScript with ESLint / An ESLint custom parser which leverages TypeScript ESTree
+    https://typescript-eslint.io/packages/typescript-eslint / https://typescript-eslint.io/packages/parser
+  */
+    {
+      files,
+      languageOptions: {
         parser: tseslint.parser,
         parserOptions: {
           ecmaVersion: "latest",
           project: true,
-          sourceType: "module",
         },
       },
+    },
+    /* PLUGINS */
+    {
       plugins: {
         "@babel": babelPlugin,
         "@emotion": { rules: emotion },

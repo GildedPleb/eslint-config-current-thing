@@ -188,6 +188,7 @@ const configList = [
     location: "./src/conflicts/configs/import-js-ts-config.js",
     name: "import-js-ts",
   },
+  { location: "./src/conflicts/configs/jsdoc-ts-config.js", name: "jsdoc-ts" },
 ];
 
 export default configList;

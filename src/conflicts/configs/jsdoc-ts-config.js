@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/ts-config.js
+// PathMark: ./src/conflicts/configs/jsdoc-ts-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -207,28 +207,27 @@ const configGen = ({
     },
 
     /*
-      TypeScript
+      JSDoc - TS
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: @typescript-eslint
+      Requires: jsdoc
     */
-    ...(disable.includes("typescript-eslint") ||
-    disable.includes("@typescript-eslint/eslint-plugin") ||
-    threshold > 1_000_000
+    ...(disable.includes("eslint-plugin-jsdoc-ts") || threshold > 1_000_000
       ? []
       : [
           {
             files: tsFiles,
             rules: {
-              ...tseslint.configs.recommendedTypeChecked[1].rules,
-              ...tseslint.configs.recommendedTypeChecked[2].rules,
-              ...("typescript-eslint" in override
-                ? override["typescript-eslint"]
+              ...jsdoc.configs["flat/recommended-typescript"].rules,
+              ...("eslint-plugin-jsdoc/ts" in override
+                ? override["eslint-plugin-jsdoc/ts"]
                 : {}),
-              ...("@typescript-eslint/eslint-plugin" in override
-                ? override["@typescript-eslint/eslint-plugin"]
-                : {}),
+            },
+            settings: {
+              jsdoc: {
+                mode: "typescript",
+              },
             },
           },
         ]),

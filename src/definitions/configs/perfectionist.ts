@@ -3,9 +3,6 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  conflicts: {
-    "perfectionist/sort-imports": ["import-sort"],
-  },
   definitions: `{
     files,
     ${RULES}

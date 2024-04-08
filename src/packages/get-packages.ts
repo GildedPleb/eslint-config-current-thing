@@ -4,6 +4,7 @@
 import { Level } from "level";
 
 import configs from "../definitions/configs";
+import parsers from "../definitions/parsers";
 import plugins from "../definitions/plugins";
 import { isMoreThanRandomDaysInThePast } from "../helpers";
 import { fetchNPMURLs, getDownloadCount } from "../npm";
@@ -19,6 +20,9 @@ const installed = new Set([
   ...plugins.flatMap((config) =>
     config.packages.map(({ package: pack }) => pack),
   ),
+  ...parsers.flatMap((config) =>
+    config.packages.map(({ package: pack }) => pack),
+  ),
 ]);
 
 interface Populated {
@@ -28,7 +32,8 @@ interface Populated {
 }
 
 /**
- *
+ * Gets the download counts from the cache
+ * @returns the saved data
  */
 async function getExisting(): Promise<Populated[]> {
   const downloads: Populated[] = [];
@@ -53,6 +58,7 @@ async function getExisting(): Promise<Populated[]> {
 
 /**
  * Uses the NPM API results to find and coalesce all applicable NPM packages
+ * @returns a populated plugin def
  */
 async function fetchEslintPlugins(): Promise<Populated[]> {
   console.log("Checking lists...");

@@ -1161,7 +1161,6 @@
     "parserOptions": {
       "ecmaVersion": "latest",
       "project": true,
-      "sourceType": "module",
       "ecmaFeatures": {
         "jsx": true
       }
@@ -1221,13 +1220,6 @@
     "you-dont-need-lodash-underscore"
   ],
   "rules": {
-    "@stylistic/brace-style": [
-      0,
-      "stroustrup",
-      {
-        "allowSingleLine": true
-      }
-    ],
     "@stylistic/operator-linebreak": [
       0,
       "before"
@@ -2540,11 +2532,51 @@
       0,
       "never"
     ],
+    "@typescript-eslint/no-extra-parens": [
+      0
+    ],
     "@typescript-eslint/object-curly-spacing": [
       0
     ],
     "@typescript-eslint/semi": [
       0
+    ],
+    "perfectionist/sort-imports": [
+      0,
+      {
+        "groups": [
+          "type",
+          [
+            "builtin",
+            "external"
+          ],
+          "internal-type",
+          "internal",
+          [
+            "parent-type",
+            "sibling-type",
+            "index-type"
+          ],
+          [
+            "parent",
+            "sibling",
+            "index"
+          ],
+          "object",
+          "unknown"
+        ],
+        "custom-groups": {
+          "value": {},
+          "type": {}
+        },
+        "newlines-between": "always",
+        "internal-pattern": [
+          "~/**"
+        ],
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
     ],
     "arrow-body-style": [
       2
@@ -3223,6 +3255,21 @@
     "node/no-callback-literal": [
       2
     ],
+    "@typescript-eslint/indent": [
+      0
+    ],
+    "@typescript-eslint/member-delimiter-style": [
+      0
+    ],
+    "@typescript-eslint/quotes": [
+      0
+    ],
+    "@typescript-eslint/space-before-function-paren": [
+      0
+    ],
+    "unicorn/no-nested-ternary": [
+      0
+    ],
     "functional/functional-parameters": [
       0,
       {
@@ -3766,9 +3813,6 @@
     "@typescript-eslint/brace-style": [
       0
     ],
-    "@typescript-eslint/member-delimiter-style": [
-      0
-    ],
     "@stylistic/array-bracket-spacing": [
       2,
       "never"
@@ -3781,8 +3825,15 @@
       }
     ],
     "@stylistic/block-spacing": [
-      2,
+      0,
       "always"
+    ],
+    "@stylistic/brace-style": [
+      0,
+      "stroustrup",
+      {
+        "allowSingleLine": true
+      }
     ],
     "@stylistic/comma-dangle": [
       0,
@@ -4017,7 +4068,7 @@
       "always"
     ],
     "@stylistic/space-before-function-paren": [
-      2,
+      0,
       {
         "anonymous": "always",
         "asyncArrow": "always",
@@ -4162,43 +4213,6 @@
         "logical": "parens-new-line",
         "prop": "parens-new-line",
         "return": "parens-new-line"
-      }
-    ],
-    "perfectionist/sort-imports": [
-      0,
-      {
-        "groups": [
-          "type",
-          [
-            "builtin",
-            "external"
-          ],
-          "internal-type",
-          "internal",
-          [
-            "parent-type",
-            "sibling-type",
-            "index-type"
-          ],
-          [
-            "parent",
-            "sibling",
-            "index"
-          ],
-          "object",
-          "unknown"
-        ],
-        "custom-groups": {
-          "value": {},
-          "type": {}
-        },
-        "newlines-between": "always",
-        "internal-pattern": [
-          "~/**"
-        ],
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false
       }
     ],
     "perfectionist/sort-classes": [
@@ -4384,9 +4398,6 @@
         }
       }
     ],
-    "@typescript-eslint/indent": [
-      0
-    ],
     "no-empty-static-block": [
       2
     ],
@@ -4446,6 +4457,9 @@
     ],
     "prefer-object-has-own": [
       2
+    ],
+    "@typescript-eslint/block-spacing": [
+      0
     ],
     "jsdoc/check-tag-names": [
       1
@@ -4786,21 +4800,6 @@
     "simple-import-sort/exports": [
       2
     ],
-    "@typescript-eslint/no-unused-vars": [
-      0
-    ],
-    "unused-imports/no-unused-imports": [
-      2
-    ],
-    "unused-imports/no-unused-vars": [
-      1,
-      {
-        "args": "after-used",
-        "argsIgnorePattern": "^_",
-        "vars": "all",
-        "varsIgnorePattern": "^_"
-      }
-    ],
     "@eslint-community/eslint-comments/disable-enable-pair": [
       2
     ],
@@ -4816,8 +4815,20 @@
     "@eslint-community/eslint-comments/no-unused-enable": [
       2
     ],
-    "@typescript-eslint/no-extra-parens": [
+    "@typescript-eslint/no-unused-vars": [
       0
+    ],
+    "unused-imports/no-unused-imports": [
+      2
+    ],
+    "unused-imports/no-unused-vars": [
+      1,
+      {
+        "args": "after-used",
+        "argsIgnorePattern": "^_",
+        "vars": "all",
+        "varsIgnorePattern": "^_"
+      }
     ],
     "unicorn/catch-error-name": [
       2
@@ -4911,9 +4922,6 @@
     ],
     "unicorn/no-negated-condition": [
       2
-    ],
-    "unicorn/no-nested-ternary": [
-      0
     ],
     "unicorn/no-new-array": [
       2
@@ -5244,69 +5252,6 @@
     "testing-library/render-result-naming-convention": [
       2
     ],
-    "@next/next/google-font-display": [
-      1
-    ],
-    "@next/next/google-font-preconnect": [
-      1
-    ],
-    "@next/next/next-script-for-ga": [
-      1
-    ],
-    "@next/next/no-async-client-component": [
-      1
-    ],
-    "@next/next/no-before-interactive-script-outside-document": [
-      1
-    ],
-    "@next/next/no-css-tags": [
-      1
-    ],
-    "@next/next/no-head-element": [
-      1
-    ],
-    "@next/next/no-html-link-for-pages": [
-      0
-    ],
-    "@next/next/no-img-element": [
-      1
-    ],
-    "@next/next/no-page-custom-font": [
-      1
-    ],
-    "@next/next/no-styled-jsx-in-document": [
-      1
-    ],
-    "@next/next/no-sync-scripts": [
-      1
-    ],
-    "@next/next/no-title-in-document-head": [
-      1
-    ],
-    "@next/next/no-typos": [
-      1
-    ],
-    "@next/next/no-unwanted-polyfillio": [
-      1
-    ],
-    "@next/next/inline-script-id": [
-      2
-    ],
-    "@next/next/no-assign-module-variable": [
-      2
-    ],
-    "@next/next/no-document-import-in-page": [
-      2
-    ],
-    "@next/next/no-duplicate-head": [
-      2
-    ],
-    "@next/next/no-head-import-in-document": [
-      2
-    ],
-    "@next/next/no-script-component-in-head": [
-      2
-    ],
     "testing-library/await-async-events": [
       2,
       {
@@ -5389,10 +5334,70 @@
     "n/shebang": [
       2
     ],
-    "@typescript-eslint/lines-around-comment": [
+    "@next/next/google-font-display": [
+      1
+    ],
+    "@next/next/google-font-preconnect": [
+      1
+    ],
+    "@next/next/next-script-for-ga": [
+      1
+    ],
+    "@next/next/no-async-client-component": [
+      1
+    ],
+    "@next/next/no-before-interactive-script-outside-document": [
+      1
+    ],
+    "@next/next/no-css-tags": [
+      1
+    ],
+    "@next/next/no-head-element": [
+      1
+    ],
+    "@next/next/no-html-link-for-pages": [
       0
     ],
-    "@typescript-eslint/quotes": [
+    "@next/next/no-img-element": [
+      1
+    ],
+    "@next/next/no-page-custom-font": [
+      1
+    ],
+    "@next/next/no-styled-jsx-in-document": [
+      1
+    ],
+    "@next/next/no-sync-scripts": [
+      1
+    ],
+    "@next/next/no-title-in-document-head": [
+      1
+    ],
+    "@next/next/no-typos": [
+      1
+    ],
+    "@next/next/no-unwanted-polyfillio": [
+      1
+    ],
+    "@next/next/inline-script-id": [
+      2
+    ],
+    "@next/next/no-assign-module-variable": [
+      2
+    ],
+    "@next/next/no-document-import-in-page": [
+      2
+    ],
+    "@next/next/no-duplicate-head": [
+      2
+    ],
+    "@next/next/no-head-import-in-document": [
+      2
+    ],
+    "@next/next/no-script-component-in-head": [
+      2
+    ],
+    "@typescript-eslint/lines-around-comment": [
       0
     ],
     "babel/quotes": [
@@ -5402,9 +5407,6 @@
       0
     ],
     "vue/max-len": [
-      0
-    ],
-    "@typescript-eslint/block-spacing": [
       0
     ],
     "@typescript-eslint/comma-spacing": [
@@ -5423,9 +5425,6 @@
       0
     ],
     "@typescript-eslint/space-before-blocks": [
-      0
-    ],
-    "@typescript-eslint/space-before-function-paren": [
       0
     ],
     "@typescript-eslint/space-infix-ops": [

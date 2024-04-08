@@ -6,6 +6,8 @@ import { isMoreThan1DaysInThePast } from "../helpers";
 import { getDownloadCount, getInfo, type Info } from "../npm";
 import type { Config } from "./configs";
 import configs from "./configs";
+import type { Parser } from "./parsers";
+import parsers from "./parsers";
 
 const database = new Level("./packages-installed", { valueEncoding: "json" });
 
@@ -73,6 +75,64 @@ for await (const config of configs) {
   configsWithCount.push({ ...config, count, description, homepage });
 }
 
+export interface PopulatedParser extends Parser {
+  count: number;
+  description: string;
+  homepage: string;
+}
+
+const parsersWithCount: PopulatedParser[] = [];
+
+for await (const config of parsers) {
+  console.log(`Getting info for "${config.name}"...`);
+  let count = 0;
+  let description = "";
+  let homepage = "";
+  for await (const { package: pack } of config.packages) {
+    try {
+      const previous = await database.get(`installed-${pack}`);
+
+      const {
+        count: packCount,
+        date,
+        info,
+      } = JSON.parse(previous) as DatabaseEntry;
+
+      if (isMoreThan1DaysInThePast(date)) throw new Error("Data too old");
+
+      count += packCount;
+      description =
+        description === ""
+          ? info.description
+          : `${description} / ${info.description}`;
+      homepage =
+        homepage === "" ? info.homepage : `${homepage} / ${info.homepage}`;
+    } catch {
+      const packCount = await getDownloadCount(pack);
+      const info = await getInfo(pack);
+
+      await database.put(
+        `installed-${pack}`,
+        JSON.stringify({
+          count: packCount ?? 0,
+          date: new Date().toLocaleDateString(),
+          info,
+        }),
+      );
+
+      count += packCount ?? 0;
+      description =
+        description === ""
+          ? info.description
+          : `${description} / ${info.description}`;
+      homepage =
+        homepage === "" ? info.homepage : `${homepage} / ${info.homepage}`;
+    }
+  }
+
+  parsersWithCount.push({ ...config, count, description, homepage });
+}
+
 export interface FinalConfig extends PopulatedConfig {
   overrides: string[];
 }
@@ -123,6 +183,7 @@ for await (const config of configsWithCount) {
 
 const configsWithOverride: FinalConfig[] = Object.values(configsMapped);
 
+export { parsersWithCount as parsers };
 export { configsWithOverride as configs };
 export { default as plugins } from "./plugins";
 

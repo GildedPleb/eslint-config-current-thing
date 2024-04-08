@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/generate-conflicts.ts
+// PathMark: ./src/conflicts/get-fixables.ts
 
 // TODO: it would be good to get this generator to always be in line with the main generator, but i'm not sure its worth it...
 import fs from "node:fs";

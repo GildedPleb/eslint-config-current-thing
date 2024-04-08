@@ -1,6 +1,6 @@
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable @stylistic/no-tabs */
-// PathMark: ./src/conflicts/code-samples/javascript.js
+// PathMark: ./src/conflicts/code-samples/javascript-style.js
 
 /*
      !!! DO NOT EDIT !!!
