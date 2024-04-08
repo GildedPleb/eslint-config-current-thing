@@ -195,6 +195,7 @@ const configList = [
     name: "sort-class",
   },
   { location: "./src/conflicts/configs/jsonc-config.js", name: "jsonc" },
+  { location: "./src/conflicts/configs/mocha-config.js", name: "mocha" },
 ];
 
 export default configList;

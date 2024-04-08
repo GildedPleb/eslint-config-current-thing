@@ -3,6 +3,9 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  conflicts: {
+    "prefer-arrow-callback": ["mocha"],
+  },
   definitions: `{
     files,
     ${RULES}

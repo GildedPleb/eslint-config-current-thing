@@ -22,6 +22,7 @@ const rejected = new Set([
 
   // Irrelevant?
   "eslint-plugin-local-rules",
+  "eslint-import-resolver-alias",
 
   // Vue -- Hopefully to be added one day when its more popular than react!
   "@vue/eslint-config-typescript",

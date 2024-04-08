@@ -6,8 +6,8 @@ import React from "react";
 
 import HiddenMessage from "./hello";
 
-describe("Do tests of tests for JSX", () => {
-  it("shows the children when the checkbox is checked", () => {
+describe("Do tests of tests for JSX", function () {
+  it("shows the children when the checkbox is checked", function () {
     const testMessage = "Test Message";
     render(<HiddenMessage>{testMessage}</HiddenMessage>);
     expect(screen.queryByText(testMessage)).not.toBeInTheDocument();

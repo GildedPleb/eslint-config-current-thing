@@ -19,6 +19,7 @@ import jestFormatting from "./jest-formatting";
 import jsdoc from "./jsdoc";
 import jsonc from "./jsonc";
 import jsxA11y from "./jsx-a11y";
+import mocha from "./mocha";
 import nextjs from "./nextjs";
 import noOnlyTest from "./no-only-test";
 import node from "./node";
@@ -108,6 +109,7 @@ const plugins = [
   youDontNeedLodash,
   cypress,
   jsonc,
+  mocha,
 ];
 
 type ExtractNamespace<T> =

@@ -5,6 +5,7 @@ import type { Config } from ".";
 export default {
   conflicts: {
     "import/order": ["import-sort"],
+    "prefer-arrow-callback": ["mocha"],
   },
   definitions: `{
     files,

@@ -103,6 +103,7 @@ const incompatibles: ConflictCache = {
     indent: 0,
     "indent-legacy": 0,
     "jsx-quotes": 0,
+    "lines-around-comment": 0,
     "no-confusing-arrow": 0,
     "object-curly-spacing": 0,
     "operator-linebreak": 0,

@@ -98,6 +98,15 @@ for (const { configs, def: codeToLint, exclude, filePath, short } of fileList) {
     console.log(currentCheck, "- Starting check...");
     const [es1, json1] = await getLinter(filePath, config1Path);
     const [es2, json2] = await getLinter(filePath, config2Path);
+
+    // Utility to call out a particular rule when seen in a config.
+
+    // const ruleToCheck = "prefer-arrow-callback";
+    // if (json1?.rules !== undefined && ruleToCheck in json1.rules)
+    //   console.log(name1, json1.rules[ruleToCheck]);
+    // if (json2?.rules !== undefined && ruleToCheck in json2.rules)
+    //   console.log(name2, json2.rules[ruleToCheck]);
+
     const keyHash = hashObject({ codeToLint, filePath, json1, json2 });
     const hasCache = await getCache(database, keyHash);
 

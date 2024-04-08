@@ -49,6 +49,7 @@ import jestFormatting from "eslint-plugin-jest-formatting";
 import jsdoc from "eslint-plugin-jsdoc";
 import jsonc from "eslint-plugin-jsonc";
 import jsxA11y from "eslint-plugin-jsx-a11y";
+import mocha from "eslint-plugin-mocha";
 import nNode from "eslint-plugin-n";
 import noOnlyTest from "eslint-plugin-no-only-tests";
 import unsanitized from "eslint-plugin-no-unsanitized";
@@ -213,6 +214,7 @@ const configGen = ({
         jsdoc,
         jsonc,
         "jsx-a11y": jsxA11y,
+        mocha,
         n: nNode,
         "no-only-tests": noOnlyTest,
         "no-unsanitized": unsanitized,
@@ -373,6 +375,7 @@ const configGen = ({
               "prettier/prettier": 0,
               semi: 0,
               ...shopify.configs.esnext.rules,
+              "mocha/no-mocha-arrows": 0,
               "simple-import-sort/imports": 0,
               ...("@shopify/eslint-plugin/esnext" in override
                 ? override["@shopify/eslint-plugin/esnext"]
@@ -470,6 +473,7 @@ const configGen = ({
               indent: 0,
               "indent-legacy": 0,
               "jsx-quotes": 0,
+              "lines-around-comment": 0,
               "no-confusing-arrow": 0,
               "object-curly-spacing": 0,
               "operator-linebreak": 0,
@@ -1026,7 +1030,7 @@ const configGen = ({
               "indent-legacy": 0,
               "prettier/prettier": 0,
               ...xo.rules,
-
+              "mocha/no-mocha-arrows": 0,
               ...("eslint-config-xo" in override
                 ? override["eslint-config-xo"]
                 : {}),
@@ -1378,6 +1382,31 @@ const configGen = ({
 
               ...("eslint-plugin-security" in override
                 ? override["eslint-plugin-security"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Mocha
+      3,970,291 monthly downloads
+      Eslint rules for mocha.
+      https://github.com/lo1tuma/eslint-plugin-mocha
+      Requires: mocha
+    */
+    ...(disable.includes("eslint-plugin-mocha") || threshold > 3_970_291
+      ? []
+      : [
+          {
+            files: testFiles,
+            languageOptions: {
+              globals: globals.node,
+            },
+            rules: {
+              ...mocha.configs.recommended.rules,
+              "prefer-arrow-callback": 0,
+              ...("eslint-plugin-mocha" in override
+                ? override["eslint-plugin-mocha"]
                 : {}),
             },
           },
