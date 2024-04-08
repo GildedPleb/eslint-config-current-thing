@@ -17,6 +17,7 @@ import jest from "./jest";
 import jestDom from "./jest-dom";
 import jestFormatting from "./jest-formatting";
 import jsdoc from "./jsdoc";
+import jsonc from "./jsonc";
 import jsxA11y from "./jsx-a11y";
 import nextjs from "./nextjs";
 import noOnlyTest from "./no-only-test";
@@ -106,6 +107,7 @@ const plugins = [
   unusedImports,
   youDontNeedLodash,
   cypress,
+  jsonc,
 ];
 
 type ExtractNamespace<T> =

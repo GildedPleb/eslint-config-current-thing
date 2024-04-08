@@ -194,6 +194,7 @@ const configList = [
     location: "./src/conflicts/configs/sort-class-config.js",
     name: "sort-class",
   },
+  { location: "./src/conflicts/configs/jsonc-config.js", name: "jsonc" },
 ];
 
 export default configList;

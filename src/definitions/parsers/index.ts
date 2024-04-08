@@ -1,5 +1,6 @@
 // PathMark: ./src/definitions/parsers/index.ts
 
+import jsonc from "./jsonc";
 import ts from "./ts";
 
 export interface Parser {
@@ -12,7 +13,7 @@ export interface Parser {
   }>;
 }
 
-const parsers: Parser[] = [ts];
+const parsers: Parser[] = [ts, jsonc];
 
 export default parsers;
 // EOF

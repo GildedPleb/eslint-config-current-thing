@@ -1234,6 +1234,7 @@
     "jest-dom",
     "jest-formatting",
     "jsdoc",
+    "jsonc:eslint-plugin-jsonc@2.15.0",
     "jsx-a11y",
     "n:eslint-plugin-n@16.6.2",
     "no-only-tests",

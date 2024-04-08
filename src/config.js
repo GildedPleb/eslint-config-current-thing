@@ -47,6 +47,7 @@ import jest from "eslint-plugin-jest";
 import jestDom from "eslint-plugin-jest-dom";
 import jestFormatting from "eslint-plugin-jest-formatting";
 import jsdoc from "eslint-plugin-jsdoc";
+import jsonc from "eslint-plugin-jsonc";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import nNode from "eslint-plugin-n";
 import noOnlyTest from "eslint-plugin-no-only-tests";
@@ -73,6 +74,7 @@ import unicorn from "eslint-plugin-unicorn";
 import unusedImports from "eslint-plugin-unused-imports";
 import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
 import globals from "globals";
+import jsoncEslintParser from "jsonc-eslint-parser";
 import tseslint from "typescript-eslint";
 
 const filename = fileURLToPath(import.meta.url);
@@ -84,6 +86,14 @@ const tsxFiles = ["**/*.tsx"];
 const jsFiles = ["**/*.js", ...jsxFiles, "**/*.mjs", "**/*.cjs"];
 const tsFiles = ["**/*.ts", ...tsxFiles, "**/*.mts", "**/*.cts"];
 const files = [...jsFiles, ...tsFiles];
+const jsonFiles = [
+  "*.json",
+  "**/*.json",
+  "*.json5",
+  "**/*.json5",
+  "*.jsonc",
+  "**/*.jsonc",
+];
 
 const testFiles = [
   "**/*.test.*",
@@ -130,6 +140,18 @@ const configGen = ({
       },
     },
     /* PARSERS */
+    /*
+      JSONC
+      5,865,811 monthly downloads
+      JSON, JSONC and JSON5 parser for use with ESLint plugins
+      https://github.com/ota-meshi/jsonc-eslint-parser#readme
+    */
+    {
+      files: jsonFiles,
+      languageOptions: {
+        parser: jsoncEslintParser,
+      },
+    },
     /*
       TypeScript
       122,656,609 monthly downloads
@@ -189,6 +211,7 @@ const configGen = ({
         "jest-dom": jestDom,
         "jest-formatting": jestFormatting,
         jsdoc,
+        jsonc,
         "jsx-a11y": jsxA11y,
         n: nNode,
         "no-only-tests": noOnlyTest,
@@ -1006,6 +1029,31 @@ const configGen = ({
 
               ...("eslint-config-xo" in override
                 ? override["eslint-config-xo"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      JSONC
+      1,295,689 monthly downloads
+      ESLint plugin for JSON, JSONC and JSON5 files.
+      https://ota-meshi.github.io/eslint-plugin-jsonc/
+      Requires: jsonc
+    */
+    ...(disable.includes("eslint-plugin-jsonc") || threshold > 1_295_689
+      ? []
+      : [
+          {
+            files: jsonFiles,
+            rules: {
+              ...jsonc.configs.base.overrides[0].rules,
+              ...jsonc.configs["recommended-with-json"].rules,
+              ...jsonc.configs["recommended-with-jsonc"].rules,
+              ...jsonc.configs["recommended-with-json5"].rules,
+
+              ...("eslint-plugin-jsonc" in override
+                ? override["eslint-plugin-jsonc"]
                 : {}),
             },
           },

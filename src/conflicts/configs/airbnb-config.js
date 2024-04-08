@@ -20,6 +20,7 @@ import jsxA11y from "eslint-plugin-jsx-a11y";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import globals from "globals";
+import jsoncEslintParser from "jsonc-eslint-parser";
 import tseslint from "typescript-eslint";
 
 const filename = fileURLToPath(import.meta.url);
@@ -31,6 +32,14 @@ const tsxFiles = ["**/*.tsx"];
 const jsFiles = ["**/*.js", ...jsxFiles, "**/*.mjs", "**/*.cjs"];
 const tsFiles = ["**/*.ts", ...tsxFiles, "**/*.mts", "**/*.cts"];
 const files = [...jsFiles, ...tsFiles];
+const jsonFiles = [
+  "*.json",
+  "**/*.json",
+  "*.json5",
+  "**/*.json5",
+  "*.jsonc",
+  "**/*.jsonc",
+];
 
 const testFiles = [
   "**/*.test.*",
@@ -78,10 +87,21 @@ const configGen = ({
     },
     /* PARSERS */
     /*
-    TypeScript
-    Tooling which enables you to use TypeScript with ESLint / An ESLint custom parser which leverages TypeScript ESTree
-    https://typescript-eslint.io/packages/typescript-eslint / https://typescript-eslint.io/packages/parser
-  */
+      JSONC
+      JSON, JSONC and JSON5 parser for use with ESLint plugins
+      https://github.com/ota-meshi/jsonc-eslint-parser#readme
+    */
+    {
+      files: jsonFiles,
+      languageOptions: {
+        parser: jsoncEslintParser,
+      },
+    },
+    /*
+      TypeScript
+      Tooling which enables you to use TypeScript with ESLint / An ESLint custom parser which leverages TypeScript ESTree
+      https://typescript-eslint.io/packages/typescript-eslint / https://typescript-eslint.io/packages/parser
+    */
     {
       files,
       languageOptions: {

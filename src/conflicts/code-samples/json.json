@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "Module    Resolution": "Bundler",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
+    "allowJs": true,
+    "checkJs": true,
+    "outDir": "dist",
+    "removeComments": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "jsx": "react-jsx",
+    "types": [
+      "jest",
+      "node"
+    ]
+  },
+  "exclude  ": [
+    "node_modules"
+  ],
+  "include": [
+    "src",
+    "types",
+    "test"
+  ],
+  "f": 60
+}

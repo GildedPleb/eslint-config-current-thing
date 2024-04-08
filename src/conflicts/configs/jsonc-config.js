@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/no-only-test-config.js
+// PathMark: ./src/conflicts/configs/jsonc-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -15,7 +15,7 @@ import { fileURLToPath } from "node:url";
 
 import { FlatCompat } from "@eslint/eslintrc";
 import { defineFlatConfig } from "eslint-define-config";
-import noOnlyTest from "eslint-plugin-no-only-tests";
+import jsonc from "eslint-plugin-jsonc";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
 import tseslint from "typescript-eslint";
@@ -112,26 +112,29 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        "no-only-tests": noOnlyTest,
+        jsonc,
       },
     },
 
     /*
-      No Only Tests
+      JSONC
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: no-only-tests
+      Requires: jsonc
     */
-    ...(disable.includes("eslint-plugin-no-only-tests") || threshold > 1_000_000
+    ...(disable.includes("eslint-plugin-jsonc") || threshold > 1_000_000
       ? []
       : [
           {
-            files: testFiles,
+            files: jsonFiles,
             rules: {
-              "no-only-tests/no-only-tests": 2,
-              ...("eslint-plugin-no-only-tests" in override
-                ? override["eslint-plugin-no-only-tests"]
+              ...jsonc.configs.base.overrides[0].rules,
+              ...jsonc.configs["recommended-with-json"].rules,
+              ...jsonc.configs["recommended-with-jsonc"].rules,
+              ...jsonc.configs["recommended-with-json5"].rules,
+              ...("eslint-plugin-jsonc" in override
+                ? override["eslint-plugin-jsonc"]
                 : {}),
             },
           },

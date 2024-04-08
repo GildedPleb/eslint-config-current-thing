@@ -118,6 +118,7 @@ const tsxFiles = ["**/*.tsx"];
 const jsFiles = ["**/*.js", ...jsxFiles, "**/*.mjs", "**/*.cjs"];
 const tsFiles = ["**/*.ts", ...tsxFiles, "**/*.mts", "**/*.cts"];
 const files = [...jsFiles, ...tsFiles];
+const jsonFiles = ["*.json", "**/*.json", "*.json5", "**/*.json5", "*.jsonc", "**/*.jsonc"];
 
 const testFiles = [
   "**/*.test.*",
@@ -143,109 +144,109 @@ const configGen = ({
 } = defaultOptions) =>
   // @ts-expect-error type mismatching here is expected because the return is defined as a literal type, on literal types.
   defineFlatConfig([
-  {
-    ignores: [
-      "**/eslint.config.js",
-      "dist",
-      "build",
-      "artifacts",
-      "coverage",
-      ".git",
-      "node_modules",
-      "index.js",
-    ],
-  },
-  {
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.node,
+    {
+      ignores: [
+        "**/eslint.config.js",
+        "dist",
+        "build",
+        "artifacts",
+        "coverage",
+        ".git",
+        "node_modules",
+        "index.js",
+      ],
+    },
+    {
+      languageOptions: {
+        globals: {
+          ...globals.browser,
+          ...globals.node,
+        },
       },
     },
-  },
-  /* PARSERS */
-  ${parsers
-    .sort((first, name2) => first.count - name2.count)
-    .map(({ definitions, description, homepage, name }) => {
-      if (!definitions.includes("languageOptions:")) {
-        const message = `Formatting Error: ${name} defines a parser definition but does not include a 'languageOptions' key.`;
-        throw new Error(message);
-      }
+    /* PARSERS */
+${parsers
+  .sort((first, name2) => first.count - name2.count)
+  .map(({ definitions, description, homepage, name }) => {
+    if (!definitions.includes("languageOptions:")) {
+      const message = `Formatting Error: ${name} defines a parser definition but does not include a 'languageOptions' key.`;
+      throw new Error(message);
+    }
 
-      return `/*
-    ${name}
-    ${description}
-    ${homepage}
-  */
-  ${definitions
-    .split("\n")
-    .map((line, index) => (index === 0 ? line : `  ${line}`))
-    .join("\n")},`;
-    }).join(`
-  `)}
-  /* PLUGINS */
-  {
-    plugins: {
-      ${(plugins as Array<Plugin<Namespace>>)
-        .flatMap(({ packages }) => packages)
-        .filter((plugin) =>
-          configContext.requiredPlugins.includes(plugin.namespace),
-        )
-        .map(
-          ({ declaredAs, namespace }) =>
-            `"${namespace}": ${declaredAs
-              .split("\n")
-              .map((line, index) => (index === 0 ? line : `  ${line}`))
-              .join("\n")},`,
-        )
-        .sort().join(`
-      `)}
+    return `    /*
+      ${name}
+      ${description}
+      ${homepage}
+    */
+    ${definitions
+      .split("\n")
+      .map((line, index) => (index === 0 ? line : `  ${line}`))
+      .join("\n")},`;
+  }).join(`
+`)}
+    /* PLUGINS */
+    {
+      plugins: {
+        ${(plugins as Array<Plugin<Namespace>>)
+          .flatMap(({ packages }) => packages)
+          .filter((plugin) =>
+            configContext.requiredPlugins.includes(plugin.namespace),
+          )
+          .map(
+            ({ declaredAs, namespace }) =>
+              `"${namespace}": ${declaredAs
+                .split("\n")
+                .map((line, index) => (index === 0 ? line : `  ${line}`))
+                .join("\n")},`,
+          )
+          .sort().join(`
+        `)}
+      },
     },
-  },
 
-  ${[configContext].map(
-    ({
-      count,
-      definitions,
-      description,
-      homepage,
-      name,
-      nameSecondary,
-      packages,
-      requiredPlugins,
-      rules,
-    }) => {
-      if (rules !== undefined && !definitions.includes(RULES)) {
-        const message = `Formatting Error: ${name} includes a 'rules' key but does not define were those rules should be placed inline.`;
-        throw new Error(message);
-      }
+${[configContext].map(
+  ({
+    count,
+    definitions,
+    description,
+    homepage,
+    name,
+    nameSecondary,
+    packages,
+    requiredPlugins,
+    rules,
+  }) => {
+    if (rules !== undefined && !definitions.includes(RULES)) {
+      const message = `Formatting Error: ${name} includes a 'rules' key but does not define were those rules should be placed inline.`;
+      throw new Error(message);
+    }
 
-      if (
-        definitions.includes("rules: ") &&
-        !name.includes("Shopify") &&
-        name !== "Emotion CSS"
-      ) {
-        const message = `Formatting Error: ${name}.definitions includes a 'rules' key when it should use the 'RULES' replacement inline placeholder. See other config definitions for examples.`;
-        throw new Error(message);
-      }
+    if (
+      definitions.includes("rules: ") &&
+      !name.includes("Shopify") &&
+      name !== "Emotion CSS"
+    ) {
+      const message = `Formatting Error: ${name}.definitions includes a 'rules' key when it should use the 'RULES' replacement inline placeholder. See other config definitions for examples.`;
+      throw new Error(message);
+    }
 
-      if (!definitions.includes(RULES)) {
-        const message = `Formatting Error: ${name}.definitions does not include a 'RULES' inline market to show were rules should be added as a placeholder. See other config definitions for examples.`;
-        throw new Error(message);
-      }
+    if (!definitions.includes(RULES)) {
+      const message = `Formatting Error: ${name}.definitions does not include a 'RULES' inline market to show were rules should be added as a placeholder. See other config definitions for examples.`;
+      throw new Error(message);
+    }
 
-      const parsedRules =
-        rules === undefined
-          ? ""
-          : rules
-              .split("\n")
-              .map((line, index) => (index === 0 ? line : `          ${line}`))
-              .join("\n");
-      const second2 = hasSecondary ? `/${nameSecondary?.toLowerCase()}` : "";
+    const parsedRules =
+      rules === undefined
+        ? ""
+        : rules
+            .split("\n")
+            .map((line, index) => (index === 0 ? line : `          ${line}`))
+            .join("\n");
+    const second2 = hasSecondary ? `/${nameSecondary?.toLowerCase()}` : "";
 
-      const definition = `  ...(${packages
-        .map(({ package: pack }) => `disable.includes("${pack}${second}")`)
-        .join(` || `)} || threshold > ${count}
+    const definition = `...(${packages
+      .map(({ package: pack }) => `disable.includes("${pack}${second}")`)
+      .join(` || `)} || threshold > ${count}
       ? []
       : [
   ${definitions
@@ -255,30 +256,30 @@ const configGen = ({
     .replace(
       RULES,
       `rules: {
-                  ${parsedRules}
-                  ${packages.map(
-                    ({ package: pack }) =>
-                      `...("${pack}${second2}" in override
-                    ? override["${pack}${second2}"]
-                    : {}),`,
-                  ).join(`
-                  `)}
-                },`,
+              ${parsedRules}
+              ${packages.map(
+                ({ package: pack }) =>
+                  `...("${pack}${second2}" in override
+                ? override["${pack}${second2}"]
+                : {}),`,
+              ).join(`
+              `)}
+            },`,
     )},
-            ])`;
+        ])`;
 
-      return `    /*
+    return `    /*
       ${name}${hasSecondary ? ` - ${nameSecondary}` : ""}
       ${count.toLocaleString()} monthly downloads
       ${description}
       ${homepage}
       Requires: ${requiredPlugins.length > 0 ? requiredPlugins.join(", ") : "(None)"}
     */
-  ${definition},
+    ${definition},
 `;
-    },
-  ).join(`
-`)}]);
+  },
+).join(`
+`)}  ]);
 
 export default configGen();
 // EOF
