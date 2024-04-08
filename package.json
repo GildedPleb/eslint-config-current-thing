@@ -8,6 +8,8 @@
     "src/config.js",
     "current-ts.json",
     "current-js.json",
+    "current-jsx.json",
+    "current-tsx.json",
     "current-test.json"
   ],
   "scripts": {
