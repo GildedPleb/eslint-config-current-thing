@@ -140,7 +140,6 @@ const incompatibles: ConflictCache = {
     "brace-style": 0,
     "comma-dangle": 0,
     indent: 0,
-    "indent-legacy": 0,
     "object-curly-spacing": 0,
     "operator-linebreak": 0,
     "prettier/prettier": 0,
