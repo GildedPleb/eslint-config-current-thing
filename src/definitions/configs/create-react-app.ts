@@ -29,7 +29,11 @@ export default {
   id: "cra",
   name: "Create React App",
   packages: [
-    { name: "cra", package: "eslint-config-react-app", requiresImport: false },
+    {
+      declaredAs: "cra",
+      package: "eslint-config-react-app",
+      requiresImport: false,
+    },
   ],
   requiredPlugins: ["react", "react-hooks", "import", "jsx-a11y", "flowtype"],
   rules: `"array-callback-return": 1,

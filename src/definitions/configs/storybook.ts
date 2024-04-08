@@ -11,7 +11,7 @@ export default {
   name: "Storybook",
   packages: [
     {
-      name: "storybook",
+      declaredAs: "storybook",
       package: "eslint-plugin-storybook",
       requiresImport: false,
     },

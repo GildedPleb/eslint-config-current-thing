@@ -10,7 +10,11 @@ export default {
   id: "jsdoc",
   name: "JSDoc",
   packages: [
-    { name: "jsdoc", package: "eslint-plugin-jsdoc", requiresImport: false },
+    {
+      declaredAs: "jsdoc",
+      package: "eslint-plugin-jsdoc",
+      requiresImport: false,
+    },
   ],
   requiredPlugins: ["jsdoc"],
   rules: `...jsdoc.configs['flat/recommended'].rules,`,

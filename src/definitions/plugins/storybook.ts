@@ -5,11 +5,11 @@ export default {
   name: "Storybook",
   packages: [
     {
-      key: "storybook",
-      name: "storybook",
+      declaredAs: "storybook",
+      namespace: "storybook",
       package: "eslint-plugin-storybook",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"storybook">;
 // EOF

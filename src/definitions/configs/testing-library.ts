@@ -11,7 +11,7 @@ export default {
   name: "Testing Library",
   packages: [
     {
-      name: "testingLibrary",
+      declaredAs: "testingLibrary",
       package: "eslint-plugin-testing-library",
       requiresImport: false,
     },

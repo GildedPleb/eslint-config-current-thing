@@ -11,12 +11,12 @@ export default {
   name: "Standard",
   packages: [
     {
-      name: "standard",
+      declaredAs: "standard",
       package: "eslint-config-standard-with-typescript",
       requiresImport: false,
     },
     {
-      name: "standardTS",
+      declaredAs: "standardTS",
       package: "eslint-config-love",
       requiresImport: true,
     },

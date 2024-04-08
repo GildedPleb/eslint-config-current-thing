@@ -5,11 +5,11 @@ export default {
   name: "Prettier",
   packages: [
     {
-      key: "prettier",
-      name: "prettier",
+      declaredAs: "prettier",
+      namespace: "prettier",
       package: "eslint-plugin-prettier",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"prettier">;
 // EOF

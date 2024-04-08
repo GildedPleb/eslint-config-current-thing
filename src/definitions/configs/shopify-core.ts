@@ -12,12 +12,12 @@ export default {
   nameSecondary: "Core",
   packages: [
     {
-      name: "shopify",
+      declaredAs: "shopify",
       package: "@shopify/eslint-plugin",
       requiresImport: false,
     },
   ],
-  requiredPlugins: ["@shopify", "eslint-comments"],
+  requiredPlugins: ["@shopify", "eslint-comments", "@shopify/typescript"],
   rules: `...shopify.configs.core.rules,`,
 } satisfies Config;
 // EOF

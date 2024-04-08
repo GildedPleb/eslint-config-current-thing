@@ -5,17 +5,17 @@ export default {
   name: "ES-X",
   packages: [
     {
-      key: "es-x",
-      name: "esX",
+      declaredAs: "esX",
+      namespace: "es-x",
       package: "eslint-plugin-es-x",
       requiresImport: true,
     },
     {
-      key: "es",
-      name: "es",
+      declaredAs: "es",
+      namespace: "es",
       package: "eslint-plugin-es",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"es" | "es-x">;
 // EOF

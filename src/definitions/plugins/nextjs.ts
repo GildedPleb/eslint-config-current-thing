@@ -5,11 +5,11 @@ export default {
   name: "NextJS",
   packages: [
     {
-      key: "@next/next",
-      name: "nextjs",
+      declaredAs: "nextjs",
+      namespace: "@next/next",
       package: "@next/eslint-plugin-next",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"@next/next">;
 // EOF

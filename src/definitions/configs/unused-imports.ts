@@ -11,7 +11,7 @@ export default {
   name: "No Unused Imports",
   packages: [
     {
-      name: "unusedImports",
+      declaredAs: "unusedImports",
       package: "eslint-plugin-unused-imports",
       requiresImport: false,
     },

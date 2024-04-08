@@ -11,7 +11,7 @@ export default {
   name: "Espree",
   packages: [
     {
-      name: "* as espree",
+      declaredAs: "* as espree",
       package: "espree",
       requiresImport: true,
     },

@@ -5,11 +5,11 @@ export default {
   name: "React",
   packages: [
     {
-      key: "react",
-      name: "react",
+      declaredAs: "react",
+      namespace: "react",
       package: "eslint-plugin-react",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"react">;
 // EOF

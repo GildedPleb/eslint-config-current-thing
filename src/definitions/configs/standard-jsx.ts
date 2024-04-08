@@ -23,7 +23,7 @@ export default {
   name: "Standard JSX",
   packages: [
     {
-      name: "standardJsx",
+      declaredAs: "standardJsx",
       package: "eslint-config-standard-jsx",
       requiresImport: true,
     },

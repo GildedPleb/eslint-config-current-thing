@@ -12,17 +12,17 @@ export default {
   nameSecondary: "TS",
   packages: [
     {
-      name: "reactNativeConfig",
+      declaredAs: "reactNativeConfig",
       package: "@react-native-community/eslint-config",
       requiresImport: false,
     },
     {
-      name: "rnConfig",
+      declaredAs: "rnConfig",
       package: "@react-native/eslint-config",
       requiresImport: false,
     },
   ],
-  requiredPlugins: ["@typescript-eslint/eslint-plugin"],
+  requiredPlugins: ["@typescript-eslint"],
   rules: `...reactNativeConfig.overrides[1].rules,`,
 } satisfies Config;
 // EOF

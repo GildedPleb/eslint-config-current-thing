@@ -11,7 +11,7 @@ export default {
   name: "Jest Formatting",
   packages: [
     {
-      name: "jestFormatting",
+      declaredAs: "jestFormatting",
       package: "eslint-plugin-jest-formatting",
       requiresImport: false,
     },

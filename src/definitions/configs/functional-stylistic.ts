@@ -12,7 +12,7 @@ export default {
   nameSecondary: "Stylistic",
   packages: [
     {
-      name: "functional",
+      declaredAs: "functional",
       package: "eslint-plugin-functional",
       requiresImport: false,
     },

@@ -5,8 +5,7 @@ export default {
   name: "Shopify - Jest",
   packages: [
     {
-      key: "@shopify/jest",
-      name: `{
+      declaredAs: `{
         rules: Object.fromEntries(
           Object.entries(shopify.rules).map(([key, value]) => [
             key.startsWith("jest/") ? key.slice(5) : key,
@@ -14,9 +13,10 @@ export default {
           ]),
         ),
       }`,
+      namespace: "@shopify/jest",
       package: "@shopify/eslint-plugin",
       requiresImport: false,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"@shopify/jest">;
 // EOF

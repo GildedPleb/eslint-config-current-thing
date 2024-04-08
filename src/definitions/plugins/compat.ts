@@ -5,11 +5,11 @@ export default {
   name: "Compat",
   packages: [
     {
-      key: "compat",
-      name: "comp",
+      declaredAs: "comp",
+      namespace: "compat",
       package: "eslint-plugin-compat",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"compat">;
 // EOF

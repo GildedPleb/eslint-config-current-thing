@@ -12,12 +12,12 @@ export default {
   nameSecondary: "Prettier",
   packages: [
     {
-      name: "shopify",
+      declaredAs: "shopify",
       package: "@shopify/eslint-plugin",
       requiresImport: false,
     },
   ],
-  requiredPlugins: ["prettier", "@babel/eslint-plugin", "@shopify"],
+  requiredPlugins: ["prettier", "@babel", "@shopify"],
   rules: `...shopify.configs.prettier.rules,`,
 } satisfies Config;
 // EOF

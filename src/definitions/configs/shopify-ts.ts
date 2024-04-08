@@ -12,12 +12,12 @@ export default {
   nameSecondary: "TS",
   packages: [
     {
-      name: "shopify",
+      declaredAs: "shopify",
       package: "@shopify/eslint-plugin",
       requiresImport: false,
     },
   ],
-  requiredPlugins: ["@typescript-eslint"],
+  requiredPlugins: ["@typescript-eslint", "@shopify/typescript"],
   rules: `...shopify.configs.typescript.overrides[0].rules,`,
 } satisfies Config;
 // EOF

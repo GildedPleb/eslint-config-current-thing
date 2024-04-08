@@ -30,7 +30,11 @@ export default {
   name: "Create React App",
   nameSecondary: "TS",
   packages: [
-    { name: "cra", package: "eslint-config-react-app", requiresImport: false },
+    {
+      declaredAs: "cra",
+      package: "eslint-config-react-app",
+      requiresImport: false,
+    },
   ],
   requiredPlugins: ["@typescript-eslint"],
   rules: `"@typescript-eslint/consistent-type-assertions": 1,

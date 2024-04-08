@@ -11,7 +11,7 @@ export default {
   name: "Stylistic",
   packages: [
     {
-      name: "stylistic",
+      declaredAs: "stylistic",
       package: "@stylistic/eslint-plugin",
       requiresImport: false,
     },

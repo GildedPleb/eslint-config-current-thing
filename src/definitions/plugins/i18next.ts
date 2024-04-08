@@ -5,11 +5,11 @@ export default {
   name: "i18n",
   packages: [
     {
-      key: "i18next",
-      name: "i18next",
+      declaredAs: "i18next",
+      namespace: "i18next",
       package: "eslint-plugin-i18next",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"i18next">;
 // EOF

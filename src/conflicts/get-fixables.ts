@@ -33,10 +33,10 @@ const generateCode = `// PathMark: ./src/conflicts/plugins.js
 ${rawConfigs
   .flatMap((config) =>
     config.packages
-      .map(({ name, package: pack, requiresImport }) =>
+      .map(({ declaredAs, package: pack, requiresImport }) =>
         requiresImport
           ? `\n// @ts-ignore yes, we need to ignore every import for this to run
-import ${name} from "${pack}";`
+import ${declaredAs} from "${pack}";`
           : "",
       )
       .filter(Boolean).join(`
@@ -45,10 +45,10 @@ import ${name} from "${pack}";`
   .join(``)}
 ${plugins
   .flatMap(({ packages }) =>
-    packages.map(({ name, package: pack, requiresImport }) =>
+    packages.map(({ declaredAs, package: pack, requiresImport }) =>
       requiresImport
         ? `\n// @ts-ignore yes, we need to ignore every import for this to run
-import ${name} from "${pack}";`
+import ${declaredAs} from "${pack}";`
         : "",
     ),
   )
@@ -64,8 +64,8 @@ const plugins = {
   ${plugins
     .flatMap(({ packages }) =>
       packages.map(
-        ({ key, name }) =>
-          `"${key}": ${name
+        ({ declaredAs, namespace }) =>
+          `"${namespace}": ${declaredAs
             .split("\n")
             .map((line, index) => (index === 0 ? line : `  ${line}`))
             .join("\n")},`,

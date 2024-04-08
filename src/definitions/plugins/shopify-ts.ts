@@ -5,8 +5,7 @@ export default {
   name: "Shopify - TS",
   packages: [
     {
-      key: "@shopify/typescript",
-      name: `{
+      declaredAs: `{
         rules: Object.fromEntries(
           Object.entries(shopify.rules).map(([key, value]) => [
             key.startsWith("typescript/") ? key.slice(11) : key,
@@ -14,9 +13,10 @@ export default {
           ]),
         ),
       }`,
+      namespace: "@shopify/typescript",
       package: "@shopify/eslint-plugin",
       requiresImport: false,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"@shopify/typescript">;
 // EOF

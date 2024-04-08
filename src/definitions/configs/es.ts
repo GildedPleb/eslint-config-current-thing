@@ -10,8 +10,8 @@ export default {
   id: "es-x",
   name: "ES-X",
   packages: [
-    { name: "esX", package: "eslint-plugin-es-x", requiresImport: false },
-    { name: "es", package: "eslint-plugin-es", requiresImport: false },
+    { declaredAs: "esX", package: "eslint-plugin-es-x", requiresImport: false },
+    { declaredAs: "es", package: "eslint-plugin-es", requiresImport: false },
   ],
   requiredPlugins: ["es", "es-x"],
   rules: `...esX.configs["no-new-in-esnext"].rules,`,

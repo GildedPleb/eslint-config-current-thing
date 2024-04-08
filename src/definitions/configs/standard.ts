@@ -18,7 +18,7 @@ export default {
   name: "Standard",
   packages: [
     {
-      name: "standard",
+      declaredAs: "standard",
       package: "eslint-config-standard",
       requiresImport: true,
     },

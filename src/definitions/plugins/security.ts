@@ -5,11 +5,11 @@ export default {
   name: "Security",
   packages: [
     {
-      key: "security",
-      name: "security",
+      declaredAs: "security",
+      namespace: "security",
       package: "eslint-plugin-security",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"security">;
 // EOF

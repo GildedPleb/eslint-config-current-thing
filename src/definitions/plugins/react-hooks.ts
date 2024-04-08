@@ -5,11 +5,11 @@ export default {
   name: "React Hooks",
   packages: [
     {
-      key: "react-hooks",
-      name: "reactHooks",
+      declaredAs: "reactHooks",
+      namespace: "react-hooks",
       package: "eslint-plugin-react-hooks",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"react-hooks">;
 // EOF

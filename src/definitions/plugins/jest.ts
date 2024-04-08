@@ -5,11 +5,11 @@ export default {
   name: "Jest",
   packages: [
     {
-      key: "jest",
-      name: "jest",
+      declaredAs: "jest",
+      namespace: "jest",
       package: "eslint-plugin-jest",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"jest">;
 // EOF

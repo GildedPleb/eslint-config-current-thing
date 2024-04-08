@@ -5,17 +5,17 @@ export default {
   name: "Flowtype",
   packages: [
     {
-      key: "flowtype",
-      name: "flowtype",
+      declaredAs: "flowtype",
+      namespace: "flowtype",
       package: "eslint-plugin-flowtype",
       requiresImport: true,
     },
     {
-      key: "ft-flow",
-      name: "ftFlow",
+      declaredAs: "ftFlow",
+      namespace: "ft-flow",
       package: "eslint-plugin-ft-flow",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"flowtype" | "ft-flow">;
 // EOF

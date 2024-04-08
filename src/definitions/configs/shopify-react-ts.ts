@@ -24,7 +24,7 @@ export default {
   nameSecondary: "React-TS",
   packages: [
     {
-      name: "shopify",
+      declaredAs: "shopify",
       package: "@shopify/eslint-plugin",
       requiresImport: false,
     },

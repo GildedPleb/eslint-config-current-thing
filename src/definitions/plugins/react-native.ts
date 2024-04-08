@@ -5,11 +5,11 @@ export default {
   name: "React Native Config",
   packages: [
     {
-      key: "@react-native",
-      name: "rnPlugin",
+      declaredAs: "rnPlugin",
+      namespace: "@react-native",
       package: "@react-native/eslint-plugin",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"@react-native">;
 // EOF

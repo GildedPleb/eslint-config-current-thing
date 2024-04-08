@@ -5,11 +5,11 @@ export default {
   name: "Regular Expressions",
   packages: [
     {
-      key: "regexp",
-      name: "regexp",
+      declaredAs: "regexp",
+      namespace: "regexp",
       package: "eslint-plugin-regexp",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"regexp">;
 // EOF

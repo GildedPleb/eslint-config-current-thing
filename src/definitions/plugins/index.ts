@@ -4,6 +4,7 @@ import babel from "./babel";
 import comments from "./comments";
 import compat from "./compat";
 import cssModules from "./css-modules";
+import cypress from "./cypress";
 import emotion from "./emotion";
 import es from "./es";
 import flowtype from "./flowtype";
@@ -47,17 +48,17 @@ import unsanitized from "./unsanitized";
 import unusedImports from "./unused-imports";
 import youDontNeedLodash from "./you-dont-need-lodash";
 
-export interface Plugin {
+export interface Plugin<N extends string> {
   name: string;
   packages: Array<{
-    key: string;
-    name: string;
+    declaredAs: string;
+    namespace: N;
     package: string;
     requiresImport: boolean;
   }>;
 }
 
-const plugins: Plugin[] = [
+const plugins = [
   babel,
   comments,
   compat,
@@ -104,7 +105,16 @@ const plugins: Plugin[] = [
   unsanitized,
   unusedImports,
   youDontNeedLodash,
+  cypress,
 ];
+
+type ExtractNamespace<T> =
+  T extends Array<{ packages: infer U }>
+    ? U extends Array<{ namespace: infer V }>
+      ? V
+      : never
+    : never;
+export type Namespace = ExtractNamespace<typeof plugins>;
 
 export default plugins;
 // EOF

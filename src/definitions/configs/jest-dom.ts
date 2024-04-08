@@ -11,7 +11,7 @@ export default {
   name: "Jest Dom",
   packages: [
     {
-      name: "jestDom",
+      declaredAs: "jestDom",
       package: "eslint-plugin-jest-dom",
       requiresImport: false,
     },

@@ -26,24 +26,24 @@ import { fileURLToPath } from "node:url";
 
 ${configs
   .flatMap(({ packages }) =>
-    packages.map(({ name, package: pack, requiresImport }) =>
-      requiresImport ? `import ${name} from "${pack}";` : "",
+    packages.map(({ declaredAs, package: pack, requiresImport }) =>
+      requiresImport ? `import ${declaredAs} from "${pack}";` : "",
     ),
   )
   .filter(Boolean).join(`
 `)}
 ${plugins
   .flatMap(({ packages }) =>
-    packages.map(({ name, package: pack, requiresImport }) =>
-      requiresImport ? `import ${name} from "${pack}";` : "",
+    packages.map(({ declaredAs, package: pack, requiresImport }) =>
+      requiresImport ? `import ${declaredAs} from "${pack}";` : "",
     ),
   )
   .filter(Boolean).join(`
 `)}
 ${parsers
   .flatMap(({ packages }) =>
-    packages.map(({ name, package: pack, requiresImport }) =>
-      requiresImport ? `import ${name} from "${pack}";` : "",
+    packages.map(({ declaredAs, package: pack, requiresImport }) =>
+      requiresImport ? `import ${declaredAs} from "${pack}";` : "",
     ),
   )
   .filter(Boolean).join(`
@@ -134,8 +134,8 @@ const configGen = ({
         ${plugins
           .flatMap(({ packages }) =>
             packages.map(
-              ({ key, name }) =>
-                `"${key}": ${name
+              ({ declaredAs, namespace }) =>
+                `"${namespace}": ${declaredAs
                   .split("\n")
                   .map((line, index) => (index === 0 ? line : `  ${line}`))
                   .join("\n")},`,

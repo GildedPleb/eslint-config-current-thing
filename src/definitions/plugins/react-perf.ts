@@ -5,11 +5,11 @@ export default {
   name: "React Performance",
   packages: [
     {
-      key: "react-perf",
-      name: "reactPerf",
+      declaredAs: "reactPerf",
+      namespace: "react-perf",
       package: "eslint-plugin-react-perf",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"react-perf">;
 // EOF

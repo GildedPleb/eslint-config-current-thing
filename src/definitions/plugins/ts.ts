@@ -5,11 +5,11 @@ export default {
   name: "TypeScript",
   packages: [
     {
-      key: "@typescript-eslint",
-      name: "tseslint.plugin",
+      declaredAs: "tseslint.plugin",
+      namespace: "@typescript-eslint",
       package: "typescript-eslint",
       requiresImport: false,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"@typescript-eslint">;
 // EOF

@@ -17,12 +17,12 @@ export default {
   nameSecondary: "Jest",
   packages: [
     {
-      name: "shopify",
+      declaredAs: "shopify",
       package: "@shopify/eslint-plugin",
       requiresImport: false,
     },
   ],
-  requiredPlugins: ["jest", "jest-formatting", "@shopify"],
+  requiredPlugins: ["jest", "jest-formatting", "@shopify", "@shopify/jest"],
   rules: `...shopify.configs.jest.rules,`,
 } satisfies Config;
 // EOF

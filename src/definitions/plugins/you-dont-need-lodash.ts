@@ -5,11 +5,11 @@ export default {
   name: "You Don't Need Lodash",
   packages: [
     {
-      key: "you-dont-need-lodash-underscore",
-      name: "youDontNeedLodash",
+      declaredAs: "youDontNeedLodash",
+      namespace: "you-dont-need-lodash-underscore",
       package: "eslint-plugin-you-dont-need-lodash-underscore",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"you-dont-need-lodash-underscore">;
 // EOF

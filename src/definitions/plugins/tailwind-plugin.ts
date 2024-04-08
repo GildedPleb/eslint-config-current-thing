@@ -5,11 +5,11 @@ export default {
   name: "Tailwind CSS",
   packages: [
     {
-      key: "tailwindcss",
-      name: "tailwindcss",
+      declaredAs: "tailwindcss",
+      namespace: "tailwindcss",
       package: "eslint-plugin-tailwindcss",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"tailwindcss">;
 // EOF

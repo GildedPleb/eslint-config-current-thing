@@ -5,11 +5,11 @@ export default {
   name: "No Unsanitized",
   packages: [
     {
-      key: "no-unsanitized",
-      name: "unsanitized",
+      declaredAs: "unsanitized",
+      namespace: "no-unsanitized",
       package: "eslint-plugin-no-unsanitized",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"no-unsanitized">;
 // EOF

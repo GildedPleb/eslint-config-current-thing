@@ -5,17 +5,17 @@ export default {
   name: "Node.js",
   packages: [
     {
-      key: "n",
-      name: "nNode",
+      declaredAs: "nNode",
+      namespace: "n",
       package: "eslint-plugin-n",
       requiresImport: true,
     },
     {
-      key: "node",
-      name: "node",
+      declaredAs: "node",
+      namespace: "node",
       package: "eslint-plugin-node",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"n" | "node">;
 // EOF

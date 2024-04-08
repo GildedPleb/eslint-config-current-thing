@@ -14,12 +14,12 @@ export default {
   name: "NextJS",
   packages: [
     {
-      name: "nextjs",
+      declaredAs: "nextjs",
       package: "@next/eslint-plugin-next",
       requiresImport: false,
     },
     {
-      name: "nextJsConfig",
+      declaredAs: "nextJsConfig",
       package: "eslint-config-next",
       requiresImport: false,
     },

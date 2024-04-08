@@ -11,7 +11,7 @@ export default {
   name: "React Performance",
   packages: [
     {
-      name: "reactPerf",
+      declaredAs: "reactPerf",
       package: "eslint-plugin-react-perf",
       requiresImport: false,
     },

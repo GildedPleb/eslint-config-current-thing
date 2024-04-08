@@ -11,12 +11,12 @@ export default {
   name: "Emotion CSS",
   packages: [
     {
-      name: "{ rules as emotion }",
+      declaredAs: "{ rules as emotion }",
       package: "@emotion/eslint-plugin",
       requiresImport: true,
     },
   ],
-  requiredPlugins: ["emotion"],
+  requiredPlugins: ["@emotion"],
   rules: `"@emotion/import-from-emotion": 2,
     "@emotion/jsx-import": 2,
     "@emotion/no-vanilla": 2,

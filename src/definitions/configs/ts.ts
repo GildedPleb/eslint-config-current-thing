@@ -10,9 +10,13 @@ export default {
   id: "ts",
   name: "TypeScript",
   packages: [
-    { name: "tseslint", package: "typescript-eslint", requiresImport: true },
     {
-      name: "typescriptPlugin",
+      declaredAs: "tseslint",
+      package: "typescript-eslint",
+      requiresImport: true,
+    },
+    {
+      declaredAs: "typescriptPlugin",
       package: "@typescript-eslint/eslint-plugin",
       requiresImport: false,
     },

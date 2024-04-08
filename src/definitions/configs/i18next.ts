@@ -11,7 +11,7 @@ export default {
   name: "Internationalization (i18n)",
   packages: [
     {
-      name: "i18next",
+      declaredAs: "i18next",
       package: "eslint-plugin-i18next",
       requiresImport: false,
     },

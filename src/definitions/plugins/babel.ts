@@ -5,11 +5,11 @@ export default {
   name: "Babel",
   packages: [
     {
-      key: "@babel",
-      name: "babelPlugin",
+      declaredAs: "babelPlugin",
+      namespace: "@babel",
       package: "@babel/eslint-plugin",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"@babel">;
 // EOF

@@ -12,13 +12,13 @@ export default {
   name: "React Native Plugin",
   packages: [
     {
-      name: "rnPlugin",
+      declaredAs: "rnPlugin",
       package: "@react-native/eslint-plugin",
       requiresImport: false,
     },
     // This package is an exact copy of the one above. It is not imported and it is updated infrequently.
     {
-      name: "rnPluginCommunity",
+      declaredAs: "rnPluginCommunity",
       package: "@react-native-community/eslint-plugin",
       requiresImport: false,
     },

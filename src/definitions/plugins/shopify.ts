@@ -5,11 +5,11 @@ export default {
   name: "Shopify - Core",
   packages: [
     {
-      key: "@shopify",
-      name: "shopify",
+      declaredAs: "shopify",
+      namespace: "@shopify",
       package: "@shopify/eslint-plugin",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"@shopify">;
 // EOF

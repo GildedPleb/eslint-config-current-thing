@@ -27,7 +27,11 @@ export default {
   id: "jest",
   name: "Jest",
   packages: [
-    { name: "jest", package: "eslint-plugin-jest", requiresImport: false },
+    {
+      declaredAs: "jest",
+      package: "eslint-plugin-jest",
+      requiresImport: false,
+    },
   ],
   requiredPlugins: ["jest"],
   rules: `...jest.configs['flat/recommended'].rules,`,

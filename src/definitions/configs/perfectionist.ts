@@ -11,7 +11,7 @@ export default {
   name: "Perfectionist",
   packages: [
     {
-      name: "perfectionist",
+      declaredAs: "perfectionist",
       package: "eslint-plugin-perfectionist",
       requiresImport: false,
     },

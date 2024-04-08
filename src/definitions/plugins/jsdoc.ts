@@ -5,11 +5,11 @@ export default {
   name: "JSDoc",
   packages: [
     {
-      key: "jsdoc",
-      name: "jsdoc",
+      declaredAs: "jsdoc",
+      namespace: "jsdoc",
       package: "eslint-plugin-jsdoc",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"jsdoc">;
 // EOF

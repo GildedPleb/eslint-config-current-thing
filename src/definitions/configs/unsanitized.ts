@@ -11,7 +11,7 @@ export default {
   name: "No Unsanitized",
   packages: [
     {
-      name: "unsanitized",
+      declaredAs: "unsanitized",
       package: "eslint-plugin-no-unsanitized",
       requiresImport: false,
     },

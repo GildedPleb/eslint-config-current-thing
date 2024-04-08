@@ -5,11 +5,11 @@ export default {
   name: "SonarJS",
   packages: [
     {
-      key: "sonarjs",
-      name: "sonarjs",
+      declaredAs: "sonarjs",
+      namespace: "sonarjs",
       package: "eslint-plugin-sonarjs",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"sonarjs">;
 // EOF

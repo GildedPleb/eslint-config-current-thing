@@ -1,4 +1,5 @@
 // PathMark: ./src/definitions/configs/index.ts
+import { type Namespace } from "../plugins";
 import airbnb from "./airbnb";
 import airbnbBase from "./airbnb-base";
 import airbnbTs from "./airbnb-ts";
@@ -8,6 +9,7 @@ import createReactApp from "./create-react-app";
 import createReactAppJest from "./create-react-app-jest";
 import createReactAppTs from "./create-react-app-ts";
 import cssModules from "./css-modules";
+import cypress from "./cypress";
 import emotion from "./emotion";
 import es from "./es";
 import eslint from "./eslint";
@@ -55,6 +57,7 @@ import shopifyReactTs from "./shopify-react-ts";
 import shopifyTs from "./shopify-ts";
 import shopifyTsTypeCheck from "./shopify-ts-typecheck";
 import sonarjs from "./sonarjs";
+import sortClass from "./sort-class";
 import standard from "./standard";
 import standardJsx from "./standard-jsx";
 import standardReact from "./standard-react";
@@ -79,12 +82,12 @@ export interface Config {
   name: string;
   nameSecondary?: string;
   packages: Array<{
-    name: string;
+    declaredAs: string;
     package: string;
     requiresImport: boolean;
     subModule?: string;
   }>;
-  requiredPlugins: string[];
+  requiredPlugins: Namespace[];
   rules?: string;
 }
 
@@ -161,6 +164,8 @@ const configs: Config[] = [
   functionalTs,
   importTs,
   jsdocTs,
+  cypress,
+  sortClass,
 ];
 
 export default configs;

@@ -14,7 +14,7 @@ export default {
   name: "React Native (Independent Plugin/Config)",
   packages: [
     {
-      name: "reactNativeIndie",
+      declaredAs: "reactNativeIndie",
       package: "eslint-plugin-react-native",
       requiresImport: false,
     },

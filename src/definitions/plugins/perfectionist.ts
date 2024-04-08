@@ -5,11 +5,11 @@ export default {
   name: "Perfectionist",
   packages: [
     {
-      key: "perfectionist",
-      name: "perfectionist",
+      declaredAs: "perfectionist",
+      namespace: "perfectionist",
       package: "eslint-plugin-perfectionist",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"perfectionist">;
 // EOF

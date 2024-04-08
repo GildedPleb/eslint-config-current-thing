@@ -34,7 +34,7 @@ export default {
   name: "Functional",
   packages: [
     {
-      name: "functional",
+      declaredAs: "functional",
       package: "eslint-plugin-functional",
       requiresImport: false,
     },

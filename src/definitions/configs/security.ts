@@ -11,7 +11,7 @@ export default {
   name: "Security",
   packages: [
     {
-      name: "security",
+      declaredAs: "security",
       package: "eslint-plugin-security",
       requiresImport: false,
     },

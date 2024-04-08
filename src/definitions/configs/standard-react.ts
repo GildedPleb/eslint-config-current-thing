@@ -23,7 +23,7 @@ export default {
   name: "Standard React",
   packages: [
     {
-      name: "standardReact",
+      declaredAs: "standardReact",
       package: "eslint-config-standard-react",
       requiresImport: true,
     },

@@ -118,6 +118,9 @@ const rejected = new Set([
   "@stylistic/eslint-plugin-ts",
   "@stylistic/eslint-plugin-jsx",
 
+  // Prettier types
+  "@types/eslint-config-prettier",
+
   // Prettier Stuffs
   "prettier-eslint",
   "prettier-eslint-cli",

@@ -5,11 +5,11 @@ export default {
   name: "TSDoc",
   packages: [
     {
-      key: "tsdoc",
-      name: "tsdoc",
+      declaredAs: "tsdoc",
+      namespace: "tsdoc",
       package: "eslint-plugin-tsdoc",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"tsdoc">;
 // EOF

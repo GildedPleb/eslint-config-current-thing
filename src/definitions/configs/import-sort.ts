@@ -14,7 +14,7 @@ export default {
   name: "Simple Import Sort",
   packages: [
     {
-      name: "importSort",
+      declaredAs: "importSort",
       package: "eslint-plugin-simple-import-sort",
       requiresImport: false,
     },

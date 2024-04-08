@@ -11,7 +11,7 @@ export default {
   name: "You Don't Need Lodash",
   packages: [
     {
-      name: "youDontNeedLodash",
+      declaredAs: "youDontNeedLodash",
       package: "eslint-plugin-you-dont-need-lodash-underscore",
       requiresImport: false,
     },

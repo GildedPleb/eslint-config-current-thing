@@ -11,7 +11,7 @@ export default {
   name: "No Only Tests",
   packages: [
     {
-      name: "noOnlyTest",
+      declaredAs: "noOnlyTest",
       package: "eslint-plugin-no-only-tests",
       requiresImport: false,
     },

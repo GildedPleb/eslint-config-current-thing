@@ -24,8 +24,12 @@ export default {
   id: "node",
   name: "Node.js",
   packages: [
-    { name: "nNode", package: "eslint-plugin-n", requiresImport: false },
-    { name: "node", package: "eslint-plugin-node", requiresImport: false },
+    { declaredAs: "nNode", package: "eslint-plugin-n", requiresImport: false },
+    {
+      declaredAs: "node",
+      package: "eslint-plugin-node",
+      requiresImport: false,
+    },
   ],
   requiredPlugins: ["node", "n"],
   rules: `...nNode.configs["flat/recommended-module"].rules,`,

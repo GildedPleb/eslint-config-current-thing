@@ -14,7 +14,7 @@ export default {
   name: "AirBnb Base",
   packages: [
     {
-      name: "airbnbBase",
+      declaredAs: "airbnbBase",
       package: "eslint-config-airbnb-base",
       requiresImport: false,
     },

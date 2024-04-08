@@ -5,11 +5,11 @@ export default {
   name: "Promises",
   packages: [
     {
-      key: "promise",
-      name: "promise",
+      declaredAs: "promise",
+      namespace: "promise",
       package: "eslint-plugin-promise",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"promise">;
 // EOF

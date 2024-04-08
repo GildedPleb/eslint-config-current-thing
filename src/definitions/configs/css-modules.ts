@@ -11,7 +11,7 @@ export default {
   name: "CSS Modules",
   packages: [
     {
-      name: "cssModules",
+      declaredAs: "cssModules",
       package: "eslint-plugin-css-modules",
       requiresImport: false,
     },

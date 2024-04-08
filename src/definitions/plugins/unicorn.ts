@@ -5,11 +5,11 @@ export default {
   name: "Unicorn",
   packages: [
     {
-      key: "unicorn",
-      name: "unicorn",
+      declaredAs: "unicorn",
+      namespace: "unicorn",
       package: "eslint-plugin-unicorn",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"unicorn">;
 // EOF

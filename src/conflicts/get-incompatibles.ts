@@ -94,6 +94,8 @@ for (const { configs, def: codeToLint, exclude, filePath, short } of fileList) {
     const { location: config1Path, name: name1 } = config1;
     const { location: config2Path, name: name2 } = config2;
     const currentCheck = `${chalk.green(short)}: ${chalk.blue(name1)} ${chalk.blue("-vs-")} ${chalk.blue(name2)}`;
+    // This log is important in the case of missing Plugin Definitions
+    console.log(currentCheck, "- Starting check...");
     const [es1, json1] = await getLinter(filePath, config1Path);
     const [es2, json2] = await getLinter(filePath, config2Path);
     const keyHash = hashObject({ codeToLint, filePath, json1, json2 });

@@ -18,17 +18,12 @@ export default {
   nameSecondary: "ESNext",
   packages: [
     {
-      name: "shopify",
+      declaredAs: "shopify",
       package: "@shopify/eslint-plugin",
       requiresImport: false,
     },
   ],
-  requiredPlugins: [
-    "@babel/eslint-plugin",
-    "promise",
-    "sort-class-members",
-    "import",
-  ],
+  requiredPlugins: ["@babel", "promise", "sort-class-members", "import"],
   rules: `...shopify.configs.esnext.rules,`,
 } satisfies Config;
 // EOF

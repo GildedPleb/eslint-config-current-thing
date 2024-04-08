@@ -11,7 +11,7 @@ export default {
   name: "AirBnb-Typescript",
   packages: [
     {
-      name: "airbnbTypescript",
+      declaredAs: "airbnbTypescript",
       package: "eslint-config-airbnb-typescript",
       requiresImport: false,
     },

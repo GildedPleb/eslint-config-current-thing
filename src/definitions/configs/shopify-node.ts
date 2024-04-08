@@ -12,12 +12,12 @@ export default {
   nameSecondary: "Node",
   packages: [
     {
-      name: "shopify",
+      declaredAs: "shopify",
       package: "@shopify/eslint-plugin",
       requiresImport: false,
     },
   ],
-  requiredPlugins: ["@shopify"],
+  requiredPlugins: ["@shopify", "node"],
   rules: `...shopify.configs.node.rules,`,
 } satisfies Config;
 // EOF

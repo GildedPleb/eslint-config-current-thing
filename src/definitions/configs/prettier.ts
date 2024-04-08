@@ -11,36 +11,23 @@ export default {
   name: "Prettier",
   packages: [
     {
-      name: "prettier",
+      declaredAs: "prettier",
       package: "eslint-plugin-prettier",
       requiresImport: false,
     },
     {
-      name: "prettierConfig",
+      declaredAs: "prettierConfig",
       package: "eslint-config-prettier",
       requiresImport: true,
-    },
-    {
-      name: "prettierTypes",
-      package: "@types/eslint-config-prettier",
-      requiresImport: false,
-    },
-    {
-      name: "prettierTypes",
-      package: "@types/eslint-plugin-prettier",
-      requiresImport: false,
     },
   ],
   requiredPlugins: [
     "prettier",
     "@typescript-eslint",
     "@babel",
-    "vue",
     "unicorn",
-    "babel",
     "flowtype",
     "react",
-    "standard",
   ],
   rules: `...prettierConfig.rules,
     "prettier/prettier": 2,`,

@@ -15,7 +15,11 @@ export default {
   id: "compat",
   name: "Compat",
   packages: [
-    { name: "comp", package: "eslint-plugin-compat", requiresImport: false },
+    {
+      declaredAs: "comp",
+      package: "eslint-plugin-compat",
+      requiresImport: false,
+    },
   ],
   requiredPlugins: ["compat"],
   rules: `...comp.configs.recommended.rules,`,

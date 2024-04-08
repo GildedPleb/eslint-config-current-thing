@@ -11,7 +11,7 @@ export default {
   name: "Regular Expressions",
   packages: [
     {
-      name: "regexp",
+      declaredAs: "regexp",
       package: "eslint-plugin-regexp",
       requiresImport: false,
     },

@@ -5,11 +5,11 @@ export default {
   name: "Header",
   packages: [
     {
-      key: "header",
-      name: "header",
+      declaredAs: "header",
+      namespace: "header",
       package: "eslint-plugin-header",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"header">;
 // EOF

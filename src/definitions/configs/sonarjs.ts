@@ -11,7 +11,7 @@ export default {
   name: "SonarJS",
   packages: [
     {
-      name: "sonarjs",
+      declaredAs: "sonarjs",
       package: "eslint-plugin-sonarjs",
       requiresImport: false,
     },

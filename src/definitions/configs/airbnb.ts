@@ -11,7 +11,7 @@ export default {
   name: "AirBnb",
   packages: [
     {
-      name: "airbnb",
+      declaredAs: "airbnb",
       package: "eslint-config-airbnb",
       requiresImport: false,
     },

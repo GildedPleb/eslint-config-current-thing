@@ -11,7 +11,7 @@ export default {
   name: "Tailwind CSS",
   packages: [
     {
-      name: "tailwindcss",
+      declaredAs: "tailwindcss",
       package: "eslint-plugin-tailwindcss",
       requiresImport: false,
     },

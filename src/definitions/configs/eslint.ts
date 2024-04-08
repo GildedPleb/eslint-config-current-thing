@@ -9,7 +9,9 @@ export default {
   }`,
   id: "eslint",
   name: "ESLint",
-  packages: [{ name: "eslint", package: "@eslint/js", requiresImport: true }],
+  packages: [
+    { declaredAs: "eslint", package: "@eslint/js", requiresImport: true },
+  ],
   requiredPlugins: [],
   rules: `...eslint.configs.recommended.rules,`,
 } satisfies Config;

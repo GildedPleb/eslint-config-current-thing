@@ -56,12 +56,12 @@ export default {
   name: "Import",
   packages: [
     {
-      name: "importPlugin",
+      declaredAs: "importPlugin",
       package: "eslint-plugin-import",
       requiresImport: false,
     },
     {
-      name: "importResolver",
+      declaredAs: "importResolver",
       package: "eslint-import-resolver-typescript",
       requiresImport: false,
     },

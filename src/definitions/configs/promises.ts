@@ -11,7 +11,7 @@ export default {
   name: "Promises",
   packages: [
     {
-      name: "promise",
+      declaredAs: "promise",
       package: "eslint-plugin-promise",
       requiresImport: false,
     },

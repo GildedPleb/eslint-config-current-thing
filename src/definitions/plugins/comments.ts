@@ -5,17 +5,17 @@ export default {
   name: "Comments",
   packages: [
     {
-      key: "@eslint-community/eslint-comments",
-      name: "comments",
+      declaredAs: "comments",
+      namespace: "@eslint-community/eslint-comments",
       package: "@eslint-community/eslint-plugin-eslint-comments",
       requiresImport: true,
     },
     {
-      key: "eslint-comments",
-      name: "commentsOld",
+      declaredAs: "commentsOld",
+      namespace: "eslint-comments",
       package: "eslint-plugin-eslint-comments",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"@eslint-community/eslint-comments" | "eslint-comments">;
 // EOF

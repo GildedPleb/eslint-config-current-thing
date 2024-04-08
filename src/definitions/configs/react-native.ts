@@ -14,18 +14,18 @@ export default {
   name: "React Native Config",
   packages: [
     {
-      name: "reactNativeConfig",
+      declaredAs: "reactNativeConfig",
       package: "@react-native-community/eslint-config",
       requiresImport: true,
     },
     {
-      name: "rnConfig",
+      declaredAs: "rnConfig",
       package: "@react-native/eslint-config",
       requiresImport: false,
     },
     // These globals exist in the other packages
     {
-      name: "rnGlobals",
+      declaredAs: "rnGlobals",
       package: "eslint-plugin-react-native-globals",
       requiresImport: false,
     },

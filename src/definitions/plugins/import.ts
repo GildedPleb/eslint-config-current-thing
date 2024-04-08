@@ -5,11 +5,11 @@ export default {
   name: "Import",
   packages: [
     {
-      key: "import",
-      name: "importPlugin",
+      declaredAs: "importPlugin",
+      namespace: "import",
       package: "eslint-plugin-import",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"import">;
 // EOF

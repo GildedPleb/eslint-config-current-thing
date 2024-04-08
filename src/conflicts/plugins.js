@@ -37,6 +37,8 @@ import comp from "eslint-plugin-compat";
 // @ts-ignore yes, we need to ignore every import for this to run
 import cssModules from "eslint-plugin-css-modules";
 // @ts-ignore yes, we need to ignore every import for this to run
+import cypress from "eslint-plugin-cypress";
+// @ts-ignore yes, we need to ignore every import for this to run
 import es from "eslint-plugin-es";
 // @ts-ignore yes, we need to ignore every import for this to run
 import esX from "eslint-plugin-es-x";
@@ -144,6 +146,7 @@ const plugins = {
   "@typescript-eslint": tseslint.plugin,
   compat: comp,
   "css-modules": cssModules,
+  cypress,
   es,
   "es-x": esX,
   "eslint-comments": commentsOld,

@@ -13,7 +13,11 @@ export default {
   id: "google",
   name: "Google",
   packages: [
-    { name: "google", package: "eslint-config-google", requiresImport: true },
+    {
+      declaredAs: "google",
+      package: "eslint-config-google",
+      requiresImport: true,
+    },
   ],
   requiredPlugins: [],
   rules: `...google.rules,`,

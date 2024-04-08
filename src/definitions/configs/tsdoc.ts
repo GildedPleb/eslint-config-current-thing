@@ -10,7 +10,11 @@ export default {
   id: "tsdoc",
   name: "TSDoc",
   packages: [
-    { name: "tsdoc", package: "eslint-plugin-tsdoc", requiresImport: false },
+    {
+      declaredAs: "tsdoc",
+      package: "eslint-plugin-tsdoc",
+      requiresImport: false,
+    },
   ],
   requiredPlugins: ["tsdoc"],
   rules: `"tsdoc/syntax": 2,`,

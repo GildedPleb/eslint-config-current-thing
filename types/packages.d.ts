@@ -51,6 +51,7 @@ declare module "eslint-plugin-testing-library";
 declare module "eslint-plugin-ft-flow";
 declare module "eslint-config-standard";
 declare module "eslint-plugin-unused-imports";
+declare module "eslint-plugin-cypress";
 declare module "eslint/use-at-your-own-risk" {
   interface ParserOptions {
     allowReserved?: boolean;

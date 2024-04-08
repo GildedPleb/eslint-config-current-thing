@@ -5,11 +5,11 @@ export default {
   name: "No Only Tests",
   packages: [
     {
-      key: "no-only-tests",
-      name: "noOnlyTest",
+      declaredAs: "noOnlyTest",
+      namespace: "no-only-tests",
       package: "eslint-plugin-no-only-tests",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"no-only-tests">;
 // EOF

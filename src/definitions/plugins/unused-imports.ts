@@ -5,11 +5,11 @@ export default {
   name: "Unused Imports",
   packages: [
     {
-      key: "unused-imports",
-      name: "unusedImports",
+      declaredAs: "unusedImports",
+      namespace: "unused-imports",
       package: "eslint-plugin-unused-imports",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"unused-imports">;
 // EOF

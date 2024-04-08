@@ -23,7 +23,11 @@ export default {
   id: "react",
   name: "React",
   packages: [
-    { name: "react", package: "eslint-plugin-react", requiresImport: false },
+    {
+      declaredAs: "react",
+      package: "eslint-plugin-react",
+      requiresImport: false,
+    },
   ],
   requiredPlugins: ["react"],
   rules: `...react.configs.recommended.rules,`,

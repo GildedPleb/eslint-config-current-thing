@@ -6,7 +6,7 @@ export interface Parser {
   definitions: string;
   name: string;
   packages: Array<{
-    name: string;
+    declaredAs: string;
     package: string;
     requiresImport: boolean;
   }>;

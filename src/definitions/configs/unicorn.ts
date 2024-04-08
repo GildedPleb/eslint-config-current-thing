@@ -11,7 +11,7 @@ export default {
   name: "Unicorn",
   packages: [
     {
-      name: "unicorn",
+      declaredAs: "unicorn",
       package: "eslint-plugin-unicorn",
       requiresImport: false,
     },

@@ -189,6 +189,11 @@ const configList = [
     name: "import-js-ts",
   },
   { location: "./src/conflicts/configs/jsdoc-ts-config.js", name: "jsdoc-ts" },
+  { location: "./src/conflicts/configs/cypress-config.js", name: "cypress" },
+  {
+    location: "./src/conflicts/configs/sort-class-config.js",
+    name: "sort-class",
+  },
 ];
 
 export default configList;

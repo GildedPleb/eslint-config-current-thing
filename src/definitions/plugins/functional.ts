@@ -5,11 +5,11 @@ export default {
   name: "Functional",
   packages: [
     {
-      key: "functional",
-      name: "functional",
+      declaredAs: "functional",
+      namespace: "functional",
       package: "eslint-plugin-functional",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"functional">;
 // EOF

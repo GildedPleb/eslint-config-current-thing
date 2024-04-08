@@ -5,11 +5,11 @@ export default {
   name: "Testing Library",
   packages: [
     {
-      key: "testing-library",
-      name: "testingLibrary",
+      declaredAs: "testingLibrary",
+      namespace: "testing-library",
       package: "eslint-plugin-testing-library",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"testing-library">;
 // EOF

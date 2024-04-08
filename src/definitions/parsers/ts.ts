@@ -15,12 +15,12 @@ export default {
   name: "TypeScript",
   packages: [
     {
-      name: "tseslint.plugin",
+      declaredAs: "tseslint.plugin",
       package: "typescript-eslint",
       requiresImport: false,
     },
     {
-      name: "typescriptParser",
+      declaredAs: "typescriptParser",
       package: "@typescript-eslint/parser",
       requiresImport: false,
     },

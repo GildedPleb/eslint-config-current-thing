@@ -11,12 +11,12 @@ export default {
   name: "JSX Accessibility (JSX A11y)",
   packages: [
     {
-      name: "jsxA11y",
+      declaredAs: "jsxA11y",
       package: "eslint-plugin-jsx-a11y",
       requiresImport: false,
     },
   ],
-  requiredPlugins: ["jsxA11y"],
+  requiredPlugins: ["jsx-a11y"],
   rules: `...jsxA11y.configs.recommended.rules,`,
 } satisfies Config;
 // EOF

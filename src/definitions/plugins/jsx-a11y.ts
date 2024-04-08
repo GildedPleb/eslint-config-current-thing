@@ -5,11 +5,11 @@ export default {
   name: "JSX A11y",
   packages: [
     {
-      key: "jsx-a11y",
-      name: "jsxA11y",
+      declaredAs: "jsxA11y",
+      namespace: "jsx-a11y",
       package: "eslint-plugin-jsx-a11y",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"jsx-a11y">;
 // EOF

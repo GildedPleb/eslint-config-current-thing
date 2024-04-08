@@ -5,11 +5,11 @@ export default {
   name: "Simple Import Sort",
   packages: [
     {
-      key: "simple-import-sort",
-      name: "importSort",
+      declaredAs: "importSort",
+      namespace: "simple-import-sort",
       package: "eslint-plugin-simple-import-sort",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"simple-import-sort">;
 // EOF

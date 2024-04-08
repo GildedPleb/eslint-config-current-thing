@@ -5,11 +5,11 @@ export default {
   name: "Sort Class Members",
   packages: [
     {
-      key: "sort-class-members",
-      name: "sortClassMembers",
+      declaredAs: "sortClassMembers",
+      namespace: "sort-class-members",
       package: "eslint-plugin-sort-class-members",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"sort-class-members">;
 // EOF

@@ -5,11 +5,11 @@ export default {
   name: "CSS Modules",
   packages: [
     {
-      key: "css-modules",
-      name: "cssModules",
+      declaredAs: "cssModules",
+      namespace: "css-modules",
       package: "eslint-plugin-css-modules",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"css-modules">;
 // EOF

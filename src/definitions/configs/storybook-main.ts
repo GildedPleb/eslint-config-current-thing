@@ -12,7 +12,7 @@ export default {
   nameSecondary: "Main",
   packages: [
     {
-      name: "storybook",
+      declaredAs: "storybook",
       package: "eslint-plugin-storybook",
       requiresImport: false,
     },

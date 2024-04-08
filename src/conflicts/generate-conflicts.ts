@@ -9,7 +9,7 @@ import { MINIMUMS, RULES } from "../constants";
 import { parsers } from "../definitions";
 import type { Config } from "../definitions/configs";
 import rawConfigs from "../definitions/configs";
-import plugins from "../definitions/plugins";
+import plugins, { type Namespace, type Plugin } from "../definitions/plugins";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -22,8 +22,7 @@ export interface PopulatedConfig extends Config {
 
 const configsWithCount: PopulatedConfig[] = [];
 
-for await (const config of rawConfigs) {
-  console.log(`Getting info for "${config.name}"...`);
+for (const config of rawConfigs) {
   const count = 1_000_000;
   const description = "Purply for generating conflicts";
   const homepage = "www.nope.com";
@@ -76,28 +75,28 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 ${configContext.packages
-  .map(({ name, package: pack, requiresImport }) =>
+  .map(({ declaredAs, package: pack, requiresImport }) =>
     requiresImport &&
-    name !== "{ rules as emotion }" &&
-    name !== "reactNativeConfig" &&
-    name !== "tseslint"
-      ? `import ${name} from "${pack}";`
+    declaredAs !== "{ rules as emotion }" &&
+    declaredAs !== "reactNativeConfig" &&
+    declaredAs !== "tseslint"
+      ? `import ${declaredAs} from "${pack}";`
       : "",
   )
   .filter(Boolean).join(`
 `)}
 ${plugins
   .flatMap(({ packages }) =>
-    packages.map(({ name, package: pack, requiresImport }) =>
-      requiresImport ? `import ${name} from "${pack}";` : "",
+    packages.map(({ declaredAs, package: pack, requiresImport }) =>
+      requiresImport ? `import ${declaredAs} from "${pack}";` : "",
     ),
   )
   .filter(Boolean).join(`
 `)}
 ${parsers
   .flatMap(({ packages }) =>
-    packages.map(({ name, package: pack, requiresImport }) =>
-      requiresImport ? `import ${name} from "${pack}";` : "",
+    packages.map(({ declaredAs, package: pack, requiresImport }) =>
+      requiresImport ? `import ${declaredAs} from "${pack}";` : "",
     ),
   )
   .filter(Boolean).join(`
@@ -167,7 +166,7 @@ const configGen = ({
   /* PARSERS */
   ${parsers
     .sort((first, name2) => first.count - name2.count)
-    .map(({ count, definitions, description, homepage, name }) => {
+    .map(({ definitions, description, homepage, name }) => {
       if (!definitions.includes("languageOptions:")) {
         const message = `Formatting Error: ${name} defines a parser definition but does not include a 'languageOptions' key.`;
         throw new Error(message);
@@ -175,7 +174,6 @@ const configGen = ({
 
       return `/*
     ${name}
-    ${count.toLocaleString()} monthly downloads
     ${description}
     ${homepage}
   */
@@ -188,15 +186,17 @@ const configGen = ({
   /* PLUGINS */
   {
     plugins: {
-      ${plugins
-        .flatMap(({ packages }) =>
-          packages.map(
-            ({ key, name }) =>
-              `"${key}": ${name
-                .split("\n")
-                .map((line, index) => (index === 0 ? line : `  ${line}`))
-                .join("\n")},`,
-          ),
+      ${(plugins as Array<Plugin<Namespace>>)
+        .flatMap(({ packages }) => packages)
+        .filter((plugin) =>
+          configContext.requiredPlugins.includes(plugin.namespace),
+        )
+        .map(
+          ({ declaredAs, namespace }) =>
+            `"${namespace}": ${declaredAs
+              .split("\n")
+              .map((line, index) => (index === 0 ? line : `  ${line}`))
+              .join("\n")},`,
         )
         .sort().join(`
       `)}

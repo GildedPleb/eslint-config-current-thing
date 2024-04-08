@@ -11,7 +11,7 @@ export default {
   name: "React Refresh",
   packages: [
     {
-      name: "reactRefresh",
+      declaredAs: "reactRefresh",
       package: "eslint-plugin-react-refresh",
       requiresImport: false,
     },

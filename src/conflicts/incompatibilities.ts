@@ -5,6 +5,9 @@ const incompatibles: ConflictCache = {
   airbnb: {
     "prettier/prettier": 0,
   },
+  "airbnb-base": {
+    "prettier/prettier": 0,
+  },
   "airbnb-ts": {
     "@babel/object-curly-spacing": 0,
     "@stylistic/semi": 0,
@@ -35,6 +38,7 @@ const incompatibles: ConflictCache = {
   perfectionist: {
     "import/order": 0,
     "simple-import-sort/imports": 0,
+    "sort-class-members/sort-class-members": 0,
   },
   prettier: {
     "@stylistic/arrow-parens": 0,
@@ -55,8 +59,13 @@ const incompatibles: ConflictCache = {
     "@typescript-eslint/comma-dangle": 0,
   },
   "shopify-core": {
+    "@stylistic/object-curly-spacing": 0,
     "@stylistic/operator-linebreak": 0,
+    "@stylistic/quote-props": 0,
+    "@stylistic/semi": 0,
     "@typescript-eslint/comma-dangle": 0,
+    "@typescript-eslint/object-curly-spacing": 0,
+    "@typescript-eslint/semi": 0,
     "prettier/prettier": 0,
   },
   "shopify-esnext": {
@@ -71,6 +80,16 @@ const incompatibles: ConflictCache = {
     semi: 0,
   },
   "shopify-prettier": {
+    "@stylistic/arrow-parens": 0,
+    "@stylistic/brace-style": 0,
+    "@stylistic/indent": 0,
+    "@stylistic/indent-binary-ops": 0,
+    "@stylistic/jsx-one-expression-per-line": 0,
+    "@stylistic/member-delimiter-style": 0,
+    "@stylistic/operator-linebreak": 0,
+    "@stylistic/quote-props": 0,
+    "@stylistic/quotes": 0,
+    "@stylistic/semi": 0,
     "@typescript-eslint/comma-dangle": 0,
     "@typescript-eslint/indent": 0,
     "@typescript-eslint/member-delimiter-style": 0,
@@ -83,6 +102,7 @@ const incompatibles: ConflictCache = {
     curly: 0,
     indent: 0,
     "indent-legacy": 0,
+    "jsx-quotes": 0,
     "no-confusing-arrow": 0,
     "object-curly-spacing": 0,
     "operator-linebreak": 0,
@@ -104,6 +124,9 @@ const incompatibles: ConflictCache = {
     "prettier/prettier": 0,
     "unicorn/no-nested-ternary": 0,
   },
+  "sort-class": {
+    "perfectionist/sort-classes": 0,
+  },
   standard: {
     "@babel/object-curly-spacing": 0,
     "@babel/semi": 0,
@@ -121,6 +144,7 @@ const incompatibles: ConflictCache = {
     "prettier/prettier": 0,
   },
   "standard-ts": {
+    "@babel/object-curly-spacing": 0,
     "@babel/semi": 0,
     "@stylistic/comma-dangle": 0,
     "@stylistic/space-before-function-paren": 0,

@@ -5,11 +5,11 @@ export default {
   name: "React Refresh",
   packages: [
     {
-      key: "react-refresh",
-      name: "reactRefresh",
+      declaredAs: "reactRefresh",
+      namespace: "react-refresh",
       package: "eslint-plugin-react-refresh",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"react-refresh">;
 // EOF

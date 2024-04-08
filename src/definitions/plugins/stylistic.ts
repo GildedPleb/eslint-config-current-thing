@@ -5,11 +5,11 @@ export default {
   name: "Stylistic",
   packages: [
     {
-      key: "@stylistic",
-      name: "stylistic",
+      declaredAs: "stylistic",
+      namespace: "@stylistic",
       package: "@stylistic/eslint-plugin",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"@stylistic">;
 // EOF

@@ -5,11 +5,11 @@ export default {
   name: "Jest Formatting",
   packages: [
     {
-      key: "jest-formatting",
-      name: "jestFormatting",
+      declaredAs: "jestFormatting",
+      namespace: "jest-formatting",
       package: "eslint-plugin-jest-formatting",
       requiresImport: true,
     },
   ],
-} satisfies Plugin;
+} satisfies Plugin<"jest-formatting">;
 // EOF
