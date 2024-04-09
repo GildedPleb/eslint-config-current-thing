@@ -444,6 +444,12 @@ for (const { configs, def: codeToLint, exclude, filePath, short } of fileList) {
 console.log({ fullConflictList });
 
 const generateCode = `// PathMark: ./src/conflicts/incompatibilities.ts
+
+/*
+  This file is fully generated, to edit it change ./get-incompatibilities.ts
+  Generated on ${new Date().toLocaleDateString()}
+*/
+
 import { type ConflictCache } from "./types";
 
 const incompatibles: ConflictCache = ${JSON.stringify(fullConflictList, undefined, 2)};

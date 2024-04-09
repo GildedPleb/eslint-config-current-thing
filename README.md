@@ -2,19 +2,17 @@
 
 <img src="./static/current_thing.jpg" alt="I support the Current Thing" width="200" style=""/>
 
-An **extremely unopinionated** config based on a popularity contest between the most downloaded ESLint configs/plugins/parsers/rules.
+An **extremely unopinionated** config based on an automatically generated popularity contest between the most downloaded ESLint configs/plugins/parsers/rules.
+
+_**Now with automated conflict discovery and mitigation!**_
 
 > _"Finally, we have a config we all equally hate!"_
 
 ---
 
-Linting can be so opinionated, it can become political. `Eslint Config Current Thing` generates an ESLint config objectively based on whatever the current thing is at the time of build w/r/t broad ecosystem-wide definitions and opinion around JavaScript linting. Now, those political preferences can be exposed for what they are--power-grabs--by competing on an inter-ecosystem, distributed scale, not just within a set of contributors or a niche!
+Linting is too opinionated. In fact, it can become political. `Eslint Config Current Thing` generates an ESLint config objectively based on whatever the current thing is at the time of build w/r/t broad ecosystem-wide definitions and opinion around JavaScript linting. Now, those political preferences can be exposed for what they are and market competition can settle the debate.
 
-## Technical explainer
-
-This is a meta-config of many configs. The basic idea is that Linting is usually incrementally added in and teams have no reason or time to sit down like AirBnB and justify and debate every last ESLint rule, but they do all sit down and figure something out. Over time, hundreds of eslint plugins and configurations have emerged with various levels of popularity and maintenance, but they usually only address the small set of things that the team who developed them needed to address and invariably miss something--this is complicated by the fact that NPM does not make searching for ESLint configs/plugins easy. Then, the JS ecosystem moves to the next framework, the config goes out of maintenance and rules become irrelevant/bad and everybody has to solve the same problems again (welcome to FOSS!). Lint The Current Thing essentially grabs as many rules as possible, indiscriminately, provided they meet minimum thresholds of quality, and compares each rule on a popularity contest, so whatever the Current Thing is (provided you update your packages) that will fundamentally be tied to ecosystem-wide best practices as supported by the most people--this is to say Lint The Current Thing produces code that is accessible to the widest possible set of developers and stays in-step with the ecosystem. You can read more in the "Why is this a good idea" section.
-
-Presently, it combines these configs (and their plugins, submodules, etc.):
+Presently, lint the current thing combines these configs (and their plugins, submodules, etc.):
 
 |                 |                       |                |               |                    |
 | --------------- | --------------------- | -------------- | ------------- | ------------------ |
@@ -36,9 +34,9 @@ The winning (and thus supported) high-level architecture is:
 | ------------ | ------------------------ | ------- |
 | `Typescript` | `React` / `React Native` | `Jest`  |
 
-Meaning, in many cases, using this config without these frameworks (by disabling them) or with competing frameworks, probably means you are gunna have a bad time.
+## Technical explainer
 
----
+This is a meta-config of many configs. The basic idea is that Linting is usually incrementally added in and teams have no reason or time to sit down like AirBnB and justify and debate every last ESLint rule, but they do all sit down and figure something out. Over time, hundreds of eslint plugins and configurations have emerged with various levels of popularity and maintenance, but they usually only address the small set of things that the team who developed them needed to address and invariably miss something--this is complicated by the fact that NPM does not make searching for ESLint configs/plugins easy. Then, the JS ecosystem moves to the next framework, the config goes out of maintenance and rules become irrelevant/bad and everybody has to solve the same problems again (welcome to FOSS!). Lint The Current Thing essentially grabs as many rules as possible, indiscriminately, provided they meet minimum thresholds of quality, and compares each rule on a popularity contest, so whatever the Current Thing is (provided you update your packages) that will fundamentally be tied to ecosystem-wide best practices as supported by the most people--this is to say Lint The Current Thing produces code that is accessible to the widest possible set of developers and stays in-step with the ecosystem. You can read more in the "Why is this a good idea" section.
 
 <!-- Generated do not edit! -->
 
@@ -126,7 +124,9 @@ import currentThing from "eslint-config-current-thing";
 export default [...currentThing({ disable: ["eslint-config-import"] })];
 ```
 
-**WARNING: `disable` may have unintended consequences as various configs are interdependent** (To-do: This need not be so, but fixing it is very annoying).
+E.g. if you disable every config, in order from the most downloaded down, until you hit `functional`, then functional will be your leading config and your project will then be linted with the recommended functional style.
+
+**WARNING: `disable` may have unintended consequences where the linted code might get into an irreconcilable state, as various configs can toggle rules. We attempt to guard against this with automated conflict resolution but things can still sneak by.**
 
 #### `override`
 
@@ -140,7 +140,7 @@ export default [
 ];
 ```
 
-`override` will not clear existing rules but is provided in the unlikely case that a given rule needs more fine-tuning; we just don't have the bandwidth to test a thousand rules against each other.
+`override` will not clear existing rules but is provided in the unlikely case that a given rule needs more fine-tuning,
 
 `disable` takes precedence over `override`.
 
@@ -163,17 +163,17 @@ This would only include packages that exceed 1,000,000 downloads per month, and 
 There are a crazy amount of rules in this config, and they are completely overwhelming.
 
 1. Try easing into them by setting a high `threshold`.
-1. Importantly, the config is also exported as a plain JS object called `JSONConfig`. As such, you can pick off rules to disable in `eslint.config.js`, like below, and choke out the problems in your code by slowly allowing more rules in:
+1. Importantly, the config is also exported as a plain JS object called `JSONConfigJs`. As such, you can pick off rules to disable in `eslint.config.js`, like below, and choke out the problems in your code by slowly allowing more rules in:
 
 ```js
-import currentThing, { JSONConfig } from "eslint-config-current-thing";
+import currentThing, { JSONConfigJs } from "eslint-config-current-thing";
 
 export default [
   ...currentThing(),
   {
     // Disable all but the first 10 rules
     rules: Object.fromEntries(
-      Object.entries(JSONConfig.rules).map(([rule, state], i) => [
+      Object.entries(JSONConfigJs.rules).map(([rule, state], i) => [
         rule,
         i > 10 ? 0 : state,
       ]),
@@ -181,6 +181,14 @@ export default [
   },
 ];
 ```
+
+- To see the current config standings, checkout [`src/config.js`](./src/config.js)
+- To see the full current rule set, checkout:
+  - TS [`current-ts.json`](./current-ts.json)
+  - JS [`current-js.json`](./current-js.json)
+  - Test [`current-test.json`](./current-test.json)
+  - TSX [`current-test.json`](./current-tsx.json)
+  - TSX [`current-test.json`](./current-jsx.json)
 
 ### Overwrite Preferences
 
@@ -202,14 +210,6 @@ export default [
 
 ## Config Methodology - "The Rules"
 
-- To see the current config standings, checkout [`src/config.js`](./src/config.js)
-- To see the full current rule set, checkout:
-  - TS [`current-ts.json`](./current-ts.json)
-  - JS [`current-js.json`](./current-js.json)
-  - Test [`current-test.json`](./current-test.json)
-  - TSX [`current-test.json`](./current-tsx.json)
-  - TSX [`current-test.json`](./current-jsx.json)
-
 ### 1. Additions
 
 **For a CONFIG to be added, it needs to have around 400,000 monthly downloads (or 4 consecutive weeks above 100,000 weekly downloads).** This is to prevent spam, bloat, needless PRs, and arguments about minutia. But it's also variable as configs change popularity. Yes, it's arbitrary (and it can be spoofed/is [naively calculated](https://blog.npmjs.org/post/92574016600/numeric-precision-matters-how-npm-download-counts-work.html)), but it seems to be a good heuristic for the cutoff between generally used configs and niche configs.
@@ -220,17 +220,19 @@ In short, it should be easy for a plugin to get added and stay added, but hard f
 
 To determine if your preferred config is eligible, visit the NPM page and check the weekly download count, or scroll to the bottom to see a list of packages presently under consideration.
 
-You can always extend/disable this config to meet your own needs. However, if you think a config should be included, and it passes the `monthly count test` (and is not garbage/has stars/contributors, etc.), open a PR or Issue, and it will be added. When adding a rule, the `recommended` version of that rule will be unashamedly used with as little alterations as possible (however, if it has serious conflicts with higher priority rules we will find workarounds, e.g. even "lite" FP rules break everything popular).
+You can always extend/disable this config to meet your own needs. However, if you think a config should be included, and it passes the `monthly count test` (and is not garbage/has stars/contributors, etc.), open a PR or Issue, and it will be added. When adding a rule, the "recommended" version of that rule will be unashamedly ~~smashed~~ used with as little alterations as possible.
 
-Outside of getting the various pieces to play nice together, this repo does all it can to _not_ define any new individual rules or to have any opinion. **[Holding back intensifies]**
+Outside of getting the various pieces to play nice together, Lint the Current Thing does all it can to _not_ define any new individual rules or to have any opinion. See Conflicts below.
+
+**[Holding back intensifies]**
 
 ### 2. Conflicts
 
-**Conflicting rules favor the preferences of more popular configs via the rules of ESLint flat-config merging.** Or, if conflicts can not be resolved this way (i.e. two differently named rules which enforce opposing behavior) then the manual disabling of the lower, conflicting rule is used, or that rule is not added. However, in some cases, an [intolerant minority](https://nassimtaleb.org/2016/08/intolerant-wins-dictatorship-small-minority/) rule-set will disable rules from a more used package (e.g. TSDoc, with fewer users, only has 1 rule, turning off that rule means the package is useless, yet, that one rule conflicts with many rules in the widely used JSDoc/recommended config. As long as we are using Typescript, rules in JSDoc are turned off to accommodate TSDoc.)
+**Conflicting rules favor the preferences of more popular configs via the rules of ESLint flat-config merging.** Adding a bunch of configs will introduce conflicts. But conflicts are now automatically resolved on a config and rule basis, where conflicting rules are disabled (set to `0`) at the conflict config order. This way, they are ideologically in line with the popularity contest. If two conflicting configs switch order, the rules will switch as well. To see the full list of generated conflicts check out [incompatibilities](src/conflicts/incompatibilities.ts). If conflicts can not be resolved this way (i.e. three or more differently named rules which cyclically enforce opposing behavior) then the rules are manually added to the config as known conflicts. It would add insane complexity to fix this automatically to find the less than 5 cases where this actually happens.
 
 ### 3. Sub-Categories
 
-**Whatever the leading config is, for any particular thing, that is the config which gets to decide other config's sub-preferences, winner take all, for that particular thing.** ESLint is about linting JavaScript, and many rules and opinions exist around what constitutes "appropriate" use of JS. Many of those opinions not only deal with JavaScript but also deal with auxiliary or tangential systems. Of those tangential systems, where there are conflicts which can not be resolved via merging, the popular winner takes all. For instance, despite being well-supported, very few people use Flow in comparison to TypeScript for typing. Thus, Typescript gets to dominate typing framework and other packages are expected to use their TypeScript-native rules, while Flow is discouraged / unsupported. If Flow suddenly became more popular than TypeScript, this would change. In most cases, opposing frameworks can both be included, like varying style guides (e.g. prettier vs standard vs functional) as neither present breaking changes to the other.
+**Whatever the leading config is, for any particular thing, that is the config which gets to decide other config's sub-preferences, winner take all, for that particular thing.** ESLint is about linting JavaScript, and many rules and opinions exist around what constitutes "appropriate" use of JS. Many of those opinions not only deal with JavaScript but also deal with auxiliary or tangential systems. Of those tangential systems, where there are conflicts which can not be resolved via merging, the popular winner takes all. For instance, despite being well-supported, very few people use Flow in comparison to TypeScript for typing. Thus, Typescript gets to dominate typing framework and other packages are expected to use their TypeScript-native rules, while Flow is discouraged / unsupported. If Flow suddenly became more popular than TypeScript, this would change. In most cases, opposing frameworks can both be included, like varying style guides (e.g. prettier vs standard vs functional) as neither present fundamentally breaking changes to the other.
 
 ### 4. Linting Lag
 
@@ -253,7 +255,7 @@ If a repository is abandoned due to lack of community interest and has no fork--
 
 1. Somebody will game the system to get a billion weekly downloads.
 1. Because NPM naively calculates the download count, once a config makes it into the `current-thing` it will never and can never leave (Until we up the download count minimum or check in nodes modules, etc.)
-1. We are moments away from AI linting code way better than ESLint.
+1. We are moments away from AI linting code way better than ESLint. Mere moments!
 
 ## Why is this a good idea?
 
@@ -267,7 +269,7 @@ That said, there are some very compelling reasons to use this config above other
 
 1. Custom or extremely granular rules which add value to qualifying configs and are not defined in higher-ranking configs still make it into the `current thing` final config, no matter how obscure. This alters strategies for convincing people about the merits of your new rule. It puts a bid on new rule creation in existing/popular repos, making existing rule sets more robust. In addition to stopping config proliferation, it actually helps build better rules. And more so, it encourages developers behind more popular configs to remain competitive.
 
-1. This config will shift as the opinions in JS Linting shift, just as all human languages shift. All of those shifts in opinion, both outside and in the config will happen on the margin. Non-democratic configs do not listen to this nuance, they take a stance and see if anyone follows. To demonstrate how `current thing` manages this, clone this repo and open up `src/config.js`. Then, alter the `order` of the configs, and you will see how the rules _marginally_ change. It's not just that [software is eating the world](https://a16z.com/2011/08/20/why-software-is-eating-the-world/), it's actually _JavaScript_ software, and we must be cognizant of how everyone is using it in wildly disparate ways as new styles, processes, and technologies rise.
+1. This config will shift as the opinions in JS Linting shift, just as all human languages shift. All of those shifts in opinion, both outside and in the config will happen on the margin. Non-democratic configs do not listen to this nuance, they take a stance and see if anyone follows. To demonstrate how `current thing` manages this, clone this repo and open up `src/config.js`. Then, alter the `order` of the configs, and you will see how the rules _marginally_ change. It's not just that [software is eating the world](https://a16z.com/2011/08/20/why-software-is-eating-the-world/), it's actually _JavaScript_ software, and we must be cognizant of how everyone is using it in wildly disparate ways as new styles, processes, and technologies rise and old ones fall.
 
 1. Unlike many other configs, this config completely abstracts away the need to add any other `eslint` packages, configs, plugins, and management. It is a pure barbell--absolutely simple in its application, and yet insanely complex and heavy-weight in its implementation.
 
@@ -289,9 +291,42 @@ That said, there are some very compelling reasons to use this config above other
 - [Sheriff ESLint Config](https://www.eslint-config-sheriff.dev/)
 - [Eslint-Config-Hardcore](https://www.npmjs.com/package/eslint-config-hardcore)
 
+## Architecture
+
+We're expecting to see an Architecture section, huh?
+
+```mermaid
+
+graph LR
+    gen[generate] --> fix[generate:fixables]
+    fix --> node_fix[node: get-fixables.ts] ==> lint_fix[lint] --> x[Fixable rules now known]
+
+    fix --> confl[generate:conflicts]
+    confl --> node_confl[node: generate-conflicts.ts] --> lint_confl[lint] --> y[Individual configs now generated]
+
+    confl --> incomp[generate:incompatibles]
+    incomp --> node_incomp[node: get-incompatibles.ts] --> lint_incomp[lint] --> z[Individual conflicting rules now known]
+
+    incomp --> confs[generate:configs]
+    confs --> gen_conf[generate:config] --> node_gen_conf[node: generate-config.ts] --> node_npm_q[NPM queried for counts] --> lint_conf[lint] --> a[Final configuration now generated]
+    confs --> gen_curr[generate:currents] --> curr_all[all currents]
+    curr_all --> curr_ts[current:ts]
+    curr_all --> curr_js[current:js]
+    curr_all --> curr_test[current:test]
+    curr_all --> curr_tsx[current:tsx]
+    curr_all --> curr_jsx[current:jsx]
+    curr_all --> lint_curr[lint] --> b[All JSON configs now generated]
+
+    confs --> readme[generate:readme]
+    readme --> node_readme[node: generate-readme.ts] --> node_npm_s[NPM searched for all configs] --> c[Current state of all config rankings now known]
+
+
+
+```
+
 ## We will not be adding these configs
 
-See [rejected](./src/rejected.ts) and [not-applicable](./src/not-applicable.ts) for the full list. But it's always open for debate!
+See [rejected](./src/packages/rejected.ts) for the full list with notes. But it's always open for debate!
 
 <!-- DO NOT EDIT below this line, fully generated -->
 
@@ -299,13 +334,13 @@ See [rejected](./src/rejected.ts) and [not-applicable](./src/not-applicable.ts) 
 
 The following section is generated according to spec.
 
-Generated on 4/8/2024, downloads for the previous 28 days.
+Generated on 4/9/2024, downloads for the previous 28 days.
 
 - 2,551,899 downloads, [yaml-eslint-parser](https://www.npmjs.com/package/yaml-eslint-parser)
 - 1,989,051 downloads, [eslint-plugin-json](https://www.npmjs.com/package/eslint-plugin-json)
 - 1,952,180 downloads, [eslint-plugin-markdown](https://www.npmjs.com/package/eslint-plugin-markdown)
 - 1,884,054 downloads, [@graphql-eslint/eslint-plugin](https://www.npmjs.com/package/@graphql-eslint/eslint-plugin)
-- 1,862,420 downloads, [eslint-plugin-html](https://www.npmjs.com/package/eslint-plugin-html)
+- 1,776,798 downloads, [eslint-plugin-html](https://www.npmjs.com/package/eslint-plugin-html)
 - 1,676,975 downloads, [eslint-plugin-lodash](https://www.npmjs.com/package/eslint-plugin-lodash)
 - 1,271,157 downloads, [@microsoft/eslint-plugin-sdl](https://www.npmjs.com/package/@microsoft/eslint-plugin-sdl)
 - 1,267,562 downloads, [eslint-plugin-yml](https://www.npmjs.com/package/eslint-plugin-yml)
@@ -330,12 +365,12 @@ Generated on 4/8/2024, downloads for the previous 28 days.
 - 402,544 downloads, [eslint-plugin-local](https://www.npmjs.com/package/eslint-plugin-local)
 - 394,615 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit) - Not Yet Eligible
 - 380,819 downloads, [eslint-plugin-ssr-friendly](https://www.npmjs.com/package/eslint-plugin-ssr-friendly) - Not Yet Eligible
-- 378,233 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
 - 376,648 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
 - 372,474 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
-- 372,365 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard) - Not Yet Eligible
 - 368,410 downloads, [json-fixer](https://www.npmjs.com/package/json-fixer) - Not Yet Eligible
+- 359,685 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
 - 354,418 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu) - Not Yet Eligible
+- 349,325 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard) - Not Yet Eligible
 - 346,019 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc) - Not Yet Eligible
 - 343,248 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
 - 334,315 downloads, [xo](https://www.npmjs.com/package/xo) - Not Yet Eligible
