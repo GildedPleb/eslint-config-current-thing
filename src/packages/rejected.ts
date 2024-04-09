@@ -1,7 +1,5 @@
 // PathMark: ./src/packages/rejected.ts
 
-// These are actual project that are either ESlint configs or plugins
-
 const rejected = new Set([
   // Tslint is a dead project, replaced by @typescript-eslint
   "tslint-config-prettier",
