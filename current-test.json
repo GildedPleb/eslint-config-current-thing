@@ -1251,7 +1251,7 @@
     "react-native",
     "react-perf",
     "react-refresh",
-    "regexp:eslint-plugin-regexp@2.4.0",
+    "regexp:eslint-plugin-regexp@2.5.0",
     "security:eslint-plugin-security@2.1.1",
     "simple-import-sort:eslint-plugin-simple-import-sort@12.0.0",
     "sonarjs",
