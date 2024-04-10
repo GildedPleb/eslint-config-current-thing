@@ -5,12 +5,7 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "src/config.js",
-    "current-ts.json",
-    "current-js.json",
-    "current-jsx.json",
-    "current-tsx.json",
-    "current-test.json"
+    "src/config.js"
   ],
   "scripts": {
     "test": "npm run predeploy && npm run lint && npx jest ./test ",

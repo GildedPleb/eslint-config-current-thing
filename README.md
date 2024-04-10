@@ -169,29 +169,9 @@ export default [
 
 This would only include packages that exceed 1,000,000 downloads per month, and thus would constitute a more lenient linting config as less rules will be activated.
 
-### Choke Out Problems
+### Observability
 
-There are a crazy amount of rules in this config, and they are completely overwhelming.
-
-1. Try easing into them by setting a high `threshold`.
-1. Importantly, the config is also exported as a plain JS object called `JSONConfigJs`. As such, you can pick off rules to disable in `eslint.config.js`, like below, and choke out the problems in your code by slowly allowing more rules in:
-
-```js
-import currentThing, { JSONConfigJs } from "eslint-config-current-thing";
-
-export default [
-  ...currentThing(),
-  {
-    // Disable all but the first 10 rules
-    rules: Object.fromEntries(
-      Object.entries(JSONConfigJs.rules).map(([rule, state], i) => [
-        rule,
-        i > 10 ? 0 : state,
-      ]),
-    ),
-  },
-];
-```
+There are a crazy amount of rules in this config, and they are completely overwhelming. Try easing into them by setting a high `threshold`, and understanding what you are getting into:
 
 - To see the current config standings, checkout [`src/config.js`](./src/config.js)
 - To see the full current rule set, checkout:
@@ -330,8 +310,6 @@ graph LR
 
     confs --> readme[generate:readme]
     readme --> node_readme[node: generate-readme.ts] --> node_npm_s[NPM searched for all configs] --> c[Current state of all config rankings now known]
-
-
 
 ```
 
