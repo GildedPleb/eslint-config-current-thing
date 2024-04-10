@@ -330,7 +330,7 @@ Generated on 4/10/2024, downloads for the previous 28 days.
 - 1,952,180 downloads, [eslint-plugin-markdown](https://www.npmjs.com/package/eslint-plugin-markdown)
 - 1,884,054 downloads, [@graphql-eslint/eslint-plugin](https://www.npmjs.com/package/@graphql-eslint/eslint-plugin)
 - 1,863,331 downloads, [eslint-plugin-html](https://www.npmjs.com/package/eslint-plugin-html)
-- 1,676,975 downloads, [eslint-plugin-lodash](https://www.npmjs.com/package/eslint-plugin-lodash)
+- 1,669,038 downloads, [eslint-plugin-lodash](https://www.npmjs.com/package/eslint-plugin-lodash)
 - 1,281,310 downloads, [@microsoft/eslint-plugin-sdl](https://www.npmjs.com/package/@microsoft/eslint-plugin-sdl)
 - 1,267,562 downloads, [eslint-plugin-yml](https://www.npmjs.com/package/eslint-plugin-yml)
 - 1,196,358 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)

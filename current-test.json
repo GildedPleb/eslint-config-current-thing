@@ -1197,7 +1197,7 @@
       "jest": false,
       "xtest": false
     },
-    "parser": "typescript-eslint/parser@7.5.0",
+    "parser": "typescript-eslint/parser@7.6.0",
     "parserOptions": {
       "ecmaVersion": "latest",
       "project": true,
@@ -1217,7 +1217,7 @@
     "@shopify/jest",
     "@shopify/typescript",
     "@stylistic",
-    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.5.0",
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.6.0",
     "compat",
     "css-modules",
     "cypress",
