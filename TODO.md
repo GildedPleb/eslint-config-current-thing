@@ -1,7 +1,6 @@
-- Automatically generate the Included Packages list
 - Automatically lint the Final Config with each possible combination of disabled configs. (1 disabled, 2 disabled, 10 disabled, etc) for the purposes of further finding conflicting rules
-- Use the found conflicting rule to hyper-target the condense the conflict in a cheap, repeatable, and persistent way. (ie, lint given two configs, max, on a very small code set like `const a = 1;`). Ultimately this is a stretch goal because we still ahve to lint every config and rule against every other config and rule when any new rule is added and current setup is optimized for that.
+- Use the found conflicting rule to hyper-target the condense the conflict in a cheap, repeatable, and persistent way. (ie, lint given two configs, max, on a very small code set like `const a = 1;`). Ultimately this is a stretch goal because we still have to lint every config and rule against every other config and rule when any new rule is added and current setup is optimized for that.
 - Make the package smaller.
 - Upgrade to ESLint 9, and eject more configs that are clearly never going to upgrade ie, google, AirBNB etc.
 - Automatic monthly generation and publishing.
-- Testing for: CSS, JSON, YML, i18n, a11y, etc
+- Testing for: CSS, JSON, YML, i18n, a11y, md etc

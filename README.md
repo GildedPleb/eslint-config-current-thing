@@ -14,19 +14,24 @@ Linting is too opinionated. In fact, it can become political. `Eslint Config Cur
 
 Presently, lint the current thing combines these configs (and their plugins, submodules, etc.):
 
-|                 |                       |                |               |                    |
-| --------------- | --------------------- | -------------- | ------------- | ------------------ |
-| AirBnB          | Babel                 | Comments       | Compat        | CRA (Now Ejected!) |
-| CSS Modules     | Emotion               | ES/ES-X        | ESLint        | Flowtype           |
-| Functional      | Google                | Header         | i18next       | Import             |
-| Import-sort     | Jest                  | JSDoc          | JSX A11y      | NextJS             |
-| Node            | No-Only-Tests         | No-unsanitized | Perfectionist | Prettier           |
-| Promises        | React                 | React Hooks    | React Native  | React Perf         |
-| React-Refresh   | Regexp                | Security       | Shopify       | SonarJS            |
-| Sort Classes    | Standard              | Storybook      | Stylistic     | Tailwind           |
-| Testing-Library | TSDoc                 | Typescript     | Unicorn       | Unused-Imports     |
-| XO              | You Don't Need Lodash | Cypress        | Class Sort    | JSONC              |
-| Mocha           | Playwright            | Prefer-Arrow   |               |                    |
+<!-- Start Generated List of Configs DO NOT EDIT! -->
+
+|                     |                       |                              |               |                                          |
+| ------------------- | --------------------- | ---------------------------- | ------------- | ---------------------------------------- |
+| AirBnb              | AirBnb Base           | AirBnb-Typescript            | CSS Modules   | Comments                                 |
+| Compat              | Create React App      | Cypress                      | ES-X          | ESLint                                   |
+| Emotion CSS         | Functional            | Google                       | Import        | Internationalization (i18n)              |
+| JSDoc               | JSONC                 | JSX Accessibility (JSX A11y) | Jest          | Jest Dom                                 |
+| Jest Formatting     | Mocha                 | NextJS                       | No Only Tests | No Unsanitized                           |
+| No Unused Imports   | Node.js               | Perfectionist                | Playwright    | Prefer Arrow                             |
+| Prettier            | Promises              | React                        | React Hooks   | React Native (Independent Plugin/Config) |
+| React Native Config | React Native Plugin   | React Performance            | React Refresh | Regular Expressions                      |
+| Security            | Shopify               | Simple Import Sort           | SonarJS       | Sort Class Members                       |
+| Standard            | Standard JSX          | Standard React               | Storybook     | Stylistic                                |
+| TSDoc               | Tailwind CSS          | Testing Library              | TypeScript    | Unicorn                                  |
+| XO                  | You Don't Need Lodash |                              |               |                                          |
+
+<!-- End Generated List of Configs DO NOT EDIT! -->
 
 The winning (and thus supported) high-level architecture is:
 
@@ -36,13 +41,19 @@ The winning (and thus supported) high-level architecture is:
 
 ## Technical explainer
 
-This is a meta-config of many configs. The basic idea is that Linting is usually incrementally added in and teams have no reason or time to sit down like AirBnB and justify and debate every last ESLint rule, but they do all sit down and figure something out. Over time, hundreds of eslint plugins and configurations have emerged with various levels of popularity and maintenance, but they usually only address the small set of things that the team who developed them needed to address and invariably miss something--this is complicated by the fact that NPM does not make searching for ESLint configs/plugins easy. Then, the JS ecosystem moves to the next framework, the config goes out of maintenance and rules become irrelevant/bad and everybody has to solve the same problems again (welcome to FOSS!). Lint The Current Thing essentially grabs as many rules as possible, indiscriminately, provided they meet minimum thresholds of quality, and compares each rule on a popularity contest, so whatever the Current Thing is (provided you update your packages) that will fundamentally be tied to ecosystem-wide best practices as supported by the most people--this is to say Lint The Current Thing produces code that is accessible to the widest possible set of developers and stays in-step with the ecosystem. You can read more in the "Why is this a good idea" section.
+This is a meta-config of many configs. The basic idea is that Linting is usually incrementally added in and teams have no reason or time to sit down like AirBnB and justify and debate every last ESLint rule, but they do all sit down and figure something out. Over time, hundreds of eslint plugins and configurations have emerged with various levels of popularity and maintenance, but they usually only address the small set of things that the team who developed them needed to address and invariably miss something--this is complicated by the fact that NPM does not make searching for ESLint configs/plugins easy. Then, the JS ecosystem moves to the next framework, the config goes out of maintenance and rules become irrelevant/bad and everybody has to solve the same problems again (welcome to FOSS!). Lint The Current Thing essentially grabs as many rules as possible, indiscriminately, provided they meet minimum thresholds of quality, and compares each rule on a popularity contest, so whatever the Current Thing is (provided you update your packages) that will fundamentally be tied to ecosystem-wide best practices as supported by the most people--this is to say Lint The Current Thing produces code that is accessible to the widest possible set of developers and stays in-step with the ecosystem. You can read more in the ["Why is this a good idea?"](#why-is-this-a-good-idea) section.
 
-<!-- Generated do not edit! -->
+<!-- Start Generated Rule Counts DO NOT EDIT! -->
 
-Unsurprisingly, it is incredibly strict with popularity-based opinions on 1136 typescript rules, 1035 javascript rules, and 1165 testing rules.
+Unsurprisingly, it is incredibly strict these popularity-based opinions on:
 
-<!-- End Generated do not edit! -->
+- **1136** typescript rules
+- **1035** javascript rules
+- **1165** testing rules
+- **1278** TSX rules
+- **1177** JSX rules
+
+<!-- End Generated Rule Counts DO NOT EDIT! -->
 
 Surprisingly, _it works_.
 
@@ -328,51 +339,53 @@ graph LR
 
 See [rejected](./src/packages/rejected.ts) for the full list with notes. But it's always open for debate!
 
-<!-- DO NOT EDIT below this line, fully generated -->
-
 ## We are considering adding these configs
+
+<!-- Start Generated Under Consideration List DO NOT EDIT! -->
 
 The following section is generated according to spec.
 
-Generated on 4/9/2024, downloads for the previous 28 days.
+Generated on 4/10/2024, downloads for the previous 28 days.
 
-- 2,551,899 downloads, [yaml-eslint-parser](https://www.npmjs.com/package/yaml-eslint-parser)
-- 1,989,051 downloads, [eslint-plugin-json](https://www.npmjs.com/package/eslint-plugin-json)
+- 2,579,927 downloads, [yaml-eslint-parser](https://www.npmjs.com/package/yaml-eslint-parser)
+- 1,978,364 downloads, [eslint-plugin-json](https://www.npmjs.com/package/eslint-plugin-json)
 - 1,952,180 downloads, [eslint-plugin-markdown](https://www.npmjs.com/package/eslint-plugin-markdown)
 - 1,884,054 downloads, [@graphql-eslint/eslint-plugin](https://www.npmjs.com/package/@graphql-eslint/eslint-plugin)
-- 1,776,798 downloads, [eslint-plugin-html](https://www.npmjs.com/package/eslint-plugin-html)
+- 1,863,331 downloads, [eslint-plugin-html](https://www.npmjs.com/package/eslint-plugin-html)
 - 1,676,975 downloads, [eslint-plugin-lodash](https://www.npmjs.com/package/eslint-plugin-lodash)
 - 1,271,157 downloads, [@microsoft/eslint-plugin-sdl](https://www.npmjs.com/package/@microsoft/eslint-plugin-sdl)
 - 1,267,562 downloads, [eslint-plugin-yml](https://www.npmjs.com/package/eslint-plugin-yml)
 - 1,196,358 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
-- 1,113,480 downloads, [eslint-plugin-chai-friendly](https://www.npmjs.com/package/eslint-plugin-chai-friendly)
-- 996,919 downloads, [eslint-plugin-sort-keys-fix](https://www.npmjs.com/package/eslint-plugin-sort-keys-fix)
+- 1,084,576 downloads, [eslint-plugin-chai-friendly](https://www.npmjs.com/package/eslint-plugin-chai-friendly)
 - 974,957 downloads, [eslint-plugin-graphql](https://www.npmjs.com/package/eslint-plugin-graphql)
-- 893,948 downloads, [eslint-plugin-mdx](https://www.npmjs.com/package/eslint-plugin-mdx)
+- 940,187 downloads, [eslint-plugin-sort-keys-fix](https://www.npmjs.com/package/eslint-plugin-sort-keys-fix)
+- 891,293 downloads, [eslint-plugin-mdx](https://www.npmjs.com/package/eslint-plugin-mdx)
 - 857,487 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
 - 784,058 downloads, [eslint-plugin-jasmine](https://www.npmjs.com/package/eslint-plugin-jasmine)
-- 682,845 downloads, [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file)
-- 680,104 downloads, [npm-package-json-lint](https://www.npmjs.com/package/npm-package-json-lint)
+- 687,172 downloads, [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file)
 - 671,221 downloads, [eslint-import-resolver-custom-alias](https://www.npmjs.com/package/eslint-import-resolver-custom-alias)
-- 548,290 downloads, [@types/eslint-plugin-prettier](https://www.npmjs.com/package/@types/eslint-plugin-prettier)
+- 639,086 downloads, [npm-package-json-lint](https://www.npmjs.com/package/npm-package-json-lint)
+- 546,447 downloads, [@types/eslint-plugin-prettier](https://www.npmjs.com/package/@types/eslint-plugin-prettier)
 - 538,057 downloads, [eslint-plugin-ava](https://www.npmjs.com/package/eslint-plugin-ava)
-- 521,441 downloads, [ember-template-lint](https://www.npmjs.com/package/ember-template-lint)
-- 505,761 downloads, [eslint-plugin-react-prefer-function-component](https://www.npmjs.com/package/eslint-plugin-react-prefer-function-component)
+- 513,140 downloads, [ember-template-lint](https://www.npmjs.com/package/ember-template-lint)
 - 500,025 downloads, [eslint-formatter-gitlab](https://www.npmjs.com/package/eslint-formatter-gitlab)
-- 483,346 downloads, [eslint-plugin-no-use-extend-native](https://www.npmjs.com/package/eslint-plugin-no-use-extend-native)
+- 484,181 downloads, [eslint-plugin-react-prefer-function-component](https://www.npmjs.com/package/eslint-plugin-react-prefer-function-component)
+- 463,208 downloads, [eslint-plugin-no-use-extend-native](https://www.npmjs.com/package/eslint-plugin-no-use-extend-native)
 - 463,120 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin)
-- 427,008 downloads, [eslint-config-xo-space](https://www.npmjs.com/package/eslint-config-xo-space)
+- 416,657 downloads, [eslint-config-xo-space](https://www.npmjs.com/package/eslint-config-xo-space)
 - 402,544 downloads, [eslint-plugin-local](https://www.npmjs.com/package/eslint-plugin-local)
 - 394,615 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit) - Not Yet Eligible
-- 380,819 downloads, [eslint-plugin-ssr-friendly](https://www.npmjs.com/package/eslint-plugin-ssr-friendly) - Not Yet Eligible
-- 376,648 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
 - 372,474 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
-- 368,410 downloads, [json-fixer](https://www.npmjs.com/package/json-fixer) - Not Yet Eligible
+- 370,320 downloads, [json-fixer](https://www.npmjs.com/package/json-fixer) - Not Yet Eligible
+- 366,210 downloads, [eslint-plugin-ssr-friendly](https://www.npmjs.com/package/eslint-plugin-ssr-friendly) - Not Yet Eligible
+- 360,364 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
 - 359,685 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
 - 354,418 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu) - Not Yet Eligible
 - 349,325 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard) - Not Yet Eligible
-- 346,019 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc) - Not Yet Eligible
 - 343,248 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
-- 334,315 downloads, [xo](https://www.npmjs.com/package/xo) - Not Yet Eligible
+- 341,891 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc) - Not Yet Eligible
+- 338,616 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
 - 331,869 downloads, [eslint-plugin-testcafe](https://www.npmjs.com/package/eslint-plugin-testcafe) - Not Yet Eligible
-- 331,437 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
+- 323,565 downloads, [eslint-plugin-deprecate](https://www.npmjs.com/package/eslint-plugin-deprecate) - Not Yet Eligible
+
+<!-- End Generated Under Consideration List DO NOT EDIT! -->

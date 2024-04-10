@@ -36,7 +36,6 @@ const investigating = new Set([
   "eslint-formatter-html",
   "eslint-formatter-mo",
   "eslint-formatter-summary-chart",
-  "eslint-import-resolver-alias",
   "eslint-plugin-angular",
   "eslint-plugin-assemblyscript",
   "eslint-plugin-astro",
