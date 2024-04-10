@@ -29,7 +29,7 @@
   "dependencies": {
     "@babel/eslint-plugin": "^7.23.5",
     "@emotion/eslint-plugin": "^11.11.0",
-    "@eslint-community/eslint-plugin-eslint-comments": "^4.1.0",
+    "@eslint-community/eslint-plugin-eslint-comments": "^4.3.0",
     "@eslint/eslintrc": "^3.0.2",
     "@eslint/js": "^8.57.0",
     "@next/eslint-plugin-next": "^14.1.4",
