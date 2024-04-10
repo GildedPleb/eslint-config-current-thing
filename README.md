@@ -16,20 +16,21 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 
 <!-- Start Generated List of Configs DO NOT EDIT! -->
 
-|                     |                       |                              |               |                                          |
-| ------------------- | --------------------- | ---------------------------- | ------------- | ---------------------------------------- |
-| AirBnb              | AirBnb Base           | AirBnb-Typescript            | CSS Modules   | Comments                                 |
-| Compat              | Create React App      | Cypress                      | ES-X          | ESLint                                   |
-| Emotion CSS         | Functional            | Google                       | Import        | Internationalization (i18n)              |
-| JSDoc               | JSONC                 | JSX Accessibility (JSX A11y) | Jest          | Jest Dom                                 |
-| Jest Formatting     | Mocha                 | NextJS                       | No Only Tests | No Unsanitized                           |
-| No Unused Imports   | Node.js               | Perfectionist                | Playwright    | Prefer Arrow                             |
-| Prettier            | Promises              | React                        | React Hooks   | React Native (Independent Plugin/Config) |
-| React Native Config | React Native Plugin   | React Performance            | React Refresh | Regular Expressions                      |
-| Security            | Shopify               | Simple Import Sort           | SonarJS       | Sort Class Members                       |
-| Standard            | Standard JSX          | Standard React               | Storybook     | Stylistic                                |
-| TSDoc               | Tailwind CSS          | Testing Library              | TypeScript    | Unicorn                                  |
-| XO                  | You Don't Need Lodash |                              |               |                                          |
+| | | | | | 
+| - | - | - | - | - |
+| AirBnb | AirBnb Base | AirBnb-Typescript | CSS Modules | Comments |
+| Compat | Create React App | Cypress | ES-X | ESLint |
+| Emotion CSS | Functional | Google | Import | Internationalization (i18n) |
+| JSDoc | JSONC | JSX Accessibility (JSX A11y) | Jest | Jest Dom |
+| Jest Formatting | Mocha | NextJS | No Only Tests | No Unsanitized |
+| No Unused Imports | Node.js | Perfectionist | Playwright | Prefer Arrow |
+| Prettier | Promises | React | React Hooks | React Native (Independent Plugin/Config) |
+| React Native Config | React Native Plugin | React Performance | React Refresh | Regular Expressions |
+| Security | Shopify | Simple Import Sort | SonarJS | Sort Class Members |
+| Standard | Standard JSX | Standard React | Storybook | Stylistic |
+| TSDoc | Tailwind CSS | Testing Library | TypeScript | Unicorn |
+| XO | You Don't Need Lodash |  |  |  |
+
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -45,8 +46,7 @@ This is a meta-config of many configs. The basic idea is that Linting is usually
 
 <!-- Start Generated Rule Counts DO NOT EDIT! -->
 
-Unsurprisingly, it is incredibly strict these popularity-based opinions on:
-
+Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 - **1136** typescript rules
 - **1035** javascript rules
 - **1165** testing rules
@@ -178,8 +178,8 @@ There are a crazy amount of rules in this config, and they are completely overwh
   - TS [`current-ts.json`](./current-ts.json)
   - JS [`current-js.json`](./current-js.json)
   - Test [`current-test.json`](./current-test.json)
-  - TSX [`current-test.json`](./current-tsx.json)
-  - TSX [`current-test.json`](./current-jsx.json)
+  - TSX [`current-tsx.json`](./current-tsx.json)
+  - JSX [`current-jsx.json`](./current-jsx.json)
 
 ### Overwrite Preferences
 
@@ -341,7 +341,7 @@ Generated on 4/10/2024, downloads for the previous 28 days.
 - 857,487 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
 - 784,058 downloads, [eslint-plugin-jasmine](https://www.npmjs.com/package/eslint-plugin-jasmine)
 - 687,172 downloads, [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file)
-- 671,221 downloads, [eslint-import-resolver-custom-alias](https://www.npmjs.com/package/eslint-import-resolver-custom-alias)
+- 668,857 downloads, [eslint-import-resolver-custom-alias](https://www.npmjs.com/package/eslint-import-resolver-custom-alias)
 - 639,086 downloads, [npm-package-json-lint](https://www.npmjs.com/package/npm-package-json-lint)
 - 546,447 downloads, [@types/eslint-plugin-prettier](https://www.npmjs.com/package/@types/eslint-plugin-prettier)
 - 538,057 downloads, [eslint-plugin-ava](https://www.npmjs.com/package/eslint-plugin-ava)
@@ -365,5 +365,6 @@ Generated on 4/10/2024, downloads for the previous 28 days.
 - 338,616 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
 - 331,869 downloads, [eslint-plugin-testcafe](https://www.npmjs.com/package/eslint-plugin-testcafe) - Not Yet Eligible
 - 323,565 downloads, [eslint-plugin-deprecate](https://www.npmjs.com/package/eslint-plugin-deprecate) - Not Yet Eligible
+
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

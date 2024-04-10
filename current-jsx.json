@@ -1224,12 +1224,6 @@
     "you-dont-need-lodash-underscore"
   ],
   "rules": {
-    "css-modules/no-unused-class": [
-      2
-    ],
-    "css-modules/no-undef-class": [
-      2
-    ],
     "@stylistic/object-curly-spacing": [
       0,
       "always"
@@ -3924,6 +3918,12 @@
       2
     ],
     "jsx-a11y/tabindex-no-positive": [
+      2
+    ],
+    "css-modules/no-unused-class": [
+      2
+    ],
+    "css-modules/no-undef-class": [
       2
     ],
     "i18next/no-literal-string": [
