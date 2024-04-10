@@ -1,16 +1,8 @@
 // PathMark: ./src/packages/rejected.ts
 
 const rejected = new Set([
-  // Tslint is a dead project, replaced by @typescript-eslint
-  "tslint-config-prettier",
-
-  // Out of Scope
+  // Maybe?
   "@tanstack/eslint-plugin-query",
-  "eslint-plugin-ember",
-  "@backstage/eslint-plugin",
-  "html-validate",
-  "eslint-watch",
-  "@ianvs/eslint-stats",
 
   // Fork of import
   "eslint-plugin-i",
@@ -45,6 +37,9 @@ const rejected = new Set([
   "svelte-eslint-parser",
   "eslint-plugin-svelte",
 
+  // Ember -- Hopefully to be added one day when its more popular than react!
+  "eslint-plugin-ember",
+
   // OOMKills everything. Insane that people still use this.
   "eslint-plugin-deprecation",
 
@@ -59,9 +54,12 @@ const rejected = new Set([
   "@typescript-eslint/utils",
   "@typescript-eslint/visitor-keys",
   "@typescript-eslint/experimental-utils",
-  "@typescript-eslint/eslint-plugin-tslint",
   "@typescript-eslint/rule-tester",
   "typescript-eslint-language-service",
+
+  // Tslint is a dead project, replaced by @typescript-eslint
+  "@typescript-eslint/eslint-plugin-tslint",
+  "tslint-config-prettier",
   "tslint-to-eslint-config",
 
   // ES Lint submodules
@@ -70,7 +68,6 @@ const rejected = new Set([
   "eslint-import-resolver-node",
   "eslint-scope",
   "eslint-visitor-keys",
-  "eslint-webpack-plugin",
   "@eslint-community/eslint-utils",
   "@eslint-community/regexpp",
   "@eslint/eslintrc",
@@ -80,7 +77,8 @@ const rejected = new Set([
   "eslint-compat-utils",
   "eslint-template-visitor",
 
-  // Various
+  // Various / Out of scope
+  "eslint-webpack-plugin",
   "@babel/eslint-parser",
   "@rushstack/eslint-patch",
   "ignore",
@@ -108,6 +106,11 @@ const rejected = new Set([
   "@axe-core/react",
   "lockfile-lint-api",
   "gulp-eslint",
+  "eslint-define-config",
+  "html-validate",
+  "eslint-watch",
+  "@ianvs/eslint-stats",
+  "xo",
 
   // Sarif
   "node-sarif-builder",
@@ -117,10 +120,9 @@ const rejected = new Set([
   "@stylistic/eslint-plugin-ts",
   "@stylistic/eslint-plugin-jsx",
 
-  // Prettier types
-  "@types/eslint-config-prettier",
-
   // Prettier Stuffs
+  "@types/eslint-config-prettier",
+  "@types/eslint-plugin-prettier",
   "prettier-eslint",
   "prettier-eslint-cli",
   "vite-plugin-eslint",
@@ -131,7 +133,6 @@ const rejected = new Set([
   "@eslint-types/unicorn",
   "@eslint-types/typescript-eslint",
   "@eslint-types/jsdoc",
-  "eslint-define-config",
   "@types/eslint",
   "@types/eslint-scope",
 
@@ -178,6 +179,7 @@ const rejected = new Set([
   "syncpack",
   "@rushstack/eslint-plugin",
   "@rushstack/eslint-plugin-security",
+  "@backstage/eslint-plugin",
 ]);
 
 export default rejected;
