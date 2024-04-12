@@ -21,7 +21,7 @@ export default {
       requiresImport: true,
     },
   ],
-  requiredPlugins: ["@typescript-eslint"],
+  requiredPlugins: ["@typescript-eslint", "n", "import", "promise"],
   rules: `...standardTS.rules,`,
 } satisfies Config;
 // EOF
