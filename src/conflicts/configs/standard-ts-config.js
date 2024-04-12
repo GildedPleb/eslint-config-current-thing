@@ -18,6 +18,7 @@ import standardTS from "eslint-config-love";
 import { defineFlatConfig } from "eslint-define-config";
 import importPlugin from "eslint-plugin-import";
 import nNode from "eslint-plugin-n";
+import promise from "eslint-plugin-promise";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
 import tseslint from "typescript-eslint";
@@ -118,6 +119,7 @@ const configGen = ({
         "@typescript-eslint": tseslint.plugin,
         import: importPlugin,
         n: nNode,
+        promise,
       },
     },
 
@@ -126,7 +128,7 @@ const configGen = ({
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: @typescript-eslint, n, import
+      Requires: @typescript-eslint, n, import, promise
     */
     ...(disable.includes("eslint-config-standard-with-typescript") ||
     disable.includes("eslint-config-love") ||
