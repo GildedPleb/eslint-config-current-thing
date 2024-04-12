@@ -1160,6 +1160,7 @@
     "parserOptions": {
       "ecmaVersion": "latest",
       "project": true,
+      "warnOnUnsupportedTypeScriptVersion": false,
       "ecmaFeatures": {
         "jsx": true
       }
@@ -1736,7 +1737,7 @@
       2
     ],
     "no-inner-declarations": [
-      2
+      0
     ],
     "no-invalid-regexp": [
       2
@@ -2687,7 +2688,7 @@
       0
     ],
     "no-new-symbol": [
-      2
+      1
     ],
     "no-this-before-super": [
       2
@@ -5916,6 +5917,9 @@
       0
     ],
     "jsx-a11y/autocomplete-valid": [
+      2
+    ],
+    "no-unused-private-class-members": [
       2
     ],
     "@typescript-eslint/lines-around-comment": [

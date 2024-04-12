@@ -3,6 +3,10 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  conflicts: {
+    "unused-imports/no-unused-imports": ["ts"],
+    "unused-imports/no-unused-vars": ["ts"],
+  },
   definitions: `{
     files,
     ${RULES}
@@ -18,8 +22,6 @@ export default {
   ],
   requiredPlugins: ["unused-imports"],
   rules: `// These rules all come "recommended"
-    "no-unused-vars": 0,
-    "@typescript-eslint/no-unused-vars": 0,
     "unused-imports/no-unused-imports": 2,
     "unused-imports/no-unused-vars": [
       1,

@@ -1146,7 +1146,8 @@
     "parser": "typescript-eslint/parser@7.6.0",
     "parserOptions": {
       "ecmaVersion": "latest",
-      "project": true
+      "project": true,
+      "warnOnUnsupportedTypeScriptVersion": false
     }
   },
   "plugins": [
@@ -5272,10 +5273,10 @@
       2
     ],
     "unused-imports/no-unused-imports": [
-      2
+      0
     ],
     "unused-imports/no-unused-vars": [
-      1,
+      0,
       {
         "args": "after-used",
         "argsIgnorePattern": "^_",
@@ -5770,6 +5771,9 @@
       2
     ],
     "@next/next/no-script-component-in-head": [
+      2
+    ],
+    "no-unused-private-class-members": [
       2
     ],
     "@typescript-eslint/no-duplicate-enum-values": [

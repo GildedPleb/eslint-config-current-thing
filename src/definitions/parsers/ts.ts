@@ -9,6 +9,7 @@ export default {
       parserOptions: {
         ecmaVersion: "latest",
         project: true,
+        warnOnUnsupportedTypeScriptVersion: false,
       },
     },
   }`,

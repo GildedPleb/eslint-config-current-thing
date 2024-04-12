@@ -1201,6 +1201,7 @@
     "parserOptions": {
       "ecmaVersion": "latest",
       "project": true,
+      "warnOnUnsupportedTypeScriptVersion": false,
       "ecmaFeatures": {
         "jsx": true
       }
@@ -5599,6 +5600,9 @@
       2
     ],
     "@next/next/no-script-component-in-head": [
+      2
+    ],
+    "no-unused-private-class-members": [
       2
     ],
     "@typescript-eslint/lines-around-comment": [

@@ -1143,7 +1143,8 @@
     "parser": "typescript-eslint/parser@7.6.0",
     "parserOptions": {
       "ecmaVersion": "latest",
-      "project": true
+      "project": true,
+      "warnOnUnsupportedTypeScriptVersion": false
     }
   },
   "plugins": [
@@ -5111,6 +5112,9 @@
       2
     ],
     "@next/next/no-script-component-in-head": [
+      2
+    ],
+    "no-unused-private-class-members": [
       2
     ],
     "@typescript-eslint/lines-around-comment": [

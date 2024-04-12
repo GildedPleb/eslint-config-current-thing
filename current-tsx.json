@@ -1163,6 +1163,7 @@
     "parserOptions": {
       "ecmaVersion": "latest",
       "project": true,
+      "warnOnUnsupportedTypeScriptVersion": false,
       "ecmaFeatures": {
         "jsx": true
       }
@@ -2434,7 +2435,7 @@
       0
     ],
     "no-inner-declarations": [
-      2
+      0
     ],
     "no-invalid-regexp": [
       2
@@ -6071,10 +6072,10 @@
       2
     ],
     "unused-imports/no-unused-imports": [
-      2
+      0
     ],
     "unused-imports/no-unused-vars": [
-      1,
+      0,
       {
         "args": "after-used",
         "argsIgnorePattern": "^_",
@@ -6575,6 +6576,9 @@
       0
     ],
     "jsx-a11y/autocomplete-valid": [
+      2
+    ],
+    "no-unused-private-class-members": [
       2
     ],
     "@typescript-eslint/no-duplicate-enum-values": [

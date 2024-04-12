@@ -106,6 +106,7 @@ const configGen = ({
         parserOptions: {
           ecmaVersion: "latest",
           project: true,
+          warnOnUnsupportedTypeScriptVersion: false,
         },
       },
     },
@@ -130,9 +131,7 @@ const configGen = ({
           {
             files,
             rules: {
-              "@typescript-eslint/no-unused-vars": 0,
               // These rules all come "recommended"
-              "no-unused-vars": 0,
               "unused-imports/no-unused-imports": 2,
               "unused-imports/no-unused-vars": [
                 1,

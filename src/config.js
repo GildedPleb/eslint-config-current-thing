@@ -168,6 +168,7 @@ const configGen = ({
         parserOptions: {
           ecmaVersion: "latest",
           project: true,
+          warnOnUnsupportedTypeScriptVersion: false,
         },
       },
     },
@@ -1809,8 +1810,8 @@ const configGen = ({
             files,
             rules: {
               "@typescript-eslint/no-unused-vars": 0,
-              // These rules all come "recommended"
               "no-unused-vars": 0,
+              // These rules all come "recommended"
               "unused-imports/no-unused-imports": 2,
               "unused-imports/no-unused-vars": [
                 1,
@@ -1821,7 +1822,6 @@ const configGen = ({
                   varsIgnorePattern: "^_",
                 },
               ],
-
               ...("eslint-plugin-unused-imports" in override
                 ? override["eslint-plugin-unused-imports"]
                 : {}),
@@ -2721,6 +2721,8 @@ const configGen = ({
               ...tseslint.configs.recommendedTypeChecked[2].rules,
               "@next/next/no-html-link-for-pages": 0,
               "functional/no-conditional-statements": 0,
+              "unused-imports/no-unused-imports": 0,
+              "unused-imports/no-unused-vars": 0,
               ...("typescript-eslint" in override
                 ? override["typescript-eslint"]
                 : {}),

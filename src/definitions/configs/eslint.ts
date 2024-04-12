@@ -3,6 +3,9 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  conflicts: {
+    "no-unused-vars": ["unused-imports"],
+  },
   definitions: `{
     files,
     ${RULES}

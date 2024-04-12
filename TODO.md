@@ -1,5 +1,9 @@
 - Use the found conflicting rule to hyper-target the condense the conflict in a cheap, repeatable, and persistent way. (ie, lint given two configs, max, on a very small code set like `const a = 1;`). Ultimately this is a stretch goal because we still have to lint every config and rule against every other config and rule when any new rule is added and current setup is optimized for that.
-- Upgrade to ESLint 9, and eject more configs that are clearly never going to upgrade ie, google, AirBNB etc.
+- Upgrade to ESLint 9,
+- Eject ALL CONFIGS. Add them as git sub modules in dedicated directories.
+  - We then disconnect the loop of adding to downloading counts on NPM
+  - We can update configs directly, meaning, we no longer have to worry about any one config being out of date.
+  - And a second level of config generation where it parses all the flat config rules and spits out an optimized flat config with minimal dependancies? This is like doing ESLint Flat configs job for it? Making this config very fast? Who knows.
 - Automatic monthly generation and publishing.
 - Testing for: CSS, JSON, YML, i18n, a11y, md etc
 - Make it so Parsing is also appropriately targeted by popularity. The upside here is that when a parser updates, it doesn't kill the _entire_ cache, plus it exposes more subtle difficulties and config problems (this has been tried once, but was abandonded for a reason i forget? Probably because of a massive difficulty spike to fix the new problems).

@@ -107,6 +107,7 @@ const configGen = ({
         parserOptions: {
           ecmaVersion: "latest",
           project: true,
+          warnOnUnsupportedTypeScriptVersion: false,
         },
       },
     },
