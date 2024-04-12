@@ -1196,7 +1196,7 @@
     "jest-dom",
     "jest-formatting",
     "jsdoc",
-    "jsonc:eslint-plugin-jsonc@2.15.0",
+    "jsonc:eslint-plugin-jsonc@2.15.1",
     "jsx-a11y",
     "mocha",
     "n:eslint-plugin-n@16.6.2",
@@ -5501,9 +5501,6 @@
     "compat/compat": [
       2
     ],
-    "tsdoc/syntax": [
-      2
-    ],
     "tailwindcss/classnames-order": [
       1
     ],
@@ -5527,6 +5524,9 @@
     ],
     "tailwindcss/no-unnecessary-arbitrary-value": [
       1
+    ],
+    "tsdoc/syntax": [
+      2
     ],
     "react/jsx-curly-newline": [
       0,
