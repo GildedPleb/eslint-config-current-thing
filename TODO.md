@@ -11,3 +11,5 @@
   'es1' is assigned a value but never used. Allowed unused vars must match /^\_/u.eslintunused-imports/no-unused-vars
 
 as in, if i write \_es used.eslint@typescript-eslint/no-unused-vars should be off.
+
+- Parse out so tha when you get an error, you only get 1 error from the leading config and all other errors are supressed.

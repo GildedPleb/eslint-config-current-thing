@@ -323,7 +323,7 @@ See [rejected](./src/packages/rejected.ts) for the full list with notes. But it'
 
 The following section is generated according to spec.
 
-Generated on 4/10/2024, downloads for the previous 28 days.
+Generated on 4/11/2024, downloads for the previous 28 days.
 
 - 2,579,927 downloads, [yaml-eslint-parser](https://www.npmjs.com/package/yaml-eslint-parser)
 - 1,978,364 downloads, [eslint-plugin-json](https://www.npmjs.com/package/eslint-plugin-json)
@@ -341,8 +341,8 @@ Generated on 4/10/2024, downloads for the previous 28 days.
 - 857,487 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
 - 779,614 downloads, [eslint-plugin-jasmine](https://www.npmjs.com/package/eslint-plugin-jasmine)
 - 687,172 downloads, [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file)
+- 670,225 downloads, [npm-package-json-lint](https://www.npmjs.com/package/npm-package-json-lint)
 - 668,857 downloads, [eslint-import-resolver-custom-alias](https://www.npmjs.com/package/eslint-import-resolver-custom-alias)
-- 639,086 downloads, [npm-package-json-lint](https://www.npmjs.com/package/npm-package-json-lint)
 - 538,057 downloads, [eslint-plugin-ava](https://www.npmjs.com/package/eslint-plugin-ava)
 - 513,140 downloads, [ember-template-lint](https://www.npmjs.com/package/ember-template-lint)
 - 500,025 downloads, [eslint-formatter-gitlab](https://www.npmjs.com/package/eslint-formatter-gitlab)
@@ -362,7 +362,7 @@ Generated on 4/10/2024, downloads for the previous 28 days.
 - 343,248 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
 - 341,891 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc) - Not Yet Eligible
 - 338,616 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
-- 331,869 downloads, [eslint-plugin-testcafe](https://www.npmjs.com/package/eslint-plugin-testcafe) - Not Yet Eligible
+- 335,505 downloads, [eslint-plugin-testcafe](https://www.npmjs.com/package/eslint-plugin-testcafe) - Not Yet Eligible
 - 323,565 downloads, [eslint-plugin-deprecate](https://www.npmjs.com/package/eslint-plugin-deprecate) - Not Yet Eligible
 - 310,499 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
 

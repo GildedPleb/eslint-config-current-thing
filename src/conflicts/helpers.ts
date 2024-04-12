@@ -2,7 +2,10 @@
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable security/detect-object-injection */
 import ESLint from "eslint/use-at-your-own-risk";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import memoize from "fast-memoize";
 
+import { hashObject, hashString } from "../helpers";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import {
   type ConfigData,
@@ -19,82 +22,151 @@ const { FlatESLint } = ESLint;
 
 /**
  *
+ * @param overrideConfigFile - The location for the file
+ * @param rules - optional additional rules
+ * @returns an eslint instance and the json representation
+ */
+export function linter(
+  overrideConfigFile: string,
+  rules?: Record<string, Rule>,
+): IFlatESLint {
+  return new FlatESLint({
+    fix: true,
+    overrideConfigFile,
+    ...(rules === undefined ? {} : { overrideConfig: { rules } }),
+  }) as IFlatESLint;
+}
+
+/**
+ *
  * @param filePath - File Path
  * @param overrideConfigFile - The location for the file
  * @param rules - optional additional rules
  * @returns an eslint instance and the json representation
  */
-export async function getLinter(
+async function getLinterRaw(
   filePath: string,
   overrideConfigFile: string,
   rules?: Record<string, Rule>,
-): Promise<[IFlatESLint, ConfigData | undefined]> {
-  const eslint = new FlatESLint({
-    fix: true,
-    overrideConfigFile,
-    ...(rules === undefined ? {} : { overrideConfig: { rules } }),
-  });
+): Promise<[IFlatESLint, ConfigData, string]> {
+  const eslint = linter(overrideConfigFile, rules);
   const json = await eslint.calculateConfigForFile(filePath);
-  return [eslint, json];
+  const hash = hashObject({ json });
+  return [eslint, json, hash];
 }
+
+export const getLinter = memoize(getLinterRaw);
+
+const memoizedLintText = memoize(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  async (es: IFlatESLint, code: string, opt: Files, _hash: string) =>
+    es.lintText(code, opt),
+  {
+    serializer: (arguments_) => {
+      const [, code, opt, hash] = arguments_ as [
+        x: unknown,
+        code: string,
+        opt: Files,
+        hash: string,
+      ];
+      return hashString(code + hash + opt.filePath);
+    },
+  },
+);
 
 /**
  * This lints the same file multiple times
  * @param opt - the options to pass to the configs
  * @param codeToLint - the code to lint
- * @param es1 - the eslint instance 1
- * @param es2 - the eslint instance 2
+ * @param config1 - [IFlatESLint, ConfigData] for config 1
+ * @param config2 - [IFlatESLint, ConfigData] for config 2
  * @returns a tuple of each output
  */
-export async function getDiff(
+async function getDiffRaw(
   opt: Files,
   codeToLint: string,
-  es1: IFlatESLint,
-  es2: IFlatESLint,
+  config1: [IFlatESLint, ConfigData, string],
+  config2: [IFlatESLint, ConfigData, string],
 ): DiffReturn {
+  const [es1, , hash1] = config1;
+  const [es2, , hash2] = config2;
   const [results1Z, results2Z] = await Promise.all([
-    es1.lintText(codeToLint, opt),
-    es2.lintText(codeToLint, opt),
+    memoizedLintText(es1, codeToLint, opt, hash1),
+    memoizedLintText(es2, codeToLint, opt, hash2),
   ]);
+
+  if (!("output" in results1Z[0]) || !("output" in results2Z[0])) {
+    return [undefined, undefined];
+  }
 
   const [results1A, results2A] = await Promise.all([
-    es1.lintText(results2Z[0].output ?? "", opt),
-    es2.lintText(results1Z[0].output ?? "", opt),
+    memoizedLintText(es1, results2Z[0].output ?? "", opt, hash1),
+    memoizedLintText(es2, results1Z[0].output ?? "", opt, hash2),
   ]);
-  // Test It:
-  // console.log({ results1A, results2A });
+
+  if (!("output" in results1A[0]) || !("output" in results2A[0])) {
+    return [undefined, undefined];
+  }
 
   const [results1B, results2B] = await Promise.all([
-    es1.lintText(results2A[0].output ?? "", opt),
-    es2.lintText(results1A[0].output ?? "", opt),
+    memoizedLintText(es1, results2A[0].output ?? "", opt, hash1),
+    memoizedLintText(es2, results1A[0].output ?? "", opt, hash2),
   ]);
-  // Test it:
-  // console.log({ results1B, results2B });
+
   const output1 = results1B[0].output;
   const output2 = results2B[0].output;
 
   return [output1, output2];
 }
 
+// Using fast-memoize with TypeScript
+export const getDiff = memoize(getDiffRaw, {
+  serializer: (arguments_: unknown[]): string => {
+    // eslint-disable-next-line unicorn/no-unreadable-array-destructuring
+    const [opt, codeToLint, [, , hash1], [, , hash2]] = arguments_ as [
+      Files,
+      string,
+      [IFlatESLint, ConfigData, string],
+      [IFlatESLint, ConfigData, string],
+    ];
+    return hashString(codeToLint + hash1 + hash2 + opt.filePath);
+  },
+});
+
 /**
- * This lints the same file multiple times
- * @param opt - the options to pass to the configs
- * @param codeToLint - the code to lint
- * @param main - the eslint instance 1
- * @param subRule - the eslint instance 2
- * @returns a tuple of each output
+ * Lints the same file multiple times.
+ * @param opt - The options to pass to the configs.
+ * @param codeToLint - The code
+ * @param esMain - the main config
+ * @param esSub - the sub config
+ * @returns a diff
  */
 export async function getSimpleDiff(
   opt: Files,
   codeToLint: string,
-  main: IFlatESLint,
-  subRule: IFlatESLint,
+  esMain: [IFlatESLint, string],
+  esSub: [IFlatESLint, string],
 ): DiffReturn {
-  const results = await subRule.lintText(codeToLint, opt);
-  const results0 = await main.lintText(results[0].output ?? "", opt);
+  const [main, mainHash] = esMain;
+  const [subRule, subHash] = esSub;
+  const results = await memoizedLintText(subRule, codeToLint, opt, subHash);
+  if (!("output" in results[0])) return [undefined, undefined];
+  const results0 = await memoizedLintText(
+    main,
+    results[0].output ?? "",
+    opt,
+    mainHash,
+  );
+  if (!("output" in results0[0])) return [undefined, undefined];
   const output1 = results0[0].output;
-  const results1 = await subRule.lintText(output1 ?? "", opt);
-  const results2 = await main.lintText(results1[0].output ?? "", opt);
+  const results1 = await memoizedLintText(subRule, output1 ?? "", opt, subHash);
+  if (!("output" in results1[0])) return [undefined, undefined];
+  const results2 = await memoizedLintText(
+    main,
+    results1[0].output ?? "",
+    opt,
+    mainHash,
+  );
   const output2 = results2[0].output;
   return [output1, output2];
 }
@@ -143,5 +215,27 @@ export const compatible = (
   output2: string | undefined,
 ): boolean =>
   output1 === undefined || output2 === undefined || output1 === output2;
+/**
+ * Clones a JSON object and sets a specific rule.
+ * @param hash - the key to memoize on
+ * @param ruleName - The name of the rule to set.
+ * @param ruleSetting - The setting for the rule.
+ * @returns A new object with the specified rule set.
+ */
+function cloneWithRuleRaw(
+  hash: string,
+  ruleName: string,
+  ruleSetting: Rule,
+): string {
+  return hashString(hash + ruleName + hashObject({ ruleSetting }));
+}
+
+// Using fast-memoize with TypeScript
+export const cloneWithRule = memoize(cloneWithRuleRaw, {
+  serializer: (arguments_: unknown[]): string => {
+    const [hash, ruleName, ruleSetting] = arguments_ as [string, string, Rule];
+    return hashString(hash + ruleName + hashObject({ ruleSetting }));
+  },
+});
 
 // EOF

@@ -57,7 +57,7 @@ export interface Files {
 }
 
 export interface IFlatESLint {
-  calculateConfigForFile: (filePath: string) => Promise<ConfigData | undefined>;
+  calculateConfigForFile: (filePath: string) => Promise<ConfigData>;
   lintText: (
     code: string,
     options?: { filePath?: string; warnIgnored?: boolean },

@@ -96,4 +96,22 @@ export const hashObject = (object: object): string => {
   const jsonString = JSON.stringify(object);
   return createHash("sha256").update(jsonString).digest("hex");
 };
+
+export const hashString = (text: string): string =>
+  createHash("sha256").update(text).digest("hex");
+
+/**
+ * Tests if an object is empty
+ * @param object - the object to test
+ * @returns true or false
+ */
+export function isEmpty(object: object): boolean {
+  for (const property in object) {
+    if (Object.hasOwn(object, property)) {
+      return false;
+    }
+  }
+
+  return true;
+}
 // EOF

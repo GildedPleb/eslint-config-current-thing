@@ -2,7 +2,7 @@
 
 /*
   This file is fully generated, to edit it change ./get-incompatibilities.ts
-  Generated on 4/10/2024
+  Generated on 4/11/2024
 */
 
 import { type ConflictCache } from "./types";
@@ -28,6 +28,7 @@ const incompatibles: ConflictCache = {
     "@stylistic/operator-linebreak": 0,
     "@stylistic/semi": 0,
     "@typescript-eslint/block-spacing": 0,
+    "@typescript-eslint/comma-dangle": 0,
     "@typescript-eslint/indent": 0,
     "@typescript-eslint/object-curly-spacing": 0,
     "@typescript-eslint/semi": 0,
@@ -104,7 +105,6 @@ const incompatibles: ConflictCache = {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/semi": 0,
     "@typescript-eslint/space-before-function-paren": 0,
-    "comma-dangle": 0,
     curly: 0,
     indent: 0,
     "indent-legacy": 0,
@@ -115,9 +115,6 @@ const incompatibles: ConflictCache = {
     "operator-linebreak": 0,
     "quote-props": 0,
     quotes: 0,
-    semi: 0,
-    "space-before-function-paren": 0,
-    "unicorn/no-nested-ternary": 0,
     "wrap-iife": 0,
   },
   "shopify-ts": {
