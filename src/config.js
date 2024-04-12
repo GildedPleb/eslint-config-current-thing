@@ -389,6 +389,7 @@ const configGen = ({
             },
             rules: {
               ...shopify.configs.jest.rules,
+              "jest/no-if": 0,
 
               ...("@shopify/eslint-plugin/jest" in override
                 ? override["@shopify/eslint-plugin/jest"]

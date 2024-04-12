@@ -108,6 +108,12 @@ for (const { def: codeToLint, filePath, short } of fileList) {
     configList.map(async ({ location, name }) => {
       try {
         const [es, json, hash] = await getLinter(filePath, location);
+
+        // Utility to call out a particular rule when seen in a config.
+        const ruleToCheck = "jest/no-if";
+        if (json.rules !== undefined && ruleToCheck in json.rules)
+          console.log(name, json.rules[ruleToCheck]);
+
         return { es, hash, json, location, name };
       } catch (error) {
         console.log(`Linter for ${chalk.red(name)}... FAILED!`);
