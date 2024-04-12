@@ -4,6 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import JSONConfigJs from "../current-js.json" assert { type: "json" };
+import JSONConfigJson from "../current-json.json" assert { type: "json" };
 import JSONConfigJsx from "../current-jsx.json" assert { type: "json" };
 import JSONConfigTest from "../current-test.json" assert { type: "json" };
 import JSONConfigTs from "../current-ts.json" assert { type: "json" };
@@ -93,6 +94,9 @@ const tsxRuleCount = Object.keys(
 const jsxRuleCount = Object.keys(
   (JSONConfigJsx as { rules: Record<string, unknown> }).rules,
 ).length;
+const jsonRuleCount = Object.keys(
+  (JSONConfigJson as { rules: Record<string, unknown> }).rules,
+).length;
 
 const ruleCountMarker = "Rule Counts";
 const ruleCount = `Unsurprisingly, it is incredibly strict with popularity-based opinions on:
@@ -100,7 +104,8 @@ const ruleCount = `Unsurprisingly, it is incredibly strict with popularity-based
 - **${jsRuleCount}** javascript rules
 - **${testRuleCount}** testing rules
 - **${tsxRuleCount}** TSX rules
-- **${jsxRuleCount}** JSX rules`;
+- **${jsxRuleCount}** JSX rules
+- **${jsonRuleCount}** JSON rules`;
 
 const underConsiderationMarker = "Under Consideration List";
 const underConsideration = `The following section is generated according to spec.

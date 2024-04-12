@@ -65,6 +65,8 @@ import jestFormatting from "eslint-plugin-jest-formatting";
 // @ts-ignore yes, we need to ignore every import for this to run
 import jsdoc from "eslint-plugin-jsdoc";
 // @ts-ignore yes, we need to ignore every import for this to run
+import json from "eslint-plugin-json";
+// @ts-ignore yes, we need to ignore every import for this to run
 import jsonc from "eslint-plugin-jsonc";
 // @ts-ignore yes, we need to ignore every import for this to run
 import jsxA11y from "eslint-plugin-jsx-a11y";
@@ -168,6 +170,7 @@ const plugins = {
   "jest-dom": jestDom,
   "jest-formatting": jestFormatting,
   jsdoc,
+  json,
   jsonc,
   "jsx-a11y": jsxA11y,
   mocha,

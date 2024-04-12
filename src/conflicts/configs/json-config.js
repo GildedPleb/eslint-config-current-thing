@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/regexp-config.js
+// PathMark: ./src/conflicts/configs/json-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -15,7 +15,7 @@ import { fileURLToPath } from "node:url";
 
 import { FlatCompat } from "@eslint/eslintrc";
 import { defineFlatConfig } from "eslint-define-config";
-import regexp from "eslint-plugin-regexp";
+import json from "eslint-plugin-json";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
 import tseslint from "typescript-eslint";
@@ -126,26 +126,27 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        regexp,
+        json,
       },
     },
 
     /*
-      Regular Expressions
+      JSON
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: regexp
+      Requires: json
     */
-    ...(disable.includes("eslint-plugin-regexp") || threshold > 1_000_000
+    ...(disable.includes("eslint-plugin-json") || threshold > 1_000_000
       ? []
       : [
           {
-            files,
+            files: jsonFiles,
             rules: {
-              ...regexp.configs["flat/recommended"].rules,
-              ...("eslint-plugin-regexp" in override
-                ? override["eslint-plugin-regexp"]
+              ...json.configs.recommended.rules,
+              ...json.configs["recommended-with-comments"].rules,
+              ...("eslint-plugin-json" in override
+                ? override["eslint-plugin-json"]
                 : {}),
             },
           },

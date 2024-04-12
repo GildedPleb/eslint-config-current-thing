@@ -2,6 +2,7 @@
 import importsCodeToLint from "./import-export";
 import jsCodeToLint from "./javascript";
 import testCodeToLint from "./js.test";
+import jsonCodeToLint from "./json";
 import jsxCodeToLint from "./jsx";
 import tsxCodeToLint from "./tsx";
 import tsCodeToLint from "./typescript";
@@ -42,6 +43,11 @@ const fileList: FileList[] = [
     def: testCodeToLint,
     filePath: "./src/conflicts/code-samples/js.test.js",
     short: "test",
+  },
+  {
+    def: jsonCodeToLint,
+    filePath: "./src/conflicts/code-samples/json.json",
+    short: "json",
   },
 ];
 

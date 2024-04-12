@@ -47,6 +47,7 @@ import jest from "eslint-plugin-jest";
 import jestDom from "eslint-plugin-jest-dom";
 import jestFormatting from "eslint-plugin-jest-formatting";
 import jsdoc from "eslint-plugin-jsdoc";
+import json from "eslint-plugin-json";
 import jsonc from "eslint-plugin-jsonc";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import mocha from "eslint-plugin-mocha";
@@ -79,6 +80,7 @@ import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
 import tseslint from "typescript-eslint";
+import ymlEslintParser from "yaml-eslint-parser";
 
 const filename = fileURLToPath(import.meta.url);
 const baseDirectory = path.dirname(filename);
@@ -97,6 +99,7 @@ const jsonFiles = [
   "*.jsonc",
   "**/*.jsonc",
 ];
+const ymlFiles = ["*.yaml", "*.yml"];
 
 const testFiles = [
   "**/*.test.*",
@@ -143,6 +146,18 @@ const configGen = ({
       },
     },
     /* PARSERS */
+    /*
+      JSONC
+      2,597,005 monthly downloads
+      A YAML parser that produces output compatible with ESLint
+      https://github.com/ota-meshi/yaml-eslint-parser#readme
+    */
+    {
+      files: ymlFiles,
+      languageOptions: {
+        parser: ymlEslintParser,
+      },
+    },
     /*
       JSONC
       5,951,309 monthly downloads
@@ -215,6 +230,7 @@ const configGen = ({
         "jest-dom": jestDom,
         "jest-formatting": jestFormatting,
         jsdoc,
+        json,
         jsonc,
         "jsx-a11y": jsxA11y,
         mocha,
@@ -1174,6 +1190,29 @@ const configGen = ({
 
               ...("eslint-plugin-tsdoc" in override
                 ? override["eslint-plugin-tsdoc"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      JSON
+      1,965,106 monthly downloads
+      eslint plugin for JSON files
+      https://github.com/azeemba/eslint-plugin-json#readme
+      Requires: json
+    */
+    ...(disable.includes("eslint-plugin-json") || threshold > 1_965_106
+      ? []
+      : [
+          {
+            files: jsonFiles,
+            rules: {
+              ...json.configs.recommended.rules,
+              ...json.configs["recommended-with-comments"].rules,
+
+              ...("eslint-plugin-json" in override
+                ? override["eslint-plugin-json"]
                 : {}),
             },
           },

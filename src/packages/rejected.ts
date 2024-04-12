@@ -32,6 +32,7 @@ const rejected = new Set([
   "@nrwl/angular",
   "@nx/angular",
   "@ngdaddy/eslint-plugin",
+  "eslint-plugin-angular",
 
   // Svelte -- Hopefully to be added one day when its more popular than react!
   "svelte-eslint-parser",

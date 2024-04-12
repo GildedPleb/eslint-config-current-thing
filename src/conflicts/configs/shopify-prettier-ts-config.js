@@ -20,6 +20,7 @@ import prettier from "eslint-plugin-prettier";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
 import tseslint from "typescript-eslint";
+import ymlEslintParser from "yaml-eslint-parser";
 
 const filename = fileURLToPath(import.meta.url);
 const baseDirectory = path.dirname(filename);
@@ -38,6 +39,7 @@ const jsonFiles = [
   "*.jsonc",
   "**/*.jsonc",
 ];
+const ymlFiles = ["*.yaml", "*.yml"];
 
 const testFiles = [
   "**/*.test.*",
@@ -84,6 +86,17 @@ const configGen = ({
       },
     },
     /* PARSERS */
+    /*
+      JSONC
+      A YAML parser that produces output compatible with ESLint
+      https://github.com/ota-meshi/yaml-eslint-parser#readme
+    */
+    {
+      files: ymlFiles,
+      languageOptions: {
+        parser: ymlEslintParser,
+      },
+    },
     /*
       JSONC
       JSON, JSONC and JSON5 parser for use with ESLint plugins

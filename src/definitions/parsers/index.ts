@@ -2,6 +2,7 @@
 
 import jsonc from "./jsonc";
 import ts from "./ts";
+import yml from "./yml";
 
 export interface Parser {
   definitions: string;
@@ -13,7 +14,7 @@ export interface Parser {
   }>;
 }
 
-const parsers: Parser[] = [ts, jsonc];
+const parsers: Parser[] = [ts, jsonc, yml];
 
 export default parsers;
 // EOF

@@ -17,6 +17,7 @@ import jest from "./jest";
 import jestDom from "./jest-dom";
 import jestFormatting from "./jest-formatting";
 import jsdoc from "./jsdoc";
+import json from "./json";
 import jsonc from "./jsonc";
 import jsxA11y from "./jsx-a11y";
 import mocha from "./mocha";
@@ -114,6 +115,7 @@ const plugins = [
   mocha,
   playwright,
   preferArrow,
+  json,
 ];
 
 type ExtractNamespace<T> =

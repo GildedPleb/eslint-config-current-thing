@@ -14,8 +14,9 @@
     "current:test": "npx eslint --print-config test/basic.test.js > current-test.json",
     "current:jsx": "npx eslint --print-config test/hello.jsx > current-jsx.json",
     "current:tsx": "npx eslint --print-config src/conflicts/code-samples/tsx.tsx > current-tsx.json",
+    "current:json": "npx eslint --print-config src/conflicts/code-samples/json.json > current-json.json",
     "lint": "npx eslint --fix -c ./eslint.config.js --max-warnings 0 . --cache",
-    "generate:currents": "npm run current:ts && npm run current:js && npm run current:test && npm run current:tsx && npm run current:jsx",
+    "generate:currents": "npm run current:ts && npm run current:js && npm run current:test && npm run current:tsx && npm run current:jsx && npm run current:json",
     "generate:config": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/generate-config.ts",
     "generate:configs": "npm run generate:config && npm run lint && npm run generate:currents",
     "generate:readme": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/generate-readme.ts",
@@ -68,6 +69,7 @@
     "eslint-plugin-jest-dom": "^5.2.0",
     "eslint-plugin-jest-formatting": "^3.1.0",
     "eslint-plugin-jsdoc": "^48.2.3",
+    "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-jsonc": "^2.15.1",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-mocha": "^10.4.2",
@@ -101,7 +103,8 @@
     "globals": "^15.0.0",
     "jsonc-eslint-parser": "^2.4.0",
     "prettier": "^3.2.5",
-    "typescript-eslint": "^7.6.0"
+    "typescript-eslint": "^7.6.0",
+    "yaml-eslint-parser": "^1.2.2"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.24.4",
