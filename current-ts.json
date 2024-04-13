@@ -1178,7 +1178,6 @@
     "jest-dom",
     "jest-formatting",
     "jsdoc",
-    "json",
     "jsonc:eslint-plugin-jsonc@2.15.1",
     "jsx-a11y",
     "mocha",

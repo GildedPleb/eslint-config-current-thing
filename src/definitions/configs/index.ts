@@ -26,7 +26,6 @@ import jestDom from "./jest-dom";
 import jestFormatting from "./jest-formatting";
 import jsdoc from "./jsdoc";
 import jsdocTs from "./jsdoc-ts";
-import json from "./json";
 import jsonc from "./jsonc";
 import jsxA11y from "./jsx-a11y";
 import mocha from "./mocha";
@@ -175,7 +174,6 @@ const configs: Config[] = [
   mocha,
   playwright,
   preferArrow,
-  json,
 ];
 
 export default configs;

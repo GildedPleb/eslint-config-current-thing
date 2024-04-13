@@ -21,15 +21,15 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 | AirBnb | AirBnb Base | AirBnb-Typescript | CSS Modules | Comments |
 | Compat | Create React App | Cypress | ES-X | ESLint |
 | Emotion CSS | Functional | Google | Import | Internationalization (i18n) |
-| JSDoc | JSON | JSONC | JSX Accessibility (JSX A11y) | Jest |
-| Jest Dom | Jest Formatting | Mocha | NextJS | No Only Tests |
-| No Unsanitized | No Unused Imports | Node.js | Perfectionist | Playwright |
-| Prefer Arrow | Prettier | Promises | React | React Hooks |
-| React Native (Independent Plugin/Config) | React Native Config | React Native Plugin | React Performance | React Refresh |
-| Regular Expressions | Security | Shopify | Simple Import Sort | SonarJS |
-| Sort Class Members | Standard | Standard JSX | Standard React | Storybook |
-| Stylistic | TSDoc | Tailwind CSS | Testing Library | TypeScript |
-| Unicorn | XO | You Don't Need Lodash |  |  |
+| JSDoc | JSONC | JSX Accessibility (JSX A11y) | Jest | Jest Dom |
+| Jest Formatting | Mocha | NextJS | No Only Tests | No Unsanitized |
+| No Unused Imports | Node.js | Perfectionist | Playwright | Prefer Arrow |
+| Prettier | Promises | React | React Hooks | React Native (Independent Plugin/Config) |
+| React Native Config | React Native Plugin | React Performance | React Refresh | Regular Expressions |
+| Security | Shopify | Simple Import Sort | SonarJS | Sort Class Members |
+| Standard | Standard JSX | Standard React | Storybook | Stylistic |
+| TSDoc | Tailwind CSS | Testing Library | TypeScript | Unicorn |
+| XO | You Don't Need Lodash |  |  |  |
 
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
@@ -52,7 +52,7 @@ Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 - **1166** testing rules
 - **1279** TSX rules
 - **1178** JSX rules
-- **33** JSON rules
+- **32** JSON rules
 
 <!-- End Generated Rule Counts DO NOT EDIT! -->
 
@@ -339,9 +339,9 @@ Generated on 4/12/2024, downloads for the previous 28 days.
 - 891,293 downloads, [eslint-plugin-mdx](https://www.npmjs.com/package/eslint-plugin-mdx)
 - 857,924 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
 - 774,856 downloads, [eslint-plugin-jasmine](https://www.npmjs.com/package/eslint-plugin-jasmine)
-- 687,172 downloads, [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file)
 - 672,310 downloads, [npm-package-json-lint](https://www.npmjs.com/package/npm-package-json-lint)
 - 668,857 downloads, [eslint-import-resolver-custom-alias](https://www.npmjs.com/package/eslint-import-resolver-custom-alias)
+- 656,334 downloads, [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file)
 - 539,039 downloads, [eslint-formatter-gitlab](https://www.npmjs.com/package/eslint-formatter-gitlab)
 - 533,564 downloads, [eslint-plugin-ava](https://www.npmjs.com/package/eslint-plugin-ava)
 - 513,039 downloads, [ember-template-lint](https://www.npmjs.com/package/ember-template-lint)

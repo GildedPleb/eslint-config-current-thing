@@ -41,8 +41,9 @@ const rejected = new Set([
   // Ember -- Hopefully to be added one day when its more popular than react!
   "eslint-plugin-ember",
 
-  // OOMKills everything. Insane that people still use this.
+  // These do not work
   "eslint-plugin-deprecation",
+  "eslint-plugin-json",
 
   // Plugin for linting plugins
   "eslint-plugin-eslint-plugin",
