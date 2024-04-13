@@ -165,8 +165,8 @@ const configList = [
     name: "shopify-ts-typecheck",
   },
   {
-    location: "./src/conflicts/configs/standard-ts-config.js",
-    name: "standard-ts",
+    location: "./src/conflicts/configs/standard-ts-ts-config.js",
+    name: "standard-ts-ts",
   },
   {
     location: "./src/conflicts/configs/storybook-main-config.js",
@@ -205,6 +205,7 @@ const configList = [
     name: "prefer-arrow",
   },
   { location: "./src/conflicts/configs/markdown-config.js", name: "markdown" },
+  { location: "./src/conflicts/configs/graphql-config.js", name: "graphql" },
 ];
 
 export default configList;

@@ -109,7 +109,6 @@ const incompatibles: ConflictCache = {
     indent: 0,
     "indent-legacy": 0,
     "jsx-quotes": 0,
-    "lines-around-comment": 0,
     "no-confusing-arrow": 0,
     "object-curly-spacing": 0,
     "operator-linebreak": 0,
@@ -181,7 +180,6 @@ const incompatibles: ConflictCache = {
     "regexp/strict": 0,
   },
   xo: {
-    "@stylistic/arrow-parens": 0,
     "@stylistic/brace-style": 0,
     "@stylistic/indent": 0,
     "@stylistic/indent-binary-ops": 0,

@@ -17,6 +17,12 @@ import { rules as emotion } from "@emotion/eslint-plugin";
 import { FlatCompat } from "@eslint/eslintrc";
 import eslint from "@eslint/js";
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
+import {
+  flatConfigs as graphqlConfigs,
+  parseForESLint,
+  processors as graphqlProcessors,
+  rules as graphQLRules,
+} from "@graphql-eslint/eslint-plugin";
 import nextjs from "@next/eslint-plugin-next";
 import rnPlugin from "@react-native/eslint-plugin";
 import reactNativeConfig from "@react-native-community/eslint-config";
@@ -77,6 +83,7 @@ import tsdoc from "eslint-plugin-tsdoc";
 import unicorn from "eslint-plugin-unicorn";
 import unusedImports from "eslint-plugin-unused-imports";
 import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
+import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
 import tseslint from "typescript-eslint";
@@ -100,7 +107,8 @@ const jsonFiles = [
   "**/*.jsonc",
 ];
 const ymlFiles = ["*.yaml", "*.yml"];
-const mdFiles = ["**/*.md", "**/*.md/*.js", "**/*.md/*.ts"];
+const mdFiles = ["**/*.md/**"];
+const graphQLFiles = ["**/*.graphql"];
 
 const testFiles = [
   "**/*.test.*",
@@ -148,10 +156,32 @@ const configGen = ({
     },
     /* PROCESSORS */
     {
-      files: mdFiles,
+      files: ["**/*.md"],
       processor: markdown.processors.markdown,
     },
+    {
+      files,
+      processor: {
+        meta: {
+          name: "GraphQL-Processor",
+          version: "1.0.0",
+        },
+        ...graphqlProcessors.graphql,
+      },
+    },
     /* PARSERS */
+    /*
+      GraphQL
+      1,868,109 monthly downloads
+      GraphQL plugin for ESLint
+      https://github.com/B2o5T/graphql-eslint#readme
+    */
+    {
+      files: graphQLFiles,
+      languageOptions: {
+        parser: parseForESLint,
+      },
+    },
     /*
       JSONC
       2,603,922 monthly downloads
@@ -183,7 +213,7 @@ const configGen = ({
       https://typescript-eslint.io/packages/typescript-eslint / https://typescript-eslint.io/packages/parser
     */
     {
-      files,
+      files: tsFiles,
       languageOptions: {
         parser: tseslint.parser,
         parserOptions: {
@@ -193,12 +223,25 @@ const configGen = ({
         },
       },
     },
+    /*
+      Espree
+      147,169,501 monthly downloads
+      An Esprima-compatible JavaScript parser built on Acorn
+      https://github.com/eslint/espree
+    */
+    {
+      files: jsFiles,
+      languageOptions: {
+        parser: espree,
+      },
+    },
     /* PLUGINS */
     {
       plugins: {
         "@babel": babelPlugin,
         "@emotion": { rules: emotion },
         "@eslint-community/eslint-comments": comments,
+        "@graphql-eslint": { rules: graphQLRules },
         "@next/next": nextjs,
         "@react-native": rnPlugin,
         "@shopify": shopify,
@@ -501,7 +544,6 @@ const configGen = ({
               indent: 0,
               "indent-legacy": 0,
               "jsx-quotes": 0,
-              "lines-around-comment": 0,
               "no-confusing-arrow": 0,
               "object-curly-spacing": 0,
               "operator-linebreak": 0,
@@ -838,10 +880,11 @@ const configGen = ({
       ? []
       : [
           {
-            files,
+            files: jsFiles,
             rules: {
               ...functional.configs["external-vanilla-recommended"].rules,
               ...functional.configs.recommended.rules,
+              ...functional.configs["disable-type-checked"].rules,
               "prefer-arrow/prefer-arrow-functions": 0,
               ...("eslint-plugin-functional" in override
                 ? override["eslint-plugin-functional"]
@@ -878,7 +921,7 @@ const configGen = ({
       665,791 monthly downloads
       ESLint rules to promote functional programming in TypeScript.
       https://github.com/eslint-functional/eslint-plugin-functional#readme
-      Requires: @typescript-eslint
+      Requires: @typescript-eslint, functional
     */
     ...(disable.includes("eslint-plugin-functional/ts") || threshold > 665_791
       ? []
@@ -886,6 +929,7 @@ const configGen = ({
           {
             files: tsFiles,
             rules: {
+              ...functional.configs.recommended.rules,
               ...functional.configs["external-typescript-recommended"].rules,
 
               ...("eslint-plugin-functional/ts" in override
@@ -1046,7 +1090,6 @@ const configGen = ({
           {
             files,
             rules: {
-              "@stylistic/arrow-parens": 0,
               "@stylistic/brace-style": 0,
               "@stylistic/indent": 0,
               "@stylistic/indent-binary-ops": 0,
@@ -1152,6 +1195,30 @@ const configGen = ({
 
               ...("eslint-plugin-compat" in override
                 ? override["eslint-plugin-compat"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      GraphQL
+      1,868,109 monthly downloads
+      GraphQL plugin for ESLint
+      https://github.com/B2o5T/graphql-eslint#readme
+      Requires: @graphql-eslint
+    */
+    ...(disable.includes("@graphql-eslint/eslint-plugin") ||
+    threshold > 1_868_109
+      ? []
+      : [
+          {
+            files: graphQLFiles,
+            rules: {
+              ...graphqlConfigs["schema-recommended"].rules,
+              ...graphqlConfigs["operations-recommended"].rules,
+
+              ...("@graphql-eslint/eslint-plugin" in override
+                ? override["@graphql-eslint/eslint-plugin"]
                 : {}),
             },
           },
@@ -1334,32 +1401,27 @@ const configGen = ({
         ]),
 
     /*
-      Standard
+      Standard - TS
       2,780,158 monthly downloads
       An ESLint Shareable Config for JavaScript Standard Style with TypeScript support / A TypeScript ESLint config that loves you
       https://github.com/mightyiam/eslint-config-standard-with-typescript#readme / https://github.com/mightyiam/eslint-config-love#readme
       Requires: @typescript-eslint, n, import, promise
     */
-    ...(disable.includes("eslint-config-standard-with-typescript") ||
-    disable.includes("eslint-config-love") ||
+    ...(disable.includes("eslint-config-standard-with-typescript/ts") ||
+    disable.includes("eslint-config-love/ts") ||
     threshold > 2_780_158
       ? []
       : [
           {
             files: tsFiles,
             rules: {
-              "@babel/object-curly-spacing": 0,
-              "@babel/semi": 0,
-              "@stylistic/comma-dangle": 0,
-              "@stylistic/space-before-function-paren": 0,
-              "prettier/prettier": 0,
               ...standardTS.rules,
 
-              ...("eslint-config-standard-with-typescript" in override
-                ? override["eslint-config-standard-with-typescript"]
+              ...("eslint-config-standard-with-typescript/ts" in override
+                ? override["eslint-config-standard-with-typescript/ts"]
                 : {}),
-              ...("eslint-config-love" in override
-                ? override["eslint-config-love"]
+              ...("eslint-config-love/ts" in override
+                ? override["eslint-config-love/ts"]
                 : {}),
             },
           },
@@ -1899,6 +1961,14 @@ const configGen = ({
               ...unicorn.configs.recommended.rules,
               "functional/no-loop-statements": 0,
               "functional/prefer-immutable-types": 0,
+              // Recommended if using eslint-plugin-markdown (which we are) https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v52.0.0/docs/rules/filename-case.md
+              "unicorn/filename-case": [
+                2,
+                {
+                  case: "kebabCase",
+                  ignore: [".*.md$", ".*.md/.*"],
+                },
+              ],
               ...("eslint-plugin-unicorn" in override
                 ? override["eslint-plugin-unicorn"]
                 : {}),

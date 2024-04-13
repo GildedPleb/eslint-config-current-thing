@@ -1,13 +1,9 @@
 ```js
 import currentThing from "eslint-config-current-thing";
 
-export default [...currentThing()];
-```
+const config = [...currentThing()];
 
-```ts
-import currentThing from "eslint-config-current-thing";
-
-export default [...currentThing()];
+export default config;
 ```
 
 You'll also probably want something like this in your `package.json` (edit accordingly):

@@ -3,7 +3,7 @@ import type { Parser } from ".";
 
 export default {
   definitions: `{
-    files,
+    files: tsFiles,
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {

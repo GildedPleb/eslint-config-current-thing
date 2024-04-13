@@ -64,7 +64,8 @@ const tsFiles = ["**/*.ts", ...tsxFiles, "**/*.mts", "**/*.cts"];
 const files = [...jsFiles, ...tsFiles];
 const jsonFiles = ["*.json", "**/*.json", "*.json5", "**/*.json5", "*.jsonc", "**/*.jsonc"];
 const ymlFiles = ["*.yaml", "*.yml"];
-const mdFiles = ["**/*.md", "**/*.md/*.js", "**/*.md/*.ts"];
+const mdFiles = ["**/*.md/**"];
+const graphQLFiles = ["**/*.graphql"];
 
 const testFiles = [
   "**/*.test.*",
@@ -112,8 +113,18 @@ const configGen = ({
     },
     /* PROCESSORS */
     {
-      files: mdFiles,
+      files: ["**/*.md"],
       processor: markdown.processors.markdown,
+    },
+    {
+      files,
+      processor: {
+        meta: {
+          name: "GraphQL-Processor",
+          version: "1.0.0",
+        },
+        ...graphqlProcessors.graphql,
+      },
     },
     /* PARSERS */
     ${parsers

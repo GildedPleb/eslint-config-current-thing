@@ -7,9 +7,6 @@ const rejected = new Set([
   // Fork of import
   "eslint-plugin-i",
 
-  // This is the not-maintained version of @babel/eslint-plugin, and download counts don't matter of ordering plugins.
-  "eslint-plugin-babel",
-
   // Irrelevant?
   "eslint-plugin-local-rules",
   "eslint-import-resolver-alias",
@@ -41,9 +38,11 @@ const rejected = new Set([
   // Ember -- Hopefully to be added one day when its more popular than react!
   "eslint-plugin-ember",
 
-  // These do not work
+  // Broken / not-maintained / abandoned
   "eslint-plugin-deprecation",
   "eslint-plugin-json",
+  "eslint-plugin-babel",
+  "eslint-plugin-graphql",
 
   // Plugin for linting plugins
   "eslint-plugin-eslint-plugin",

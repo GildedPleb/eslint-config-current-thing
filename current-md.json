@@ -1093,11 +1093,7 @@
       "setImmediate": false
     },
     "parser": "espree@9.6.1",
-    "parserOptions": {
-      "ecmaFeatures": {
-        "impliedStrict": true
-      }
-    }
+    "parserOptions": {}
   },
   "processor": "eslint-plugin-markdown/markdown@4.0.1",
   "plugins": [
@@ -1105,6 +1101,7 @@
     "@babel:@babel/eslint-plugin@7.23.5",
     "@emotion",
     "@eslint-community/eslint-comments",
+    "@graphql-eslint",
     "@next/next",
     "@react-native",
     "@shopify",
@@ -1159,27 +1156,5 @@
     "unused-imports",
     "you-dont-need-lodash-underscore"
   ],
-  "rules": {
-    "eol-last": [
-      0
-    ],
-    "no-undef": [
-      0
-    ],
-    "no-unused-expressions": [
-      0
-    ],
-    "no-unused-vars": [
-      0
-    ],
-    "padded-blocks": [
-      0
-    ],
-    "strict": [
-      0
-    ],
-    "unicode-bom": [
-      0
-    ]
-  }
+  "rules": {}
 }

@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/shopify-react-ts-config.js
+// PathMark: ./src/conflicts/configs/standard-ts-ts-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -18,10 +18,12 @@ import {
   parseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
-import shopify from "@shopify/eslint-plugin";
+import standardTS from "eslint-config-love";
 import { defineFlatConfig } from "eslint-define-config";
+import importPlugin from "eslint-plugin-import";
 import markdown from "eslint-plugin-markdown";
-import react from "eslint-plugin-react";
+import nNode from "eslint-plugin-n";
+import promise from "eslint-plugin-promise";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
@@ -172,40 +174,35 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        react,
+        "@typescript-eslint": tseslint.plugin,
+        import: importPlugin,
+        n: nNode,
+        promise,
       },
     },
 
     /*
-      Shopify - React-TS
+      Standard - TS
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: react
+      Requires: @typescript-eslint, n, import, promise
     */
-    ...(disable.includes("@shopify/eslint-plugin-react-ts") ||
+    ...(disable.includes("eslint-config-standard-with-typescript-ts") ||
+    disable.includes("eslint-config-love-ts") ||
     threshold > 1_000_000
       ? []
       : [
           {
-            files: tsxFiles,
-            languageOptions: {
-              parserOptions: {
-                ecmaFeatures: {
-                  jsx: true,
-                },
-              },
-            },
+            files: tsFiles,
             rules: {
-              ...shopify.configs.react.overrides[0].rules,
-              ...("@shopify/eslint-plugin/react-ts" in override
-                ? override["@shopify/eslint-plugin/react-ts"]
+              ...standardTS.rules,
+              ...("eslint-config-standard-with-typescript/ts" in override
+                ? override["eslint-config-standard-with-typescript/ts"]
                 : {}),
-            },
-            settings: {
-              react: {
-                version: "detect",
-              },
+              ...("eslint-config-love/ts" in override
+                ? override["eslint-config-love/ts"]
+                : {}),
             },
           },
         ]),

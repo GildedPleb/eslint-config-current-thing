@@ -14,6 +14,10 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { FlatCompat } from "@eslint/eslintrc";
+import {
+  parseForESLint,
+  processors as graphqlProcessors,
+} from "@graphql-eslint/eslint-plugin";
 import standardTS from "eslint-config-love";
 import { defineFlatConfig } from "eslint-define-config";
 import importPlugin from "eslint-plugin-import";
@@ -44,6 +48,7 @@ const jsonFiles = [
 ];
 const ymlFiles = ["*.yaml", "*.yml"];
 const mdFiles = ["**/*.md", "**/*.md/*.js", "**/*.md/*.ts"];
+const graphQLFiles = ["**/*.graphql"];
 
 const testFiles = [
   "**/*.test.*",
@@ -94,7 +99,28 @@ const configGen = ({
       files: mdFiles,
       processor: markdown.processors.markdown,
     },
+    {
+      files,
+      processor: {
+        meta: {
+          name: "GraphQL-Processor",
+          version: "1.0.0",
+        },
+        ...graphqlProcessors.graphql,
+      },
+    },
     /* PARSERS */
+    /*
+      GraphQL
+      GraphQL plugin for ESLint
+      https://github.com/B2o5T/graphql-eslint#readme
+    */
+    {
+      files: graphQLFiles,
+      languageOptions: {
+        parser: parseForESLint,
+      },
+    },
     /*
       JSONC
       A YAML parser that produces output compatible with ESLint

@@ -31,6 +31,7 @@ export function linter(
   rules?: Record<string, Rule>,
 ): IFlatESLint {
   return new FlatESLint({
+    cache: true,
     fix: true,
     overrideConfigFile,
     ...(rules === undefined ? {} : { overrideConfig: { rules } }),

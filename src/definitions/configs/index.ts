@@ -17,6 +17,7 @@ import functional from "./functional";
 import functionalStylistic from "./functional-stylistic";
 import functionalTs from "./functional-ts";
 import google from "./google";
+import graphql from "./graphql";
 import i18next from "./i18next";
 import index from "./import";
 import importSort from "./import-sort";
@@ -176,6 +177,7 @@ const configs: Config[] = [
   playwright,
   preferArrow,
   md,
+  graphql,
 ];
 
 export default configs;

@@ -1100,6 +1100,7 @@
     "@babel:@babel/eslint-plugin@7.23.5",
     "@emotion",
     "@eslint-community/eslint-comments",
+    "@graphql-eslint",
     "@next/next",
     "@react-native",
     "@shopify",

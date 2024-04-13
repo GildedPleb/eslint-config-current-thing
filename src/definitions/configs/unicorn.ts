@@ -17,6 +17,14 @@ export default {
     },
   ],
   requiredPlugins: ["unicorn"],
-  rules: `...unicorn.configs.recommended.rules,`,
+  rules: `...unicorn.configs.recommended.rules,
+    // Recommended if using eslint-plugin-markdown (which we are) https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v52.0.0/docs/rules/filename-case.md
+    "unicorn/filename-case": [
+      2,
+      {
+        case: "kebabCase",
+        ignore: [".*\\.md$", ".*\\.md\\/.*"],
+      },
+    ],`,
 } satisfies Config;
 // EOF

@@ -1140,18 +1140,16 @@
       "setImmediate": false,
       "browser": true
     },
-    "parser": "typescript-eslint/parser@7.6.0",
-    "parserOptions": {
-      "ecmaVersion": "latest",
-      "project": true,
-      "warnOnUnsupportedTypeScriptVersion": false
-    }
+    "parser": "espree@10.0.1",
+    "parserOptions": {}
   },
+  "processor": "GraphQL-Processor@1.0.0",
   "plugins": [
     "@",
     "@babel:@babel/eslint-plugin@7.23.5",
     "@emotion",
     "@eslint-community/eslint-comments",
+    "@graphql-eslint",
     "@next/next",
     "@react-native",
     "@shopify",
@@ -3207,10 +3205,7 @@
       0
     ],
     "functional/no-conditional-statements": [
-      0,
-      {
-        "allowReturningBranches": true
-      }
+      0
     ],
     "functional/no-expression-statements": [
       0
@@ -3656,7 +3651,7 @@
       0
     ],
     "functional/no-mixed-types": [
-      2
+      0
     ],
     "functional/no-this-expressions": [
       0
@@ -3665,72 +3660,16 @@
       0
     ],
     "functional/prefer-immutable-types": [
-      0,
-      {
-        "enforcement": "None",
-        "ignoreInferredTypes": true,
-        "parameters": {
-          "enforcement": "ReadonlyDeep"
-        }
-      }
+      0
     ],
     "functional/type-declaration-immutability": [
-      2,
-      {
-        "rules": [
-          {
-            "identifiers": [
-              "^I?Immutable.+"
-            ],
-            "immutability": 5,
-            "comparator": 1
-          },
-          {
-            "identifiers": [
-              "^I?ReadonlyDeep.+"
-            ],
-            "immutability": 4,
-            "comparator": 1
-          },
-          {
-            "identifiers": [
-              "^I?Readonly.+"
-            ],
-            "immutability": 3,
-            "comparator": 1,
-            "suggestions": [
-              {
-                "pattern": "^(Array|Map|Set)<(.+)>$",
-                "replace": "Readonly$1<$2>"
-              },
-              {
-                "pattern": "^(.+)$",
-                "replace": "Readonly<$1>"
-              }
-            ]
-          },
-          {
-            "identifiers": [
-              "^I?Mutable.+"
-            ],
-            "immutability": 2,
-            "comparator": -1,
-            "suggestions": [
-              {
-                "pattern": "^Readonly(Array|Map|Set)<(.+)>$",
-                "replace": "$1<$2>"
-              },
-              {
-                "pattern": "^Readonly<(.+)>$",
-                "replace": "$1"
-              }
-            ]
-          }
-        ]
-      }
+      0
     ],
     "functional/prefer-property-signatures": [
       2
+    ],
+    "functional/prefer-readonly-type": [
+      0
     ],
     "functional/prefer-tacit": [
       1
@@ -4648,7 +4587,14 @@
       2
     ],
     "unicorn/filename-case": [
-      2
+      2,
+      {
+        "case": "kebabCase",
+        "ignore": [
+          ".*.md$",
+          ".*.md/.*"
+        ]
+      }
     ],
     "unicorn/import-style": [
       2

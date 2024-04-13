@@ -9,6 +9,7 @@ import emotion from "./emotion";
 import es from "./es";
 import flowtype from "./flowtype";
 import functional from "./functional";
+import graphql from "./graphql";
 import header from "./header";
 import i18next from "./i18next";
 import importPlugin from "./import";
@@ -116,6 +117,7 @@ const plugins = [
   playwright,
   preferArrow,
   md,
+  graphql,
 ];
 
 type ExtractNamespace<T> =

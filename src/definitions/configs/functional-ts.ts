@@ -17,7 +17,8 @@ export default {
       requiresImport: false,
     },
   ],
-  requiredPlugins: ["@typescript-eslint"],
-  rules: `...functional.configs["external-typescript-recommended"].rules,`,
+  requiredPlugins: ["@typescript-eslint", "functional"],
+  rules: `...functional.configs.recommended.rules,
+  ...functional.configs["external-typescript-recommended"].rules,`,
 } satisfies Config;
 // EOF

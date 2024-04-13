@@ -56,6 +56,8 @@ import ${declaredAs} from "${pack}";`
   .join(``)}
 // @ts-ignore yes, we need to ignore every import for this to run
 import { Linter } from 'eslint';
+// @ts-ignore yes, we need to ignore every import for this to run
+import { rules as graphQLRules } from "@graphql-eslint/eslint-plugin";
 
 const linter = new Linter();
 const allRules = linter.getRules();

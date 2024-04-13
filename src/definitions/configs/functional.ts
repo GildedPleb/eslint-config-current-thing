@@ -27,7 +27,7 @@ export default {
     "functional/prefer-immutable-types": ["unicorn"],
   },
   definitions: `{
-    files,
+    files: jsFiles,
     ${RULES}
   }`,
   id: "functional",
@@ -41,6 +41,7 @@ export default {
   ],
   requiredPlugins: ["functional"],
   rules: `...functional.configs["external-vanilla-recommended"].rules,
-    ...functional.configs.recommended.rules,`,
+    ...functional.configs.recommended.rules,
+    ...functional.configs["disable-type-checked"].rules,`,
 } satisfies Config;
 // EOF

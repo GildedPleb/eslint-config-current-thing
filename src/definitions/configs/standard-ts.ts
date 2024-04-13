@@ -9,6 +9,7 @@ export default {
   }`,
   id: "standard-ts",
   name: "Standard",
+  nameSecondary: "TS",
   packages: [
     {
       declaredAs: "standard",

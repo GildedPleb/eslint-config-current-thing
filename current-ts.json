@@ -1150,11 +1150,13 @@
       "warnOnUnsupportedTypeScriptVersion": false
     }
   },
+  "processor": "GraphQL-Processor@1.0.0",
   "plugins": [
     "@",
     "@babel:@babel/eslint-plugin@7.23.5",
     "@emotion",
     "@eslint-community/eslint-comments",
+    "@graphql-eslint",
     "@next/next",
     "@react-native",
     "@shopify",
@@ -4146,6 +4148,15 @@
     "regexp/use-ignore-case": [
       2
     ],
+    "functional/prefer-property-signatures": [
+      2
+    ],
+    "functional/prefer-tacit": [
+      1
+    ],
+    "functional/readonly-type": [
+      2
+    ],
     "functional/immutable-data": [
       0
     ],
@@ -4231,15 +4242,6 @@
           }
         ]
       }
-    ],
-    "functional/prefer-property-signatures": [
-      2
-    ],
-    "functional/prefer-tacit": [
-      1
-    ],
-    "functional/readonly-type": [
-      2
     ],
     "@typescript-eslint/switch-exhaustiveness-check": [
       2
@@ -5313,7 +5315,14 @@
       2
     ],
     "unicorn/filename-case": [
-      2
+      2,
+      {
+        "case": "kebabCase",
+        "ignore": [
+          ".*.md$",
+          ".*.md/.*"
+        ]
+      }
     ],
     "unicorn/import-style": [
       2

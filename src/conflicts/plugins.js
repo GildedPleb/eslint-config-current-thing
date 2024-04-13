@@ -23,6 +23,8 @@ import { rules as emotion } from "@emotion/eslint-plugin";
 // @ts-ignore yes, we need to ignore every import for this to run
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
 // @ts-ignore yes, we need to ignore every import for this to run
+import { rules as graphQLRules } from "@graphql-eslint/eslint-plugin";
+// @ts-ignore yes, we need to ignore every import for this to run
 import nextjs from "@next/eslint-plugin-next";
 // @ts-ignore yes, we need to ignore every import for this to run
 import rnPlugin from "@react-native/eslint-plugin";
@@ -133,6 +135,7 @@ const plugins = {
   "@babel": babelPlugin,
   "@emotion": { rules: emotion },
   "@eslint-community/eslint-comments": comments,
+  "@graphql-eslint": { rules: graphQLRules },
   "@next/next": nextjs,
   "@react-native": rnPlugin,
   "@shopify": shopify,

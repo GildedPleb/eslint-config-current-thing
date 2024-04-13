@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/shopify-react-ts-config.js
+// PathMark: ./src/conflicts/configs/graphql-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -15,13 +15,13 @@ import { fileURLToPath } from "node:url";
 
 import { FlatCompat } from "@eslint/eslintrc";
 import {
+  flatConfigs as graphqlConfigs,
   parseForESLint,
   processors as graphqlProcessors,
+  rules as graphQLRules,
 } from "@graphql-eslint/eslint-plugin";
-import shopify from "@shopify/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
 import markdown from "eslint-plugin-markdown";
-import react from "eslint-plugin-react";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
@@ -172,40 +172,29 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        react,
+        "@graphql-eslint": { rules: graphQLRules },
       },
     },
 
     /*
-      Shopify - React-TS
+      GraphQL
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: react
+      Requires: @graphql-eslint
     */
-    ...(disable.includes("@shopify/eslint-plugin-react-ts") ||
+    ...(disable.includes("@graphql-eslint/eslint-plugin") ||
     threshold > 1_000_000
       ? []
       : [
           {
-            files: tsxFiles,
-            languageOptions: {
-              parserOptions: {
-                ecmaFeatures: {
-                  jsx: true,
-                },
-              },
-            },
+            files: graphQLFiles,
             rules: {
-              ...shopify.configs.react.overrides[0].rules,
-              ...("@shopify/eslint-plugin/react-ts" in override
-                ? override["@shopify/eslint-plugin/react-ts"]
+              ...graphqlConfigs["schema-recommended"].rules,
+              ...graphqlConfigs["operations-recommended"].rules,
+              ...("@graphql-eslint/eslint-plugin" in override
+                ? override["@graphql-eslint/eslint-plugin"]
                 : {}),
-            },
-            settings: {
-              react: {
-                version: "detect",
-              },
             },
           },
         ]),

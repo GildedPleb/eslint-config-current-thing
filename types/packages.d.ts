@@ -151,6 +151,7 @@ declare module "eslint/use-at-your-own-risk" {
   }
 
   interface ESLintOptions {
+    cache?: boolean;
     fix: boolean;
     overrideConfig?: ConfigData;
     overrideConfigFile?: boolean | string;

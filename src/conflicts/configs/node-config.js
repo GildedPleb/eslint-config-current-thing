@@ -14,10 +14,15 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { FlatCompat } from "@eslint/eslintrc";
+import {
+  parseForESLint,
+  processors as graphqlProcessors,
+} from "@graphql-eslint/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
 import markdown from "eslint-plugin-markdown";
 import nNode from "eslint-plugin-n";
 import node from "eslint-plugin-node";
+import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
 import tseslint from "typescript-eslint";
@@ -41,7 +46,8 @@ const jsonFiles = [
   "**/*.jsonc",
 ];
 const ymlFiles = ["*.yaml", "*.yml"];
-const mdFiles = ["**/*.md", "**/*.md/*.js", "**/*.md/*.ts"];
+const mdFiles = ["**/*.md/**"];
+const graphQLFiles = ["**/*.graphql"];
 
 const testFiles = [
   "**/*.test.*",
@@ -89,10 +95,31 @@ const configGen = ({
     },
     /* PROCESSORS */
     {
-      files: mdFiles,
+      files: ["**/*.md"],
       processor: markdown.processors.markdown,
     },
+    {
+      files,
+      processor: {
+        meta: {
+          name: "GraphQL-Processor",
+          version: "1.0.0",
+        },
+        ...graphqlProcessors.graphql,
+      },
+    },
     /* PARSERS */
+    /*
+      GraphQL
+      GraphQL plugin for ESLint
+      https://github.com/B2o5T/graphql-eslint#readme
+    */
+    {
+      files: graphQLFiles,
+      languageOptions: {
+        parser: parseForESLint,
+      },
+    },
     /*
       JSONC
       A YAML parser that produces output compatible with ESLint
@@ -121,7 +148,7 @@ const configGen = ({
       https://typescript-eslint.io/packages/typescript-eslint / https://typescript-eslint.io/packages/parser
     */
     {
-      files,
+      files: tsFiles,
       languageOptions: {
         parser: tseslint.parser,
         parserOptions: {
@@ -129,6 +156,17 @@ const configGen = ({
           project: true,
           warnOnUnsupportedTypeScriptVersion: false,
         },
+      },
+    },
+    /*
+      Espree
+      An Esprima-compatible JavaScript parser built on Acorn
+      https://github.com/eslint/espree
+    */
+    {
+      files: jsFiles,
+      languageOptions: {
+        parser: espree,
       },
     },
     /* PLUGINS */
