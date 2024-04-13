@@ -204,6 +204,7 @@ const configList = [
     location: "./src/conflicts/configs/prefer-arrow-config.js",
     name: "prefer-arrow",
   },
+  { location: "./src/conflicts/configs/markdown-config.js", name: "markdown" },
 ];
 
 export default configList;

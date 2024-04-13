@@ -1,11 +1,9 @@
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
-/* eslint-disable @stylistic/no-tabs */
-// PathMark: ./src/conflicts/code-samples/import-export.ts
+// PathMark: ./src/conflicts/code-samples/json.js
 
 /*
      !!! DO NOT EDIT !!!
 
-    This is the baseline JS code. If you found an anomaly,
+    This is the baseline JSON code. If you found an anomaly,
     Add a new file to this folder and the list of files to lint.
 
     !!! DO NOT EDIT !!!

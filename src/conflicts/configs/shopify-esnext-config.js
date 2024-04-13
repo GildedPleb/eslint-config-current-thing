@@ -18,6 +18,7 @@ import { FlatCompat } from "@eslint/eslintrc";
 import shopify from "@shopify/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
 import importPlugin from "eslint-plugin-import";
+import markdown from "eslint-plugin-markdown";
 import promise from "eslint-plugin-promise";
 import sortClassMembers from "eslint-plugin-sort-class-members";
 import globals from "globals";
@@ -43,6 +44,7 @@ const jsonFiles = [
   "**/*.jsonc",
 ];
 const ymlFiles = ["*.yaml", "*.yml"];
+const mdFiles = ["**/*.md", "**/*.md/*.js", "**/*.md/*.ts"];
 
 const testFiles = [
   "**/*.test.*",
@@ -87,6 +89,11 @@ const configGen = ({
           ...globals.node,
         },
       },
+    },
+    /* PROCESSORS */
+    {
+      files: mdFiles,
+      processor: markdown.processors.markdown,
     },
     /* PARSERS */
     /*

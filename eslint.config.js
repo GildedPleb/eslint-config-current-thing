@@ -1,8 +1,17 @@
 import currentThing from "./src/config.js";
 // import pathMark from "eslint-plugin-pathmark"
+// import markdown from "eslint-plugin-markdown";
 
 export default [
   ...currentThing(),
+  // ...markdown.configs.recommended,
+  // {
+  //   files: ["**/*.md/**.js"],
+  //   rules: {
+  //     "no-undef": 2,
+  //     "prettier/prettier": 2
+  //   }
+  // }
   // pathMark.configs.flat,
 ];
 

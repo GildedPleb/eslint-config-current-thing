@@ -111,7 +111,11 @@ for (const { def: codeToLint, filePath, short } of fileList) {
 
         // Utility to call out a particular rule when seen in a config.
         const ruleToCheck = "jest/no-if";
-        if (json.rules !== undefined && ruleToCheck in json.rules)
+        if (
+          "rules" in json &&
+          json.rules !== undefined &&
+          ruleToCheck in json.rules
+        )
           console.log(name, json.rules[ruleToCheck]);
 
         return { es, hash, json, location, name };

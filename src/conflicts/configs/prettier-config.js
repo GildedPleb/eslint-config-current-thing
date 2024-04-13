@@ -18,6 +18,7 @@ import { FlatCompat } from "@eslint/eslintrc";
 import prettierConfig from "eslint-config-prettier";
 import { defineFlatConfig } from "eslint-define-config";
 import flowtype from "eslint-plugin-flowtype";
+import markdown from "eslint-plugin-markdown";
 import prettier from "eslint-plugin-prettier";
 import react from "eslint-plugin-react";
 import unicorn from "eslint-plugin-unicorn";
@@ -44,6 +45,7 @@ const jsonFiles = [
   "**/*.jsonc",
 ];
 const ymlFiles = ["*.yaml", "*.yml"];
+const mdFiles = ["**/*.md", "**/*.md/*.js", "**/*.md/*.ts"];
 
 const testFiles = [
   "**/*.test.*",
@@ -88,6 +90,11 @@ const configGen = ({
           ...globals.node,
         },
       },
+    },
+    /* PROCESSORS */
+    {
+      files: mdFiles,
+      processor: markdown.processors.markdown,
     },
     /* PARSERS */
     /*

@@ -4,6 +4,7 @@ import jsCodeToLint from "./javascript";
 import testCodeToLint from "./js.test";
 import jsonCodeToLint from "./json";
 import jsxCodeToLint from "./jsx";
+import mdCodeToLint from "./markdown";
 import tsxCodeToLint from "./tsx";
 import tsCodeToLint from "./typescript";
 
@@ -48,6 +49,11 @@ const fileList: FileList[] = [
     def: jsonCodeToLint,
     filePath: "./src/conflicts/code-samples/json.json",
     short: "json",
+  },
+  {
+    def: mdCodeToLint,
+    filePath: "./src/conflicts/code-samples/markdown.md",
+    short: "markdown",
   },
 ];
 

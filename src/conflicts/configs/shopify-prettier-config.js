@@ -17,6 +17,7 @@ import babelPlugin from "@babel/eslint-plugin";
 import { FlatCompat } from "@eslint/eslintrc";
 import shopify from "@shopify/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
+import markdown from "eslint-plugin-markdown";
 import prettier from "eslint-plugin-prettier";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
@@ -41,6 +42,7 @@ const jsonFiles = [
   "**/*.jsonc",
 ];
 const ymlFiles = ["*.yaml", "*.yml"];
+const mdFiles = ["**/*.md", "**/*.md/*.js", "**/*.md/*.ts"];
 
 const testFiles = [
   "**/*.test.*",
@@ -85,6 +87,11 @@ const configGen = ({
           ...globals.node,
         },
       },
+    },
+    /* PROCESSORS */
+    {
+      files: mdFiles,
+      processor: markdown.processors.markdown,
     },
     /* PARSERS */
     /*

@@ -18,6 +18,7 @@ import reactNativeConfig from "@react-native-community/eslint-config";
 import { defineFlatConfig } from "eslint-define-config";
 import commentsOld from "eslint-plugin-eslint-comments";
 import jest from "eslint-plugin-jest";
+import markdown from "eslint-plugin-markdown";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactNativeIndie from "eslint-plugin-react-native";
@@ -44,6 +45,7 @@ const jsonFiles = [
   "**/*.jsonc",
 ];
 const ymlFiles = ["*.yaml", "*.yml"];
+const mdFiles = ["**/*.md", "**/*.md/*.js", "**/*.md/*.ts"];
 
 const testFiles = [
   "**/*.test.*",
@@ -88,6 +90,11 @@ const configGen = ({
           ...globals.node,
         },
       },
+    },
+    /* PROCESSORS */
+    {
+      files: mdFiles,
+      processor: markdown.processors.markdown,
     },
     /* PARSERS */
     /*

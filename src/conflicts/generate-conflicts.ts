@@ -120,6 +120,7 @@ const tsFiles = ["**/*.ts", ...tsxFiles, "**/*.mts", "**/*.cts"];
 const files = [...jsFiles, ...tsFiles];
 const jsonFiles = ["*.json", "**/*.json", "*.json5", "**/*.json5", "*.jsonc", "**/*.jsonc"];
 const ymlFiles = ["*.yaml", "*.yml"];
+const mdFiles = ["**/*.md", "**/*.md/*.js", "**/*.md/*.ts"];
 
 const testFiles = [
   "**/*.test.*",
@@ -164,6 +165,11 @@ const configGen = ({
           ...globals.node,
         },
       },
+    },
+    /* PROCESSORS */
+    {
+      files: mdFiles,
+      processor: markdown.processors.markdown,
     },
     /* PARSERS */
 ${parsers

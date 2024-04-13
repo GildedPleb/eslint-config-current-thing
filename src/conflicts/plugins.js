@@ -69,6 +69,8 @@ import jsonc from "eslint-plugin-jsonc";
 // @ts-ignore yes, we need to ignore every import for this to run
 import jsxA11y from "eslint-plugin-jsx-a11y";
 // @ts-ignore yes, we need to ignore every import for this to run
+import markdown from "eslint-plugin-markdown";
+// @ts-ignore yes, we need to ignore every import for this to run
 import mocha from "eslint-plugin-mocha";
 // @ts-ignore yes, we need to ignore every import for this to run
 import nNode from "eslint-plugin-n";
@@ -170,6 +172,7 @@ const plugins = {
   jsdoc,
   jsonc,
   "jsx-a11y": jsxA11y,
+  markdown,
   mocha,
   n: nNode,
   "no-only-tests": noOnlyTest,

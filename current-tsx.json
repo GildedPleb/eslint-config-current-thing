@@ -1199,6 +1199,7 @@
     "jsdoc",
     "jsonc:eslint-plugin-jsonc@2.15.1",
     "jsx-a11y",
+    "markdown:eslint-plugin-markdown@4.0.1",
     "mocha",
     "n:eslint-plugin-n@16.6.2",
     "no-only-tests",
@@ -1228,6 +1229,12 @@
     "you-dont-need-lodash-underscore"
   ],
   "rules": {
+    "css-modules/no-unused-class": [
+      2
+    ],
+    "css-modules/no-undef-class": [
+      2
+    ],
     "@stylistic/block-spacing": [
       0,
       "always"
@@ -4419,12 +4426,6 @@
       2
     ],
     "jsx-a11y/tabindex-no-positive": [
-      2
-    ],
-    "css-modules/no-unused-class": [
-      2
-    ],
-    "css-modules/no-undef-class": [
       2
     ],
     "i18next/no-literal-string": [

@@ -17,6 +17,7 @@ import { FlatCompat } from "@eslint/eslintrc";
 import standard from "eslint-config-standard";
 import { defineFlatConfig } from "eslint-define-config";
 import importPlugin from "eslint-plugin-import";
+import markdown from "eslint-plugin-markdown";
 import nNode from "eslint-plugin-n";
 import promise from "eslint-plugin-promise";
 import globals from "globals";
@@ -42,6 +43,7 @@ const jsonFiles = [
   "**/*.jsonc",
 ];
 const ymlFiles = ["*.yaml", "*.yml"];
+const mdFiles = ["**/*.md", "**/*.md/*.js", "**/*.md/*.ts"];
 
 const testFiles = [
   "**/*.test.*",
@@ -86,6 +88,11 @@ const configGen = ({
           ...globals.node,
         },
       },
+    },
+    /* PROCESSORS */
+    {
+      files: mdFiles,
+      processor: markdown.processors.markdown,
     },
     /* PARSERS */
     /*

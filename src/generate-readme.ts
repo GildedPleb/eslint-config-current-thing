@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 import JSONConfigJs from "../current-js.json" assert { type: "json" };
 import JSONConfigJson from "../current-json.json" assert { type: "json" };
 import JSONConfigJsx from "../current-jsx.json" assert { type: "json" };
+import JSONConfigMd from "../current-md.json" assert { type: "json" };
 import JSONConfigTest from "../current-test.json" assert { type: "json" };
 import JSONConfigTs from "../current-ts.json" assert { type: "json" };
 import JSONConfigTsx from "../current-tsx.json" assert { type: "json" };
@@ -79,33 +80,21 @@ const configListMarker = "List of Configs";
 
 const newPackages = await fetchEslintPlugins();
 
-const tsRuleCount = Object.keys(
-  (JSONConfigTs as { rules: Record<string, unknown> }).rules,
-).length;
-const jsRuleCount = Object.keys(
-  (JSONConfigJs as { rules: Record<string, unknown> }).rules,
-).length;
-const testRuleCount = Object.keys(
-  (JSONConfigTest as { rules: Record<string, unknown> }).rules,
-).length;
-const tsxRuleCount = Object.keys(
-  (JSONConfigTsx as { rules: Record<string, unknown> }).rules,
-).length;
-const jsxRuleCount = Object.keys(
-  (JSONConfigJsx as { rules: Record<string, unknown> }).rules,
-).length;
-const jsonRuleCount = Object.keys(
-  (JSONConfigJson as { rules: Record<string, unknown> }).rules,
-).length;
-
+// Mapping config to their corresponding counts
+const JSONconfigs = [
+  { config: JSONConfigTs, name: "typescript" },
+  { config: JSONConfigJs, name: "javascript" },
+  { config: JSONConfigTest, name: "testing" },
+  { config: JSONConfigTsx, name: "TSX" },
+  { config: JSONConfigJsx, name: "JSX" },
+  { config: JSONConfigJson, name: "JSON" },
+  { config: JSONConfigMd, name: "MD" },
+];
 const ruleCountMarker = "Rule Counts";
-const ruleCount = `Unsurprisingly, it is incredibly strict with popularity-based opinions on:
-- **${tsRuleCount}** typescript rules
-- **${jsRuleCount}** javascript rules
-- **${testRuleCount}** testing rules
-- **${tsxRuleCount}** TSX rules
-- **${jsxRuleCount}** JSX rules
-- **${jsonRuleCount}** JSON rules`;
+const ruleCount = `Unsurprisingly, it is incredibly strict with popularity-based opinions on:\n\n${JSONconfigs.map(
+  ({ config, name }) =>
+    `- **${Object.keys(config.rules).length}** ${name} rules`,
+).join("\n")}`;
 
 const underConsiderationMarker = "Under Consideration List";
 const underConsideration = `The following section is generated according to spec.

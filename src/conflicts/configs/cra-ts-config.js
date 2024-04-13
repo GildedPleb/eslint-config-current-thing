@@ -15,6 +15,7 @@ import { fileURLToPath } from "node:url";
 
 import { FlatCompat } from "@eslint/eslintrc";
 import { defineFlatConfig } from "eslint-define-config";
+import markdown from "eslint-plugin-markdown";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
 import tseslint from "typescript-eslint";
@@ -38,6 +39,7 @@ const jsonFiles = [
   "**/*.jsonc",
 ];
 const ymlFiles = ["*.yaml", "*.yml"];
+const mdFiles = ["**/*.md", "**/*.md/*.js", "**/*.md/*.ts"];
 
 const testFiles = [
   "**/*.test.*",
@@ -82,6 +84,11 @@ const configGen = ({
           ...globals.node,
         },
       },
+    },
+    /* PROCESSORS */
+    {
+      files: mdFiles,
+      processor: markdown.processors.markdown,
     },
     /* PARSERS */
     /*

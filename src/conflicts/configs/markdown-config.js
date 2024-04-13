@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/jest-dom-config.js
+// PathMark: ./src/conflicts/configs/markdown-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -15,7 +15,6 @@ import { fileURLToPath } from "node:url";
 
 import { FlatCompat } from "@eslint/eslintrc";
 import { defineFlatConfig } from "eslint-define-config";
-import jestDom from "eslint-plugin-jest-dom";
 import markdown from "eslint-plugin-markdown";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
@@ -133,26 +132,33 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        "jest-dom": jestDom,
+        markdown,
       },
     },
 
     /*
-      Jest Dom
+      Markdown
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: jest-dom
+      Requires: markdown
     */
-    ...(disable.includes("eslint-plugin-jest-dom") || threshold > 1_000_000
+    ...(disable.includes("eslint-plugin-markdown") || threshold > 1_000_000
       ? []
       : [
           {
-            files: testFiles,
+            files: mdFiles,
+            languageOptions: {
+              parserOptions: {
+                ecmaFeatures: {
+                  impliedStrict: true,
+                },
+              },
+            },
             rules: {
-              ...jestDom.configs.recommended.rules,
-              ...("eslint-plugin-jest-dom" in override
-                ? override["eslint-plugin-jest-dom"]
+              ...markdown.configs.recommended[2].rules,
+              ...("eslint-plugin-markdown" in override
+                ? override["eslint-plugin-markdown"]
                 : {}),
             },
           },

@@ -16,5 +16,5 @@
     "types": ["jest", "node"]
   },
   "exclude": ["node_modules"],
-  "include": ["src", "types", "test"]
+  "include": ["src/**/*", "types/**/*", "test/**/*"]
 }

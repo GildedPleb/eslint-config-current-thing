@@ -22,14 +22,14 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 | Compat | Create React App | Cypress | ES-X | ESLint |
 | Emotion CSS | Functional | Google | Import | Internationalization (i18n) |
 | JSDoc | JSONC | JSX Accessibility (JSX A11y) | Jest | Jest Dom |
-| Jest Formatting | Mocha | NextJS | No Only Tests | No Unsanitized |
-| No Unused Imports | Node.js | Perfectionist | Playwright | Prefer Arrow |
-| Prettier | Promises | React | React Hooks | React Native (Independent Plugin/Config) |
-| React Native Config | React Native Plugin | React Performance | React Refresh | Regular Expressions |
-| Security | Shopify | Simple Import Sort | SonarJS | Sort Class Members |
-| Standard | Standard JSX | Standard React | Storybook | Stylistic |
-| TSDoc | Tailwind CSS | Testing Library | TypeScript | Unicorn |
-| XO | You Don't Need Lodash |  |  |  |
+| Jest Formatting | Markdown | Mocha | NextJS | No Only Tests |
+| No Unsanitized | No Unused Imports | Node.js | Perfectionist | Playwright |
+| Prefer Arrow | Prettier | Promises | React | React Hooks |
+| React Native (Independent Plugin/Config) | React Native Config | React Native Plugin | React Performance | React Refresh |
+| Regular Expressions | Security | Shopify | Simple Import Sort | SonarJS |
+| Sort Class Members | Standard | Standard JSX | Standard React | Storybook |
+| Stylistic | TSDoc | Tailwind CSS | Testing Library | TypeScript |
+| Unicorn | XO | You Don't Need Lodash |  |  |
 
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
@@ -47,12 +47,14 @@ This is a meta-config of many configs. The basic idea is that Linting is usually
 <!-- Start Generated Rule Counts DO NOT EDIT! -->
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
+
 - **1137** typescript rules
 - **1036** javascript rules
 - **1166** testing rules
 - **1279** TSX rules
 - **1178** JSX rules
 - **32** JSON rules
+- **7** MD rules
 
 <!-- End Generated Rule Counts DO NOT EDIT! -->
 
@@ -79,7 +81,7 @@ export default [...currentThing()];
 You'll also probably want something like this in your `package.json` (edit accordingly):
 
 ```json
-  ...
+{
   "type": "module",
   "prettier": {},
   "engines": {
@@ -88,17 +90,15 @@ You'll also probably want something like this in your `package.json` (edit accor
   "browserslist": [
     "defaults and supports es6-module",
     "maintained node versions"
-  ],
-  ...
+  ]
+}
 ```
 
 And if you are using VS Code, you should get the extension for ESLint `dbaeumer.vscode-eslint` where you will need to add this to your `settings.json`:
 
 ```json
 {
-  ...
   "eslint.experimental.useFlatConfig": true
-  ...
 }
 ```
 
@@ -145,6 +145,8 @@ E.g. if you disable every config, in order from the most downloaded down, until 
 In the event that you need to override or change a rule in order with respect to all other rules:
 
 ```js
+import currentThing from "eslint-config-current-thing";
+
 export default [
   ...currentThing({
     override: { "eslint-config-airbnb": { "no-restricted-syntax": 2 } },
@@ -161,6 +163,8 @@ export default [
 `threshold` can be passed to the options object to set the popularity threshold for packages. Defaulting to 400,000 downloads per month.
 
 ```js
+import currentThing from "eslint-config-current-thing";
+
 export default [
   ...currentThing({
     threshold: 1_000_000,
@@ -181,12 +185,15 @@ There are a crazy amount of rules in this config, and they are completely overwh
   - Test [`current-test.json`](./current-test.json)
   - TSX [`current-tsx.json`](./current-tsx.json)
   - JSX [`current-jsx.json`](./current-jsx.json)
+  - JSON [`current-json.json`](./current-json.json)
 
 ### Overwrite Preferences
 
 What is more, you can Enable, Disable, Add or Alter any rule you come across, like so:
 
 ```js
+import currentThing from "eslint-config-current-thing";
+
 export default [
   ...currentThing(),
   {
@@ -324,27 +331,26 @@ See [rejected](./src/packages/rejected.ts) for the full list with notes. But it'
 
 The following section is generated according to spec.
 
-Generated on 4/12/2024, downloads for the previous 28 days.
+Generated on 4/13/2024, downloads for the previous 28 days.
 
-- 1,970,575 downloads, [eslint-plugin-markdown](https://www.npmjs.com/package/eslint-plugin-markdown)
-- 1,884,054 downloads, [@graphql-eslint/eslint-plugin](https://www.npmjs.com/package/@graphql-eslint/eslint-plugin)
+- 1,868,109 downloads, [@graphql-eslint/eslint-plugin](https://www.npmjs.com/package/@graphql-eslint/eslint-plugin)
 - 1,863,331 downloads, [eslint-plugin-html](https://www.npmjs.com/package/eslint-plugin-html)
 - 1,669,038 downloads, [eslint-plugin-lodash](https://www.npmjs.com/package/eslint-plugin-lodash)
 - 1,285,316 downloads, [@microsoft/eslint-plugin-sdl](https://www.npmjs.com/package/@microsoft/eslint-plugin-sdl)
 - 1,267,562 downloads, [eslint-plugin-yml](https://www.npmjs.com/package/eslint-plugin-yml)
-- 1,173,146 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
-- 1,084,576 downloads, [eslint-plugin-chai-friendly](https://www.npmjs.com/package/eslint-plugin-chai-friendly)
+- 1,162,603 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
+- 1,142,850 downloads, [eslint-plugin-chai-friendly](https://www.npmjs.com/package/eslint-plugin-chai-friendly)
 - 974,957 downloads, [eslint-plugin-graphql](https://www.npmjs.com/package/eslint-plugin-graphql)
 - 940,187 downloads, [eslint-plugin-sort-keys-fix](https://www.npmjs.com/package/eslint-plugin-sort-keys-fix)
 - 891,293 downloads, [eslint-plugin-mdx](https://www.npmjs.com/package/eslint-plugin-mdx)
 - 857,924 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
 - 774,856 downloads, [eslint-plugin-jasmine](https://www.npmjs.com/package/eslint-plugin-jasmine)
 - 672,310 downloads, [npm-package-json-lint](https://www.npmjs.com/package/npm-package-json-lint)
-- 668,857 downloads, [eslint-import-resolver-custom-alias](https://www.npmjs.com/package/eslint-import-resolver-custom-alias)
+- 660,536 downloads, [eslint-import-resolver-custom-alias](https://www.npmjs.com/package/eslint-import-resolver-custom-alias)
 - 656,334 downloads, [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file)
 - 539,039 downloads, [eslint-formatter-gitlab](https://www.npmjs.com/package/eslint-formatter-gitlab)
 - 533,564 downloads, [eslint-plugin-ava](https://www.npmjs.com/package/eslint-plugin-ava)
-- 513,039 downloads, [ember-template-lint](https://www.npmjs.com/package/ember-template-lint)
+- 514,699 downloads, [ember-template-lint](https://www.npmjs.com/package/ember-template-lint)
 - 501,972 downloads, [eslint-plugin-react-prefer-function-component](https://www.npmjs.com/package/eslint-plugin-react-prefer-function-component)
 - 492,944 downloads, [eslint-plugin-no-use-extend-native](https://www.npmjs.com/package/eslint-plugin-no-use-extend-native)
 - 463,120 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin)
@@ -358,13 +364,14 @@ Generated on 4/12/2024, downloads for the previous 28 days.
 - 360,364 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
 - 355,321 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu) - Not Yet Eligible
 - 354,616 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
-- 349,325 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard) - Not Yet Eligible
+- 345,033 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard) - Not Yet Eligible
 - 338,616 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
 - 337,871 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc) - Not Yet Eligible
 - 336,894 downloads, [eslint-plugin-testcafe](https://www.npmjs.com/package/eslint-plugin-testcafe) - Not Yet Eligible
 - 310,758 downloads, [@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config) - Not Yet Eligible
 - 304,828 downloads, [eslint-plugin-deprecate](https://www.npmjs.com/package/eslint-plugin-deprecate) - Not Yet Eligible
 - 295,772 downloads, [eslint-plugin-no-secrets](https://www.npmjs.com/package/eslint-plugin-no-secrets) - Not Yet Eligible
+- 292,669 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
 - 287,395 downloads, [eslint-plugin-diff](https://www.npmjs.com/package/eslint-plugin-diff) - Not Yet Eligible
 
 
