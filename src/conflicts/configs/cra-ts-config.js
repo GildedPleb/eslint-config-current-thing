@@ -198,6 +198,7 @@ const configGen = ({
                 ecmaFeatures: {
                   jsx: true,
                 },
+                warnOnUnsupportedTypeScriptVersion: false,
               },
             },
             rules: {

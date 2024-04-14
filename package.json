@@ -65,6 +65,7 @@
     "eslint-plugin-ft-flow": "^3.0.7",
     "eslint-plugin-functional": "^6.4.0",
     "eslint-plugin-header": "^3.1.1",
+    "eslint-plugin-html": "^8.1.0",
     "eslint-plugin-i18next": "^6.0.3",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jest": "^28.2.0",

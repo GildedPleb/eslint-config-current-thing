@@ -11,6 +11,7 @@ import flowtype from "./flowtype";
 import functional from "./functional";
 import graphql from "./graphql";
 import header from "./header";
+import html from "./html";
 import i18next from "./i18next";
 import importPlugin from "./import";
 import importSort from "./import-sort";
@@ -118,6 +119,7 @@ const plugins = [
   preferArrow,
   md,
   graphql,
+  html,
 ];
 
 type ExtractNamespace<T> =

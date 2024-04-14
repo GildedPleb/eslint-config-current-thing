@@ -47,6 +47,7 @@ import flowtype from "eslint-plugin-flowtype";
 import ftFlow from "eslint-plugin-ft-flow";
 import functional from "eslint-plugin-functional";
 import header from "eslint-plugin-header";
+import html from "eslint-plugin-html";
 import i18next from "eslint-plugin-i18next";
 import importPlugin from "eslint-plugin-import";
 import jest from "eslint-plugin-jest";
@@ -273,6 +274,7 @@ const configGen = ({
         "ft-flow": ftFlow,
         functional,
         header,
+        html,
         i18next,
         import: importPlugin,
         jest,
@@ -2376,6 +2378,7 @@ const configGen = ({
                 ecmaFeatures: {
                   jsx: true,
                 },
+                warnOnUnsupportedTypeScriptVersion: false,
               },
             },
             rules: {

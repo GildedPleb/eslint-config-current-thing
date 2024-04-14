@@ -36,7 +36,6 @@ const investigating = new Set([
   "eslint-formatter-html",
   "eslint-formatter-mo",
   "eslint-formatter-summary-chart",
-  "eslint-plugin-angular",
   "eslint-plugin-assemblyscript",
   "eslint-plugin-astro",
   "eslint-plugin-ava",
@@ -73,13 +72,11 @@ const investigating = new Set([
   "eslint-plugin-generator-eslint",
   "eslint-plugin-github",
   "eslint-plugin-globals",
-  "eslint-plugin-graphql",
   "eslint-plugin-hapi",
   "eslint-plugin-hexagonal-architecture",
   "eslint-plugin-html",
   "eslint-plugin-immutable",
   "eslint-plugin-inclusive-language",
-  "eslint-plugin-json",
   "eslint-plugin-maintainable",
   "eslint-plugin-mdx",
   "eslint-plugin-meteor",
@@ -117,6 +114,7 @@ const investigating = new Set([
   "putout",
   "superlint",
   "tslint-etc",
+  "@html-eslint",
 ]);
 
 export default investigating;

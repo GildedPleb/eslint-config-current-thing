@@ -55,6 +55,8 @@ import functional from "eslint-plugin-functional";
 // @ts-ignore yes, we need to ignore every import for this to run
 import header from "eslint-plugin-header";
 // @ts-ignore yes, we need to ignore every import for this to run
+import html from "eslint-plugin-html";
+// @ts-ignore yes, we need to ignore every import for this to run
 import i18next from "eslint-plugin-i18next";
 // @ts-ignore yes, we need to ignore every import for this to run
 import importPlugin from "eslint-plugin-import";
@@ -167,6 +169,7 @@ const plugins = {
   "ft-flow": ftFlow,
   functional,
   header,
+  html,
   i18next,
   import: importPlugin,
   jest,

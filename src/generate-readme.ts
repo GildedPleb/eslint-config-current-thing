@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import JSONConfigJs from "../current-js.json" assert { type: "json" };
 import JSONConfigJson from "../current-json.json" assert { type: "json" };
 import JSONConfigJsx from "../current-jsx.json" assert { type: "json" };
-import JSONConfigMd from "../current-md.json" assert { type: "json" };
+// Import JSONConfigMd from "../current-md.json" assert { type: "json" };
 import JSONConfigTest from "../current-test.json" assert { type: "json" };
 import JSONConfigTs from "../current-ts.json" assert { type: "json" };
 import JSONConfigTsx from "../current-tsx.json" assert { type: "json" };
@@ -88,7 +88,7 @@ const JSONconfigs = [
   { config: JSONConfigTsx, name: "TSX" },
   { config: JSONConfigJsx, name: "JSX" },
   { config: JSONConfigJson, name: "JSON" },
-  { config: JSONConfigMd, name: "MD" },
+  // { config: JSONConfigMd, name: "MD" },
 ];
 const ruleCountMarker = "Rule Counts";
 const ruleCount = `Unsurprisingly, it is incredibly strict with popularity-based opinions on:\n\n${JSONconfigs.map(

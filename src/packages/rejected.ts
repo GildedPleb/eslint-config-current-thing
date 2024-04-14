@@ -43,6 +43,7 @@ const rejected = new Set([
   "eslint-plugin-json",
   "eslint-plugin-babel",
   "eslint-plugin-graphql",
+  "eslint-plugin-lodash",
 
   // Plugin for linting plugins
   "eslint-plugin-eslint-plugin",
