@@ -83,6 +83,7 @@ import unicorn from "./unicorn";
 import unsanitized from "./unsanitized";
 import unusedImports from "./unused-imports";
 import xo from "./xo";
+import yml from "./yml";
 import youDontNeedLodash from "./you-dont-need-lodash";
 
 export interface Config {
@@ -186,6 +187,7 @@ const configs: Config[] = [
   sdlNode,
   sdlReact,
   sdlTs,
+  yml,
 ];
 
 export default configs;

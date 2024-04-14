@@ -216,6 +216,7 @@ const configList = [
     name: "msdl-react",
   },
   { location: "./src/conflicts/configs/msdl-ts-config.js", name: "msdl-ts" },
+  { location: "./src/conflicts/configs/yml-config.js", name: "yml" },
 ];
 
 export default configList;

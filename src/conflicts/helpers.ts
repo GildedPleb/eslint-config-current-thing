@@ -49,7 +49,7 @@ async function getLinterRaw(
   filePath: string,
   overrideConfigFile: string,
   rules?: Record<string, Rule>,
-): Promise<[IFlatESLint, ConfigData, string]> {
+): Promise<[IFlatESLint, ConfigData | undefined, string]> {
   const eslint = linter(overrideConfigFile, rules);
   const json = await eslint.calculateConfigForFile(filePath);
   const hash = hashObject({ json });
@@ -86,8 +86,8 @@ const memoizedLintText = memoize(
 async function getDiffRaw(
   opt: Files,
   codeToLint: string,
-  config1: [IFlatESLint, ConfigData, string],
-  config2: [IFlatESLint, ConfigData, string],
+  config1: [IFlatESLint, ConfigData | undefined, string],
+  config2: [IFlatESLint, ConfigData | undefined, string],
 ): DiffReturn {
   const [es1, , hash1] = config1;
   const [es2, , hash2] = config2;
@@ -127,8 +127,8 @@ export const getDiff = memoize(getDiffRaw, {
     const [opt, codeToLint, [, , hash1], [, , hash2]] = arguments_ as [
       Files,
       string,
-      [IFlatESLint, ConfigData, string],
-      [IFlatESLint, ConfigData, string],
+      [IFlatESLint, ConfigData | undefined, string],
+      [IFlatESLint, ConfigData | undefined, string],
     ];
     return hashString(codeToLint + hash1 + hash2 + opt.filePath);
   },

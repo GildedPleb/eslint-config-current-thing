@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/rn-ts-config.js
+// PathMark: ./src/conflicts/configs/yml-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -18,9 +18,9 @@ import {
   parseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
-import reactNativeConfig from "@react-native-community/eslint-config";
 import { defineFlatConfig } from "eslint-define-config";
 import markdown from "eslint-plugin-markdown";
+import yml from "eslint-plugin-yml";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
@@ -171,31 +171,28 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        "@typescript-eslint": tseslint.plugin,
+        yml,
       },
     },
 
     /*
-      React Native Config - TS
+      YML
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: @typescript-eslint
+      Requires: yml
     */
-    ...(disable.includes("@react-native-community/eslint-config-ts") ||
-    disable.includes("@react-native/eslint-config-ts") ||
-    threshold > 1_000_000
+    ...(disable.includes("eslint-plugin-yml") || threshold > 1_000_000
       ? []
       : [
           {
-            files: tsxFiles,
+            files: ymlFiles,
             rules: {
-              ...reactNativeConfig.overrides[1].rules,
-              ...("@react-native-community/eslint-config/ts" in override
-                ? override["@react-native-community/eslint-config/ts"]
-                : {}),
-              ...("@react-native/eslint-config/ts" in override
-                ? override["@react-native/eslint-config/ts"]
+              ...yml.configs.base.overrides[0].rules,
+              ...yml.configs.standard.rules,
+              ...yml.configs.recommended.rules,
+              ...("eslint-plugin-yml" in override
+                ? override["eslint-plugin-yml"]
                 : {}),
             },
           },

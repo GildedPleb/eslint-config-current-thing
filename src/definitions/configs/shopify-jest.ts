@@ -24,6 +24,6 @@ export default {
   ],
   requiredPlugins: ["jest", "jest-formatting", "@shopify", "@shopify/jest"],
   rules: `...shopify.configs.jest.rules,
-  "jest/no-if": 0,`,
+    "jest/no-if": 0,`,
 } satisfies Config;
 // EOF

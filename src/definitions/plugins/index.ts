@@ -54,6 +54,7 @@ import tsdoc from "./tsdoc";
 import unicorn from "./unicorn";
 import unsanitized from "./unsanitized";
 import unusedImports from "./unused-imports";
+import yml from "./yml";
 import youDontNeedLodash from "./you-dont-need-lodash";
 
 export interface Plugin<N extends string> {
@@ -122,6 +123,7 @@ const plugins = [
   graphql,
   html,
   sdl,
+  yml,
 ];
 
 type ExtractNamespace<T> =

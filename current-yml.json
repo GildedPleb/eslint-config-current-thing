@@ -1092,7 +1092,7 @@
       "require": false,
       "setImmediate": false
     },
-    "parser": "jsonc-eslint-parser@2.4.0",
+    "parser": "yaml-eslint-parser@1.2.2",
     "parserOptions": {}
   },
   "plugins": [
@@ -1159,100 +1159,73 @@
     "you-dont-need-lodash-underscore"
   ],
   "rules": {
-    "strict": [
-      0
-    ],
-    "no-unused-expressions": [
+    "no-irregular-whitespace": [
       0
     ],
     "no-unused-vars": [
       0
     ],
-    "jsonc/comma-dangle": [
+    "spaced-comment": [
+      0
+    ],
+    "yml/block-mapping-question-indicator-newline": [
       2
     ],
-    "jsonc/no-bigint-literals": [
+    "yml/block-mapping": [
       2
     ],
-    "jsonc/no-binary-expression": [
+    "yml/block-sequence-hyphen-indicator-newline": [
       2
     ],
-    "jsonc/no-binary-numeric-literals": [
+    "yml/block-sequence": [
       2
     ],
-    "jsonc/no-comments": [
+    "yml/flow-mapping-curly-newline": [
       2
     ],
-    "jsonc/no-dupe-keys": [
+    "yml/flow-mapping-curly-spacing": [
       2
     ],
-    "jsonc/no-escape-sequence-in-identifier": [
+    "yml/flow-sequence-bracket-newline": [
       2
     ],
-    "jsonc/no-floating-decimal": [
+    "yml/flow-sequence-bracket-spacing": [
       2
     ],
-    "jsonc/no-hexadecimal-numeric-literals": [
+    "yml/indent": [
       2
     ],
-    "jsonc/no-infinity": [
+    "yml/key-spacing": [
       2
     ],
-    "jsonc/no-multi-str": [
+    "yml/no-empty-document": [
       2
     ],
-    "jsonc/no-nan": [
+    "yml/no-empty-key": [
       2
     ],
-    "jsonc/no-number-props": [
+    "yml/no-empty-mapping-value": [
       2
     ],
-    "jsonc/no-numeric-separators": [
+    "yml/no-empty-sequence-entry": [
       2
     ],
-    "jsonc/no-octal-numeric-literals": [
+    "yml/no-irregular-whitespace": [
       2
     ],
-    "jsonc/no-octal": [
+    "yml/no-tab-indent": [
       2
     ],
-    "jsonc/no-parenthesized": [
+    "yml/plain-scalar": [
       2
     ],
-    "jsonc/no-plus-sign": [
+    "yml/quotes": [
       2
     ],
-    "jsonc/no-regexp-literals": [
+    "yml/spaced-comment": [
       2
     ],
-    "jsonc/no-sparse-arrays": [
-      2
-    ],
-    "jsonc/no-template-literals": [
-      2
-    ],
-    "jsonc/no-undefined-value": [
-      2
-    ],
-    "jsonc/no-unicode-codepoint-escapes": [
-      2
-    ],
-    "jsonc/no-useless-escape": [
-      2
-    ],
-    "jsonc/quote-props": [
-      2
-    ],
-    "jsonc/quotes": [
-      2
-    ],
-    "jsonc/space-unary-ops": [
-      2
-    ],
-    "jsonc/valid-json-number": [
-      2
-    ],
-    "jsonc/vue-custom-block/no-parsing-error": [
+    "yml/vue-custom-block/no-parsing-error": [
       2
     ]
   }

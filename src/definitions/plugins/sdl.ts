@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/plugins/cypress.ts
+// PathMark: ./src/definitions/plugins/sdl.ts
 import type { Plugin } from ".";
 
 export default {

@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/jsonc.ts
+// PathMark: ./src/definitions/configs/graphql.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

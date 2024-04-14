@@ -8,7 +8,7 @@ export default {
       parser: ymlEslintParser,
     },
   }`,
-  name: "JSONC",
+  name: "YML",
   packages: [
     {
       declaredAs: "ymlEslintParser",

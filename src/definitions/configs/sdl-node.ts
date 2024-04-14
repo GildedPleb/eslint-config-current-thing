@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/sdl-react.ts
+// PathMark: ./src/definitions/configs/sdl-node.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

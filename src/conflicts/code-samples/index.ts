@@ -7,6 +7,7 @@ import jsxCodeToLint from "./jsx";
 import mdCodeToLint from "./markdown";
 import tsxCodeToLint from "./tsx";
 import tsCodeToLint from "./typescript";
+import ymlCodeToLint from "./yml";
 
 export interface FileList {
   def: string;
@@ -54,6 +55,11 @@ const fileList: FileList[] = [
     def: mdCodeToLint,
     filePath: "./src/conflicts/code-samples/markdown.md",
     short: "markdown",
+  },
+  {
+    def: ymlCodeToLint,
+    filePath: "./src/conflicts/code-samples/yml.yml",
+    short: "yml",
   },
 ];
 

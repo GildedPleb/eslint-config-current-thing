@@ -112,6 +112,7 @@ for (const { def: codeToLint, filePath, short } of fileList) {
         // Utility to call out a particular rule when seen in a config.
         const ruleToCheck = "jest/no-if";
         if (
+          json !== undefined &&
           "rules" in json &&
           json.rules !== undefined &&
           ruleToCheck in json.rules
@@ -128,7 +129,7 @@ for (const { def: codeToLint, filePath, short } of fileList) {
   );
 
   const configsFiltered = configsPopulated.filter(({ json, name }) => {
-    const rules1 = json.rules ?? {};
+    const rules1 = json?.rules ?? {};
     if (isEmpty(rules1)) {
       console.log(`${chalk.blue(name)} - Zero applicable rules, No conflicts!`);
       return false;

@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/plugins/markdown.ts
+// PathMark: ./src/definitions/plugins/md.ts
 import type { Plugin } from ".";
 
 export default {

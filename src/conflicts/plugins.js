@@ -129,6 +129,8 @@ import unicorn from "eslint-plugin-unicorn";
 // @ts-ignore yes, we need to ignore every import for this to run
 import unusedImports from "eslint-plugin-unused-imports";
 // @ts-ignore yes, we need to ignore every import for this to run
+import yml from "eslint-plugin-yml";
+// @ts-ignore yes, we need to ignore every import for this to run
 import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
 import tseslint from "typescript-eslint";
 
@@ -208,6 +210,7 @@ const plugins = {
   tsdoc,
   unicorn,
   "unused-imports": unusedImports,
+  yml,
   "you-dont-need-lodash-underscore": youDontNeedLodash,
 };
 

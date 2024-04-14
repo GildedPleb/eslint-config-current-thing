@@ -18,8 +18,8 @@ export default {
   ],
   requiredPlugins: ["jsonc"],
   rules: `...jsonc.configs.base.overrides[0].rules,
-  ...jsonc.configs["recommended-with-json"].rules,
-  ...jsonc.configs["recommended-with-jsonc"].rules,
-  ...jsonc.configs["recommended-with-json5"].rules,`,
+    ...jsonc.configs["recommended-with-json"].rules,
+    ...jsonc.configs["recommended-with-jsonc"].rules,
+    ...jsonc.configs["recommended-with-json5"].rules,`,
 } satisfies Config;
 // EOF

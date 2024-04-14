@@ -44,7 +44,7 @@ const jsonFiles = [
   "*.jsonc",
   "**/*.jsonc",
 ];
-const ymlFiles = ["*.yaml", "*.yml"];
+const ymlFiles = ["**/*.yaml", "**/*.yml"];
 const mdFiles = ["**/*.md/**"];
 const graphQLFiles = ["**/*.graphql"];
 
@@ -120,7 +120,7 @@ const configGen = ({
       },
     },
     /*
-      JSONC
+      YML
       A YAML parser that produces output compatible with ESLint
       https://github.com/ota-meshi/yaml-eslint-parser#readme
     */

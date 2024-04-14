@@ -63,7 +63,7 @@ const jsFiles = ["**/*.js", ...jsxFiles, "**/*.mjs", "**/*.cjs"];
 const tsFiles = ["**/*.ts", ...tsxFiles, "**/*.mts", "**/*.cts"];
 const files = [...jsFiles, ...tsFiles];
 const jsonFiles = ["*.json", "**/*.json", "*.json5", "**/*.json5", "*.jsonc", "**/*.jsonc"];
-const ymlFiles = ["*.yaml", "*.yml"];
+const ymlFiles = ["**/*.yaml", "**/*.yml"];
 const mdFiles = ["**/*.md/**"];
 const graphQLFiles = ["**/*.graphql"];
 
