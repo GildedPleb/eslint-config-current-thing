@@ -57,6 +57,7 @@ declare module "eslint-plugin-json";
 // Technically, a types packages for this exists, but it is incorrect.
 declare module "eslint-plugin-markdown";
 declare module "eslint-plugin-html";
+declare module "@microsoft/eslint-plugin-sdl";
 
 declare module "eslint/use-at-your-own-risk" {
   interface ParserOptions {

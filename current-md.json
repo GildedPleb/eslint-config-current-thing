@@ -1102,6 +1102,7 @@
     "@emotion",
     "@eslint-community/eslint-comments",
     "@graphql-eslint",
+    "@microsoft/sdl",
     "@next/next",
     "@react-native",
     "@shopify",

@@ -49,6 +49,10 @@ import reactNativeTs from "./react-native-ts";
 import reactPerf from "./react-perf";
 import reactRefresh from "./react-refresh";
 import regexp from "./regexp";
+import sdl from "./sdl";
+import sdlNode from "./sdl-node";
+import sdlReact from "./sdl-react";
+import sdlTs from "./sdl-ts";
 import security from "./security";
 import shopifyCore from "./shopify-core";
 import shopifyEsnext from "./shopify-esnext";
@@ -178,6 +182,10 @@ const configs: Config[] = [
   preferArrow,
   md,
   graphql,
+  sdl,
+  sdlNode,
+  sdlReact,
+  sdlTs,
 ];
 
 export default configs;

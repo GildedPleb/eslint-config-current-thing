@@ -1170,6 +1170,7 @@
     "@emotion",
     "@eslint-community/eslint-comments",
     "@graphql-eslint",
+    "@microsoft/sdl",
     "@next/next",
     "@react-native",
     "@shopify",
@@ -3373,7 +3374,7 @@
       2
     ],
     "react/no-danger": [
-      0
+      2
     ],
     "react/no-danger-with-children": [
       2
@@ -4934,6 +4935,39 @@
       2
     ],
     "prefer-object-has-own": [
+      2
+    ],
+    "@microsoft/sdl/no-cookies": [
+      2
+    ],
+    "@microsoft/sdl/no-document-domain": [
+      2
+    ],
+    "@microsoft/sdl/no-document-write": [
+      2
+    ],
+    "@microsoft/sdl/no-html-method": [
+      2
+    ],
+    "@microsoft/sdl/no-inner-html": [
+      2
+    ],
+    "@microsoft/sdl/no-insecure-url": [
+      2
+    ],
+    "@microsoft/sdl/no-msapp-exec-unsafe": [
+      2
+    ],
+    "@microsoft/sdl/no-postmessage-star-origin": [
+      2
+    ],
+    "@microsoft/sdl/no-winjs-html-unsafe": [
+      2
+    ],
+    "@microsoft/sdl/no-unsafe-alloc": [
+      2
+    ],
+    "@microsoft/sdl/react-iframe-missing-sandbox": [
       2
     ],
     "@typescript-eslint/block-spacing": [

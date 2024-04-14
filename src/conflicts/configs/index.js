@@ -206,6 +206,16 @@ const configList = [
   },
   { location: "./src/conflicts/configs/markdown-config.js", name: "markdown" },
   { location: "./src/conflicts/configs/graphql-config.js", name: "graphql" },
+  { location: "./src/conflicts/configs/msdl-config.js", name: "msdl" },
+  {
+    location: "./src/conflicts/configs/msdl-node-config.js",
+    name: "msdl-node",
+  },
+  {
+    location: "./src/conflicts/configs/msdl-react-config.js",
+    name: "msdl-react",
+  },
+  { location: "./src/conflicts/configs/msdl-ts-config.js", name: "msdl-ts" },
 ];
 
 export default configList;

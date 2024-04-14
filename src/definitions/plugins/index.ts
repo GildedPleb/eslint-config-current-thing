@@ -38,6 +38,7 @@ import reactNativeIndie from "./react-native-indie";
 import reactPerf from "./react-perf";
 import reactRefresh from "./react-refresh";
 import regexp from "./regexp";
+import sdl from "./sdl";
 import security from "./security";
 import shopify from "./shopify";
 import shopifyJest from "./shopify-jest";
@@ -120,6 +121,7 @@ const plugins = [
   md,
   graphql,
   html,
+  sdl,
 ];
 
 type ExtractNamespace<T> =

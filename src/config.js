@@ -23,6 +23,7 @@ import {
   processors as graphqlProcessors,
   rules as graphQLRules,
 } from "@graphql-eslint/eslint-plugin";
+import msdl from "@microsoft/eslint-plugin-sdl";
 import nextjs from "@next/eslint-plugin-next";
 import rnPlugin from "@react-native/eslint-plugin";
 import reactNativeConfig from "@react-native-community/eslint-config";
@@ -243,6 +244,7 @@ const configGen = ({
         "@emotion": { rules: emotion },
         "@eslint-community/eslint-comments": comments,
         "@graphql-eslint": { rules: graphQLRules },
+        "@microsoft/sdl": msdl,
         "@next/next": nextjs,
         "@react-native": rnPlugin,
         "@shopify": shopify,
@@ -1109,6 +1111,109 @@ const configGen = ({
               "mocha/no-mocha-arrows": 0,
               ...("eslint-config-xo" in override
                 ? override["eslint-config-xo"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Microsoft SDL
+      1,274,411 monthly downloads
+      ESLint plugin focused on common security issues and misconfigurations discoverable during static testing as part of Microsoft Security Development Lifecycle (SDL)
+      https://github.com/microsoft/eslint-plugin-sdl
+      Requires: @microsoft/sdl
+    */
+    ...(disable.includes("@microsoft/eslint-plugin-sdl") ||
+    threshold > 1_274_411
+      ? []
+      : [
+          {
+            files,
+            rules: {
+              // "Recommended" is just a smattering of everything: If Angular ever becomes a thing then we should add the angular modules here.
+              ...msdl.configs.common.rules,
+
+              ...("@microsoft/eslint-plugin-sdl" in override
+                ? override["@microsoft/eslint-plugin-sdl"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Microsoft SDL - Node
+      1,274,411 monthly downloads
+      ESLint plugin focused on common security issues and misconfigurations discoverable during static testing as part of Microsoft Security Development Lifecycle (SDL)
+      https://github.com/microsoft/eslint-plugin-sdl
+      Requires: node, @microsoft/sdl
+    */
+    ...(disable.includes("@microsoft/eslint-plugin-sdl/node") ||
+    threshold > 1_274_411
+      ? []
+      : [
+          {
+            files,
+            rules: {
+              // "Recommended" is just a smattering of everything
+              ...msdl.configs.node.rules,
+
+              ...("@microsoft/eslint-plugin-sdl/node" in override
+                ? override["@microsoft/eslint-plugin-sdl/node"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Microsoft SDL - React
+      1,274,411 monthly downloads
+      ESLint plugin focused on common security issues and misconfigurations discoverable during static testing as part of Microsoft Security Development Lifecycle (SDL)
+      https://github.com/microsoft/eslint-plugin-sdl
+      Requires: react, @microsoft/sdl
+    */
+    ...(disable.includes("@microsoft/eslint-plugin-sdl/react") ||
+    threshold > 1_274_411
+      ? []
+      : [
+          {
+            files: [...jsxFiles, ...tsxFiles],
+            languageOptions: {
+              parserOptions: {
+                ecmaFeatures: {
+                  jsx: true,
+                },
+              },
+            },
+            rules: {
+              // "Recommended" is just a smattering of everything
+              ...msdl.configs.react.rules,
+
+              ...("@microsoft/eslint-plugin-sdl/react" in override
+                ? override["@microsoft/eslint-plugin-sdl/react"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Microsoft SDL - TS
+      1,274,411 monthly downloads
+      ESLint plugin focused on common security issues and misconfigurations discoverable during static testing as part of Microsoft Security Development Lifecycle (SDL)
+      https://github.com/microsoft/eslint-plugin-sdl
+      Requires: @typescript-eslint, @microsoft/sdl
+    */
+    ...(disable.includes("@microsoft/eslint-plugin-sdl/ts") ||
+    threshold > 1_274_411
+      ? []
+      : [
+          {
+            files: tsFiles,
+            rules: {
+              // "Recommended" is just a smattering of everything
+              ...msdl.configs.typescript.rules,
+
+              ...("@microsoft/eslint-plugin-sdl/ts" in override
+                ? override["@microsoft/eslint-plugin-sdl/ts"]
                 : {}),
             },
           },
