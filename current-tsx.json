@@ -1228,6 +1228,7 @@
     "tailwindcss",
     "testing-library",
     "tsdoc",
+    "typescript-sort-keys",
     "unicorn:eslint-plugin-unicorn@52.0.0",
     "unused-imports",
     "yml:eslint-plugin-yml@1.14.0",
@@ -5497,6 +5498,12 @@
       2
     ],
     "prefer-object-has-own": [
+      2
+    ],
+    "typescript-sort-keys/interface": [
+      2
+    ],
+    "typescript-sort-keys/string-enum": [
       2
     ],
     "@microsoft/sdl/no-cookies": [

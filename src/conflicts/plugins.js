@@ -125,6 +125,8 @@ import testingLibrary from "eslint-plugin-testing-library";
 // @ts-ignore yes, we need to ignore every import for this to run
 import tsdoc from "eslint-plugin-tsdoc";
 // @ts-ignore yes, we need to ignore every import for this to run
+import sortKeys from "eslint-plugin-typescript-sort-keys";
+// @ts-ignore yes, we need to ignore every import for this to run
 import unicorn from "eslint-plugin-unicorn";
 // @ts-ignore yes, we need to ignore every import for this to run
 import unusedImports from "eslint-plugin-unused-imports";
@@ -208,6 +210,7 @@ const plugins = {
   tailwindcss,
   "testing-library": testingLibrary,
   tsdoc,
+  "typescript-sort-keys": sortKeys,
   unicorn,
   "unused-imports": unusedImports,
   yml,

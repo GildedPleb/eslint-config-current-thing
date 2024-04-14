@@ -17,3 +17,4 @@
 as in, if i write \_es used.eslint@typescript-eslint/no-unused-vars should be off.
 
 - Parse out so tha when you get an error, you only get 1 error from the leading config and all other errors are supressed.
+- Do a post process filter to remove unused plugins and rules.

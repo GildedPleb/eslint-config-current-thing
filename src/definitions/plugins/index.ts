@@ -45,6 +45,7 @@ import shopifyJest from "./shopify-jest";
 import shopifyTs from "./shopify-ts";
 import sonarjs from "./sonarjs";
 import sortClass from "./sort-class";
+import sortKeys from "./sort-keys";
 import storybook from "./storybook";
 import stylistic from "./stylistic";
 import tailwindPlugin from "./tailwind-plugin";
@@ -124,6 +125,7 @@ const plugins = [
   html,
   sdl,
   yml,
+  sortKeys,
 ];
 
 type ExtractNamespace<T> =

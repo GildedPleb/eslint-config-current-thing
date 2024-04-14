@@ -448,7 +448,33 @@ function startRace(...participants: [string, ...string[]]): void {
 }
 startRace('Alice', 'Bob', 'Charlie'); // Uses rest parameters with tuple types for a minimum number of arguments
 
+enum Direction1 {
+  Up,    // 0
+  Down,  // 1
+  Left,  // 2
+  Right  // 3
+}
 
+enum Direction2 {
+  Up = 1,
+  Down = 2,
+  Left = 3,
+  Right = 4
+}
+
+enum Direction3 {
+  Up = "UP",
+  Down = "DOWN",
+  Left = "LEFT",
+  Right = "RIGHT"
+}
+
+enum BooleanLikeHeterogeneousEnum {
+  No = 0,
+  Yes = "YES",
+  no = 2,
+  yes = "YESSSSS",
+}
 
 // EOF
 

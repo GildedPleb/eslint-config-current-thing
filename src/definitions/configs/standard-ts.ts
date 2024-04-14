@@ -8,8 +8,7 @@ export default {
     ${RULES}
   }`,
   id: "standard-ts",
-  name: "Standard",
-  nameSecondary: "TS",
+  name: "Standard TS",
   packages: [
     {
       declaredAs: "standard",

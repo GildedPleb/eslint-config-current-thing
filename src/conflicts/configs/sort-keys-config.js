@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/standard-ts-config.js
+// PathMark: ./src/conflicts/configs/sort-keys-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-unused-vars */
@@ -18,12 +18,9 @@ import {
   parseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
-import standardTS from "eslint-config-love";
 import { defineFlatConfig } from "eslint-define-config";
-import importPlugin from "eslint-plugin-import";
 import markdown from "eslint-plugin-markdown";
-import nNode from "eslint-plugin-n";
-import promise from "eslint-plugin-promise";
+import sortKeys from "eslint-plugin-typescript-sort-keys";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
@@ -174,34 +171,27 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        "@typescript-eslint": tseslint.plugin,
-        import: importPlugin,
-        n: nNode,
-        promise,
+        "typescript-sort-keys": sortKeys,
       },
     },
 
     /*
-      Standard TS
+      Typescript Sort Keys
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: @typescript-eslint, n, import, promise
+      Requires: typescript-sort-keys
     */
-    ...(disable.includes("eslint-config-standard-with-typescript") ||
-    disable.includes("eslint-config-love") ||
+    ...(disable.includes("eslint-plugin-typescript-sort-keys") ||
     threshold > 1_000_000
       ? []
       : [
           {
             files: tsFiles,
             rules: {
-              ...standardTS.rules,
-              ...("eslint-config-standard-with-typescript" in override
-                ? override["eslint-config-standard-with-typescript"]
-                : {}),
-              ...("eslint-config-love" in override
-                ? override["eslint-config-love"]
+              ...sortKeys.configs.recommended.rules,
+              ...("eslint-plugin-typescript-sort-keys" in override
+                ? override["eslint-plugin-typescript-sort-keys"]
                 : {}),
             },
           },

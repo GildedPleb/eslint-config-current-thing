@@ -165,8 +165,8 @@ const configList = [
     name: "shopify-ts-typecheck",
   },
   {
-    location: "./src/conflicts/configs/standard-ts-ts-config.js",
-    name: "standard-ts-ts",
+    location: "./src/conflicts/configs/standard-ts-config.js",
+    name: "standard-ts",
   },
   {
     location: "./src/conflicts/configs/storybook-main-config.js",
@@ -217,6 +217,10 @@ const configList = [
   },
   { location: "./src/conflicts/configs/msdl-ts-config.js", name: "msdl-ts" },
   { location: "./src/conflicts/configs/yml-config.js", name: "yml" },
+  {
+    location: "./src/conflicts/configs/sort-keys-config.js",
+    name: "sort-keys",
+  },
 ];
 
 export default configList;

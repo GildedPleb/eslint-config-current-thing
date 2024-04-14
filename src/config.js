@@ -82,6 +82,7 @@ import storybook from "eslint-plugin-storybook";
 import tailwindcss from "eslint-plugin-tailwindcss";
 import testingLibrary from "eslint-plugin-testing-library";
 import tsdoc from "eslint-plugin-tsdoc";
+import sortKeys from "eslint-plugin-typescript-sort-keys";
 import unicorn from "eslint-plugin-unicorn";
 import unusedImports from "eslint-plugin-unused-imports";
 import yml from "eslint-plugin-yml";
@@ -311,6 +312,7 @@ const configGen = ({
         tailwindcss,
         "testing-library": testingLibrary,
         tsdoc,
+        "typescript-sort-keys": sortKeys,
         unicorn,
         "unused-imports": unusedImports,
         yml,
@@ -989,6 +991,7 @@ const configGen = ({
               "@typescript-eslint/brace-style": 0,
               "@typescript-eslint/comma-dangle": 0,
               "@typescript-eslint/member-delimiter-style": 0,
+              "@typescript-eslint/no-extra-parens": 0,
               "@typescript-eslint/object-curly-spacing": 0,
               "@typescript-eslint/semi": 0,
               "@typescript-eslint/space-before-function-paren": 0,
@@ -1104,6 +1107,7 @@ const configGen = ({
               "@stylistic/semi": 0,
               "@typescript-eslint/comma-dangle": 0,
               "@typescript-eslint/indent": 0,
+              "@typescript-eslint/no-extra-parens": 0,
               "@typescript-eslint/object-curly-spacing": 0,
               "@typescript-eslint/semi": 0,
               "@typescript-eslint/space-before-function-paren": 0,
@@ -1113,6 +1117,29 @@ const configGen = ({
               "mocha/no-mocha-arrows": 0,
               ...("eslint-config-xo" in override
                 ? override["eslint-config-xo"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Typescript Sort Keys
+      1,162,151 monthly downloads
+      Sort interface and string enum keys
+      https://github.com/infctr/eslint-plugin-typescript-sort-keys#readme
+      Requires: typescript-sort-keys
+    */
+    ...(disable.includes("eslint-plugin-typescript-sort-keys") ||
+    threshold > 1_162_151
+      ? []
+      : [
+          {
+            files: tsFiles,
+            rules: {
+              ...sortKeys.configs.recommended.rules,
+
+              ...("eslint-plugin-typescript-sort-keys" in override
+                ? override["eslint-plugin-typescript-sort-keys"]
                 : {}),
             },
           },
@@ -1534,27 +1561,32 @@ const configGen = ({
         ]),
 
     /*
-      Standard - TS
+      Standard TS
       2,780,165 monthly downloads
       An ESLint Shareable Config for JavaScript Standard Style with TypeScript support / A TypeScript ESLint config that loves you
       https://github.com/mightyiam/eslint-config-standard-with-typescript#readme / https://github.com/mightyiam/eslint-config-love#readme
       Requires: @typescript-eslint, n, import, promise
     */
-    ...(disable.includes("eslint-config-standard-with-typescript/ts") ||
-    disable.includes("eslint-config-love/ts") ||
+    ...(disable.includes("eslint-config-standard-with-typescript") ||
+    disable.includes("eslint-config-love") ||
     threshold > 2_780_165
       ? []
       : [
           {
             files: tsFiles,
             rules: {
+              "@babel/object-curly-spacing": 0,
+              "@babel/semi": 0,
+              "@stylistic/comma-dangle": 0,
+              "@stylistic/space-before-function-paren": 0,
+              "prettier/prettier": 0,
               ...standardTS.rules,
 
-              ...("eslint-config-standard-with-typescript/ts" in override
-                ? override["eslint-config-standard-with-typescript/ts"]
+              ...("eslint-config-standard-with-typescript" in override
+                ? override["eslint-config-standard-with-typescript"]
                 : {}),
-              ...("eslint-config-love/ts" in override
-                ? override["eslint-config-love/ts"]
+              ...("eslint-config-love" in override
+                ? override["eslint-config-love"]
                 : {}),
             },
           },

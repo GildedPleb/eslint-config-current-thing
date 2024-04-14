@@ -68,6 +68,7 @@ import shopifyTs from "./shopify-ts";
 import shopifyTsTypeCheck from "./shopify-ts-typecheck";
 import sonarjs from "./sonarjs";
 import sortClass from "./sort-class";
+import sortKeys from "./sort-keys";
 import standard from "./standard";
 import standardJsx from "./standard-jsx";
 import standardReact from "./standard-react";
@@ -188,6 +189,7 @@ const configs: Config[] = [
   sdlReact,
   sdlTs,
   yml,
+  sortKeys,
 ];
 
 export default configs;
