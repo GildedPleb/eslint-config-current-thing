@@ -221,6 +221,7 @@ const configList = [
     location: "./src/conflicts/configs/sort-keys-config.js",
     name: "sort-keys",
   },
+  { location: "./src/conflicts/configs/chai-config.js", name: "chai" },
 ];
 
 export default configList;

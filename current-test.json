@@ -1219,6 +1219,7 @@
     "@shopify/typescript",
     "@stylistic",
     "@typescript-eslint:@typescript-eslint/eslint-plugin@7.6.0",
+    "chai-friendly",
     "compat",
     "css-modules",
     "cypress",
@@ -4450,6 +4451,9 @@
       2
     ],
     "prefer-object-has-own": [
+      2
+    ],
+    "chai-friendly/no-unused-expressions": [
       2
     ],
     "@microsoft/sdl/no-cookies": [

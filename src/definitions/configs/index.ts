@@ -3,6 +3,7 @@ import { type Namespace } from "../plugins";
 import airbnb from "./airbnb";
 import airbnbBase from "./airbnb-base";
 import airbnbTs from "./airbnb-ts";
+import chai from "./chai";
 import comments from "./comments";
 import compat from "./compat";
 import createReactApp from "./create-react-app";
@@ -190,6 +191,7 @@ const configs: Config[] = [
   sdlTs,
   yml,
   sortKeys,
+  chai,
 ];
 
 export default configs;

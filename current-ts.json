@@ -1165,6 +1165,7 @@
     "@shopify/typescript",
     "@stylistic",
     "@typescript-eslint:@typescript-eslint/eslint-plugin@7.6.0",
+    "chai-friendly",
     "compat",
     "css-modules",
     "cypress",

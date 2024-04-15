@@ -18,19 +18,19 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 
 | | | | | | 
 | - | - | - | - | - |
-| AirBnb | AirBnb Base | AirBnb-Typescript | CSS Modules | Comments |
-| Compat | Create React App | Cypress | ES-X | ESLint |
-| Emotion CSS | Functional | Google | GraphQL | Import |
-| Internationalization (i18n) | JSDoc | JSONC | JSX Accessibility (JSX A11y) | Jest |
-| Jest Dom | Jest Formatting | Markdown | Microsoft SDL | Mocha |
-| NextJS | No Only Tests | No Unsanitized | No Unused Imports | Node.js |
-| Perfectionist | Playwright | Prefer Arrow | Prettier | Promises |
-| React | React Hooks | React Native (Independent Plugin/Config) | React Native Config | React Native Plugin |
-| React Performance | React Refresh | Regular Expressions | Security | Shopify |
-| Simple Import Sort | SonarJS | Sort Class Members | Standard | Standard JSX |
-| Standard React | Standard TS | Storybook | Stylistic | TSDoc |
-| Tailwind CSS | Testing Library | TypeScript | Typescript Sort Keys | Unicorn |
-| XO | YML | You Don't Need Lodash |  |  |
+| AirBnb | AirBnb Base | AirBnb-Typescript | CSS Modules | Chai Friendly |
+| Comments | Compat | Create React App | Cypress | ES-X |
+| ESLint | Emotion CSS | Functional | Google | GraphQL |
+| Import | Internationalization (i18n) | JSDoc | JSONC | JSX Accessibility (JSX A11y) |
+| Jest | Jest Dom | Jest Formatting | Markdown | Microsoft SDL |
+| Mocha | NextJS | No Only Tests | No Unsanitized | No Unused Imports |
+| Node.js | Perfectionist | Playwright | Prefer Arrow | Prettier |
+| Promises | React | React Hooks | React Native (Independent Plugin/Config) | React Native Config |
+| React Native Plugin | React Performance | React Refresh | Regular Expressions | Security |
+| Shopify | Simple Import Sort | SonarJS | Sort Class Members | Standard |
+| Standard JSX | Standard React | Standard TS | Storybook | Stylistic |
+| TSDoc | Tailwind CSS | Testing Library | TypeScript | Typescript Sort Keys |
+| Unicorn | XO | YML | You Don't Need Lodash |  |
 
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
@@ -49,12 +49,13 @@ This is a meta-config of many configs. The basic idea is that Linting is usually
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1149** typescript rules
-- **1047** javascript rules
-- **1177** testing rules
+- **1149** Typescript rules
+- **1047** Javascript rules
+- **1178** Testing rules
 - **1292** TSX rules
 - **1190** JSX rules
 - **32** JSON rules
+- **23** YML rules
 
 <!-- End Generated Rule Counts DO NOT EDIT! -->
 
@@ -345,7 +346,6 @@ The following section is generated according to spec.
 
 Generated on 4/14/2024, downloads for the previous 28 days.
 
-- 1,142,850 downloads, [eslint-plugin-chai-friendly](https://www.npmjs.com/package/eslint-plugin-chai-friendly)
 - 970,140 downloads, [eslint-plugin-sort-keys-fix](https://www.npmjs.com/package/eslint-plugin-sort-keys-fix)
 - 891,293 downloads, [eslint-plugin-mdx](https://www.npmjs.com/package/eslint-plugin-mdx)
 - 857,924 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
@@ -385,6 +385,7 @@ Generated on 4/14/2024, downloads for the previous 28 days.
 - 256,280 downloads, [solhint](https://www.npmjs.com/package/solhint) - Not Yet Eligible
 - 253,622 downloads, [eslint-plugin-astro](https://www.npmjs.com/package/eslint-plugin-astro) - Not Yet Eligible
 - 251,828 downloads, [eslint-plugin-minecraft-linting](https://www.npmjs.com/package/eslint-plugin-minecraft-linting) - Not Yet Eligible
+- 245,339 downloads, [eslint-plugin-regex](https://www.npmjs.com/package/eslint-plugin-regex) - Not Yet Eligible
 
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

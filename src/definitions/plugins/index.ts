@@ -1,6 +1,7 @@
 // PathMark: ./src/definitions/plugins/index.ts
 
 import babel from "./babel";
+import chai from "./chai";
 import comments from "./comments";
 import compat from "./compat";
 import cssModules from "./css-modules";
@@ -126,6 +127,7 @@ const plugins = [
   sdl,
   yml,
   sortKeys,
+  chai,
 ];
 
 type ExtractNamespace<T> =

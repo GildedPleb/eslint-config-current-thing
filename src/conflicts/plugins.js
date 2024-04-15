@@ -37,6 +37,8 @@ import stylistic from "@stylistic/eslint-plugin";
 // @ts-ignore yes, we need to ignore every import for this to run
 import { Linter } from "eslint";
 // @ts-ignore yes, we need to ignore every import for this to run
+import chaiFriendly from "eslint-plugin-chai-friendly";
+// @ts-ignore yes, we need to ignore every import for this to run
 import comp from "eslint-plugin-compat";
 // @ts-ignore yes, we need to ignore every import for this to run
 import cssModules from "eslint-plugin-css-modules";
@@ -166,6 +168,7 @@ const plugins = {
   },
   "@stylistic": stylistic,
   "@typescript-eslint": tseslint.plugin,
+  "chai-friendly": chaiFriendly,
   compat: comp,
   "css-modules": cssModules,
   cypress,

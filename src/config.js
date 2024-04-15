@@ -38,6 +38,7 @@ import standardJsx from "eslint-config-standard-jsx";
 import standardReact from "eslint-config-standard-react";
 import xo from "eslint-config-xo";
 import { defineFlatConfig } from "eslint-define-config";
+import chaiFriendly from "eslint-plugin-chai-friendly";
 import comp from "eslint-plugin-compat";
 import cssModules from "eslint-plugin-css-modules";
 import cypress from "eslint-plugin-cypress";
@@ -268,6 +269,7 @@ const configGen = ({
         },
         "@stylistic": stylistic,
         "@typescript-eslint": tseslint.plugin,
+        "chai-friendly": chaiFriendly,
         compat: comp,
         "css-modules": cssModules,
         cypress,
@@ -991,7 +993,6 @@ const configGen = ({
               "@typescript-eslint/brace-style": 0,
               "@typescript-eslint/comma-dangle": 0,
               "@typescript-eslint/member-delimiter-style": 0,
-              "@typescript-eslint/no-extra-parens": 0,
               "@typescript-eslint/object-curly-spacing": 0,
               "@typescript-eslint/semi": 0,
               "@typescript-eslint/space-before-function-paren": 0,
@@ -1107,7 +1108,6 @@ const configGen = ({
               "@stylistic/semi": 0,
               "@typescript-eslint/comma-dangle": 0,
               "@typescript-eslint/indent": 0,
-              "@typescript-eslint/no-extra-parens": 0,
               "@typescript-eslint/object-curly-spacing": 0,
               "@typescript-eslint/semi": 0,
               "@typescript-eslint/space-before-function-paren": 0,
@@ -1117,6 +1117,28 @@ const configGen = ({
               "mocha/no-mocha-arrows": 0,
               ...("eslint-config-xo" in override
                 ? override["eslint-config-xo"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Chai Friendly
+      1,134,409 monthly downloads
+      This plugin makes 'no-unused-expressions' rule friendly towards chai expect statements.
+      https://github.com/ihordiachenko/eslint-plugin-chai-friendly#readme
+      Requires: chai-friendly
+    */
+    ...(disable.includes("eslint-plugin-chai-friendly") || threshold > 1_134_409
+      ? []
+      : [
+          {
+            files: testFiles,
+            rules: {
+              ...chaiFriendly.configs.recommended.rules,
+
+              ...("eslint-plugin-chai-friendly" in override
+                ? override["eslint-plugin-chai-friendly"]
                 : {}),
             },
           },

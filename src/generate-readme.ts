@@ -10,6 +10,7 @@ import JSONConfigJsx from "../current-jsx.json" assert { type: "json" };
 import JSONConfigTest from "../current-test.json" assert { type: "json" };
 import JSONConfigTs from "../current-ts.json" assert { type: "json" };
 import JSONConfigTsx from "../current-tsx.json" assert { type: "json" };
+import JSONConfigYml from "../current-yml.json" assert { type: "json" };
 import { LAST_DAY_INTERVAL, MINIMUMS } from "./constants";
 import configs from "./definitions/configs";
 import fetchEslintPlugins from "./packages/get-packages";
@@ -82,12 +83,13 @@ const newPackages = await fetchEslintPlugins();
 
 // Mapping config to their corresponding counts
 const JSONconfigs = [
-  { config: JSONConfigTs, name: "typescript" },
-  { config: JSONConfigJs, name: "javascript" },
-  { config: JSONConfigTest, name: "testing" },
+  { config: JSONConfigTs, name: "Typescript" },
+  { config: JSONConfigJs, name: "Javascript" },
+  { config: JSONConfigTest, name: "Testing" },
   { config: JSONConfigTsx, name: "TSX" },
   { config: JSONConfigJsx, name: "JSX" },
   { config: JSONConfigJson, name: "JSON" },
+  { config: JSONConfigYml, name: "YML" },
   // { config: JSONConfigMd, name: "MD" },
 ];
 const ruleCountMarker = "Rule Counts";

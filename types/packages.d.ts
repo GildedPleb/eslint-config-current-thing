@@ -58,6 +58,8 @@ declare module "eslint-plugin-json";
 declare module "eslint-plugin-markdown";
 declare module "eslint-plugin-html";
 declare module "@microsoft/eslint-plugin-sdl";
+declare module "eslint-plugin-typescript-sort-keys";
+declare module "eslint-plugin-chai-friendly";
 
 declare module "eslint/use-at-your-own-risk" {
   interface ParserOptions {
