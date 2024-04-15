@@ -180,6 +180,11 @@ const configGen = ({
       : [
           {
             files,
+            languageOptions: {
+              parserOptions: {
+                warnOnUnsupportedTypeScriptVersion: false,
+              },
+            },
             rules: {
               ...stylistic.configs["recommended-flat"].rules,
               ...("@stylistic/eslint-plugin" in override

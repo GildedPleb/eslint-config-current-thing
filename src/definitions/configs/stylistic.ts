@@ -5,6 +5,11 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
+    languageOptions: {
+      parserOptions: {
+        warnOnUnsupportedTypeScriptVersion: false,
+      },
+    },
     ${RULES}
   }`,
   id: "stylistic",
