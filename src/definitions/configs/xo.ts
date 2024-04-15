@@ -7,7 +7,7 @@ export default {
     "prefer-arrow-callback": ["mocha"],
   },
   definitions: `{
-    files,
+    files: jsFiles,
     ${RULES}
   }`,
   id: "xo",

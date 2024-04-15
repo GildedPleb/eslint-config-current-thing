@@ -49,11 +49,11 @@ This is a meta-config of many configs. The basic idea is that Linting is usually
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1149** Typescript rules
-- **1047** Javascript rules
-- **1178** Testing rules
-- **1292** TSX rules
-- **1190** JSX rules
+- **1081** Typescript rules
+- **1052** Javascript rules
+- **1182** Testing rules
+- **1242** TSX rules
+- **1205** JSX rules
 - **32** JSON rules
 - **23** YML rules
 
@@ -344,46 +344,46 @@ See [rejected](./src/packages/rejected.ts) for the full list with notes. But it'
 
 The following section is generated according to spec.
 
-Generated on 4/14/2024, downloads for the previous 28 days.
+Generated on 4/15/2024, downloads for the previous 28 days.
 
 - 970,140 downloads, [eslint-plugin-sort-keys-fix](https://www.npmjs.com/package/eslint-plugin-sort-keys-fix)
-- 891,293 downloads, [eslint-plugin-mdx](https://www.npmjs.com/package/eslint-plugin-mdx)
+- 880,366 downloads, [eslint-plugin-mdx](https://www.npmjs.com/package/eslint-plugin-mdx)
 - 857,924 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
 - 773,999 downloads, [eslint-plugin-jasmine](https://www.npmjs.com/package/eslint-plugin-jasmine)
 - 664,177 downloads, [npm-package-json-lint](https://www.npmjs.com/package/npm-package-json-lint)
 - 660,130 downloads, [eslint-import-resolver-custom-alias](https://www.npmjs.com/package/eslint-import-resolver-custom-alias)
 - 656,334 downloads, [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file)
+- 544,545 downloads, [remark-lint](https://www.npmjs.com/package/remark-lint)
 - 542,592 downloads, [eslint-formatter-gitlab](https://www.npmjs.com/package/eslint-formatter-gitlab)
-- 526,127 downloads, [eslint-plugin-ava](https://www.npmjs.com/package/eslint-plugin-ava)
+- 538,729 downloads, [eslint-plugin-ava](https://www.npmjs.com/package/eslint-plugin-ava)
 - 514,699 downloads, [ember-template-lint](https://www.npmjs.com/package/ember-template-lint)
-- 501,972 downloads, [eslint-plugin-react-prefer-function-component](https://www.npmjs.com/package/eslint-plugin-react-prefer-function-component)
+- 501,022 downloads, [eslint-plugin-react-prefer-function-component](https://www.npmjs.com/package/eslint-plugin-react-prefer-function-component)
 - 496,444 downloads, [eslint-plugin-no-use-extend-native](https://www.npmjs.com/package/eslint-plugin-no-use-extend-native)
 - 465,284 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin)
 - 410,789 downloads, [eslint-plugin-local](https://www.npmjs.com/package/eslint-plugin-local)
 - 406,018 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit)
 - 400,427 downloads, [eslint-config-xo-space](https://www.npmjs.com/package/eslint-config-xo-space)
 - 388,548 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
-- 373,076 downloads, [json-fixer](https://www.npmjs.com/package/json-fixer) - Not Yet Eligible
+- 377,648 downloads, [remark-preset-lint-recommended](https://www.npmjs.com/package/remark-preset-lint-recommended) - Not Yet Eligible
 - 372,532 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
+- 372,070 downloads, [json-fixer](https://www.npmjs.com/package/json-fixer) - Not Yet Eligible
 - 367,346 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
 - 365,954 downloads, [eslint-plugin-ssr-friendly](https://www.npmjs.com/package/eslint-plugin-ssr-friendly) - Not Yet Eligible
 - 356,974 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu) - Not Yet Eligible
-- 354,616 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
+- 350,199 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
 - 345,367 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard) - Not Yet Eligible
-- 337,871 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc) - Not Yet Eligible
+- 337,789 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc) - Not Yet Eligible
 - 337,397 downloads, [eslint-plugin-testcafe](https://www.npmjs.com/package/eslint-plugin-testcafe) - Not Yet Eligible
 - 337,002 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
 - 310,758 downloads, [@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config) - Not Yet Eligible
 - 303,940 downloads, [eslint-plugin-deprecate](https://www.npmjs.com/package/eslint-plugin-deprecate) - Not Yet Eligible
 - 292,669 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
-- 287,395 downloads, [eslint-plugin-diff](https://www.npmjs.com/package/eslint-plugin-diff) - Not Yet Eligible
-- 282,832 downloads, [eslint-plugin-array-func](https://www.npmjs.com/package/eslint-plugin-array-func) - Not Yet Eligible
+- 289,747 downloads, [eslint-plugin-array-func](https://www.npmjs.com/package/eslint-plugin-array-func) - Not Yet Eligible
 - 281,339 downloads, [@salesforce/eslint-plugin-lightning](https://www.npmjs.com/package/@salesforce/eslint-plugin-lightning) - Not Yet Eligible
 - 278,522 downloads, [eslint-plugin-import-newlines](https://www.npmjs.com/package/eslint-plugin-import-newlines) - Not Yet Eligible
 - 276,907 downloads, [@rushstack/eslint-config](https://www.npmjs.com/package/@rushstack/eslint-config) - Not Yet Eligible
 - 276,906 downloads, [eslint-plugin-no-secrets](https://www.npmjs.com/package/eslint-plugin-no-secrets) - Not Yet Eligible
-- 256,280 downloads, [solhint](https://www.npmjs.com/package/solhint) - Not Yet Eligible
-- 253,622 downloads, [eslint-plugin-astro](https://www.npmjs.com/package/eslint-plugin-astro) - Not Yet Eligible
+- 253,323 downloads, [eslint-plugin-astro](https://www.npmjs.com/package/eslint-plugin-astro) - Not Yet Eligible
 - 251,828 downloads, [eslint-plugin-minecraft-linting](https://www.npmjs.com/package/eslint-plugin-minecraft-linting) - Not Yet Eligible
 - 245,339 downloads, [eslint-plugin-regex](https://www.npmjs.com/package/eslint-plugin-regex) - Not Yet Eligible
 

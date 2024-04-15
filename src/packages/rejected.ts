@@ -98,9 +98,6 @@ const rejected = new Set([
   "@mapbox/jsonlint-lines-primitives",
   "cspell",
   "doiuse",
-  "markdownlint",
-  "remark-lint",
-  "remark-preset-lint-recommended",
   "standard-engine",
   "standard",
   "flowbite",
@@ -113,6 +110,8 @@ const rejected = new Set([
   "eslint-watch",
   "@ianvs/eslint-stats",
   "xo",
+  "eslint-plugin-diff",
+  "markdownlint",
 
   // Sarif
   "node-sarif-builder",
@@ -182,6 +181,9 @@ const rejected = new Set([
   "@rushstack/eslint-plugin",
   "@rushstack/eslint-plugin-security",
   "@backstage/eslint-plugin",
+
+  // Literally supporting scams and fraud
+  "solhint",
 ]);
 
 export default rejected;

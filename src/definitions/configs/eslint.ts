@@ -7,7 +7,7 @@ export default {
     "no-unused-vars": ["unused-imports"],
   },
   definitions: `{
-    files,
+    files: jsFiles,
     ${RULES}
   }`,
   id: "eslint",

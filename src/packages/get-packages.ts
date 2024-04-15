@@ -33,14 +33,15 @@ interface Populated {
 
 /**
  * Gets the download counts from the cache
+ * @param cache - The db
  * @returns the saved data
  */
-async function getExisting(): Promise<Populated[]> {
+async function getExisting(cache: Level): Promise<Populated[]> {
   const downloads: Populated[] = [];
 
   try {
     // Assuming plugins are stored with keys prefixed by 'plugin-'
-    const stream = database.iterator({
+    const stream = cache.iterator({
       gte: "plugin-",
       lte: "plugin-\u00FF",
     });
@@ -58,9 +59,10 @@ async function getExisting(): Promise<Populated[]> {
 
 /**
  * Uses the NPM API results to find and coalesce all applicable NPM packages
+ * @param cache - The db
  * @returns a populated plugin def
  */
-async function fetchEslintPlugins(): Promise<Populated[]> {
+async function fetchEslintPlugins(cache = database): Promise<Populated[]> {
   console.log("Checking lists...");
   for (const pack of investigating) {
     if (installed.has(pack)) {
@@ -74,7 +76,7 @@ async function fetchEslintPlugins(): Promise<Populated[]> {
 
   console.log("Getting full list...");
   const searchedPluginNames = await fetchNPMURLs(searchTerms);
-  const currentKnown = await getExisting();
+  const currentKnown = await getExisting(cache);
   const everythingList = [
     ...new Set([
       ...searchedPluginNames,

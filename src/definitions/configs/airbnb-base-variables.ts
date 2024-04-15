@@ -3,23 +3,22 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  conflicts: {
-    "import/order": ["import-sort"],
-  },
   definitions: `{
-    files,
+    files: jsFiles,
     ${RULES}
   }`,
   id: "airbnb-base",
   name: "AirBnb Base",
+  nameSecondary: "Variables",
   packages: [
     {
-      declaredAs: "airbnbBase",
+      declaredAs: "airbnbBaseVariables",
       package: "eslint-config-airbnb-base",
-      requiresImport: false,
+      requiresImport: true,
+      subModule: "/rules/variables",
     },
   ],
-  requiredPlugins: ["import"],
-  rules: `...compat.extends("airbnb-base")[0].rules,`,
+  requiredPlugins: [],
+  rules: `...airbnbBaseVariables.rules,`,
 } satisfies Config;
 // EOF

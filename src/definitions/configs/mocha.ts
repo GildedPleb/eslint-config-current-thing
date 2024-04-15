@@ -4,7 +4,7 @@ import type { Config } from ".";
 
 export default {
   conflicts: {
-    "mocha/no-mocha-arrows": ["shopify/esnext", "xo"],
+    "mocha/no-mocha-arrows": ["shopify/esnext", "xo", "airbnb-base/es6"],
   },
   definitions: `{
     files: testFiles,

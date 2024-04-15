@@ -1,6 +1,5 @@
 // PathMark: ./src/conflicts/generate-conflicts.ts
 
-// TODO: it would be good to get this generator to always be in line with the main generator, but i'm not sure its worth it...
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -62,6 +61,7 @@ for (const configContext of configs) {
   const generateCode = `// PathMark: ./src/conflicts/${relative.slice(2)}
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
+/* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
 /* eslint-disable sonarjs/no-duplicate-string */
@@ -71,16 +71,13 @@ for (const configContext of configs) {
   This file is fully generated, to edit it change ./generate-conflicts.ts
 */
 
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
 ${configContext.packages
-  .map(({ declaredAs, package: pack, requiresImport }) =>
+  .map(({ declaredAs, package: pack, requiresImport, subModule }) =>
     requiresImport &&
     declaredAs !== "{ rules as emotion }" &&
     declaredAs !== "reactNativeConfig" &&
     declaredAs !== "tseslint"
-      ? `import ${declaredAs} from "${pack}";`
+      ? `import ${declaredAs} from "${pack}${subModule ?? ""}";`
       : "",
   )
   .filter(Boolean).join(`
@@ -101,17 +98,12 @@ ${parsers
   )
   .filter(Boolean).join(`
 `)}
-import { FlatCompat } from "@eslint/eslintrc";
 import globals from "globals";
 import restrictedGlobals from 'confusing-browser-globals';
 import { defineFlatConfig } from 'eslint-define-config';
 import tseslint from "typescript-eslint";
 import { rules as emotion } from "@emotion/eslint-plugin";
 import reactNativeConfig from "@react-native-community/eslint-config";
-
-const filename = fileURLToPath(import.meta.url);
-const baseDirectory = path.dirname(filename);
-const compat = new FlatCompat({ baseDirectory });
 
 const jsxFiles = ["**/*.jsx"];
 const tsxFiles = ["**/*.tsx"];

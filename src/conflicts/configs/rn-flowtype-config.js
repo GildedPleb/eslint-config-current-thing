@@ -1,6 +1,7 @@
 // PathMark: ./src/conflicts/configs/rn-flowtype-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
+/* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
 /* eslint-disable sonarjs/no-duplicate-string */
@@ -10,10 +11,6 @@
   This file is fully generated, to edit it change ./generate-conflicts.ts
 */
 
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-import { FlatCompat } from "@eslint/eslintrc";
 import {
   parseForESLint,
   processors as graphqlProcessors,
@@ -27,10 +24,6 @@ import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
 import tseslint from "typescript-eslint";
 import ymlEslintParser from "yaml-eslint-parser";
-
-const filename = fileURLToPath(import.meta.url);
-const baseDirectory = path.dirname(filename);
-const compat = new FlatCompat({ baseDirectory });
 
 const jsxFiles = ["**/*.jsx"];
 const tsxFiles = ["**/*.tsx"];

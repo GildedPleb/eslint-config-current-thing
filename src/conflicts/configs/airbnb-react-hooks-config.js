@@ -1,6 +1,7 @@
-// PathMark: ./src/conflicts/configs/airbnb-base-config.js
+// PathMark: ./src/conflicts/configs/airbnb-react-hooks-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
+/* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
 /* eslint-disable sonarjs/no-duplicate-string */
@@ -10,26 +11,19 @@
   This file is fully generated, to edit it change ./generate-conflicts.ts
 */
 
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-import { FlatCompat } from "@eslint/eslintrc";
 import {
   parseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
+import airbnbReactHooks from "eslint-config-airbnb/rules/react-hooks";
 import { defineFlatConfig } from "eslint-define-config";
-import importPlugin from "eslint-plugin-import";
 import markdown from "eslint-plugin-markdown";
+import reactHooks from "eslint-plugin-react-hooks";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
 import tseslint from "typescript-eslint";
 import ymlEslintParser from "yaml-eslint-parser";
-
-const filename = fileURLToPath(import.meta.url);
-const baseDirectory = path.dirname(filename);
-const compat = new FlatCompat({ baseDirectory });
 
 const jsxFiles = ["**/*.jsx"];
 const tsxFiles = ["**/*.tsx"];
@@ -171,26 +165,34 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        import: importPlugin,
+        "react-hooks": reactHooks,
       },
     },
 
     /*
-      AirBnb Base
+      AirBnb - React-Hooks
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: import
+      Requires: react-hooks
     */
-    ...(disable.includes("eslint-config-airbnb-base") || threshold > 1_000_000
+    ...(disable.includes("eslint-config-airbnb-react-hooks") ||
+    threshold > 1_000_000
       ? []
       : [
           {
-            files,
+            files: [...jsxFiles, ...tsxFiles],
+            languageOptions: {
+              parserOptions: {
+                ecmaFeatures: {
+                  jsx: true,
+                },
+              },
+            },
             rules: {
-              ...compat.extends("airbnb-base")[0].rules,
-              ...("eslint-config-airbnb-base" in override
-                ? override["eslint-config-airbnb-base"]
+              ...airbnbReactHooks.rules,
+              ...("eslint-config-airbnb/react-hooks" in override
+                ? override["eslint-config-airbnb/react-hooks"]
                 : {}),
             },
           },

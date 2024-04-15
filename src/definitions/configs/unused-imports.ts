@@ -3,12 +3,8 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
-  conflicts: {
-    "unused-imports/no-unused-imports": ["ts"],
-    "unused-imports/no-unused-vars": ["ts"],
-  },
   definitions: `{
-    files,
+    files: jsFiles,
     ${RULES}
   }`,
   id: "unused-imports",

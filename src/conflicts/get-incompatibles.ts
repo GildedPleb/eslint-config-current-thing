@@ -1,6 +1,4 @@
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
-/* eslint-disable no-await-in-loop */
-/* eslint-disable max-depth */
 /* eslint-disable security/detect-object-injection */
 /* eslint-disable no-extra-label */
 /* eslint-disable no-labels */
@@ -53,12 +51,12 @@ if (skipCache) {
   console.log("\n", chalk.inverse("Skipping the Cache for this run."));
 }
 
-const heap = (): string => {
+const heap = (warn = 0.75, error = 0.9): string => {
   const heapMax = Math.floor(heapStats.heap_size_limit / 1024 / 1024);
   const currentHeap = Math.floor(process.memoryUsage().heapUsed / 1024 / 1024);
 
-  const warningThreshold = Math.floor(heapMax * 0.75);
-  const criticalThreshold = Math.floor(heapMax * 0.9);
+  const warningThreshold = Math.floor(heapMax * warn);
+  const criticalThreshold = Math.floor(heapMax * error);
 
   let currentHeapDisplay;
   if (currentHeap >= criticalThreshold) {
@@ -85,7 +83,9 @@ const getCache = async (
   try {
     if (skipCache) throw new Error("Skipping the cache.");
     return await database.get(`conflicts-${key}`);
-  } catch {}
+  } catch {
+    // skipping the cache or there was no cache, either way, continue
+  }
 
   return undefined;
 };
@@ -110,7 +110,7 @@ for (const { def: codeToLint, filePath, short } of fileList) {
         const [es, json, hash] = await getLinter(filePath, location);
 
         // Utility to call out a particular rule when seen in a config.
-        const ruleToCheck = "jest/no-if";
+        const ruleToCheck = "import/extensions";
         if (
           json !== undefined &&
           "rules" in json &&

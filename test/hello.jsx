@@ -5,7 +5,12 @@
 // PathMark: ./test/hello.jsx
 import * as React from "react";
 
-const Nine = () => <div>{9}</div>;
+/**
+ * @returns {React.ReactNode} - a React component
+ */
+function Nine() {
+  return <div>{9}</div>;
+}
 
 /**
  *

@@ -5,7 +5,13 @@ import { reactIds } from "./id-groups";
 
 export default {
   conflicts: {
-    "prefer-arrow/prefer-arrow-functions": ["mocha", ...reactIds, "functional"],
+    "prefer-arrow/prefer-arrow-functions": [
+      "mocha",
+      ...reactIds,
+      "functional",
+      "functional/ts",
+      "ts",
+    ],
   },
   definitions: `{
     files,

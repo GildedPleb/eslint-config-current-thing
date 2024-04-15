@@ -60,6 +60,18 @@ declare module "eslint-plugin-html";
 declare module "@microsoft/eslint-plugin-sdl";
 declare module "eslint-plugin-typescript-sort-keys";
 declare module "eslint-plugin-chai-friendly";
+declare module "eslint-config-airbnb/rules/react";
+declare module "eslint-config-airbnb/rules/react-a11y";
+declare module "eslint-config-airbnb/rules/react-hooks";
+declare module "eslint-config-airbnb-base/rules/best-practices";
+declare module "eslint-config-airbnb-base/rules/errors";
+declare module "eslint-config-airbnb-base/rules/es6";
+declare module "eslint-config-airbnb-base/rules/imports";
+declare module "eslint-config-airbnb-base/rules/node";
+declare module "eslint-config-airbnb-base/rules/strict";
+declare module "eslint-config-airbnb-base/rules/style";
+declare module "eslint-config-airbnb-base/rules/variables";
+declare module "eslint-config-airbnb-typescript/lib/shared.js";
 
 declare module "eslint/use-at-your-own-risk" {
   interface ParserOptions {
@@ -162,7 +174,7 @@ declare module "eslint/use-at-your-own-risk" {
   }
 
   /** */
-  export class FlatESLint {
+  export default class FlatESLint {
     constructor(options?: ESLintOptions);
     calculateConfigForFile(filePath: string): Promise<ConfigData | undefined>;
     lintText(

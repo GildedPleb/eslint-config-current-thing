@@ -30,6 +30,7 @@ export function linter(
   overrideConfigFile: string,
   rules?: Record<string, Rule>,
 ): IFlatESLint {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   return new FlatESLint({
     cache: true,
     fix: true,

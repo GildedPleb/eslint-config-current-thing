@@ -1,6 +1,7 @@
-// PathMark: ./src/conflicts/configs/standard-ts-ts-config.js
+// PathMark: ./src/conflicts/configs/airbnb-base-node-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
+/* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
 /* eslint-disable sonarjs/no-duplicate-string */
@@ -10,29 +11,18 @@
   This file is fully generated, to edit it change ./generate-conflicts.ts
 */
 
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-import { FlatCompat } from "@eslint/eslintrc";
 import {
   parseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
-import standardTS from "eslint-config-love";
+import airbnbBaseNode from "eslint-config-airbnb-base/rules/node";
 import { defineFlatConfig } from "eslint-define-config";
-import importPlugin from "eslint-plugin-import";
 import markdown from "eslint-plugin-markdown";
-import nNode from "eslint-plugin-n";
-import promise from "eslint-plugin-promise";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
 import tseslint from "typescript-eslint";
 import ymlEslintParser from "yaml-eslint-parser";
-
-const filename = fileURLToPath(import.meta.url);
-const baseDirectory = path.dirname(filename);
-const compat = new FlatCompat({ baseDirectory });
 
 const jsxFiles = ["**/*.jsx"];
 const tsxFiles = ["**/*.tsx"];
@@ -173,35 +163,26 @@ const configGen = ({
     },
     /* PLUGINS */
     {
-      plugins: {
-        "@typescript-eslint": tseslint.plugin,
-        import: importPlugin,
-        n: nNode,
-        promise,
-      },
+      plugins: {},
     },
 
     /*
-      Standard - TS
+      AirBnb Base - Node
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: @typescript-eslint, n, import, promise
+      Requires: (None)
     */
-    ...(disable.includes("eslint-config-standard-with-typescript-ts") ||
-    disable.includes("eslint-config-love-ts") ||
+    ...(disable.includes("eslint-config-airbnb-base-node") ||
     threshold > 1_000_000
       ? []
       : [
           {
-            files: tsFiles,
+            files: jsFiles,
             rules: {
-              ...standardTS.rules,
-              ...("eslint-config-standard-with-typescript/ts" in override
-                ? override["eslint-config-standard-with-typescript/ts"]
-                : {}),
-              ...("eslint-config-love/ts" in override
-                ? override["eslint-config-love/ts"]
+              ...airbnbBaseNode.rules,
+              ...("eslint-config-airbnb-base/node" in override
+                ? override["eslint-config-airbnb-base/node"]
                 : {}),
             },
           },

@@ -1,6 +1,5 @@
 // PathMark: ./src/conflicts/get-fixables.ts
 
-// TODO: it would be good to get this generator to always be in line with the main generator, but i'm not sure its worth it...
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -24,6 +23,7 @@ export interface FinalConfig extends PopulatedConfig {
 
 const generateCode = `// PathMark: ./src/conflicts/plugins.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable simple-import-sort/imports */
 /* eslint-disable id-length */
 
 /*

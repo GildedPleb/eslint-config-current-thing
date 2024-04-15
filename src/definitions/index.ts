@@ -168,7 +168,7 @@ for await (const config of configsWithCount) {
     for (const externalConfig of new Set(conflictingConfigs)) {
       if (!(externalConfig in configsMapped)) {
         throw new Error(
-          `Must provide valid keys. Key does not exist: ${externalConfig}. Valid keys: ${Object.keys(configsMapped).join(", ")}.`,
+          `Must provide valid keys. Key does not exist: ${externalConfig}. Valid keys: ${Object.keys(configsMapped).sort().join(", ")}.`,
         );
       }
 

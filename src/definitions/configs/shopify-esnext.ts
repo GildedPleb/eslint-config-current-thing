@@ -8,7 +8,7 @@ export default {
     "prefer-arrow-callback": ["mocha"],
   },
   definitions: `{
-    files,
+    files: jsFiles,
     ${RULES}
     settings: {
       "import/ignore": ["node_modules", "\\.s?css"],

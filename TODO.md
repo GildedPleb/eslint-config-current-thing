@@ -1,3 +1,5 @@
+# TODOs
+
 - Use the found conflicting rule to hyper-target the condense the conflict in a cheap, repeatable, and persistent way. (ie, lint given two configs, max, on a very small code set like `const a = 1;`). Ultimately this is a stretch goal because we still have to lint every config and rule against every other config and rule when any new rule is added and current setup is optimized for that.
 - Upgrade to ESLint 9,
 - Eject ALL CONFIGS. Add them as git sub modules in dedicated directories.
@@ -18,3 +20,5 @@ as in, if i write \_es used.eslint@typescript-eslint/no-unused-vars should be of
 
 - Parse out so tha when you get an error, you only get 1 error from the leading config and all other errors are supressed.
 - Do a post process filter to remove unused plugins and rules.
+- The Cache doesnt get invalidated when a config becomes more specified: a config that applies to js and ts, when changed to js only, will not longer present rules for ts, so the ts cache might still be used.
+- it would be good to get the two config generators to always be in line with eachother, but i'm not sure its worth it...

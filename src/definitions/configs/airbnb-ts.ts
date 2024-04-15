@@ -13,10 +13,16 @@ export default {
     {
       declaredAs: "airbnbTypescript",
       package: "eslint-config-airbnb-typescript",
-      requiresImport: false,
+      requiresImport: true,
+      subModule: "/lib/shared.js",
     },
   ],
-  requiredPlugins: ["@typescript-eslint", "import"],
-  rules: `...compat.extends("airbnb-typescript")[0].rules,`,
+  requiredPlugins: ["@typescript-eslint", "import", "react"],
+  rules: `...airbnbTypescript.rules,
+    ...airbnbTypescript.overrides[0].rules,
+    "react/jsx-filename-extension": [
+      2,
+      { extensions: [".jsx", ".tsx"] },
+    ],`,
 } satisfies Config;
 // EOF

@@ -7,7 +7,7 @@ export default {
     "valid-jsdoc": ["jsdoc/ts"],
   },
   definitions: `{
-    files,
+    files: jsFiles,
     ${RULES}
   }`,
   id: "google",

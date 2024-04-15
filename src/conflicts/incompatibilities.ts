@@ -2,20 +2,28 @@
 
 /*
   This file is fully generated, to edit it change ./get-incompatibilities.ts
-  Generated on 4/14/2024
+  Generated on 4/15/2024
 */
 
 import { type ConflictCache } from "./types";
 
 const incompatibles: ConflictCache = {
-  airbnb: {
+  "airbnb-base-best-practices": {
     "prettier/prettier": 0,
   },
-  "airbnb-base": {
+  "airbnb-base-es6": {
+    "@stylistic/arrow-parens": 0,
+  },
+  "airbnb-base-style": {
+    "@babel/object-curly-spacing": 0,
+    "@stylistic/quote-props": 0,
+    "@stylistic/semi": 0,
+    "prettier/prettier": 0,
+  },
+  "airbnb-react": {
     "prettier/prettier": 0,
   },
   "airbnb-ts": {
-    "@babel/object-curly-spacing": 0,
     "@stylistic/semi": 0,
     "prettier/prettier": 0,
   },
@@ -27,11 +35,6 @@ const incompatibles: ConflictCache = {
     "@stylistic/object-curly-spacing": 0,
     "@stylistic/operator-linebreak": 0,
     "@stylistic/semi": 0,
-    "@typescript-eslint/block-spacing": 0,
-    "@typescript-eslint/comma-dangle": 0,
-    "@typescript-eslint/indent": 0,
-    "@typescript-eslint/object-curly-spacing": 0,
-    "@typescript-eslint/semi": 0,
     "jsdoc/check-tag-names": 0,
     "prettier/prettier": 0,
   },
@@ -43,7 +46,6 @@ const incompatibles: ConflictCache = {
     "valid-jsdoc": 0,
   },
   perfectionist: {
-    "import/order": 0,
     "simple-import-sort/imports": 0,
     "sort-class-members/sort-class-members": 0,
   },
@@ -79,10 +81,6 @@ const incompatibles: ConflictCache = {
     "@stylistic/arrow-parens": 0,
     "@stylistic/object-curly-spacing": 0,
     "@stylistic/semi": 0,
-    "@typescript-eslint/no-extra-parens": 0,
-    "@typescript-eslint/object-curly-spacing": 0,
-    "@typescript-eslint/semi": 0,
-    "perfectionist/sort-imports": 0,
     "prettier/prettier": 0,
     semi: 0,
   },
@@ -105,16 +103,16 @@ const incompatibles: ConflictCache = {
     "@typescript-eslint/quotes": 0,
     "@typescript-eslint/semi": 0,
     "@typescript-eslint/space-before-function-paren": 0,
-    curly: 0,
+    "comma-dangle": 0,
     indent: 0,
     "indent-legacy": 0,
     "jsx-quotes": 0,
-    "no-confusing-arrow": 0,
     "object-curly-spacing": 0,
     "operator-linebreak": 0,
-    "quote-props": 0,
     quotes: 0,
-    "wrap-iife": 0,
+    semi: 0,
+    "space-before-function-paren": 0,
+    "unicorn/no-nested-ternary": 0,
   },
   "shopify-ts": {
     "@stylistic/block-spacing": 0,
@@ -123,7 +121,6 @@ const incompatibles: ConflictCache = {
     "@stylistic/object-curly-spacing": 0,
     "@stylistic/semi": 0,
     "@typescript-eslint/block-spacing": 0,
-    "no-confusing-arrow": 0,
     "prettier/prettier": 0,
     "unicorn/no-nested-ternary": 0,
   },
@@ -137,18 +134,12 @@ const incompatibles: ConflictCache = {
     "@stylistic/operator-linebreak": 0,
     "@stylistic/quote-props": 0,
     "@stylistic/space-before-function-paren": 0,
-    "@typescript-eslint/comma-dangle": 0,
-    "@typescript-eslint/object-curly-spacing": 0,
-    "@typescript-eslint/semi": 0,
-    "@typescript-eslint/space-before-function-paren": 0,
     "prettier/prettier": 0,
   },
   "standard-jsx": {
     "prettier/prettier": 0,
   },
   "standard-ts": {
-    "@babel/object-curly-spacing": 0,
-    "@babel/semi": 0,
     "@stylistic/comma-dangle": 0,
     "@stylistic/space-before-function-paren": 0,
     "prettier/prettier": 0,
@@ -186,11 +177,6 @@ const incompatibles: ConflictCache = {
     "@stylistic/object-curly-spacing": 0,
     "@stylistic/quote-props": 0,
     "@stylistic/semi": 0,
-    "@typescript-eslint/comma-dangle": 0,
-    "@typescript-eslint/indent": 0,
-    "@typescript-eslint/object-curly-spacing": 0,
-    "@typescript-eslint/semi": 0,
-    "@typescript-eslint/space-before-function-paren": 0,
     "indent-legacy": 0,
     "prettier/prettier": 0,
   },

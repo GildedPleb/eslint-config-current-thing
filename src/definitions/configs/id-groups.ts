@@ -9,7 +9,9 @@ export const testIds = [
   "shopify/react-test",
 ];
 export const reactIds = [
-  "airbnb",
+  "airbnb/react",
+  "airbnb/react-hooks",
+  "airbnb/react-a11y",
   "cra",
   "cra/jest",
   "cra/ts",

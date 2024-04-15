@@ -1,6 +1,7 @@
-// PathMark: ./src/conflicts/configs/airbnb-config.js
+// PathMark: ./src/conflicts/configs/airbnb-react-a11y-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
+/* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
 /* eslint-disable sonarjs/no-duplicate-string */
@@ -10,29 +11,20 @@
   This file is fully generated, to edit it change ./generate-conflicts.ts
 */
 
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-import { FlatCompat } from "@eslint/eslintrc";
 import {
   parseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
+import airbnbReactA11y from "eslint-config-airbnb/rules/react-a11y";
 import { defineFlatConfig } from "eslint-define-config";
-import importPlugin from "eslint-plugin-import";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import markdown from "eslint-plugin-markdown";
 import react from "eslint-plugin-react";
-import reactHooks from "eslint-plugin-react-hooks";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
 import tseslint from "typescript-eslint";
 import ymlEslintParser from "yaml-eslint-parser";
-
-const filename = fileURLToPath(import.meta.url);
-const baseDirectory = path.dirname(filename);
-const compat = new FlatCompat({ baseDirectory });
 
 const jsxFiles = ["**/*.jsx"];
 const tsxFiles = ["**/*.tsx"];
@@ -174,30 +166,35 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        import: importPlugin,
         "jsx-a11y": jsxA11y,
         react,
-        "react-hooks": reactHooks,
       },
     },
 
     /*
-      AirBnb
+      AirBnb - React-A11y
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: jsx-a11y, import, react, react-hooks
+      Requires: jsx-a11y, react
     */
-    ...(disable.includes("eslint-config-airbnb") || threshold > 1_000_000
+    ...(disable.includes("eslint-config-airbnb-react-a11y") ||
+    threshold > 1_000_000
       ? []
       : [
           {
-            files,
+            files: [...jsxFiles, ...tsxFiles],
+            languageOptions: {
+              parserOptions: {
+                ecmaFeatures: {
+                  jsx: true,
+                },
+              },
+            },
             rules: {
-              ...compat.extends("airbnb")[0].rules,
-              ...compat.extends("airbnb/hooks")[0].rules,
-              ...("eslint-config-airbnb" in override
-                ? override["eslint-config-airbnb"]
+              ...airbnbReactA11y.rules,
+              ...("eslint-config-airbnb/react-a11y" in override
+                ? override["eslint-config-airbnb/react-a11y"]
                 : {}),
             },
           },

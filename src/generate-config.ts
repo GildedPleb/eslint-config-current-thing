@@ -17,17 +17,17 @@ const generateCode = `// PathMark: ./src/config.js
 /* eslint-disable id-length */
 
 /*
-  This file is fully generated, to edit it change ./generate.ts
+  This file is fully generated, to edit it change ./generate-config.ts
   Generated on ${new Date().toLocaleDateString()}
 */
 
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
+/* eslint-disable import/extensions */
 ${configs
   .flatMap(({ packages }) =>
-    packages.map(({ declaredAs, package: pack, requiresImport }) =>
-      requiresImport ? `import ${declaredAs} from "${pack}";` : "",
+    packages.map(({ declaredAs, package: pack, requiresImport, subModule }) =>
+      requiresImport
+        ? `import ${declaredAs} from "${pack}${subModule ?? ""}";`
+        : "",
     ),
   )
   .filter(Boolean).join(`
@@ -48,14 +48,10 @@ ${parsers
   )
   .filter(Boolean).join(`
 `)}
-import { FlatCompat } from "@eslint/eslintrc";
 import globals from "globals";
 import restrictedGlobals from "confusing-browser-globals";
 import { defineFlatConfig } from "eslint-define-config";
-
-const filename = fileURLToPath(import.meta.url);
-const baseDirectory = path.dirname(filename);
-const compat = new FlatCompat({ baseDirectory });
+/* eslint-enable import/extensions */
 
 const jsxFiles = ["**/*.jsx"];
 const tsxFiles = ["**/*.tsx"];

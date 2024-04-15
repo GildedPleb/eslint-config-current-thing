@@ -1,6 +1,7 @@
 // PathMark: ./src/conflicts/configs/airbnb-ts-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
+/* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
 /* eslint-disable sonarjs/no-duplicate-string */
@@ -10,26 +11,20 @@
   This file is fully generated, to edit it change ./generate-conflicts.ts
 */
 
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-import { FlatCompat } from "@eslint/eslintrc";
 import {
   parseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
+import airbnbTypescript from "eslint-config-airbnb-typescript/lib/shared.js";
 import { defineFlatConfig } from "eslint-define-config";
 import importPlugin from "eslint-plugin-import";
 import markdown from "eslint-plugin-markdown";
+import react from "eslint-plugin-react";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
 import tseslint from "typescript-eslint";
 import ymlEslintParser from "yaml-eslint-parser";
-
-const filename = fileURLToPath(import.meta.url);
-const baseDirectory = path.dirname(filename);
-const compat = new FlatCompat({ baseDirectory });
 
 const jsxFiles = ["**/*.jsx"];
 const tsxFiles = ["**/*.tsx"];
@@ -173,6 +168,7 @@ const configGen = ({
       plugins: {
         "@typescript-eslint": tseslint.plugin,
         import: importPlugin,
+        react,
       },
     },
 
@@ -181,7 +177,7 @@ const configGen = ({
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: @typescript-eslint, import
+      Requires: @typescript-eslint, import, react
     */
     ...(disable.includes("eslint-config-airbnb-typescript") ||
     threshold > 1_000_000
@@ -190,7 +186,12 @@ const configGen = ({
           {
             files: tsFiles,
             rules: {
-              ...compat.extends("airbnb-typescript")[0].rules,
+              ...airbnbTypescript.rules,
+              ...airbnbTypescript.overrides[0].rules,
+              "react/jsx-filename-extension": [
+                2,
+                { extensions: [".jsx", ".tsx"] },
+              ],
               ...("eslint-config-airbnb-typescript" in override
                 ? override["eslint-config-airbnb-typescript"]
                 : {}),
