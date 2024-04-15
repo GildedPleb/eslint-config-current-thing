@@ -1159,7 +1159,7 @@
     "@shopify/jest",
     "@shopify/typescript",
     "@stylistic",
-    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.6.0",
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.7.0",
     "chai-friendly",
     "compat",
     "css-modules",
@@ -1198,7 +1198,7 @@
     "react-refresh",
     "regexp:eslint-plugin-regexp@2.5.0",
     "security:eslint-plugin-security@3.0.0",
-    "simple-import-sort:eslint-plugin-simple-import-sort@12.0.0",
+    "simple-import-sort:eslint-plugin-simple-import-sort@12.1.0",
     "sonarjs",
     "sort-class-members:eslint-plugin-sort-class-members@1.20.0",
     "storybook",
@@ -4308,6 +4308,14 @@
       2,
       {
         "spread-last": true,
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
+    ],
+    "perfectionist/sort-intersection-types": [
+      2,
+      {
         "type": "natural",
         "order": "asc",
         "ignore-case": false

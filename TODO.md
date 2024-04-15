@@ -22,3 +22,4 @@ as in, if i write \_es used.eslint@typescript-eslint/no-unused-vars should be of
 - Do a post process filter to remove unused plugins and rules.
 - The Cache doesnt get invalidated when a config becomes more specified: a config that applies to js and ts, when changed to js only, will not longer present rules for ts, so the ts cache might still be used.
 - it would be good to get the two config generators to always be in line with eachother, but i'm not sure its worth it...
+- In the case where two configs are in conflict, but only when the entire config is run against the other entire config, we should default to both configs disabling the other entire config.

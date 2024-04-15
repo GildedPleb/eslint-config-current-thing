@@ -1023,6 +1023,7 @@ const configGen = ({
               "@typescript-eslint/brace-style": 0,
               "@typescript-eslint/comma-dangle": 0,
               "@typescript-eslint/member-delimiter-style": 0,
+              "@typescript-eslint/no-extra-parens": 0,
               "@typescript-eslint/object-curly-spacing": 0,
               "@typescript-eslint/semi": 0,
               "@typescript-eslint/space-before-function-paren": 0,
@@ -2295,6 +2296,7 @@ const configGen = ({
               },
             },
             rules: {
+              "@typescript-eslint/no-extra-parens": 0,
               "prettier/prettier": 0,
               ...airbnbReact.rules,
               "functional/functional-parameters": 0,
