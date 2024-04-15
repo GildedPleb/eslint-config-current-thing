@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-current-thing",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "description": "Lint The Current Thing",
   "main": "index.js",
   "files": [
