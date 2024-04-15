@@ -183,7 +183,7 @@ const configGen = ({
               ...airbnbBaseStyle.rules,
               // Added to modernize this config
               "no-restricted-syntax": [
-                "error",
+                2,
                 {
                   message:
                     "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.",

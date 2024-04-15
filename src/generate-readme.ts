@@ -55,7 +55,7 @@ const uniqueNamesSet = new Set<string>();
 for (const config of configs) uniqueNamesSet.add(config.name);
 const uniqueNames = [...uniqueNamesSet].sort();
 
-const maxColumns = 5;
+const maxColumns = 4;
 let markdownTable = `${"| ".repeat(maxColumns + 1)}\n${[..."|".repeat(maxColumns + 1)].join(" - ")}\n|`;
 let columnCount = 0;
 

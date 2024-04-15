@@ -2145,6 +2145,7 @@ const configGen = ({
               ...unicorn.configs.recommended.rules,
               "functional/no-loop-statements": 0,
               "functional/prefer-immutable-types": 0,
+              "no-restricted-syntax": 0,
               // Recommended if using eslint-plugin-markdown (which we are) https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v52.0.0/docs/rules/filename-case.md
               "unicorn/filename-case": [
                 2,
@@ -3040,7 +3041,7 @@ const configGen = ({
               ...airbnbBaseStyle.rules,
               // Added to modernize this config
               "no-restricted-syntax": [
-                "error",
+                2,
                 {
                   message:
                     "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.",
