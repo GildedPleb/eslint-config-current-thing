@@ -114,9 +114,6 @@ export interface Config {
 }
 
 const configs: Config[] = [
-  airbnbReact,
-  airbnbReactA11y,
-  airbnbReactHooks,
   airbnbBaseBP,
   airbnbBaseErrors,
   airbnbBaseEs6,
@@ -125,6 +122,9 @@ const configs: Config[] = [
   airbnbBaseStrict,
   airbnbBaseStyle,
   airbnbBaseVariables,
+  airbnbReact,
+  airbnbReactA11y,
+  airbnbReactHooks,
   airbnbTs,
   chai,
   comments,

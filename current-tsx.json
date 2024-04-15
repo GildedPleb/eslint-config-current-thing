@@ -1258,6 +1258,13 @@
       0,
       "never"
     ],
+    "@typescript-eslint/brace-style": [
+      0,
+      "1tbs",
+      {
+        "allowSingleLine": true
+      }
+    ],
     "@typescript-eslint/comma-dangle": [
       0,
       {
@@ -2780,13 +2787,6 @@
     ],
     "arrow-body-style": [
       0
-    ],
-    "@typescript-eslint/brace-style": [
-      0,
-      "1tbs",
-      {
-        "allowSingleLine": true
-      }
     ],
     "@typescript-eslint/func-call-spacing": [
       0,

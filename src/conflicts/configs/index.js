@@ -1,18 +1,6 @@
 // PathMark: ./src/conflicts/configs/index.js
 const configList = [
   {
-    location: "./src/conflicts/configs/airbnb-react-config.js",
-    name: "airbnb-react",
-  },
-  {
-    location: "./src/conflicts/configs/airbnb-react-a11y-config.js",
-    name: "airbnb-react-a11y",
-  },
-  {
-    location: "./src/conflicts/configs/airbnb-react-hooks-config.js",
-    name: "airbnb-react-hooks",
-  },
-  {
     location: "./src/conflicts/configs/airbnb-base-best-practices-config.js",
     name: "airbnb-base-best-practices",
   },
@@ -43,6 +31,18 @@ const configList = [
   {
     location: "./src/conflicts/configs/airbnb-base-variables-config.js",
     name: "airbnb-base-variables",
+  },
+  {
+    location: "./src/conflicts/configs/airbnb-react-config.js",
+    name: "airbnb-react",
+  },
+  {
+    location: "./src/conflicts/configs/airbnb-react-a11y-config.js",
+    name: "airbnb-react-a11y",
+  },
+  {
+    location: "./src/conflicts/configs/airbnb-react-hooks-config.js",
+    name: "airbnb-react-hooks",
   },
   {
     location: "./src/conflicts/configs/airbnb-ts-config.js",
