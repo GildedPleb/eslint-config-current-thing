@@ -1161,5 +1161,7 @@
     "yml:eslint-plugin-yml@1.14.0",
     "you-dont-need-lodash-underscore"
   ],
-  "rules": {}
+  "rules": {
+    "prettier/prettier": [2]
+  }
 }

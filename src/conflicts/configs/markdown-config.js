@@ -37,7 +37,8 @@ const jsonFiles = [
   "**/*.jsonc",
 ];
 const ymlFiles = ["**/*.yaml", "**/*.yml"];
-const mdFiles = ["**/*.md/**"];
+const codeBlocks = ["**/*.md/**", "**/*.mdx/**"];
+const mdFiles = ["**/*.mdx", "**/*.md"];
 const graphQLFiles = ["**/*.graphql"];
 
 const testFiles = [
@@ -86,7 +87,7 @@ const configGen = ({
     },
     /* PROCESSORS */
     {
-      files: ["**/*.md"],
+      files: mdFiles,
       processor: markdown.processors.markdown,
     },
     {
@@ -178,7 +179,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: mdFiles,
+            files: codeBlocks,
             languageOptions: {
               parserOptions: {
                 ecmaFeatures: {

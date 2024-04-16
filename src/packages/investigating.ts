@@ -115,6 +115,8 @@ const investigating = new Set([
   "superlint",
   "tslint-etc",
   "@html-eslint",
+  "markdown-eslint-parser",
+  "eslint-plugin-md",
 ]);
 
 export default investigating;

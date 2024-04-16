@@ -3,6 +3,9 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  conflicts: {
+    "yml/flow-mapping-curly-spacing": ["prettier/yml"],
+  },
   definitions: `{
     files: ymlFiles,
     ${RULES}

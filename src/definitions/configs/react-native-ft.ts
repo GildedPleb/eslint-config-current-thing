@@ -4,7 +4,7 @@ import type { Config } from ".";
 
 export default {
   definitions: `{
-    files: ["*.js"],
+    files: ["**/*.js"],
     ${RULES}
   }`,
   id: "rn",

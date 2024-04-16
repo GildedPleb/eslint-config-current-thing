@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/stylistic-config.js
+// PathMark: ./src/conflicts/configs/prettier-json-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable import/extensions */
@@ -15,9 +15,9 @@ import {
   parseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
-import stylistic from "@stylistic/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
 import markdown from "eslint-plugin-markdown";
+import prettier from "eslint-plugin-prettier";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
@@ -165,31 +165,31 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        "@stylistic": stylistic,
+        prettier,
       },
     },
 
     /*
-      Stylistic
+      Prettier - JSON
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: @stylistic
+      Requires: prettier
     */
-    ...(disable.includes("@stylistic/eslint-plugin") || threshold > 1_000_000
+    ...(disable.includes("eslint-plugin-prettier-json") ||
+    disable.includes("eslint-config-prettier-json") ||
+    threshold > 1_000_000
       ? []
       : [
           {
-            files,
-            languageOptions: {
-              parserOptions: {
-                warnOnUnsupportedTypeScriptVersion: false,
-              },
-            },
+            files: jsonFiles,
             rules: {
-              ...stylistic.configs["recommended-flat"].rules,
-              ...("@stylistic/eslint-plugin" in override
-                ? override["@stylistic/eslint-plugin"]
+              "prettier/prettier": 2,
+              ...("eslint-plugin-prettier/json" in override
+                ? override["eslint-plugin-prettier/json"]
+                : {}),
+              ...("eslint-config-prettier/json" in override
+                ? override["eslint-config-prettier/json"]
                 : {}),
             },
           },

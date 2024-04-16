@@ -10,6 +10,8 @@ import { configs, parsers, plugins } from "./definitions";
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
+const contextOverrides: string[] = [];
+
 const generateCode = `// PathMark: ./src/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable sonarjs/no-duplicate-string */
@@ -60,7 +62,8 @@ const tsFiles = ["**/*.ts", ...tsxFiles, "**/*.mts", "**/*.cts"];
 const files = [...jsFiles, ...tsFiles];
 const jsonFiles = ["*.json", "**/*.json", "*.json5", "**/*.json5", "*.jsonc", "**/*.jsonc"];
 const ymlFiles = ["**/*.yaml", "**/*.yml"];
-const mdFiles = ["**/*.md/**"];
+const codeBlocks = ["**/*.md/**", "**/*.mdx/**"];
+const mdFiles = ["**/*.mdx", "**/*.md"];
 const graphQLFiles = ["**/*.graphql"];
 
 const testFiles = [
@@ -109,7 +112,7 @@ const configGen = ({
     },
     /* PROCESSORS */
     {
-      files: ["**/*.md"],
+      files: mdFiles,
       processor: markdown.processors.markdown,
     },
     {
@@ -165,6 +168,7 @@ ${configs
   .sort((first, second) => first.count - second.count)
   .map(
     ({
+      contextOverride,
       count,
       definitions,
       description,
@@ -245,7 +249,7 @@ ${configs
     )},
         ])`;
 
-      return `    /*
+      const full = `    /*
       ${name}${hasSecondary ? ` - ${nameSecondary}` : ""}
       ${count.toLocaleString()} monthly downloads
       ${description}
@@ -254,9 +258,15 @@ ${configs
     */
   ${definition},
 `;
+      if (contextOverride !== undefined && contextOverride)
+        contextOverrides.push(full);
+      return full;
     },
   ).join(`
-`)}]);
+`)}
+    /* CONTEXT OVERRIDES */
+${contextOverrides.join("")}
+]);
 
 export default configGen;
 // EOF

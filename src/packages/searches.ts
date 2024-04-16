@@ -173,6 +173,18 @@ const searchTerms: string[] = [
     "webpack%20config%20eslint%20lint",
     "rollup%20config%20eslint%20lint",
     "babel%20config%20eslint%20lint",
+    "eslint%20mdx",
+    "eslint%20md",
+    "lint%20mdx",
+    "lint%20md",
+    "mdx%20eslint",
+    "md%20eslint",
+    "mdx%20lint",
+    "md%20lint",
+    "eslint%20markdown",
+    "lint%20markdown",
+    "markdown%20eslint",
+    "markdown%20lint",
   ]),
 ];
 

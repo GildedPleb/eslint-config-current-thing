@@ -48,6 +48,9 @@ import perfectionist from "./perfectionist";
 import playwright from "./playwright";
 import preferArrow from "./prefer-arrow";
 import prettier from "./prettier";
+import prettierJson from "./prettier-json";
+import prettierMd from "./prettier-md";
+import prettierYml from "./prettier-yml";
 import promises from "./promises";
 import react from "./react";
 import reactHooks from "./react-hooks";
@@ -99,6 +102,7 @@ import youDontNeedLodash from "./you-dont-need-lodash";
 
 export interface Config {
   conflicts?: Record<string, string[]>;
+  contextOverride?: boolean;
   definitions: `${"..." | "{"}${string}${")" | "}"}`;
   id: string;
   name: string;
@@ -210,6 +214,9 @@ const configs: Config[] = [
   xo,
   yml,
   youDontNeedLodash,
+  prettierMd,
+  prettierYml,
+  prettierJson,
 ];
 
 export default configs;

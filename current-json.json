@@ -1161,101 +1161,38 @@
     "you-dont-need-lodash-underscore"
   ],
   "rules": {
-    "strict": [
-      0
-    ],
-    "no-unused-expressions": [
-      0
-    ],
-    "no-unused-vars": [
-      0
-    ],
-    "jsonc/comma-dangle": [
-      2
-    ],
-    "jsonc/no-bigint-literals": [
-      2
-    ],
-    "jsonc/no-binary-expression": [
-      2
-    ],
-    "jsonc/no-binary-numeric-literals": [
-      2
-    ],
-    "jsonc/no-comments": [
-      2
-    ],
-    "jsonc/no-dupe-keys": [
-      2
-    ],
-    "jsonc/no-escape-sequence-in-identifier": [
-      2
-    ],
-    "jsonc/no-floating-decimal": [
-      2
-    ],
-    "jsonc/no-hexadecimal-numeric-literals": [
-      2
-    ],
-    "jsonc/no-infinity": [
-      2
-    ],
-    "jsonc/no-multi-str": [
-      2
-    ],
-    "jsonc/no-nan": [
-      2
-    ],
-    "jsonc/no-number-props": [
-      2
-    ],
-    "jsonc/no-numeric-separators": [
-      2
-    ],
-    "jsonc/no-octal-numeric-literals": [
-      2
-    ],
-    "jsonc/no-octal": [
-      2
-    ],
-    "jsonc/no-parenthesized": [
-      2
-    ],
-    "jsonc/no-plus-sign": [
-      2
-    ],
-    "jsonc/no-regexp-literals": [
-      2
-    ],
-    "jsonc/no-sparse-arrays": [
-      2
-    ],
-    "jsonc/no-template-literals": [
-      2
-    ],
-    "jsonc/no-undefined-value": [
-      2
-    ],
-    "jsonc/no-unicode-codepoint-escapes": [
-      2
-    ],
-    "jsonc/no-useless-escape": [
-      2
-    ],
-    "jsonc/quote-props": [
-      2
-    ],
-    "jsonc/quotes": [
-      2
-    ],
-    "jsonc/space-unary-ops": [
-      2
-    ],
-    "jsonc/valid-json-number": [
-      2
-    ],
-    "jsonc/vue-custom-block/no-parsing-error": [
-      2
-    ]
+    "strict": [0],
+    "no-unused-expressions": [0],
+    "no-unused-vars": [0],
+    "jsonc/comma-dangle": [2],
+    "jsonc/no-bigint-literals": [2],
+    "jsonc/no-binary-expression": [2],
+    "jsonc/no-binary-numeric-literals": [2],
+    "jsonc/no-comments": [2],
+    "jsonc/no-dupe-keys": [2],
+    "jsonc/no-escape-sequence-in-identifier": [2],
+    "jsonc/no-floating-decimal": [2],
+    "jsonc/no-hexadecimal-numeric-literals": [2],
+    "jsonc/no-infinity": [2],
+    "jsonc/no-multi-str": [2],
+    "jsonc/no-nan": [2],
+    "jsonc/no-number-props": [2],
+    "jsonc/no-numeric-separators": [2],
+    "jsonc/no-octal-numeric-literals": [2],
+    "jsonc/no-octal": [2],
+    "jsonc/no-parenthesized": [2],
+    "jsonc/no-plus-sign": [2],
+    "jsonc/no-regexp-literals": [2],
+    "jsonc/no-sparse-arrays": [2],
+    "jsonc/no-template-literals": [2],
+    "jsonc/no-undefined-value": [2],
+    "jsonc/no-unicode-codepoint-escapes": [2],
+    "jsonc/no-useless-escape": [2],
+    "jsonc/quote-props": [2],
+    "jsonc/quotes": [2],
+    "jsonc/space-unary-ops": [2],
+    "jsonc/valid-json-number": [2],
+    "jsonc/vue-custom-block/no-parsing-error": [2],
+    "prettier/prettier": [2]
   }
 }

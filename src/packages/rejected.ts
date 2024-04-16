@@ -111,7 +111,11 @@ const rejected = new Set([
   "@ianvs/eslint-stats",
   "xo",
   "eslint-plugin-diff",
+
+  // Markdownlint is poorly supported for integration with ESLint
   "markdownlint",
+  "markdownlint-cli",
+  "markdownlint-cli2",
 
   // Sarif
   "node-sarif-builder",

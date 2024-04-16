@@ -6,11 +6,7 @@
     "created": "2024-04-12",
     "updated": null
   },
-  "tags": [
-    "example",
-    "json",
-    "demo"
-  ],
+  "tags": ["example", "json", "demo"],
   "metrics": {
     "views": 1000,
     "likes": 100,

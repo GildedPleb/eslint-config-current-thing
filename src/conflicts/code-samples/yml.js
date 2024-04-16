@@ -76,7 +76,12 @@ user_profile:
     - Admin
     - User
 
-# Inline notation
+# eslint-disable-next-line prettier/prettier
+favorites: {color: blue, food: pizza, sport: soccer}
+
+# eslint-disable-next-line yml/flow-mapping-curly-spacing
+favoritesPrettier: { color: blue, food: pizza, sport: soccer }
+
 favorites: {color: blue, food: pizza, sport: soccer}
 
 # Multi-line strings using different styles

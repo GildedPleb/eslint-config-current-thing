@@ -118,7 +118,8 @@ const jsonFiles = [
   "**/*.jsonc",
 ];
 const ymlFiles = ["**/*.yaml", "**/*.yml"];
-const mdFiles = ["**/*.md/**"];
+const codeBlocks = ["**/*.md/**", "**/*.mdx/**"];
+const mdFiles = ["**/*.mdx", "**/*.md"];
 const graphQLFiles = ["**/*.graphql"];
 
 const testFiles = [
@@ -167,7 +168,7 @@ const configGen = ({
     },
     /* PROCESSORS */
     {
-      files: ["**/*.md"],
+      files: mdFiles,
       processor: markdown.processors.markdown,
     },
     {
@@ -1023,7 +1024,6 @@ const configGen = ({
               "@typescript-eslint/brace-style": 0,
               "@typescript-eslint/comma-dangle": 0,
               "@typescript-eslint/member-delimiter-style": 0,
-              "@typescript-eslint/no-extra-parens": 0,
               "@typescript-eslint/object-curly-spacing": 0,
               "@typescript-eslint/semi": 0,
               "@typescript-eslint/space-before-function-paren": 0,
@@ -1312,7 +1312,7 @@ const configGen = ({
               ...yml.configs.base.overrides[0].rules,
               ...yml.configs.standard.rules,
               ...yml.configs.recommended.rules,
-
+              "prettier/prettier": 0,
               ...("eslint-plugin-yml" in override
                 ? override["eslint-plugin-yml"]
                 : {}),
@@ -1457,7 +1457,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: mdFiles,
+            files: codeBlocks,
             languageOptions: {
               parserOptions: {
                 ecmaFeatures: {
@@ -1467,7 +1467,7 @@ const configGen = ({
             },
             rules: {
               ...markdown.configs.recommended[2].rules,
-
+              "unused-imports/no-unused-vars": 0,
               ...("eslint-plugin-markdown" in override
                 ? override["eslint-plugin-markdown"]
                 : {}),
@@ -1621,7 +1621,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: ["*.js"],
+            files: ["**/*.js"],
             rules: {
               ...reactNativeConfig.overrides[0].rules,
               "functional/functional-parameters": 0,
@@ -2296,7 +2296,6 @@ const configGen = ({
               },
             },
             rules: {
-              "@typescript-eslint/no-extra-parens": 0,
               "prettier/prettier": 0,
               ...airbnbReact.rules,
               "functional/functional-parameters": 0,
@@ -3442,6 +3441,117 @@ const configGen = ({
                 : {}),
               ...("eslint-config-prettier" in override
                 ? override["eslint-config-prettier"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Prettier - MD
+      131,380,125 monthly downloads
+      Runs prettier as an eslint rule / Turns off all rules that are unnecessary or might conflict with Prettier.
+      https://github.com/prettier/eslint-plugin-prettier#readme / https://github.com/prettier/eslint-config-prettier#readme
+      Requires: prettier
+    */
+    ...(disable.includes("eslint-plugin-prettier/md") ||
+    disable.includes("eslint-config-prettier/md") ||
+    threshold > 131_380_125
+      ? []
+      : [
+          {
+            files: mdFiles,
+            rules: {
+              "prettier/prettier": 2,
+
+              ...("eslint-plugin-prettier/md" in override
+                ? override["eslint-plugin-prettier/md"]
+                : {}),
+              ...("eslint-config-prettier/md" in override
+                ? override["eslint-config-prettier/md"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Prettier - YML
+      131,380,125 monthly downloads
+      Runs prettier as an eslint rule / Turns off all rules that are unnecessary or might conflict with Prettier.
+      https://github.com/prettier/eslint-plugin-prettier#readme / https://github.com/prettier/eslint-config-prettier#readme
+      Requires: prettier
+    */
+    ...(disable.includes("eslint-plugin-prettier/yml") ||
+    disable.includes("eslint-config-prettier/yml") ||
+    threshold > 131_380_125
+      ? []
+      : [
+          {
+            files: ymlFiles,
+            rules: {
+              "prettier/prettier": 2,
+              "yml/flow-mapping-curly-spacing": 0,
+              ...("eslint-plugin-prettier/yml" in override
+                ? override["eslint-plugin-prettier/yml"]
+                : {}),
+              ...("eslint-config-prettier/yml" in override
+                ? override["eslint-config-prettier/yml"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Prettier - JSON
+      131,380,125 monthly downloads
+      Runs prettier as an eslint rule / Turns off all rules that are unnecessary or might conflict with Prettier.
+      https://github.com/prettier/eslint-plugin-prettier#readme / https://github.com/prettier/eslint-config-prettier#readme
+      Requires: prettier
+    */
+    ...(disable.includes("eslint-plugin-prettier/json") ||
+    disable.includes("eslint-config-prettier/json") ||
+    threshold > 131_380_125
+      ? []
+      : [
+          {
+            files: jsonFiles,
+            rules: {
+              "prettier/prettier": 2,
+
+              ...("eslint-plugin-prettier/json" in override
+                ? override["eslint-plugin-prettier/json"]
+                : {}),
+              ...("eslint-config-prettier/json" in override
+                ? override["eslint-config-prettier/json"]
+                : {}),
+            },
+          },
+        ]),
+
+    /* CONTEXT OVERRIDES */
+    /*
+      Markdown
+      1,973,007 monthly downloads
+      An ESLint plugin to lint JavaScript in Markdown code fences.
+      https://github.com/eslint/eslint-plugin-markdown#readme
+      Requires: markdown
+    */
+    ...(disable.includes("eslint-plugin-markdown") || threshold > 1_973_007
+      ? []
+      : [
+          {
+            files: codeBlocks,
+            languageOptions: {
+              parserOptions: {
+                ecmaFeatures: {
+                  impliedStrict: true,
+                },
+              },
+            },
+            rules: {
+              ...markdown.configs.recommended[2].rules,
+              "unused-imports/no-unused-vars": 0,
+              ...("eslint-plugin-markdown" in override
+                ? override["eslint-plugin-markdown"]
                 : {}),
             },
           },

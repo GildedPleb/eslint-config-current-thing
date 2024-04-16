@@ -261,6 +261,18 @@ const configList = [
     location: "./src/conflicts/configs/no-lodash-config.js",
     name: "no-lodash",
   },
+  {
+    location: "./src/conflicts/configs/prettier-md-config.js",
+    name: "prettier-md",
+  },
+  {
+    location: "./src/conflicts/configs/prettier-yml-config.js",
+    name: "prettier-yml",
+  },
+  {
+    location: "./src/conflicts/configs/prettier-json-config.js",
+    name: "prettier-json",
+  },
 ];
 
 export default configList;

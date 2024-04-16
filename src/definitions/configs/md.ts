@@ -3,8 +3,9 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  contextOverride: true,
   definitions: `{
-    files: mdFiles,
+    files: codeBlocks,
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {

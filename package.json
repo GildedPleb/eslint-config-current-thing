@@ -18,7 +18,7 @@
     "current:md": "npx eslint --print-config src/conflicts/code-samples/markdown.md > current-md.json",
     "current:yml": "npx eslint --print-config src/conflicts/code-samples/yml.yml > current-yml.json",
     "lint": "npx eslint --fix -c ./eslint.config.js --max-warnings 0 . --cache",
-    "generate:currents": "npm run current:ts && npm run current:js && npm run current:test && npm run current:tsx && npm run current:jsx && npm run current:json && npm run current:md && npm run current:yml",
+    "generate:currents": "npm run current:ts && npm run current:js && npm run current:test && npm run current:tsx && npm run current:jsx && npm run current:json && npm run current:md && npm run current:yml && npm run lint",
     "generate:config": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/generate-config.ts",
     "generate:configs": "npm run generate:config && npm run lint && npm run generate:currents",
     "generate:readme": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/generate-readme.ts",
