@@ -1221,6 +1221,13 @@
     "@stylistic/operator-linebreak": [0, "before"],
     "@stylistic/quote-props": [0, "consistent-as-needed"],
     "@stylistic/semi": [0, "never"],
+    "@typescript-eslint/brace-style": [
+      0,
+      "1tbs",
+      {
+        "allowSingleLine": true
+      }
+    ],
     "@typescript-eslint/comma-dangle": [
       0,
       {
@@ -2101,13 +2108,6 @@
     "@babel/object-curly-spacing": [0],
     "prefer-arrow-callback": [0],
     "arrow-body-style": [0],
-    "@typescript-eslint/brace-style": [
-      0,
-      "1tbs",
-      {
-        "allowSingleLine": true
-      }
-    ],
     "@typescript-eslint/func-call-spacing": [0, "never"],
     "@typescript-eslint/type-annotation-spacing": [0],
     "react/boolean-prop-naming": [

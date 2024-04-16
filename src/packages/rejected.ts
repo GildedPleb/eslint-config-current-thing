@@ -38,12 +38,14 @@ const rejected = new Set([
   // Ember -- Hopefully to be added one day when its more popular than react!
   "eslint-plugin-ember",
 
-  // Broken / not-maintained / abandoned
+  // Broken / not-maintained / abandoned / scams
   "eslint-plugin-deprecation",
   "eslint-plugin-json",
   "eslint-plugin-babel",
   "eslint-plugin-graphql",
   "eslint-plugin-lodash",
+  "eslint-plugin-sort-keys-fix",
+  "solhint",
 
   // Plugin for linting plugins
   "eslint-plugin-eslint-plugin",
@@ -185,9 +187,6 @@ const rejected = new Set([
   "@rushstack/eslint-plugin",
   "@rushstack/eslint-plugin-security",
   "@backstage/eslint-plugin",
-
-  // Literally supporting scams and fraud
-  "solhint",
 ]);
 
 export default rejected;

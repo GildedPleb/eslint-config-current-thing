@@ -350,14 +350,13 @@ The following section is generated according to spec.
 
 Generated on 4/15/2024, downloads for the previous 28 days.
 
-- 977,889 downloads, [eslint-plugin-sort-keys-fix](https://www.npmjs.com/package/eslint-plugin-sort-keys-fix)
 - 896,376 downloads, [eslint-mdx](https://www.npmjs.com/package/eslint-mdx)
 - 890,681 downloads, [eslint-plugin-mdx](https://www.npmjs.com/package/eslint-plugin-mdx)
 - 862,343 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
 - 773,999 downloads, [eslint-plugin-jasmine](https://www.npmjs.com/package/eslint-plugin-jasmine)
-- 664,177 downloads, [npm-package-json-lint](https://www.npmjs.com/package/npm-package-json-lint)
 - 659,759 downloads, [eslint-import-resolver-custom-alias](https://www.npmjs.com/package/eslint-import-resolver-custom-alias)
 - 656,334 downloads, [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file)
+- 634,941 downloads, [npm-package-json-lint](https://www.npmjs.com/package/npm-package-json-lint)
 - 544,545 downloads, [remark-lint](https://www.npmjs.com/package/remark-lint)
 - 542,911 downloads, [eslint-formatter-gitlab](https://www.npmjs.com/package/eslint-formatter-gitlab)
 - 538,729 downloads, [eslint-plugin-ava](https://www.npmjs.com/package/eslint-plugin-ava)
@@ -390,6 +389,7 @@ Generated on 4/15/2024, downloads for the previous 28 days.
 - 276,907 downloads, [@rushstack/eslint-config](https://www.npmjs.com/package/@rushstack/eslint-config) - Not Yet Eligible
 - 253,323 downloads, [eslint-plugin-astro](https://www.npmjs.com/package/eslint-plugin-astro) - Not Yet Eligible
 - 252,915 downloads, [eslint-plugin-minecraft-linting](https://www.npmjs.com/package/eslint-plugin-minecraft-linting) - Not Yet Eligible
+- 245,339 downloads, [eslint-plugin-regex](https://www.npmjs.com/package/eslint-plugin-regex) - Not Yet Eligible
 
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

@@ -1216,6 +1216,7 @@
     "@stylistic/operator-linebreak": [0, "before"],
     "@stylistic/quote-props": [0, "consistent-as-needed"],
     "@stylistic/semi": [0, "never"],
+    "@typescript-eslint/brace-style": [0],
     "@typescript-eslint/comma-dangle": [0],
     "@typescript-eslint/object-curly-spacing": [0],
     "@typescript-eslint/semi": [0],
@@ -3467,7 +3468,6 @@
         "ignore-case": false
       }
     ],
-    "@typescript-eslint/brace-style": [0],
     "@stylistic/array-bracket-spacing": [2, "never"],
     "@stylistic/arrow-spacing": [
       2,
