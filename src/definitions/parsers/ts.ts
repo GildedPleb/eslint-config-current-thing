@@ -16,14 +16,12 @@ export default {
   name: "TypeScript",
   packages: [
     {
-      declaredAs: "tseslint.plugin",
+      declaredAs: "tseslint",
       package: "typescript-eslint",
-      requiresImport: false,
     },
     {
       declaredAs: "typescriptParser",
       package: "@typescript-eslint/parser",
-      requiresImport: false,
     },
   ],
 } satisfies Parser;

@@ -13,7 +13,7 @@
 
 import {
   flatConfigs as graphqlConfigs,
-  parseForESLint,
+  parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
   rules as graphQLRules,
 } from "@graphql-eslint/eslint-plugin";
@@ -133,7 +133,7 @@ const configGen = ({
     {
       files: graphQLFiles,
       languageOptions: {
-        parser: parseForESLint,
+        parser: graphQLparseForESLint,
       },
     },
     /*

@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "header",
+      mappedAs: "header",
       namespace: "header",
       package: "eslint-plugin-header",
       requiresImport: true,

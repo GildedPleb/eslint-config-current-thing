@@ -16,7 +16,7 @@ export default {
     {
       declaredAs: "tseslint",
       package: "typescript-eslint",
-      requiresImport: true,
+      requiresImport: false,
     },
     {
       declaredAs: "typescriptPlugin",

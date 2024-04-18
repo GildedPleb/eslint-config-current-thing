@@ -7,6 +7,7 @@ export default {
   packages: [
     {
       declaredAs: "playwright",
+      mappedAs: "playwright",
       namespace: "playwright",
       package: "eslint-plugin-playwright",
       requiresImport: true,

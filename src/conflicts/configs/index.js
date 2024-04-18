@@ -137,6 +137,7 @@ const configList = [
   { location: "./src/conflicts/configs/rn-ip-config.js", name: "rn-ip" },
   { location: "./src/conflicts/configs/rn-p-config.js", name: "rn-p" },
   { location: "./src/conflicts/configs/rn-ts-config.js", name: "rn-ts" },
+  { location: "./src/conflicts/configs/rn-jest-config.js", name: "rn-jest" },
   {
     location: "./src/conflicts/configs/react-perf-config.js",
     name: "react-perf",

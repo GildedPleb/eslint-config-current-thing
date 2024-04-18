@@ -20,7 +20,7 @@ export default {
     {
       declaredAs: "reactNativeConfig",
       package: "@react-native-community/eslint-config",
-      requiresImport: false,
+      requiresImport: true,
     },
     {
       declaredAs: "rnConfig",

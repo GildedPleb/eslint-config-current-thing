@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "functional",
+      mappedAs: "functional",
       namespace: "functional",
       package: "eslint-plugin-functional",
       requiresImport: true,

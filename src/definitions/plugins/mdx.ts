@@ -5,10 +5,11 @@ export default {
   name: "MDX",
   packages: [
     {
-      declaredAs: "mdx",
+      declaredAs: "* as mdx",
+      mappedAs: "mdx",
       namespace: "mdx",
       package: "eslint-plugin-mdx",
-      requiresImport: false,
+      requiresImport: true,
     },
   ],
 } satisfies Plugin<"mdx">;

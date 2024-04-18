@@ -59,6 +59,7 @@ import reactHooks from "./react-hooks";
 import reactNative from "./react-native";
 import reactNativeFt from "./react-native-ft";
 import reactNativeIndie from "./react-native-indie";
+import reactNativeJest from "./react-native-jest";
 import reactNativePlug from "./react-native-plug";
 import reactNativeTs from "./react-native-ts";
 import reactPerf from "./react-perf";
@@ -176,6 +177,7 @@ const configs: Config[] = [
   reactNativeIndie,
   reactNativePlug,
   reactNativeTs,
+  reactNativeJest,
   reactPerf,
   reactRefresh,
   regexp,

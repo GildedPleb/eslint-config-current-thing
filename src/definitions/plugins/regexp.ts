@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "regexp",
+      mappedAs: "regexp",
       namespace: "regexp",
       package: "eslint-plugin-regexp",
       requiresImport: true,

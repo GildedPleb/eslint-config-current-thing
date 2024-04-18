@@ -5,7 +5,8 @@ export default {
   name: "TypeScript",
   packages: [
     {
-      declaredAs: "tseslint.plugin",
+      declaredAs: "tseslint",
+      mappedAs: "tseslint.plugin",
       namespace: "@typescript-eslint",
       package: "typescript-eslint",
       requiresImport: false,

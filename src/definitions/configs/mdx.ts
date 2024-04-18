@@ -13,7 +13,17 @@ export default {
     {
       declaredAs: "* as mdx",
       package: "eslint-plugin-mdx",
-      requiresImport: true,
+      requiresImport: false,
+    },
+    {
+      declaredAs: "remarkLint",
+      package: "remark-lint",
+      requiresImport: false,
+    },
+    {
+      declaredAs: "remarkLintRecomended",
+      package: "remark-preset-lint-recommende",
+      requiresImport: false,
     },
   ],
   requiredPlugins: ["mdx", "react"],

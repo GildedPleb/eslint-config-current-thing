@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "promise",
+      mappedAs: "promise",
       namespace: "promise",
       package: "eslint-plugin-promise",
       requiresImport: true,

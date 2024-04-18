@@ -13,7 +13,6 @@ export interface Parser {
   packages: Array<{
     declaredAs: string;
     package: string;
-    requiresImport: boolean;
   }>;
 }
 

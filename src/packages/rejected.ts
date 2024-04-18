@@ -149,6 +149,11 @@ const rejected = new Set([
   "remark-toc",
   "rehype-katex",
   "remark-directive",
+  "remark-reference-links",
+  "remark-breaks",
+  "@astrojs/markdown-remark",
+  "remark-smartypants",
+  "remark-message-control",
 
   // Markdownlint is poorly supported for integration with ESLint
   "markdownlint",

@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "mocha",
+      mappedAs: "mocha",
       namespace: "mocha",
       package: "eslint-plugin-mocha",
       requiresImport: true,

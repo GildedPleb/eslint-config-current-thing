@@ -13,7 +13,7 @@
 
 import babelPlugin from "@babel/eslint-plugin";
 import {
-  parseForESLint,
+  parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
 import prettierConfig from "eslint-config-prettier";
@@ -137,7 +137,7 @@ const configGen = ({
     {
       files: graphQLFiles,
       languageOptions: {
-        parser: parseForESLint,
+        parser: graphQLparseForESLint,
       },
     },
     /*

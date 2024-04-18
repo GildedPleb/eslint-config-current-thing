@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "prettier",
+      mappedAs: "prettier",
       namespace: "prettier",
       package: "eslint-plugin-prettier",
       requiresImport: true,

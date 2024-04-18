@@ -13,7 +13,6 @@ export default {
     {
       declaredAs: "* as espree",
       package: "espree",
-      requiresImport: true,
     },
   ],
 } satisfies Parser;

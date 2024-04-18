@@ -71,15 +71,11 @@ for (const configContext of configs) {
   This file is fully generated, to edit it change ./generate-conflicts.ts
 */
 
-${configContext.packages
-  .map(({ declaredAs, package: pack, requiresImport, subModule }) =>
-    requiresImport &&
-    declaredAs !== "{ rules as emotion }" &&
-    declaredAs !== "reactNativeConfig" &&
-    declaredAs !== "tseslint" &&
-    declaredAs !== "* as mdx"
-      ? `import ${declaredAs} from "${pack}${subModule ?? ""}";`
-      : "",
+${parsers
+  .flatMap(({ packages }) =>
+    packages.map(
+      ({ declaredAs, package: pack }) => `import ${declaredAs} from "${pack}";`,
+    ),
   )
   .filter(Boolean).join(`
 `)}
@@ -91,21 +87,19 @@ ${plugins
   )
   .filter(Boolean).join(`
 `)}
-${parsers
-  .flatMap(({ packages }) =>
-    packages.map(({ declaredAs, package: pack, requiresImport }) =>
-      requiresImport ? `import ${declaredAs} from "${pack}";` : "",
-    ),
+${configContext.packages
+  .map(({ declaredAs, package: pack, requiresImport, subModule }) =>
+    requiresImport
+      ? `import ${declaredAs} from "${pack}${subModule ?? ""}";`
+      : "",
   )
   .filter(Boolean).join(`
 `)}
+
+
 import globals from "globals";
 import restrictedGlobals from 'confusing-browser-globals';
 import { defineFlatConfig } from 'eslint-define-config';
-import tseslint from "typescript-eslint";
-import { rules as emotion } from "@emotion/eslint-plugin";
-import reactNativeConfig from "@react-native-community/eslint-config";
-import * as mdx from "eslint-plugin-mdx";
 
 const jsxFiles = ["**/*.jsx"];
 const tsxFiles = ["**/*.tsx"];
@@ -210,8 +204,8 @@ ${parsers
             configContext.requiredPlugins.includes(plugin.namespace),
           )
           .map(
-            ({ declaredAs, namespace }) =>
-              `"${namespace}": ${declaredAs
+            ({ mappedAs, namespace }) =>
+              `"${namespace}": ${mappedAs
                 .split("\n")
                 .map((line, index) => (index === 0 ? line : `  ${line}`))
                 .join("\n")},`,

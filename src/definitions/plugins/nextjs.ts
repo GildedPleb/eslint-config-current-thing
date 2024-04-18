@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "nextjs",
+      mappedAs: "nextjs",
       namespace: "@next/next",
       package: "@next/eslint-plugin-next",
       requiresImport: true,

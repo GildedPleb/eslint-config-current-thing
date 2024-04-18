@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "tsdoc",
+      mappedAs: "tsdoc",
       namespace: "tsdoc",
       package: "eslint-plugin-tsdoc",
       requiresImport: true,

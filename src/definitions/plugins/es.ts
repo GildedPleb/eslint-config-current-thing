@@ -6,12 +6,14 @@ export default {
   packages: [
     {
       declaredAs: "esX",
+      mappedAs: "esX",
       namespace: "es-x",
       package: "eslint-plugin-es-x",
       requiresImport: true,
     },
     {
       declaredAs: "es",
+      mappedAs: "es",
       namespace: "es",
       package: "eslint-plugin-es",
       requiresImport: true,

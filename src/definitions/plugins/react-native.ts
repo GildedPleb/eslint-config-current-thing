@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "rnPlugin",
+      mappedAs: "rnPlugin",
       namespace: "@react-native",
       package: "@react-native/eslint-plugin",
       requiresImport: true,

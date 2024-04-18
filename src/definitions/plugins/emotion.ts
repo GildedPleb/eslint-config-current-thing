@@ -5,10 +5,11 @@ export default {
   name: "Emotion CSS",
   packages: [
     {
-      declaredAs: "{ rules: emotion }",
+      declaredAs: "{ rules as emotion }",
+      mappedAs: "{ rules: emotion }",
       namespace: "@emotion",
       package: "@emotion/eslint-plugin",
-      requiresImport: false,
+      requiresImport: true,
     },
   ],
 } satisfies Plugin<"@emotion">;

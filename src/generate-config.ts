@@ -12,6 +12,8 @@ const dirname = path.dirname(filename);
 
 const contextOverrides: string[] = [];
 
+const packageSet = new Set<string>();
+
 const generateCode = `// PathMark: ./src/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable sonarjs/no-duplicate-string */
@@ -24,29 +26,34 @@ const generateCode = `// PathMark: ./src/config.js
 */
 
 /* eslint-disable import/extensions */
-${configs
+${parsers
   .flatMap(({ packages }) =>
-    packages.map(({ declaredAs, package: pack, requiresImport, subModule }) =>
-      requiresImport
-        ? `import ${declaredAs} from "${pack}${subModule ?? ""}";`
-        : "",
+    packages.map(
+      ({ declaredAs, package: pack }) => `import ${declaredAs} from "${pack}";`,
     ),
   )
   .filter(Boolean).join(`
 `)}
 ${plugins
   .flatMap(({ packages }) =>
-    packages.map(({ declaredAs, package: pack, requiresImport }) =>
-      requiresImport ? `import ${declaredAs} from "${pack}";` : "",
-    ),
+    packages.map(({ declaredAs, package: pack, requiresImport }) => {
+      if (!requiresImport) return "";
+      if (packageSet.has(pack)) return "";
+      packageSet.add(pack);
+      return `import ${declaredAs} from "${pack}";`;
+    }),
   )
   .filter(Boolean).join(`
 `)}
-${parsers
+${configs
   .flatMap(({ packages }) =>
-    packages.map(({ declaredAs, package: pack, requiresImport }) =>
-      requiresImport ? `import ${declaredAs} from "${pack}";` : "",
-    ),
+    packages.map(({ declaredAs, package: pack, requiresImport, subModule }) => {
+      if (!requiresImport) return "";
+      const pName = `${pack}${subModule ?? ""}`;
+      if (packageSet.has(pName)) return "";
+      packageSet.add(pName);
+      return `import ${declaredAs} from "${pName}";`;
+    }),
   )
   .filter(Boolean).join(`
 `)}
@@ -156,8 +163,8 @@ const configGen = ({
         ${plugins
           .flatMap(({ packages }) =>
             packages.map(
-              ({ declaredAs, namespace }) =>
-                `"${namespace}": ${declaredAs
+              ({ mappedAs, namespace }) =>
+                `"${namespace}": ${mappedAs
                   .split("\n")
                   .map((line, index) => (index === 0 ? line : `  ${line}`))
                   .join("\n")},`,

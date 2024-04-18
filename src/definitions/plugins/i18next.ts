@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "i18next",
+      mappedAs: "i18next",
       namespace: "i18next",
       package: "eslint-plugin-i18next",
       requiresImport: true,

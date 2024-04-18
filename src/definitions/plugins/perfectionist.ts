@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "perfectionist",
+      mappedAs: "perfectionist",
       namespace: "perfectionist",
       package: "eslint-plugin-perfectionist",
       requiresImport: true,

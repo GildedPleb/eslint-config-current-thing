@@ -6,12 +6,14 @@ export default {
   packages: [
     {
       declaredAs: "comments",
+      mappedAs: "comments",
       namespace: "@eslint-community/eslint-comments",
       package: "@eslint-community/eslint-plugin-eslint-comments",
       requiresImport: true,
     },
     {
       declaredAs: "commentsOld",
+      mappedAs: "commentsOld",
       namespace: "eslint-comments",
       package: "eslint-plugin-eslint-comments",
       requiresImport: true,

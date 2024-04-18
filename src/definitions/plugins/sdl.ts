@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "msdl",
+      mappedAs: "msdl",
       namespace: "@microsoft/sdl",
       package: "@microsoft/eslint-plugin-sdl",
       requiresImport: true,

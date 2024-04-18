@@ -12,7 +12,7 @@
 */
 
 import {
-  parseForESLint,
+  parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
 import standardTS from "eslint-config-love";
@@ -135,7 +135,7 @@ const configGen = ({
     {
       files: graphQLFiles,
       languageOptions: {
-        parser: parseForESLint,
+        parser: graphQLparseForESLint,
       },
     },
     /*

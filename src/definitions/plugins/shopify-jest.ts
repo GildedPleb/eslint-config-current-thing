@@ -5,7 +5,8 @@ export default {
   name: "Shopify - Jest",
   packages: [
     {
-      declaredAs: `{
+      declaredAs: `shopify`,
+      mappedAs: `{
         rules: Object.fromEntries(
           Object.entries(shopify.rules).map(([key, value]) => [
             key.startsWith("jest/") ? key.slice(5) : key,

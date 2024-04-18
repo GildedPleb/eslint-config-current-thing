@@ -12,7 +12,7 @@
 */
 
 import {
-  parseForESLint,
+  parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
 import airbnbTypescript from "eslint-config-airbnb-typescript/lib/shared.js";
@@ -134,7 +134,7 @@ const configGen = ({
     {
       files: graphQLFiles,
       languageOptions: {
-        parser: parseForESLint,
+        parser: graphQLparseForESLint,
       },
     },
     /*

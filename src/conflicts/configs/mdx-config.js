@@ -12,7 +12,7 @@
 */
 
 import {
-  parseForESLint,
+  parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
@@ -132,7 +132,7 @@ const configGen = ({
     {
       files: graphQLFiles,
       languageOptions: {
-        parser: parseForESLint,
+        parser: graphQLparseForESLint,
       },
     },
     /*
@@ -199,7 +199,10 @@ const configGen = ({
       www.nope.com
       Requires: mdx, react
     */
-    ...(disable.includes("eslint-plugin-mdx") || threshold > 1_000_000
+    ...(disable.includes("eslint-plugin-mdx") ||
+    disable.includes("remark-lint") ||
+    disable.includes("remark-preset-lint-recommende") ||
+    threshold > 1_000_000
       ? []
       : [
           {
@@ -214,6 +217,10 @@ const configGen = ({
 
               ...("eslint-plugin-mdx" in override
                 ? override["eslint-plugin-mdx"]
+                : {}),
+              ...("remark-lint" in override ? override["remark-lint"] : {}),
+              ...("remark-preset-lint-recommende" in override
+                ? override["remark-preset-lint-recommende"]
                 : {}),
             },
           },

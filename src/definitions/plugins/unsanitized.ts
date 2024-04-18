@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "unsanitized",
+      mappedAs: "unsanitized",
       namespace: "no-unsanitized",
       package: "eslint-plugin-no-unsanitized",
       requiresImport: true,

@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "reactRefresh",
+      mappedAs: "reactRefresh",
       namespace: "react-refresh",
       package: "eslint-plugin-react-refresh",
       requiresImport: true,

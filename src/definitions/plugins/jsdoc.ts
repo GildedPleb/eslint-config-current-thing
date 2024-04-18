@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "jsdoc",
+      mappedAs: "jsdoc",
       namespace: "jsdoc",
       package: "eslint-plugin-jsdoc",
       requiresImport: true,

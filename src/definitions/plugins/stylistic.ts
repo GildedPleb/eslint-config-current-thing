@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "stylistic",
+      mappedAs: "stylistic",
       namespace: "@stylistic",
       package: "@stylistic/eslint-plugin",
       requiresImport: true,

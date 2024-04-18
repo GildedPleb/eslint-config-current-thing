@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "markdown",
+      mappedAs: "markdown",
       namespace: "markdown",
       package: "eslint-plugin-markdown",
       requiresImport: true,

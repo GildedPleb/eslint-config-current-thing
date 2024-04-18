@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "unicorn",
+      mappedAs: "unicorn",
       namespace: "unicorn",
       package: "eslint-plugin-unicorn",
       requiresImport: true,

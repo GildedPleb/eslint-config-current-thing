@@ -13,7 +13,7 @@
 
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
 import {
-  parseForESLint,
+  parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
@@ -133,7 +133,7 @@ const configGen = ({
     {
       files: graphQLFiles,
       languageOptions: {
-        parser: parseForESLint,
+        parser: graphQLparseForESLint,
       },
     },
     /*

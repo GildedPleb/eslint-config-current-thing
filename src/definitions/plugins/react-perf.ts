@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "reactPerf",
+      mappedAs: "reactPerf",
       namespace: "react-perf",
       package: "eslint-plugin-react-perf",
       requiresImport: true,

@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "cypress",
+      mappedAs: "cypress",
       namespace: "cypress",
       package: "eslint-plugin-cypress",
       requiresImport: true,

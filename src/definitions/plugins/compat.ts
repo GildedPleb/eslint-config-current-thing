@@ -5,7 +5,8 @@ export default {
   name: "Compat",
   packages: [
     {
-      declaredAs: "comp",
+      declaredAs: "compat",
+      mappedAs: "compat",
       namespace: "compat",
       package: "eslint-plugin-compat",
       requiresImport: true,

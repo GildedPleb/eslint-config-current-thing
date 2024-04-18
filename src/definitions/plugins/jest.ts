@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "jest",
+      mappedAs: "jest",
       namespace: "jest",
       package: "eslint-plugin-jest",
       requiresImport: true,

@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "sonarjs",
+      mappedAs: "sonarjs",
       namespace: "sonarjs",
       package: "eslint-plugin-sonarjs",
       requiresImport: true,

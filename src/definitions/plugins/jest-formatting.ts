@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "jestFormatting",
+      mappedAs: "jestFormatting",
       namespace: "jest-formatting",
       package: "eslint-plugin-jest-formatting",
       requiresImport: true,

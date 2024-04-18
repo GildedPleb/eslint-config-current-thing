@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "chaiFriendly",
+      mappedAs: "chaiFriendly",
       namespace: "chai-friendly",
       package: "eslint-plugin-chai-friendly",
       requiresImport: true,

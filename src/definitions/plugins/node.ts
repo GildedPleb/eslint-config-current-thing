@@ -6,12 +6,14 @@ export default {
   packages: [
     {
       declaredAs: "nNode",
+      mappedAs: "nNode",
       namespace: "n",
       package: "eslint-plugin-n",
       requiresImport: true,
     },
     {
       declaredAs: "node",
+      mappedAs: "node",
       namespace: "node",
       package: "eslint-plugin-node",
       requiresImport: true,

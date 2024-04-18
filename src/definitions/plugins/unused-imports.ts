@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "unusedImports",
+      mappedAs: "unusedImports",
       namespace: "unused-imports",
       package: "eslint-plugin-unused-imports",
       requiresImport: true,

@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/stylistic-config.js
+// PathMark: ./src/conflicts/configs/rn-jest-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable import/extensions */
@@ -15,11 +15,12 @@ import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
-import stylistic from "@stylistic/eslint-plugin";
+import reactNativeConfig from "@react-native-community/eslint-config";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
 import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
+import reactNativeIndie from "eslint-plugin-react-native";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
@@ -187,31 +188,37 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        "@stylistic": stylistic,
+        "react-native": reactNativeIndie,
       },
     },
 
     /*
-      Stylistic
+      React Native Config - Jest
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: @stylistic
+      Requires: react-native
     */
-    ...(disable.includes("@stylistic/eslint-plugin") || threshold > 1_000_000
+    ...(disable.includes("@react-native-community/eslint-config-jest") ||
+    disable.includes("@react-native/eslint-config-jest") ||
+    threshold > 1_000_000
       ? []
       : [
           {
-            files,
+            files: testFiles,
             languageOptions: {
-              parserOptions: {
-                warnOnUnsupportedTypeScriptVersion: false,
+              globals: {
+                jest: true,
+                "jest/globals": true,
               },
             },
             rules: {
-              ...stylistic.configs["recommended-flat"].rules,
-              ...("@stylistic/eslint-plugin" in override
-                ? override["@stylistic/eslint-plugin"]
+              ...reactNativeConfig.overrides[2].rules,
+              ...("@react-native-community/eslint-config/jest" in override
+                ? override["@react-native-community/eslint-config/jest"]
+                : {}),
+              ...("@react-native/eslint-config/jest" in override
+                ? override["@react-native/eslint-config/jest"]
                 : {}),
             },
           },

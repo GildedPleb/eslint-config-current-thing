@@ -13,7 +13,6 @@ export default {
     {
       declaredAs: "jsoncEslintParser",
       package: "jsonc-eslint-parser",
-      requiresImport: true,
     },
   ],
 } satisfies Parser;

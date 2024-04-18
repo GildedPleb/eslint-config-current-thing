@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "jsxA11y",
+      mappedAs: "jsxA11y",
       namespace: "jsx-a11y",
       package: "eslint-plugin-jsx-a11y",
       requiresImport: true,

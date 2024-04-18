@@ -13,7 +13,7 @@ export default {
     {
       declaredAs: "{ rules as emotion }",
       package: "@emotion/eslint-plugin",
-      requiresImport: true,
+      requiresImport: false,
     },
   ],
   requiredPlugins: ["@emotion"],

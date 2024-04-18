@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "security",
+      mappedAs: "security",
       namespace: "security",
       package: "eslint-plugin-security",
       requiresImport: true,

@@ -16,7 +16,7 @@ import eslint from "@eslint/js";
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
 import {
   flatConfigs as graphqlConfigs,
-  parseForESLint,
+  parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
   rules as graphQLRules,
 } from "@graphql-eslint/eslint-plugin";
@@ -49,7 +49,7 @@ import xo from "eslint-config-xo";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
 import chaiFriendly from "eslint-plugin-chai-friendly";
-import comp from "eslint-plugin-compat";
+import compat from "eslint-plugin-compat";
 import cssModules from "eslint-plugin-css-modules";
 import cypress from "eslint-plugin-cypress";
 import es from "eslint-plugin-es";
@@ -214,7 +214,7 @@ const configGen = ({
     {
       files: graphQLFiles,
       languageOptions: {
-        parser: parseForESLint,
+        parser: graphQLparseForESLint,
       },
     },
     /*
@@ -300,7 +300,7 @@ const configGen = ({
         "@stylistic": stylistic,
         "@typescript-eslint": tseslint.plugin,
         "chai-friendly": chaiFriendly,
-        compat: comp,
+        compat,
         "css-modules": cssModules,
         cypress,
         es,
@@ -1096,33 +1096,6 @@ const configGen = ({
         ]),
 
     /*
-      MDX
-      887,697 monthly downloads
-      ESLint Plugin for MDX
-      https://github.com/mdx-js/eslint-mdx/blob/master/packages/eslint-plugin-mdx
-      Requires: mdx, react
-    */
-    ...(disable.includes("eslint-plugin-mdx") || threshold > 887_697
-      ? []
-      : [
-          {
-            files: mdFiles,
-            rules: {
-              // MDX "recommended" is composed of Overrides, Base, and CodeBlocks but with unneeded conditional logic
-              // Overrides:
-              "react/jsx-no-undef": [2, { allowGlobals: true }],
-              "react/react-in-jsx-scope": 0,
-              // Base:
-              ...mdx.configs.base.rules,
-
-              ...("eslint-plugin-mdx" in override
-                ? override["eslint-plugin-mdx"]
-                : {}),
-            },
-          },
-        ]),
-
-    /*
       MDX - Code-Blocks
       887,697 monthly downloads
       ESLint Plugin for MDX
@@ -1403,6 +1376,40 @@ const configGen = ({
         ]),
 
     /*
+      MDX
+      1,435,351 monthly downloads
+      ESLint Plugin for MDX / remark plugin to lint Markdown code style / undefined
+      https://github.com/mdx-js/eslint-mdx/blob/master/packages/eslint-plugin-mdx / https://github.com/remarkjs/remark-lint/tree/main#readme / undefined
+      Requires: mdx, react
+    */
+    ...(disable.includes("eslint-plugin-mdx") ||
+    disable.includes("remark-lint") ||
+    disable.includes("remark-preset-lint-recommende") ||
+    threshold > 1_435_351
+      ? []
+      : [
+          {
+            files: mdFiles,
+            rules: {
+              // MDX "recommended" is composed of Overrides, Base, and CodeBlocks but with unneeded conditional logic
+              // Overrides:
+              "react/jsx-no-undef": [2, { allowGlobals: true }],
+              "react/react-in-jsx-scope": 0,
+              // Base:
+              ...mdx.configs.base.rules,
+
+              ...("eslint-plugin-mdx" in override
+                ? override["eslint-plugin-mdx"]
+                : {}),
+              ...("remark-lint" in override ? override["remark-lint"] : {}),
+              ...("remark-preset-lint-recommende" in override
+                ? override["remark-preset-lint-recommende"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
       Google
       1,619,647 monthly downloads
       ESLint shareable config for the Google style
@@ -1451,7 +1458,7 @@ const configGen = ({
               },
             },
             rules: {
-              ...comp.configs.recommended.rules,
+              ...compat.configs.recommended.rules,
 
               ...("eslint-plugin-compat" in override
                 ? override["eslint-plugin-compat"]
@@ -1751,6 +1758,39 @@ const configGen = ({
                 : {}),
               ...("@react-native/eslint-config/ts" in override
                 ? override["@react-native/eslint-config/ts"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      React Native Config - Jest
+      2,982,776 monthly downloads
+      ESLint config for React Native / ESLint config for React Native
+      https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native-community#readme / https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native#readme
+      Requires: react-native
+    */
+    ...(disable.includes("@react-native-community/eslint-config/jest") ||
+    disable.includes("@react-native/eslint-config/jest") ||
+    threshold > 2_982_776
+      ? []
+      : [
+          {
+            files: testFiles,
+            languageOptions: {
+              globals: {
+                jest: true,
+                "jest/globals": true,
+              },
+            },
+            rules: {
+              ...reactNativeConfig.overrides[2].rules,
+
+              ...("@react-native-community/eslint-config/jest" in override
+                ? override["@react-native-community/eslint-config/jest"]
+                : {}),
+              ...("@react-native/eslint-config/jest" in override
+                ? override["@react-native/eslint-config/jest"]
                 : {}),
             },
           },

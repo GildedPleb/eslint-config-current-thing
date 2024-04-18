@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "jsonc",
+      mappedAs: "jsonc",
       namespace: "jsonc",
       package: "eslint-plugin-jsonc",
       requiresImport: true,

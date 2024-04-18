@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "importSort",
+      mappedAs: "importSort",
       namespace: "simple-import-sort",
       package: "eslint-plugin-simple-import-sort",
       requiresImport: true,

@@ -54,7 +54,7 @@ Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
 - **1244** TSX rules
 - **1206** JSX rules
-- **1185** Testing rules
+- **1186** Testing rules
 - **1083** Typescript rules
 - **1055** Javascript rules
 - **33** JSON rules
@@ -354,18 +354,12 @@ The following section is generated according to spec.
 
 Generated on 4/18/2024, downloads for the previous 28 days.
 
-- 883,475 downloads, [remark-breaks](https://www.npmjs.com/package/remark-breaks)
-- 874,772 downloads, [@astrojs/markdown-remark](https://www.npmjs.com/package/@astrojs/markdown-remark)
 - 862,343 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
-- 838,491 downloads, [remark-reference-links](https://www.npmjs.com/package/remark-reference-links)
-- 805,269 downloads, [remark-smartypants](https://www.npmjs.com/package/remark-smartypants)
 - 773,999 downloads, [eslint-plugin-jasmine](https://www.npmjs.com/package/eslint-plugin-jasmine)
 - 659,759 downloads, [eslint-import-resolver-custom-alias](https://www.npmjs.com/package/eslint-import-resolver-custom-alias)
 - 657,375 downloads, [npm-package-json-lint](https://www.npmjs.com/package/npm-package-json-lint)
 - 656,334 downloads, [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file)
 - 582,800 downloads, [@mapbox/hast-util-table-cell-style](https://www.npmjs.com/package/@mapbox/hast-util-table-cell-style)
-- 574,711 downloads, [remark-message-control](https://www.npmjs.com/package/remark-message-control)
-- 549,769 downloads, [remark-lint](https://www.npmjs.com/package/remark-lint)
 - 541,394 downloads, [remark-cli](https://www.npmjs.com/package/remark-cli)
 - 538,729 downloads, [eslint-plugin-ava](https://www.npmjs.com/package/eslint-plugin-ava)
 - 521,162 downloads, [ember-template-lint](https://www.npmjs.com/package/ember-template-lint)
@@ -377,12 +371,12 @@ Generated on 4/18/2024, downloads for the previous 28 days.
 - 465,284 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin)
 - 462,882 downloads, [remark-lint-no-blockquote-without-marker](https://www.npmjs.com/package/remark-lint-no-blockquote-without-marker)
 - 459,772 downloads, [remark-lint-no-literal-urls](https://www.npmjs.com/package/remark-lint-no-literal-urls)
+- 452,574 downloads, [remark-lint-no-shortcut-reference-image](https://www.npmjs.com/package/remark-lint-no-shortcut-reference-image)
 - 446,636 downloads, [remark-lint-list-item-indent](https://www.npmjs.com/package/remark-lint-list-item-indent)
 - 442,956 downloads, [remark-lint-no-shortcut-reference-link](https://www.npmjs.com/package/remark-lint-no-shortcut-reference-link)
 - 442,737 downloads, [remark-lint-hard-break-spaces](https://www.npmjs.com/package/remark-lint-hard-break-spaces)
 - 440,775 downloads, [remark-lint-no-inline-padding](https://www.npmjs.com/package/remark-lint-no-inline-padding)
 - 440,760 downloads, [remark-retext](https://www.npmjs.com/package/remark-retext)
-- 440,598 downloads, [remark-lint-no-shortcut-reference-image](https://www.npmjs.com/package/remark-lint-no-shortcut-reference-image)
 - 435,156 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit)
 - 413,895 downloads, [eslint-plugin-local](https://www.npmjs.com/package/eslint-plugin-local)
 - 407,092 downloads, [eslint-config-xo-space](https://www.npmjs.com/package/eslint-config-xo-space)
@@ -394,5 +388,11 @@ Generated on 4/18/2024, downloads for the previous 28 days.
 - 381,709 downloads, [remark-lint-no-duplicate-definitions](https://www.npmjs.com/package/remark-lint-no-duplicate-definitions) - Not Yet Eligible
 - 378,422 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
 - 377,043 downloads, [remark-lint-list-item-bullet-indent](https://www.npmjs.com/package/remark-lint-list-item-bullet-indent) - Not Yet Eligible
+- 376,264 downloads, [remark-preset-lint-recommended](https://www.npmjs.com/package/remark-preset-lint-recommended) - Not Yet Eligible
+- 375,758 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
+- 364,594 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
+- 362,075 downloads, [json-fixer](https://www.npmjs.com/package/json-fixer) - Not Yet Eligible
+- 361,446 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu) - Not Yet Eligible
+- 359,468 downloads, [eslint-plugin-ssr-friendly](https://www.npmjs.com/package/eslint-plugin-ssr-friendly) - Not Yet Eligible
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

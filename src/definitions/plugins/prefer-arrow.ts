@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "preferArrow",
+      mappedAs: "preferArrow",
       namespace: "prefer-arrow",
       package: "eslint-plugin-prefer-arrow",
       requiresImport: true,

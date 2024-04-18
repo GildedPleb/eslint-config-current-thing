@@ -13,7 +13,6 @@ export default {
     {
       declaredAs: "ymlEslintParser",
       package: "yaml-eslint-parser",
-      requiresImport: true,
     },
   ],
 } satisfies Parser;

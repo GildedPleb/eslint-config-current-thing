@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "{ rules: graphQLRules }",
+      mappedAs: "{ rules: graphQLRules }",
       namespace: "@graphql-eslint",
       package: "@graphql-eslint/eslint-plugin",
       requiresImport: false,

@@ -1122,6 +1122,7 @@
       "setImmediate": false,
       "jest/globals": true,
       "browser": true,
+      "jest": false,
       "cy": false,
       "Cypress": false,
       "expect": false,
@@ -1173,7 +1174,6 @@
       "afterAll": false,
       "beforeAll": false,
       "fit": false,
-      "jest": false,
       "xtest": false
     },
     "parser": "espree@10.0.1",
@@ -3405,6 +3405,7 @@
     "compat/compat": [2],
     "ft-flow/define-flow-type": [1],
     "ft-flow/use-flow-type": [1],
+    "react-native/no-inline-styles": [0],
     "security/detect-buffer-noassert": [1],
     "security/detect-child-process": [1],
     "security/detect-disable-mustache-escape": [1],

@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "storybook",
+      mappedAs: "storybook",
       namespace: "storybook",
       package: "eslint-plugin-storybook",
       requiresImport: true,

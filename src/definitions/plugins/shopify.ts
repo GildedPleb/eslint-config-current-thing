@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "shopify",
+      mappedAs: "shopify",
       namespace: "@shopify",
       package: "@shopify/eslint-plugin",
       requiresImport: true,

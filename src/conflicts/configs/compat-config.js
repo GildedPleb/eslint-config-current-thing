@@ -12,12 +12,12 @@
 */
 
 import {
-  parseForESLint,
+  parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
-import comp from "eslint-plugin-compat";
+import compat from "eslint-plugin-compat";
 import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import * as espree from "espree";
@@ -132,7 +132,7 @@ const configGen = ({
     {
       files: graphQLFiles,
       languageOptions: {
-        parser: parseForESLint,
+        parser: graphQLparseForESLint,
       },
     },
     /*
@@ -187,7 +187,7 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        compat: comp,
+        compat,
       },
     },
 
@@ -209,7 +209,7 @@ const configGen = ({
               },
             },
             rules: {
-              ...comp.configs.recommended.rules,
+              ...compat.configs.recommended.rules,
               ...("eslint-plugin-compat" in override
                 ? override["eslint-plugin-compat"]
                 : {}),

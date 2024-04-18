@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "testingLibrary",
+      mappedAs: "testingLibrary",
       namespace: "testing-library",
       package: "eslint-plugin-testing-library",
       requiresImport: true,

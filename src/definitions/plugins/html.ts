@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "html",
+      mappedAs: "html",
       namespace: "html",
       package: "eslint-plugin-html",
       requiresImport: true,

@@ -64,6 +64,7 @@ export interface Plugin<N extends string> {
   name: string;
   packages: Array<{
     declaredAs: string;
+    mappedAs: string;
     namespace: N;
     package: string;
     requiresImport: boolean;

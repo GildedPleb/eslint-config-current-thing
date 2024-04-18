@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "youDontNeedLodash",
+      mappedAs: "youDontNeedLodash",
       namespace: "you-dont-need-lodash-underscore",
       package: "eslint-plugin-you-dont-need-lodash-underscore",
       requiresImport: true,

@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 
 import type { Config } from "../definitions/configs";
 import rawConfigs from "../definitions/configs";
+import parsers from "../definitions/parsers";
 import plugins from "../definitions/plugins";
 
 const filename = fileURLToPath(import.meta.url);
@@ -21,6 +22,8 @@ export interface FinalConfig extends PopulatedConfig {
   overrides: string[];
 }
 
+const packagesSet = new Set<string>();
+
 const generateCode = `// PathMark: ./src/conflicts/plugins.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable simple-import-sort/imports */
@@ -33,33 +36,42 @@ const generateCode = `// PathMark: ./src/conflicts/plugins.js
 ${rawConfigs
   .flatMap((config) =>
     config.packages
-      .map(({ declaredAs, package: pack, requiresImport }) =>
-        requiresImport
-          ? `\n// @ts-ignore yes, we need to ignore every import for this to run
-import ${declaredAs} from "${pack}";`
-          : "",
-      )
+      .map(({ declaredAs, package: pack, requiresImport }) => {
+        if (!requiresImport) return "";
+        if (packagesSet.has(pack)) return "";
+        packagesSet.add(pack);
+        return `\n// @ts-ignore yes, we need to ignore every import for this to run
+import ${declaredAs} from "${pack}";`;
+      })
       .filter(Boolean).join(`
 `),
   )
   .join(``)}
 ${plugins
   .flatMap(({ packages }) =>
-    packages.map(({ declaredAs, package: pack, requiresImport }) =>
-      requiresImport
-        ? `\n// @ts-ignore yes, we need to ignore every import for this to run
-import ${declaredAs} from "${pack}";`
-        : "",
-    ),
+    packages.map(({ declaredAs, package: pack, requiresImport }) => {
+      if (!requiresImport) return "";
+      if (packagesSet.has(pack)) return "";
+      packagesSet.add(pack);
+      return `\n// @ts-ignore yes, we need to ignore every import for this to run
+import ${declaredAs} from "${pack}";`;
+    }),
   )
   .filter(Boolean)
   .join(``)}
+${parsers
+  .flatMap(({ packages }) =>
+    packages.map(({ declaredAs, package: pack }) => {
+      if (packagesSet.has(pack)) return "";
+      packagesSet.add(pack);
+      return `\n// @ts-ignore yes, we need to ignore every import for this to run
+import ${declaredAs} from "${pack}";`;
+    }),
+  )
+  .filter(Boolean).join(`
+`)}
 // @ts-ignore yes, we need to ignore every import for this to run
 import { Linter } from 'eslint';
-// @ts-ignore yes, we need to ignore every import for this to run
-import { rules as graphQLRules } from "@graphql-eslint/eslint-plugin";
-// @ts-ignore yes, we need to ignore every import for this to run
-// import * as mdx from "eslint-plugin-mdx";
 
 const linter = new Linter();
 const allRules = linter.getRules();
@@ -68,8 +80,8 @@ const plugins = {
   ${plugins
     .flatMap(({ packages }) =>
       packages.map(
-        ({ declaredAs, namespace }) =>
-          `"${namespace}": ${declaredAs
+        ({ mappedAs, namespace }) =>
+          `"${namespace}": ${mappedAs
             .split("\n")
             .map((line, index) => (index === 0 ? line : `  ${line}`))
             .join("\n")},`,

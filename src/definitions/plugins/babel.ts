@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "babelPlugin",
+      mappedAs: "babelPlugin",
       namespace: "@babel",
       package: "@babel/eslint-plugin",
       requiresImport: true,

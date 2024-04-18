@@ -14,7 +14,7 @@ export default {
     {
       declaredAs: "reactNativeConfig",
       package: "@react-native-community/eslint-config",
-      requiresImport: false,
+      requiresImport: true,
     },
     // Throws WARN in NPM and is literally the exact same as @react-native-community/eslint-config, not installed
     {

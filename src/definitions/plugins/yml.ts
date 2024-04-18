@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "yml",
+      mappedAs: "yml",
       namespace: "yml",
       package: "eslint-plugin-yml",
       requiresImport: true,

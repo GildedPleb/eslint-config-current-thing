@@ -6,12 +6,14 @@ export default {
   packages: [
     {
       declaredAs: "flowtype",
+      mappedAs: "flowtype",
       namespace: "flowtype",
       package: "eslint-plugin-flowtype",
       requiresImport: true,
     },
     {
       declaredAs: "ftFlow",
+      mappedAs: "ftFlow",
       namespace: "ft-flow",
       package: "eslint-plugin-ft-flow",
       requiresImport: true,

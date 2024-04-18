@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "sortClassMembers",
+      mappedAs: "sortClassMembers",
       namespace: "sort-class-members",
       package: "eslint-plugin-sort-class-members",
       requiresImport: true,

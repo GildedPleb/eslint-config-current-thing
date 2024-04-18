@@ -16,12 +16,12 @@ export default {
   name: "Compat",
   packages: [
     {
-      declaredAs: "comp",
+      declaredAs: "compat",
       package: "eslint-plugin-compat",
       requiresImport: false,
     },
   ],
   requiredPlugins: ["compat"],
-  rules: `...comp.configs.recommended.rules,`,
+  rules: `...compat.configs.recommended.rules,`,
 } satisfies Config;
 // EOF

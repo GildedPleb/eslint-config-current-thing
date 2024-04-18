@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "tailwindcss",
+      mappedAs: "tailwindcss",
       namespace: "tailwindcss",
       package: "eslint-plugin-tailwindcss",
       requiresImport: true,

@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "react",
+      mappedAs: "react",
       namespace: "react",
       package: "eslint-plugin-react",
       requiresImport: true,

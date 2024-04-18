@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "cssModules",
+      mappedAs: "cssModules",
       namespace: "css-modules",
       package: "eslint-plugin-css-modules",
       requiresImport: true,

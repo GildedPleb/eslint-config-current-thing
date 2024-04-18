@@ -5,7 +5,8 @@ export default {
   name: "Shopify - TS",
   packages: [
     {
-      declaredAs: `{
+      declaredAs: `shopify`,
+      mappedAs: `{
         rules: Object.fromEntries(
           Object.entries(shopify.rules).map(([key, value]) => [
             key.startsWith("typescript/") ? key.slice(11) : key,

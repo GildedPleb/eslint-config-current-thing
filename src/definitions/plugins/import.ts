@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "importPlugin",
+      mappedAs: "importPlugin",
       namespace: "import",
       package: "eslint-plugin-import",
       requiresImport: true,

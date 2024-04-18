@@ -5,12 +5,12 @@ export default {
   definitions: `{
     files: mdFiles,
     languageOptions: {
-      sourceType: "module",
       ecmaVersion: "latest",
-      parser: eslintMdx,
       globals: {
         React: false,
       },
+      parser: eslintMdx,
+      sourceType: "module",
     },
   }`,
   name: "MDX",
@@ -18,7 +18,6 @@ export default {
     {
       declaredAs: "* as eslintMdx",
       package: "eslint-mdx",
-      requiresImport: true,
     },
   ],
 } satisfies Parser;

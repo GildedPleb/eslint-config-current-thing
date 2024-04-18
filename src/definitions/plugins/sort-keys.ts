@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "sortKeys",
+      mappedAs: "sortKeys",
       namespace: "typescript-sort-keys",
       package: "eslint-plugin-typescript-sort-keys",
       requiresImport: true,

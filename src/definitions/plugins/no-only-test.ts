@@ -6,6 +6,7 @@ export default {
   packages: [
     {
       declaredAs: "noOnlyTest",
+      mappedAs: "noOnlyTest",
       namespace: "no-only-tests",
       package: "eslint-plugin-no-only-tests",
       requiresImport: true,
