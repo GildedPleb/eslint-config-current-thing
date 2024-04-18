@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/airbnb.ts
+// PathMark: ./src/definitions/configs/airbnb-react.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/mdx.ts
+// PathMark: ./src/definitions/configs/mdx-code.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

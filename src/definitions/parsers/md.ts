@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/parsers/mdx.ts
+// PathMark: ./src/definitions/parsers/md.ts
 import type { Parser } from ".";
 
 export default {
