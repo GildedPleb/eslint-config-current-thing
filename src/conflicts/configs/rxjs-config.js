@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/mdx-config.js
+// PathMark: ./src/conflicts/configs/rxjs-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable import/extensions */
@@ -19,7 +19,7 @@ import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
 import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
-import react from "eslint-plugin-react";
+import rxjs from "eslint-plugin-rxjs";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
@@ -187,40 +187,26 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        mdx,
-        react,
+        rxjs,
       },
     },
 
     /*
-      MDX
+      RxJS
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: mdx, react
+      Requires: rxjs
     */
-    ...(disable.includes("eslint-plugin-mdx") ||
-    disable.includes("remark-lint") ||
-    disable.includes("remark-preset-lint-recommended") ||
-    threshold > 1_000_000
+    ...(disable.includes("eslint-plugin-rxjs") || threshold > 1_000_000
       ? []
       : [
           {
-            files: mdFiles,
+            files: tsFiles,
             rules: {
-              // MDX "recommended" is composed of Overrides, Base, and CodeBlocks but with unneeded conditional logic
-              // Overrides:
-              "react/jsx-no-undef": [2, { allowGlobals: true }],
-              "react/react-in-jsx-scope": 0,
-              // Base:
-              ...mdx.configs.base.rules,
-
-              ...("eslint-plugin-mdx" in override
-                ? override["eslint-plugin-mdx"]
-                : {}),
-              ...("remark-lint" in override ? override["remark-lint"] : {}),
-              ...("remark-preset-lint-recommended" in override
-                ? override["remark-preset-lint-recommended"]
+              ...rxjs.configs.recommended.rules,
+              ...("eslint-plugin-rxjs" in override
+                ? override["eslint-plugin-rxjs"]
                 : {}),
             },
           },

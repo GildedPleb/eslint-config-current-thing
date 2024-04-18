@@ -1182,6 +1182,7 @@
     "react-perf",
     "react-refresh",
     "regexp:eslint-plugin-regexp@2.5.0",
+    "rxjs",
     "security:eslint-plugin-security@3.0.0",
     "simple-import-sort:eslint-plugin-simple-import-sort@12.1.0",
     "sonarjs",
@@ -2476,6 +2477,26 @@
         "ignore-case": false
       }
     ],
+    "rxjs/no-async-subscribe": [2],
+    "rxjs/no-create": [2],
+    "rxjs/no-ignored-notifier": [2],
+    "rxjs/no-ignored-replay-buffer": [2],
+    "rxjs/no-ignored-takewhile-value": [2],
+    "rxjs/no-implicit-any-catch": [2],
+    "rxjs/no-index": [2],
+    "rxjs/no-internal": [2],
+    "rxjs/no-nested-subscribe": [2],
+    "rxjs/no-redundant-notify": [2],
+    "rxjs/no-sharereplay": [
+      2,
+      {
+        "allowConfig": true
+      }
+    ],
+    "rxjs/no-subject-unsubscribe": [2],
+    "rxjs/no-unbound-methods": [2],
+    "rxjs/no-unsafe-subject-next": [2],
+    "rxjs/no-unsafe-takeuntil": [2],
     "simple-import-sort/imports": [2],
     "perfectionist/sort-imports": [
       0,

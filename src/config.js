@@ -86,6 +86,7 @@ import reactNativeIndie from "eslint-plugin-react-native";
 import reactPerf from "eslint-plugin-react-perf";
 import reactRefresh from "eslint-plugin-react-refresh";
 import regexp from "eslint-plugin-regexp";
+import rxjs from "eslint-plugin-rxjs";
 import security from "eslint-plugin-security";
 import importSort from "eslint-plugin-simple-import-sort";
 import sonarjs from "eslint-plugin-sonarjs";
@@ -337,6 +338,7 @@ const configGen = ({
         "react-perf": reactPerf,
         "react-refresh": reactRefresh,
         regexp,
+        rxjs,
         security,
         "simple-import-sort": importSort,
         sonarjs,
@@ -1026,6 +1028,28 @@ const configGen = ({
         ]),
 
     /*
+      RxJS
+      861,273 monthly downloads
+      ESLint rules for RxJS
+      https://github.com/cartant/eslint-plugin-rxjs
+      Requires: rxjs
+    */
+    ...(disable.includes("eslint-plugin-rxjs") || threshold > 861_273
+      ? []
+      : [
+          {
+            files: tsFiles,
+            rules: {
+              ...rxjs.configs.recommended.rules,
+
+              ...("eslint-plugin-rxjs" in override
+                ? override["eslint-plugin-rxjs"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
       Perfectionist
       864,423 monthly downloads
       ESLint plugin for sorting various data such as objects, imports, types, enums, JSX props, etc.
@@ -1376,40 +1400,6 @@ const configGen = ({
         ]),
 
     /*
-      MDX
-      1,435,351 monthly downloads
-      ESLint Plugin for MDX / remark plugin to lint Markdown code style / undefined
-      https://github.com/mdx-js/eslint-mdx/blob/master/packages/eslint-plugin-mdx / https://github.com/remarkjs/remark-lint/tree/main#readme / undefined
-      Requires: mdx, react
-    */
-    ...(disable.includes("eslint-plugin-mdx") ||
-    disable.includes("remark-lint") ||
-    disable.includes("remark-preset-lint-recommende") ||
-    threshold > 1_435_351
-      ? []
-      : [
-          {
-            files: mdFiles,
-            rules: {
-              // MDX "recommended" is composed of Overrides, Base, and CodeBlocks but with unneeded conditional logic
-              // Overrides:
-              "react/jsx-no-undef": [2, { allowGlobals: true }],
-              "react/react-in-jsx-scope": 0,
-              // Base:
-              ...mdx.configs.base.rules,
-
-              ...("eslint-plugin-mdx" in override
-                ? override["eslint-plugin-mdx"]
-                : {}),
-              ...("remark-lint" in override ? override["remark-lint"] : {}),
-              ...("remark-preset-lint-recommende" in override
-                ? override["remark-preset-lint-recommende"]
-                : {}),
-            },
-          },
-        ]),
-
-    /*
       Google
       1,619,647 monthly downloads
       ESLint shareable config for the Google style
@@ -1435,6 +1425,40 @@ const configGen = ({
 
               ...("eslint-config-google" in override
                 ? override["eslint-config-google"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      MDX
+      1,808,843 monthly downloads
+      ESLint Plugin for MDX / remark plugin to lint Markdown code style / remark preset to configure remark-lint with rules that prevent mistakes or stuff that fails across vendors.
+      https://github.com/mdx-js/eslint-mdx/blob/master/packages/eslint-plugin-mdx / https://github.com/remarkjs/remark-lint/tree/main#readme / https://github.com/remarkjs/remark-lint/tree/main#readme
+      Requires: mdx, react
+    */
+    ...(disable.includes("eslint-plugin-mdx") ||
+    disable.includes("remark-lint") ||
+    disable.includes("remark-preset-lint-recommended") ||
+    threshold > 1_808_843
+      ? []
+      : [
+          {
+            files: mdFiles,
+            rules: {
+              // MDX "recommended" is composed of Overrides, Base, and CodeBlocks but with unneeded conditional logic
+              // Overrides:
+              "react/jsx-no-undef": [2, { allowGlobals: true }],
+              "react/react-in-jsx-scope": 0,
+              // Base:
+              ...mdx.configs.base.rules,
+
+              ...("eslint-plugin-mdx" in override
+                ? override["eslint-plugin-mdx"]
+                : {}),
+              ...("remark-lint" in override ? override["remark-lint"] : {}),
+              ...("remark-preset-lint-recommended" in override
+                ? override["remark-preset-lint-recommended"]
                 : {}),
             },
           },

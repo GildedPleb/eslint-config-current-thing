@@ -57,6 +57,22 @@ async function getExisting(cache: Level): Promise<Populated[]> {
   }
 }
 
+for (const pack of investigating) {
+  if (installed.has(pack)) {
+    console.log(`--> ALERT! investigating "${pack}" already INSTALLED`);
+  }
+
+  if (rejected.has(pack)) {
+    console.log(`--> ALERT! investigating "${pack}" already REJECTED`);
+  }
+}
+
+for (const pack of rejected) {
+  if (installed.has(pack)) {
+    console.log(`--> ALERT! rejected "${pack}" already INSTALLED`);
+  }
+}
+
 /**
  * Uses the NPM API results to find and coalesce all applicable NPM packages
  * @param cache - The db
@@ -64,16 +80,6 @@ async function getExisting(cache: Level): Promise<Populated[]> {
  */
 async function fetchEslintPlugins(cache = database): Promise<Populated[]> {
   console.log("Checking lists...");
-  for (const pack of investigating) {
-    if (installed.has(pack)) {
-      console.log(`--> ALERT! investigating "${pack}" already INSTALLED`);
-    }
-
-    if (rejected.has(pack)) {
-      console.log(`--> ALERT! investigating "${pack}" already REJECTED`);
-    }
-  }
-
   console.log("Getting full list...");
   const searchedPluginNames = await fetchNPMURLs(searchTerms);
   const currentKnown = await getExisting(cache);

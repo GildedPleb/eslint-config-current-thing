@@ -21,8 +21,8 @@ export default {
       requiresImport: false,
     },
     {
-      declaredAs: "remarkLintRecomended",
-      package: "remark-preset-lint-recommende",
+      declaredAs: "remarkLintRecommended",
+      package: "remark-preset-lint-recommended",
       requiresImport: false,
     },
   ],

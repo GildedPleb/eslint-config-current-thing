@@ -40,6 +40,7 @@ import reactNativeIndie from "./react-native-indie";
 import reactPerf from "./react-perf";
 import reactRefresh from "./react-refresh";
 import regexp from "./regexp";
+import rxjs from "./rxjs";
 import sdl from "./sdl";
 import security from "./security";
 import shopify from "./shopify";
@@ -131,6 +132,7 @@ const plugins = [
   yml,
   youDontNeedLodash,
   mdx,
+  rxjs,
 ];
 
 type ExtractNamespace<T> =

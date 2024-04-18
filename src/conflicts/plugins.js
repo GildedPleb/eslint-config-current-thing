@@ -138,6 +138,8 @@ import yml from "eslint-plugin-yml";
 import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
 // @ts-ignore yes, we need to ignore every import for this to run
 import * as mdx from "eslint-plugin-mdx";
+// @ts-ignore yes, we need to ignore every import for this to run
+import rxjs from "eslint-plugin-rxjs";
 
 // @ts-ignore yes, we need to ignore every import for this to run
 import tseslint from "typescript-eslint";
@@ -225,6 +227,7 @@ const plugins = {
   "react-perf": reactPerf,
   "react-refresh": reactRefresh,
   regexp,
+  rxjs,
   security,
   "simple-import-sort": importSort,
   sonarjs,

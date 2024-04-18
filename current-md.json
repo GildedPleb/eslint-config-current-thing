@@ -1149,6 +1149,7 @@
     "react-perf",
     "react-refresh",
     "regexp:eslint-plugin-regexp@2.5.0",
+    "rxjs",
     "security:eslint-plugin-security@3.0.0",
     "simple-import-sort:eslint-plugin-simple-import-sort@12.1.0",
     "sonarjs",

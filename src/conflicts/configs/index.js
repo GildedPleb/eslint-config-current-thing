@@ -279,6 +279,7 @@ const configList = [
     location: "./src/conflicts/configs/mdx-code-blocks-config.js",
     name: "mdx-code-blocks",
   },
+  { location: "./src/conflicts/configs/rxjs-config.js", name: "rxjs" },
 ];
 
 export default configList;

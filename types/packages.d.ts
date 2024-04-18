@@ -72,6 +72,7 @@ declare module "eslint-config-airbnb-base/rules/strict";
 declare module "eslint-config-airbnb-base/rules/style";
 declare module "eslint-config-airbnb-base/rules/variables";
 declare module "eslint-config-airbnb-typescript/lib/shared.js";
+declare module "eslint-plugin-rxjs";
 
 declare module "eslint/use-at-your-own-risk" {
   interface ParserOptions {

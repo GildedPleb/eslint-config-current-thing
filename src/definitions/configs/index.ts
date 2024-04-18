@@ -65,6 +65,7 @@ import reactNativeTs from "./react-native-ts";
 import reactPerf from "./react-perf";
 import reactRefresh from "./react-refresh";
 import regexp from "./regexp";
+import rxjs from "./rxjs";
 import sdl from "./sdl";
 import sdlNode from "./sdl-node";
 import sdlReact from "./sdl-react";
@@ -223,6 +224,7 @@ const configs: Config[] = [
   prettierJson,
   mdx,
   mdxCode,
+  rxjs,
 ];
 
 export default configs;
