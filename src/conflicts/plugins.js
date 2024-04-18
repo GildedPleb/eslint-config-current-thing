@@ -140,6 +140,8 @@ import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
 import * as mdx from "eslint-plugin-mdx";
 // @ts-ignore yes, we need to ignore every import for this to run
 import rxjs from "eslint-plugin-rxjs";
+// @ts-ignore yes, we need to ignore every import for this to run
+import jasmine from "eslint-plugin-jasmine";
 
 // @ts-ignore yes, we need to ignore every import for this to run
 import tseslint from "typescript-eslint";
@@ -203,6 +205,7 @@ const plugins = {
   html,
   i18next,
   import: importPlugin,
+  jasmine,
   jest,
   "jest-dom": jestDom,
   "jest-formatting": jestFormatting,

@@ -57,6 +57,7 @@ describe("multiply function", function () {
 
   it("returns number", function () {
     const t = new TestCLass(4);
+
     expect(t.getNum()).toBe(4);
   });
 });

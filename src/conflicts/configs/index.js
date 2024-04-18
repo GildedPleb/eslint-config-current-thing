@@ -280,6 +280,7 @@ const configList = [
     name: "mdx-code-blocks",
   },
   { location: "./src/conflicts/configs/rxjs-config.js", name: "rxjs" },
+  { location: "./src/conflicts/configs/jasmine-config.js", name: "jasmine" },
 ];
 
 export default configList;

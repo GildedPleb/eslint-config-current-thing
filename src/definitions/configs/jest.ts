@@ -34,6 +34,6 @@ export default {
     },
   ],
   requiredPlugins: ["jest"],
-  rules: `...jest.configs['flat/recommended'].rules,`,
+  rules: `...jest.configs["flat/recommended"].rules,`,
 } satisfies Config;
 // EOF

@@ -1153,6 +1153,7 @@
     "html",
     "i18next",
     "import",
+    "jasmine",
     "jest:eslint-plugin-jest@28.2.0",
     "jest-dom",
     "jest-formatting",

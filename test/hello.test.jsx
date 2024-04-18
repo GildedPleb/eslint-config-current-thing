@@ -10,8 +10,10 @@ describe("Do tests of tests for JSX", function () {
   it("shows the children when the checkbox is checked", function () {
     const testMessage = "Test Message";
     render(<HiddenMessage>{testMessage}</HiddenMessage>);
+
     expect(screen.queryByText(testMessage)).not.toBeInTheDocument();
     fireEvent.click(screen.getByLabelText(/show/i));
+
     expect(screen.getByText(testMessage)).toBeInTheDocument();
   });
 });

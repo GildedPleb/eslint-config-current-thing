@@ -16,6 +16,7 @@ import html from "./html";
 import i18next from "./i18next";
 import importPlugin from "./import";
 import importSort from "./import-sort";
+import jasmine from "./jasmine";
 import jest from "./jest";
 import jestDom from "./jest-dom";
 import jestFormatting from "./jest-formatting";
@@ -133,6 +134,7 @@ const plugins = [
   youDontNeedLodash,
   mdx,
   rxjs,
+  jasmine,
 ];
 
 type ExtractNamespace<T> =

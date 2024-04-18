@@ -32,6 +32,7 @@ import i18next from "./i18next";
 import index from "./import";
 import importSort from "./import-sort";
 import importTs from "./import-ts";
+import jasmine from "./jasmine";
 import jest from "./jest";
 import jestDom from "./jest-dom";
 import jestFormatting from "./jest-formatting";
@@ -225,6 +226,7 @@ const configs: Config[] = [
   mdx,
   mdxCode,
   rxjs,
+  jasmine,
 ];
 
 export default configs;

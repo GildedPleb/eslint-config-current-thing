@@ -62,6 +62,7 @@ import header from "eslint-plugin-header";
 import html from "eslint-plugin-html";
 import i18next from "eslint-plugin-i18next";
 import importPlugin from "eslint-plugin-import";
+import jasmine from "eslint-plugin-jasmine";
 import jest from "eslint-plugin-jest";
 import jestDom from "eslint-plugin-jest-dom";
 import jestFormatting from "eslint-plugin-jest-formatting";
@@ -314,6 +315,7 @@ const configGen = ({
         html,
         i18next,
         import: importPlugin,
+        jasmine,
         jest,
         "jest-dom": jestDom,
         "jest-formatting": jestFormatting,
@@ -998,6 +1000,33 @@ const configGen = ({
 
               ...("@emotion/eslint-plugin" in override
                 ? override["@emotion/eslint-plugin"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Jasmine
+      772,618 monthly downloads
+      ESLint rules for Jasmine
+      https://github.com/tlvince/eslint-plugin-jasmine
+      Requires: jasmine
+    */
+    ...(disable.includes("eslint-plugin-jasmine") || threshold > 772_618
+      ? []
+      : [
+          {
+            files: testFiles,
+            languageOptions: {
+              globals: {
+                jasmine: true,
+              },
+            },
+            rules: {
+              ...jasmine.configs.recommended.rules,
+
+              ...("eslint-plugin-jasmine" in override
+                ? override["eslint-plugin-jasmine"]
                 : {}),
             },
           },
