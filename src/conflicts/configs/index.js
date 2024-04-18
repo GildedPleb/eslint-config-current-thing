@@ -273,6 +273,11 @@ const configList = [
     location: "./src/conflicts/configs/prettier-json-config.js",
     name: "prettier-json",
   },
+  { location: "./src/conflicts/configs/mdx-config.js", name: "mdx" },
+  {
+    location: "./src/conflicts/configs/mdx-code-blocks-config.js",
+    name: "mdx-code-blocks",
+  },
 ];
 
 export default configList;

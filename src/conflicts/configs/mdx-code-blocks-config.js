@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/prettier-md-config.js
+// PathMark: ./src/conflicts/configs/mdx-code-blocks-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable import/extensions */
@@ -19,7 +19,6 @@ import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
 import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
-import prettier from "eslint-plugin-prettier";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
@@ -186,32 +185,35 @@ const configGen = ({
     },
     /* PLUGINS */
     {
-      plugins: {
-        prettier,
-      },
+      plugins: {},
     },
 
     /*
-      Prettier - MD
+      MDX - Code-Blocks
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: prettier
+      Requires: (None)
     */
-    ...(disable.includes("eslint-plugin-prettier-md") ||
-    disable.includes("eslint-config-prettier-md") ||
+    ...(disable.includes("eslint-plugin-mdx-code-blocks") ||
     threshold > 1_000_000
       ? []
       : [
           {
-            files: mdFiles,
+            files: codeBlocks,
+            languageOptions: {
+              parserOptions: {
+                ecmaFeatures: {
+                  impliedStrict: true,
+                },
+              },
+            },
             rules: {
-              "prettier/prettier": 2,
-              ...("eslint-plugin-prettier/md" in override
-                ? override["eslint-plugin-prettier/md"]
-                : {}),
-              ...("eslint-config-prettier/md" in override
-                ? override["eslint-config-prettier/md"]
+              // MDX "recommended" is composed of Overrides, Base, and CodeBlocks but with unneeded conditional logic
+              // CodeBlocks:
+              ...mdx.configs.codeBlocks.rules,
+              ...("eslint-plugin-mdx/code-blocks" in override
+                ? override["eslint-plugin-mdx/code-blocks"]
                 : {}),
             },
           },

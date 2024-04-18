@@ -1130,6 +1130,7 @@
     "jsonc:eslint-plugin-jsonc@2.15.1",
     "jsx-a11y",
     "markdown:eslint-plugin-markdown@4.0.1",
+    "mdx:eslint-plugin-mdx@3.1.5",
     "mocha",
     "n:eslint-plugin-n@16.6.2",
     "no-only-tests",

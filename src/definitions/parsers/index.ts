@@ -3,6 +3,7 @@
 import eslint from "./eslint";
 import graphql from "./graphql";
 import jsonc from "./jsonc";
+import md from "./md";
 import ts from "./ts";
 import yml from "./yml";
 
@@ -16,7 +17,7 @@ export interface Parser {
   }>;
 }
 
-const parsers: Parser[] = [ts, jsonc, yml, graphql, eslint];
+const parsers: Parser[] = [ts, jsonc, yml, graphql, eslint, md];
 
 export default parsers;
 // EOF

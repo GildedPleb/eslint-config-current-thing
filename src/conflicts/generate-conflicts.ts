@@ -76,7 +76,8 @@ ${configContext.packages
     requiresImport &&
     declaredAs !== "{ rules as emotion }" &&
     declaredAs !== "reactNativeConfig" &&
-    declaredAs !== "tseslint"
+    declaredAs !== "tseslint" &&
+    declaredAs !== "* as mdx"
       ? `import ${declaredAs} from "${pack}${subModule ?? ""}";`
       : "",
   )
@@ -104,6 +105,7 @@ import { defineFlatConfig } from 'eslint-define-config';
 import tseslint from "typescript-eslint";
 import { rules as emotion } from "@emotion/eslint-plugin";
 import reactNativeConfig from "@react-native-community/eslint-config";
+import * as mdx from "eslint-plugin-mdx";
 
 const jsxFiles = ["**/*.jsx"];
 const tsxFiles = ["**/*.tsx"];
@@ -164,6 +166,10 @@ const configGen = ({
     {
       files: mdFiles,
       processor: markdown.processors.markdown,
+    },
+    {
+      files: mdFiles,
+      processor: mdx.processors.remark,
     },
     {
       files,

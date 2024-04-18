@@ -32,6 +32,8 @@ import { rules as emotion } from "@emotion/eslint-plugin";
 // @ts-ignore yes, we need to ignore every import for this to run
 import tseslint from "typescript-eslint";
 // @ts-ignore yes, we need to ignore every import for this to run
+// @ts-ignore yes, we need to ignore every import for this to run
+import * as mdx from "eslint-plugin-mdx";
 
 // @ts-ignore yes, we need to ignore every import for this to run
 import babelPlugin from "@babel/eslint-plugin";
@@ -151,6 +153,8 @@ import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
 import { Linter } from "eslint";
 // @ts-ignore yes, we need to ignore every import for this to run
 import { rules as graphQLRules } from "@graphql-eslint/eslint-plugin";
+// @ts-ignore yes, we need to ignore every import for this to run
+// import * as mdx from "eslint-plugin-mdx";
 
 const linter = new Linter();
 const allRules = linter.getRules();
@@ -203,6 +207,7 @@ const plugins = {
   jsonc,
   "jsx-a11y": jsxA11y,
   markdown,
+  mdx,
   mocha,
   n: nNode,
   "no-only-tests": noOnlyTest,

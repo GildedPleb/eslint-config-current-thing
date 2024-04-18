@@ -1090,12 +1090,13 @@
       "module": false,
       "process": false,
       "require": false,
-      "setImmediate": false
+      "setImmediate": false,
+      "React": false
     },
-    "parser": "espree@9.6.1",
+    "parser": "eslint-mdx@3.1.5",
     "parserOptions": {}
   },
-  "processor": "eslint-plugin-markdown/markdown@4.0.1",
+  "processor": "mdx/remark@3.1.5",
   "plugins": [
     "@",
     "@babel:@babel/eslint-plugin@7.23.5",
@@ -1131,6 +1132,7 @@
     "jsonc:eslint-plugin-jsonc@2.15.1",
     "jsx-a11y",
     "markdown:eslint-plugin-markdown@4.0.1",
+    "mdx:eslint-plugin-mdx@3.1.5",
     "mocha",
     "n:eslint-plugin-n@16.6.2",
     "no-only-tests",
@@ -1162,6 +1164,15 @@
     "you-dont-need-lodash-underscore"
   ],
   "rules": {
+    "react/jsx-no-undef": [
+      2,
+      {
+        "allowGlobals": true
+      }
+    ],
+    "react/react-in-jsx-scope": [0],
+    "mdx/remark": [1],
+    "no-unused-expressions": [2],
     "prettier/prettier": [2]
   }
 }

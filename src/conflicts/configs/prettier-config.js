@@ -18,8 +18,10 @@ import {
 } from "@graphql-eslint/eslint-plugin";
 import prettierConfig from "eslint-config-prettier";
 import { defineFlatConfig } from "eslint-define-config";
+import * as eslintMdx from "eslint-mdx";
 import flowtype from "eslint-plugin-flowtype";
 import markdown from "eslint-plugin-markdown";
+import * as mdx from "eslint-plugin-mdx";
 import prettier from "eslint-plugin-prettier";
 import react from "eslint-plugin-react";
 import unicorn from "eslint-plugin-unicorn";
@@ -97,6 +99,10 @@ const configGen = ({
       processor: markdown.processors.markdown,
     },
     {
+      files: mdFiles,
+      processor: mdx.processors.remark,
+    },
+    {
       files,
       processor: {
         meta: {
@@ -107,6 +113,22 @@ const configGen = ({
       },
     },
     /* PARSERS */
+    /*
+      MDX
+      ESLint Parser for MDX
+      https://github.com/mdx-js/eslint-mdx/blob/master/packages/eslint-mdx
+    */
+    {
+      files: mdFiles,
+      languageOptions: {
+        ecmaVersion: "latest",
+        globals: {
+          React: false,
+        },
+        parser: eslintMdx,
+        sourceType: "module",
+      },
+    },
     /*
       GraphQL
       GraphQL plugin for ESLint

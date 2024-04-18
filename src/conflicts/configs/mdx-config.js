@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/prettier-md-config.js
+// PathMark: ./src/conflicts/configs/mdx-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable import/extensions */
@@ -19,7 +19,7 @@ import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
 import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
-import prettier from "eslint-plugin-prettier";
+import react from "eslint-plugin-react";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
@@ -187,31 +187,33 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        prettier,
+        mdx,
+        react,
       },
     },
 
     /*
-      Prettier - MD
+      MDX
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: prettier
+      Requires: mdx, react
     */
-    ...(disable.includes("eslint-plugin-prettier-md") ||
-    disable.includes("eslint-config-prettier-md") ||
-    threshold > 1_000_000
+    ...(disable.includes("eslint-plugin-mdx") || threshold > 1_000_000
       ? []
       : [
           {
             files: mdFiles,
             rules: {
-              "prettier/prettier": 2,
-              ...("eslint-plugin-prettier/md" in override
-                ? override["eslint-plugin-prettier/md"]
-                : {}),
-              ...("eslint-config-prettier/md" in override
-                ? override["eslint-config-prettier/md"]
+              // MDX "recommended" is composed of Overrides, Base, and CodeBlocks but with unneeded conditional logic
+              // Overrides:
+              "react/jsx-no-undef": [2, { allowGlobals: true }],
+              "react/react-in-jsx-scope": 0,
+              // Base:
+              ...mdx.configs.base.rules,
+
+              ...("eslint-plugin-mdx" in override
+                ? override["eslint-plugin-mdx"]
                 : {}),
             },
           },

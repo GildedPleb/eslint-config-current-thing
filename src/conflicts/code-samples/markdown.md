@@ -117,9 +117,9 @@ Use three or more dashes for a horizontal rule.
 
 ### Task List
 
-- [x] Task 1
-- [ ] Task 2
-- [ ] Task 3
+- \[x] Task 1
+- \[ ] Task 2
+- \[ ] Task 3
 
 ### HTML in Markdown
 

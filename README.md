@@ -4,7 +4,7 @@
 
 An **extremely unopinionated** config based on an automatically generated popularity contest between the most downloaded ESLint configs/plugins/parsers/rules.
 
-_**Now with automated conflict discovery and mitigation!**_
+**_Now with automated conflict discovery and mitigation!_**
 
 > _"Finally, we have a config we all equally hate!"_
 
@@ -16,25 +16,25 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 
 <!-- Start Generated List of Configs DO NOT EDIT! -->
 
-| | | | | 
-| - | - | - | - |
-| AirBnb | AirBnb Base | AirBnb-Typescript | CSS Modules |
-| Chai Friendly | Comments | Compat | Create React App |
-| Cypress | ES-X | ESLint | Emotion CSS |
-| Functional | Google | GraphQL | Import |
-| Internationalization (i18n) | JSDoc | JSONC | JSX Accessibility (JSX A11y) |
-| Jest | Jest Dom | Jest Formatting | Markdown |
-| Microsoft SDL | Mocha | NextJS | No Only Tests |
-| No Unsanitized | No Unused Imports | Node.js | Perfectionist |
-| Playwright | Prefer Arrow | Prettier | Promises |
-| React | React Hooks | React Native (Independent Plugin/Config) | React Native Config |
-| React Native Plugin | React Performance | React Refresh | Regular Expressions |
-| Security | Shopify | Simple Import Sort | SonarJS |
-| Sort Class Members | Standard | Standard JSX | Standard React |
-| Standard TS | Storybook | Stylistic | TSDoc |
-| Tailwind CSS | Testing Library | TypeScript | Typescript Sort Keys |
-| Unicorn | XO | YML | You Don't Need Lodash |
-|
+|                             |                     |                   |                                          |
+| --------------------------- | ------------------- | ----------------- | ---------------------------------------- |
+| AirBnb                      | AirBnb Base         | AirBnb-Typescript | CSS Modules                              |
+| Chai Friendly               | Comments            | Compat            | Create React App                         |
+| Cypress                     | ES-X                | ESLint            | Emotion CSS                              |
+| Functional                  | Google              | GraphQL           | Import                                   |
+| Internationalization (i18n) | JSDoc               | JSONC             | JSX Accessibility (JSX A11y)             |
+| Jest                        | Jest Dom            | Jest Formatting   | MDX                                      |
+| Markdown                    | Microsoft SDL       | Mocha             | NextJS                                   |
+| No Only Tests               | No Unsanitized      | No Unused Imports | Node.js                                  |
+| Perfectionist               | Playwright          | Prefer Arrow      | Prettier                                 |
+| Promises                    | React               | React Hooks       | React Native (Independent Plugin/Config) |
+| React Native Config         | React Native Plugin | React Performance | React Refresh                            |
+| Regular Expressions         | Security            | Shopify           | Simple Import Sort                       |
+| SonarJS                     | Sort Class Members  | Standard          | Standard JSX                             |
+| Standard React              | Standard TS         | Storybook         | Stylistic                                |
+| TSDoc                       | Tailwind CSS        | Testing Library   | TypeScript                               |
+| Typescript Sort Keys        | Unicorn             | XO                | YML                                      |
+| You Don't Need Lodash       |                     |                   |                                          |
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -59,7 +59,7 @@ Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 - **1055** Javascript rules
 - **33** JSON rules
 - **24** YML rules
-- **1** MD rules
+- **5** MD rules
 
 <!-- End Generated Rule Counts DO NOT EDIT! -->
 
@@ -91,6 +91,9 @@ You'll also probably want something like this in your `package.json` (edit accor
 {
   "type": "module",
   "prettier": {},
+  "remarkConfig": {
+    "plugins": ["remark-preset-lint-recommended"]
+  },
   "engines": {
     "node": ">=20.0.0"
   },
@@ -195,6 +198,7 @@ There are a crazy amount of rules in this config, and they are completely overwh
 
 - To see the current config standings, checkout [`src/config.js`](./src/config.js)
 - To see the full current rule set, checkout:
+
   - TS [`current-ts.json`](./current-ts.json)
   - JS [`current-js.json`](./current-js.json)
   - Test [`current-test.json`](./current-test.json)
@@ -240,7 +244,7 @@ You can always extend/disable this config to meet your own needs. However, if yo
 
 Outside of getting the various pieces to play nice together, Lint the Current Thing does all it can to _not_ define any new individual rules or to have any opinion. See Conflicts below.
 
-**[Holding back intensifies]**
+**\[Holding back intensifies]**
 
 ### 2. Conflicts
 
@@ -348,48 +352,47 @@ See [rejected](./src/packages/rejected.ts) for the full list with notes. But it'
 
 The following section is generated according to spec.
 
-Generated on 4/15/2024, downloads for the previous 28 days.
+Generated on 4/18/2024, downloads for the previous 28 days.
 
-- 896,376 downloads, [eslint-mdx](https://www.npmjs.com/package/eslint-mdx)
-- 890,681 downloads, [eslint-plugin-mdx](https://www.npmjs.com/package/eslint-plugin-mdx)
+- 883,475 downloads, [remark-breaks](https://www.npmjs.com/package/remark-breaks)
+- 874,772 downloads, [@astrojs/markdown-remark](https://www.npmjs.com/package/@astrojs/markdown-remark)
 - 862,343 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
+- 838,491 downloads, [remark-reference-links](https://www.npmjs.com/package/remark-reference-links)
+- 805,269 downloads, [remark-smartypants](https://www.npmjs.com/package/remark-smartypants)
 - 773,999 downloads, [eslint-plugin-jasmine](https://www.npmjs.com/package/eslint-plugin-jasmine)
 - 659,759 downloads, [eslint-import-resolver-custom-alias](https://www.npmjs.com/package/eslint-import-resolver-custom-alias)
+- 657,375 downloads, [npm-package-json-lint](https://www.npmjs.com/package/npm-package-json-lint)
 - 656,334 downloads, [eslint-plugin-check-file](https://www.npmjs.com/package/eslint-plugin-check-file)
-- 634,941 downloads, [npm-package-json-lint](https://www.npmjs.com/package/npm-package-json-lint)
-- 544,545 downloads, [remark-lint](https://www.npmjs.com/package/remark-lint)
-- 542,911 downloads, [eslint-formatter-gitlab](https://www.npmjs.com/package/eslint-formatter-gitlab)
+- 582,800 downloads, [@mapbox/hast-util-table-cell-style](https://www.npmjs.com/package/@mapbox/hast-util-table-cell-style)
+- 574,711 downloads, [remark-message-control](https://www.npmjs.com/package/remark-message-control)
+- 549,769 downloads, [remark-lint](https://www.npmjs.com/package/remark-lint)
+- 541,394 downloads, [remark-cli](https://www.npmjs.com/package/remark-cli)
 - 538,729 downloads, [eslint-plugin-ava](https://www.npmjs.com/package/eslint-plugin-ava)
-- 514,629 downloads, [ember-template-lint](https://www.npmjs.com/package/ember-template-lint)
+- 521,162 downloads, [ember-template-lint](https://www.npmjs.com/package/ember-template-lint)
+- 518,893 downloads, [eslint-formatter-gitlab](https://www.npmjs.com/package/eslint-formatter-gitlab)
+- 516,815 downloads, [remark-github](https://www.npmjs.com/package/remark-github)
+- 511,949 downloads, [remark-lint-ordered-list-marker-style](https://www.npmjs.com/package/remark-lint-ordered-list-marker-style)
 - 501,022 downloads, [eslint-plugin-react-prefer-function-component](https://www.npmjs.com/package/eslint-plugin-react-prefer-function-component)
-- 496,444 downloads, [eslint-plugin-no-use-extend-native](https://www.npmjs.com/package/eslint-plugin-no-use-extend-native)
+- 481,457 downloads, [eslint-plugin-no-use-extend-native](https://www.npmjs.com/package/eslint-plugin-no-use-extend-native)
 - 465,284 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin)
-- 413,467 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit)
-- 410,789 downloads, [eslint-plugin-local](https://www.npmjs.com/package/eslint-plugin-local)
+- 462,882 downloads, [remark-lint-no-blockquote-without-marker](https://www.npmjs.com/package/remark-lint-no-blockquote-without-marker)
+- 459,772 downloads, [remark-lint-no-literal-urls](https://www.npmjs.com/package/remark-lint-no-literal-urls)
+- 446,636 downloads, [remark-lint-list-item-indent](https://www.npmjs.com/package/remark-lint-list-item-indent)
+- 442,956 downloads, [remark-lint-no-shortcut-reference-link](https://www.npmjs.com/package/remark-lint-no-shortcut-reference-link)
+- 442,737 downloads, [remark-lint-hard-break-spaces](https://www.npmjs.com/package/remark-lint-hard-break-spaces)
+- 440,775 downloads, [remark-lint-no-inline-padding](https://www.npmjs.com/package/remark-lint-no-inline-padding)
+- 440,760 downloads, [remark-retext](https://www.npmjs.com/package/remark-retext)
+- 440,598 downloads, [remark-lint-no-shortcut-reference-image](https://www.npmjs.com/package/remark-lint-no-shortcut-reference-image)
+- 435,156 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit)
+- 413,895 downloads, [eslint-plugin-local](https://www.npmjs.com/package/eslint-plugin-local)
 - 407,092 downloads, [eslint-config-xo-space](https://www.npmjs.com/package/eslint-config-xo-space)
-- 393,199 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
-- 376,264 downloads, [remark-preset-lint-recommended](https://www.npmjs.com/package/remark-preset-lint-recommended) - Not Yet Eligible
-- 372,678 downloads, [eslint-plugin-ssr-friendly](https://www.npmjs.com/package/eslint-plugin-ssr-friendly) - Not Yet Eligible
-- 372,532 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
-- 372,070 downloads, [json-fixer](https://www.npmjs.com/package/json-fixer) - Not Yet Eligible
-- 364,594 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
-- 356,974 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu) - Not Yet Eligible
-- 353,215 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
-- 345,836 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard) - Not Yet Eligible
-- 337,789 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc) - Not Yet Eligible
-- 337,397 downloads, [eslint-plugin-testcafe](https://www.npmjs.com/package/eslint-plugin-testcafe) - Not Yet Eligible
-- 337,002 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
-- 312,929 downloads, [@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config) - Not Yet Eligible
-- 303,912 downloads, [eslint-plugin-deprecate](https://www.npmjs.com/package/eslint-plugin-deprecate) - Not Yet Eligible
-- 291,027 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
-- 289,747 downloads, [eslint-plugin-array-func](https://www.npmjs.com/package/eslint-plugin-array-func) - Not Yet Eligible
-- 281,339 downloads, [@salesforce/eslint-plugin-lightning](https://www.npmjs.com/package/@salesforce/eslint-plugin-lightning) - Not Yet Eligible
-- 279,251 downloads, [eslint-plugin-no-secrets](https://www.npmjs.com/package/eslint-plugin-no-secrets) - Not Yet Eligible
-- 279,006 downloads, [eslint-plugin-import-newlines](https://www.npmjs.com/package/eslint-plugin-import-newlines) - Not Yet Eligible
-- 276,907 downloads, [@rushstack/eslint-config](https://www.npmjs.com/package/@rushstack/eslint-config) - Not Yet Eligible
-- 253,323 downloads, [eslint-plugin-astro](https://www.npmjs.com/package/eslint-plugin-astro) - Not Yet Eligible
-- 252,915 downloads, [eslint-plugin-minecraft-linting](https://www.npmjs.com/package/eslint-plugin-minecraft-linting) - Not Yet Eligible
-- 245,339 downloads, [eslint-plugin-regex](https://www.npmjs.com/package/eslint-plugin-regex) - Not Yet Eligible
-
+- 397,062 downloads, [remark-lint-no-unused-definitions](https://www.npmjs.com/package/remark-lint-no-unused-definitions) - Not Yet Eligible
+- 393,575 downloads, [markdown-toc](https://www.npmjs.com/package/markdown-toc) - Not Yet Eligible
+- 390,711 downloads, [remark-lint-no-undefined-references](https://www.npmjs.com/package/remark-lint-no-undefined-references) - Not Yet Eligible
+- 390,214 downloads, [remark-lint-no-heading-content-indent](https://www.npmjs.com/package/remark-lint-no-heading-content-indent) - Not Yet Eligible
+- 383,183 downloads, [remark-lint-final-newline](https://www.npmjs.com/package/remark-lint-final-newline) - Not Yet Eligible
+- 381,709 downloads, [remark-lint-no-duplicate-definitions](https://www.npmjs.com/package/remark-lint-no-duplicate-definitions) - Not Yet Eligible
+- 378,422 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
+- 377,043 downloads, [remark-lint-list-item-bullet-indent](https://www.npmjs.com/package/remark-lint-list-item-bullet-indent) - Not Yet Eligible
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

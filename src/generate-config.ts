@@ -116,6 +116,10 @@ const configGen = ({
       processor: markdown.processors.markdown,
     },
     {
+      files: mdFiles,
+      processor: mdx.processors.remark,
+    },
+    {
       files,
       processor: {
         meta: {

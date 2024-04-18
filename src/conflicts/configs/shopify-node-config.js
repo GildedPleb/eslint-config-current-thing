@@ -17,7 +17,9 @@ import {
 } from "@graphql-eslint/eslint-plugin";
 import shopify from "@shopify/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
+import * as eslintMdx from "eslint-mdx";
 import markdown from "eslint-plugin-markdown";
+import * as mdx from "eslint-plugin-mdx";
 import node from "eslint-plugin-node";
 import * as espree from "espree";
 import globals from "globals";
@@ -93,6 +95,10 @@ const configGen = ({
       processor: markdown.processors.markdown,
     },
     {
+      files: mdFiles,
+      processor: mdx.processors.remark,
+    },
+    {
       files,
       processor: {
         meta: {
@@ -103,6 +109,22 @@ const configGen = ({
       },
     },
     /* PARSERS */
+    /*
+      MDX
+      ESLint Parser for MDX
+      https://github.com/mdx-js/eslint-mdx/blob/master/packages/eslint-mdx
+    */
+    {
+      files: mdFiles,
+      languageOptions: {
+        ecmaVersion: "latest",
+        globals: {
+          React: false,
+        },
+        parser: eslintMdx,
+        sourceType: "module",
+      },
+    },
     /*
       GraphQL
       GraphQL plugin for ESLint

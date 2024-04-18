@@ -33,6 +33,10 @@ const t: string = "t";
 
 // -->
 
-```js
-const t = 1;
+```ts
+const t: string = 1;
 ```
+
+its solved???
+
+- Items that have been installed but are also rejected should be ALERTED

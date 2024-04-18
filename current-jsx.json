@@ -1179,6 +1179,7 @@
     "jsonc:eslint-plugin-jsonc@2.15.1",
     "jsx-a11y",
     "markdown:eslint-plugin-markdown@4.0.1",
+    "mdx:eslint-plugin-mdx@3.1.5",
     "mocha",
     "n:eslint-plugin-n@16.6.2",
     "no-only-tests",
@@ -1216,7 +1217,6 @@
     "@stylistic/operator-linebreak": [0, "before"],
     "@stylistic/quote-props": [0, "consistent-as-needed"],
     "@stylistic/semi": [0, "never"],
-    "@typescript-eslint/brace-style": [0],
     "@typescript-eslint/comma-dangle": [0],
     "@typescript-eslint/object-curly-spacing": [0],
     "@typescript-eslint/semi": [0],
@@ -3358,6 +3358,23 @@
     "you-dont-need-lodash-underscore/get": [1],
     "you-dont-need-lodash-underscore/union-by": [1],
     "you-dont-need-lodash-underscore/is-array-buffer": [1],
+    "functional/immutable-data": [0],
+    "functional/no-let": [
+      0,
+      {
+        "allowInForLoopInit": true
+      }
+    ],
+    "functional/no-loop-statements": [0],
+    "functional/no-mixed-types": [0],
+    "functional/no-this-expressions": [0],
+    "functional/no-try-statements": [0],
+    "functional/prefer-immutable-types": [0],
+    "functional/type-declaration-immutability": [0],
+    "functional/prefer-property-signatures": [2],
+    "functional/prefer-readonly-type": [0],
+    "functional/prefer-tacit": [1],
+    "functional/readonly-type": [2],
     "unicorn/better-regex": [2],
     "prefer-regex-literals": [
       2,
@@ -3426,23 +3443,6 @@
     "regexp/sort-flags": [2],
     "regexp/strict": [0],
     "regexp/use-ignore-case": [2],
-    "functional/immutable-data": [0],
-    "functional/no-let": [
-      0,
-      {
-        "allowInForLoopInit": true
-      }
-    ],
-    "functional/no-loop-statements": [0],
-    "functional/no-mixed-types": [0],
-    "functional/no-this-expressions": [0],
-    "functional/no-try-statements": [0],
-    "functional/prefer-immutable-types": [0],
-    "functional/type-declaration-immutability": [0],
-    "functional/prefer-property-signatures": [2],
-    "functional/prefer-readonly-type": [0],
-    "functional/prefer-tacit": [1],
-    "functional/readonly-type": [2],
     "@emotion/import-from-emotion": [2],
     "@emotion/jsx-import": [2],
     "@emotion/no-vanilla": [2],
@@ -3468,6 +3468,164 @@
         "ignore-case": false
       }
     ],
+    "perfectionist/sort-imports": [
+      0,
+      {
+        "groups": [
+          "type",
+          ["builtin", "external"],
+          "internal-type",
+          "internal",
+          ["parent-type", "sibling-type", "index-type"],
+          ["parent", "sibling", "index"],
+          "object",
+          "unknown"
+        ],
+        "custom-groups": {
+          "value": {},
+          "type": {}
+        },
+        "newlines-between": "always",
+        "internal-pattern": ["~/**"],
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
+    ],
+    "perfectionist/sort-objects": [
+      2,
+      {
+        "partition-by-comment": false,
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false,
+        "partition-by-new-line": false,
+        "styled-components": true
+      }
+    ],
+    "perfectionist/sort-array-includes": [
+      2,
+      {
+        "spread-last": true,
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
+    ],
+    "perfectionist/sort-intersection-types": [
+      2,
+      {
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
+    ],
+    "perfectionist/sort-svelte-attributes": [
+      2,
+      {
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
+    ],
+    "perfectionist/sort-astro-attributes": [
+      2,
+      {
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
+    ],
+    "perfectionist/sort-vue-attributes": [
+      2,
+      {
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false,
+        "groups": []
+      }
+    ],
+    "perfectionist/sort-named-exports": [
+      2,
+      {
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false,
+        "group-kind": "mixed"
+      }
+    ],
+    "perfectionist/sort-named-imports": [
+      0,
+      {
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
+    ],
+    "perfectionist/sort-object-types": [
+      2,
+      {
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false,
+        "groups": [],
+        "partition-by-new-line": false
+      }
+    ],
+    "perfectionist/sort-union-types": [
+      2,
+      {
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false,
+        "nullable-last": false
+      }
+    ],
+    "perfectionist/sort-interfaces": [
+      2,
+      {
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false,
+        "optionality-order": "ignore",
+        "groups": [],
+        "partition-by-new-line": false
+      }
+    ],
+    "perfectionist/sort-jsx-props": [
+      2,
+      {
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
+    ],
+    "perfectionist/sort-exports": [
+      2,
+      {
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
+    ],
+    "perfectionist/sort-enums": [
+      2,
+      {
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false,
+        "partition-by-comment": false
+      }
+    ],
+    "perfectionist/sort-maps": [
+      2,
+      {
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
+    ],
+    "@typescript-eslint/brace-style": [0],
     "@stylistic/array-bracket-spacing": [2, "never"],
     "@stylistic/arrow-spacing": [
       2,
@@ -3661,163 +3819,6 @@
         "logical": "parens-new-line",
         "prop": "parens-new-line",
         "return": "parens-new-line"
-      }
-    ],
-    "perfectionist/sort-imports": [
-      0,
-      {
-        "groups": [
-          "type",
-          ["builtin", "external"],
-          "internal-type",
-          "internal",
-          ["parent-type", "sibling-type", "index-type"],
-          ["parent", "sibling", "index"],
-          "object",
-          "unknown"
-        ],
-        "custom-groups": {
-          "value": {},
-          "type": {}
-        },
-        "newlines-between": "always",
-        "internal-pattern": ["~/**"],
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false
-      }
-    ],
-    "perfectionist/sort-objects": [
-      2,
-      {
-        "partition-by-comment": false,
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false,
-        "partition-by-new-line": false,
-        "styled-components": true
-      }
-    ],
-    "perfectionist/sort-array-includes": [
-      2,
-      {
-        "spread-last": true,
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false
-      }
-    ],
-    "perfectionist/sort-intersection-types": [
-      2,
-      {
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false
-      }
-    ],
-    "perfectionist/sort-svelte-attributes": [
-      2,
-      {
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false
-      }
-    ],
-    "perfectionist/sort-astro-attributes": [
-      2,
-      {
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false
-      }
-    ],
-    "perfectionist/sort-vue-attributes": [
-      2,
-      {
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false,
-        "groups": []
-      }
-    ],
-    "perfectionist/sort-named-exports": [
-      2,
-      {
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false,
-        "group-kind": "mixed"
-      }
-    ],
-    "perfectionist/sort-named-imports": [
-      0,
-      {
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false
-      }
-    ],
-    "perfectionist/sort-object-types": [
-      2,
-      {
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false,
-        "groups": [],
-        "partition-by-new-line": false
-      }
-    ],
-    "perfectionist/sort-union-types": [
-      2,
-      {
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false,
-        "nullable-last": false
-      }
-    ],
-    "perfectionist/sort-interfaces": [
-      2,
-      {
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false,
-        "optionality-order": "ignore",
-        "groups": [],
-        "partition-by-new-line": false
-      }
-    ],
-    "perfectionist/sort-jsx-props": [
-      2,
-      {
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false
-      }
-    ],
-    "perfectionist/sort-exports": [
-      2,
-      {
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false
-      }
-    ],
-    "perfectionist/sort-enums": [
-      2,
-      {
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false,
-        "partition-by-comment": false
-      }
-    ],
-    "perfectionist/sort-maps": [
-      2,
-      {
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false
       }
     ],
     "no-unsanitized/property": [

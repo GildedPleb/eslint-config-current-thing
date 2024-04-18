@@ -23,6 +23,7 @@ import jsdoc from "./jsdoc";
 import jsonc from "./jsonc";
 import jsxA11y from "./jsx-a11y";
 import md from "./md";
+import mdx from "./mdx";
 import mocha from "./mocha";
 import nextjs from "./nextjs";
 import noOnlyTest from "./no-only-test";
@@ -128,6 +129,7 @@ const plugins = [
   unusedImports,
   yml,
   youDontNeedLodash,
+  mdx,
 ];
 
 type ExtractNamespace<T> =

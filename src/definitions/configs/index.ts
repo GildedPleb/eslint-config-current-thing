@@ -40,6 +40,8 @@ import jsdocTs from "./jsdoc-ts";
 import jsonc from "./jsonc";
 import jsxA11y from "./jsx-a11y";
 import md from "./md";
+import mdx from "./mdx";
+import mdxCode from "./mdx-code";
 import mocha from "./mocha";
 import nextjs from "./nextjs";
 import noOnlyTest from "./no-only-test";
@@ -217,6 +219,8 @@ const configs: Config[] = [
   prettierMd,
   prettierYml,
   prettierJson,
+  mdx,
+  mdxCode,
 ];
 
 export default configs;

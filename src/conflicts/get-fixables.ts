@@ -58,6 +58,8 @@ import ${declaredAs} from "${pack}";`
 import { Linter } from 'eslint';
 // @ts-ignore yes, we need to ignore every import for this to run
 import { rules as graphQLRules } from "@graphql-eslint/eslint-plugin";
+// @ts-ignore yes, we need to ignore every import for this to run
+// import * as mdx from "eslint-plugin-mdx";
 
 const linter = new Linter();
 const allRules = linter.getRules();

@@ -2,7 +2,7 @@
 
 /*
   This file is fully generated, to edit it change ./get-incompatibilities.ts
-  Generated on 4/15/2024
+  Generated on 4/18/2024
 */
 
 import { type ConflictCache } from "./types";
@@ -21,12 +21,10 @@ const incompatibles: ConflictCache = {
     "prettier/prettier": 0,
   },
   "airbnb-react": {
-    "@typescript-eslint/no-extra-parens": 0,
     "prettier/prettier": 0,
   },
   "airbnb-ts": {
     "@stylistic/semi": 0,
-    "indent-legacy": 0,
     "prettier/prettier": 0,
   },
   google: {
@@ -74,7 +72,6 @@ const incompatibles: ConflictCache = {
     "@stylistic/operator-linebreak": 0,
     "@stylistic/quote-props": 0,
     "@stylistic/semi": 0,
-    "@typescript-eslint/brace-style": 0,
     "@typescript-eslint/comma-dangle": 0,
     "@typescript-eslint/object-curly-spacing": 0,
     "@typescript-eslint/semi": 0,
@@ -153,7 +150,6 @@ const incompatibles: ConflictCache = {
     "@typescript-eslint/brace-style": 0,
     "@typescript-eslint/comma-dangle": 0,
     "@typescript-eslint/member-delimiter-style": 0,
-    "@typescript-eslint/no-extra-parens": 0,
     "@typescript-eslint/object-curly-spacing": 0,
     "@typescript-eslint/semi": 0,
     "@typescript-eslint/space-before-function-paren": 0,

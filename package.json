@@ -20,8 +20,8 @@
     "lint": "npx eslint --fix -c ./eslint.config.js --max-warnings 0 . --cache",
     "generate:currents": "npm run current:ts && npm run current:js && npm run current:test && npm run current:tsx && npm run current:jsx && npm run current:json && npm run current:md && npm run current:yml && npm run lint",
     "generate:config": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/generate-config.ts",
-    "generate:configs": "npm run generate:config && npm run lint && npm run generate:currents",
-    "generate:readme": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/generate-readme.ts",
+    "generate:configs": "npm run generate:config && npm run lint && npm run generate:currents && npm run lint",
+    "generate:readme": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/generate-readme.ts && npm run lint",
     "generate:conflicts": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/conflicts/generate-conflicts.ts && npm run lint",
     "generate:incompatibles": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings --max-old-space-size=16000 ./src/conflicts/get-incompatibles.ts && npm run lint",
     "generate:fixables": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/conflicts/get-fixables.ts && npm run lint",
@@ -56,6 +56,7 @@
     "eslint-config-xo": "^0.44.0",
     "eslint-define-config": "^2.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-mdx": "^3.1.5",
     "eslint-plugin-chai-friendly": "^0.7.4",
     "eslint-plugin-compat": "^4.2.0",
     "eslint-plugin-css-modules": "^2.12.0",
@@ -78,6 +79,7 @@
     "eslint-plugin-jsonc": "^2.15.1",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-markdown": "^4.0.1",
+    "eslint-plugin-mdx": "^3.1.5",
     "eslint-plugin-mocha": "^10.4.2",
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-no-only-tests": "^3.1.0",
@@ -111,6 +113,8 @@
     "globals": "^15.0.0",
     "jsonc-eslint-parser": "^2.4.0",
     "prettier": "^3.2.5",
+    "remark-lint": "^10.0.0",
+    "remark-preset-lint-recommended": "^7.0.0",
     "typescript-eslint": "^7.7.0",
     "yaml-eslint-parser": "^1.2.2"
   },
@@ -146,6 +150,11 @@
   },
   "type": "module",
   "prettier": {},
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended"
+    ]
+  },
   "engines": {
     "node": ">=18.0.0"
   },
