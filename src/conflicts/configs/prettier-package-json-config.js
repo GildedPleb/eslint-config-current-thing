@@ -198,9 +198,7 @@ const configGen = ({
       www.nope.com
       Requires: prettier-package-json
     */
-    ...(disable.includes("eslint-plugin-prettier") ||
-    disable.includes("prettier-plugin-packagejson") ||
-    threshold > 1_000_000
+    ...(disable.includes("prettier-plugin-packagejson") || threshold > 1_000_000
       ? []
       : [
           {
@@ -210,9 +208,6 @@ const configGen = ({
                 2,
                 { plugins: ["prettier-plugin-packagejson"] },
               ],
-              ...("eslint-plugin-prettier" in override
-                ? override["eslint-plugin-prettier"]
-                : {}),
               ...("prettier-plugin-packagejson" in override
                 ? override["prettier-plugin-packagejson"]
                 : {}),

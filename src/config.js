@@ -1763,6 +1763,31 @@ const configGen = ({
         ]),
 
     /*
+      Prettier Plugin PackageJSON
+      2,357,812 monthly downloads
+      Prettier package.json plugin to make the order of properties nice.
+      https://github.com/matzkoh/prettier-plugin-packagejson#readme
+      Requires: prettier-package-json
+    */
+    ...(disable.includes("prettier-plugin-packagejson") || threshold > 2_357_812
+      ? []
+      : [
+          {
+            files: ["**/*package.json"],
+            rules: {
+              "prettier-package-json/prettier": [
+                2,
+                { plugins: ["prettier-plugin-packagejson"] },
+              ],
+
+              ...("prettier-plugin-packagejson" in override
+                ? override["prettier-plugin-packagejson"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
       React Native Plugin
       2,700,009 monthly downloads
       ESLint rules for @react-native/eslint-config / ESLint rules for @react-native-community/eslint-config
@@ -3584,36 +3609,6 @@ const configGen = ({
 
               ...("eslint-plugin-prettier/plugin" in override
                 ? override["eslint-plugin-prettier/plugin"]
-                : {}),
-            },
-          },
-        ]),
-
-    /*
-      Prettier Plugin PackageJSON
-      55,228,377 monthly downloads
-      Runs prettier as an eslint rule / Prettier package.json plugin to make the order of properties nice.
-      https://github.com/prettier/eslint-plugin-prettier#readme / https://github.com/matzkoh/prettier-plugin-packagejson#readme
-      Requires: prettier-package-json
-    */
-    ...(disable.includes("eslint-plugin-prettier") ||
-    disable.includes("prettier-plugin-packagejson") ||
-    threshold > 55_228_377
-      ? []
-      : [
-          {
-            files: ["**/*package.json"],
-            rules: {
-              "prettier-package-json/prettier": [
-                2,
-                { plugins: ["prettier-plugin-packagejson"] },
-              ],
-
-              ...("eslint-plugin-prettier" in override
-                ? override["eslint-plugin-prettier"]
-                : {}),
-              ...("prettier-plugin-packagejson" in override
-                ? override["prettier-plugin-packagejson"]
                 : {}),
             },
           },

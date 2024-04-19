@@ -12,11 +12,6 @@ export default {
   packages: [
     {
       declaredAs: "prettier",
-      package: "eslint-plugin-prettier",
-      requiresImport: false,
-    },
-    {
-      declaredAs: "prettier",
       package: "prettier-plugin-packagejson",
       requiresImport: false,
     },
