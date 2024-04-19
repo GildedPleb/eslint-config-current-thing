@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/nextjs-config.js
+// PathMark: ./src/conflicts/configs/nextjs-config-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable import/extensions */
@@ -15,11 +15,13 @@ import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
-import nextjs from "@next/eslint-plugin-next";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
+import importPlugin from "eslint-plugin-import";
+import jsxA11y from "eslint-plugin-jsx-a11y";
 import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
+import react from "eslint-plugin-react";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
@@ -187,26 +189,45 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        "@next/next": nextjs,
+        import: importPlugin,
+        "jsx-a11y": jsxA11y,
+        react,
       },
     },
 
     /*
-      NextJS
+      NextJS - Config
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: @next/next
+      Requires: import, react, jsx-a11y
     */
-    ...(disable.includes("@next/eslint-plugin-next") || threshold > 1_000_000
+    ...(disable.includes("eslint-config-next-config") || threshold > 1_000_000
       ? []
       : [
           {
             files,
             rules: {
-              ...nextjs.configs.recommended.rules,
-              ...("@next/eslint-plugin-next" in override
-                ? override["@next/eslint-plugin-next"]
+              // Rules Ejected because requires no longer needed: "@rushstack/eslint-patch/modern-module-resolution"
+              "import/no-anonymous-default-export": 1,
+              "jsx-a11y/alt-text": [
+                1,
+                {
+                  elements: ["img"],
+                  img: ["Image"],
+                },
+              ],
+              "jsx-a11y/aria-props": 1,
+              "jsx-a11y/aria-proptypes": 1,
+              "jsx-a11y/aria-unsupported-elements": 1,
+              "jsx-a11y/role-has-required-aria-props": 1,
+              "jsx-a11y/role-supports-aria-props": 1,
+              "react/jsx-no-target-blank": 0,
+              "react/no-unknown-property": 0,
+              "react/prop-types": 0,
+              "react/react-in-jsx-scope": 0,
+              ...("eslint-config-next/config" in override
+                ? override["eslint-config-next/config"]
                 : {}),
             },
           },

@@ -1859,39 +1859,6 @@ const configGen = ({
         ]),
 
     /*
-      React Native Config - TS
-      2,983,470 monthly downloads
-      ESLint config for React Native / ESLint config for React Native
-      https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native-community#readme / https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native#readme
-      Requires: @typescript-eslint
-    */
-    ...(disable.includes("@react-native-community/eslint-config/ts") ||
-    disable.includes("@react-native/eslint-config/ts") ||
-    threshold > 2_983_470
-      ? []
-      : [
-          {
-            files: tsxFiles,
-            rules: {
-              ...reactNativeConfig.overrides[1].rules,
-              "functional/functional-parameters": 0,
-              "functional/no-classes": 0,
-              "functional/no-conditional-statements": 0,
-              "functional/no-expression-statements": 0,
-              "functional/no-return-void": 0,
-              "functional/no-throw-statements": 0,
-              "prefer-arrow/prefer-arrow-functions": 0,
-              ...("@react-native-community/eslint-config/ts" in override
-                ? override["@react-native-community/eslint-config/ts"]
-                : {}),
-              ...("@react-native/eslint-config/ts" in override
-                ? override["@react-native/eslint-config/ts"]
-                : {}),
-            },
-          },
-        ]),
-
-    /*
       React Native Config - Jest
       2,983,470 monthly downloads
       ESLint config for React Native / ESLint config for React Native
@@ -1919,6 +1886,39 @@ const configGen = ({
                 : {}),
               ...("@react-native/eslint-config/jest" in override
                 ? override["@react-native/eslint-config/jest"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      React Native Config - TS
+      2,983,470 monthly downloads
+      ESLint config for React Native / ESLint config for React Native
+      https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native-community#readme / https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native#readme
+      Requires: @typescript-eslint
+    */
+    ...(disable.includes("@react-native-community/eslint-config/ts") ||
+    disable.includes("@react-native/eslint-config/ts") ||
+    threshold > 2_983_470
+      ? []
+      : [
+          {
+            files: tsxFiles,
+            rules: {
+              ...reactNativeConfig.overrides[1].rules,
+              "functional/functional-parameters": 0,
+              "functional/no-classes": 0,
+              "functional/no-conditional-statements": 0,
+              "functional/no-expression-statements": 0,
+              "functional/no-return-void": 0,
+              "functional/no-throw-statements": 0,
+              "prefer-arrow/prefer-arrow-functions": 0,
+              ...("@react-native-community/eslint-config/ts" in override
+                ? override["@react-native-community/eslint-config/ts"]
+                : {}),
+              ...("@react-native/eslint-config/ts" in override
+                ? override["@react-native/eslint-config/ts"]
                 : {}),
             },
           },
@@ -2635,6 +2635,45 @@ const configGen = ({
         ]),
 
     /*
+      NextJS - Config
+      16,535,232 monthly downloads
+      ESLint configuration used by Next.js.
+      https://nextjs.org/docs/app/building-your-application/configuring/eslint#eslint-config
+      Requires: import, react, jsx-a11y
+    */
+    ...(disable.includes("eslint-config-next/config") || threshold > 16_535_232
+      ? []
+      : [
+          {
+            files,
+            rules: {
+              // Rules Ejected because requires no longer needed: "@rushstack/eslint-patch/modern-module-resolution"
+              "import/no-anonymous-default-export": 1,
+              "jsx-a11y/alt-text": [
+                1,
+                {
+                  elements: ["img"],
+                  img: ["Image"],
+                },
+              ],
+              "jsx-a11y/aria-props": 1,
+              "jsx-a11y/aria-proptypes": 1,
+              "jsx-a11y/aria-unsupported-elements": 1,
+              "jsx-a11y/role-has-required-aria-props": 1,
+              "jsx-a11y/role-supports-aria-props": 1,
+              "react/jsx-no-target-blank": 0,
+              "react/no-unknown-property": 0,
+              "react/prop-types": 0,
+              "react/react-in-jsx-scope": 0,
+
+              ...("eslint-config-next/config" in override
+                ? override["eslint-config-next/config"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
       Create React App
       16,639,874 monthly downloads
       ESLint configuration used by Create React App
@@ -3036,6 +3075,28 @@ const configGen = ({
         ]),
 
     /*
+      NextJS
+      18,517,262 monthly downloads
+      ESLint plugin for Next.js.
+      https://github.com/vercel/next.js#readme
+      Requires: @next/next
+    */
+    ...(disable.includes("@next/eslint-plugin-next") || threshold > 18_517_262
+      ? []
+      : [
+          {
+            files,
+            rules: {
+              ...nextjs.configs.recommended.rules,
+
+              ...("@next/eslint-plugin-next" in override
+                ? override["@next/eslint-plugin-next"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
       Testing Library
       20,539,044 monthly downloads
       ESLint plugin to follow best practices and anticipate common mistakes when writing tests with Testing Library
@@ -3339,33 +3400,6 @@ const configGen = ({
 
               ...("eslint-config-airbnb-base/variables" in override
                 ? override["eslint-config-airbnb-base/variables"]
-                : {}),
-            },
-          },
-        ]),
-
-    /*
-      NextJS
-      35,052,494 monthly downloads
-      ESLint plugin for Next.js. / ESLint configuration used by Next.js.
-      https://github.com/vercel/next.js#readme / https://nextjs.org/docs/app/building-your-application/configuring/eslint#eslint-config
-      Requires: @next/next
-    */
-    ...(disable.includes("@next/eslint-plugin-next") ||
-    disable.includes("eslint-config-next") ||
-    threshold > 35_052_494
-      ? []
-      : [
-          {
-            files,
-            rules: {
-              ...nextjs.configs.recommended.rules,
-
-              ...("@next/eslint-plugin-next" in override
-                ? override["@next/eslint-plugin-next"]
-                : {}),
-              ...("eslint-config-next" in override
-                ? override["eslint-config-next"]
                 : {}),
             },
           },
@@ -3697,6 +3731,33 @@ const configGen = ({
         ]),
 
     /*
+      Prettier - JSON
+      131,041,054 monthly downloads
+      Runs prettier as an eslint rule / Turns off all rules that are unnecessary or might conflict with Prettier.
+      https://github.com/prettier/eslint-plugin-prettier#readme / https://github.com/prettier/eslint-config-prettier#readme
+      Requires: prettier
+    */
+    ...(disable.includes("eslint-plugin-prettier/json") ||
+    disable.includes("eslint-config-prettier/json") ||
+    threshold > 131_041_054
+      ? []
+      : [
+          {
+            files: jsonFiles,
+            rules: {
+              "prettier/prettier": 2,
+
+              ...("eslint-plugin-prettier/json" in override
+                ? override["eslint-plugin-prettier/json"]
+                : {}),
+              ...("eslint-config-prettier/json" in override
+                ? override["eslint-config-prettier/json"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
       Prettier - MD
       131,041,054 monthly downloads
       Runs prettier as an eslint rule / Turns off all rules that are unnecessary or might conflict with Prettier.
@@ -3745,33 +3806,6 @@ const configGen = ({
                 : {}),
               ...("eslint-config-prettier/yml" in override
                 ? override["eslint-config-prettier/yml"]
-                : {}),
-            },
-          },
-        ]),
-
-    /*
-      Prettier - JSON
-      131,041,054 monthly downloads
-      Runs prettier as an eslint rule / Turns off all rules that are unnecessary or might conflict with Prettier.
-      https://github.com/prettier/eslint-plugin-prettier#readme / https://github.com/prettier/eslint-config-prettier#readme
-      Requires: prettier
-    */
-    ...(disable.includes("eslint-plugin-prettier/json") ||
-    disable.includes("eslint-config-prettier/json") ||
-    threshold > 131_041_054
-      ? []
-      : [
-          {
-            files: jsonFiles,
-            rules: {
-              "prettier/prettier": 2,
-
-              ...("eslint-plugin-prettier/json" in override
-                ? override["eslint-plugin-prettier/json"]
-                : {}),
-              ...("eslint-config-prettier/json" in override
-                ? override["eslint-config-prettier/json"]
                 : {}),
             },
           },

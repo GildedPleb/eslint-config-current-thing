@@ -46,7 +46,7 @@ const rejected = new Set([
   // Ember -- Hopefully to be added one day when its more popular than react!
   "eslint-plugin-ember",
 
-  // Broken / not-maintained / abandoned / scams
+  // Broken / not-maintained / abandoned / scams / dead
   "eslint-plugin-babel",
   "eslint-plugin-deprecation",
   "eslint-plugin-graphql",
@@ -54,6 +54,10 @@ const rejected = new Set([
   "eslint-plugin-lodash",
   "eslint-plugin-sort-keys-fix",
   "solhint",
+  "@typescript-eslint/eslint-plugin-tslint",
+  "tslint-config-prettier",
+  "tslint-to-eslint-config",
+  "tslint-etc",
 
   // Plugin for linting plugins
   "eslint-plugin-eslint-plugin",
@@ -68,11 +72,6 @@ const rejected = new Set([
   "@typescript-eslint/utils",
   "@typescript-eslint/visitor-keys",
   "typescript-eslint-language-service",
-
-  // Tslint is a dead project, replaced by @typescript-eslint
-  "@typescript-eslint/eslint-plugin-tslint",
-  "tslint-config-prettier",
-  "tslint-to-eslint-config",
 
   // ES Lint submodules
   "@eslint-community/eslint-utils",
@@ -91,13 +90,20 @@ const rejected = new Set([
   "@nicolo-ribaudo/eslint-scope-5-internals",
   "estree-util-attach-comments",
   "estree-util-build-jsx",
+  "@eslint-types/jsdoc",
+  "@eslint-types/jsdoc",
+  "@eslint-types/typescript-eslint",
+  "@eslint-types/unicorn",
+  "@types/eslint-scope",
+  "@types/eslint",
 
   // Various / Out of scope
   "@axe-core/react",
   "@babel/eslint-parser",
-  "estree-to-babel",
   "@biomejs/biome",
   "@codemirror/lint",
+  "@es-joy/jsdoccomment",
+  "@html-validate/stylish",
   "@ianvs/eslint-stats",
   "@ls-lint/ls-lint",
   "@mapbox/jsonlint-lines-primitives",
@@ -115,6 +121,7 @@ const rejected = new Set([
   "eslint-plugin-diff",
   "eslint-watch",
   "eslint-webpack-plugin",
+  "estree-to-babel",
   "flowbite",
   "fork-ts-checker-webpack-plugin",
   "gherkin-lint",
@@ -122,22 +129,20 @@ const rejected = new Set([
   "hast-util-to-mdast",
   "html-validate",
   "ignore",
+  "jest-runner-eslint",
   "json-fixer",
   "jsx-ast-utils",
   "knip",
   "lint-staged",
   "lockfile-lint-api",
   "oxlint",
+  "parse-function",
   "standard-engine",
   "standard",
   "unified-lint-rule",
   "unist-util-find",
   "unist-util-visit",
   "xo",
-  "@es-joy/jsdoccomment",
-  "parse-function",
-  "jest-runner-eslint",
-  "@html-validate/stylish",
 
   // npm-package-json
   "@wordpress/npm-package-json-lint-config",
@@ -256,10 +261,10 @@ const rejected = new Set([
   "@microsoft/eslint-formatter-sarif",
 
   // Stylistic
-  "@stylistic/eslint-plugin-ts",
-  "@stylistic/eslint-plugin-jsx",
   "@stylistic/eslint-plugin-js",
+  "@stylistic/eslint-plugin-jsx",
   "@stylistic/eslint-plugin-plus",
+  "@stylistic/eslint-plugin-ts",
 
   // Prettier Stuffs
   "@types/eslint-config-prettier",
@@ -268,14 +273,6 @@ const rejected = new Set([
   "prettier-eslint",
   "prettier-linter-helpers",
   "vite-plugin-eslint",
-
-  // ES Lint types
-  "@eslint-types/jsdoc",
-  "@eslint-types/jsdoc",
-  "@eslint-types/typescript-eslint",
-  "@eslint-types/unicorn",
-  "@types/eslint-scope",
-  "@types/eslint",
 
   // Automatically included
   "globals",
@@ -319,7 +316,6 @@ const rejected = new Set([
   "@nx/next",
   "@rushstack/eslint-plugin-security",
   "@rushstack/eslint-plugin",
-  "eslint-config-turbo",
   "syncpack",
 ]);
 

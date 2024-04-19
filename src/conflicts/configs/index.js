@@ -48,6 +48,7 @@ const configList = [
     location: "./src/conflicts/configs/airbnb-ts-config.js",
     name: "airbnb-ts",
   },
+  { location: "./src/conflicts/configs/ava-config.js", name: "ava" },
   { location: "./src/conflicts/configs/chai-config.js", name: "chai" },
   { location: "./src/conflicts/configs/comments-config.js", name: "comments" },
   { location: "./src/conflicts/configs/compat-config.js", name: "compat" },
@@ -68,6 +69,11 @@ const configList = [
   {
     location: "./src/conflicts/configs/functional-config.js",
     name: "functional",
+  },
+  {
+    location:
+      "./src/conflicts/configs/react-prefer-function-component-config.js",
+    name: "react-prefer-function-component",
   },
   {
     location: "./src/conflicts/configs/functional-stylistic-config.js",
@@ -92,6 +98,7 @@ const configList = [
     location: "./src/conflicts/configs/import-js-config.js",
     name: "import-js",
   },
+  { location: "./src/conflicts/configs/jasmine-config.js", name: "jasmine" },
   { location: "./src/conflicts/configs/jest-config.js", name: "jest" },
   { location: "./src/conflicts/configs/jest-dom-config.js", name: "jest-dom" },
   {
@@ -103,12 +110,25 @@ const configList = [
   { location: "./src/conflicts/configs/jsonc-config.js", name: "jsonc" },
   { location: "./src/conflicts/configs/jsx-a11y-config.js", name: "jsx-a11y" },
   { location: "./src/conflicts/configs/markdown-config.js", name: "markdown" },
+  { location: "./src/conflicts/configs/mdx-config.js", name: "mdx" },
+  {
+    location: "./src/conflicts/configs/mdx-code-blocks-config.js",
+    name: "mdx-code-blocks",
+  },
   { location: "./src/conflicts/configs/mocha-config.js", name: "mocha" },
   { location: "./src/conflicts/configs/nextjs-config.js", name: "nextjs" },
+  {
+    location: "./src/conflicts/configs/nextjs-config-config.js",
+    name: "nextjs-config",
+  },
   { location: "./src/conflicts/configs/node-config.js", name: "node" },
   {
     location: "./src/conflicts/configs/no-only-test-config.js",
     name: "no-only-test",
+  },
+  {
+    location: "./src/conflicts/configs/no-use-extend-native-config.js",
+    name: "no-use-extend-native",
   },
   {
     location: "./src/conflicts/configs/perfectionist-config.js",
@@ -123,6 +143,18 @@ const configList = [
     name: "prefer-arrow",
   },
   { location: "./src/conflicts/configs/prettier-config.js", name: "prettier" },
+  {
+    location: "./src/conflicts/configs/prettier-json-config.js",
+    name: "prettier-json",
+  },
+  {
+    location: "./src/conflicts/configs/prettier-md-config.js",
+    name: "prettier-md",
+  },
+  {
+    location: "./src/conflicts/configs/prettier-yml-config.js",
+    name: "prettier-yml",
+  },
   { location: "./src/conflicts/configs/promises-config.js", name: "promises" },
   { location: "./src/conflicts/configs/react-config.js", name: "react" },
   {
@@ -135,9 +167,9 @@ const configList = [
     name: "rn-flowtype",
   },
   { location: "./src/conflicts/configs/rn-ip-config.js", name: "rn-ip" },
+  { location: "./src/conflicts/configs/rn-jest-config.js", name: "rn-jest" },
   { location: "./src/conflicts/configs/rn-p-config.js", name: "rn-p" },
   { location: "./src/conflicts/configs/rn-ts-config.js", name: "rn-ts" },
-  { location: "./src/conflicts/configs/rn-jest-config.js", name: "rn-jest" },
   {
     location: "./src/conflicts/configs/react-perf-config.js",
     name: "react-perf",
@@ -147,6 +179,7 @@ const configList = [
     name: "react-refresh",
   },
   { location: "./src/conflicts/configs/regexp-config.js", name: "regexp" },
+  { location: "./src/conflicts/configs/rxjs-config.js", name: "rxjs" },
   { location: "./src/conflicts/configs/msdl-config.js", name: "msdl" },
   {
     location: "./src/conflicts/configs/msdl-node-config.js",
@@ -261,35 +294,6 @@ const configList = [
   {
     location: "./src/conflicts/configs/no-lodash-config.js",
     name: "no-lodash",
-  },
-  {
-    location: "./src/conflicts/configs/prettier-md-config.js",
-    name: "prettier-md",
-  },
-  {
-    location: "./src/conflicts/configs/prettier-yml-config.js",
-    name: "prettier-yml",
-  },
-  {
-    location: "./src/conflicts/configs/prettier-json-config.js",
-    name: "prettier-json",
-  },
-  { location: "./src/conflicts/configs/mdx-config.js", name: "mdx" },
-  {
-    location: "./src/conflicts/configs/mdx-code-blocks-config.js",
-    name: "mdx-code-blocks",
-  },
-  { location: "./src/conflicts/configs/rxjs-config.js", name: "rxjs" },
-  { location: "./src/conflicts/configs/jasmine-config.js", name: "jasmine" },
-  { location: "./src/conflicts/configs/ava-config.js", name: "ava" },
-  {
-    location:
-      "./src/conflicts/configs/react-prefer-function-component-config.js",
-    name: "react-prefer-function-component",
-  },
-  {
-    location: "./src/conflicts/configs/no-use-extend-native-config.js",
-    name: "no-use-extend-native",
   },
 ];
 

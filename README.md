@@ -54,10 +54,10 @@ This is a meta-config of many configs. The basic idea is that Linting is usually
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
 - **1261** TSX rules
-- **1236** Testing rules
+- **1246** Testing rules
 - **1208** JSX rules
-- **1099** Typescript rules
-- **1056** Javascript rules
+- **1110** Typescript rules
+- **1066** Javascript rules
 - **33** JSON rules
 - **24** YML rules
 - **5** MD rules
@@ -358,6 +358,9 @@ The following section is generated according to spec.
 
 Generated on 4/19/2024, downloads for the previous 28 days.
 
+- 2,364,962 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
+- 2,303,363 downloads, [eslint-config-turbo](https://www.npmjs.com/package/eslint-config-turbo)
+- 850,891 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 777,063 downloads, [toml-eslint-parser](https://www.npmjs.com/package/toml-eslint-parser)
 - 768,108 downloads, [eslint-plugin-formatjs](https://www.npmjs.com/package/eslint-plugin-formatjs)
 - 636,845 downloads, [eslint-plugin-no-relative-import-paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)
@@ -366,10 +369,10 @@ Generated on 4/19/2024, downloads for the previous 28 days.
 - 410,878 downloads, [eslint-config-xo-space](https://www.npmjs.com/package/eslint-config-xo-space)
 - 397,863 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
 - 378,422 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
+- 372,489 downloads, [eslint-plugin-ssr-friendly](https://www.npmjs.com/package/eslint-plugin-ssr-friendly) - Not Yet Eligible
 - 371,103 downloads, [eslint-plugin-import-helpers](https://www.npmjs.com/package/eslint-plugin-import-helpers) - Not Yet Eligible
 - 364,594 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
 - 361,446 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu) - Not Yet Eligible
-- 359,468 downloads, [eslint-plugin-ssr-friendly](https://www.npmjs.com/package/eslint-plugin-ssr-friendly) - Not Yet Eligible
 - 356,355 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
 - 350,500 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard) - Not Yet Eligible
 - 349,280 downloads, [eslint-plugin-i18n-text](https://www.npmjs.com/package/eslint-plugin-i18n-text) - Not Yet Eligible
@@ -395,8 +398,5 @@ Generated on 4/19/2024, downloads for the previous 28 days.
 - 237,028 downloads, [eslint-plugin-json-format](https://www.npmjs.com/package/eslint-plugin-json-format) - Not Yet Eligible
 - 231,030 downloads, [eslint-plugin-canonical](https://www.npmjs.com/package/eslint-plugin-canonical) - Not Yet Eligible
 - 227,139 downloads, [eslint-config-esnext](https://www.npmjs.com/package/eslint-config-esnext) - Not Yet Eligible
-- 220,459 downloads, [eslint-config-airbnb-typescript-prettier](https://www.npmjs.com/package/eslint-config-airbnb-typescript-prettier) - Not Yet Eligible
-- 218,266 downloads, [eslint-plugin-spellcheck](https://www.npmjs.com/package/eslint-plugin-spellcheck) - Not Yet Eligible
-- 217,320 downloads, [eslint-plugin-etc](https://www.npmjs.com/package/eslint-plugin-etc) - Not Yet Eligible
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->
