@@ -1,5 +1,7 @@
 // PathMark: ./src/packages/get-packages.ts
 
+import readline from "node:readline";
+
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Level } from "level";
 
@@ -23,6 +25,12 @@ const installed = new Set([
   ...parsers.flatMap((config) =>
     config.packages.map(({ package: pack }) => pack),
   ),
+]);
+
+const installedNames = new Set([
+  ...configs.map(({ name }) => `ESLint ${name}`.replaceAll(" ", "%20")),
+  ...plugins.map(({ name }) => `ESLint ${name}`.replaceAll(" ", "%20")),
+  ...parsers.map(({ name }) => `ESLint ${name}`.replaceAll(" ", "%20")),
 ]);
 
 interface Populated {
@@ -81,7 +89,11 @@ for (const pack of rejected) {
 async function fetchEslintPlugins(cache = database): Promise<Populated[]> {
   console.log("Checking lists...");
   console.log("Getting full list...");
-  const searchedPluginNames = await fetchNPMURLs(searchTerms);
+  const searchedPluginNames = await fetchNPMURLs([
+    ...searchTerms,
+    ...installed,
+    ...installedNames,
+  ]);
   const currentKnown = await getExisting(cache);
   const everythingList = [
     ...new Set([
@@ -122,7 +134,16 @@ async function fetchEslintPlugins(cache = database): Promise<Populated[]> {
   for await (const plugin of unpopulated) {
     const downloads = await getDownloadCount(plugin.name);
     populated.push({ ...plugin, count: downloads ?? 0 });
-    console.log(`Adding "${plugin.name}"... ${downloads}`);
+    if ((downloads ?? 0) > 50_000)
+      console.log(
+        `Noteworthy plugin: "${plugin.name}"... ${downloads}`.padEnd(
+          process.stdout.columns,
+          " ",
+        ),
+      );
+    const out = `Adding: "${plugin.name}"... ${downloads}`;
+    process.stdout.write(out.padEnd(process.stdout.columns, " "));
+    readline.cursorTo(process.stdout, 0);
   }
 
   for await (const plugin of populated) {

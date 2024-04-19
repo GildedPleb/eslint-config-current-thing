@@ -12,6 +12,9 @@ const rejected = new Set([
   "eslint-import-resolver-custom-alias",
   "eslint-plugin-local-rules",
   "eslint-plugin-local",
+  "eslint-import-resolver-webpack",
+  "eslint-import-resolver-babel-module",
+  "eslint-import-resolver-jest",
 
   // Vue -- Hopefully to be added one day when its more popular than react!
   "@vue/eslint-config-airbnb",
@@ -24,6 +27,7 @@ const rejected = new Set([
   "eslint-plugin-vue",
   "eslint-plugin-vuejs-accessibility",
   "vue-eslint-parser",
+  "@intlify/eslint-plugin-vue-i18n",
 
   // Angular -- Hopefully to be added one day when its more popular than react!
   "@angular-eslint/eslint-plugin-template",
@@ -84,10 +88,14 @@ const rejected = new Set([
   "eslint-template-visitor",
   "eslint-visitor-keys",
   "eslint",
+  "@nicolo-ribaudo/eslint-scope-5-internals",
+  "estree-util-attach-comments",
+  "estree-util-build-jsx",
 
   // Various / Out of scope
   "@axe-core/react",
   "@babel/eslint-parser",
+  "estree-to-babel",
   "@biomejs/biome",
   "@codemirror/lint",
   "@ianvs/eslint-stats",
@@ -126,6 +134,10 @@ const rejected = new Set([
   "unist-util-find",
   "unist-util-visit",
   "xo",
+  "@es-joy/jsdoccomment",
+  "parse-function",
+  "jest-runner-eslint",
+  "@html-validate/stylish",
 
   // npm-package-json
   "@wordpress/npm-package-json-lint-config",
@@ -246,6 +258,8 @@ const rejected = new Set([
   // Stylistic
   "@stylistic/eslint-plugin-ts",
   "@stylistic/eslint-plugin-jsx",
+  "@stylistic/eslint-plugin-js",
+  "@stylistic/eslint-plugin-plus",
 
   // Prettier Stuffs
   "@types/eslint-config-prettier",

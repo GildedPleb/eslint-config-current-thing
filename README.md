@@ -282,7 +282,7 @@ If a repository is abandoned due to lack of community interest and has no fork--
 
 That said, there are some very compelling reasons to use this config above other configs:
 
-1. Please watch "[**Code is for Humans**](https://frontendmasters.com/teachers/kyle-simpson/code-is-for-humans/)" by Kyle Simpson, author of "[You Don't know JS](https://github.com/getify/You-Dont-Know-JS)". Tying the way that code is written to the way that the most people read it helps ensure that it is accessible for the most humans. A project which adheres to whatever the `current thing` is can be objectively certain that the _most developers in the entire ecosystem_ will be somewhat comfortable approaching it. This makes debugging, contributing, using, understanding, and sharing code easier. No one will be 100% happy with the linting results (what else is new?), but this at least provides some basis to ease developer ramp up time with any particular project or JS code base. Linting React code as React Native code sounds dumb at first, but its really no different from using a superset of React, which is the exact same pattern as Typescript and JS, by putting tighter limits on the code, it makes it more reusable.
+1. Please watch "[**Code is for Humans**](https://frontendmasters.com/teachers/kyle-simpson/code-is-for-humans/)" by Kyle Simpson, author of "[You Don't know JS](https://github.com/getify/You-Dont-Know-JS)". Tying the way that code is written to the way that the most people read it helps ensure that it is accessible for the most humans. A project which adheres to whatever the `current thing` is can be objectively certain that the _most developers in the entire ecosystem_ will be somewhat comfortable approaching it. This makes debugging, contributing, using, understanding, and sharing code easier. No one will be 100% happy with the linting results (what else is new?), but this at least provides some basis to ease developer ramp up time with any particular project or JS code base. Linting React code as React Native code sounds dumb at first, but its really no different from using a superset of React, which is the exact same pattern as Typescript and JS, by putting tighter limits on the code, it makes it more accessible to a wide range of participants.
 
 1. It adds a "higher-authority" or "single source of truth" to config discussions--which is not just someone else's opinion, but aggregate opinion at large, as it spreads across use cases. And as such, it better arbitrates disagreement. Many rules offer links to justification, and it's hard to argue that more learning about JS is bad.
 
@@ -358,45 +358,45 @@ The following section is generated according to spec.
 
 Generated on 4/19/2024, downloads for the previous 28 days.
 
+- 777,063 downloads, [toml-eslint-parser](https://www.npmjs.com/package/toml-eslint-parser)
+- 768,108 downloads, [eslint-plugin-formatjs](https://www.npmjs.com/package/eslint-plugin-formatjs)
+- 636,845 downloads, [eslint-plugin-no-relative-import-paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)
 - 442,562 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin)
 - 435,156 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit)
 - 410,878 downloads, [eslint-config-xo-space](https://www.npmjs.com/package/eslint-config-xo-space)
 - 397,863 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
 - 378,422 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
+- 371,103 downloads, [eslint-plugin-import-helpers](https://www.npmjs.com/package/eslint-plugin-import-helpers) - Not Yet Eligible
 - 364,594 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
 - 361,446 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu) - Not Yet Eligible
 - 359,468 downloads, [eslint-plugin-ssr-friendly](https://www.npmjs.com/package/eslint-plugin-ssr-friendly) - Not Yet Eligible
-- 353,215 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
+- 356,355 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
 - 350,500 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard) - Not Yet Eligible
+- 349,280 downloads, [eslint-plugin-i18n-text](https://www.npmjs.com/package/eslint-plugin-i18n-text) - Not Yet Eligible
 - 339,141 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
 - 338,795 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc) - Not Yet Eligible
+- 321,566 downloads, [@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config) - Not Yet Eligible
 - 319,617 downloads, [eslint-plugin-testcafe](https://www.npmjs.com/package/eslint-plugin-testcafe) - Not Yet Eligible
-- 312,929 downloads, [@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config) - Not Yet Eligible
 - 297,572 downloads, [eslint-plugin-deprecate](https://www.npmjs.com/package/eslint-plugin-deprecate) - Not Yet Eligible
-- 283,147 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
+- 295,029 downloads, [eslint-plugin-lit](https://www.npmjs.com/package/eslint-plugin-lit) - Not Yet Eligible
+- 292,774 downloads, [@ngrx/eslint-plugin](https://www.npmjs.com/package/@ngrx/eslint-plugin) - Not Yet Eligible
+- 282,683 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
 - 280,719 downloads, [eslint-plugin-array-func](https://www.npmjs.com/package/eslint-plugin-array-func) - Not Yet Eligible
+- 280,009 downloads, [@rushstack/eslint-config](https://www.npmjs.com/package/@rushstack/eslint-config) - Not Yet Eligible
 - 278,957 downloads, [eslint-plugin-import-newlines](https://www.npmjs.com/package/eslint-plugin-import-newlines) - Not Yet Eligible
-- 278,423 downloads, [@rushstack/eslint-config](https://www.npmjs.com/package/@rushstack/eslint-config) - Not Yet Eligible
 - 276,757 downloads, [eslint-plugin-no-secrets](https://www.npmjs.com/package/eslint-plugin-no-secrets) - Not Yet Eligible
 - 272,731 downloads, [@salesforce/eslint-plugin-lightning](https://www.npmjs.com/package/@salesforce/eslint-plugin-lightning) - Not Yet Eligible
 - 263,143 downloads, [eslint-plugin-minecraft-linting](https://www.npmjs.com/package/eslint-plugin-minecraft-linting) - Not Yet Eligible
+- 257,683 downloads, [eslint-config-oclif-typescript](https://www.npmjs.com/package/eslint-config-oclif-typescript) - Not Yet Eligible
 - 250,835 downloads, [eslint-plugin-astro](https://www.npmjs.com/package/eslint-plugin-astro) - Not Yet Eligible
 - 245,452 downloads, [eslint-plugin-regex](https://www.npmjs.com/package/eslint-plugin-regex) - Not Yet Eligible
 - 243,436 downloads, [@sap/eslint-plugin-cds](https://www.npmjs.com/package/@sap/eslint-plugin-cds) - Not Yet Eligible
 - 242,052 downloads, [eslint-plugin-chai-expect](https://www.npmjs.com/package/eslint-plugin-chai-expect) - Not Yet Eligible
 - 237,028 downloads, [eslint-plugin-json-format](https://www.npmjs.com/package/eslint-plugin-json-format) - Not Yet Eligible
 - 231,030 downloads, [eslint-plugin-canonical](https://www.npmjs.com/package/eslint-plugin-canonical) - Not Yet Eligible
-- 227,486 downloads, [eslint-config-esnext](https://www.npmjs.com/package/eslint-config-esnext) - Not Yet Eligible
+- 227,139 downloads, [eslint-config-esnext](https://www.npmjs.com/package/eslint-config-esnext) - Not Yet Eligible
 - 220,459 downloads, [eslint-config-airbnb-typescript-prettier](https://www.npmjs.com/package/eslint-config-airbnb-typescript-prettier) - Not Yet Eligible
 - 218,266 downloads, [eslint-plugin-spellcheck](https://www.npmjs.com/package/eslint-plugin-spellcheck) - Not Yet Eligible
 - 217,320 downloads, [eslint-plugin-etc](https://www.npmjs.com/package/eslint-plugin-etc) - Not Yet Eligible
-- 215,751 downloads, [eslint-plugin-require-extensions](https://www.npmjs.com/package/eslint-plugin-require-extensions) - Not Yet Eligible
-- 214,895 downloads, [eslint-plugin-toml](https://www.npmjs.com/package/eslint-plugin-toml) - Not Yet Eligible
-- 208,520 downloads, [eslint-config-node](https://www.npmjs.com/package/eslint-config-node) - Not Yet Eligible
-- 200,917 downloads, [@gitlab/eslint-plugin](https://www.npmjs.com/package/@gitlab/eslint-plugin) - Not Yet Eligible
-- 193,182 downloads, [@darraghor/eslint-plugin-nestjs-typed](https://www.npmjs.com/package/@darraghor/eslint-plugin-nestjs-typed) - Not Yet Eligible
-- 188,934 downloads, [eslint-plugin-no-floating-promise](https://www.npmjs.com/package/eslint-plugin-no-floating-promise) - Not Yet Eligible
-- 184,438 downloads, [eslint-plugin-react-redux](https://www.npmjs.com/package/eslint-plugin-react-redux) - Not Yet Eligible
-- 183,922 downloads, [eslint-plugin-sort-exports](https://www.npmjs.com/package/eslint-plugin-sort-exports) - Not Yet Eligible
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->
