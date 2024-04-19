@@ -11,8 +11,12 @@ export default {
   name: "GraphQL",
   packages: [
     {
-      declaredAs:
-        "{ parseForESLint as graphQLparseForESLint, processors as graphqlProcessors, rules as graphQLRules, flatConfigs as graphqlConfigs }",
+      declaredAs: `{
+          flatConfigs as graphqlConfigs,
+          parseForESLint as graphQLparseForESLint,
+          processors as graphqlProcessors,
+          rules as graphQLRules,
+        }`,
       package: "@graphql-eslint/eslint-plugin",
     },
   ],

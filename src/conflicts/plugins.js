@@ -234,6 +234,7 @@ const plugins = {
   playwright,
   "prefer-arrow": preferArrow,
   prettier,
+  "prettier-package-json": prettier,
   promise,
   react,
   "react-hooks": reactHooks,

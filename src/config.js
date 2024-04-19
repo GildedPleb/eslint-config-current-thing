@@ -340,6 +340,7 @@ const configGen = ({
         playwright,
         "prefer-arrow": preferArrow,
         prettier,
+        "prettier-package-json": prettier,
         promise,
         react,
         "react-hooks": reactHooks,
@@ -1231,7 +1232,6 @@ const configGen = ({
               "@typescript-eslint/brace-style": 0,
               "@typescript-eslint/comma-dangle": 0,
               "@typescript-eslint/member-delimiter-style": 0,
-              "@typescript-eslint/no-extra-parens": 0,
               "@typescript-eslint/object-curly-spacing": 0,
               "@typescript-eslint/semi": 0,
               "@typescript-eslint/space-before-function-paren": 0,
@@ -3584,6 +3584,36 @@ const configGen = ({
 
               ...("eslint-plugin-prettier/plugin" in override
                 ? override["eslint-plugin-prettier/plugin"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Prettier Plugin PackageJSON
+      55,228,377 monthly downloads
+      Runs prettier as an eslint rule / Prettier package.json plugin to make the order of properties nice.
+      https://github.com/prettier/eslint-plugin-prettier#readme / https://github.com/matzkoh/prettier-plugin-packagejson#readme
+      Requires: prettier-package-json
+    */
+    ...(disable.includes("eslint-plugin-prettier") ||
+    disable.includes("prettier-plugin-packagejson") ||
+    threshold > 55_228_377
+      ? []
+      : [
+          {
+            files: ["**/*package.json"],
+            rules: {
+              "prettier-package-json/prettier": [
+                2,
+                { plugins: ["prettier-plugin-packagejson"] },
+              ],
+
+              ...("eslint-plugin-prettier" in override
+                ? override["eslint-plugin-prettier"]
+                : {}),
+              ...("prettier-plugin-packagejson" in override
+                ? override["prettier-plugin-packagejson"]
                 : {}),
             },
           },

@@ -299,6 +299,10 @@ const configList = [
     location: "./src/conflicts/configs/prettier-plugin-config.js",
     name: "prettier-plugin",
   },
+  {
+    location: "./src/conflicts/configs/prettier-package-json-config.js",
+    name: "prettier-package-json",
+  },
 ];
 
 export default configList;

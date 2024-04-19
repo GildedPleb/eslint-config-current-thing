@@ -11,6 +11,13 @@ export default {
       package: "eslint-plugin-prettier",
       requiresImport: true,
     },
+    {
+      declaredAs: "prettier",
+      mappedAs: "prettier",
+      namespace: "prettier-package-json",
+      package: "eslint-plugin-prettier",
+      requiresImport: false,
+    },
   ],
-} satisfies Plugin<"prettier">;
+} satisfies Plugin<"prettier" | "prettier-package-json">;
 // EOF

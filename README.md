@@ -16,26 +16,26 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 
 <!-- Start Generated List of Configs DO NOT EDIT! -->
 
-|                              |                             |                                          |                     |
-| ---------------------------- | --------------------------- | ---------------------------------------- | ------------------- |
-| AirBnb                       | AirBnb Base                 | AirBnb-Typescript                        | Ava                 |
-| CSS Modules                  | Chai Friendly               | Comments                                 | Compat              |
-| Create React App             | Cypress                     | ES-X                                     | ESLint              |
-| Emotion CSS                  | Functional                  | Google                                   | GraphQL             |
-| Import                       | Internationalization (i18n) | JSDoc                                    | JSONC               |
-| JSX Accessibility (JSX A11y) | Jasmine                     | Jest                                     | Jest Dom            |
-| Jest Formatting              | MDX                         | Markdown                                 | Microsoft SDL       |
-| Mocha                        | NextJS                      | No Only Tests                            | No Unsanitized      |
-| No Unused Imports            | No Use Extend Native        | Node.js                                  | Perfectionist       |
-| Playwright                   | Prefer Arrow                | Prettier                                 | Promises            |
-| React                        | React Hooks                 | React Native (Independent Plugin/Config) | React Native Config |
-| React Native Plugin          | React Performance           | React Prefer Function Component          | React Refresh       |
-| Regular Expressions          | RxJS                        | Security                                 | Shopify             |
-| Simple Import Sort           | SonarJS                     | Sort Class Members                       | Standard            |
-| Standard JSX                 | Standard React              | Standard TS                              | Storybook           |
-| Stylistic                    | TSDoc                       | Tailwind CSS                             | Testing Library     |
-| TypeScript                   | Typescript Sort Keys        | Unicorn                                  | XO                  |
-| YML                          | You Don't Need Lodash       |                                          |                     |
+|                              |                             |                       |                                          |
+| ---------------------------- | --------------------------- | --------------------- | ---------------------------------------- |
+| AirBnb                       | AirBnb Base                 | AirBnb-Typescript     | Ava                                      |
+| CSS Modules                  | Chai Friendly               | Comments              | Compat                                   |
+| Create React App             | Cypress                     | ES-X                  | ESLint                                   |
+| Emotion CSS                  | Functional                  | Google                | GraphQL                                  |
+| Import                       | Internationalization (i18n) | JSDoc                 | JSONC                                    |
+| JSX Accessibility (JSX A11y) | Jasmine                     | Jest                  | Jest Dom                                 |
+| Jest Formatting              | MDX                         | Markdown              | Microsoft SDL                            |
+| Mocha                        | NextJS                      | No Only Tests         | No Unsanitized                           |
+| No Unused Imports            | No Use Extend Native        | Node.js               | Perfectionist                            |
+| Playwright                   | Prefer Arrow                | Prettier              | Prettier Plugin PackageJSON              |
+| Promises                     | React                       | React Hooks           | React Native (Independent Plugin/Config) |
+| React Native Config          | React Native Plugin         | React Performance     | React Prefer Function Component          |
+| React Refresh                | Regular Expressions         | RxJS                  | Security                                 |
+| Shopify                      | Simple Import Sort          | SonarJS               | Sort Class Members                       |
+| Standard                     | Standard JSX                | Standard React        | Standard TS                              |
+| Storybook                    | Stylistic                   | TSDoc                 | Tailwind CSS                             |
+| Testing Library              | TypeScript                  | Typescript Sort Keys  | Unicorn                                  |
+| XO                           | YML                         | You Don't Need Lodash |                                          |
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -362,7 +362,6 @@ Generated on 4/19/2024, downloads for the previous 28 days.
 - 3,223,461 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
 - 2,402,690 downloads, [prettier-plugin-organize-imports](https://www.npmjs.com/package/prettier-plugin-organize-imports)
 - 2,364,962 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
-- 2,357,812 downloads, [prettier-plugin-packagejson](https://www.npmjs.com/package/prettier-plugin-packagejson)
 - 2,303,363 downloads, [eslint-config-turbo](https://www.npmjs.com/package/eslint-config-turbo)
 - 1,314,975 downloads, [@svgr/plugin-prettier](https://www.npmjs.com/package/@svgr/plugin-prettier)
 - 1,179,957 downloads, [@ianvs/prettier-plugin-sort-imports](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports)
@@ -382,8 +381,8 @@ Generated on 4/19/2024, downloads for the previous 28 days.
 - 375,705 downloads, [prettier-plugin-java](https://www.npmjs.com/package/prettier-plugin-java) - Not Yet Eligible
 - 372,489 downloads, [eslint-plugin-ssr-friendly](https://www.npmjs.com/package/eslint-plugin-ssr-friendly) - Not Yet Eligible
 - 371,103 downloads, [eslint-plugin-import-helpers](https://www.npmjs.com/package/eslint-plugin-import-helpers) - Not Yet Eligible
-- 364,594 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
 - 361,446 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu) - Not Yet Eligible
+- 359,019 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
 - 356,355 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
 - 350,500 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard) - Not Yet Eligible
 - 349,280 downloads, [eslint-plugin-i18n-text](https://www.npmjs.com/package/eslint-plugin-i18n-text) - Not Yet Eligible
@@ -398,5 +397,6 @@ Generated on 4/19/2024, downloads for the previous 28 days.
 - 282,683 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
 - 280,719 downloads, [eslint-plugin-array-func](https://www.npmjs.com/package/eslint-plugin-array-func) - Not Yet Eligible
 - 280,009 downloads, [@rushstack/eslint-config](https://www.npmjs.com/package/@rushstack/eslint-config) - Not Yet Eligible
+- 278,957 downloads, [eslint-plugin-import-newlines](https://www.npmjs.com/package/eslint-plugin-import-newlines) - Not Yet Eligible
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->
