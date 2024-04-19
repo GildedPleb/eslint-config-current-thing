@@ -148,6 +148,8 @@ import checkFile from "eslint-plugin-check-file";
 import ava from "eslint-plugin-ava";
 // @ts-ignore yes, we need to ignore every import for this to run
 import preferFC from "eslint-plugin-react-prefer-function-component";
+// @ts-ignore yes, we need to ignore every import for this to run
+import noUseExtendNative from "eslint-plugin-no-use-extend-native";
 
 // @ts-ignore yes, we need to ignore every import for this to run
 import tseslint from "typescript-eslint";
@@ -226,6 +228,7 @@ const plugins = {
   n: nNode,
   "no-only-tests": noOnlyTest,
   "no-unsanitized": unsanitized,
+  "no-use-extend-native": noUseExtendNative,
   node,
   perfectionist,
   playwright,

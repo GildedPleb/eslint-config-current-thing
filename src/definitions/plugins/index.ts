@@ -31,6 +31,7 @@ import mdx from "./mdx";
 import mocha from "./mocha";
 import nextjs from "./nextjs";
 import noOnlyTest from "./no-only-test";
+import noUseExtendNative from "./no-use-extend-native";
 import node from "./node";
 import perfectionist from "./perfectionist";
 import playwright from "./playwright";
@@ -141,6 +142,7 @@ const plugins = [
   checkFile,
   ava,
   functionalComponents,
+  noUseExtendNative,
 ];
 
 type ExtractNamespace<T> =

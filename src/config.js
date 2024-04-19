@@ -77,6 +77,7 @@ import mocha from "eslint-plugin-mocha";
 import nNode from "eslint-plugin-n";
 import noOnlyTest from "eslint-plugin-no-only-tests";
 import unsanitized from "eslint-plugin-no-unsanitized";
+import noUseExtendNative from "eslint-plugin-no-use-extend-native";
 import node from "eslint-plugin-node";
 import perfectionist from "eslint-plugin-perfectionist";
 import playwright from "eslint-plugin-playwright";
@@ -333,6 +334,7 @@ const configGen = ({
         n: nNode,
         "no-only-tests": noOnlyTest,
         "no-unsanitized": unsanitized,
+        "no-use-extend-native": noUseExtendNative,
         node,
         perfectionist,
         playwright,
@@ -884,6 +886,28 @@ const configGen = ({
             files: testFiles,
             rules: {
               ...ava.configs.recommended.rules,
+
+              ...("eslint-plugin-ava" in override
+                ? override["eslint-plugin-ava"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      No Use Extend Native
+      546,148 monthly downloads
+      ESLint rules for AVA
+      https://github.com/avajs/eslint-plugin-ava#readme
+      Requires: no-use-extend-native
+    */
+    ...(disable.includes("eslint-plugin-ava") || threshold > 546_148
+      ? []
+      : [
+          {
+            files,
+            rules: {
+              ...noUseExtendNative.configs.recommended.rules,
 
               ...("eslint-plugin-ava" in override
                 ? override["eslint-plugin-ava"]

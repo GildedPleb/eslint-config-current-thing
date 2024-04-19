@@ -287,6 +287,10 @@ const configList = [
       "./src/conflicts/configs/react-prefer-function-component-config.js",
     name: "react-prefer-function-component",
   },
+  {
+    location: "./src/conflicts/configs/no-use-extend-native-config.js",
+    name: "no-use-extend-native",
+  },
 ];
 
 export default configList;
