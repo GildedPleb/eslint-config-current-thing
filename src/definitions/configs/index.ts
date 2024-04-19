@@ -12,6 +12,7 @@ import airbnbReact from "./airbnb-react";
 import airbnbReactA11y from "./airbnb-react-a11y";
 import airbnbReactHooks from "./airbnb-react-hooks";
 import airbnbTs from "./airbnb-ts";
+import ava from "./ava";
 import chai from "./chai";
 import comments from "./comments";
 import compat from "./compat";
@@ -227,6 +228,7 @@ const configs: Config[] = [
   mdxCode,
   rxjs,
   jasmine,
+  ava,
 ];
 
 export default configs;

@@ -281,6 +281,7 @@ const configList = [
   },
   { location: "./src/conflicts/configs/rxjs-config.js", name: "rxjs" },
   { location: "./src/conflicts/configs/jasmine-config.js", name: "jasmine" },
+  { location: "./src/conflicts/configs/ava-config.js", name: "ava" },
 ];
 
 export default configList;

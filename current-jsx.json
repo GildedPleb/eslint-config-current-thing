@@ -1158,7 +1158,9 @@
     "@shopify/typescript",
     "@stylistic",
     "@typescript-eslint:@typescript-eslint/eslint-plugin@7.7.0",
+    "ava",
     "chai-friendly",
+    "check-file:eslint-plugin-check-file@2.8.0",
     "compat",
     "css-modules",
     "cypress",
@@ -1213,8 +1215,6 @@
     "you-dont-need-lodash-underscore"
   ],
   "rules": {
-    "css-modules/no-unused-class": [2],
-    "css-modules/no-undef-class": [2],
     "@stylistic/object-curly-spacing": [0, "always"],
     "@stylistic/operator-linebreak": [0, "before"],
     "@stylistic/quote-props": [0, "consistent-as-needed"],
@@ -3286,6 +3286,8 @@
     "jsx-a11y/role-supports-aria-props": [2],
     "jsx-a11y/scope": [2],
     "jsx-a11y/tabindex-no-positive": [2],
+    "css-modules/no-unused-class": [2],
+    "css-modules/no-undef-class": [2],
     "i18next/no-literal-string": [2],
     "you-dont-need-lodash-underscore/concat": [2],
     "you-dont-need-lodash-underscore/drop": [2],

@@ -10,6 +10,7 @@ const rejected = new Set([
   // Irrelevant?
   "eslint-plugin-local-rules",
   "eslint-import-resolver-alias",
+  "eslint-import-resolver-custom-alias",
 
   // Vue -- Hopefully to be added one day when its more popular than react!
   "@vue/eslint-config-typescript",
@@ -114,6 +115,9 @@ const rejected = new Set([
   "xo",
   "eslint-plugin-diff",
   "unist-util-visit",
+  "npm-package-json-lint",
+  "ember-template-lint",
+  "eslint-formatter-gitlab",
 
   // Remark / MDX / Unified / Markdown stuff
   "remark-parse",
@@ -182,6 +186,7 @@ const rejected = new Set([
   "remark-lint-no-undefined-references",
   "remark-lint-no-unused-definitions",
   "remark-lint-ordered-list-marker-style",
+  "@mapbox/hast-util-table-cell-style",
 
   // Markdownlint is poorly supported for integration with ESLint
   "markdownlint",

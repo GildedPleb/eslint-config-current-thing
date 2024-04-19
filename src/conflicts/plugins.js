@@ -142,6 +142,10 @@ import * as mdx from "eslint-plugin-mdx";
 import rxjs from "eslint-plugin-rxjs";
 // @ts-ignore yes, we need to ignore every import for this to run
 import jasmine from "eslint-plugin-jasmine";
+// @ts-ignore yes, we need to ignore every import for this to run
+import checkFile from "eslint-plugin-check-file";
+// @ts-ignore yes, we need to ignore every import for this to run
+import ava from "eslint-plugin-ava";
 
 // @ts-ignore yes, we need to ignore every import for this to run
 import tseslint from "typescript-eslint";
@@ -191,7 +195,9 @@ const plugins = {
   },
   "@stylistic": stylistic,
   "@typescript-eslint": tseslint.plugin,
+  ava,
   "chai-friendly": chaiFriendly,
+  "check-file": checkFile,
   compat,
   "css-modules": cssModules,
   cypress,

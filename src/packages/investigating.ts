@@ -112,6 +112,7 @@ const investigating = new Set([
   "@html-eslint",
   "markdown-eslint-parser",
   "eslint-plugin-md",
+  "eslint-plugin-package-json",
 ]);
 
 export default investigating;

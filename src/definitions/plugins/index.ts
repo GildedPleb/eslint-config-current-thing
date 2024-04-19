@@ -1,7 +1,9 @@
 // PathMark: ./src/definitions/plugins/index.ts
 
+import ava from "./ava";
 import babel from "./babel";
 import chai from "./chai";
+import checkFile from "./check-file";
 import comments from "./comments";
 import compat from "./compat";
 import cssModules from "./css-modules";
@@ -135,6 +137,8 @@ const plugins = [
   mdx,
   rxjs,
   jasmine,
+  checkFile,
+  ava,
 ];
 
 type ExtractNamespace<T> =
