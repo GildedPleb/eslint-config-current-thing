@@ -146,6 +146,8 @@ import jasmine from "eslint-plugin-jasmine";
 import checkFile from "eslint-plugin-check-file";
 // @ts-ignore yes, we need to ignore every import for this to run
 import ava from "eslint-plugin-ava";
+// @ts-ignore yes, we need to ignore every import for this to run
+import preferFC from "eslint-plugin-react-prefer-function-component";
 
 // @ts-ignore yes, we need to ignore every import for this to run
 import tseslint from "typescript-eslint";
@@ -234,6 +236,7 @@ const plugins = {
   "react-hooks": reactHooks,
   "react-native": reactNativeIndie,
   "react-perf": reactPerf,
+  "react-prefer-function-component": preferFC,
   "react-refresh": reactRefresh,
   regexp,
   rxjs,

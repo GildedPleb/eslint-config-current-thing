@@ -12,6 +12,7 @@ import emotion from "./emotion";
 import es from "./es";
 import flowtype from "./flowtype";
 import functional from "./functional";
+import functionalComponents from "./functional-components";
 import graphql from "./graphql";
 import header from "./header";
 import html from "./html";
@@ -139,6 +140,7 @@ const plugins = [
   jasmine,
   checkFile,
   ava,
+  functionalComponents,
 ];
 
 type ExtractNamespace<T> =

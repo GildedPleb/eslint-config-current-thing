@@ -1239,6 +1239,7 @@
     "react-hooks",
     "react-native",
     "react-perf",
+    "react-prefer-function-component",
     "react-refresh",
     "regexp:eslint-plugin-regexp@2.5.0",
     "rxjs",

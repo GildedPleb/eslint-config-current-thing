@@ -87,6 +87,7 @@ import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactNativeIndie from "eslint-plugin-react-native";
 import reactPerf from "eslint-plugin-react-perf";
+import preferFC from "eslint-plugin-react-prefer-function-component";
 import reactRefresh from "eslint-plugin-react-refresh";
 import regexp from "eslint-plugin-regexp";
 import rxjs from "eslint-plugin-rxjs";
@@ -342,6 +343,7 @@ const configGen = ({
         "react-hooks": reactHooks,
         "react-native": reactNativeIndie,
         "react-perf": reactPerf,
+        "react-prefer-function-component": preferFC,
         "react-refresh": reactRefresh,
         regexp,
         rxjs,
@@ -384,6 +386,29 @@ const configGen = ({
               "prefer-arrow/prefer-arrow-functions": 0,
               ...("eslint-plugin-react-perf" in override
                 ? override["eslint-plugin-react-perf"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      React Prefer Function Component
+      499,663 monthly downloads
+      ESLint plugin that prevents the use of JSX class components
+      https://github.com/tatethurston/eslint-plugin-react-prefer-function-component#readme
+      Requires: react-prefer-function-component
+    */
+    ...(disable.includes("eslint-plugin-react-prefer-function-component") ||
+    threshold > 499_663
+      ? []
+      : [
+          {
+            files: [...jsxFiles, ...tsxFiles],
+            rules: {
+              ...preferFC.configs.recommended.rules,
+
+              ...("eslint-plugin-react-prefer-function-component" in override
+                ? override["eslint-plugin-react-prefer-function-component"]
                 : {}),
             },
           },

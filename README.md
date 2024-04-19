@@ -16,27 +16,26 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 
 <!-- Start Generated List of Configs DO NOT EDIT! -->
 
-|                              |                                          |                     |                       |
-| ---------------------------- | ---------------------------------------- | ------------------- | --------------------- |
-| AirBnb                       | AirBnb Base                              | AirBnb-Typescript   | Ava                   |
-| CSS Modules                  | Chai Friendly                            | Comments            | Compat                |
-| Create React App             | Cypress                                  | ES-X                | ESLint                |
-| Emotion CSS                  | Functional                               | Google              | GraphQL               |
-| Import                       | Internationalization (i18n)              | JSDoc               | JSONC                 |
-| JSX Accessibility (JSX A11y) | Jasmine                                  | Jest                | Jest Dom              |
-| Jest Formatting              | MDX                                      | Markdown            | Microsoft SDL         |
-| Mocha                        | NextJS                                   | No Only Tests       | No Unsanitized        |
-| No Unused Imports            | Node.js                                  | Perfectionist       | Playwright            |
-| Prefer Arrow                 | Prettier                                 | Promises            | React                 |
-| React Hooks                  | React Native (Independent Plugin/Config) | React Native Config | React Native Plugin   |
-| React Performance            | React Refresh                            | Regular Expressions | RxJS                  |
-| Security                     | Shopify                                  | Simple Import Sort  | SonarJS               |
-| Sort Class Members           | Standard                                 | Standard JSX        | Standard React        |
-| Standard TS                  | Storybook                                | Stylistic           | TSDoc                 |
-| Tailwind CSS                 | Testing Library                          | TypeScript          | Typescript Sort Keys  |
-| Unicorn                      | XO                                       | YML                 | You Don't Need Lodash |
-
-|
+|                              |                                          |                     |                     |
+| ---------------------------- | ---------------------------------------- | ------------------- | ------------------- |
+| AirBnb                       | AirBnb Base                              | AirBnb-Typescript   | Ava                 |
+| CSS Modules                  | Chai Friendly                            | Comments            | Compat              |
+| Create React App             | Cypress                                  | ES-X                | ESLint              |
+| Emotion CSS                  | Functional                               | Google              | GraphQL             |
+| Import                       | Internationalization (i18n)              | JSDoc               | JSONC               |
+| JSX Accessibility (JSX A11y) | Jasmine                                  | Jest                | Jest Dom            |
+| Jest Formatting              | MDX                                      | Markdown            | Microsoft SDL       |
+| Mocha                        | NextJS                                   | No Only Tests       | No Unsanitized      |
+| No Unused Imports            | Node.js                                  | Perfectionist       | Playwright          |
+| Prefer Arrow                 | Prettier                                 | Promises            | React               |
+| React Hooks                  | React Native (Independent Plugin/Config) | React Native Config | React Native Plugin |
+| React Performance            | React Prefer Function Component          | React Refresh       | Regular Expressions |
+| RxJS                         | Security                                 | Shopify             | Simple Import Sort  |
+| SonarJS                      | Sort Class Members                       | Standard            | Standard JSX        |
+| Standard React               | Standard TS                              | Storybook           | Stylistic           |
+| TSDoc                        | Tailwind CSS                             | Testing Library     | TypeScript          |
+| Typescript Sort Keys         | Unicorn                                  | XO                  | YML                 |
+| You Don't Need Lodash        |                                          |                     |                     |
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -54,9 +53,9 @@ This is a meta-config of many configs. The basic idea is that Linting is usually
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1259** TSX rules
+- **1260** TSX rules
 - **1235** Testing rules
-- **1206** JSX rules
+- **1207** JSX rules
 - **1098** Typescript rules
 - **1055** Javascript rules
 - **33** JSON rules
@@ -356,45 +355,45 @@ The following section is generated according to spec.
 
 Generated on 4/19/2024, downloads for the previous 28 days.
 
-- 501,022 downloads, [eslint-plugin-react-prefer-function-component](https://www.npmjs.com/package/eslint-plugin-react-prefer-function-component)
 - 481,457 downloads, [eslint-plugin-no-use-extend-native](https://www.npmjs.com/package/eslint-plugin-no-use-extend-native)
 - 442,562 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin)
 - 435,156 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit)
 - 413,895 downloads, [eslint-plugin-local](https://www.npmjs.com/package/eslint-plugin-local)
 - 407,092 downloads, [eslint-config-xo-space](https://www.npmjs.com/package/eslint-config-xo-space)
 - 397,863 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
-- 393,575 downloads, [markdown-toc](https://www.npmjs.com/package/markdown-toc) - Not Yet Eligible
 - 378,422 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
 - 364,594 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
-- 362,075 downloads, [json-fixer](https://www.npmjs.com/package/json-fixer) - Not Yet Eligible
 - 361,446 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu) - Not Yet Eligible
 - 359,468 downloads, [eslint-plugin-ssr-friendly](https://www.npmjs.com/package/eslint-plugin-ssr-friendly) - Not Yet Eligible
 - 353,215 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
-- 351,248 downloads, [react-native-markdown-display](https://www.npmjs.com/package/react-native-markdown-display) - Not Yet Eligible
 - 345,836 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard) - Not Yet Eligible
 - 339,141 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
 - 338,795 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc) - Not Yet Eligible
-- 332,727 downloads, [markdown-it-attrs](https://www.npmjs.com/package/markdown-it-attrs) - Not Yet Eligible
-- 331,041 downloads, [remark-lint-heading-style](https://www.npmjs.com/package/remark-lint-heading-style) - Not Yet Eligible
-- 330,548 downloads, [remark-lint-code-block-style](https://www.npmjs.com/package/remark-lint-code-block-style) - Not Yet Eligible
-- 330,247 downloads, [remark-lint-blockquote-indentation](https://www.npmjs.com/package/remark-lint-blockquote-indentation) - Not Yet Eligible
-- 329,263 downloads, [remark-lint-rule-style](https://www.npmjs.com/package/remark-lint-rule-style) - Not Yet Eligible
-- 327,679 downloads, [remark-lint-table-cell-padding](https://www.npmjs.com/package/remark-lint-table-cell-padding) - Not Yet Eligible
 - 319,617 downloads, [eslint-plugin-testcafe](https://www.npmjs.com/package/eslint-plugin-testcafe) - Not Yet Eligible
-- 316,493 downloads, [remark-lint-strong-marker](https://www.npmjs.com/package/remark-lint-strong-marker) - Not Yet Eligible
-- 315,007 downloads, [remark-lint-fenced-code-marker](https://www.npmjs.com/package/remark-lint-fenced-code-marker) - Not Yet Eligible
 - 312,929 downloads, [@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config) - Not Yet Eligible
 - 310,598 downloads, [remark-lint-link-title-style](https://www.npmjs.com/package/remark-lint-link-title-style) - Not Yet Eligible
 - 306,080 downloads, [remark-lint-list-item-content-indent](https://www.npmjs.com/package/remark-lint-list-item-content-indent) - Not Yet Eligible
 - 303,912 downloads, [eslint-plugin-deprecate](https://www.npmjs.com/package/eslint-plugin-deprecate) - Not Yet Eligible
 - 301,722 downloads, [remark-lint-emphasis-marker](https://www.npmjs.com/package/remark-lint-emphasis-marker) - Not Yet Eligible
-- 290,141 downloads, [eslint-plugin-array-func](https://www.npmjs.com/package/eslint-plugin-array-func) - Not Yet Eligible
 - 283,147 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
+- 280,719 downloads, [eslint-plugin-array-func](https://www.npmjs.com/package/eslint-plugin-array-func) - Not Yet Eligible
 - 279,006 downloads, [eslint-plugin-import-newlines](https://www.npmjs.com/package/eslint-plugin-import-newlines) - Not Yet Eligible
 - 278,423 downloads, [@rushstack/eslint-config](https://www.npmjs.com/package/@rushstack/eslint-config) - Not Yet Eligible
 - 276,757 downloads, [eslint-plugin-no-secrets](https://www.npmjs.com/package/eslint-plugin-no-secrets) - Not Yet Eligible
 - 272,731 downloads, [@salesforce/eslint-plugin-lightning](https://www.npmjs.com/package/@salesforce/eslint-plugin-lightning) - Not Yet Eligible
 - 268,407 downloads, [unist-util-find](https://www.npmjs.com/package/unist-util-find) - Not Yet Eligible
 - 263,605 downloads, [gatsby-transformer-remark](https://www.npmjs.com/package/gatsby-transformer-remark) - Not Yet Eligible
+- 263,542 downloads, [remark-lint-unordered-list-marker-style](https://www.npmjs.com/package/remark-lint-unordered-list-marker-style) - Not Yet Eligible
+- 263,143 downloads, [eslint-plugin-minecraft-linting](https://www.npmjs.com/package/eslint-plugin-minecraft-linting) - Not Yet Eligible
+- 259,334 downloads, [@mdx-js/esbuild](https://www.npmjs.com/package/@mdx-js/esbuild) - Not Yet Eligible
+- 258,887 downloads, [remark-lint-final-definition](https://www.npmjs.com/package/remark-lint-final-definition) - Not Yet Eligible
+- 255,335 downloads, [remark-lint-ordered-list-marker-value](https://www.npmjs.com/package/remark-lint-ordered-list-marker-value) - Not Yet Eligible
+- 250,835 downloads, [eslint-plugin-astro](https://www.npmjs.com/package/eslint-plugin-astro) - Not Yet Eligible
+- 249,390 downloads, [remark-lint-maximum-line-length](https://www.npmjs.com/package/remark-lint-maximum-line-length) - Not Yet Eligible
+- 248,131 downloads, [@theguild/remark-npm2yarn](https://www.npmjs.com/package/@theguild/remark-npm2yarn) - Not Yet Eligible
+- 246,867 downloads, [oxlint](https://www.npmjs.com/package/oxlint) - Not Yet Eligible
+- 243,821 downloads, [eslint-plugin-regex](https://www.npmjs.com/package/eslint-plugin-regex) - Not Yet Eligible
+- 243,589 downloads, [remark-lint-checkbox-character-style](https://www.npmjs.com/package/remark-lint-checkbox-character-style) - Not Yet Eligible
+- 243,436 downloads, [@sap/eslint-plugin-cds](https://www.npmjs.com/package/@sap/eslint-plugin-cds) - Not Yet Eligible
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

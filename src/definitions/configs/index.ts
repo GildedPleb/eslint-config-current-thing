@@ -25,6 +25,7 @@ import emotion from "./emotion";
 import es from "./es";
 import eslint from "./eslint";
 import functional from "./functional";
+import functionalComponents from "./functional-components";
 import functionalStylistic from "./functional-stylistic";
 import functionalTs from "./functional-ts";
 import google from "./google";
@@ -229,6 +230,7 @@ const configs: Config[] = [
   rxjs,
   jasmine,
   ava,
+  functionalComponents,
 ];
 
 export default configs;

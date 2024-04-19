@@ -1202,6 +1202,7 @@
     "react-hooks",
     "react-native",
     "react-perf",
+    "react-prefer-function-component",
     "react-refresh",
     "regexp:eslint-plugin-regexp@2.5.0",
     "rxjs",
@@ -1220,6 +1221,7 @@
     "you-dont-need-lodash-underscore"
   ],
   "rules": {
+    "react-prefer-function-component/react-prefer-function-component": [2],
     "@stylistic/object-curly-spacing": [2, "always"],
     "@stylistic/operator-linebreak": [0, "before"],
     "@stylistic/quote-props": [0, "consistent-as-needed"],
