@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/prettier-md-config.js
+// PathMark: ./src/conflicts/configs/prettier-plugin-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable import/extensions */
@@ -192,21 +192,22 @@ const configGen = ({
     },
 
     /*
-      Prettier - MD
+      Prettier - Plugin
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
       Requires: prettier
     */
-    ...(disable.includes("eslint-plugin-prettier-md") || threshold > 1_000_000
+    ...(disable.includes("eslint-plugin-prettier-plugin") ||
+    threshold > 1_000_000
       ? []
       : [
           {
-            files: mdFiles,
+            files,
             rules: {
               "prettier/prettier": 2,
-              ...("eslint-plugin-prettier/md" in override
-                ? override["eslint-plugin-prettier/md"]
+              ...("eslint-plugin-prettier/plugin" in override
+                ? override["eslint-plugin-prettier/plugin"]
                 : {}),
             },
           },

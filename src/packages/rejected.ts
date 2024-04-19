@@ -42,6 +42,7 @@ const rejected = new Set([
   "eslint-plugin-svelte",
   "eslint-plugin-svelte3",
   "svelte-eslint-parser",
+  "prettier-plugin-svelte",
 
   // Ember -- Hopefully to be added one day when its more popular than react!
   "eslint-plugin-ember",
@@ -58,6 +59,7 @@ const rejected = new Set([
   "tslint-config-prettier",
   "tslint-to-eslint-config",
   "tslint-etc",
+  "prettier-plugin-solidity",
 
   // Plugin for linting plugins
   "eslint-plugin-eslint-plugin",
@@ -291,6 +293,7 @@ const rejected = new Set([
   "stylelint-scss",
   "stylelint-webpack-plugin",
   "stylelint",
+  "stylelint-prettier",
 
   // Commitlint
   "@commitlint/cli",

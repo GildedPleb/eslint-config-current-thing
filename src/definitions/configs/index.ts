@@ -57,6 +57,7 @@ import preferArrow from "./prefer-arrow";
 import prettier from "./prettier";
 import prettierJson from "./prettier-json";
 import prettierMd from "./prettier-md";
+import prettierPlugin from "./prettier-plugin";
 import prettierYml from "./prettier-yml";
 import promises from "./promises";
 import react from "./react";
@@ -235,6 +236,7 @@ const configs: Config[] = [
   xo,
   yml,
   youDontNeedLodash,
+  prettierPlugin,
 ];
 
 export default configs;

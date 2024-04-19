@@ -1,15 +1,15 @@
-// PathMark: ./src/definitions/configs/prettier-md.ts
+// PathMark: ./src/definitions/configs/prettier.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
   definitions: `{
-    files: mdFiles,
+    files,
     ${RULES}
   }`,
   id: "prettier",
   name: "Prettier",
-  nameSecondary: "MD",
+  nameSecondary: "Plugin",
   packages: [
     {
       declaredAs: "prettier",

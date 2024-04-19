@@ -187,6 +187,7 @@ const searchTerms: string[] = [
     "markdown%20lint",
     "remark%20lint",
     "remark-lint",
+    "prettier%20plugin",
   ]),
 ];
 

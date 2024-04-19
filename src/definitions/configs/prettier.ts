@@ -11,11 +11,6 @@ export default {
   name: "Prettier",
   packages: [
     {
-      declaredAs: "prettier",
-      package: "eslint-plugin-prettier",
-      requiresImport: false,
-    },
-    {
       declaredAs: "prettierConfig",
       package: "eslint-config-prettier",
       requiresImport: true,

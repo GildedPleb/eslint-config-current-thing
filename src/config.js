@@ -1231,6 +1231,7 @@ const configGen = ({
               "@typescript-eslint/brace-style": 0,
               "@typescript-eslint/comma-dangle": 0,
               "@typescript-eslint/member-delimiter-style": 0,
+              "@typescript-eslint/no-extra-parens": 0,
               "@typescript-eslint/object-curly-spacing": 0,
               "@typescript-eslint/semi": 0,
               "@typescript-eslint/space-before-function-paren": 0,
@@ -3472,6 +3473,123 @@ const configGen = ({
         ]),
 
     /*
+      Prettier - JSON
+      52,870,565 monthly downloads
+      Runs prettier as an eslint rule
+      https://github.com/prettier/eslint-plugin-prettier#readme
+      Requires: prettier
+    */
+    ...(disable.includes("eslint-plugin-prettier/json") ||
+    threshold > 52_870_565
+      ? []
+      : [
+          {
+            files: jsonFiles,
+            rules: {
+              "prettier/prettier": 2,
+
+              ...("eslint-plugin-prettier/json" in override
+                ? override["eslint-plugin-prettier/json"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Prettier - MD
+      52,870,565 monthly downloads
+      Runs prettier as an eslint rule
+      https://github.com/prettier/eslint-plugin-prettier#readme
+      Requires: prettier
+    */
+    ...(disable.includes("eslint-plugin-prettier/md") || threshold > 52_870_565
+      ? []
+      : [
+          {
+            files: mdFiles,
+            rules: {
+              "prettier/prettier": 2,
+
+              ...("eslint-plugin-prettier/md" in override
+                ? override["eslint-plugin-prettier/md"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Prettier - YML
+      52,870,565 monthly downloads
+      Runs prettier as an eslint rule
+      https://github.com/prettier/eslint-plugin-prettier#readme
+      Requires: prettier
+    */
+    ...(disable.includes("eslint-plugin-prettier/yml") || threshold > 52_870_565
+      ? []
+      : [
+          {
+            files: ymlFiles,
+            rules: {
+              "prettier/prettier": 2,
+              "yml/flow-mapping-curly-spacing": 0,
+              ...("eslint-plugin-prettier/yml" in override
+                ? override["eslint-plugin-prettier/yml"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Prettier - Plugin
+      52,870,565 monthly downloads
+      Runs prettier as an eslint rule
+      https://github.com/prettier/eslint-plugin-prettier#readme
+      Requires: prettier
+    */
+    ...(disable.includes("eslint-plugin-prettier/plugin") ||
+    threshold > 52_870_565
+      ? []
+      : [
+          {
+            files,
+            rules: {
+              "@stylistic/arrow-parens": 0,
+              "@stylistic/brace-style": 0,
+              "@stylistic/indent": 0,
+              "@stylistic/indent-binary-ops": 0,
+              "@stylistic/jsx-one-expression-per-line": 0,
+              "@stylistic/member-delimiter-style": 0,
+              "@stylistic/operator-linebreak": 0,
+              "@stylistic/quote-props": 0,
+              "@stylistic/quotes": 0,
+              "@stylistic/semi": 0,
+              "@typescript-eslint/comma-dangle": 0,
+              "@typescript-eslint/indent": 0,
+              "@typescript-eslint/member-delimiter-style": 0,
+              "@typescript-eslint/no-extra-parens": 0,
+              "@typescript-eslint/object-curly-spacing": 0,
+              "@typescript-eslint/quotes": 0,
+              "@typescript-eslint/semi": 0,
+              "@typescript-eslint/space-before-function-paren": 0,
+              "comma-dangle": 0,
+              indent: 0,
+              "jsx-quotes": 0,
+              "object-curly-spacing": 0,
+              "operator-linebreak": 0,
+              "prettier/prettier": 2,
+              quotes: 0,
+              semi: 0,
+              "space-before-function-paren": 0,
+              "unicorn/no-nested-ternary": 0,
+
+              ...("eslint-plugin-prettier/plugin" in override
+                ? override["eslint-plugin-prettier/plugin"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
       React Hooks
       56,872,853 monthly downloads
       ESLint rules for React Hooks
@@ -3536,6 +3654,39 @@ const configGen = ({
                 pragma: "React",
                 version: "detect",
               },
+            },
+          },
+        ]),
+
+    /*
+      Prettier
+      78,170,489 monthly downloads
+      Turns off all rules that are unnecessary or might conflict with Prettier.
+      https://github.com/prettier/eslint-config-prettier#readme
+      Requires: prettier, @typescript-eslint, @babel, unicorn, flowtype, react
+    */
+    ...(disable.includes("eslint-config-prettier") || threshold > 78_170_489
+      ? []
+      : [
+          {
+            files,
+            rules: {
+              "@stylistic/arrow-parens": 0,
+              "@stylistic/brace-style": 0,
+              "@stylistic/indent": 0,
+              "@stylistic/indent-binary-ops": 0,
+              "@stylistic/jsx-one-expression-per-line": 0,
+              "@stylistic/member-delimiter-style": 0,
+              "@stylistic/operator-linebreak": 0,
+              "@stylistic/quote-props": 0,
+              "@stylistic/quotes": 0,
+              "@stylistic/semi": 0,
+              ...prettierConfig.rules,
+              "@next/next/no-html-link-for-pages": 0,
+              "prettier/prettier": 2,
+              ...("eslint-config-prettier" in override
+                ? override["eslint-config-prettier"]
+                : {}),
             },
           },
         ]),
@@ -3688,125 +3839,6 @@ const configGen = ({
                 },
                 typescript: { alwaysTryTypes: true },
               },
-            },
-          },
-        ]),
-
-    /*
-      Prettier
-      131,041,054 monthly downloads
-      Runs prettier as an eslint rule / Turns off all rules that are unnecessary or might conflict with Prettier.
-      https://github.com/prettier/eslint-plugin-prettier#readme / https://github.com/prettier/eslint-config-prettier#readme
-      Requires: prettier, @typescript-eslint, @babel, unicorn, flowtype, react
-    */
-    ...(disable.includes("eslint-plugin-prettier") ||
-    disable.includes("eslint-config-prettier") ||
-    threshold > 131_041_054
-      ? []
-      : [
-          {
-            files,
-            rules: {
-              "@stylistic/arrow-parens": 0,
-              "@stylistic/brace-style": 0,
-              "@stylistic/indent": 0,
-              "@stylistic/indent-binary-ops": 0,
-              "@stylistic/jsx-one-expression-per-line": 0,
-              "@stylistic/member-delimiter-style": 0,
-              "@stylistic/operator-linebreak": 0,
-              "@stylistic/quote-props": 0,
-              "@stylistic/quotes": 0,
-              "@stylistic/semi": 0,
-              ...prettierConfig.rules,
-              "@next/next/no-html-link-for-pages": 0,
-              "prettier/prettier": 2,
-              ...("eslint-plugin-prettier" in override
-                ? override["eslint-plugin-prettier"]
-                : {}),
-              ...("eslint-config-prettier" in override
-                ? override["eslint-config-prettier"]
-                : {}),
-            },
-          },
-        ]),
-
-    /*
-      Prettier - JSON
-      131,041,054 monthly downloads
-      Runs prettier as an eslint rule / Turns off all rules that are unnecessary or might conflict with Prettier.
-      https://github.com/prettier/eslint-plugin-prettier#readme / https://github.com/prettier/eslint-config-prettier#readme
-      Requires: prettier
-    */
-    ...(disable.includes("eslint-plugin-prettier/json") ||
-    disable.includes("eslint-config-prettier/json") ||
-    threshold > 131_041_054
-      ? []
-      : [
-          {
-            files: jsonFiles,
-            rules: {
-              "prettier/prettier": 2,
-
-              ...("eslint-plugin-prettier/json" in override
-                ? override["eslint-plugin-prettier/json"]
-                : {}),
-              ...("eslint-config-prettier/json" in override
-                ? override["eslint-config-prettier/json"]
-                : {}),
-            },
-          },
-        ]),
-
-    /*
-      Prettier - MD
-      131,041,054 monthly downloads
-      Runs prettier as an eslint rule / Turns off all rules that are unnecessary or might conflict with Prettier.
-      https://github.com/prettier/eslint-plugin-prettier#readme / https://github.com/prettier/eslint-config-prettier#readme
-      Requires: prettier
-    */
-    ...(disable.includes("eslint-plugin-prettier/md") ||
-    disable.includes("eslint-config-prettier/md") ||
-    threshold > 131_041_054
-      ? []
-      : [
-          {
-            files: mdFiles,
-            rules: {
-              "prettier/prettier": 2,
-
-              ...("eslint-plugin-prettier/md" in override
-                ? override["eslint-plugin-prettier/md"]
-                : {}),
-              ...("eslint-config-prettier/md" in override
-                ? override["eslint-config-prettier/md"]
-                : {}),
-            },
-          },
-        ]),
-
-    /*
-      Prettier - YML
-      131,041,054 monthly downloads
-      Runs prettier as an eslint rule / Turns off all rules that are unnecessary or might conflict with Prettier.
-      https://github.com/prettier/eslint-plugin-prettier#readme / https://github.com/prettier/eslint-config-prettier#readme
-      Requires: prettier
-    */
-    ...(disable.includes("eslint-plugin-prettier/yml") ||
-    disable.includes("eslint-config-prettier/yml") ||
-    threshold > 131_041_054
-      ? []
-      : [
-          {
-            files: ymlFiles,
-            rules: {
-              "prettier/prettier": 2,
-              "yml/flow-mapping-curly-spacing": 0,
-              ...("eslint-plugin-prettier/yml" in override
-                ? override["eslint-plugin-prettier/yml"]
-                : {}),
-              ...("eslint-config-prettier/yml" in override
-                ? override["eslint-config-prettier/yml"]
-                : {}),
             },
           },
         ]),

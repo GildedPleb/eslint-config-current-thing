@@ -208,9 +208,7 @@ const configGen = ({
       www.nope.com
       Requires: prettier, @typescript-eslint, @babel, unicorn, flowtype, react
     */
-    ...(disable.includes("eslint-plugin-prettier") ||
-    disable.includes("eslint-config-prettier") ||
-    threshold > 1_000_000
+    ...(disable.includes("eslint-config-prettier") || threshold > 1_000_000
       ? []
       : [
           {
@@ -218,9 +216,6 @@ const configGen = ({
             rules: {
               ...prettierConfig.rules,
               "prettier/prettier": 2,
-              ...("eslint-plugin-prettier" in override
-                ? override["eslint-plugin-prettier"]
-                : {}),
               ...("eslint-config-prettier" in override
                 ? override["eslint-config-prettier"]
                 : {}),

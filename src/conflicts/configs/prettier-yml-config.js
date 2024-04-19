@@ -198,9 +198,7 @@ const configGen = ({
       www.nope.com
       Requires: prettier
     */
-    ...(disable.includes("eslint-plugin-prettier-yml") ||
-    disable.includes("eslint-config-prettier-yml") ||
-    threshold > 1_000_000
+    ...(disable.includes("eslint-plugin-prettier-yml") || threshold > 1_000_000
       ? []
       : [
           {
@@ -209,9 +207,6 @@ const configGen = ({
               "prettier/prettier": 2,
               ...("eslint-plugin-prettier/yml" in override
                 ? override["eslint-plugin-prettier/yml"]
-                : {}),
-              ...("eslint-config-prettier/yml" in override
-                ? override["eslint-config-prettier/yml"]
                 : {}),
             },
           },
