@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-current-thing",
-  "version": "7.1.0",
+  "version": "7.2.0",
   "description": "Lint The Current Thing",
   "keywords": [
     "eslint",
