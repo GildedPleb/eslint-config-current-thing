@@ -1218,7 +1218,6 @@
     "you-dont-need-lodash-underscore"
   ],
   "rules": {
-    "react-prefer-function-component/react-prefer-function-component": [2],
     "@stylistic/object-curly-spacing": [0, "always"],
     "@stylistic/operator-linebreak": [0, "before"],
     "@stylistic/quote-props": [0, "consistent-as-needed"],
@@ -3287,10 +3286,27 @@
     "jsx-a11y/role-supports-aria-props": [2],
     "jsx-a11y/scope": [2],
     "jsx-a11y/tabindex-no-positive": [2],
+    "react-prefer-function-component/react-prefer-function-component": [2],
     "css-modules/no-unused-class": [2],
     "css-modules/no-undef-class": [2],
     "no-use-extend-native/no-use-extend-native": [2],
-    "i18next/no-literal-string": [2],
+    "functional/immutable-data": [0],
+    "functional/no-let": [
+      0,
+      {
+        "allowInForLoopInit": true
+      }
+    ],
+    "functional/no-loop-statements": [0],
+    "functional/no-mixed-types": [0],
+    "functional/no-this-expressions": [0],
+    "functional/no-try-statements": [0],
+    "functional/prefer-immutable-types": [0],
+    "functional/type-declaration-immutability": [0],
+    "functional/prefer-property-signatures": [2],
+    "functional/prefer-readonly-type": [0],
+    "functional/prefer-tacit": [1],
+    "functional/readonly-type": [2],
     "you-dont-need-lodash-underscore/concat": [2],
     "you-dont-need-lodash-underscore/drop": [2],
     "you-dont-need-lodash-underscore/drop-right": [2],
@@ -3364,23 +3380,7 @@
     "you-dont-need-lodash-underscore/get": [1],
     "you-dont-need-lodash-underscore/union-by": [1],
     "you-dont-need-lodash-underscore/is-array-buffer": [1],
-    "functional/immutable-data": [0],
-    "functional/no-let": [
-      0,
-      {
-        "allowInForLoopInit": true
-      }
-    ],
-    "functional/no-loop-statements": [0],
-    "functional/no-mixed-types": [0],
-    "functional/no-this-expressions": [0],
-    "functional/no-try-statements": [0],
-    "functional/prefer-immutable-types": [0],
-    "functional/type-declaration-immutability": [0],
-    "functional/prefer-property-signatures": [2],
-    "functional/prefer-readonly-type": [0],
-    "functional/prefer-tacit": [1],
-    "functional/readonly-type": [2],
+    "i18next/no-literal-string": [2],
     "unicorn/better-regex": [2],
     "prefer-regex-literals": [
       2,

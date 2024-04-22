@@ -114,6 +114,7 @@ const investigating = new Set([
   "putout",
   "superlint",
   "@vercel/style-guide",
+  "prettier-plugin-css-order",
 ]);
 
 export default investigating;

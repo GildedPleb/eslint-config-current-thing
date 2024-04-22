@@ -189,6 +189,9 @@ const searchTerms: string[] = [
     "remark-lint",
     "prettier%20plugin",
     "plugin%20prettier",
+    "plugin",
+    "config",
+    "prettier",
   ]),
 ];
 
