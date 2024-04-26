@@ -341,6 +341,7 @@ const configGen = ({
         "prefer-arrow": preferArrow,
         prettier,
         "prettier-package-json": prettier,
+        "prettier-tailwind": prettier,
         promise,
         react,
         "react-hooks": reactHooks,
@@ -438,6 +439,7 @@ const configGen = ({
               "@typescript-eslint/object-curly-spacing": 0,
               "@typescript-eslint/semi": 0,
               "prettier/prettier": 0,
+              "prettier-tailwind/prettier": 0,
               ...shopify.configs.core.rules,
 
               ...("@shopify/eslint-plugin/core" in override
@@ -778,6 +780,7 @@ const configGen = ({
               "@stylistic/semi": 0,
               "@typescript-eslint/block-spacing": 0,
               "prettier/prettier": 0,
+              "prettier-tailwind/prettier": 0,
               "unicorn/no-nested-ternary": 0,
               ...shopify.configs.typescript.overrides[0].rules,
 
@@ -1243,6 +1246,7 @@ const configGen = ({
               "object-curly-spacing": 0,
               "operator-linebreak": 0,
               "prettier/prettier": 0,
+              "prettier-tailwind/prettier": 0,
               "quote-props": 0,
               semi: 0,
               "space-before-function-paren": 0,
@@ -1743,6 +1747,7 @@ const configGen = ({
             },
             rules: {
               "prettier/prettier": 0,
+              "prettier-tailwind/prettier": 0,
               ...standardJsx.rules,
               "functional/functional-parameters": 0,
               "functional/no-classes": 0,
@@ -1840,6 +1845,7 @@ const configGen = ({
               "@stylistic/comma-dangle": 0,
               "@stylistic/space-before-function-paren": 0,
               "prettier/prettier": 0,
+              "prettier-tailwind/prettier": 0,
               ...standardTS.rules,
 
               ...("eslint-config-standard-with-typescript" in override
@@ -2189,6 +2195,48 @@ const configGen = ({
         ]),
 
     /*
+      Prettier Plugin Tailwind
+      6,398,921 monthly downloads
+      A Prettier plugin for sorting Tailwind CSS classes.
+      https://github.com/tailwindlabs/prettier-plugin-tailwindcss#readme
+      Requires: prettier-tailwind
+    */
+    ...(disable.includes("prettier-plugin-tailwindcss") || threshold > 6_398_921
+      ? []
+      : [
+          {
+            files: [...jsxFiles, ...tsxFiles],
+            rules: {
+              "@stylistic/arrow-parens": 0,
+              "@stylistic/jsx-one-expression-per-line": 0,
+              "@stylistic/member-delimiter-style": 0,
+              "@stylistic/quotes": 0,
+              "@stylistic/semi": 0,
+              "@typescript-eslint/comma-dangle": 0,
+              "@typescript-eslint/member-delimiter-style": 0,
+              "@typescript-eslint/no-extra-parens": 0,
+              "@typescript-eslint/object-curly-spacing": 0,
+              "@typescript-eslint/quotes": 0,
+              "@typescript-eslint/semi": 0,
+              "@typescript-eslint/space-before-function-paren": 0,
+              "jsx-quotes": 0,
+              "object-curly-spacing": 0,
+              "prettier-tailwind/prettier": [
+                2,
+                { plugins: ["prettier-plugin-tailwindcss"] },
+              ],
+              quotes: 0,
+              "react/jsx-one-expression-per-line": 0,
+              "unicorn/no-nested-ternary": 0,
+
+              ...("prettier-plugin-tailwindcss" in override
+                ? override["prettier-plugin-tailwindcss"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
       React Native Config
       6,575,774 monthly downloads
       ESLint config for React Native / ESLint config for React Native / ESLint Environment for React Native
@@ -2327,6 +2375,7 @@ const configGen = ({
             rules: {
               "@stylistic/semi": 0,
               "prettier/prettier": 0,
+              "prettier-tailwind/prettier": 0,
               ...airbnbTypescript.rules,
               ...airbnbTypescript.overrides[0].rules,
               "react/jsx-filename-extension": [
@@ -2419,6 +2468,7 @@ const configGen = ({
             rules: {
               "@typescript-eslint/no-extra-parens": 0,
               "prettier/prettier": 0,
+              "prettier-tailwind/prettier": 0,
               "regexp/strict": 0,
               ...unicorn.configs.recommended.rules,
               "functional/no-loop-statements": 0,
@@ -2574,6 +2624,7 @@ const configGen = ({
             },
             rules: {
               "prettier/prettier": 0,
+              "prettier-tailwind/prettier": 0,
               ...airbnbReact.rules,
               "functional/functional-parameters": 0,
               "functional/no-classes": 0,

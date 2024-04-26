@@ -1,4 +1,5 @@
 // PathMark: ./src/conflicts/code-samples/index.ts
+import cssInJS from "./css-in-js";
 import importsCodeToLint from "./import-export";
 import jsCodeToLint from "./javascript";
 import testCodeToLint from "./js.test";
@@ -60,6 +61,11 @@ const fileList: FileList[] = [
     def: ymlCodeToLint,
     filePath: "./src/conflicts/code-samples/yml.yml",
     short: "yml",
+  },
+  {
+    def: cssInJS,
+    filePath: "./src/conflicts/code-samples/css-in-js.jsx",
+    short: "css-in-js",
   },
 ];
 

@@ -59,6 +59,7 @@ import prettierJson from "./prettier-json";
 import prettierMd from "./prettier-md";
 import prettierPackageJson from "./prettier-package-json";
 import prettierPlugin from "./prettier-plugin";
+import prettierTailwind from "./prettier-tailwind";
 import prettierYml from "./prettier-yml";
 import promises from "./promises";
 import react from "./react";
@@ -239,6 +240,7 @@ const configs: Config[] = [
   youDontNeedLodash,
   prettierPlugin,
   prettierPackageJson,
+  prettierTailwind,
 ];
 
 export default configs;

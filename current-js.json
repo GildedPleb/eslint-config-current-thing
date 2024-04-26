@@ -1175,6 +1175,7 @@
     "prefer-arrow",
     "prettier:eslint-plugin-prettier@5.1.3",
     "prettier-package-json:eslint-plugin-prettier@5.1.3",
+    "prettier-tailwind:eslint-plugin-prettier@5.1.3",
     "promise",
     "react",
     "react-hooks",
@@ -1207,6 +1208,7 @@
     "@typescript-eslint/object-curly-spacing": [0],
     "@typescript-eslint/semi": [0],
     "prettier/prettier": [2],
+    "prettier-tailwind/prettier": [0],
     "accessor-pairs": [
       0,
       {

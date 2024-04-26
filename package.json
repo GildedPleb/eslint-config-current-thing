@@ -173,6 +173,7 @@
     "jsonc-eslint-parser": "^2.4.0",
     "prettier": "^3.2.5",
     "prettier-plugin-packagejson": "^2.5.0",
+    "prettier-plugin-tailwindcss": "^0.5.14",
     "remark-lint": "^10.0.0",
     "remark-preset-lint-recommended": "^7.0.0",
     "typescript-eslint": "^7.7.1",

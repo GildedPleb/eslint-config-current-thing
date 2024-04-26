@@ -22,10 +22,12 @@ const incompatibles: ConflictCache = {
   },
   "airbnb-react": {
     "prettier/prettier": 0,
+    "prettier-tailwind/prettier": 0,
   },
   "airbnb-ts": {
     "@stylistic/semi": 0,
     "prettier/prettier": 0,
+    "prettier-tailwind/prettier": 0,
   },
   google: {
     "@stylistic/arrow-parens": 0,
@@ -90,6 +92,25 @@ const incompatibles: ConflictCache = {
     "space-before-function-paren": 0,
     "unicorn/no-nested-ternary": 0,
   },
+  "prettier-tailwind": {
+    "@stylistic/arrow-parens": 0,
+    "@stylistic/jsx-one-expression-per-line": 0,
+    "@stylistic/member-delimiter-style": 0,
+    "@stylistic/quotes": 0,
+    "@stylistic/semi": 0,
+    "@typescript-eslint/comma-dangle": 0,
+    "@typescript-eslint/member-delimiter-style": 0,
+    "@typescript-eslint/no-extra-parens": 0,
+    "@typescript-eslint/object-curly-spacing": 0,
+    "@typescript-eslint/quotes": 0,
+    "@typescript-eslint/semi": 0,
+    "@typescript-eslint/space-before-function-paren": 0,
+    "jsx-quotes": 0,
+    "object-curly-spacing": 0,
+    quotes: 0,
+    "react/jsx-one-expression-per-line": 0,
+    "unicorn/no-nested-ternary": 0,
+  },
   regexp: {
     "unicorn/better-regex": 0,
   },
@@ -105,6 +126,7 @@ const incompatibles: ConflictCache = {
     "@typescript-eslint/object-curly-spacing": 0,
     "@typescript-eslint/semi": 0,
     "prettier/prettier": 0,
+    "prettier-tailwind/prettier": 0,
   },
   "shopify-esnext": {
     "@stylistic/arrow-parens": 0,
@@ -151,6 +173,7 @@ const incompatibles: ConflictCache = {
     "@stylistic/semi": 0,
     "@typescript-eslint/block-spacing": 0,
     "prettier/prettier": 0,
+    "prettier-tailwind/prettier": 0,
     "unicorn/no-nested-ternary": 0,
   },
   "sort-class": {
@@ -167,11 +190,13 @@ const incompatibles: ConflictCache = {
   },
   "standard-jsx": {
     "prettier/prettier": 0,
+    "prettier-tailwind/prettier": 0,
   },
   "standard-ts": {
     "@stylistic/comma-dangle": 0,
     "@stylistic/space-before-function-paren": 0,
     "prettier/prettier": 0,
+    "prettier-tailwind/prettier": 0,
   },
   stylistic: {
     "@babel/object-curly-spacing": 0,
@@ -190,6 +215,7 @@ const incompatibles: ConflictCache = {
     "object-curly-spacing": 0,
     "operator-linebreak": 0,
     "prettier/prettier": 0,
+    "prettier-tailwind/prettier": 0,
     "quote-props": 0,
     semi: 0,
     "space-before-function-paren": 0,
@@ -197,6 +223,7 @@ const incompatibles: ConflictCache = {
   unicorn: {
     "@typescript-eslint/no-extra-parens": 0,
     "prettier/prettier": 0,
+    "prettier-tailwind/prettier": 0,
     "regexp/strict": 0,
   },
   xo: {

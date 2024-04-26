@@ -1,6 +1,8 @@
 // PathMark: ./src/definitions/plugins/prettier.ts
 import type { Plugin } from ".";
 
+const epp = "eslint-plugin-prettier";
+
 export default {
   name: "Prettier",
   packages: [
@@ -8,16 +10,23 @@ export default {
       declaredAs: "prettier",
       mappedAs: "prettier",
       namespace: "prettier",
-      package: "eslint-plugin-prettier",
+      package: epp,
       requiresImport: true,
     },
     {
       declaredAs: "prettier",
       mappedAs: "prettier",
       namespace: "prettier-package-json",
-      package: "eslint-plugin-prettier",
+      package: epp,
+      requiresImport: false,
+    },
+    {
+      declaredAs: "prettier",
+      mappedAs: "prettier",
+      namespace: "prettier-tailwind",
+      package: epp,
       requiresImport: false,
     },
   ],
-} satisfies Plugin<"prettier" | "prettier-package-json">;
+} satisfies Plugin<"prettier" | "prettier-package-json" | "prettier-tailwind">;
 // EOF

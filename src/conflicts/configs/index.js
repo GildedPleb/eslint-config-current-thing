@@ -303,6 +303,10 @@ const configList = [
     location: "./src/conflicts/configs/prettier-package-json-config.js",
     name: "prettier-package-json",
   },
+  {
+    location: "./src/conflicts/configs/prettier-tailwind-config.js",
+    name: "prettier-tailwind",
+  },
 ];
 
 export default configList;

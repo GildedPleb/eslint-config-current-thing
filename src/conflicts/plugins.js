@@ -235,6 +235,7 @@ const plugins = {
   "prefer-arrow": preferArrow,
   prettier,
   "prettier-package-json": prettier,
+  "prettier-tailwind": prettier,
   promise,
   react,
   "react-hooks": reactHooks,
