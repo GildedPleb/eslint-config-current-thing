@@ -191,6 +191,7 @@ const rejected = new Set([
   "babel-plugin-react-native-web",
   "babel-plugin-inline-react-svg",
   "babel-plugin-react-require",
+  "find-babel-config",
 
   // Webpack
   "eslint-webpack-plugin",
@@ -206,6 +207,7 @@ const rejected = new Set([
   "css-minimizer-webpack-plugin",
   "pnp-webpack-plugin",
   "compression-webpack-plugin",
+  "node-polyfill-webpack-plugin",
 
   // Various / Out of scope
   "@axe-core/react",
@@ -311,6 +313,7 @@ const rejected = new Set([
   "prettier-bytes",
   "tailwindcss-radix",
   "@azure/app-configuration",
+  "@luminati-io/luminati-proxy",
 
   // Fastify
   "fastify-plugin",
@@ -354,6 +357,7 @@ const rejected = new Set([
   "rollup-plugin-visualizer",
   "@rollup/plugin-typescript",
   "rollup-plugin-dts",
+  "@rollup/plugin-commonjs",
 
   // Smithy
   "@smithy/node-config-provider",
@@ -379,6 +383,7 @@ const rejected = new Set([
   "postcss-minify-params",
   "postcss-preset-env",
   "postcss-pxtorem",
+  "cssnano",
 
   // aws
   "@aws-sdk/credential-provider-ini",
