@@ -372,8 +372,8 @@ Generated on 4/26/2024, downloads for the previous 28 days.
 
 - 6,244,464 downloads, [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss)
 - 3,248,400 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
+- 2,421,428 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
 - 2,408,715 downloads, [prettier-plugin-organize-imports](https://www.npmjs.com/package/prettier-plugin-organize-imports)
-- 2,361,264 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
 - 2,300,505 downloads, [eslint-config-turbo](https://www.npmjs.com/package/eslint-config-turbo)
 - 1,320,141 downloads, [@svgr/plugin-prettier](https://www.npmjs.com/package/@svgr/plugin-prettier)
 - 1,179,691 downloads, [@ianvs/prettier-plugin-sort-imports](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports)
@@ -382,7 +382,7 @@ Generated on 4/26/2024, downloads for the previous 28 days.
 - 774,079 downloads, [toml-eslint-parser](https://www.npmjs.com/package/toml-eslint-parser)
 - 762,757 downloads, [eslint-plugin-formatjs](https://www.npmjs.com/package/eslint-plugin-formatjs)
 - 639,701 downloads, [eslint-plugin-no-relative-import-paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)
-- 547,426 downloads, [@prettier/plugin-ruby](https://www.npmjs.com/package/@prettier/plugin-ruby)
+- 539,649 downloads, [@prettier/plugin-ruby](https://www.npmjs.com/package/@prettier/plugin-ruby)
 - 455,335 downloads, [prettier-plugin-astro](https://www.npmjs.com/package/prettier-plugin-astro)
 - 444,335 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit)
 - 423,198 downloads, [prettier-plugin-sh](https://www.npmjs.com/package/prettier-plugin-sh)
