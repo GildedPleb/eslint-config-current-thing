@@ -1122,7 +1122,7 @@
       "setImmediate": false,
       "browser": true
     },
-    "parser": "typescript-eslint/parser@7.7.0",
+    "parser": "typescript-eslint/parser@7.7.1",
     "parserOptions": {
       "ecmaVersion": "latest",
       "project": true,
@@ -1143,7 +1143,7 @@
     "@shopify/jest",
     "@shopify/typescript",
     "@stylistic",
-    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.7.0",
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.7.1",
     "ava",
     "chai-friendly",
     "check-file:eslint-plugin-check-file@2.8.0",

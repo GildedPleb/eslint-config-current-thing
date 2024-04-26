@@ -368,7 +368,7 @@ See [rejected](./src/packages/rejected.ts) for the full list with notes. But it'
 
 The following section is generated according to spec.
 
-Generated on 4/22/2024, downloads for the previous 28 days.
+Generated on 4/26/2024, downloads for the previous 28 days.
 
 - 6,244,464 downloads, [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss)
 - 3,248,400 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)

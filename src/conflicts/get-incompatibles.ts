@@ -51,6 +51,9 @@ if (skipCache) {
   console.log("\n", chalk.inverse("Skipping the Cache for this run."));
 }
 
+let diffCount = 0;
+let loopCount = 0;
+
 const heap = (warn = 0.75, error = 0.9): string => {
   const heapMax = Math.floor(heapStats.heap_size_limit / 1024 / 1024);
   const currentHeap = Math.floor(process.memoryUsage().heapUsed / 1024 / 1024);
@@ -148,11 +151,13 @@ for (const { def: codeToLint, filePath, short } of fileList) {
   const combinations = [];
   for (let index = 0; index < configsFiltered.length; index++) {
     for (let bIndex = index + 1; bIndex < configsFiltered.length; bIndex++) {
+      loopCount++;
       combinations.push([configsFiltered[index], configsFiltered[bIndex]]);
     }
   }
 
   for (const [config1, config2] of combinations) {
+    loopCount++;
     const { es: es1, hash: hash1, json: json1, name: name1 } = config1;
     const { es: es2, hash: hash2, json: json2, name: name2 } = config2;
     const currentCheck = `${chalk.green(short)}: ${chalk.blue(name1)} ${chalk.blue("-vs-")} ${chalk.blue(name2)}`;
@@ -174,6 +179,7 @@ for (const { def: codeToLint, filePath, short } of fileList) {
       [es1, json1, hash1],
       [es2, json2, hash2],
     );
+    diffCount++;
 
     if (compatible(output1, output2)) {
       console.log(`${currentCheck} ${heap()} - Compatible, No conflicts!`);
@@ -230,6 +236,7 @@ for (const { def: codeToLint, filePath, short } of fileList) {
     let conflictList: ConflictCache = {};
 
     mid: for (const [ruleName, ruleSetting] of rules1List) {
+      loopCount++;
       if (isRuleOff(ruleSetting) || ruleName in rules2) continue mid;
       const jsonOneRule1 = cloneWithRule(hash1, ruleName, ruleSetting);
       const innerKeyHash = hashString(
@@ -253,6 +260,7 @@ for (const { def: codeToLint, filePath, short } of fileList) {
         [es2, hash2],
         [esX, hashX],
       );
+      diffCount++;
 
       if (compatible(output1, output2)) {
         rules1Zeroed[ruleName] = 0;
@@ -277,6 +285,7 @@ for (const { def: codeToLint, filePath, short } of fileList) {
     }
 
     mid: for (const [ruleName, rule1Setting] of rules2List) {
+      loopCount++;
       if (isRuleOff(rule1Setting) || ruleName in rules1) continue mid;
       const jsonOneRule2 = cloneWithRule(hash2, ruleName, rule1Setting);
       const innerKeyHash = hashString(
@@ -300,6 +309,7 @@ for (const { def: codeToLint, filePath, short } of fileList) {
         [es1, hash1],
         [esX, hashX],
       );
+      diffCount++;
       if (compatible(output1, output2)) {
         if (!skipCache) {
           await database.put(`conflicts-${innerKeyHash}`, {});
@@ -351,6 +361,7 @@ for (const { def: codeToLint, filePath, short } of fileList) {
         BatchOperation<Level<string, ConflictCache>, string, ConflictCache>
       > = [];
       inner: for (const [json2Rule, json2Setting] of rules2List) {
+        loopCount++;
         readline.cursorTo(process.stdout, 0);
 
         if (isRuleOff(json2Setting)) continue inner;
@@ -382,7 +393,7 @@ for (const { def: codeToLint, filePath, short } of fileList) {
         rules2Zeroed[json2Rule] = json2Setting;
         const inner = await getLinter(filePath, path2, rules2Zeroed);
         const [output1, output2] = await getDiff(opt, codeToLint, outer, inner);
-
+        diffCount++;
         if (compatible(output1, output2)) {
           rules2Zeroed[json2Rule] = 0;
           if (!skipCache) {
@@ -458,10 +469,16 @@ for (const { def: codeToLint, filePath, short } of fileList) {
   console.log(chalk.red(filePath), { fullConflictList });
   console.timeEnd(`${short} run`);
   console.log(`Current heap: ${heap()} `);
+  console.log("Current diffs:", diffCount);
+  console.log("Current loops:", loopCount);
+  console.log("Optimization Ratio:", diffCount / loopCount);
 }
 
 console.log({ fullConflictList });
 console.timeEnd("Total");
+console.log("Total diffs:", diffCount);
+console.log("Total loops:", loopCount);
+console.log("Final Optimization Ratio:", diffCount / loopCount);
 
 const generateCode = `// PathMark: ./src/conflicts/incompatibilities.ts
 

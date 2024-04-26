@@ -1138,7 +1138,7 @@
       "jest": true,
       "node": true
     },
-    "parser": "typescript-eslint/parser@7.7.0",
+    "parser": "typescript-eslint/parser@7.7.1",
     "parserOptions": {
       "ecmaVersion": "latest",
       "project": true,
@@ -1162,7 +1162,7 @@
     "@shopify/jest",
     "@shopify/typescript",
     "@stylistic",
-    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.7.0",
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.7.1",
     "ava",
     "chai-friendly",
     "check-file:eslint-plugin-check-file@2.8.0",
@@ -1223,6 +1223,7 @@
     "you-dont-need-lodash-underscore"
   ],
   "rules": {
+    "react-prefer-function-component/react-prefer-function-component": [2],
     "@stylistic/object-curly-spacing": [2, "always"],
     "@stylistic/operator-linebreak": [0, "before"],
     "@stylistic/quote-props": [0, "consistent-as-needed"],
@@ -2988,7 +2989,6 @@
     "import/no-unresolved": [2],
     "no-dupe-class-members": [0],
     "import/export": [2],
-    "react-prefer-function-component/react-prefer-function-component": [2],
     "css-modules/no-unused-class": [2],
     "css-modules/no-undef-class": [2],
     "no-use-extend-native/no-use-extend-native": [2],
@@ -3640,7 +3640,6 @@
     "@microsoft/sdl/no-unsafe-alloc": [2],
     "@microsoft/sdl/react-iframe-missing-sandbox": [2],
     "compat/compat": [2],
-    "tsdoc/syntax": [2],
     "tailwindcss/classnames-order": [1],
     "tailwindcss/enforces-negative-arbitrary-values": [1],
     "tailwindcss/enforces-shorthand": [1],
@@ -3649,6 +3648,7 @@
     "tailwindcss/no-custom-classname": [1],
     "tailwindcss/no-contradicting-classname": [2],
     "tailwindcss/no-unnecessary-arbitrary-value": [1],
+    "tsdoc/syntax": [2],
     "react/jsx-curly-newline": [
       0,
       {
