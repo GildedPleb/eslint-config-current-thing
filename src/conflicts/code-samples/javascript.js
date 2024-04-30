@@ -216,6 +216,18 @@ function checkConditionsjhtrcj(
   }
 }
 
+function* permute(array_, m = []) {
+  if (m.length === size) {
+    yield m;
+  } else {
+    for (let index = 0; index < array_.length; index++) {
+      const current = [...array_];
+      const next = current.splice(index, 1);
+      yield* permute(current, m.concat(next));
+    }
+  }
+}
+
 // *************************** //
 // CERTIFIED CONFLICT CODE END //
 // *************************** //

@@ -3215,26 +3215,6 @@
     "@emotion/no-vanilla": [2],
     "@emotion/pkg-renaming": [2],
     "@emotion/styled-import": [2],
-    "perfectionist/sort-classes": [
-      2,
-      {
-        "groups": [
-          "index-signature",
-          "static-property",
-          "private-property",
-          "property",
-          "constructor",
-          "static-method",
-          "private-method",
-          "method",
-          ["get-method", "set-method"],
-          "unknown"
-        ],
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false
-      }
-    ],
     "rxjs/no-async-subscribe": [2],
     "rxjs/no-create": [2],
     "rxjs/no-ignored-notifier": [2],
@@ -3255,6 +3235,26 @@
     "rxjs/no-unbound-methods": [2],
     "rxjs/no-unsafe-subject-next": [2],
     "rxjs/no-unsafe-takeuntil": [2],
+    "perfectionist/sort-classes": [
+      2,
+      {
+        "groups": [
+          "index-signature",
+          "static-property",
+          "private-property",
+          "property",
+          "constructor",
+          "static-method",
+          "private-method",
+          "method",
+          ["get-method", "set-method"],
+          "unknown"
+        ],
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
+    ],
     "simple-import-sort/imports": [2],
     "perfectionist/sort-imports": [
       0,
@@ -4103,12 +4103,12 @@
         "inputComponents": []
       }
     ],
-    "import/no-anonymous-default-export": [1],
     "flowtype/define-flow-type": [1],
     "flowtype/require-valid-file-annotation": [1],
     "flowtype/use-flow-type": [1],
     "import/first": [2],
     "import/no-amd": [2],
+    "import/no-anonymous-default-export": [1],
     "import/no-webpack-loader-syntax": [2],
     "no-useless-computed-key": [1],
     "no-useless-rename": [

@@ -22,6 +22,11 @@ function HiddenMessage({ children }) {
   const [showMessage, setShowMessage] = React.useState(false);
   const title = "Show Message";
   const finalMessage = showMessage ? children : undefined;
+
+  const eventHandler = React.useCallback((event) => {
+    setShowMessage(event.target.checked);
+  }, []);
+
   return (
     <>
       <label htmlFor="toggle">{title}</label>
@@ -29,9 +34,7 @@ function HiddenMessage({ children }) {
       <input
         checked={showMessage}
         id="toggle"
-        onChange={(event) => {
-          setShowMessage(event.target.checked);
-        }}
+        onChange={eventHandler}
         type="checkbox"
       />
       {finalMessage}

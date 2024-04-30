@@ -2,7 +2,7 @@
 
 /*
   This file is fully generated, to edit it change ./get-incompatibilities.ts
-  Generated on 4/26/2024
+  Generated on 4/30/2024
 */
 
 import { type ConflictCache } from "./types";
@@ -26,6 +26,7 @@ const incompatibles: ConflictCache = {
   },
   "airbnb-ts": {
     "@stylistic/semi": 0,
+    "indent-legacy": 0,
     "prettier/prettier": 0,
     "prettier-tailwind/prettier": 0,
   },
@@ -62,6 +63,7 @@ const incompatibles: ConflictCache = {
     "@stylistic/quote-props": 0,
     "@stylistic/quotes": 0,
     "@stylistic/semi": 0,
+    "@stylistic/yield-star-spacing": 0,
   },
   "prettier-plugin": {
     "@stylistic/arrow-parens": 0,
@@ -74,6 +76,7 @@ const incompatibles: ConflictCache = {
     "@stylistic/quote-props": 0,
     "@stylistic/quotes": 0,
     "@stylistic/semi": 0,
+    "@stylistic/yield-star-spacing": 0,
     "@typescript-eslint/comma-dangle": 0,
     "@typescript-eslint/indent": 0,
     "@typescript-eslint/member-delimiter-style": 0,
@@ -83,6 +86,7 @@ const incompatibles: ConflictCache = {
     "@typescript-eslint/semi": 0,
     "@typescript-eslint/space-before-function-paren": 0,
     "comma-dangle": 0,
+    "generator-star-spacing": 0,
     indent: 0,
     "jsx-quotes": 0,
     "object-curly-spacing": 0,
@@ -91,6 +95,7 @@ const incompatibles: ConflictCache = {
     semi: 0,
     "space-before-function-paren": 0,
     "unicorn/no-nested-ternary": 0,
+    "yield-star-spacing": 0,
   },
   "prettier-tailwind": {
     "@stylistic/arrow-parens": 0,
@@ -122,6 +127,7 @@ const incompatibles: ConflictCache = {
     "@stylistic/operator-linebreak": 0,
     "@stylistic/quote-props": 0,
     "@stylistic/semi": 0,
+    "@typescript-eslint/brace-style": 0,
     "@typescript-eslint/comma-dangle": 0,
     "@typescript-eslint/object-curly-spacing": 0,
     "@typescript-eslint/semi": 0,
@@ -146,6 +152,7 @@ const incompatibles: ConflictCache = {
     "@stylistic/quote-props": 0,
     "@stylistic/quotes": 0,
     "@stylistic/semi": 0,
+    "@stylistic/yield-star-spacing": 0,
     "@typescript-eslint/comma-dangle": 0,
     "@typescript-eslint/indent": 0,
     "@typescript-eslint/member-delimiter-style": 0,
@@ -155,6 +162,7 @@ const incompatibles: ConflictCache = {
     "@typescript-eslint/semi": 0,
     "@typescript-eslint/space-before-function-paren": 0,
     "comma-dangle": 0,
+    "generator-star-spacing": 0,
     indent: 0,
     "indent-legacy": 0,
     "jsx-quotes": 0,
@@ -164,6 +172,7 @@ const incompatibles: ConflictCache = {
     semi: 0,
     "space-before-function-paren": 0,
     "unicorn/no-nested-ternary": 0,
+    "yield-star-spacing": 0,
   },
   "shopify-ts": {
     "@stylistic/block-spacing": 0,
