@@ -1864,6 +1864,7 @@
         "avoidEscape": false
       }
     ],
+    "@stylistic/yield-star-spacing": [0, "both"],
     "@typescript-eslint/indent": [
       0,
       2,
@@ -1945,7 +1946,9 @@
         "asyncArrow": "always"
       }
     ],
+    "generator-star-spacing": [0],
     "unicorn/no-nested-ternary": [0],
+    "yield-star-spacing": [0],
     "@babel/semi": [0],
     "@babel/object-curly-spacing": [0],
     "prefer-arrow-callback": [0],
@@ -2466,26 +2469,6 @@
     "regexp/sort-flags": [2],
     "regexp/strict": [0],
     "regexp/use-ignore-case": [2],
-    "rxjs/no-async-subscribe": [2],
-    "rxjs/no-create": [2],
-    "rxjs/no-ignored-notifier": [2],
-    "rxjs/no-ignored-replay-buffer": [2],
-    "rxjs/no-ignored-takewhile-value": [2],
-    "rxjs/no-implicit-any-catch": [2],
-    "rxjs/no-index": [2],
-    "rxjs/no-internal": [2],
-    "rxjs/no-nested-subscribe": [2],
-    "rxjs/no-redundant-notify": [2],
-    "rxjs/no-sharereplay": [
-      2,
-      {
-        "allowConfig": true
-      }
-    ],
-    "rxjs/no-subject-unsubscribe": [2],
-    "rxjs/no-unbound-methods": [2],
-    "rxjs/no-unsafe-subject-next": [2],
-    "rxjs/no-unsafe-takeuntil": [2],
     "perfectionist/sort-classes": [
       2,
       {
@@ -2506,6 +2489,26 @@
         "ignore-case": false
       }
     ],
+    "rxjs/no-async-subscribe": [2],
+    "rxjs/no-create": [2],
+    "rxjs/no-ignored-notifier": [2],
+    "rxjs/no-ignored-replay-buffer": [2],
+    "rxjs/no-ignored-takewhile-value": [2],
+    "rxjs/no-implicit-any-catch": [2],
+    "rxjs/no-index": [2],
+    "rxjs/no-internal": [2],
+    "rxjs/no-nested-subscribe": [2],
+    "rxjs/no-redundant-notify": [2],
+    "rxjs/no-sharereplay": [
+      2,
+      {
+        "allowConfig": true
+      }
+    ],
+    "rxjs/no-subject-unsubscribe": [2],
+    "rxjs/no-unbound-methods": [2],
+    "rxjs/no-unsafe-subject-next": [2],
+    "rxjs/no-unsafe-takeuntil": [2],
     "simple-import-sort/imports": [2],
     "perfectionist/sort-imports": [
       0,
@@ -2808,7 +2811,6 @@
         "functionPrototypeMethods": true
       }
     ],
-    "@stylistic/yield-star-spacing": [2, "both"],
     "@stylistic/jsx-closing-bracket-location": [2],
     "@stylistic/jsx-closing-tag-location": [2],
     "@stylistic/jsx-curly-brace-presence": [
@@ -3468,11 +3470,9 @@
     "no-spaced-func": [0],
     "arrow-spacing": [0],
     "function-call-argument-newline": [0],
-    "generator-star-spacing": [0],
     "no-confusing-arrow": [0],
     "rest-spread-spacing": [0],
     "template-curly-spacing": [0],
-    "yield-star-spacing": [0],
     "react/jsx-space-before-closing": [0],
     "no-new-native-nonconstructor": [0],
     "prefer-rest-params": [2],

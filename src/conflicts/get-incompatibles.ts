@@ -113,7 +113,7 @@ for (const { def: codeToLint, filePath, short } of fileList) {
         const [es, json, hash] = await getLinter(filePath, location);
 
         // Utility to call out a particular rule when seen in a config.
-        const ruleToCheck = "import/extensions";
+        const ruleToCheck = "react/jsx-filename-extension";
         if (
           json !== undefined &&
           "rules" in json &&

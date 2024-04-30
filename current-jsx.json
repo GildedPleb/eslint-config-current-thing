@@ -1219,6 +1219,37 @@
     "you-dont-need-lodash-underscore"
   ],
   "rules": {
+    "react-perf/jsx-no-new-object-as-prop": [2],
+    "react-perf/jsx-no-new-array-as-prop": [2],
+    "react-perf/jsx-no-new-function-as-prop": [2],
+    "functional/functional-parameters": [
+      0,
+      {
+        "enforceParameterCount": {
+          "ignoreLambdaExpression": true,
+          "ignoreIIFE": true,
+          "ignoreGettersAndSetters": true
+        }
+      }
+    ],
+    "functional/no-classes": [0],
+    "functional/no-conditional-statements": [0],
+    "functional/no-expression-statements": [0],
+    "functional/no-return-void": [0],
+    "functional/no-throw-statements": [
+      0,
+      {
+        "allowInAsyncFunctions": true
+      }
+    ],
+    "prefer-arrow/prefer-arrow-functions": [
+      0,
+      {
+        "classPropertiesAllowed": false,
+        "disallowPrototype": true,
+        "singleReturnOnly": false
+      }
+    ],
     "react-prefer-function-component/react-prefer-function-component": [2],
     "@stylistic/object-curly-spacing": [0, "always"],
     "@stylistic/operator-linebreak": [0, "before"],
@@ -2589,34 +2620,6 @@
     "node/prefer-promises/fs": [2],
     "node/no-exports-assign": [2],
     "node/no-callback-literal": [2],
-    "functional/functional-parameters": [
-      0,
-      {
-        "enforceParameterCount": {
-          "ignoreLambdaExpression": true,
-          "ignoreIIFE": true,
-          "ignoreGettersAndSetters": true
-        }
-      }
-    ],
-    "functional/no-classes": [0],
-    "functional/no-conditional-statements": [0],
-    "functional/no-expression-statements": [0],
-    "functional/no-return-void": [0],
-    "functional/no-throw-statements": [
-      0,
-      {
-        "allowInAsyncFunctions": true
-      }
-    ],
-    "prefer-arrow/prefer-arrow-functions": [
-      0,
-      {
-        "classPropertiesAllowed": false,
-        "disallowPrototype": true,
-        "singleReturnOnly": false
-      }
-    ],
     "@stylistic/brace-style": [
       0,
       "stroustrup",
@@ -2712,6 +2715,7 @@
         "avoidEscape": false
       }
     ],
+    "@stylistic/yield-star-spacing": [0, "both"],
     "@typescript-eslint/indent": [0],
     "@typescript-eslint/member-delimiter-style": [0],
     "@typescript-eslint/no-extra-parens": [0],
@@ -3783,7 +3787,6 @@
         "functionPrototypeMethods": true
       }
     ],
-    "@stylistic/yield-star-spacing": [2, "both"],
     "@stylistic/jsx-closing-bracket-location": [2],
     "@stylistic/jsx-closing-tag-location": [2],
     "@stylistic/jsx-curly-brace-presence": [

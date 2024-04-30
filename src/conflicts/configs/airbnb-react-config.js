@@ -203,7 +203,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: [...jsxFiles, ...tsxFiles],
+            files: jsxFiles,
             languageOptions: {
               parserOptions: {
                 ecmaFeatures: {

@@ -435,7 +435,6 @@ const configGen = ({
               "@stylistic/operator-linebreak": 0,
               "@stylistic/quote-props": 0,
               "@stylistic/semi": 0,
-              "@typescript-eslint/brace-style": 0,
               "@typescript-eslint/comma-dangle": 0,
               "@typescript-eslint/object-curly-spacing": 0,
               "@typescript-eslint/semi": 0,
@@ -2230,7 +2229,6 @@ const configGen = ({
                 { plugins: ["prettier-plugin-tailwindcss"] },
               ],
               quotes: 0,
-              "react/jsx-one-expression-per-line": 0,
               "unicorn/no-nested-ternary": 0,
 
               ...("prettier-plugin-tailwindcss" in override
@@ -2378,7 +2376,6 @@ const configGen = ({
             files: tsFiles,
             rules: {
               "@stylistic/semi": 0,
-              "indent-legacy": 0,
               "prettier/prettier": 0,
               "prettier-tailwind/prettier": 0,
               ...airbnbTypescript.rules,
@@ -2619,7 +2616,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: [...jsxFiles, ...tsxFiles],
+            files: jsxFiles,
             languageOptions: {
               parserOptions: {
                 ecmaFeatures: {
@@ -2628,8 +2625,6 @@ const configGen = ({
               },
             },
             rules: {
-              "prettier/prettier": 0,
-              "prettier-tailwind/prettier": 0,
               ...airbnbReact.rules,
               "functional/functional-parameters": 0,
               "functional/no-classes": 0,

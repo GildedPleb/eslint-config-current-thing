@@ -20,13 +20,8 @@ const incompatibles: ConflictCache = {
     "@stylistic/semi": 0,
     "prettier/prettier": 0,
   },
-  "airbnb-react": {
-    "prettier/prettier": 0,
-    "prettier-tailwind/prettier": 0,
-  },
   "airbnb-ts": {
     "@stylistic/semi": 0,
-    "indent-legacy": 0,
     "prettier/prettier": 0,
     "prettier-tailwind/prettier": 0,
   },
@@ -113,7 +108,6 @@ const incompatibles: ConflictCache = {
     "jsx-quotes": 0,
     "object-curly-spacing": 0,
     quotes: 0,
-    "react/jsx-one-expression-per-line": 0,
     "unicorn/no-nested-ternary": 0,
   },
   regexp: {
@@ -127,7 +121,6 @@ const incompatibles: ConflictCache = {
     "@stylistic/operator-linebreak": 0,
     "@stylistic/quote-props": 0,
     "@stylistic/semi": 0,
-    "@typescript-eslint/brace-style": 0,
     "@typescript-eslint/comma-dangle": 0,
     "@typescript-eslint/object-curly-spacing": 0,
     "@typescript-eslint/semi": 0,

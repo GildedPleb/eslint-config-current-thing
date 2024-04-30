@@ -2687,6 +2687,7 @@
         "avoidEscape": false
       }
     ],
+    "@stylistic/yield-star-spacing": [0, "both"],
     "@typescript-eslint/indent": [0],
     "@typescript-eslint/member-delimiter-style": [0],
     "@typescript-eslint/no-extra-parens": [0],
@@ -3174,7 +3175,6 @@
         "functionPrototypeMethods": true
       }
     ],
-    "@stylistic/yield-star-spacing": [2, "both"],
     "@stylistic/jsx-closing-bracket-location": [2],
     "@stylistic/jsx-closing-tag-location": [2],
     "@stylistic/jsx-curly-brace-presence": [
