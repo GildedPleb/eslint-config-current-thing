@@ -385,10 +385,10 @@ Generated on 5/1/2024, downloads for the previous 28 days.
 - 762,757 downloads, [eslint-plugin-formatjs](https://www.npmjs.com/package/eslint-plugin-formatjs)
 - 657,210 downloads, [eslint-plugin-no-relative-import-paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)
 - 539,649 downloads, [@prettier/plugin-ruby](https://www.npmjs.com/package/@prettier/plugin-ruby)
+- 491,382 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit)
 - 478,304 downloads, [prettier-plugin-sh](https://www.npmjs.com/package/prettier-plugin-sh)
 - 455,335 downloads, [prettier-plugin-astro](https://www.npmjs.com/package/prettier-plugin-astro)
-- 444,335 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit)
-- 420,003 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin)
+- 427,612 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin)
 - 417,905 downloads, [eslint-config-xo-space](https://www.npmjs.com/package/eslint-config-xo-space)
 - 401,276 downloads, [prettier-plugin-java](https://www.npmjs.com/package/prettier-plugin-java)
 - 396,021 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
@@ -399,10 +399,10 @@ Generated on 5/1/2024, downloads for the previous 28 days.
 - 368,358 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
 - 367,044 downloads, [eslint-plugin-import-helpers](https://www.npmjs.com/package/eslint-plugin-import-helpers) - Not Yet Eligible
 - 366,331 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc) - Not Yet Eligible
+- 361,422 downloads, [eslint-plugin-i18n-text](https://www.npmjs.com/package/eslint-plugin-i18n-text) - Not Yet Eligible
 - 359,556 downloads, [prettier-plugin-sort-json](https://www.npmjs.com/package/prettier-plugin-sort-json) - Not Yet Eligible
 - 358,498 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard) - Not Yet Eligible
 - 353,966 downloads, [wp-prettier](https://www.npmjs.com/package/wp-prettier) - Not Yet Eligible
-- 353,485 downloads, [eslint-plugin-i18n-text](https://www.npmjs.com/package/eslint-plugin-i18n-text) - Not Yet Eligible
 - 346,468 downloads, [@wordpress/prettier-config](https://www.npmjs.com/package/@wordpress/prettier-config) - Not Yet Eligible
 - 338,405 downloads, [eslint-plugin-testcafe](https://www.npmjs.com/package/eslint-plugin-testcafe) - Not Yet Eligible
 - 334,280 downloads, [@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config) - Not Yet Eligible

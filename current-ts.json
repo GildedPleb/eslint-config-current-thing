@@ -1856,6 +1856,7 @@
         }
       }
     ],
+    "@stylistic/multiline-ternary": [0, "always-multiline"],
     "@stylistic/quotes": [
       0,
       "single",
@@ -2722,7 +2723,6 @@
         "max": 1
       }
     ],
-    "@stylistic/multiline-ternary": [2, "always-multiline"],
     "@stylistic/new-parens": [2],
     "@stylistic/no-extra-parens": [2, "functions"],
     "@stylistic/no-floating-decimal": [2],

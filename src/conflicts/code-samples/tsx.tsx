@@ -30,6 +30,22 @@ interface ItemProps {
 interface DangerouslySetMarkupProps {
   htmlContent: string;
 }
+
+const permutations = 2345n;
+
+const conclusion =
+  permutations > 0n ? (
+    <>
+      <h1>allegedly</h1>
+      <div>allegedlySlug</div>
+    </>
+  ) : (
+    <>
+      <h1>no</h1>
+      <div>noSlug</div>
+    </>
+  );
+
 const Nine: React.FC = () => <div>{9}</div>;
 const Greeting: React.FC<GreetingProps> = ({ name }) => {
   return <h1>Hello, {name}!</h1>;
