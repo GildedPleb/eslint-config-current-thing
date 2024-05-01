@@ -23,6 +23,7 @@ export default {
     },
   ],
   requiredPlugins: ["jsdoc"],
-  rules: `...jsdoc.configs["flat/recommended-typescript"].rules,`,
+  rules: `...jsdoc.configs["flat/recommended-typescript"].rules,
+    "jsdoc/require-yields": 0,`,
 } satisfies Config;
 // EOF

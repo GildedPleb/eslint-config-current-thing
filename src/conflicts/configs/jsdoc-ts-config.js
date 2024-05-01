@@ -205,6 +205,7 @@ const configGen = ({
             files: tsFiles,
             rules: {
               ...jsdoc.configs["flat/recommended-typescript"].rules,
+              "jsdoc/require-yields": 0,
               ...("eslint-plugin-jsdoc/ts" in override
                 ? override["eslint-plugin-jsdoc/ts"]
                 : {}),

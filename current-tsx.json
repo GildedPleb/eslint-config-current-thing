@@ -3466,7 +3466,6 @@
         "singleline": "consistent"
       }
     ],
-    "@react-native/platform-colors": [1],
     "no-loss-of-precision": [0],
     "@typescript-eslint/comma-spacing": [
       0,
@@ -3571,6 +3570,7 @@
       }
     ],
     "@typescript-eslint/return-await": [2, "in-try-catch"],
+    "@react-native/platform-colors": [1],
     "@typescript-eslint/no-shadow": [2],
     "security/detect-buffer-noassert": [1],
     "security/detect-child-process": [1],
@@ -3688,7 +3688,7 @@
     "jsdoc/require-returns-description": [1],
     "jsdoc/require-returns-type": [0],
     "jsdoc/require-throws": [0],
-    "jsdoc/require-yields": [1],
+    "jsdoc/require-yields": [0],
     "jsdoc/require-yields-check": [1],
     "jsdoc/sort-tags": [0],
     "jsdoc/tag-lines": [1],
