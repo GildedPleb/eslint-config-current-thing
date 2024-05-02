@@ -2470,26 +2470,6 @@
     "regexp/sort-flags": [2],
     "regexp/strict": [0],
     "regexp/use-ignore-case": [2],
-    "perfectionist/sort-classes": [
-      2,
-      {
-        "groups": [
-          "index-signature",
-          "static-property",
-          "private-property",
-          "property",
-          "constructor",
-          "static-method",
-          "private-method",
-          "method",
-          ["get-method", "set-method"],
-          "unknown"
-        ],
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false
-      }
-    ],
     "rxjs/no-async-subscribe": [2],
     "rxjs/no-create": [2],
     "rxjs/no-ignored-notifier": [2],
@@ -2510,6 +2490,26 @@
     "rxjs/no-unbound-methods": [2],
     "rxjs/no-unsafe-subject-next": [2],
     "rxjs/no-unsafe-takeuntil": [2],
+    "perfectionist/sort-classes": [
+      2,
+      {
+        "groups": [
+          "index-signature",
+          "static-property",
+          "private-property",
+          "property",
+          "constructor",
+          "static-method",
+          "private-method",
+          "method",
+          ["get-method", "set-method"],
+          "unknown"
+        ],
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
+    ],
     "simple-import-sort/imports": [2],
     "perfectionist/sort-imports": [
       0,

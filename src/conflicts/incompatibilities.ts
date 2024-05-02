@@ -2,7 +2,7 @@
 
 /*
   This file is fully generated, to edit it change ./get-incompatibilities.ts
-  Generated on 5/1/2024
+  Generated on 5/2/2024
 */
 
 import { type ConflictCache } from "./types";
@@ -196,7 +196,6 @@ const incompatibles: ConflictCache = {
     "prettier/prettier": 0,
   },
   "standard-jsx": {
-    "@typescript-eslint/no-extra-parens": 0,
     "prettier/prettier": 0,
     "prettier-tailwind/prettier": 0,
   },

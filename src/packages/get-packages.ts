@@ -8,7 +8,7 @@ import { Level } from "level";
 import configs from "../definitions/configs";
 import parsers from "../definitions/parsers";
 import plugins from "../definitions/plugins";
-import { isMoreThanRandomDaysInThePast } from "../helpers";
+import { isMoreThan1DaysInThePast } from "../helpers";
 import { fetchNPMURLs, getDownloadCount } from "../npm";
 import investigating from "./investigating";
 import rejected from "./rejected";
@@ -115,7 +115,7 @@ async function fetchEslintPlugins(cache = database): Promise<Populated[]> {
     const exists = currentKnown.filter(({ name }) => name === known);
     if (
       exists.length === 1 &&
-      !isMoreThanRandomDaysInThePast(exists[0].date) &&
+      !isMoreThan1DaysInThePast(exists[0].date) &&
       "count" in exists[0]
     ) {
       populated.push(exists[0]);

@@ -3400,11 +3400,6 @@
     "jsdoc/text-escaping": [0],
     "jsdoc/valid-types": [1],
     "simple-import-sort/exports": [2],
-    "@eslint-community/eslint-comments/disable-enable-pair": [2],
-    "@eslint-community/eslint-comments/no-aggregating-enable": [2],
-    "@eslint-community/eslint-comments/no-duplicate-disable": [2],
-    "@eslint-community/eslint-comments/no-unlimited-disable": [2],
-    "@eslint-community/eslint-comments/no-unused-enable": [2],
     "@typescript-eslint/no-unused-vars": [0],
     "unused-imports/no-unused-imports": [2],
     "unused-imports/no-unused-vars": [
@@ -3416,6 +3411,11 @@
         "varsIgnorePattern": "^_"
       }
     ],
+    "@eslint-community/eslint-comments/disable-enable-pair": [2],
+    "@eslint-community/eslint-comments/no-aggregating-enable": [2],
+    "@eslint-community/eslint-comments/no-duplicate-disable": [2],
+    "@eslint-community/eslint-comments/no-unlimited-disable": [2],
+    "@eslint-community/eslint-comments/no-unused-enable": [2],
     "unicorn/catch-error-name": [2],
     "unicorn/consistent-destructuring": [0],
     "unicorn/consistent-function-scoping": [2],

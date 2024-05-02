@@ -192,6 +192,8 @@ const rejected = new Set([
   "babel-plugin-inline-react-svg",
   "babel-plugin-react-require",
   "find-babel-config",
+  "@svgr/babel-plugin-add-jsx-attribute",
+  "babel-plugin-module-resolver",
 
   // Webpack
   "eslint-webpack-plugin",
@@ -314,6 +316,8 @@ const rejected = new Set([
   "tailwindcss-radix",
   "@azure/app-configuration",
   "@luminati-io/luminati-proxy",
+  "fined",
+  "vscode-langservers-extracted",
 
   // Fastify
   "fastify-plugin",
@@ -384,6 +388,7 @@ const rejected = new Set([
   "postcss-preset-env",
   "postcss-pxtorem",
   "cssnano",
+  "postcss-modules-extract-imports",
 
   // aws
   "@aws-sdk/credential-provider-ini",
