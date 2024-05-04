@@ -78,8 +78,11 @@ export const getDownloadCount = memoize(getDownloadCountLong);
  */
 async function fetchNPMURLsLong(searchStrings: string[]): Promise<string[]> {
   const pluginNames: string[] = [];
+  let count = 0;
   for await (const search of searchStrings) {
-    console.log("Searching for ...", search);
+    console.log(
+      `Searching for "${search}" (${count++}/${searchStrings.length})`,
+    );
     const url = `${BASE_URL}/-/v1/search?text=${search}&size=500`;
     try {
       const previous = await database.get(`search-${url}`);

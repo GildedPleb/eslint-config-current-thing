@@ -2806,6 +2806,23 @@
     "unicorn/no-nested-ternary": [0],
     "shopify/jsx-no-hardcoded-content": [0],
     "playwright/no-standalone-expect": [0],
+    "functional/immutable-data": [0],
+    "functional/no-let": [
+      0,
+      {
+        "allowInForLoopInit": true
+      }
+    ],
+    "functional/no-loop-statements": [0],
+    "functional/no-mixed-types": [0],
+    "functional/no-this-expressions": [0],
+    "functional/no-try-statements": [0],
+    "functional/prefer-immutable-types": [0],
+    "functional/type-declaration-immutability": [0],
+    "functional/prefer-property-signatures": [2],
+    "functional/prefer-readonly-type": [0],
+    "functional/prefer-tacit": [1],
+    "functional/readonly-type": [2],
     "ava/assertion-arguments": [2],
     "ava/hooks-order": [2],
     "ava/max-asserts": [0, 5],
@@ -2834,23 +2851,6 @@
     "ava/use-test": [2],
     "ava/use-true-false": [2],
     "no-use-extend-native/no-use-extend-native": [2],
-    "functional/immutable-data": [0],
-    "functional/no-let": [
-      0,
-      {
-        "allowInForLoopInit": true
-      }
-    ],
-    "functional/no-loop-statements": [0],
-    "functional/no-mixed-types": [0],
-    "functional/no-this-expressions": [0],
-    "functional/no-try-statements": [0],
-    "functional/prefer-immutable-types": [0],
-    "functional/type-declaration-immutability": [0],
-    "functional/prefer-property-signatures": [2],
-    "functional/prefer-readonly-type": [0],
-    "functional/prefer-tacit": [1],
-    "functional/readonly-type": [2],
     "you-dont-need-lodash-underscore/concat": [2],
     "you-dont-need-lodash-underscore/drop": [2],
     "you-dont-need-lodash-underscore/drop-right": [2],
@@ -3546,6 +3546,7 @@
     "sonarjs/prefer-object-literal": [2],
     "sonarjs/prefer-single-boolean-return": [2],
     "sonarjs/prefer-while": [2],
+    "no-only-tests/no-only-tests": [2],
     "mocha/handle-done-callback": [2],
     "mocha/max-top-level-suites": [
       2,
@@ -3574,7 +3575,6 @@
     "mocha/valid-test-description": [0],
     "mocha/no-empty-description": [2],
     "mocha/consistent-spacing-between-blocks": [2],
-    "no-only-tests/no-only-tests": [2],
     "jsdoc/check-access": [1],
     "jsdoc/check-alignment": [1],
     "jsdoc/check-examples": [0],

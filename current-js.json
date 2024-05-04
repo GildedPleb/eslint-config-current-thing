@@ -2695,7 +2695,6 @@
     "@typescript-eslint/quotes": [0],
     "@typescript-eslint/space-before-function-paren": [0],
     "unicorn/no-nested-ternary": [0],
-    "no-use-extend-native/no-use-extend-native": [2],
     "functional/immutable-data": [0],
     "functional/no-let": [
       0,
@@ -2713,6 +2712,7 @@
     "functional/prefer-readonly-type": [0],
     "functional/prefer-tacit": [1],
     "functional/readonly-type": [2],
+    "no-use-extend-native/no-use-extend-native": [2],
     "you-dont-need-lodash-underscore/concat": [2],
     "you-dont-need-lodash-underscore/drop": [2],
     "you-dont-need-lodash-underscore/drop-right": [2],

@@ -130,10 +130,12 @@ async function fetchEslintPlugins(cache = database): Promise<Populated[]> {
   }
 
   console.log("\nGetting packages, this could take a loooong time... \n");
-
+  let count = 0;
   for await (const plugin of unpopulated) {
     const downloads = await getDownloadCount(plugin.name);
-    populated.push({ ...plugin, count: downloads ?? 0 });
+    const newPlugin = { ...plugin, count: downloads ?? 0 };
+    populated.push(newPlugin);
+    await database.put(`plugin-${plugin.name}`, JSON.stringify(newPlugin));
     if ((downloads ?? 0) > 50_000)
       console.log(
         `Noteworthy plugin: "${plugin.name}"... ${downloads}`.padEnd(
@@ -141,13 +143,9 @@ async function fetchEslintPlugins(cache = database): Promise<Populated[]> {
           " ",
         ),
       );
-    const out = `Adding: "${plugin.name}"... ${downloads}`;
+    const out = `Adding (${count++}/${unpopulated.length}): "${plugin.name}"... ${downloads}`;
     process.stdout.write(out.padEnd(process.stdout.columns, " "));
     readline.cursorTo(process.stdout, 0);
-  }
-
-  for await (const plugin of populated) {
-    await database.put(`plugin-${plugin.name}`, JSON.stringify(plugin));
   }
 
   return populated
