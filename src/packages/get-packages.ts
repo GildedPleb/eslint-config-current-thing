@@ -86,7 +86,9 @@ for (const pack of rejected) {
  * @param cache - The db
  * @returns a populated plugin def
  */
-async function fetchEslintPlugins(cache = database): Promise<Populated[]> {
+async function fetchEslintPlugins(
+  cache = database,
+): Promise<{ size: number; top40: Populated[] }> {
   console.log("Checking lists...");
   console.log("Getting full list...");
   const searchedPluginNames = await fetchNPMURLs([
@@ -148,10 +150,13 @@ async function fetchEslintPlugins(cache = database): Promise<Populated[]> {
     readline.cursorTo(process.stdout, 0);
   }
 
-  return populated
-    .filter((item) => item.count)
-    .sort((first, second) => second.count - first.count)
-    .slice(0, 40);
+  return {
+    size: populated.length,
+    top40: populated
+      .filter((item) => item.count)
+      .sort((first, second) => second.count - first.count)
+      .slice(0, 40),
+  };
 }
 
 export default fetchEslintPlugins;

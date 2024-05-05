@@ -31,6 +31,29 @@ interface DangerouslySetMarkupProps {
   htmlContent: string;
 }
 
+const toggle = true;
+const uniqueItems: Array<{ index: number; word: string }> = [];
+const result: Array<{ index: number; word: string }> = [];
+const active = "asdf";
+
+const toggleComp = toggle
+  ? uniqueItems.map((item) => (
+      <div
+        className={\`item\${active.includes(item.word) ? "Active" : ""}\`}
+        key={\`\${item.word}+\${item.index}\`}
+      >
+        {item.word}
+      </div>
+    ))
+  : result.map((item) => (
+      <div
+        className={\`item\${active.includes(item.word) ? "Active" : ""}\`}
+        key={\`\${item.word}+\${item.index}\`}
+      >
+        {item.word}
+      </div>
+    ));
+
 const permutations = 2345n;
 
 const conclusion =

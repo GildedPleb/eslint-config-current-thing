@@ -2,7 +2,7 @@
 
 /*
   This file is fully generated, to edit it change ./get-incompatibilities.ts
-  Generated on 5/3/2024
+  Generated on 5/4/2024
 */
 
 import { type ConflictCache } from "./types";
@@ -52,6 +52,7 @@ const incompatibles: ConflictCache = {
     "@stylistic/brace-style": 0,
     "@stylistic/indent": 0,
     "@stylistic/indent-binary-ops": 0,
+    "@stylistic/jsx-indent": 0,
     "@stylistic/jsx-one-expression-per-line": 0,
     "@stylistic/member-delimiter-style": 0,
     "@stylistic/multiline-ternary": 0,
@@ -66,6 +67,7 @@ const incompatibles: ConflictCache = {
     "@stylistic/brace-style": 0,
     "@stylistic/indent": 0,
     "@stylistic/indent-binary-ops": 0,
+    "@stylistic/jsx-indent": 0,
     "@stylistic/jsx-one-expression-per-line": 0,
     "@stylistic/member-delimiter-style": 0,
     "@stylistic/multiline-ternary": 0,
@@ -89,6 +91,7 @@ const incompatibles: ConflictCache = {
     "object-curly-spacing": 0,
     "operator-linebreak": 0,
     quotes: 0,
+    "react/jsx-indent": 0,
     semi: 0,
     "space-before-function-paren": 0,
     "unicorn/no-nested-ternary": 0,
@@ -96,6 +99,8 @@ const incompatibles: ConflictCache = {
   },
   "prettier-tailwind": {
     "@stylistic/arrow-parens": 0,
+    "@stylistic/indent": 0,
+    "@stylistic/jsx-indent": 0,
     "@stylistic/jsx-one-expression-per-line": 0,
     "@stylistic/member-delimiter-style": 0,
     "@stylistic/multiline-ternary": 0,
@@ -103,6 +108,7 @@ const incompatibles: ConflictCache = {
     "@stylistic/quotes": 0,
     "@stylistic/semi": 0,
     "@typescript-eslint/comma-dangle": 0,
+    "@typescript-eslint/indent": 0,
     "@typescript-eslint/member-delimiter-style": 0,
     "@typescript-eslint/no-extra-parens": 0,
     "@typescript-eslint/object-curly-spacing": 0,
@@ -112,6 +118,7 @@ const incompatibles: ConflictCache = {
     "jsx-quotes": 0,
     "object-curly-spacing": 0,
     quotes: 0,
+    "react/jsx-indent": 0,
     "unicorn/no-nested-ternary": 0,
   },
   regexp: {
@@ -143,6 +150,7 @@ const incompatibles: ConflictCache = {
     "@stylistic/brace-style": 0,
     "@stylistic/indent": 0,
     "@stylistic/indent-binary-ops": 0,
+    "@stylistic/jsx-indent": 0,
     "@stylistic/jsx-one-expression-per-line": 0,
     "@stylistic/member-delimiter-style": 0,
     "@stylistic/multiline-ternary": 0,
@@ -167,10 +175,16 @@ const incompatibles: ConflictCache = {
     "object-curly-spacing": 0,
     "operator-linebreak": 0,
     quotes: 0,
+    "react/jsx-indent": 0,
     semi: 0,
     "space-before-function-paren": 0,
     "unicorn/no-nested-ternary": 0,
     "yield-star-spacing": 0,
+  },
+  "shopify-react": {
+    "@typescript-eslint/no-extra-parens": 0,
+    "prettier/prettier": 0,
+    "prettier-tailwind/prettier": 0,
   },
   "shopify-ts": {
     "@stylistic/block-spacing": 0,
@@ -196,6 +210,7 @@ const incompatibles: ConflictCache = {
     "prettier/prettier": 0,
   },
   "standard-jsx": {
+    "@typescript-eslint/no-extra-parens": 0,
     "prettier/prettier": 0,
     "prettier-tailwind/prettier": 0,
   },

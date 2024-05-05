@@ -318,6 +318,7 @@ const rejected = new Set([
   "@luminati-io/luminati-proxy",
   "fined",
   "vscode-langservers-extracted",
+  "env-paths",
 
   // Fastify
   "fastify-plugin",
@@ -374,6 +375,7 @@ const rejected = new Set([
   "@octokit/plugin-rest-endpoint-methods",
   "@octokit/plugin-retry",
   "@octokit/plugin-throttling",
+  "@octokit/plugin-request-log",
 
   // CSS / Postcss
   "postcss",

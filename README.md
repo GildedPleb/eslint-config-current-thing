@@ -358,7 +358,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **508**.
+The amount of packages reviewed and rejected **510**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -370,10 +370,8 @@ See [rejected](./src/packages/rejected.ts) for the full list with notes. But it'
 
 The following section is generated according to spec.
 
-Generated on 5/3/2024, downloads for the previous 28 days.
+Generated on 5/4/2024, downloads for the previous 28 days. Total known packages **11595**. Top 40 next in line:
 
-- 54,888,762 downloads, [env-paths](https://www.npmjs.com/package/env-paths)
-- 19,968,975 downloads, [@octokit/plugin-request-log](https://www.npmjs.com/package/@octokit/plugin-request-log)
 - 3,406,156 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
 - 2,482,490 downloads, [prettier-plugin-organize-imports](https://www.npmjs.com/package/prettier-plugin-organize-imports)
 - 2,472,846 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
@@ -412,5 +410,7 @@ Generated on 5/3/2024, downloads for the previous 28 days.
 - 317,946 downloads, [eslint-plugin-ssr-friendly](https://www.npmjs.com/package/eslint-plugin-ssr-friendly) - Not Yet Eligible
 - 312,373 downloads, [eslint-plugin-lit](https://www.npmjs.com/package/eslint-plugin-lit) - Not Yet Eligible
 - 311,102 downloads, [@sap/eslint-plugin-cds](https://www.npmjs.com/package/@sap/eslint-plugin-cds) - Not Yet Eligible
+- 305,319 downloads, [eslint-plugin-deprecate](https://www.npmjs.com/package/eslint-plugin-deprecate) - Not Yet Eligible
+- 299,596 downloads, [eslint-plugin-vitest-globals](https://www.npmjs.com/package/eslint-plugin-vitest-globals) - Not Yet Eligible
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->
