@@ -1,10 +1,10 @@
 {
   "settings": {
-    "import/ignore": ["node_modules", ".(coffee|scss|css|less|hbs|svg|json)$"],
     "react": {
       "version": "detect",
       "pragma": "React"
     },
+    "import/ignore": ["node_modules", ".(coffee|scss|css|less|hbs|svg|json)$"],
     "import/core-modules": [],
     "import/extensions": [".js", ".mjs", ".jsx", ".ts", ".tsx", ".d.ts"],
     "import/external-module-folders": ["node_modules", "node_modules/@types"],
@@ -1251,6 +1251,36 @@
       }
     ],
     "react-prefer-function-component/react-prefer-function-component": [2],
+    "react/jsx-no-bind": [
+      2,
+      {
+        "ignoreRefs": true,
+        "allowArrowFunctions": true,
+        "allowFunctions": false,
+        "allowBind": false,
+        "ignoreDOMComponents": true
+      }
+    ],
+    "react/no-did-update-set-state": [2],
+    "react/no-unknown-property": [2],
+    "react/no-unused-prop-types": [
+      2,
+      {
+        "customValidators": [],
+        "skipShapeProps": true
+      }
+    ],
+    "react/prop-types": [
+      2,
+      {
+        "ignore": [],
+        "customValidators": [],
+        "skipUndeclared": false
+      }
+    ],
+    "react/react-in-jsx-scope": [2],
+    "react-hooks/rules-of-hooks": [2],
+    "react-hooks/exhaustive-deps": [1],
     "@stylistic/object-curly-spacing": [0, "always"],
     "@stylistic/operator-linebreak": [0, "before"],
     "@stylistic/quote-props": [0, "consistent-as-needed"],
@@ -2801,7 +2831,6 @@
     "react/no-danger-with-children": [2],
     "react/no-deprecated": [2],
     "react/no-did-mount-set-state": [0],
-    "react/no-did-update-set-state": [2],
     "react/no-direct-mutation-state": [2],
     "react/no-find-dom-node": [2],
     "react/no-is-mounted": [2],
@@ -2823,18 +2852,10 @@
         "forbid": [">", "}"]
       }
     ],
-    "react/no-unknown-property": [2],
     "react/no-unsafe": [
       0,
       {
         "checkAliases": true
-      }
-    ],
-    "react/no-unused-prop-types": [
-      2,
-      {
-        "customValidators": [],
-        "skipShapeProps": true
       }
     ],
     "react/no-unused-state": [2],
@@ -2847,15 +2868,6 @@
         "ignorePureComponents": true
       }
     ],
-    "react/prop-types": [
-      2,
-      {
-        "ignore": [],
-        "customValidators": [],
-        "skipUndeclared": false
-      }
-    ],
-    "react/react-in-jsx-scope": [2],
     "react/require-default-props": [
       2,
       {
@@ -2998,16 +3010,6 @@
         "when": "multiline"
       }
     ],
-    "react/jsx-no-bind": [
-      2,
-      {
-        "ignoreRefs": true,
-        "allowArrowFunctions": true,
-        "allowFunctions": false,
-        "allowBind": false,
-        "ignoreDOMComponents": true
-      }
-    ],
     "react/jsx-no-comment-textnodes": [2],
     "react/jsx-no-duplicate-props": [
       2,
@@ -3099,8 +3101,6 @@
         "exceptions": []
       }
     ],
-    "react-hooks/rules-of-hooks": [2],
-    "react-hooks/exhaustive-deps": [1],
     "jsx-a11y/accessible-emoji": [0],
     "jsx-a11y/alt-text": [
       2,

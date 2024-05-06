@@ -1261,6 +1261,21 @@
       }
     ],
     "react-prefer-function-component/react-prefer-function-component": [2],
+    "react/jsx-no-bind": [
+      0,
+      {
+        "allowArrowFunctions": true,
+        "allowBind": false,
+        "ignoreRefs": true
+      }
+    ],
+    "react/no-did-update-set-state": [1],
+    "react/no-unknown-property": [2],
+    "react/no-unused-prop-types": [2],
+    "react/prop-types": [2],
+    "react/react-in-jsx-scope": [2],
+    "react-hooks/rules-of-hooks": [2],
+    "react-hooks/exhaustive-deps": [1],
     "@stylistic/object-curly-spacing": [2, "always"],
     "@stylistic/operator-linebreak": [0, "before"],
     "@stylistic/quote-props": [0, "consistent-as-needed"],
@@ -2144,7 +2159,6 @@
     "react/no-danger-with-children": [2],
     "react/no-deprecated": [2],
     "react/no-did-mount-set-state": [1],
-    "react/no-did-update-set-state": [1],
     "react/no-direct-mutation-state": [2],
     "react/no-find-dom-node": [2],
     "react/no-is-mounted": [2],
@@ -2166,14 +2180,12 @@
         "forbid": [">", "}"]
       }
     ],
-    "react/no-unknown-property": [2],
     "react/no-unsafe": [
       0,
       {
         "checkAliases": true
       }
     ],
-    "react/no-unused-prop-types": [2],
     "react/no-unused-state": [2],
     "react/no-will-update-set-state": [2],
     "react/prefer-read-only-props": [0],
@@ -2184,8 +2196,6 @@
         "ignorePureComponents": true
       }
     ],
-    "react/prop-types": [2],
-    "react/react-in-jsx-scope": [2],
     "react/require-default-props": [0],
     "react/require-optimization": [0],
     "react/require-render-return": [2],
@@ -2242,16 +2252,6 @@
     ],
     "react/jsx-max-depth": [0],
     "react/jsx-max-props-per-line": [0],
-    "react/jsx-no-bind": [
-      2,
-      {
-        "allowArrowFunctions": true,
-        "allowBind": false,
-        "ignoreRefs": true,
-        "allowFunctions": false,
-        "ignoreDOMComponents": false
-      }
-    ],
     "react/jsx-no-comment-textnodes": [2],
     "react/jsx-no-duplicate-props": [2],
     "react/jsx-no-literals": [0],
@@ -2305,8 +2305,6 @@
       }
     ],
     "react/jsx-props-no-spreading": [0],
-    "react-hooks/rules-of-hooks": [2],
-    "react-hooks/exhaustive-deps": [1],
     "jsx-a11y/accessible-emoji": [0],
     "jsx-a11y/alt-text": [
       2,

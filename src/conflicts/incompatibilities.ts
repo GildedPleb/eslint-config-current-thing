@@ -2,7 +2,7 @@
 
 /*
   This file is fully generated, to edit it change ./get-incompatibilities.ts
-  Generated on 5/4/2024
+  Generated on 5/6/2024
 */
 
 import { type ConflictCache } from "./types";
@@ -182,7 +182,6 @@ const incompatibles: ConflictCache = {
     "yield-star-spacing": 0,
   },
   "shopify-react": {
-    "@typescript-eslint/no-extra-parens": 0,
     "prettier/prettier": 0,
     "prettier-tailwind/prettier": 0,
   },
@@ -210,7 +209,6 @@ const incompatibles: ConflictCache = {
     "prettier/prettier": 0,
   },
   "standard-jsx": {
-    "@typescript-eslint/no-extra-parens": 0,
     "prettier/prettier": 0,
     "prettier-tailwind/prettier": 0,
   },
