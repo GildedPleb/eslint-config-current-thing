@@ -30,7 +30,7 @@ export function isMoreThanRandomDaysInThePast(dateString: string): boolean {
   const currentDate = Date.now();
   const timeDiff = currentDate - givenDate;
   const daysDiff = timeDiff / (1000 * 60 * 60 * 24);
-  return daysDiff > Math.random() * 100;
+  return daysDiff > Math.random() * 7 + 1;
 }
 
 const ADD = "[~~~+]";

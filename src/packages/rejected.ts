@@ -579,6 +579,7 @@ const rejected = new Set([
   "@nx/eslint",
   "@nx/linter",
   "@nx/next",
+  "@nx/plugin",
   "@rushstack/eslint-plugin-security",
   "@rushstack/eslint-plugin",
   "syncpack",

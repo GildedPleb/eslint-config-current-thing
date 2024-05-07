@@ -107,7 +107,7 @@ const ruleCount = `Unsurprisingly, it is incredibly strict with popularity-based
 const underConsiderationMarker = "Under Consideration List";
 const underConsideration = `The following section is generated according to spec.
 
-Generated on ${new Date().toLocaleDateString()}, downloads for the previous ${LAST_DAY_INTERVAL} days. Total known packages **${newPackages.size}**. Top 40 next in line:
+Generated on ${new Date().toLocaleDateString()}, total known packages **${newPackages.size}**. Top 40 next in line, downloads for the previous ${LAST_DAY_INTERVAL} days:
 
 ${newPackages.top40.map(({ count, name }) => `- ${count.toLocaleString()} downloads, [${name}](https://www.npmjs.com/package/${name})${count < MINIMUMS ? " - Not Yet Eligible" : ""}`).join("\n")}
 `;
