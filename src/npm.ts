@@ -5,7 +5,7 @@ import memoize from "fast-memoize";
 import { Level } from "level";
 
 import { BASE_API, BASE_URL, LAST_DAY_INTERVAL } from "./constants";
-import { isMoreThan1DaysInThePast } from "./helpers";
+import { isMoreThanRandomDaysInThePast } from "./helpers";
 
 const database = new Level("./packages-search", { valueEncoding: "json" });
 
@@ -87,7 +87,7 @@ async function fetchNPMURLsLong(searchStrings: string[]): Promise<string[]> {
     try {
       const previous = await database.get(`search-${url}`);
       const { date, result } = JSON.parse(previous) as SearchEntry;
-      if (isMoreThan1DaysInThePast(date)) {
+      if (isMoreThanRandomDaysInThePast(date)) {
         await new Promise((resolve) => setTimeout(resolve, 1000));
         throw new Error("Data too old");
       }

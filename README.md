@@ -370,7 +370,7 @@ See [rejected](./src/packages/rejected.ts) for the full list with notes. But it'
 
 The following section is generated according to spec.
 
-Generated on 5/7/2024, total known packages **12114**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 5/8/2024, total known packages **12288**. Top 40 next in line, downloads for the previous 28 days:
 
 - 3,412,495 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
 - 2,480,601 downloads, [prettier-plugin-organize-imports](https://www.npmjs.com/package/prettier-plugin-organize-imports)
@@ -378,7 +378,7 @@ Generated on 5/7/2024, total known packages **12114**. Top 40 next in line, down
 - 2,416,366 downloads, [eslint-config-turbo](https://www.npmjs.com/package/eslint-config-turbo)
 - 1,818,356 downloads, [eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest)
 - 1,340,542 downloads, [@svgr/plugin-prettier](https://www.npmjs.com/package/@svgr/plugin-prettier)
-- 1,200,271 downloads, [@ianvs/prettier-plugin-sort-imports](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports)
+- 1,198,814 downloads, [@ianvs/prettier-plugin-sort-imports](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports)
 - 924,333 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 914,063 downloads, [@prettier/plugin-xml](https://www.npmjs.com/package/@prettier/plugin-xml)
 - 861,065 downloads, [toml-eslint-parser](https://www.npmjs.com/package/toml-eslint-parser)
@@ -388,10 +388,10 @@ Generated on 5/7/2024, total known packages **12114**. Top 40 next in line, down
 - 512,447 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit)
 - 501,152 downloads, [prettier-plugin-sh](https://www.npmjs.com/package/prettier-plugin-sh)
 - 434,556 downloads, [prettier-plugin-astro](https://www.npmjs.com/package/prettier-plugin-astro)
-- 427,995 downloads, [eslint-config-xo-space](https://www.npmjs.com/package/eslint-config-xo-space)
+- 432,146 downloads, [eslint-config-xo-space](https://www.npmjs.com/package/eslint-config-xo-space)
 - 403,538 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp)
+- 402,953 downloads, [volar-service-prettier](https://www.npmjs.com/package/volar-service-prettier)
 - 401,211 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu)
-- 398,287 downloads, [volar-service-prettier](https://www.npmjs.com/package/volar-service-prettier) - Not Yet Eligible
 - 395,612 downloads, [prettier-plugin-java](https://www.npmjs.com/package/prettier-plugin-java) - Not Yet Eligible
 - 395,125 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
 - 390,674 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin) - Not Yet Eligible
