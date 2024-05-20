@@ -2391,7 +2391,7 @@
     "@babel/no-unused-expressions": [2],
     "@babel/semi": [0],
     "sort-class-members/sort-class-members": [
-      2,
+      0,
       {
         "order": [
           "[static-properties]",
@@ -3023,6 +3023,26 @@
     "jasmine/prefer-promise-strategies": [1],
     "jasmine/prefer-toHaveBeenCalledWith": [1],
     "jasmine/prefer-toBeUndefined": [0],
+    "perfectionist/sort-classes": [
+      2,
+      {
+        "groups": [
+          "index-signature",
+          "static-property",
+          "private-property",
+          "property",
+          "constructor",
+          "static-method",
+          "private-method",
+          "method",
+          ["get-method", "set-method"],
+          "unknown"
+        ],
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
+    ],
     "perfectionist/sort-imports": [
       0,
       {
@@ -3042,26 +3062,6 @@
         },
         "newlines-between": "always",
         "internal-pattern": ["~/**"],
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false
-      }
-    ],
-    "perfectionist/sort-classes": [
-      0,
-      {
-        "groups": [
-          "index-signature",
-          "static-property",
-          "private-property",
-          "property",
-          "constructor",
-          "static-method",
-          "private-method",
-          "method",
-          ["get-method", "set-method"],
-          "unknown"
-        ],
         "type": "natural",
         "order": "asc",
         "ignore-case": false
@@ -3386,31 +3386,6 @@
         "return": "parens-new-line"
       }
     ],
-    "no-unsanitized/property": [
-      2,
-      {},
-      {
-        "innerHTML": {},
-        "outerHTML": {}
-      }
-    ],
-    "no-unsanitized/method": [
-      2,
-      {},
-      {
-        "insertAdjacentHTML": {
-          "properties": [1]
-        },
-        "write": {
-          "objectMatches": ["document"],
-          "properties": [0]
-        },
-        "writeln": {
-          "objectMatches": ["document"],
-          "properties": [0]
-        }
-      }
-    ],
     "no-empty-static-block": [2],
     "no-import-assign": [2],
     "no-loss-of-precision": [2],
@@ -3452,6 +3427,31 @@
     "no-new-native-nonconstructor": [2],
     "prefer-object-has-own": [2],
     "chai-friendly/no-unused-expressions": [2],
+    "no-unsanitized/property": [
+      2,
+      {},
+      {
+        "innerHTML": {},
+        "outerHTML": {}
+      }
+    ],
+    "no-unsanitized/method": [
+      2,
+      {},
+      {
+        "insertAdjacentHTML": {
+          "properties": [1]
+        },
+        "write": {
+          "objectMatches": ["document"],
+          "properties": [0]
+        },
+        "writeln": {
+          "objectMatches": ["document"],
+          "properties": [0]
+        }
+      }
+    ],
     "@microsoft/sdl/no-cookies": [2],
     "@microsoft/sdl/no-document-domain": [2],
     "@microsoft/sdl/no-document-write": [2],
@@ -3504,17 +3504,6 @@
     "playwright/valid-expect": [2],
     "playwright/valid-expect-in-promise": [2],
     "playwright/valid-title": [2],
-    "jest-dom/prefer-checked": [2],
-    "jest-dom/prefer-empty": [2],
-    "jest-dom/prefer-enabled-disabled": [2],
-    "jest-dom/prefer-focus": [2],
-    "jest-dom/prefer-in-document": [2],
-    "jest-dom/prefer-required": [2],
-    "jest-dom/prefer-to-have-attribute": [2],
-    "jest-dom/prefer-to-have-class": [2],
-    "jest-dom/prefer-to-have-style": [2],
-    "jest-dom/prefer-to-have-text-content": [2],
-    "jest-dom/prefer-to-have-value": [2],
     "sonarjs/cognitive-complexity": [2],
     "sonarjs/elseif-without-else": [0],
     "sonarjs/max-switch-cases": [2],
@@ -3547,6 +3536,17 @@
     "sonarjs/prefer-object-literal": [2],
     "sonarjs/prefer-single-boolean-return": [2],
     "sonarjs/prefer-while": [2],
+    "jest-dom/prefer-checked": [2],
+    "jest-dom/prefer-empty": [2],
+    "jest-dom/prefer-enabled-disabled": [2],
+    "jest-dom/prefer-focus": [2],
+    "jest-dom/prefer-in-document": [2],
+    "jest-dom/prefer-required": [2],
+    "jest-dom/prefer-to-have-attribute": [2],
+    "jest-dom/prefer-to-have-class": [2],
+    "jest-dom/prefer-to-have-style": [2],
+    "jest-dom/prefer-to-have-text-content": [2],
+    "jest-dom/prefer-to-have-value": [2],
     "no-only-tests/no-only-tests": [2],
     "mocha/handle-done-callback": [2],
     "mocha/max-top-level-suites": [

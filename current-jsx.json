@@ -2447,7 +2447,7 @@
     "@babel/no-unused-expressions": [2],
     "@babel/semi": [0],
     "sort-class-members/sort-class-members": [
-      2,
+      0,
       {
         "order": [
           "[static-properties]",
@@ -3474,6 +3474,26 @@
     "@emotion/no-vanilla": [2],
     "@emotion/pkg-renaming": [2],
     "@emotion/styled-import": [2],
+    "perfectionist/sort-classes": [
+      2,
+      {
+        "groups": [
+          "index-signature",
+          "static-property",
+          "private-property",
+          "property",
+          "constructor",
+          "static-method",
+          "private-method",
+          "method",
+          ["get-method", "set-method"],
+          "unknown"
+        ],
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
+    ],
     "perfectionist/sort-imports": [
       0,
       {
@@ -3493,26 +3513,6 @@
         },
         "newlines-between": "always",
         "internal-pattern": ["~/**"],
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false
-      }
-    ],
-    "perfectionist/sort-classes": [
-      0,
-      {
-        "groups": [
-          "index-signature",
-          "static-property",
-          "private-property",
-          "property",
-          "constructor",
-          "static-method",
-          "private-method",
-          "method",
-          ["get-method", "set-method"],
-          "unknown"
-        ],
         "type": "natural",
         "order": "asc",
         "ignore-case": false
@@ -3837,31 +3837,6 @@
         "return": "parens-new-line"
       }
     ],
-    "no-unsanitized/property": [
-      2,
-      {},
-      {
-        "innerHTML": {},
-        "outerHTML": {}
-      }
-    ],
-    "no-unsanitized/method": [
-      2,
-      {},
-      {
-        "insertAdjacentHTML": {
-          "properties": [1]
-        },
-        "write": {
-          "objectMatches": ["document"],
-          "properties": [0]
-        },
-        "writeln": {
-          "objectMatches": ["document"],
-          "properties": [0]
-        }
-      }
-    ],
     "no-empty-static-block": [2],
     "no-import-assign": [2],
     "no-loss-of-precision": [2],
@@ -3899,6 +3874,31 @@
     "no-constant-binary-expression": [2],
     "no-new-native-nonconstructor": [2],
     "prefer-object-has-own": [2],
+    "no-unsanitized/property": [
+      2,
+      {},
+      {
+        "innerHTML": {},
+        "outerHTML": {}
+      }
+    ],
+    "no-unsanitized/method": [
+      2,
+      {},
+      {
+        "insertAdjacentHTML": {
+          "properties": [1]
+        },
+        "write": {
+          "objectMatches": ["document"],
+          "properties": [0]
+        },
+        "writeln": {
+          "objectMatches": ["document"],
+          "properties": [0]
+        }
+      }
+    ],
     "@microsoft/sdl/no-cookies": [2],
     "@microsoft/sdl/no-document-domain": [2],
     "@microsoft/sdl/no-document-write": [2],
