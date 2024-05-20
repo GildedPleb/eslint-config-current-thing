@@ -1219,6 +1219,7 @@
     "you-dont-need-lodash-underscore"
   ],
   "rules": {
+    "react-prefer-function-component/react-prefer-function-component": [2],
     "react-perf/jsx-no-new-object-as-prop": [2],
     "react-perf/jsx-no-new-array-as-prop": [2],
     "react-perf/jsx-no-new-function-as-prop": [2],
@@ -1250,7 +1251,6 @@
         "singleReturnOnly": false
       }
     ],
-    "react-prefer-function-component/react-prefer-function-component": [2],
     "react/jsx-no-bind": [
       2,
       {
@@ -1281,6 +1281,8 @@
     "react/react-in-jsx-scope": [2],
     "react-hooks/rules-of-hooks": [2],
     "react-hooks/exhaustive-deps": [1],
+    "css-modules/no-unused-class": [2],
+    "css-modules/no-undef-class": [2],
     "@stylistic/object-curly-spacing": [0, "always"],
     "@stylistic/operator-linebreak": [0, "before"],
     "@stylistic/quote-props": [0, "consistent-as-needed"],
@@ -2445,7 +2447,7 @@
     "@babel/no-unused-expressions": [2],
     "@babel/semi": [0],
     "sort-class-members/sort-class-members": [
-      0,
+      2,
       {
         "order": [
           "[static-properties]",
@@ -3307,8 +3309,6 @@
     "jsx-a11y/role-supports-aria-props": [2],
     "jsx-a11y/scope": [2],
     "jsx-a11y/tabindex-no-positive": [2],
-    "css-modules/no-unused-class": [2],
-    "css-modules/no-undef-class": [2],
     "functional/immutable-data": [0],
     "functional/no-let": [
       0,
@@ -3474,26 +3474,6 @@
     "@emotion/no-vanilla": [2],
     "@emotion/pkg-renaming": [2],
     "@emotion/styled-import": [2],
-    "perfectionist/sort-classes": [
-      2,
-      {
-        "groups": [
-          "index-signature",
-          "static-property",
-          "private-property",
-          "property",
-          "constructor",
-          "static-method",
-          "private-method",
-          "method",
-          ["get-method", "set-method"],
-          "unknown"
-        ],
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false
-      }
-    ],
     "perfectionist/sort-imports": [
       0,
       {
@@ -3513,6 +3493,26 @@
         },
         "newlines-between": "always",
         "internal-pattern": ["~/**"],
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
+    ],
+    "perfectionist/sort-classes": [
+      0,
+      {
+        "groups": [
+          "index-signature",
+          "static-property",
+          "private-property",
+          "property",
+          "constructor",
+          "static-method",
+          "private-method",
+          "method",
+          ["get-method", "set-method"],
+          "unknown"
+        ],
         "type": "natural",
         "order": "asc",
         "ignore-case": false

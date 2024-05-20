@@ -2359,7 +2359,7 @@
     "@babel/no-unused-expressions": [2],
     "@babel/semi": [0],
     "sort-class-members/sort-class-members": [
-      0,
+      2,
       {
         "order": [
           "[static-properties]",
@@ -2585,7 +2585,7 @@
       }
     ],
     "prefer-arrow/prefer-arrow-functions": [
-      1,
+      0,
       {
         "classPropertiesAllowed": false,
         "disallowPrototype": true,
@@ -2863,26 +2863,6 @@
     "regexp/sort-flags": [2],
     "regexp/strict": [0],
     "regexp/use-ignore-case": [2],
-    "perfectionist/sort-classes": [
-      2,
-      {
-        "groups": [
-          "index-signature",
-          "static-property",
-          "private-property",
-          "property",
-          "constructor",
-          "static-method",
-          "private-method",
-          "method",
-          ["get-method", "set-method"],
-          "unknown"
-        ],
-        "type": "natural",
-        "order": "asc",
-        "ignore-case": false
-      }
-    ],
     "perfectionist/sort-imports": [
       0,
       {
@@ -2902,6 +2882,26 @@
         },
         "newlines-between": "always",
         "internal-pattern": ["~/**"],
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": false
+      }
+    ],
+    "perfectionist/sort-classes": [
+      0,
+      {
+        "groups": [
+          "index-signature",
+          "static-property",
+          "private-property",
+          "property",
+          "constructor",
+          "static-method",
+          "private-method",
+          "method",
+          ["get-method", "set-method"],
+          "unknown"
+        ],
         "type": "natural",
         "order": "asc",
         "ignore-case": false

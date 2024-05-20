@@ -422,6 +422,7 @@ const rejected = new Set([
   "react-native-markdown-display",
   "rehype-katex",
   "rehype-raw",
+  "rehype-slug",
   "remark-breaks",
   "remark-cli",
   "remark-directive",
