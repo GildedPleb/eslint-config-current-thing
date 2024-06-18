@@ -370,7 +370,7 @@ See [rejected](./src/packages/rejected.ts) for the full list with notes. But it'
 
 The following section is generated according to spec.
 
-Generated on 6/18/2024, total known packages **14,985**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 6/18/2024, total known packages **14,988**. Top 40 next in line, downloads for the previous 28 days:
 
 - 3,352,304 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
 - 2,746,883 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
@@ -382,7 +382,7 @@ Generated on 6/18/2024, total known packages **14,985**. Top 40 next in line, do
 - 1,273,556 downloads, [@ianvs/prettier-plugin-sort-imports](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports)
 - 1,209,751 downloads, [eslint-plugin-formatjs](https://www.npmjs.com/package/eslint-plugin-formatjs)
 - 1,039,491 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
-- 959,598 downloads, [@prettier/plugin-xml](https://www.npmjs.com/package/@prettier/plugin-xml)
+- 967,582 downloads, [@prettier/plugin-xml](https://www.npmjs.com/package/@prettier/plugin-xml)
 - 916,116 downloads, [toml-eslint-parser](https://www.npmjs.com/package/toml-eslint-parser)
 - 746,236 downloads, [eslint-plugin-no-relative-import-paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)
 - 739,098 downloads, [@vercel/edge-config](https://www.npmjs.com/package/@vercel/edge-config)
@@ -393,13 +393,13 @@ Generated on 6/18/2024, total known packages **14,985**. Top 40 next in line, do
 - 509,649 downloads, [prettier-plugin-sh](https://www.npmjs.com/package/prettier-plugin-sh)
 - 484,172 downloads, [eslint-plugin-import-x](https://www.npmjs.com/package/eslint-plugin-import-x)
 - 455,109 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin)
-- 440,704 downloads, [volar-service-prettier](https://www.npmjs.com/package/volar-service-prettier)
+- 444,309 downloads, [volar-service-prettier](https://www.npmjs.com/package/volar-service-prettier)
 - 436,134 downloads, [eslint-config-flat-gitignore](https://www.npmjs.com/package/eslint-config-flat-gitignore)
-- 429,119 downloads, [prettier-plugin-astro](https://www.npmjs.com/package/prettier-plugin-astro)
+- 434,990 downloads, [prettier-plugin-astro](https://www.npmjs.com/package/prettier-plugin-astro)
+- 412,312 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github)
+- 411,959 downloads, [prettier-plugin-java](https://www.npmjs.com/package/prettier-plugin-java)
 - 410,707 downloads, [eslint-plugin-import-helpers](https://www.npmjs.com/package/eslint-plugin-import-helpers)
-- 409,906 downloads, [prettier-plugin-java](https://www.npmjs.com/package/prettier-plugin-java)
 - 407,868 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu)
-- 403,092 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github)
 - 400,676 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard)
 - 398,253 downloads, [eslint-plugin-react-compiler](https://www.npmjs.com/package/eslint-plugin-react-compiler) - Not Yet Eligible
 - 395,258 downloads, [eslint-plugin-i18n-text](https://www.npmjs.com/package/eslint-plugin-i18n-text) - Not Yet Eligible
