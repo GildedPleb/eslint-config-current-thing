@@ -1244,7 +1244,7 @@
     "react-perf",
     "react-prefer-function-component",
     "react-refresh",
-    "regexp:eslint-plugin-regexp@2.5.0",
+    "regexp:eslint-plugin-regexp@2.6.0",
     "rxjs",
     "security:eslint-plugin-security@3.0.1",
     "simple-import-sort:eslint-plugin-simple-import-sort@12.1.0",
