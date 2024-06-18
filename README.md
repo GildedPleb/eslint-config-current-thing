@@ -59,10 +59,10 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1263** TSX rules
+- **1276** TSX rules
 - **1256** Testing rules
 - **1219** JSX rules
-- **1119** Typescript rules
+- **1136** Typescript rules
 - **1075** Javascript rules
 - **33** JSON rules
 - **24** YML rules
@@ -400,7 +400,7 @@ Generated on 6/18/2024, total known packages **15,033**. Top 40 next in line, do
 - 411,959 downloads, [prettier-plugin-java](https://www.npmjs.com/package/prettier-plugin-java)
 - 410,707 downloads, [eslint-plugin-import-helpers](https://www.npmjs.com/package/eslint-plugin-import-helpers)
 - 407,868 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu)
-- 400,676 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard)
+- 404,137 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard)
 - 398,253 downloads, [eslint-plugin-react-compiler](https://www.npmjs.com/package/eslint-plugin-react-compiler) - Not Yet Eligible
 - 396,628 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
 - 395,258 downloads, [eslint-plugin-i18n-text](https://www.npmjs.com/package/eslint-plugin-i18n-text) - Not Yet Eligible
