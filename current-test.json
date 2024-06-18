@@ -1232,7 +1232,7 @@
     "@shopify/jest",
     "@shopify/typescript",
     "@stylistic",
-    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.7.1",
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@7.13.1",
     "ava",
     "chai-friendly",
     "check-file:eslint-plugin-check-file@2.8.0",
