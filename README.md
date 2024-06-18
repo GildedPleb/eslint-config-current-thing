@@ -370,7 +370,7 @@ See [rejected](./src/packages/rejected.ts) for the full list with notes. But it'
 
 The following section is generated according to spec.
 
-Generated on 6/18/2024, total known packages **14,965**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 6/18/2024, total known packages **14,972**. Top 40 next in line, downloads for the previous 28 days:
 
 - 3,352,304 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
 - 2,746,883 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
@@ -394,12 +394,12 @@ Generated on 6/18/2024, total known packages **14,965**. Top 40 next in line, do
 - 484,172 downloads, [eslint-plugin-import-x](https://www.npmjs.com/package/eslint-plugin-import-x)
 - 455,109 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin)
 - 440,704 downloads, [volar-service-prettier](https://www.npmjs.com/package/volar-service-prettier)
+- 436,134 downloads, [eslint-config-flat-gitignore](https://www.npmjs.com/package/eslint-config-flat-gitignore)
 - 429,119 downloads, [prettier-plugin-astro](https://www.npmjs.com/package/prettier-plugin-astro)
-- 424,600 downloads, [eslint-config-flat-gitignore](https://www.npmjs.com/package/eslint-config-flat-gitignore)
 - 410,707 downloads, [eslint-plugin-import-helpers](https://www.npmjs.com/package/eslint-plugin-import-helpers)
 - 409,906 downloads, [prettier-plugin-java](https://www.npmjs.com/package/prettier-plugin-java)
+- 407,868 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu)
 - 403,092 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github)
-- 402,367 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu)
 - 400,676 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard)
 - 398,253 downloads, [eslint-plugin-react-compiler](https://www.npmjs.com/package/eslint-plugin-react-compiler) - Not Yet Eligible
 - 394,720 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
