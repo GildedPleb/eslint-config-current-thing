@@ -385,7 +385,7 @@ Generated on 6/18/2024, total known packages **15,037**. Top 40 next in line, do
 - 967,582 downloads, [@prettier/plugin-xml](https://www.npmjs.com/package/@prettier/plugin-xml)
 - 916,116 downloads, [toml-eslint-parser](https://www.npmjs.com/package/toml-eslint-parser)
 - 754,479 downloads, [eslint-plugin-no-relative-import-paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)
-- 739,098 downloads, [@vercel/edge-config](https://www.npmjs.com/package/@vercel/edge-config)
+- 744,030 downloads, [@vercel/edge-config](https://www.npmjs.com/package/@vercel/edge-config)
 - 728,155 downloads, [eslint-traverse](https://www.npmjs.com/package/eslint-traverse)
 - 696,341 downloads, [eslint-plugin-wdio](https://www.npmjs.com/package/eslint-plugin-wdio)
 - 581,558 downloads, [@prettier/plugin-ruby](https://www.npmjs.com/package/@prettier/plugin-ruby)
