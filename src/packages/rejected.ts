@@ -328,6 +328,7 @@ const rejected = new Set([
   "@kollorg/nihil-veniam-deserunt",
   "@dramaorg/quae-dolore-nostrum",
   "@swenkerorg/modi-dolorum-provident",
+  "conf",
 
   // Jimp
   "@jimp/plugin-resize",

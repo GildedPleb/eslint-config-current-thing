@@ -370,20 +370,21 @@ See [rejected](./src/packages/rejected.ts) for the full list with notes. But it'
 
 The following section is generated according to spec.
 
-Generated on 6/18/2024, total known packages **14,972**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 6/18/2024, total known packages **14,983**. Top 40 next in line, downloads for the previous 28 days:
 
 - 3,352,304 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
+- 3,201,936 downloads, [conf](https://www.npmjs.com/package/conf)
 - 2,746,883 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
 - 2,693,610 downloads, [eslint-config-turbo](https://www.npmjs.com/package/eslint-config-turbo)
 - 2,590,999 downloads, [prettier-plugin-organize-imports](https://www.npmjs.com/package/prettier-plugin-organize-imports)
 - 1,982,716 downloads, [eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest)
 - 1,393,179 downloads, [@svgr/plugin-prettier](https://www.npmjs.com/package/@svgr/plugin-prettier)
+- 1,283,246 downloads, [eslint-plugin-ban](https://www.npmjs.com/package/eslint-plugin-ban)
 - 1,273,556 downloads, [@ianvs/prettier-plugin-sort-imports](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports)
-- 1,230,761 downloads, [eslint-plugin-ban](https://www.npmjs.com/package/eslint-plugin-ban)
 - 1,209,751 downloads, [eslint-plugin-formatjs](https://www.npmjs.com/package/eslint-plugin-formatjs)
 - 1,039,491 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 959,598 downloads, [@prettier/plugin-xml](https://www.npmjs.com/package/@prettier/plugin-xml)
-- 907,645 downloads, [toml-eslint-parser](https://www.npmjs.com/package/toml-eslint-parser)
+- 916,116 downloads, [toml-eslint-parser](https://www.npmjs.com/package/toml-eslint-parser)
 - 746,236 downloads, [eslint-plugin-no-relative-import-paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)
 - 739,098 downloads, [@vercel/edge-config](https://www.npmjs.com/package/@vercel/edge-config)
 - 695,398 downloads, [eslint-plugin-wdio](https://www.npmjs.com/package/eslint-plugin-wdio)
@@ -411,6 +412,5 @@ Generated on 6/18/2024, total known packages **14,972**. Top 40 next in line, do
 - 368,326 downloads, [eslint-plugin-testcafe](https://www.npmjs.com/package/eslint-plugin-testcafe) - Not Yet Eligible
 - 364,271 downloads, [prettier-plugin-sort-json](https://www.npmjs.com/package/prettier-plugin-sort-json) - Not Yet Eligible
 - 362,904 downloads, [@sap/eslint-plugin-cds](https://www.npmjs.com/package/@sap/eslint-plugin-cds) - Not Yet Eligible
-- 358,628 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->
