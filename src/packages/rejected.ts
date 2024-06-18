@@ -194,6 +194,7 @@ const rejected = new Set([
   "find-babel-config",
   "@svgr/babel-plugin-add-jsx-attribute",
   "babel-plugin-module-resolver",
+  "@babel/plugin-transform-dynamic-import",
 
   // Webpack
   "eslint-webpack-plugin",
@@ -212,6 +213,8 @@ const rejected = new Set([
   "node-polyfill-webpack-plugin",
 
   // Various / Out of scope
+  "@expo/config-types",
+  "test-exclude",
   "@axe-core/react",
   "@biomejs/biome",
   "@codemirror/lint",
@@ -292,7 +295,6 @@ const rejected = new Set([
   "@salesforce/plugin-apex",
   "@release-it/conventional-changelog",
   "pretty-quick",
-  "@jimp/plugin-resize",
   "application-config-path",
   "requirejs-config-file",
   "nconf",
@@ -319,6 +321,24 @@ const rejected = new Set([
   "fined",
   "vscode-langservers-extracted",
   "env-paths",
+  "pkcs7",
+  "htmlnano",
+  "inputmask",
+  "@juigorg/nisi-molestiae-ut",
+  "@kollorg/nihil-veniam-deserunt",
+  "@dramaorg/quae-dolore-nostrum",
+  "@swenkerorg/modi-dolorum-provident",
+
+  // Jimp
+  "@jimp/plugin-resize",
+  "@jimp/plugin-color",
+  "@jimp/plugin-circle",
+  "@jimp/plugin-threshold",
+
+  // @zitterorg
+  "@zitterorg/aspernatur-pariatur-occaecati",
+  "@zitterorg/illum-perferendis-consectetur",
+  "@zitterorg/eum-veritatis-placeat",
 
   // Fastify
   "fastify-plugin",
@@ -391,6 +411,14 @@ const rejected = new Set([
   "postcss-pxtorem",
   "cssnano",
   "postcss-modules-extract-imports",
+  "postcss-discard-duplicates",
+  "postcss-discard-comments",
+  "postcss-ordered-values",
+  "postcss-minify-gradients",
+  "postcss-minify-font-values",
+  "postcss-discard-overridden",
+  "postcss-normalize-whitespace",
+  "postcss-normalize-string",
 
   // aws
   "@aws-sdk/credential-provider-ini",
@@ -570,6 +598,7 @@ const rejected = new Set([
   "commitlint",
   "@commitlint/config-validator",
   "@commitlint/config-conventional",
+  "@commitlint/config-angular",
 
   // Monorepo stuffs
   "@backstage/eslint-plugin",

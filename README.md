@@ -59,9 +59,9 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1256** TSX rules
+- **1255** TSX rules
 - **1247** Testing rules
-- **1212** JSX rules
+- **1211** JSX rules
 - **1111** Typescript rules
 - **1067** Javascript rules
 - **33** JSON rules
@@ -358,7 +358,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **512**.
+The amount of packages reviewed and rejected **537**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -370,47 +370,47 @@ See [rejected](./src/packages/rejected.ts) for the full list with notes. But it'
 
 The following section is generated according to spec.
 
-Generated on 5/20/2024, total known packages **12,968**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 6/17/2024, total known packages **14,898**. Top 40 next in line, downloads for the previous 28 days:
 
-- 3,410,309 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
-- 2,546,198 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
-- 2,496,960 downloads, [eslint-config-turbo](https://www.npmjs.com/package/eslint-config-turbo)
-- 2,470,366 downloads, [prettier-plugin-organize-imports](https://www.npmjs.com/package/prettier-plugin-organize-imports)
-- 1,830,529 downloads, [eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest)
-- 1,396,438 downloads, [pkcs7](https://www.npmjs.com/package/pkcs7)
-- 1,318,793 downloads, [@svgr/plugin-prettier](https://www.npmjs.com/package/@svgr/plugin-prettier)
-- 1,172,581 downloads, [@ianvs/prettier-plugin-sort-imports](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports)
-- 1,001,430 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
-- 921,985 downloads, [@prettier/plugin-xml](https://www.npmjs.com/package/@prettier/plugin-xml)
-- 875,815 downloads, [toml-eslint-parser](https://www.npmjs.com/package/toml-eslint-parser)
-- 798,380 downloads, [eslint-plugin-formatjs](https://www.npmjs.com/package/eslint-plugin-formatjs)
-- 664,221 downloads, [eslint-plugin-no-relative-import-paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)
-- 537,458 downloads, [@prettier/plugin-ruby](https://www.npmjs.com/package/@prettier/plugin-ruby)
-- 533,236 downloads, [prettier-plugin-sh](https://www.npmjs.com/package/prettier-plugin-sh)
-- 521,648 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit)
-- 441,729 downloads, [eslint-config-xo-space](https://www.npmjs.com/package/eslint-config-xo-space)
-- 424,993 downloads, [volar-service-prettier](https://www.npmjs.com/package/volar-service-prettier)
-- 421,637 downloads, [prettier-plugin-astro](https://www.npmjs.com/package/prettier-plugin-astro)
-- 413,824 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu)
-- 404,380 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin)
-- 401,551 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp)
-- 384,194 downloads, [prettier-plugin-sort-json](https://www.npmjs.com/package/prettier-plugin-sort-json) - Not Yet Eligible
-- 382,984 downloads, [eslint-plugin-import-helpers](https://www.npmjs.com/package/eslint-plugin-import-helpers) - Not Yet Eligible
-- 374,224 downloads, [prettier-plugin-java](https://www.npmjs.com/package/prettier-plugin-java) - Not Yet Eligible
-- 369,699 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
-- 365,676 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard) - Not Yet Eligible
-- 362,074 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
-- 360,273 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
-- 356,173 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
-- 351,258 downloads, [eslint-plugin-i18n-text](https://www.npmjs.com/package/eslint-plugin-i18n-text) - Not Yet Eligible
-- 350,943 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc) - Not Yet Eligible
-- 341,765 downloads, [@wordpress/prettier-config](https://www.npmjs.com/package/@wordpress/prettier-config) - Not Yet Eligible
-- 338,126 downloads, [@sap/eslint-plugin-cds](https://www.npmjs.com/package/@sap/eslint-plugin-cds) - Not Yet Eligible
-- 334,872 downloads, [eslint-plugin-import-x](https://www.npmjs.com/package/eslint-plugin-import-x) - Not Yet Eligible
-- 332,688 downloads, [wp-prettier](https://www.npmjs.com/package/wp-prettier) - Not Yet Eligible
-- 332,097 downloads, [@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config) - Not Yet Eligible
-- 319,216 downloads, [eslint-plugin-testcafe](https://www.npmjs.com/package/eslint-plugin-testcafe) - Not Yet Eligible
-- 315,473 downloads, [eslint-plugin-lit](https://www.npmjs.com/package/eslint-plugin-lit) - Not Yet Eligible
-- 301,660 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
+- 3,352,304 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
+- 2,746,883 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
+- 2,693,610 downloads, [eslint-config-turbo](https://www.npmjs.com/package/eslint-config-turbo)
+- 2,567,504 downloads, [prettier-plugin-organize-imports](https://www.npmjs.com/package/prettier-plugin-organize-imports)
+- 1,982,716 downloads, [eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest)
+- 1,393,179 downloads, [@svgr/plugin-prettier](https://www.npmjs.com/package/@svgr/plugin-prettier)
+- 1,273,556 downloads, [@ianvs/prettier-plugin-sort-imports](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports)
+- 1,230,761 downloads, [eslint-plugin-ban](https://www.npmjs.com/package/eslint-plugin-ban)
+- 1,209,751 downloads, [eslint-plugin-formatjs](https://www.npmjs.com/package/eslint-plugin-formatjs)
+- 1,039,491 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
+- 959,598 downloads, [@prettier/plugin-xml](https://www.npmjs.com/package/@prettier/plugin-xml)
+- 907,645 downloads, [toml-eslint-parser](https://www.npmjs.com/package/toml-eslint-parser)
+- 746,236 downloads, [eslint-plugin-no-relative-import-paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)
+- 739,098 downloads, [@vercel/edge-config](https://www.npmjs.com/package/@vercel/edge-config)
+- 695,398 downloads, [eslint-plugin-wdio](https://www.npmjs.com/package/eslint-plugin-wdio)
+- 680,493 downloads, [eslint-traverse](https://www.npmjs.com/package/eslint-traverse)
+- 574,939 downloads, [@prettier/plugin-ruby](https://www.npmjs.com/package/@prettier/plugin-ruby)
+- 529,966 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit)
+- 509,649 downloads, [prettier-plugin-sh](https://www.npmjs.com/package/prettier-plugin-sh)
+- 467,342 downloads, [eslint-plugin-import-x](https://www.npmjs.com/package/eslint-plugin-import-x)
+- 455,109 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin)
+- 440,704 downloads, [volar-service-prettier](https://www.npmjs.com/package/volar-service-prettier)
+- 429,119 downloads, [prettier-plugin-astro](https://www.npmjs.com/package/prettier-plugin-astro)
+- 424,600 downloads, [eslint-config-flat-gitignore](https://www.npmjs.com/package/eslint-config-flat-gitignore)
+- 411,338 downloads, [eslint-plugin-import-helpers](https://www.npmjs.com/package/eslint-plugin-import-helpers)
+- 409,906 downloads, [prettier-plugin-java](https://www.npmjs.com/package/prettier-plugin-java)
+- 403,092 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github)
+- 402,367 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu)
+- 400,676 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard)
+- 394,720 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
+- 394,634 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
+- 388,494 downloads, [eslint-plugin-react-compiler](https://www.npmjs.com/package/eslint-plugin-react-compiler) - Not Yet Eligible
+- 386,837 downloads, [eslint-plugin-i18n-text](https://www.npmjs.com/package/eslint-plugin-i18n-text) - Not Yet Eligible
+- 384,714 downloads, [wp-prettier](https://www.npmjs.com/package/wp-prettier) - Not Yet Eligible
+- 378,069 downloads, [@juigorg/sit-nam-neque](https://www.npmjs.com/package/@juigorg/sit-nam-neque) - Not Yet Eligible
+- 370,916 downloads, [@wordpress/prettier-config](https://www.npmjs.com/package/@wordpress/prettier-config) - Not Yet Eligible
+- 368,326 downloads, [eslint-plugin-testcafe](https://www.npmjs.com/package/eslint-plugin-testcafe) - Not Yet Eligible
+- 364,271 downloads, [prettier-plugin-sort-json](https://www.npmjs.com/package/prettier-plugin-sort-json) - Not Yet Eligible
+- 362,904 downloads, [@sap/eslint-plugin-cds](https://www.npmjs.com/package/@sap/eslint-plugin-cds) - Not Yet Eligible
+- 358,628 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->
