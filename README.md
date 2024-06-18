@@ -370,7 +370,7 @@ See [rejected](./src/packages/rejected.ts) for the full list with notes. But it'
 
 The following section is generated according to spec.
 
-Generated on 6/18/2024, total known packages **15,044**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 6/18/2024, total known packages **15,045**. Top 40 next in line, downloads for the previous 28 days:
 
 - 3,362,769 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
 - 2,771,925 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
