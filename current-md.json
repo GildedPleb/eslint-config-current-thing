@@ -1099,7 +1099,7 @@
   "processor": "mdx/remark@3.1.5",
   "plugins": [
     "@",
-    "@babel:@babel/eslint-plugin@7.23.5",
+    "@babel:@babel/eslint-plugin@7.24.7",
     "@emotion",
     "@eslint-community/eslint-comments",
     "@graphql-eslint",

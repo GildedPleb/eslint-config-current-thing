@@ -370,7 +370,7 @@ See [rejected](./src/packages/rejected.ts) for the full list with notes. But it'
 
 The following section is generated according to spec.
 
-Generated on 6/18/2024, total known packages **14,920**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 6/18/2024, total known packages **14,951**. Top 40 next in line, downloads for the previous 28 days:
 
 - 3,352,304 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
 - 2,746,883 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
@@ -396,7 +396,7 @@ Generated on 6/18/2024, total known packages **14,920**. Top 40 next in line, do
 - 440,704 downloads, [volar-service-prettier](https://www.npmjs.com/package/volar-service-prettier)
 - 429,119 downloads, [prettier-plugin-astro](https://www.npmjs.com/package/prettier-plugin-astro)
 - 424,600 downloads, [eslint-config-flat-gitignore](https://www.npmjs.com/package/eslint-config-flat-gitignore)
-- 411,338 downloads, [eslint-plugin-import-helpers](https://www.npmjs.com/package/eslint-plugin-import-helpers)
+- 410,707 downloads, [eslint-plugin-import-helpers](https://www.npmjs.com/package/eslint-plugin-import-helpers)
 - 409,906 downloads, [prettier-plugin-java](https://www.npmjs.com/package/prettier-plugin-java)
 - 403,092 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github)
 - 402,367 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu)
@@ -406,7 +406,7 @@ Generated on 6/18/2024, total known packages **14,920**. Top 40 next in line, do
 - 394,634 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
 - 386,837 downloads, [eslint-plugin-i18n-text](https://www.npmjs.com/package/eslint-plugin-i18n-text) - Not Yet Eligible
 - 384,714 downloads, [wp-prettier](https://www.npmjs.com/package/wp-prettier) - Not Yet Eligible
-- 378,069 downloads, [@juigorg/sit-nam-neque](https://www.npmjs.com/package/@juigorg/sit-nam-neque) - Not Yet Eligible
+- 375,915 downloads, [@juigorg/sit-nam-neque](https://www.npmjs.com/package/@juigorg/sit-nam-neque) - Not Yet Eligible
 - 370,916 downloads, [@wordpress/prettier-config](https://www.npmjs.com/package/@wordpress/prettier-config) - Not Yet Eligible
 - 368,326 downloads, [eslint-plugin-testcafe](https://www.npmjs.com/package/eslint-plugin-testcafe) - Not Yet Eligible
 - 364,271 downloads, [prettier-plugin-sort-json](https://www.npmjs.com/package/prettier-plugin-sort-json) - Not Yet Eligible
