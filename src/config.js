@@ -693,7 +693,6 @@ const configGen = ({
               },
             },
             rules: {
-              "@typescript-eslint/no-extra-parens": 0,
               "prettier/prettier": 0,
               "prettier-tailwind/prettier": 0,
               ...shopify.configs.react.rules,
@@ -1756,7 +1755,6 @@ const configGen = ({
               },
             },
             rules: {
-              "@typescript-eslint/no-extra-parens": 0,
               "prettier/prettier": 0,
               "prettier-tailwind/prettier": 0,
               ...standardJsx.rules,
