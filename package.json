@@ -142,7 +142,7 @@
     "eslint-plugin-no-unsanitized": "^4.0.2",
     "eslint-plugin-no-use-extend-native": "^0.5.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-perfectionist": "^2.10.0",
+    "eslint-plugin-perfectionist": "^2.11.0",
     "eslint-plugin-playwright": "^1.6.2",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-prettier": "^5.1.3",
