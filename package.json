@@ -113,7 +113,7 @@
     "eslint-plugin-ava": "^14.0.0",
     "eslint-plugin-chai-friendly": "^1.0.0",
     "eslint-plugin-check-file": "^2.8.0",
-    "eslint-plugin-compat": "^4.2.0",
+    "eslint-plugin-compat": "^5.0.0",
     "eslint-plugin-css-modules": "^2.12.0",
     "eslint-plugin-cypress": "^3.3.0",
     "eslint-plugin-deprecation": "^2.0.0",

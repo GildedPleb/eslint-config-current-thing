@@ -1236,7 +1236,7 @@
     "ava",
     "chai-friendly:eslint-plugin-chai-friendly@1.0.0",
     "check-file:eslint-plugin-check-file@2.8.0",
-    "compat",
+    "compat:eslint-plugin-compat@5.0.0",
     "css-modules",
     "cypress",
     "es",
