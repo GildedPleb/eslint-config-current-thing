@@ -92,7 +92,7 @@
     "@microsoft/eslint-plugin-sdl": "github:microsoft/eslint-plugin-sdl",
     "@next/eslint-plugin-next": "^14.2.4",
     "@react-native-community/eslint-config": "^3.2.0",
-    "@react-native/eslint-plugin": "^0.75.0-main",
+    "@react-native/eslint-plugin": "^0.75.0-rc.0",
     "@shopify/eslint-plugin": "^45.0.0",
     "@stylistic/eslint-plugin": "^2.2.1",
     "confusing-browser-globals": "^1.0.11",

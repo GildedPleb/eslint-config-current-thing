@@ -376,7 +376,7 @@ Generated on 6/18/2024, total known packages **15,044**. Top 40 next in line, do
 - 2,771,925 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
 - 2,693,610 downloads, [eslint-config-turbo](https://www.npmjs.com/package/eslint-config-turbo)
 - 2,590,999 downloads, [prettier-plugin-organize-imports](https://www.npmjs.com/package/prettier-plugin-organize-imports)
-- 1,982,716 downloads, [eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest)
+- 2,018,047 downloads, [eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest)
 - 1,393,179 downloads, [@svgr/plugin-prettier](https://www.npmjs.com/package/@svgr/plugin-prettier)
 - 1,284,569 downloads, [@ianvs/prettier-plugin-sort-imports](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports)
 - 1,283,246 downloads, [eslint-plugin-ban](https://www.npmjs.com/package/eslint-plugin-ban)
