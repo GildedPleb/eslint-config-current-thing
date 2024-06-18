@@ -59,11 +59,11 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1255** TSX rules
-- **1247** Testing rules
-- **1211** JSX rules
-- **1111** Typescript rules
-- **1067** Javascript rules
+- **1262** TSX rules
+- **1254** Testing rules
+- **1218** JSX rules
+- **1118** Typescript rules
+- **1074** Javascript rules
 - **33** JSON rules
 - **24** YML rules
 - **5** MD rules
@@ -358,7 +358,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **537**.
+The amount of packages reviewed and rejected **538**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -370,10 +370,9 @@ See [rejected](./src/packages/rejected.ts) for the full list with notes. But it'
 
 The following section is generated according to spec.
 
-Generated on 6/18/2024, total known packages **14,983**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 6/18/2024, total known packages **14,985**. Top 40 next in line, downloads for the previous 28 days:
 
 - 3,352,304 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
-- 3,201,936 downloads, [conf](https://www.npmjs.com/package/conf)
 - 2,746,883 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
 - 2,693,610 downloads, [eslint-config-turbo](https://www.npmjs.com/package/eslint-config-turbo)
 - 2,590,999 downloads, [prettier-plugin-organize-imports](https://www.npmjs.com/package/prettier-plugin-organize-imports)
@@ -403,14 +402,15 @@ Generated on 6/18/2024, total known packages **14,983**. Top 40 next in line, do
 - 403,092 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github)
 - 400,676 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard)
 - 398,253 downloads, [eslint-plugin-react-compiler](https://www.npmjs.com/package/eslint-plugin-react-compiler) - Not Yet Eligible
+- 395,258 downloads, [eslint-plugin-i18n-text](https://www.npmjs.com/package/eslint-plugin-i18n-text) - Not Yet Eligible
 - 394,720 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
 - 394,634 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
-- 386,837 downloads, [eslint-plugin-i18n-text](https://www.npmjs.com/package/eslint-plugin-i18n-text) - Not Yet Eligible
 - 384,714 downloads, [wp-prettier](https://www.npmjs.com/package/wp-prettier) - Not Yet Eligible
 - 375,915 downloads, [@juigorg/sit-nam-neque](https://www.npmjs.com/package/@juigorg/sit-nam-neque) - Not Yet Eligible
 - 370,916 downloads, [@wordpress/prettier-config](https://www.npmjs.com/package/@wordpress/prettier-config) - Not Yet Eligible
 - 368,326 downloads, [eslint-plugin-testcafe](https://www.npmjs.com/package/eslint-plugin-testcafe) - Not Yet Eligible
+- 366,342 downloads, [@sap/eslint-plugin-cds](https://www.npmjs.com/package/@sap/eslint-plugin-cds) - Not Yet Eligible
 - 364,271 downloads, [prettier-plugin-sort-json](https://www.npmjs.com/package/prettier-plugin-sort-json) - Not Yet Eligible
-- 362,904 downloads, [@sap/eslint-plugin-cds](https://www.npmjs.com/package/@sap/eslint-plugin-cds) - Not Yet Eligible
+- 358,628 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->
