@@ -74,7 +74,7 @@
   },
   "browserslist": [
     "defaults and supports es6-module",
-    "node >= 18"
+    "node >= 20"
   ],
   "prettier": {},
   "remarkConfig": {
@@ -156,7 +156,7 @@
     "eslint-plugin-rxjs": "^5.0.3",
     "eslint-plugin-security": "^3.0.1",
     "eslint-plugin-simple-import-sort": "^12.1.0",
-    "eslint-plugin-sonarjs": "^0.25.1",
+    "eslint-plugin-sonarjs": "^1.0.3",
     "eslint-plugin-sort-class-members": "^1.20.0",
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-tailwindcss": "^3.17.3",
@@ -209,6 +209,6 @@
     "typescript": "^5.4.5"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   }
 }
