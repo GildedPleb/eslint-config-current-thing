@@ -370,7 +370,7 @@ See [rejected](./src/packages/rejected.ts) for the full list with notes. But it'
 
 The following section is generated according to spec.
 
-Generated on 6/18/2024, total known packages **15,018**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 6/18/2024, total known packages **15,019**. Top 40 next in line, downloads for the previous 28 days:
 
 - 3,362,769 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
 - 2,746,883 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
@@ -384,7 +384,7 @@ Generated on 6/18/2024, total known packages **15,018**. Top 40 next in line, do
 - 1,039,491 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 967,582 downloads, [@prettier/plugin-xml](https://www.npmjs.com/package/@prettier/plugin-xml)
 - 916,116 downloads, [toml-eslint-parser](https://www.npmjs.com/package/toml-eslint-parser)
-- 746,236 downloads, [eslint-plugin-no-relative-import-paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)
+- 754,479 downloads, [eslint-plugin-no-relative-import-paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)
 - 739,098 downloads, [@vercel/edge-config](https://www.npmjs.com/package/@vercel/edge-config)
 - 728,155 downloads, [eslint-traverse](https://www.npmjs.com/package/eslint-traverse)
 - 696,341 downloads, [eslint-plugin-wdio](https://www.npmjs.com/package/eslint-plugin-wdio)
