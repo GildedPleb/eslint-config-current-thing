@@ -1202,7 +1202,7 @@
     "testing-library",
     "tsdoc",
     "typescript-sort-keys",
-    "unicorn:eslint-plugin-unicorn@52.0.0",
+    "unicorn:eslint-plugin-unicorn@54.0.0",
     "unused-imports",
     "yml:eslint-plugin-yml@1.14.0",
     "you-dont-need-lodash-underscore"

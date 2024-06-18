@@ -59,11 +59,11 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1276** TSX rules
-- **1256** Testing rules
-- **1219** JSX rules
-- **1136** Typescript rules
-- **1075** Javascript rules
+- **1282** TSX rules
+- **1262** Testing rules
+- **1225** JSX rules
+- **1142** Typescript rules
+- **1081** Javascript rules
 - **33** JSON rules
 - **24** YML rules
 - **5** MD rules
@@ -370,7 +370,7 @@ See [rejected](./src/packages/rejected.ts) for the full list with notes. But it'
 
 The following section is generated according to spec.
 
-Generated on 6/18/2024, total known packages **15,038**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 6/18/2024, total known packages **15,042**. Top 40 next in line, downloads for the previous 28 days:
 
 - 3,362,769 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
 - 2,746,883 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
