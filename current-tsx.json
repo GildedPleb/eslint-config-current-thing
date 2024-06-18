@@ -1209,7 +1209,7 @@
     "react-refresh",
     "regexp:eslint-plugin-regexp@2.5.0",
     "rxjs",
-    "security:eslint-plugin-security@3.0.0",
+    "security:eslint-plugin-security@3.0.1",
     "simple-import-sort:eslint-plugin-simple-import-sort@12.1.0",
     "sonarjs",
     "sort-class-members:eslint-plugin-sort-class-members@1.20.0",
@@ -3220,9 +3220,6 @@
     "regexp/sort-flags": [2],
     "regexp/strict": [0],
     "regexp/use-ignore-case": [2],
-    "react-perf/jsx-no-new-object-as-prop": [2],
-    "react-perf/jsx-no-new-array-as-prop": [2],
-    "react-perf/jsx-no-new-function-as-prop": [2],
     "arrow-parens": [0],
     "@stylistic/array-bracket-spacing": [2, "never"],
     "@stylistic/arrow-spacing": [
@@ -3408,6 +3405,9 @@
         "return": "parens-new-line"
       }
     ],
+    "react-perf/jsx-no-new-object-as-prop": [2],
+    "react-perf/jsx-no-new-array-as-prop": [2],
+    "react-perf/jsx-no-new-function-as-prop": [2],
     "typescript-sort-keys/interface": [2],
     "typescript-sort-keys/string-enum": [2],
     "@microsoft/sdl/no-cookies": [2],

@@ -1155,7 +1155,7 @@
     "react-refresh",
     "regexp:eslint-plugin-regexp@2.5.0",
     "rxjs",
-    "security:eslint-plugin-security@3.0.0",
+    "security:eslint-plugin-security@3.0.1",
     "simple-import-sort:eslint-plugin-simple-import-sort@12.1.0",
     "sonarjs",
     "sort-class-members:eslint-plugin-sort-class-members@1.20.0",

@@ -1185,7 +1185,7 @@
     "react-refresh",
     "regexp:eslint-plugin-regexp@2.5.0",
     "rxjs",
-    "security:eslint-plugin-security@3.0.0",
+    "security:eslint-plugin-security@3.0.1",
     "simple-import-sort:eslint-plugin-simple-import-sort@12.1.0",
     "sonarjs",
     "sort-class-members:eslint-plugin-sort-class-members@1.20.0",
@@ -3273,6 +3273,7 @@
     "@microsoft/sdl/no-postmessage-star-origin": [2],
     "@microsoft/sdl/no-winjs-html-unsafe": [2],
     "@microsoft/sdl/no-unsafe-alloc": [2],
+    "jsdoc/check-tag-names": [1],
     "no-unsanitized/property": [
       2,
       {},
@@ -3298,7 +3299,6 @@
         }
       }
     ],
-    "jsdoc/check-tag-names": [1],
     "compat/compat": [2],
     "ft-flow/define-flow-type": [1],
     "ft-flow/use-flow-type": [1],

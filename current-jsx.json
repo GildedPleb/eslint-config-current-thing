@@ -1204,7 +1204,7 @@
     "react-refresh",
     "regexp:eslint-plugin-regexp@2.5.0",
     "rxjs",
-    "security:eslint-plugin-security@3.0.0",
+    "security:eslint-plugin-security@3.0.1",
     "simple-import-sort:eslint-plugin-simple-import-sort@12.1.0",
     "sonarjs",
     "sort-class-members:eslint-plugin-sort-class-members@1.20.0",
@@ -3684,9 +3684,6 @@
     "no-constant-binary-expression": [2],
     "no-new-native-nonconstructor": [2],
     "prefer-object-has-own": [2],
-    "react-perf/jsx-no-new-object-as-prop": [2],
-    "react-perf/jsx-no-new-array-as-prop": [2],
-    "react-perf/jsx-no-new-function-as-prop": [2],
     "@typescript-eslint/brace-style": [0],
     "@stylistic/array-bracket-spacing": [2, "never"],
     "@stylistic/arrow-spacing": [
@@ -3873,6 +3870,9 @@
         "return": "parens-new-line"
       }
     ],
+    "react-perf/jsx-no-new-object-as-prop": [2],
+    "react-perf/jsx-no-new-array-as-prop": [2],
+    "react-perf/jsx-no-new-function-as-prop": [2],
     "@microsoft/sdl/no-cookies": [2],
     "@microsoft/sdl/no-document-domain": [2],
     "@microsoft/sdl/no-document-write": [2],
@@ -3884,6 +3884,7 @@
     "@microsoft/sdl/no-winjs-html-unsafe": [2],
     "@microsoft/sdl/no-unsafe-alloc": [2],
     "@microsoft/sdl/react-iframe-missing-sandbox": [2],
+    "jsdoc/check-tag-names": [1],
     "no-unsanitized/property": [
       2,
       {},
@@ -3909,7 +3910,6 @@
         }
       }
     ],
-    "jsdoc/check-tag-names": [1],
     "tailwindcss/classnames-order": [1],
     "tailwindcss/enforces-negative-arbitrary-values": [1],
     "tailwindcss/enforces-shorthand": [1],
