@@ -94,7 +94,7 @@
     "@react-native-community/eslint-config": "^3.2.0",
     "@react-native/eslint-plugin": "^0.75.0-main",
     "@shopify/eslint-plugin": "^45.0.0",
-    "@stylistic/eslint-plugin": "^1.7.2",
+    "@stylistic/eslint-plugin": "^2.2.1",
     "confusing-browser-globals": "^1.0.11",
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
