@@ -36,7 +36,7 @@ export interface PackageAnalysis {
 }
 
 interface NpmResponse {
-  description: string;
+  description?: string;
   keywords?: string[];
   maintainers?: Array<{ name: string }>;
   name: string;
@@ -204,7 +204,7 @@ async function fetchPackageData(
       description: data.description ?? "",
       keywords: data.keywords ?? [],
       lastPublish: data.time?.modified,
-      maintainers: (data.maintainers ?? []).map((m) => m.name),
+      maintainers: (data.maintainers ?? []).map((main) => main.name),
       name: data.name,
       readme: data.readme,
       repository: data.repository,
@@ -237,7 +237,7 @@ export async function rejectTop40(packages: Populated[]): Promise<void> {
     }
 
     const result = await analyzePackage(info);
-    if ("error" in result && result.error) {
+    if ("error" in result) {
       throw new Error(result.message);
     }
     if ("category" in result) {

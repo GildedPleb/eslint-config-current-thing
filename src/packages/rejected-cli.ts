@@ -7,6 +7,7 @@ import Ajv from "ajv";
 import chalk from "chalk";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import Table from "cli-table3";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { Command } from "commander";
 
 // import { Table } from "console-table-printer";
@@ -86,9 +87,9 @@ function displayTable(data: DataType[]): void {
     colWidths: [
       // eslint-disable-next-line unicorn/no-null
       null,
-      3, // reject
-      40, // description
-      40, // purpose
+      3,
+      40,
+      40,
     ],
     head: [
       "Name",
@@ -249,7 +250,7 @@ program
   .action(async (term: string, options: { json?: boolean; keys?: string }) => {
     try {
       // Convert comma-separated keys to array if provided
-      const searchKeys = (options.keys?.split(",").map((k) => k.trim()) ??
+      const searchKeys = (options.keys?.split(",").map((key) => key.trim()) ??
         []) as Array<"name" | keyof PackageAnalysis>;
 
       const results = await search(term, searchKeys);

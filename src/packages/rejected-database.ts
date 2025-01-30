@@ -41,6 +41,12 @@ async function addItem(
   ]);
 }
 
+interface LevelDBError {
+  code: string;
+  notFound: boolean;
+  status: number;
+}
+
 /**
  * Get item by name using direct lookup
  * @param name - string
@@ -53,7 +59,19 @@ async function getItemByName(
     const category = await database.get(`_names${DELIMITER}${name}`);
     const data = await database.get(`${category}${DELIMITER}${name}`);
     return JSON.parse(data) as PackageAnalysis;
-  } catch {}
+  } catch (error: unknown) {
+    // Type guard to ensure error is a LevelDB error
+    if (
+      error !== null &&
+      typeof error === "object" &&
+      "code" in error &&
+      (error as LevelDBError).code === "LEVEL_NOT_FOUND"
+    ) {
+      return undefined;
+    }
+    // Re-throw other unexpected errors
+    throw error instanceof Error ? error : new Error(String(error));
+  }
 }
 
 /**
@@ -140,7 +158,7 @@ async function search(
         if (String(value).toLowerCase().includes(term)) {
           isMatch = true;
           break;
-        } else if (typeof value === "object" && value !== null) {
+        } else if (typeof value === "object") {
           // Handle nested objects
           const stringified = JSON.stringify(value).toLowerCase();
           if (stringified.includes(term)) {
