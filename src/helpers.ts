@@ -30,7 +30,8 @@ export function isMoreThanRandomDaysInThePast(dateString: string): boolean {
   const currentDate = Date.now();
   const timeDiff = currentDate - givenDate;
   const daysDiff = timeDiff / (1000 * 60 * 60 * 24);
-  return daysDiff > Math.random() * 7 + 1;
+  // first number is how many days to spread this out over? Second number is how many days after is this invalidated?
+  return daysDiff > Math.random() * 60 + 1;
 }
 
 const ADD = "[~~~+]";

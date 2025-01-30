@@ -11,8 +11,12 @@ import plugins from "../definitions/plugins";
 import { isMoreThanRandomDaysInThePast } from "../helpers";
 import { fetchNPMURLs, getDownloadCount } from "../npm";
 import investigating from "./investigating";
-import rejected from "./rejected";
+import { search } from "./rejected-database";
+import { rejectTop40 } from "./rejected-research";
 import searchTerms from "./searches";
+
+const rejected = await search("true", ["reject"]);
+const rejectedNames = rejected.map((item) => item.name);
 
 const database = new Level("./package-cache", { valueEncoding: "json" });
 const installed = new Set([
@@ -33,7 +37,7 @@ const installedNames = new Set([
   ...parsers.map(({ name }) => `ESLint ${name}`.replaceAll(" ", "%20")),
 ]);
 
-interface Populated {
+export interface Populated {
   count: number;
   date: string;
   name: string;
@@ -70,12 +74,12 @@ for (const pack of investigating) {
     console.log(`--> ALERT! investigating "${pack}" already INSTALLED`);
   }
 
-  if (rejected.has(pack)) {
+  if (rejectedNames.includes(pack)) {
     console.log(`--> ALERT! investigating "${pack}" already REJECTED`);
   }
 }
 
-for (const pack of rejected) {
+for (const pack of rejectedNames) {
   if (installed.has(pack)) {
     console.log(`--> ALERT! rejected "${pack}" already INSTALLED`);
   }
@@ -106,7 +110,8 @@ async function fetchEslintPlugins(
   ];
   console.log("Filtering full list...");
   const filteredList = everythingList.filter(
-    (pluginName) => !installed.has(pluginName) && !rejected.has(pluginName),
+    (pluginName) =>
+      !installed.has(pluginName) && !rejectedNames.includes(pluginName),
   );
 
   console.log("Checking cache...");
@@ -150,12 +155,24 @@ async function fetchEslintPlugins(
     readline.cursorTo(process.stdout, 0);
   }
 
+  const top40 = populated
+    .filter((item) => item.count)
+    .sort((first, second) => second.count - first.count)
+    .slice(0, 40);
+
+  await rejectTop40(top40);
+
+  const newRejected = await search("true", ["reject"]);
+  const newRejectedNames = new Set(newRejected.map((item) => item.name));
+
+  const newTop40 = populated
+    .filter((item) => item.count > 0 && !newRejectedNames.has(item.name))
+    .sort((first, second) => second.count - first.count)
+    .slice(0, 40);
+
   return {
     size: populated.length,
-    top40: populated
-      .filter((item) => item.count)
-      .sort((first, second) => second.count - first.count)
-      .slice(0, 40),
+    top40: newTop40,
   };
 }
 

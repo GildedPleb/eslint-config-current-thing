@@ -110,3 +110,6 @@ package-cache
 packages-search
 packages-installed
 conflict-cache*
+rejected-search
+
+temp

@@ -126,7 +126,7 @@ const configGen = ({
     /*
       GraphQL
       GraphQL plugin for ESLint
-      https://github.com/B2o5T/graphql-eslint#readme
+      https://github.com/dimaMachina/graphql-eslint#readme
     */
     {
       files: graphQLFiles,
@@ -175,7 +175,7 @@ const configGen = ({
     /*
       Espree
       An Esprima-compatible JavaScript parser built on Acorn
-      https://github.com/eslint/espree
+      https://github.com/eslint/js/blob/main/packages/espree/README.md
     */
     {
       files: jsFiles,

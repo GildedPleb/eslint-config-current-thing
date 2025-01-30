@@ -70,6 +70,8 @@
     "generate:readme": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/generate-readme.ts && npm run lint",
     "lint": "npx eslint --fix -c ./eslint.config.js --max-warnings 0 . --cache",
     "predeploy": "npx update-browserslist-db@latest -y",
+    "reject": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/packages/rejected-research.ts",
+    "reject-cli": "node --loader ts-node/esm --experimental-specifier-resolution=node --no-warnings ./src/packages/rejected-cli.ts",
     "test": "npm run predeploy && npm run lint && npx jest ./test "
   },
   "browserslist": [
@@ -196,7 +198,10 @@
     "@types/level": "^6.0.3",
     "@types/mocha": "^10.0.6",
     "@types/node": "^20.14.5",
+    "ajv": "^8.17.1",
     "chalk": "^5.3.0",
+    "cli-table3": "^0.6.5",
+    "commander": "^13.1.0",
     "diff": "^5.2.0",
     "eslint-plugin-pathmark": "^1.0.2",
     "fast-memoize": "^2.5.2",
@@ -204,6 +209,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "level": "^8.0.1",
     "mocha": "^10.4.0",
+    "openai": "^4.80.1",
     "react": "^18.3.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"

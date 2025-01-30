@@ -14,7 +14,7 @@ import JSONConfigYml from "../current-yml.json" assert { type: "json" };
 import { LAST_DAY_INTERVAL, MINIMUMS } from "./constants";
 import configs from "./definitions/configs";
 import fetchEslintPlugins from "./packages/get-packages";
-import rejected from "./packages/rejected";
+import { search } from "./packages/rejected-database";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -112,10 +112,13 @@ Generated on ${new Date().toLocaleDateString()}, total known packages **${newPac
 ${newPackages.top40.map(({ count, name }) => `- ${count.toLocaleString()} downloads, [${name}](https://www.npmjs.com/package/${name})${count < MINIMUMS ? " - Not Yet Eligible" : ""}`).join("\n")}
 `;
 
+const rejected = await search("true", ["reject"]);
+const rejectedCounter = rejected.length;
+
 const rejectedMarker = "Rejected Count";
 const rejectedCount = `In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **${rejected.size}**. `;
+The amount of packages reviewed and rejected **${rejectedCounter}**. `;
 
 updateReadmeSection(configListMarker, markdownTable);
 updateReadmeSection(ruleCountMarker, ruleCount);
