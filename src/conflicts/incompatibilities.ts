@@ -22,6 +22,7 @@ const incompatibles: ConflictCache = {
   },
   "airbnb-ts": {
     "@stylistic/semi": 0,
+    "indent-legacy": 0,
     "prettier/prettier": 0,
     "prettier-tailwind/prettier": 0,
   },
@@ -123,6 +124,7 @@ const incompatibles: ConflictCache = {
     "@stylistic/operator-linebreak": 0,
     "@stylistic/quote-props": 0,
     "@stylistic/semi": 0,
+    "@typescript-eslint/brace-style": 0,
     "@typescript-eslint/object-curly-spacing": 0,
     "prettier/prettier": 0,
     "prettier-tailwind/prettier": 0,
@@ -168,6 +170,7 @@ const incompatibles: ConflictCache = {
     "yield-star-spacing": 0,
   },
   "shopify-react": {
+    "@typescript-eslint/no-extra-parens": 0,
     "prettier/prettier": 0,
     "prettier-tailwind/prettier": 0,
   },
@@ -194,6 +197,7 @@ const incompatibles: ConflictCache = {
     "prettier/prettier": 0,
   },
   "standard-jsx": {
+    "@typescript-eslint/no-extra-parens": 0,
     "prettier/prettier": 0,
     "prettier-tailwind/prettier": 0,
   },

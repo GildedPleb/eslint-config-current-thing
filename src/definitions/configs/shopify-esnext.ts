@@ -11,7 +11,7 @@ export default {
     files: jsFiles,
     ${RULES}
     settings: {
-      "import/ignore": ["node_modules", "\\.s?css"],
+      "import/ignore": ["node_modules", ".s?css"],
     },
   }`,
   id: "shopify",

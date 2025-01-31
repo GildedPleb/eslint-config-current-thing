@@ -205,7 +205,7 @@ const configGen = ({
           {
             files,
             rules: {
-              ...unsanitized.configs.DOM.rules,
+              ...unsanitized.configs.recommended.rules,
               ...("eslint-plugin-no-unsanitized" in override
                 ? override["eslint-plugin-no-unsanitized"]
                 : {}),

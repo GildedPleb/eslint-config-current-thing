@@ -23,7 +23,7 @@ export default {
       2,
       {
         case: "kebabCase",
-        ignore: [".*\\.md$", ".*\\.md\\/.*"],
+        ignore: [".*.md$", ".*.md/.*"],
       },
     ],`,
 } satisfies Config;

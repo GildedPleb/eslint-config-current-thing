@@ -571,6 +571,7 @@ const configGen = ({
               "@stylistic/operator-linebreak": 0,
               "@stylistic/quote-props": 0,
               "@stylistic/semi": 0,
+              "@typescript-eslint/brace-style": 0,
               "@typescript-eslint/object-curly-spacing": 0,
               "prettier/prettier": 0,
               "prettier-tailwind/prettier": 0,
@@ -790,6 +791,7 @@ const configGen = ({
               },
             },
             rules: {
+              "@typescript-eslint/no-extra-parens": 0,
               "prettier/prettier": 0,
               "prettier-tailwind/prettier": 0,
               ...shopify.configs.react.rules,
@@ -1314,7 +1316,7 @@ const configGen = ({
           {
             files,
             rules: {
-              ...unsanitized.configs.DOM.rules,
+              ...unsanitized.configs.recommended.rules,
 
               ...("eslint-plugin-no-unsanitized" in override
                 ? override["eslint-plugin-no-unsanitized"]
@@ -1568,6 +1570,7 @@ const configGen = ({
               },
             },
             rules: {
+              "@typescript-eslint/no-extra-parens": 0,
               "prettier/prettier": 0,
               "prettier-tailwind/prettier": 0,
               ...standardJsx.rules,
@@ -2224,6 +2227,7 @@ const configGen = ({
             files: tsFiles,
             rules: {
               "@stylistic/semi": 0,
+              "indent-legacy": 0,
               "prettier/prettier": 0,
               "prettier-tailwind/prettier": 0,
               ...airbnbTypescript.rules,
