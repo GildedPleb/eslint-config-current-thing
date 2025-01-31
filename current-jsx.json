@@ -1273,7 +1273,6 @@
     "@stylistic/operator-linebreak": [0, "before"],
     "@stylistic/quote-props": [0, "consistent-as-needed"],
     "@stylistic/semi": [0, "never"],
-    "@typescript-eslint/brace-style": [0],
     "@typescript-eslint/object-curly-spacing": [0],
     "prettier/prettier": [2],
     "prettier-tailwind/prettier": [
@@ -3775,6 +3774,7 @@
     "tailwindcss/no-contradicting-classname": [2],
     "tailwindcss/no-unnecessary-arbitrary-value": [1],
     "@react-native/platform-colors": [1],
+    "@typescript-eslint/brace-style": [0],
     "@typescript-eslint/semi": [0],
     "@stylistic/array-bracket-spacing": [2, "never"],
     "@stylistic/arrow-spacing": [
