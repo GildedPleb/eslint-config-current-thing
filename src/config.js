@@ -185,13 +185,7 @@ const configGen = ({
     },
     {
       files,
-      processor: {
-        meta: {
-          name: "GraphQL-Processor",
-          version: "1.0.0",
-        },
-        ...graphqlProcessors.graphql,
-      },
+      processor: graphqlProcessors.graphql,
     },
     /* PARSERS */
     /*
@@ -287,22 +281,6 @@ const configGen = ({
         "@next/next": nextjs,
         "@react-native": rnPlugin,
         "@shopify": shopify,
-        "@shopify/jest": {
-          rules: Object.fromEntries(
-            Object.entries(shopify.rules).map(([key, value]) => [
-              key.startsWith("jest/") ? key.slice(5) : key,
-              value,
-            ]),
-          ),
-        },
-        "@shopify/typescript": {
-          rules: Object.fromEntries(
-            Object.entries(shopify.rules).map(([key, value]) => [
-              key.startsWith("typescript/") ? key.slice(11) : key,
-              value,
-            ]),
-          ),
-        },
         "@stylistic": stylistic,
         "@typescript-eslint": tseslint.plugin,
         ava,
@@ -559,7 +537,7 @@ const configGen = ({
       404,835 monthly downloads
       Shopify's ESLint rules and configs.
       https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
-      Requires: @shopify, eslint-comments, @shopify/typescript
+      Requires: @shopify, eslint-comments
     */
     ...(disable.includes("@shopify/eslint-plugin/core") || threshold > 404_835
       ? []
@@ -574,7 +552,7 @@ const configGen = ({
               "@typescript-eslint/object-curly-spacing": 0,
               "prettier/prettier": 0,
               "prettier-tailwind/prettier": 0,
-              ...shopify.configs.core.rules,
+              ...shopify.configs.core[0].rules,
 
               ...("@shopify/eslint-plugin/core" in override
                 ? override["@shopify/eslint-plugin/core"]
@@ -588,7 +566,7 @@ const configGen = ({
       404,835 monthly downloads
       Shopify's ESLint rules and configs.
       https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
-      Requires: @babel, promise, sort-class-members, import
+      Requires: @babel, promise, sort-class-members, import, @shopify
     */
     ...(disable.includes("@shopify/eslint-plugin/esnext") || threshold > 404_835
       ? []
@@ -601,7 +579,7 @@ const configGen = ({
               "@stylistic/semi": 0,
               "prettier/prettier": 0,
               semi: 0,
-              ...shopify.configs.esnext.rules,
+              ...shopify.configs.esnext.at(-1).rules,
               "mocha/no-mocha-arrows": 0,
               "simple-import-sort/imports": 0,
               ...("@shopify/eslint-plugin/esnext" in override
@@ -619,7 +597,7 @@ const configGen = ({
       404,835 monthly downloads
       Shopify's ESLint rules and configs.
       https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
-      Requires: jest, jest-formatting, @shopify, @shopify/jest
+      Requires: jest, jest-formatting, @shopify
     */
     ...(disable.includes("@shopify/eslint-plugin/jest") || threshold > 404_835
       ? []
@@ -632,7 +610,7 @@ const configGen = ({
               },
             },
             rules: {
-              ...shopify.configs.jest.rules,
+              ...shopify.configs.jest[0].rules,
               "jest/no-if": 0,
 
               ...("@shopify/eslint-plugin/jest" in override
@@ -647,7 +625,7 @@ const configGen = ({
       404,835 monthly downloads
       Shopify's ESLint rules and configs.
       https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
-      Requires: @shopify, node
+      Requires: node
     */
     ...(disable.includes("@shopify/eslint-plugin/node") || threshold > 404_835
       ? []
@@ -655,7 +633,7 @@ const configGen = ({
           {
             files,
             rules: {
-              ...shopify.configs.node.rules,
+              ...shopify.configs.node[0].rules,
 
               ...("@shopify/eslint-plugin/node" in override
                 ? override["@shopify/eslint-plugin/node"]
@@ -678,7 +656,7 @@ const configGen = ({
           {
             files,
             rules: {
-              ...shopify.configs.polaris.rules,
+              ...shopify.configs.polaris[0].rules,
               "functional/functional-parameters": 0,
               "functional/no-classes": 0,
               "functional/no-conditional-statements": 0,
@@ -711,7 +689,6 @@ const configGen = ({
               "@stylistic/brace-style": 0,
               "@stylistic/indent": 0,
               "@stylistic/indent-binary-ops": 0,
-              "@stylistic/jsx-indent": 0,
               "@stylistic/jsx-one-expression-per-line": 0,
               "@stylistic/member-delimiter-style": 0,
               "@stylistic/multiline-ternary": 0,
@@ -738,7 +715,7 @@ const configGen = ({
               "space-before-function-paren": 0,
               "unicorn/no-nested-ternary": 0,
               "yield-star-spacing": 0,
-              ...shopify.configs.prettier.rules,
+              ...shopify.configs.prettier[1].rules,
 
               ...("@shopify/eslint-plugin/prettier" in override
                 ? override["@shopify/eslint-plugin/prettier"]
@@ -761,7 +738,7 @@ const configGen = ({
           {
             files: tsFiles,
             rules: {
-              ...shopify.configs.prettier.overrides[0].rules,
+              ...shopify.configs.prettier[2].rules,
 
               ...("@shopify/eslint-plugin/prettier-ts" in override
                 ? override["@shopify/eslint-plugin/prettier-ts"]
@@ -792,7 +769,7 @@ const configGen = ({
             rules: {
               "prettier/prettier": 0,
               "prettier-tailwind/prettier": 0,
-              ...shopify.configs.react.rules,
+              ...shopify.configs.react[0].rules,
               "functional/functional-parameters": 0,
               "functional/no-classes": 0,
               "functional/no-conditional-statements": 0,
@@ -837,7 +814,7 @@ const configGen = ({
               },
             },
             rules: {
-              ...shopify.configs.react.overrides[1].rules,
+              ...shopify.configs.react[2].rules,
               "functional/functional-parameters": 0,
               "functional/no-classes": 0,
               "functional/no-conditional-statements": 0,
@@ -879,7 +856,7 @@ const configGen = ({
               },
             },
             rules: {
-              ...shopify.configs.react.overrides[0].rules,
+              ...shopify.configs.react[1].rules,
               "functional/functional-parameters": 0,
               "functional/no-classes": 0,
               "functional/no-conditional-statements": 0,
@@ -904,7 +881,7 @@ const configGen = ({
       404,835 monthly downloads
       Shopify's ESLint rules and configs.
       https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
-      Requires: @typescript-eslint, @shopify/typescript
+      Requires: @typescript-eslint, @shopify
     */
     ...(disable.includes("@shopify/eslint-plugin/ts") || threshold > 404_835
       ? []
@@ -920,7 +897,7 @@ const configGen = ({
               "prettier/prettier": 0,
               "prettier-tailwind/prettier": 0,
               "unicorn/no-nested-ternary": 0,
-              ...shopify.configs.typescript.overrides[0].rules,
+              ...shopify.configs.typescript.at(-1).rules,
 
               ...("@shopify/eslint-plugin/ts" in override
                 ? override["@shopify/eslint-plugin/ts"]
@@ -934,7 +911,7 @@ const configGen = ({
       404,835 monthly downloads
       Shopify's ESLint rules and configs.
       https://github.com/Shopify/web-configs/blob/main/packages/eslint-plugin/README.md
-      Requires: @typescript-eslint, @shopify/typescript
+      Requires: @typescript-eslint
     */
     ...(disable.includes("@shopify/eslint-plugin/ts-typecheck") ||
     threshold > 404_835
@@ -943,7 +920,7 @@ const configGen = ({
           {
             files: tsFiles,
             rules: {
-              ...shopify.configs["typescript-type-checking"].overrides[0].rules,
+              ...shopify.configs["typescript-type-checking"][0].rules,
 
               ...("@shopify/eslint-plugin/ts-typecheck" in override
                 ? override["@shopify/eslint-plugin/ts-typecheck"]
@@ -2282,8 +2259,6 @@ const configGen = ({
             files: [...jsxFiles, ...tsxFiles],
             rules: {
               "@stylistic/arrow-parens": 0,
-              "@stylistic/indent": 0,
-              "@stylistic/jsx-indent": 0,
               "@stylistic/jsx-one-expression-per-line": 0,
               "@stylistic/member-delimiter-style": 0,
               "@stylistic/multiline-ternary": 0,
@@ -3629,7 +3604,6 @@ const configGen = ({
               "@stylistic/brace-style": 0,
               "@stylistic/indent": 0,
               "@stylistic/indent-binary-ops": 0,
-              "@stylistic/jsx-indent": 0,
               "@stylistic/jsx-one-expression-per-line": 0,
               "@stylistic/member-delimiter-style": 0,
               "@stylistic/multiline-ternary": 0,
@@ -3750,7 +3724,6 @@ const configGen = ({
               "@stylistic/brace-style": 0,
               "@stylistic/indent": 0,
               "@stylistic/indent-binary-ops": 0,
-              "@stylistic/jsx-indent": 0,
               "@stylistic/jsx-one-expression-per-line": 0,
               "@stylistic/member-delimiter-style": 0,
               "@stylistic/multiline-ternary": 0,

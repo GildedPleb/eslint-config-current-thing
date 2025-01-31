@@ -213,7 +213,7 @@ const configGen = ({
               },
             },
             rules: {
-              ...shopify.configs.react.overrides[0].rules,
+              ...shopify.configs.react[1].rules,
               ...("@shopify/eslint-plugin/react-ts" in override
                 ? override["@shopify/eslint-plugin/react-ts"]
                 : {}),

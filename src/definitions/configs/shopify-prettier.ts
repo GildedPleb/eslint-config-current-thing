@@ -18,6 +18,6 @@ export default {
     },
   ],
   requiredPlugins: ["prettier", "@babel", "@shopify"],
-  rules: `...shopify.configs.prettier.rules,`,
+  rules: `...shopify.configs.prettier[1].rules,`,
 } satisfies Config;
 // EOF

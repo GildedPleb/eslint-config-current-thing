@@ -30,6 +30,6 @@ export default {
     },
   ],
   requiredPlugins: ["react"],
-  rules: `...shopify.configs.react.overrides[0].rules,`,
+  rules: `...shopify.configs.react[1].rules,`,
 } satisfies Config;
 // EOF

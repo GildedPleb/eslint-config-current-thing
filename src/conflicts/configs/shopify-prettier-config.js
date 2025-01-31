@@ -209,7 +209,7 @@ const configGen = ({
           {
             files,
             rules: {
-              ...shopify.configs.prettier.rules,
+              ...shopify.configs.prettier[1].rules,
               ...("@shopify/eslint-plugin/prettier" in override
                 ? override["@shopify/eslint-plugin/prettier"]
                 : {}),

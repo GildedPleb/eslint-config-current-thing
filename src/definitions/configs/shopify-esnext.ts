@@ -24,7 +24,13 @@ export default {
       requiresImport: false,
     },
   ],
-  requiredPlugins: ["@babel", "promise", "sort-class-members", "import"],
-  rules: `...shopify.configs.esnext.rules,`,
+  requiredPlugins: [
+    "@babel",
+    "promise",
+    "sort-class-members",
+    "import",
+    "@shopify",
+  ],
+  rules: `...shopify.configs.esnext.at(-1).rules,`,
 } satisfies Config;
 // EOF

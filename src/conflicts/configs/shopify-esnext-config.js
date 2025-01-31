@@ -192,6 +192,7 @@ const configGen = ({
     {
       plugins: {
         "@babel": babelPlugin,
+        "@shopify": shopify,
         import: importPlugin,
         promise,
         "sort-class-members": sortClassMembers,
@@ -203,7 +204,7 @@ const configGen = ({
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: @babel, promise, sort-class-members, import
+      Requires: @babel, promise, sort-class-members, import, @shopify
     */
     ...(disable.includes("@shopify/eslint-plugin-esnext") ||
     threshold > 1_000_000
@@ -212,7 +213,7 @@ const configGen = ({
           {
             files: jsFiles,
             rules: {
-              ...shopify.configs.esnext.rules,
+              ...shopify.configs.esnext.at(-1).rules,
               ...("@shopify/eslint-plugin/esnext" in override
                 ? override["@shopify/eslint-plugin/esnext"]
                 : {}),

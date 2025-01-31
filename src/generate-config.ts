@@ -136,13 +136,7 @@ const configGen = ({
     },
     {
       files,
-      processor: {
-        meta: {
-          name: "GraphQL-Processor",
-          version: "1.0.0",
-        },
-        ...graphqlProcessors.graphql,
-      },
+      processor: graphqlProcessors.graphql,
     },
     /* PARSERS */
     ${sortedParsers.map(

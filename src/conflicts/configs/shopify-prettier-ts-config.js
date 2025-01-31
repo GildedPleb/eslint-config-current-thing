@@ -207,7 +207,7 @@ const configGen = ({
           {
             files: tsFiles,
             rules: {
-              ...shopify.configs.prettier.overrides[0].rules,
+              ...shopify.configs.prettier[2].rules,
               ...("@shopify/eslint-plugin/prettier-ts" in override
                 ? override["@shopify/eslint-plugin/prettier-ts"]
                 : {}),

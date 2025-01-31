@@ -17,7 +17,7 @@ export default {
       requiresImport: false,
     },
   ],
-  requiredPlugins: ["@shopify", "node"],
-  rules: `...shopify.configs.node.rules,`,
+  requiredPlugins: ["node"],
+  rules: `...shopify.configs.node[0].rules,`,
 } satisfies Config;
 // EOF

@@ -188,7 +188,6 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        "@shopify": shopify,
         node,
       },
     },
@@ -198,7 +197,7 @@ const configGen = ({
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: @shopify, node
+      Requires: node
     */
     ...(disable.includes("@shopify/eslint-plugin-node") || threshold > 1_000_000
       ? []
@@ -206,7 +205,7 @@ const configGen = ({
           {
             files,
             rules: {
-              ...shopify.configs.node.rules,
+              ...shopify.configs.node[0].rules,
               ...("@shopify/eslint-plugin/node" in override
                 ? override["@shopify/eslint-plugin/node"]
                 : {}),

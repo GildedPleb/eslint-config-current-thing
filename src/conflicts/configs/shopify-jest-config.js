@@ -190,14 +190,6 @@ const configGen = ({
     {
       plugins: {
         "@shopify": shopify,
-        "@shopify/jest": {
-          rules: Object.fromEntries(
-            Object.entries(shopify.rules).map(([key, value]) => [
-              key.startsWith("jest/") ? key.slice(5) : key,
-              value,
-            ]),
-          ),
-        },
         jest,
         "jest-formatting": jestFormatting,
       },
@@ -208,7 +200,7 @@ const configGen = ({
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: jest, jest-formatting, @shopify, @shopify/jest
+      Requires: jest, jest-formatting, @shopify
     */
     ...(disable.includes("@shopify/eslint-plugin-jest") || threshold > 1_000_000
       ? []
@@ -221,7 +213,7 @@ const configGen = ({
               },
             },
             rules: {
-              ...shopify.configs.jest.rules,
+              ...shopify.configs.jest[0].rules,
               "jest/no-if": 0,
               ...("@shopify/eslint-plugin/jest" in override
                 ? override["@shopify/eslint-plugin/jest"]

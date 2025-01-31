@@ -49,8 +49,6 @@ import rxjs from "./rxjs";
 import sdl from "./sdl";
 import security from "./security";
 import shopify from "./shopify";
-import shopifyJest from "./shopify-jest";
-import shopifyTs from "./shopify-ts";
 import sonarjs from "./sonarjs";
 import sortClass from "./sort-class";
 import sortKeys from "./sort-keys";
@@ -120,8 +118,6 @@ const plugins = [
   sdl,
   security,
   shopify,
-  shopifyJest,
-  shopifyTs,
   sonarjs,
   sortClass,
   sortKeys,

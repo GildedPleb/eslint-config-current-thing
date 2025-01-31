@@ -187,14 +187,7 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        "@shopify/typescript": {
-          rules: Object.fromEntries(
-            Object.entries(shopify.rules).map(([key, value]) => [
-              key.startsWith("typescript/") ? key.slice(11) : key,
-              value,
-            ]),
-          ),
-        },
+        "@shopify": shopify,
         "@typescript-eslint": tseslint.plugin,
       },
     },
@@ -204,7 +197,7 @@ const configGen = ({
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: @typescript-eslint, @shopify/typescript
+      Requires: @typescript-eslint, @shopify
     */
     ...(disable.includes("@shopify/eslint-plugin-ts") || threshold > 1_000_000
       ? []
@@ -212,7 +205,7 @@ const configGen = ({
           {
             files: tsFiles,
             rules: {
-              ...shopify.configs.typescript.overrides[0].rules,
+              ...shopify.configs.typescript.at(-1).rules,
               ...("@shopify/eslint-plugin/ts" in override
                 ? override["@shopify/eslint-plugin/ts"]
                 : {}),

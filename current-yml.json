@@ -1155,8 +1155,6 @@
     "@next/next",
     "@react-native",
     "@shopify",
-    "@shopify/jest",
-    "@shopify/typescript",
     "@stylistic",
     "@typescript-eslint:@typescript-eslint/eslint-plugin@7.13.1",
     "ava",

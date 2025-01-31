@@ -17,7 +17,7 @@ export default {
       requiresImport: false,
     },
   ],
-  requiredPlugins: ["@shopify", "eslint-comments", "@shopify/typescript"],
-  rules: `...shopify.configs.core.rules,`,
+  requiredPlugins: ["@shopify", "eslint-comments"],
+  rules: `...shopify.configs.core[0].rules,`,
 } satisfies Config;
 // EOF

@@ -205,7 +205,7 @@ const configGen = ({
           {
             files,
             rules: {
-              ...shopify.configs.polaris.rules,
+              ...shopify.configs.polaris[0].rules,
               ...("@shopify/eslint-plugin/polaris" in override
                 ? override["@shopify/eslint-plugin/polaris"]
                 : {}),

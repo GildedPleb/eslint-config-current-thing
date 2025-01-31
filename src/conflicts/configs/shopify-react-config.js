@@ -218,7 +218,7 @@ const configGen = ({
               },
             },
             rules: {
-              ...shopify.configs.react.rules,
+              ...shopify.configs.react[0].rules,
               "react/jsx-filename-extension": [
                 2,
                 { extensions: [".jsx", ".tsx"] },

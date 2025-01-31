@@ -181,22 +181,6 @@ const plugins = {
   "@next/next": nextjs,
   "@react-native": rnPlugin,
   "@shopify": shopify,
-  "@shopify/jest": {
-    rules: Object.fromEntries(
-      Object.entries(shopify.rules).map(([key, value]) => [
-        key.startsWith("jest/") ? key.slice(5) : key,
-        value,
-      ]),
-    ),
-  },
-  "@shopify/typescript": {
-    rules: Object.fromEntries(
-      Object.entries(shopify.rules).map(([key, value]) => [
-        key.startsWith("typescript/") ? key.slice(11) : key,
-        value,
-      ]),
-    ),
-  },
   "@stylistic": stylistic,
   "@typescript-eslint": tseslint.plugin,
   ava,

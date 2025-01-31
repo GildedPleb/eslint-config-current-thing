@@ -17,7 +17,7 @@ export default {
       requiresImport: false,
     },
   ],
-  requiredPlugins: ["@typescript-eslint", "@shopify/typescript"],
-  rules: `...shopify.configs.typescript.overrides[0].rules,`,
+  requiredPlugins: ["@typescript-eslint", "@shopify"],
+  rules: `...shopify.configs.typescript.at(-1).rules,`,
 } satisfies Config;
 // EOF
