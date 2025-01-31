@@ -1,4 +1,8 @@
 // PathMark: ./src/generate-readme.ts
+// eslint-disable-next-line @eslint-community/eslint-comments/disable-enable-pair
+/* eslint-disable es-x/no-import-attributes */
+// eslint-disable-next-line @eslint-community/eslint-comments/disable-enable-pair
+/* eslint-disable es-x/no-json-modules */
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -54,7 +58,9 @@ function updateReadmeSection(marker: string, newContent: string): void {
 
 const uniqueNamesSet = new Set<string>();
 for (const config of configs) uniqueNamesSet.add(config.name);
-const uniqueNames = [...uniqueNamesSet].sort();
+const uniqueNames = [...uniqueNamesSet].sort((first, second) =>
+  first.localeCompare(second, "en", { sensitivity: "base" }),
+);
 
 const maxColumns = 4;
 let markdownTable = `${"| ".repeat(maxColumns + 1)}\n${[..."|".repeat(maxColumns + 1)].join(" - ")}\n|`;

@@ -2,6 +2,7 @@
 /* eslint-disable security/detect-object-injection */
 /* eslint-disable no-extra-label */
 /* eslint-disable no-labels */
+/* eslint-disable sonarjs/no-labels */
 // PathMark: ./src/conflicts/get-incompatibles.ts
 
 import fs from "node:fs";

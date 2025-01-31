@@ -2,7 +2,7 @@
 
 /*
   This file is fully generated, to edit it change ./get-incompatibilities.ts
-  Generated on 1/30/2025
+  Generated on 1/31/2025
 */
 
 import { type ConflictCache } from "./types";
@@ -116,9 +116,6 @@ const incompatibles: ConflictCache = {
     "react/jsx-indent": 0,
     "unicorn/no-nested-ternary": 0,
   },
-  regexp: {
-    "unicorn/better-regex": 0,
-  },
   "shopify-core": {
     "@stylistic/object-curly-spacing": 0,
     "@stylistic/operator-linebreak": 0,
@@ -228,7 +225,6 @@ const incompatibles: ConflictCache = {
     "@typescript-eslint/no-extra-parens": 0,
     "prettier/prettier": 0,
     "prettier-tailwind/prettier": 0,
-    "regexp/strict": 0,
   },
   xo: {
     "@stylistic/brace-style": 0,

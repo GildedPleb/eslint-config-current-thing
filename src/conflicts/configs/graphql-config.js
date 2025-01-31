@@ -12,7 +12,7 @@
 */
 
 import {
-  flatConfigs as graphqlConfigs,
+  configs as graphqlConfigs,
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
   rules as graphQLRules,

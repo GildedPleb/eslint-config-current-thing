@@ -14,6 +14,14 @@ const contextOverrides: string[] = [];
 
 const packageSet = new Set<string>();
 
+const sortedParsers = parsers.toSorted(
+  (first, second) => first.count - second.count,
+);
+
+const sortedConfigs = configs.toSorted(
+  (first, second) => first.count - second.count,
+);
+
 const generateCode = `// PathMark: ./src/config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable sonarjs/no-duplicate-string */
@@ -137,9 +145,8 @@ const configGen = ({
       },
     },
     /* PARSERS */
-    ${parsers
-      .sort((first, second) => first.count - second.count)
-      .map(({ count, definitions, description, homepage, name }) => {
+    ${sortedParsers.map(
+      ({ count, definitions, description, homepage, name }) => {
         if (!definitions.includes("languageOptions:")) {
           const message = `Formatting Error: ${name} defines a parser definition but does not include a 'languageOptions' key.`;
           throw new Error(message);
@@ -155,7 +162,8 @@ const configGen = ({
       .split("\n")
       .map((line, index) => (index === 0 ? line : `  ${line}`))
       .join("\n")},`;
-      }).join(`
+      },
+    ).join(`
     `)}
     /* PLUGINS */
     {
@@ -170,72 +178,72 @@ const configGen = ({
                   .join("\n")},`,
             ),
           )
-          .sort().join(`
+          .sort((first, second) =>
+            first.localeCompare(second, "en", { sensitivity: "base" }),
+          ).join(`
         `)}
       },
     },
     /* CONFIGS */
-${configs
-  .sort((first, second) => first.count - second.count)
-  .map(
-    ({
-      contextOverride,
-      count,
-      definitions,
-      description,
-      homepage,
-      id,
-      name,
-      nameSecondary,
-      overrides,
-      packages,
-      requiredPlugins,
-      rules,
-    }) => {
-      if (rules !== undefined && !definitions.includes(RULES)) {
-        const message = `Formatting Error: ${name} includes a 'rules' key but does not define were those rules should be placed inline.`;
-        throw new Error(message);
-      }
+${sortedConfigs.map(
+  ({
+    contextOverride,
+    count,
+    definitions,
+    description,
+    homepage,
+    id,
+    name,
+    nameSecondary,
+    overrides,
+    packages,
+    requiredPlugins,
+    rules,
+  }) => {
+    if (rules !== undefined && !definitions.includes(RULES)) {
+      const message = `Formatting Error: ${name} includes a 'rules' key but does not define were those rules should be placed inline.`;
+      throw new Error(message);
+    }
 
-      if (
-        definitions.includes("rules: ") &&
-        !name.includes("Shopify") &&
-        name !== "Emotion CSS"
-      ) {
-        const message = `Formatting Error: ${name}.definitions includes a 'rules' key when it should use the 'RULES' replacement inline placeholder. See other config definitions for examples.`;
-        throw new Error(message);
-      }
+    if (
+      definitions.includes("rules: ") &&
+      !name.includes("Shopify") &&
+      name !== "Emotion CSS"
+    ) {
+      const message = `Formatting Error: ${name}.definitions includes a 'rules' key when it should use the 'RULES' replacement inline placeholder. See other config definitions for examples.`;
+      throw new Error(message);
+    }
 
-      if (!definitions.includes(RULES)) {
-        const message = `Formatting Error: ${name}.definitions does not include a 'RULES' inline market to show were rules should be added as a placeholder. See other config definitions for examples.`;
-        throw new Error(message);
-      }
+    if (!definitions.includes(RULES)) {
+      const message = `Formatting Error: ${name}.definitions does not include a 'RULES' inline market to show were rules should be added as a placeholder. See other config definitions for examples.`;
+      throw new Error(message);
+    }
 
-      const hasSecondary = nameSecondary !== undefined && nameSecondary !== "";
-      const secondDash = hasSecondary ? `-${nameSecondary.toLowerCase()}` : "";
-      const parsedRules =
-        rules === undefined
-          ? ""
-          : rules
-              .split("\n")
-              .map((line, index) => (index === 0 ? line : `          ${line}`))
-              .join("\n");
-      const incompatibleList = Object.entries(
-        incompatibles[`${id}${secondDash}`] ?? {},
-      );
-      const incompatibleRules =
-        incompatibleList.length === 0
-          ? ""
-          : incompatibleList.map(
-              ([key, value]) => `"${key}": ${value.toString()},`,
-            ).join(`
+    const hasSecondary = nameSecondary !== undefined && nameSecondary !== "";
+    const secondDash = hasSecondary ? `-${nameSecondary.toLowerCase()}` : "";
+    const parsedRules =
+      rules === undefined
+        ? ""
+        : rules
+            .split("\n")
+            .map((line, index) => (index === 0 ? line : `          ${line}`))
+            .join("\n");
+    const incompatibleList = Object.entries(
+      incompatibles[`${id}${secondDash}`] ?? {},
+    );
+    const incompatibleRules =
+      incompatibleList.length === 0
+        ? ""
+        : incompatibleList.map(
+            ([key, value]) => `"${key}": ${value.toString()},`,
+          ).join(`
               `);
 
-      const second = hasSecondary ? `/${nameSecondary.toLowerCase()}` : "";
+    const second = hasSecondary ? `/${nameSecondary.toLowerCase()}` : "";
 
-      const definition = `  ...(${packages
-        .map(({ package: pack }) => `disable.includes("${pack}${second}")`)
-        .join(` || `)} || threshold > ${count}
+    const definition = `  ...(${packages
+      .map(({ package: pack }) => `disable.includes("${pack}${second}")`)
+      .join(` || `)} || threshold > ${count}
       ? []
       : [
   ${definitions
@@ -260,7 +268,7 @@ ${configs
     )},
         ])`;
 
-      const full = `    /*
+    const full = `    /*
       ${name}${hasSecondary ? ` - ${nameSecondary}` : ""}
       ${count.toLocaleString()} monthly downloads
       ${description}
@@ -269,11 +277,11 @@ ${configs
     */
   ${definition},
 `;
-      if (contextOverride !== undefined && contextOverride)
-        contextOverrides.push(full);
-      return full;
-    },
-  ).join(`
+    if (contextOverride !== undefined && contextOverride)
+      contextOverrides.push(full);
+    return full;
+  },
+).join(`
 `)}
     /* CONTEXT OVERRIDES */
 ${contextOverrides.join("")}

@@ -141,44 +141,36 @@ async function search(
   searchTerm: string,
   searchKeys?: Array<keyof DataType>,
 ): Promise<DataType[]> {
-  const results: DataType[] = [];
-  const term = searchTerm.toLowerCase();
-
-  // Get all items from database
-  const allItems = await getAll();
-
-  for (const item of allItems) {
-    let isMatch = false;
-
-    if (searchKeys !== undefined && searchKeys.length > 0) {
-      // Search only in specified keys
-      for (const key of searchKeys) {
-        // eslint-disable-next-line security/detect-object-injection
-        const value = item[key];
-        if (String(value).toLowerCase().includes(term)) {
-          isMatch = true;
-          break;
-        } else if (typeof value === "object") {
-          // Handle nested objects
-          const stringified = JSON.stringify(value).toLowerCase();
-          if (stringified.includes(term)) {
-            isMatch = true;
-            break;
-          }
-        }
-      }
-    } else {
-      // Search in all fields
-      const stringified = JSON.stringify(item).toLowerCase();
-      isMatch = stringified.includes(term);
-    }
-
-    if (isMatch) {
-      results.push(item);
-    }
+  if (searchTerm === "") {
+    return [];
   }
 
-  return results;
+  const term = searchTerm.toLowerCase();
+  const allItems = await getAll();
+
+  if (allItems.length === 0) {
+    return [];
+  }
+
+  // If no specific keys provided, search entire object
+  if (searchKeys?.length === undefined) {
+    return allItems.filter((item) =>
+      JSON.stringify(item).toLowerCase().includes(term),
+    );
+  }
+
+  return allItems.filter((item) =>
+    searchKeys.some((key) => {
+      // eslint-disable-next-line security/detect-object-injection
+      const value = item[key];
+
+      if (typeof value === "object") {
+        return JSON.stringify(value).toLowerCase().includes(term);
+      }
+
+      return String(value).toLowerCase().includes(term);
+    }),
+  );
 }
 
 export {

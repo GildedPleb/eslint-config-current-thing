@@ -31,6 +31,7 @@ export function isMoreThanRandomDaysInThePast(dateString: string): boolean {
   const timeDiff = currentDate - givenDate;
   const daysDiff = timeDiff / (1000 * 60 * 60 * 24);
   // first number is how many days to spread this out over? Second number is how many days after is this invalidated?
+  // eslint-disable-next-line sonarjs/pseudo-random
   return daysDiff > Math.random() * 60 + 1;
 }
 
@@ -42,8 +43,12 @@ const parseDif = (results: diff.Change[]): string => {
 
   for (const part of results) {
     // Use color coding to mark added and removed parts
-    const color =
-      part.added === true ? "green" : part.removed === true ? "red" : "grey";
+    let color: keyof typeof chalk = "grey";
+    if (part.added === true) {
+      color = "green";
+    } else if (part.removed === true) {
+      color = "red";
+    }
     // eslint-disable-next-line security/detect-object-injection
     accumulatedString += chalk[color](part.value);
     if (color === "green") accumulatedString += ADD;

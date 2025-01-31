@@ -48,7 +48,10 @@ for (const config of configsWithCount) {
 
 const filePathConfigName: string[][] = [];
 const configs: PopulatedConfig[] = configsWithCount;
-// EOF
+const sortedParsers = parsers.toSorted(
+  (first, name2) => first.count - name2.count,
+);
+
 for (const configContext of configs) {
   const hasSecondary =
     configContext.nameSecondary !== undefined &&
@@ -176,15 +179,13 @@ const configGen = ({
       },
     },
     /* PARSERS */
-${parsers
-  .sort((first, name2) => first.count - name2.count)
-  .map(({ definitions, description, homepage, name }) => {
-    if (!definitions.includes("languageOptions:")) {
-      const message = `Formatting Error: ${name} defines a parser definition but does not include a 'languageOptions' key.`;
-      throw new Error(message);
-    }
+${sortedParsers.map(({ definitions, description, homepage, name }) => {
+  if (!definitions.includes("languageOptions:")) {
+    const message = `Formatting Error: ${name} defines a parser definition but does not include a 'languageOptions' key.`;
+    throw new Error(message);
+  }
 
-    return `    /*
+  return `    /*
       ${name}
       ${description}
       ${homepage}
@@ -193,7 +194,7 @@ ${parsers
       .split("\n")
       .map((line, index) => (index === 0 ? line : `  ${line}`))
       .join("\n")},`;
-  }).join(`
+}).join(`
 `)}
     /* PLUGINS */
     {
@@ -210,7 +211,9 @@ ${parsers
                 .map((line, index) => (index === 0 ? line : `  ${line}`))
                 .join("\n")},`,
           )
-          .sort().join(`
+          .sort((first, sec) =>
+            first.localeCompare(sec, "en", { sensitivity: "base" }),
+          ).join(`
         `)}
       },
     },

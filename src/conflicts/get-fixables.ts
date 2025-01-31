@@ -87,7 +87,9 @@ const plugins = {
             .join("\n")},`,
       ),
     )
-    .sort().join(`
+    .sort((first, second) =>
+      first.localeCompare(second, "en", { sensitivity: "base" }),
+    ).join(`
   `)}
 };
 
