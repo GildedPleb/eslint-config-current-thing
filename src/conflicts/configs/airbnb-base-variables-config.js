@@ -1,11 +1,9 @@
 // PathMark: ./src/conflicts/configs/airbnb-base-variables-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
-/* eslint-disable import/extensions */
+
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
-/* eslint-disable sonarjs/no-duplicate-string */
-/* eslint-disable id-length */
 
 /*
   This file is fully generated, to edit it change ./generate-conflicts.ts
@@ -15,10 +13,8 @@ import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
-import airbnbBaseVariables from "eslint-config-airbnb-base/rules/variables";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
-import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import * as espree from "espree";
 import globals from "globals";
@@ -89,10 +85,11 @@ const configGen = ({
       },
     },
     /* PROCESSORS */
-    {
-      files: mdFiles,
-      processor: markdown.processors.markdown,
-    },
+    // {
+    // files: mdFiles,
+    // Needs to be re-enabled if adding it back in
+    // processor: markdown.processors.markdown,
+    // },
     {
       files: mdFiles,
       processor: mdx.processors.remark,
@@ -203,7 +200,99 @@ const configGen = ({
           {
             files: jsFiles,
             rules: {
-              ...airbnbBaseVariables.rules,
+              "init-declarations": 0,
+              "no-catch-shadow": 0,
+              "no-delete-var": 2,
+              "no-label-var": 2,
+              "no-restricted-globals": [
+                "error",
+                {
+                  message:
+                    "Use Number.isFinite instead https://github.com/airbnb/javascript#standard-library--isfinite",
+                  name: "isFinite",
+                },
+                {
+                  message:
+                    "Use Number.isNaN instead https://github.com/airbnb/javascript#standard-library--isnan",
+                  name: "isNaN",
+                },
+                ...[
+                  "addEventListener",
+                  "blur",
+                  "close",
+                  "closed",
+                  "confirm",
+                  "defaultStatus",
+                  "defaultstatus",
+                  "event",
+                  "external",
+                  "find",
+                  "focus",
+                  "frameElement",
+                  "frames",
+                  "history",
+                  "innerHeight",
+                  "innerWidth",
+                  "length",
+                  "location",
+                  "locationbar",
+                  "menubar",
+                  "moveBy",
+                  "moveTo",
+                  "name",
+                  "onblur",
+                  "onerror",
+                  "onfocus",
+                  "onload",
+                  "onresize",
+                  "onunload",
+                  "open",
+                  "opener",
+                  "opera",
+                  "outerHeight",
+                  "outerWidth",
+                  "pageXOffset",
+                  "pageYOffset",
+                  "parent",
+                  "print",
+                  "removeEventListener",
+                  "resizeBy",
+                  "resizeTo",
+                  "screen",
+                  "screenLeft",
+                  "screenTop",
+                  "screenX",
+                  "screenY",
+                  "scroll",
+                  "scrollbars",
+                  "scrollBy",
+                  "scrollTo",
+                  "scrollX",
+                  "scrollY",
+                  "self",
+                  "status",
+                  "statusbar",
+                  "stop",
+                  "toolbar",
+                  "top",
+                ].map((g) => ({
+                  message: `Use window.${g} instead. https://github.com/facebook/create-react-app/blob/HEAD/packages/confusing-browser-globals/README.md`,
+                  name: g,
+                })),
+              ],
+              "no-shadow": 2,
+              "no-shadow-restricted-names": 2,
+              "no-undef": 2,
+              "no-undef-init": 2,
+              "no-undefined": 0,
+              "no-unused-vars": [
+                2,
+                { args: "after-used", ignoreRestSiblings: true, vars: "all" },
+              ],
+              "no-use-before-define": [
+                2,
+                { classes: true, functions: true, variables: true },
+              ],
               ...("eslint-config-airbnb-base/variables" in override
                 ? override["eslint-config-airbnb-base/variables"]
                 : {}),

@@ -12,6 +12,8 @@ export default {
     },
     ${RULES}
   }`,
+  ejected: false,
+  enabled: false,
   id: "shopify",
   name: "Shopify",
   nameSecondary: "Jest",

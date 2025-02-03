@@ -3,10 +3,15 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  conflicts: {
+    "@typescript-eslint/no-misused-spread": ["ts"],
+  },
   definitions: `{
     files,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "unicorn",
   name: "Unicorn",
   packages: [

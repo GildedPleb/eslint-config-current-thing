@@ -126,10 +126,11 @@ const configGen = ({
       },
     },
     /* PROCESSORS */
-    {
-      files: mdFiles,
-      processor: markdown.processors.markdown,
-    },
+    // Need to be re-added if markdown is re-enabled
+    // {
+    //   files: mdFiles,
+    //   processor: markdown.processors.markdown,
+    // },
     {
       files: mdFiles,
       processor: mdx.processors.remark,
@@ -180,6 +181,7 @@ const configGen = ({
     },
     /* CONFIGS */
 ${sortedConfigs.map(
+  // eslint-disable-next-line complexity -- i don't like this rule, but its probably right
   ({
     contextOverride,
     count,
@@ -193,6 +195,7 @@ ${sortedConfigs.map(
     packages,
     requiredPlugins,
     rules,
+    // eslint-disable-next-line sonarjs/cognitive-complexity -- probably accurate
   }) => {
     if (rules !== undefined && !definitions.includes(RULES)) {
       const message = `Formatting Error: ${name} includes a 'rules' key but does not define were those rules should be placed inline.`;
@@ -228,9 +231,9 @@ ${sortedConfigs.map(
     const incompatibleRules =
       incompatibleList.length === 0
         ? ""
-        : incompatibleList.map(
-            ([key, value]) => `"${key}": ${value.toString()},`,
-          ).join(`
+        : incompatibleList
+            .filter(([, value]) => value !== undefined)
+            .map(([key, value]) => `"${key}": ${value?.toString()},`).join(`
               `);
 
     const second = hasSecondary ? `/${nameSecondary.toLowerCase()}` : "";
@@ -262,6 +265,15 @@ ${sortedConfigs.map(
     )},
         ])`;
 
+    if (
+      (description === undefined || homepage === undefined) &&
+      name !== "CSS Modules"
+    ) {
+      throw new Error(
+        `Package homepage or description is undefined. Are you sure you have the right package name? Name: '${name}'"`,
+      );
+    }
+
     const full = `    /*
       ${name}${hasSecondary ? ` - ${nameSecondary}` : ""}
       ${count.toLocaleString()} monthly downloads
@@ -288,8 +300,10 @@ export default configGen;
 const outputPath = path.join(dirname, "./config.js");
 try {
   fs.writeFileSync(outputPath, generateCode, "utf8");
+  // eslint-disable-next-line no-console -- needed for UI
   console.log("\n./config.js has been updated successfully.");
 } catch (error) {
+  // eslint-disable-next-line no-console -- needed for UI
   console.error("Error processing the config.js file:", error);
   throw new Error("Failed");
 }

@@ -7,6 +7,8 @@ export default {
     files,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "no-use-extend-native",
   name: "No Use Extend Native",
   packages: [

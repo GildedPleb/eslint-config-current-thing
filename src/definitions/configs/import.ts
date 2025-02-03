@@ -52,6 +52,8 @@ export default {
       },
     },
   }`,
+  ejected: false,
+  enabled: true,
   id: "import-js",
   name: "Import",
   packages: [

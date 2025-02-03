@@ -10,6 +10,8 @@ export default {
     files: ymlFiles,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "yml",
   name: "YML",
   packages: [

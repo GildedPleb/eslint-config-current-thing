@@ -1,8 +1,10 @@
 // PathMark: ./src/packages/get-packages.ts
+/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair -- wild */
+/* eslint-disable import/no-extraneous-dependencies -- not for prod */
+/* eslint-disable no-console -- needed for UI */
 
 import readline from "node:readline";
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Level } from "level";
 
 import configs from "../definitions/configs";
@@ -23,18 +25,18 @@ const installed = new Set([
   ...configs.flatMap((config) =>
     config.packages.map(({ package: pack }) => pack),
   ),
-  ...plugins.flatMap((config) =>
+  ...parsers.flatMap((config) =>
     config.packages.map(({ package: pack }) => pack),
   ),
-  ...parsers.flatMap((config) =>
+  ...plugins.flatMap((config) =>
     config.packages.map(({ package: pack }) => pack),
   ),
 ]);
 
 const installedNames = new Set([
   ...configs.map(({ name }) => `ESLint ${name}`.replaceAll(" ", "%20")),
-  ...plugins.map(({ name }) => `ESLint ${name}`.replaceAll(" ", "%20")),
   ...parsers.map(({ name }) => `ESLint ${name}`.replaceAll(" ", "%20")),
+  ...plugins.map(({ name }) => `ESLint ${name}`.replaceAll(" ", "%20")),
 ]);
 
 export interface Populated {
@@ -59,6 +61,7 @@ async function getExisting(cache: Level): Promise<Populated[]> {
     });
 
     for await (const [, value] of stream) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- we own the data
       downloads.push(JSON.parse(value) as Populated);
     }
 
@@ -66,22 +69,6 @@ async function getExisting(cache: Level): Promise<Populated[]> {
   } catch (error) {
     console.error("Error accessing the LevelDB database:", error);
     throw new Error("Failed");
-  }
-}
-
-for (const pack of investigating) {
-  if (installed.has(pack)) {
-    console.log(`--> ALERT! investigating "${pack}" already INSTALLED`);
-  }
-
-  if (rejectedNames.includes(pack)) {
-    console.log(`--> ALERT! investigating "${pack}" already REJECTED`);
-  }
-}
-
-for (const pack of rejectedNames) {
-  if (installed.has(pack)) {
-    console.log(`--> ALERT! rejected "${pack}" already INSTALLED`);
   }
 }
 
@@ -103,9 +90,9 @@ async function fetchEslintPlugins(
   const currentKnown = await getExisting(cache);
   const everythingList = [
     ...new Set([
-      ...searchedPluginNames,
-      ...investigating,
       ...currentKnown.map(({ name }) => name),
+      ...investigating,
+      ...searchedPluginNames,
     ]),
   ];
   console.log("Filtering full list...");
@@ -138,7 +125,7 @@ async function fetchEslintPlugins(
 
   console.log("\nGetting packages, this could take a loooong time... \n");
   let count = 0;
-  for await (const plugin of unpopulated) {
+  for (const plugin of unpopulated) {
     const downloads = await getDownloadCount(plugin.name);
     const newPlugin = { ...plugin, count: downloads ?? 0 };
     populated.push(newPlugin);
@@ -156,7 +143,7 @@ async function fetchEslintPlugins(
   }
 
   const top40 = populated
-    .filter((item) => item.count)
+    .filter((item) => Boolean(item.count))
     .sort((first, second) => second.count - first.count)
     .slice(0, 40);
 
@@ -174,6 +161,22 @@ async function fetchEslintPlugins(
     size: populated.length,
     top40: newTop40,
   };
+}
+
+for (const pack of investigating) {
+  if (installed.has(pack)) {
+    console.log(`--> ALERT! investigating "${pack}" already INSTALLED`);
+  }
+
+  if (rejectedNames.includes(pack)) {
+    console.log(`--> ALERT! investigating "${pack}" already REJECTED`);
+  }
+}
+
+for (const pack of rejectedNames) {
+  if (installed.has(pack)) {
+    console.log(`--> ALERT! rejected "${pack}" already INSTALLED`);
+  }
 }
 
 export default fetchEslintPlugins;

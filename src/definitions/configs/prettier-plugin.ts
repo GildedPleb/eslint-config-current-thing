@@ -7,6 +7,8 @@ export default {
     files,
     ${RULES}
   }`,
+  ejected: true,
+  enabled: true,
   id: "prettier",
   name: "Prettier",
   nameSecondary: "Plugin",

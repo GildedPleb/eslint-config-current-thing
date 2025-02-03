@@ -7,6 +7,8 @@ export default {
     files,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "no-lodash",
   name: "You Don't Need Lodash",
   packages: [

@@ -1,4 +1,5 @@
 // PathMark: ./src/definitions/configs/id-groups.ts
+// If SHopify is re-enabled all the need to also be re-enabled and we need to re-enable inline conflicts as well
 export const testIds = [
   "jest",
   "cra/jest",
@@ -6,7 +7,7 @@ export const testIds = [
   "jest-format",
   "no-only-test",
   "testing-library",
-  "shopify/react-test",
+  // "shopify/react-test",
 ];
 export const reactIds = [
   "airbnb/react",
@@ -22,12 +23,11 @@ export const reactIds = [
   "rn",
   "rn-ip",
   "rn/ts",
-  "rn/flowtype",
   "rn-p",
-  "shopify/react-ts",
-  "shopify/react",
-  "shopify/react-test",
-  "shopify/polaris",
+  // "shopify/react-ts",
+  // "shopify/react",
+  // "shopify/react-test",
+  // "shopify/polaris",
   "standard-react",
   "standard-jsx",
   "storybook",

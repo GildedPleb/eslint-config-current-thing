@@ -5,11 +5,15 @@ import type { Config } from ".";
 export default {
   conflicts: {
     "@typescript-eslint/no-unused-vars": ["unused-imports"],
+    "perfectionist/sort-modules": ["perfectionist"],
+    "unicorn/prefer-spread": ["unicorn"],
   },
   definitions: `{
     files: tsFiles,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "ts",
   name: "TypeScript",
   packages: [

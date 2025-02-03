@@ -1,5 +1,5 @@
 // PathMark: ./src/definitions/configs/index.ts
-import { type Namespace } from "../plugins";
+import type { Namespace } from "../plugins";
 import airbnbBaseBP from "./airbnb-base-best-practices";
 import airbnbBaseErrors from "./airbnb-base-errors";
 import airbnbBaseEs6 from "./airbnb-base-es6";
@@ -85,7 +85,6 @@ import shopifyJest from "./shopify-jest";
 import shopifyNode from "./shopify-node";
 import shopifyPolaris from "./shopify-polaris";
 import shopifyPrettier from "./shopify-prettier";
-import shopifyPrettierTs from "./shopify-prettier-ts";
 import shopifyReact from "./shopify-react";
 import shopifyReactTest from "./shopify-react-test";
 import shopifyReactTs from "./shopify-react-ts";
@@ -116,6 +115,8 @@ export interface Config {
   conflicts?: Record<string, string[]>;
   contextOverride?: boolean;
   definitions: `${"..." | "{"}${string}${")" | "}"}`;
+  ejected: boolean;
+  enabled: boolean;
   id: string;
   name: string;
   nameSecondary?: string;
@@ -212,7 +213,6 @@ const configs: Config[] = [
   shopifyNode,
   shopifyPolaris,
   shopifyPrettier,
-  shopifyPrettierTs,
   shopifyReact,
   shopifyReactTest,
   shopifyReactTs,
@@ -243,5 +243,5 @@ const configs: Config[] = [
   prettierTailwind,
 ];
 
-export default configs;
+export default configs.filter(({ enabled }) => enabled);
 // EOF

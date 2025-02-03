@@ -10,6 +10,8 @@ export default {
     files: jsFiles,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "eslint",
   name: "ESLint",
   packages: [

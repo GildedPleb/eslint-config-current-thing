@@ -19,6 +19,8 @@ export default {
       },
     },
   }`,
+  ejected: false,
+  enabled: false,
   id: "shopify",
   name: "Shopify",
   nameSecondary: "React-Test",

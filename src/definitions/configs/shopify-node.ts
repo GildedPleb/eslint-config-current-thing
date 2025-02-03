@@ -7,6 +7,8 @@ export default {
     files,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: false,
   id: "shopify",
   name: "Shopify",
   nameSecondary: "Node",
@@ -17,7 +19,7 @@ export default {
       requiresImport: false,
     },
   ],
-  requiredPlugins: ["node"],
+  requiredPlugins: ["n"],
   rules: `...shopify.configs.node[0].rules,`,
 } satisfies Config;
 // EOF

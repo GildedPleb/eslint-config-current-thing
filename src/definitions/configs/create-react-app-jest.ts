@@ -12,6 +12,8 @@ export default {
     },
     ${RULES}
   }`,
+  ejected: true,
+  enabled: true,
   id: "cra",
   name: "Create React App",
   nameSecondary: "Jest",
@@ -23,8 +25,7 @@ export default {
     },
   ],
   requiredPlugins: ["jest", "testing-library"],
-  rules: `// https://github.com/jest-community/eslint-plugin-jest
-    "jest/no-conditional-expect": 2,
+  rules: `"jest/no-conditional-expect": 2,
     "jest/no-identical-title": 2,
     "jest/no-interpolation-in-snapshots": 2,
     "jest/no-jasmine-globals": 2,
@@ -33,8 +34,6 @@ export default {
     "jest/valid-expect": 2,
     "jest/valid-expect-in-promise": 2,
     "jest/valid-title": 1,
-
-    // https://github.com/testing-library/eslint-plugin-testing-library
     "testing-library/await-async-queries": 2,
     "testing-library/await-async-utils": 2,
     "testing-library/no-await-sync-queries": 2,

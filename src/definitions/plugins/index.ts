@@ -65,6 +65,7 @@ import yml from "./yml";
 import youDontNeedLodash from "./you-dont-need-lodash";
 
 export interface Plugin<N extends string> {
+  enabled: boolean;
   name: string;
   packages: Array<{
     declaredAs: string;
@@ -149,5 +150,5 @@ type ExtractNamespace<T> =
     : never;
 export type Namespace = ExtractNamespace<typeof plugins>;
 
-export default plugins;
+export default plugins.filter(({ enabled }) => enabled);
 // EOF

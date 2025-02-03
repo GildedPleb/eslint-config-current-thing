@@ -35,6 +35,8 @@ export default {
     files: tsFiles,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "functional",
   name: "Functional",
   nameSecondary: "TS",
@@ -47,6 +49,6 @@ export default {
   ],
   requiredPlugins: ["@typescript-eslint", "functional"],
   rules: `...functional.configs.recommended.rules,
-    ...functional.configs["external-typescript-recommended"].rules,`,
+    ...functional.configs.externalTypeScriptRecommended.rules,`,
 } satisfies Config;
 // EOF

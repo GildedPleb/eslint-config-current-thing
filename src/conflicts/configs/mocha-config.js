@@ -1,11 +1,9 @@
 // PathMark: ./src/conflicts/configs/mocha-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
-/* eslint-disable import/extensions */
+
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
-/* eslint-disable sonarjs/no-duplicate-string */
-/* eslint-disable id-length */
 
 /*
   This file is fully generated, to edit it change ./generate-conflicts.ts
@@ -17,7 +15,6 @@ import {
 } from "@graphql-eslint/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
-import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import mocha from "eslint-plugin-mocha";
 import * as espree from "espree";
@@ -89,10 +86,11 @@ const configGen = ({
       },
     },
     /* PROCESSORS */
-    {
-      files: mdFiles,
-      processor: markdown.processors.markdown,
-    },
+    // {
+    // files: mdFiles,
+    // Needs to be re-enabled if adding it back in
+    // processor: markdown.processors.markdown,
+    // },
     {
       files: mdFiles,
       processor: mdx.processors.remark,

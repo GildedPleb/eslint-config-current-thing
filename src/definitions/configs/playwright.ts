@@ -14,6 +14,8 @@ export default {
     },
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "playwright",
   name: "Playwright",
   packages: [

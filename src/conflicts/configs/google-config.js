@@ -1,11 +1,9 @@
 // PathMark: ./src/conflicts/configs/google-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
-/* eslint-disable import/extensions */
+
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
-/* eslint-disable sonarjs/no-duplicate-string */
-/* eslint-disable id-length */
 
 /*
   This file is fully generated, to edit it change ./generate-conflicts.ts
@@ -15,10 +13,9 @@ import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
-import google from "eslint-config-google";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
-import markdown from "eslint-plugin-markdown";
+import jsdoc from "eslint-plugin-jsdoc";
 import * as mdx from "eslint-plugin-mdx";
 import * as espree from "espree";
 import globals from "globals";
@@ -89,10 +86,11 @@ const configGen = ({
       },
     },
     /* PROCESSORS */
-    {
-      files: mdFiles,
-      processor: markdown.processors.markdown,
-    },
+    // {
+    // files: mdFiles,
+    // Needs to be re-enabled if adding it back in
+    // processor: markdown.processors.markdown,
+    // },
     {
       files: mdFiles,
       processor: mdx.processors.remark,
@@ -186,7 +184,9 @@ const configGen = ({
     },
     /* PLUGINS */
     {
-      plugins: {},
+      plugins: {
+        jsdoc,
+      },
     },
 
     /*
@@ -194,7 +194,7 @@ const configGen = ({
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: (None)
+      Requires: jsdoc
     */
     ...(disable.includes("eslint-config-google") || threshold > 1_000_000
       ? []
@@ -202,7 +202,121 @@ const configGen = ({
           {
             files: jsFiles,
             rules: {
-              ...google.rules,
+              "array-bracket-newline": 0,
+              "array-bracket-spacing": [2, "never"],
+              "array-element-newline": 0,
+              "arrow-parens": [2, "always"],
+              "block-spacing": [2, "never"],
+              "brace-style": 2,
+              camelcase: [2, { properties: "never" }],
+              "comma-dangle": [2, "always-multiline"],
+              "comma-spacing": 2,
+              "comma-style": 2,
+              "computed-property-spacing": 2,
+              "constructor-super": 2,
+              curly: [2, "multi-line"],
+              "eol-last": 2,
+              "func-call-spacing": 2,
+              "generator-star-spacing": [2, "after"],
+              "guard-for-in": 2,
+              indent: [
+                2,
+                2,
+                {
+                  CallExpression: {
+                    arguments: 2,
+                  },
+                  FunctionDeclaration: {
+                    body: 1,
+                    parameters: 2,
+                  },
+                  FunctionExpression: {
+                    body: 1,
+                    parameters: 2,
+                  },
+                  ignoredNodes: ["ConditionalExpression"],
+                  MemberExpression: 2,
+                  ObjectExpression: 1,
+                  SwitchCase: 1,
+                },
+              ],
+              "jsdoc/require-jsdoc": [
+                2,
+                {
+                  require: {
+                    ClassDeclaration: true,
+                    FunctionDeclaration: true,
+                    MethodDefinition: true,
+                  },
+                },
+              ],
+              "key-spacing": 2,
+              "keyword-spacing": 2,
+              "linebreak-style": 2,
+              "max-len": [
+                2,
+                {
+                  code: 80,
+                  ignorePattern: "goog.(module|require)",
+                  ignoreUrls: true,
+                  tabWidth: 2,
+                },
+              ],
+              "new-cap": 2,
+              "no-array-constructor": 2,
+              "no-caller": 2,
+              "no-cond-assign": 0,
+              "no-extend-native": 2,
+              "no-extra-bind": 2,
+              "no-invalid-this": 2,
+              "no-irregular-whitespace": 2,
+              "no-mixed-spaces-and-tabs": 2,
+              "no-multi-spaces": 2,
+              "no-multi-str": 2,
+              "no-multiple-empty-lines": [2, { max: 2 }],
+              "no-new-object": 2,
+              "no-new-symbol": 2,
+              "no-new-wrappers": 2,
+              "no-tabs": 2,
+              "no-this-before-super": 2,
+              "no-throw-literal": 2,
+              "no-trailing-spaces": 2,
+              "no-unexpected-multiline": 2,
+              "no-unused-vars": [2, { args: "none" }],
+              "no-var": 2,
+              "no-with": 2,
+              "object-curly-spacing": 2,
+              "one-var": [
+                2,
+                {
+                  const: "never",
+                  let: "never",
+                  var: "never",
+                },
+              ],
+              "operator-linebreak": [2, "after"],
+              "padded-blocks": [2, "never"],
+              "prefer-const": [2, { destructuring: "all" }],
+              "prefer-promise-reject-errors": 2,
+              "prefer-rest-params": 2,
+              "prefer-spread": 2,
+              "quote-props": [2, "consistent"],
+              quotes: [2, "single", { allowTemplateLiterals: true }],
+              "rest-spread-spacing": 2,
+              semi: 2,
+              "semi-spacing": 2,
+              "space-before-blocks": 2,
+              "space-before-function-paren": [
+                2,
+                {
+                  anonymous: "never",
+                  asyncArrow: "always",
+                  named: "never",
+                },
+              ],
+              "spaced-comment": [2, "always"],
+              "switch-colon-spacing": 2,
+              "yield-star-spacing": [2, "after"],
               ...("eslint-config-google" in override
                 ? override["eslint-config-google"]
                 : {}),

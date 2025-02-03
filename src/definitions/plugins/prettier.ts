@@ -4,6 +4,7 @@ import type { Plugin } from ".";
 const epp = "eslint-plugin-prettier";
 
 export default {
+  enabled: true,
   name: "Prettier",
   packages: [
     {

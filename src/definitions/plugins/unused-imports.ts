@@ -2,6 +2,7 @@
 import type { Plugin } from ".";
 
 export default {
+  enabled: true,
   name: "Unused Imports",
   packages: [
     {

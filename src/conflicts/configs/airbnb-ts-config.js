@@ -1,11 +1,9 @@
 // PathMark: ./src/conflicts/configs/airbnb-ts-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
-/* eslint-disable import/extensions */
+
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
-/* eslint-disable sonarjs/no-duplicate-string */
-/* eslint-disable id-length */
 
 /*
   This file is fully generated, to edit it change ./generate-conflicts.ts
@@ -15,11 +13,9 @@ import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
-import airbnbTypescript from "eslint-config-airbnb-typescript/lib/shared.js";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
 import importPlugin from "eslint-plugin-import";
-import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import react from "eslint-plugin-react";
 import * as espree from "espree";
@@ -91,10 +87,11 @@ const configGen = ({
       },
     },
     /* PROCESSORS */
-    {
-      files: mdFiles,
-      processor: markdown.processors.markdown,
-    },
+    // {
+    // files: mdFiles,
+    // Needs to be re-enabled if adding it back in
+    // processor: markdown.processors.markdown,
+    // },
     {
       files: mdFiles,
       processor: mdx.processors.remark,
@@ -209,12 +206,186 @@ const configGen = ({
           {
             files: tsFiles,
             rules: {
-              ...airbnbTypescript.rules,
-              ...airbnbTypescript.overrides[0].rules,
-              "react/jsx-filename-extension": [
+              "@typescript-eslint/default-param-last": 2,
+              "@typescript-eslint/dot-notation": [2, { allowKeywords: true }],
+              "@typescript-eslint/naming-convention": [
                 2,
-                { extensions: [".jsx", ".tsx"] },
+                {
+                  format: ["camelCase", "PascalCase", "UPPER_CASE"],
+                  selector: "variable",
+                },
+                {
+                  format: ["camelCase", "PascalCase"],
+                  selector: "function",
+                },
+                {
+                  format: ["PascalCase"],
+                  selector: "typeLike",
+                },
               ],
+              "@typescript-eslint/no-array-constructor": 2,
+              "@typescript-eslint/no-dupe-class-members": 2,
+              "@typescript-eslint/no-empty-function": [
+                2,
+                {
+                  allow: ["arrowFunctions", "functions", "methods"],
+                },
+              ],
+              "@typescript-eslint/no-extra-parens": [
+                0,
+                "all",
+                {
+                  conditionalAssign: true,
+                  enforceForArrowConditionals: false,
+                  ignoreJSX: "all",
+                  nestedBinaryExpressions: false,
+                  returnAssign: false,
+                },
+              ],
+              "@typescript-eslint/no-implied-eval": 2,
+              "@typescript-eslint/no-loop-func": 2,
+              "@typescript-eslint/no-loss-of-precision": 2,
+              "@typescript-eslint/no-magic-numbers": [
+                0,
+                {
+                  detectObjects: false,
+                  enforceConst: true,
+                  ignore: [],
+                  ignoreArrayIndexes: true,
+                },
+              ],
+              "@typescript-eslint/no-redeclare": 2,
+              "@typescript-eslint/no-shadow": 2,
+              "@typescript-eslint/no-unused-expressions": [
+                2,
+                {
+                  allowShortCircuit: false,
+                  allowTaggedTemplates: false,
+                  allowTernary: false,
+                },
+              ],
+              "@typescript-eslint/no-unused-vars": [
+                2,
+                { args: "after-used", ignoreRestSiblings: true, vars: "all" },
+              ],
+              "@typescript-eslint/no-use-before-define": [
+                2,
+                { classes: true, functions: true, variables: true },
+              ],
+              "@typescript-eslint/no-useless-constructor": 2,
+              "@typescript-eslint/require-await": 0,
+              "@typescript-eslint/return-await": [2, "in-try-catch"],
+              "brace-style": 0,
+              camelcase: 0,
+              "comma-dangle": 0,
+              "comma-spacing": 0,
+              "constructor-super": 0,
+              "default-param-last": 0,
+              "dot-notation": 0,
+              "func-call-spacing": 0,
+              "getter-return": 0,
+              "import/extensions": [
+                2,
+                "ignorePackages",
+                {
+                  js: "never",
+                  jsx: "never",
+                  mjs: "never",
+                  ts: "never",
+                  tsx: "never",
+                },
+              ],
+              "import/named": 0,
+              "import/no-extraneous-dependencies": [
+                2,
+                {
+                  devDependencies: [
+                    "test/**",
+                    "tests/**",
+                    "spec/**",
+                    "**/__tests__/**",
+                    "**/__mocks__/**",
+                    "test.{js,jsx}",
+                    "test.{ts,tsx}",
+                    "test-*.{js,jsx}",
+                    "test-*.{ts,tsx}",
+                    "**/*{.,_}{test,spec}.{js,jsx}",
+                    "**/*{.,_}{test,spec}.{ts,tsx}",
+                    "**/jest.config.js",
+                    "**/jest.config.ts",
+                    "**/jest.setup.js",
+                    "**/jest.setup.ts",
+                    "**/vue.config.js",
+                    "**/vue.config.ts",
+                    "**/webpack.config.js",
+                    "**/webpack.config.ts",
+                    "**/webpack.config.*.js",
+                    "**/webpack.config.*.ts",
+                    "**/rollup.config.js",
+                    "**/rollup.config.ts",
+                    "**/rollup.config.*.js",
+                    "**/rollup.config.*.ts",
+                    "**/gulpfile.js",
+                    "**/gulpfile.ts",
+                    "**/gulpfile.*.js",
+                    "**/gulpfile.*.ts",
+                    "**/Gruntfile{,.js}",
+                    "**/Gruntfile{,.ts}",
+                    "**/protractor.conf.js",
+                    "**/protractor.conf.ts",
+                    "**/protractor.conf.*.js",
+                    "**/protractor.conf.*.ts",
+                    "**/karma.conf.js",
+                    "**/karma.conf.ts",
+                    "**/.eslintrc.js",
+                    "**/.eslintrc.ts",
+                  ],
+                  optionalDependencies: false,
+                },
+              ],
+              "import/no-named-as-default-member": 0,
+              "import/no-unresolved": 0,
+              indent: 0,
+              "keyword-spacing": 0,
+              "lines-between-class-members": 0,
+              "no-array-constructor": 0,
+              "no-const-assign": 0,
+              "no-dupe-args": 0,
+              "no-dupe-class-members": 0,
+              "no-dupe-keys": 0,
+              "no-empty-function": 0,
+              "no-extra-parens": 0,
+              "no-extra-semi": 0,
+              "no-func-assign": 0,
+              "no-implied-eval": 0,
+              "no-import-assign": 0,
+              "no-loop-func": 0,
+              "no-loss-of-precision": 0,
+              "no-magic-numbers": 0,
+              "no-new-func": 0,
+              "no-new-symbol": 0,
+              "no-obj-calls": 0,
+              "no-redeclare": 0,
+              "no-return-await": 0,
+              "no-setter-return": 0,
+              "no-shadow": 0,
+              "no-this-before-super": 0,
+              "no-throw-literal": 0,
+              "no-undef": 0,
+              "no-unreachable": 0,
+              "no-unsafe-negation": 0,
+              "no-unused-expressions": 0,
+              "no-unused-vars": 0,
+              "no-use-before-define": 0,
+              "no-useless-constructor": 0,
+              "object-curly-spacing": 0,
+              quotes: 0,
+              "require-await": 0,
+              semi: 0,
+              "space-before-blocks": 0,
+              "space-before-function-paren": 0,
+              "space-infix-ops": 0,
+              "valid-typeof": 0,
               ...("eslint-config-airbnb-typescript" in override
                 ? override["eslint-config-airbnb-typescript"]
                 : {}),

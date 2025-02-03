@@ -7,6 +7,8 @@ export default {
     files: tsFiles,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: false,
   id: "sort-keys",
   name: "Typescript Sort Keys",
   packages: [

@@ -14,6 +14,8 @@ export default {
     },
     ${RULES}
   }`,
+  ejected: true,
+  enabled: true,
   id: "airbnb",
   name: "AirBnb",
   nameSecondary: "React-Hooks",
@@ -21,11 +23,12 @@ export default {
     {
       declaredAs: "airbnbReactHooks",
       package: "eslint-config-airbnb",
-      requiresImport: true,
+      requiresImport: false,
       subModule: "/rules/react-hooks",
     },
   ],
   requiredPlugins: ["react-hooks"],
-  rules: `...airbnbReactHooks.rules,`,
+  rules: `'react-hooks/rules-of-hooks': 2,
+    'react-hooks/exhaustive-deps': 2,`,
 } satisfies Config;
 // EOF

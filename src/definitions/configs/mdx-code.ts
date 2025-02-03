@@ -15,6 +15,8 @@ export default {
     },
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "mdx",
   name: "MDX",
   nameSecondary: "Code-Blocks",

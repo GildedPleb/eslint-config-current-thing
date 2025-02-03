@@ -10,6 +10,8 @@ export default {
     files,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "nextjs",
   name: "NextJS",
   packages: [

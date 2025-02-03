@@ -1,6 +1,6 @@
 // PathMark: ./src/definitions/configs/functional.ts
 import { RULES } from "../../constants";
-import { type Config } from ".";
+import type { Config } from ".";
 import { reactIds, testIds } from "./id-groups";
 
 export default {
@@ -30,6 +30,8 @@ export default {
     files: jsFiles,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "functional",
   name: "Functional",
   packages: [
@@ -40,8 +42,8 @@ export default {
     },
   ],
   requiredPlugins: ["functional"],
-  rules: `...functional.configs["external-vanilla-recommended"].rules,
+  rules: `...functional.configs.externalVanillaRecommended.rules,
     ...functional.configs.recommended.rules,
-    ...functional.configs["disable-type-checked"].rules,`,
+    ...functional.configs.disableTypeChecked.rules,`,
 } satisfies Config;
 // EOF

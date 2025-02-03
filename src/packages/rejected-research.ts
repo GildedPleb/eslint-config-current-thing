@@ -1,27 +1,12 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair -- not needed */
+/* eslint-disable no-console -- not for prod */
+/* eslint-disable import/no-extraneous-dependencies -- not for prod */
 import Ajv from "ajv";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import chalk from "chalk";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import OpenAI from "openai";
 
-import { type Populated } from "./get-packages";
+import type { Populated } from "./get-packages";
 import { addItem, getItemByName } from "./rejected-database";
-
-interface Repository {
-  type: string;
-  url: string;
-}
-
-interface PackageDetails {
-  description: string;
-  keywords: string[];
-  lastPublish?: string;
-  maintainers: string[];
-  name: string;
-  readme?: string;
-  repository?: Repository;
-}
 
 export interface PackageAnalysis {
   category: string;
@@ -49,6 +34,21 @@ interface NpmResponse {
     [key: string]: string;
     modified: string;
   };
+}
+
+interface PackageDetails {
+  description: string;
+  keywords: string[];
+  lastPublish?: string;
+  maintainers: string[];
+  name: string;
+  readme?: string;
+  repository?: Repository;
+}
+
+interface Repository {
+  type: string;
+  url: string;
 }
 
 const PROMPTS = {
@@ -118,19 +118,20 @@ const validator = ajv.compile<PackageAnalysis>({
   type: "object",
 });
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- not worth describing
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 
 /**
  *
  * @param details - package details
- * @param maxRetries - retries
- * @returns results
+ * @param maxRetries - attempts
+ * @returns the analysis
  */
+// eslint-disable-next-line complexity -- bogus rule
 async function analyzePackage(
   details: PackageDetails,
   maxRetries = 3,
-): Promise<{ error: true; message: string } | PackageAnalysis> {
+): Promise<PackageAnalysis | { error: true; message: string }> {
   let lastError = "";
   for (let attempt = 0; attempt < maxRetries; attempt++) {
     console.log("Analyzing package", details.name, attempt);
@@ -150,7 +151,7 @@ async function analyzePackage(
         response_format: { type: "json_object" },
       });
 
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- this assignment is expected
       const result: PackageAnalysis = JSON.parse(
         response.choices[0]?.message?.content ?? "{}",
       );
@@ -176,6 +177,7 @@ async function analyzePackage(
 
   return { error: true, message: `Failed after ${maxRetries} attempts` };
 }
+
 /**
  *
  * @param packageName - string
@@ -197,7 +199,7 @@ async function fetchPackageData(
       throw new Error(`Failed to fetch package data: ${response.statusText}`);
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- this is fine
     const data: NpmResponse = await response.json();
 
     return {
@@ -221,7 +223,7 @@ async function fetchPackageData(
  *
  * @param packages - packages to evaluate
  */
-export async function rejectTop40(packages: Populated[]): Promise<void> {
+async function rejectTop40(packages: Populated[]): Promise<void> {
   console.log("\n\nConducting Package Research\n");
 
   for (const { name } of packages) {
@@ -251,3 +253,5 @@ export async function rejectTop40(packages: Populated[]): Promise<void> {
     }
   }
 }
+
+export { rejectTop40 };

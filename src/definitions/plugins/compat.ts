@@ -1,7 +1,8 @@
 // PathMark: ./src/definitions/plugins/compat.ts
-import { type Plugin } from ".";
+import type { Plugin } from ".";
 
 export default {
+  enabled: true,
   name: "Compat",
   packages: [
     {

@@ -14,6 +14,8 @@ export default {
       "import/ignore": ["node_modules", ".s?css"],
     },
   }`,
+  ejected: false,
+  enabled: false,
   id: "shopify",
   name: "Shopify",
   nameSecondary: "ESNext",

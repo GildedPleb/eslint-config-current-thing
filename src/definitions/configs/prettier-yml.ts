@@ -10,6 +10,8 @@ export default {
     files: ymlFiles,
     ${RULES}
   }`,
+  ejected: true,
+  enabled: true,
   id: "prettier",
   name: "Prettier",
   nameSecondary: "YML",

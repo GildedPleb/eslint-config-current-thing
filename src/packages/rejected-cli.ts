@@ -1,16 +1,16 @@
+/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair -- not used for prod */
+/* eslint-disable no-console -- console needed for UI */
+/* eslint-disable import/no-extraneous-dependencies -- used for prod */
+
 import { stdin as input, stdout as output } from "node:process";
+// eslint-disable-next-line n/no-unsupported-features/node-builtins -- not used for prod
 import { createInterface } from "node:readline/promises";
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 import Ajv from "ajv";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import chalk from "chalk";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import Table from "cli-table3";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Command } from "commander";
 
-// import { Table } from "console-table-printer";
 import {
   addItem,
   type DataType,
@@ -27,7 +27,7 @@ const rl = createInterface({ input, output });
 
 // Schema validation
 const ajv = new Ajv();
-const validator = ajv.compile<{ name: string } & PackageAnalysis>({
+const validator = ajv.compile<PackageAnalysis & { name: string }>({
   additionalProperties: false,
   properties: {
     category: { type: "string" },
@@ -84,13 +84,8 @@ function displayTable(data: DataType[]): void {
       "top-mid": "┬",
       "top-right": "┐",
     },
-    colWidths: [
-      // eslint-disable-next-line unicorn/no-null
-      null,
-      3,
-      40,
-      40,
-    ],
+    // eslint-disable-next-line unicorn/no-null -- null required
+    colWidths: [null, 3, 40, 40],
     head: [
       "Name",
       "Reject",
@@ -190,7 +185,7 @@ program
   .argument("[json]", "JSON string for the new item")
   .action(async (json?: string) => {
     try {
-      let data;
+      let data = {};
 
       if (json === undefined) {
         // Read JSON from stdin
@@ -199,11 +194,14 @@ program
           innerInput += chunk;
         }
         try {
-          const { date, isAI, ...rest } = JSON.parse(innerInput) as {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- we validate the data immediately after this
+          const { date, isAI, ...rest } = JSON.parse(
+            innerInput,
+          ) as PackageAnalysis & {
             date: string;
             isAI: boolean;
             name: string;
-          } & PackageAnalysis;
+          };
 
           data = rest;
         } catch {
@@ -212,11 +210,12 @@ program
       } else {
         // Parse JSON from command line argument
         try {
-          data = JSON.parse(json) as {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- we validate the data immediately after this
+          data = JSON.parse(json) as PackageAnalysis & {
             date: string;
             isAI: boolean;
             name: string;
-          } & PackageAnalysis;
+          };
         } catch {
           throw new Error("Invalid JSON format");
         }
@@ -248,8 +247,10 @@ program
   .option("-k, --keys <keys>", "comma-separated list of keys to search in")
   .option("-j, --json", "output results in JSON format")
   .action(async (term: string, options: { json?: boolean; keys?: string }) => {
+    console.log("Searching for", term, options);
     try {
       // Convert comma-separated keys to array if provided
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- we own the data
       const searchKeys = (options.keys?.split(",").map((key) => key.trim()) ??
         []) as Array<"name" | keyof PackageAnalysis>;
 

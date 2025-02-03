@@ -7,6 +7,8 @@ export default {
     files: [...jsxFiles, ...tsxFiles],
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "jsx-a11y",
   name: "JSX Accessibility (JSX A11y)",
   packages: [

@@ -12,6 +12,8 @@ export default {
       },
     },
   }`,
+  ejected: false,
+  enabled: true,
   id: "jsdoc",
   name: "JSDoc",
   nameSecondary: "TS",

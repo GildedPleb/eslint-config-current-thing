@@ -7,6 +7,8 @@ export default {
     files: jsFiles,
     ${RULES}
   }`,
+  ejected: true,
+  enabled: true,
   id: "airbnb-base",
   name: "AirBnb Base",
   nameSecondary: "Strict",
@@ -14,11 +16,11 @@ export default {
     {
       declaredAs: "airbnbBaseStrict",
       package: "eslint-config-airbnb-base",
-      requiresImport: true,
+      requiresImport: false,
       subModule: "/rules/strict",
     },
   ],
   requiredPlugins: [],
-  rules: `...airbnbBaseStrict.rules,`,
+  rules: `strict: [2, "never"],`,
 } satisfies Config;
 // EOF

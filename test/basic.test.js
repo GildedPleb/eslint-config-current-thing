@@ -27,35 +27,35 @@ class TestCLass {
   }
 }
 
-describe("multiply function", function () {
-  it("multiplies two numbers correctly", function () {
+describe("multiply function", function a() {
+  it("multiplies two numbers correctly", function b() {
     expect(multiply(2, 3)).toBe(6);
     expect(multiply(4, 5)).toBe(20);
   });
 
-  it("handles zeros correctly", function () {
+  it("handles zeros correctly", function c() {
     expect(multiply(0, 5)).toBe(0);
     expect(multiply(2, 0)).toBe(0);
     expect(multiply(0, 0)).toBe(0);
   });
 
-  it("handles negatives correctly", function () {
+  it("handles negatives correctly", function d() {
     expect(multiply(-2, 4)).toBe(-8);
     expect(multiply(5, -3)).toBe(-15);
     expect(multiply(-2, -2)).toBe(4);
   });
 
-  it("handles decimal numbers correctly", function () {
+  it("handles decimal numbers correctly", function g() {
     expect(multiply(0.5, 0.5)).toBe(0.25);
   });
 
-  it("handles large numbers correctly", function () {
+  it("handles large numbers correctly", function f() {
     expect(multiply(1_000_000_000, 1_000_000_000)).toBe(
       1_000_000_000_000_000_000,
     );
   });
 
-  it("returns number", function () {
+  it("returns number", function h() {
     const t = new TestCLass(4);
 
     expect(t.getNum()).toBe(4);

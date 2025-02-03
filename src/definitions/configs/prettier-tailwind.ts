@@ -7,6 +7,8 @@ export default {
   files: [...jsxFiles, ...tsxFiles],
     ${RULES}
   }`,
+  ejected: true,
+  enabled: true,
   id: "prettier-tailwind",
   name: "Prettier Plugin Tailwind",
   packages: [

@@ -7,6 +7,8 @@ export default {
     files: [...jsxFiles, ...tsxFiles],
     ${RULES}
   }`,
+  ejected: true,
+  enabled: false,
   id: "emotion-css",
   name: "Emotion CSS",
   packages: [

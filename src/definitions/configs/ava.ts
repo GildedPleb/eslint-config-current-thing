@@ -7,6 +7,8 @@ export default {
     files: testFiles,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "ava",
   name: "Ava",
   packages: [

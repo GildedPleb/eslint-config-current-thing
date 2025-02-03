@@ -13,6 +13,7 @@ export default {
       sourceType: "module",
     },
   }`,
+  enabled: true,
   name: "MDX",
   packages: [
     {

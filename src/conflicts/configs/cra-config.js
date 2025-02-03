@@ -1,11 +1,9 @@
 // PathMark: ./src/conflicts/configs/cra-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
-/* eslint-disable import/extensions */
+
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
-/* eslint-disable sonarjs/no-duplicate-string */
-/* eslint-disable id-length */
 
 /*
   This file is fully generated, to edit it change ./generate-conflicts.ts
@@ -18,10 +16,8 @@ import {
 import restrictedGlobals from "confusing-browser-globals";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
-import flowtype from "eslint-plugin-flowtype";
 import importPlugin from "eslint-plugin-import";
 import jsxA11y from "eslint-plugin-jsx-a11y";
-import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
@@ -94,10 +90,11 @@ const configGen = ({
       },
     },
     /* PROCESSORS */
-    {
-      files: mdFiles,
-      processor: markdown.processors.markdown,
-    },
+    // {
+    // files: mdFiles,
+    // Needs to be re-enabled if adding it back in
+    // processor: markdown.processors.markdown,
+    // },
     {
       files: mdFiles,
       processor: mdx.processors.remark,
@@ -192,7 +189,6 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        flowtype,
         import: importPlugin,
         "jsx-a11y": jsxA11y,
         react,
@@ -205,7 +201,7 @@ const configGen = ({
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: react, react-hooks, import, jsx-a11y, flowtype
+      Requires: react, react-hooks, import, jsx-a11y
     */
     ...(disable.includes("eslint-config-react-app") || threshold > 1_000_000
       ? []
@@ -231,9 +227,9 @@ const configGen = ({
               "default-case": [1, { commentPattern: "^no default$" }],
               "dot-location": [1, "property"],
               eqeqeq: [1, "smart"],
-              "flowtype/define-flow-type": 1,
-              "flowtype/require-valid-file-annotation": 1,
-              "flowtype/use-flow-type": 1,
+              // "flowtype/define-flow-type": 1,
+              // "flowtype/require-valid-file-annotation": 1,
+              // "flowtype/use-flow-type": 1,
               "getter-return": 1,
               "import/first": 2,
               "import/no-amd": 2,
@@ -378,6 +374,8 @@ const configGen = ({
               ],
               "no-whitespace-before-property": 1,
               "no-with": 1,
+              "react-hooks/exhaustive-deps": 1,
+              "react-hooks/rules-of-hooks": 2,
               "react/forbid-foreign-prop-types": [
                 1,
                 { allowInPropTypes: true },
@@ -401,8 +399,6 @@ const configGen = ({
               "react/no-typos": 2,
               "react/require-render-return": 2,
               "react/style-prop-object": 1,
-              "react-hooks/exhaustive-deps": 1,
-              "react-hooks/rules-of-hooks": 2,
               "require-yield": 1,
               "rest-spread-spacing": [1, "never"],
               strict: [1, "never"],

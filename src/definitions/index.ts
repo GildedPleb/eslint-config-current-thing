@@ -1,5 +1,8 @@
+// eslint-disable-next-line @eslint-community/eslint-comments/disable-enable-pair -- needed
+/* eslint-disable no-console -- needed for UI */
 // PathMark: ./src/definitions/index.ts
-// eslint-disable-next-line import/no-extraneous-dependencies
+
+// eslint-disable-next-line import/no-extraneous-dependencies -- not needed for prod
 import { Level } from "level";
 
 import { isMoreThan1DaysInThePast } from "../helpers";
@@ -11,26 +14,26 @@ import parsers from "./parsers";
 
 const database = new Level("./packages-installed", { valueEncoding: "json" });
 
+export interface PopulatedConfig extends Config {
+  count: number;
+  description: string | undefined;
+  homepage: string | undefined;
+}
+
 interface DatabaseEntry {
   count: number;
   date: string;
   info: Info;
 }
 
-export interface PopulatedConfig extends Config {
-  count: number;
-  description: string;
-  homepage: string;
-}
-
 const configsWithCount: PopulatedConfig[] = [];
 
-for await (const config of configs) {
+for (const config of configs) {
   console.log(`Getting info for "${config.name}"...`);
   let count = 0;
   let description = "";
   let homepage = "";
-  for await (const { package: pack } of config.packages) {
+  for (const { package: pack } of config.packages) {
     try {
       const previous = await database.get(`installed-${pack}`);
 
@@ -38,6 +41,7 @@ for await (const config of configs) {
         count: packCount,
         date,
         info,
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- we own the data
       } = JSON.parse(previous) as DatabaseEntry;
 
       if (isMoreThan1DaysInThePast(date)) throw new Error("Data too old");
@@ -83,12 +87,12 @@ export interface PopulatedParser extends Parser {
 
 const parsersWithCount: PopulatedParser[] = [];
 
-for await (const config of parsers) {
+for (const config of parsers) {
   console.log(`Getting info for "${config.name}"...`);
   let count = 0;
   let description = "";
   let homepage = "";
-  for await (const { package: pack } of config.packages) {
+  for (const { package: pack } of config.packages) {
     try {
       const previous = await database.get(`installed-${pack}`);
 
@@ -96,6 +100,7 @@ for await (const config of parsers) {
         count: packCount,
         date,
         info,
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- we own the data
       } = JSON.parse(previous) as DatabaseEntry;
 
       if (isMoreThan1DaysInThePast(date)) throw new Error("Data too old");
@@ -162,7 +167,7 @@ const configsMapped: Record<string, FinalConfig> = Object.fromEntries(
   }),
 );
 
-for await (const config of configsWithCount) {
+for (const config of configsWithCount) {
   const badRules = Object.entries(config.conflicts ?? {});
   for (const [rule, conflictingConfigs] of badRules) {
     for (const externalConfig of new Set(conflictingConfigs)) {
@@ -178,9 +183,9 @@ for await (const config of configsWithCount) {
         );
       }
 
-      // eslint-disable-next-line security/detect-object-injection
+      // eslint-disable-next-line security/detect-object-injection -- we own the data
       if (!configsMapped[externalConfig].overrides.includes(rule)) {
-        // eslint-disable-next-line security/detect-object-injection
+        // eslint-disable-next-line security/detect-object-injection -- we own the data
         configsMapped[externalConfig].overrides.push(rule);
       }
     }

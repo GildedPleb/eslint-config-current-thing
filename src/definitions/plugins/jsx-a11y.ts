@@ -2,6 +2,7 @@
 import type { Plugin } from ".";
 
 export default {
+  enabled: true,
   name: "JSX A11y",
   packages: [
     {

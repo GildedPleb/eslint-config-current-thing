@@ -15,6 +15,8 @@ export default {
     },
     ${RULES}
   }`,
+  ejected: false,
+  enabled: false,
   id: "markdown",
   name: "Markdown",
   packages: [

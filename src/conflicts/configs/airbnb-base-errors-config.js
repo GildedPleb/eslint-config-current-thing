@@ -1,11 +1,9 @@
 // PathMark: ./src/conflicts/configs/airbnb-base-errors-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
-/* eslint-disable import/extensions */
+
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
-/* eslint-disable sonarjs/no-duplicate-string */
-/* eslint-disable id-length */
 
 /*
   This file is fully generated, to edit it change ./generate-conflicts.ts
@@ -15,10 +13,8 @@ import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
-import airbnbBaseErrors from "eslint-config-airbnb-base/rules/errors";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
-import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import * as espree from "espree";
 import globals from "globals";
@@ -89,10 +85,11 @@ const configGen = ({
       },
     },
     /* PROCESSORS */
-    {
-      files: mdFiles,
-      processor: markdown.processors.markdown,
-    },
+    // {
+    // files: mdFiles,
+    // Needs to be re-enabled if adding it back in
+    // processor: markdown.processors.markdown,
+    // },
     {
       files: mdFiles,
       processor: mdx.processors.remark,
@@ -203,7 +200,72 @@ const configGen = ({
           {
             files: jsFiles,
             rules: {
-              ...airbnbBaseErrors.rules,
+              "for-direction": 2,
+              "getter-return": [2, { allowImplicit: true }],
+              "no-async-promise-executor": 2,
+              "no-await-in-loop": 2,
+              "no-compare-neg-zero": 2,
+              "no-cond-assign": [2, "always"],
+              "no-console": 1,
+              "no-constant-binary-expression": 0,
+              "no-constant-condition": 1,
+              "no-control-regex": 2,
+              "no-debugger": 2,
+              "no-dupe-args": 2,
+              "no-dupe-else-if": 2,
+              "no-dupe-keys": 2,
+              "no-duplicate-case": 2,
+              "no-empty": 2,
+              "no-empty-character-class": 2,
+              "no-ex-assign": 2,
+              "no-extra-boolean-cast": 2,
+              "no-extra-parens": [
+                0,
+                "all",
+                {
+                  conditionalAssign: true,
+                  enforceForArrowConditionals: false,
+                  ignoreJSX: "all",
+                  nestedBinaryExpressions: false,
+                  returnAssign: false,
+                },
+              ],
+              "no-extra-semi": 2,
+              "no-func-assign": 2,
+              "no-import-assign": 2,
+              "no-inner-declarations": 2,
+              "no-invalid-regexp": 2,
+              "no-irregular-whitespace": 2,
+              "no-loss-of-precision": 2,
+              "no-misleading-character-class": 2,
+              "no-negated-in-lhs": 0,
+              "no-new-native-nonconstructor": 0,
+              "no-obj-calls": 2,
+              "no-promise-executor-return": 2,
+              "no-prototype-builtins": 2,
+              "no-regex-spaces": 2,
+              "no-setter-return": 2,
+              "no-sparse-arrays": 2,
+              "no-template-curly-in-string": 2,
+              "no-unexpected-multiline": 2,
+              "no-unreachable": 2,
+              "no-unreachable-loop": [
+                2,
+                {
+                  ignore: [],
+                },
+              ],
+              "no-unsafe-finally": 2,
+              "no-unsafe-negation": 2,
+              "no-unsafe-optional-chaining": [
+                2,
+                { disallowArithmeticOperators: true },
+              ],
+              "no-unused-private-class-members": 0,
+              "no-useless-backreference": 2,
+              "require-atomic-updates": 0,
+              "use-isnan": 2,
+              "valid-typeof": [2, { requireStringLiterals: true }],
               ...("eslint-config-airbnb-base/errors" in override
                 ? override["eslint-config-airbnb-base/errors"]
                 : {}),

@@ -27,6 +27,8 @@ export default {
       },
     },
   }`,
+  ejected: true,
+  enabled: true,
   id: "cra",
   name: "Create React App",
   nameSecondary: "TS",
@@ -66,7 +68,6 @@ export default {
       },
     ],
     "@typescript-eslint/no-useless-constructor": 1,
-
     "default-case": 0,
     "no-dupe-class-members": 0,
     "no-undef": 0,

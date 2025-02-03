@@ -1,11 +1,9 @@
 // PathMark: ./src/conflicts/configs/standard-jsx-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
-/* eslint-disable import/extensions */
+
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
-/* eslint-disable sonarjs/no-duplicate-string */
-/* eslint-disable id-length */
 
 /*
   This file is fully generated, to edit it change ./generate-conflicts.ts
@@ -15,10 +13,8 @@ import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
-import standardJsx from "eslint-config-standard-jsx";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
-import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import react from "eslint-plugin-react";
 import * as espree from "espree";
@@ -90,10 +86,11 @@ const configGen = ({
       },
     },
     /* PROCESSORS */
-    {
-      files: mdFiles,
-      processor: markdown.processors.markdown,
-    },
+    // {
+    // files: mdFiles,
+    // Needs to be re-enabled if adding it back in
+    // processor: markdown.processors.markdown,
+    // },
     {
       files: mdFiles,
       processor: mdx.processors.remark,
@@ -212,7 +209,103 @@ const configGen = ({
               },
             },
             rules: {
-              ...standardJsx.rules,
+              "jsx-quotes": [2, "prefer-single"],
+              "react/jsx-boolean-value": 2,
+              "react/jsx-closing-bracket-location": [2, "tag-aligned"],
+              "react/jsx-closing-tag-location": 2,
+              "react/jsx-curly-brace-presence": [
+                2,
+                {
+                  children: "never",
+                  props: "never",
+                },
+              ],
+              "react/jsx-curly-newline": [
+                2,
+                {
+                  multiline: "consistent",
+                  singleline: "consistent",
+                },
+              ],
+              "react/jsx-curly-spacing": [
+                2,
+                {
+                  attributes: { allowMultiline: true, when: "never" },
+                  children: { allowMultiline: true, when: "never" },
+                },
+              ],
+              "react/jsx-equals-spacing": [2, "never"],
+              "react/jsx-first-prop-new-line": [2, "multiline-multiprop"],
+              "react/jsx-fragments": [2, "syntax"],
+              "react/jsx-handler-names": 2,
+              "react/jsx-indent": [
+                2,
+                2,
+                {
+                  checkAttributes: false,
+                  indentLogicalExpressions: true,
+                },
+              ],
+              "react/jsx-indent-props": [2, 2],
+              "react/jsx-key": [
+                2,
+                {
+                  checkFragmentShorthand: true,
+                },
+              ],
+              "react/jsx-no-comment-textnodes": 2,
+              "react/jsx-no-duplicate-props": 2,
+              "react/jsx-no-target-blank": [
+                2,
+                { enforceDynamicLinks: "always" },
+              ],
+              "react/jsx-no-undef": [2, { allowGlobals: true }],
+              "react/jsx-pascal-case": [2, { allowAllCaps: false }],
+              "react/jsx-props-no-multi-spaces": 2,
+              "react/jsx-tag-spacing": [
+                2,
+                {
+                  afterOpening: "never",
+                  beforeClosing: "never",
+                  beforeSelfClosing: "always",
+                  closingSlash: "never",
+                },
+              ],
+              "react/jsx-uses-react": 2,
+              "react/jsx-uses-vars": 2,
+              "react/jsx-wrap-multilines": [
+                2,
+                {
+                  arrow: "ignore",
+                  assignment: "parens-new-line",
+                  condition: "ignore",
+                  declaration: "parens-new-line",
+                  logical: "ignore",
+                  prop: "ignore",
+                  return: "parens-new-line",
+                },
+              ],
+              "react/no-children-prop": 2,
+              "react/no-danger-with-children": 2,
+              "react/no-deprecated": 2,
+              "react/no-direct-mutation-state": 2,
+              "react/no-find-dom-node": 2,
+              "react/no-is-mounted": 2,
+              "react/no-render-return-value": 2,
+              "react/no-string-refs": [
+                2,
+                {
+                  noTemplateLiterals: true,
+                },
+              ],
+              "react/no-unescaped-entities": [
+                2,
+                {
+                  forbid: [">", "}"],
+                },
+              ],
+              "react/require-render-return": 2,
+              "react/self-closing-comp": 2,
               ...("eslint-config-standard-jsx" in override
                 ? override["eslint-config-standard-jsx"]
                 : {}),

@@ -7,6 +7,8 @@ export default {
     files: tsxFiles,
     ${RULES}
   }`,
+  ejected: true,
+  enabled: true,
   id: "rn",
   name: "React Native Config",
   nameSecondary: "TS",
@@ -14,7 +16,7 @@ export default {
     {
       declaredAs: "reactNativeConfig",
       package: "@react-native-community/eslint-config",
-      requiresImport: true,
+      requiresImport: false,
     },
     {
       declaredAs: "rnConfig",
@@ -23,6 +25,17 @@ export default {
     },
   ],
   requiredPlugins: ["@typescript-eslint"],
-  rules: `...reactNativeConfig.overrides[1].rules,`,
+  rules: `'@typescript-eslint/no-unused-vars': [
+      2,
+      {
+        argsIgnorePattern: '^_',
+        destructuredArrayIgnorePattern: '^_',
+      },
+    ],
+    'no-unused-vars': 0,
+    'no-shadow': 0,
+    '@typescript-eslint/no-shadow': 1,
+    'no-undef': 0,
+    'func-call-spacing': 0,`,
 } satisfies Config;
 // EOF

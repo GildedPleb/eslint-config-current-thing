@@ -7,6 +7,8 @@ export default {
     files: tsFiles,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "standard-ts",
   name: "Standard TS",
   packages: [
@@ -21,7 +23,13 @@ export default {
       requiresImport: true,
     },
   ],
-  requiredPlugins: ["@typescript-eslint", "n", "import", "promise"],
+  requiredPlugins: [
+    "@typescript-eslint",
+    "n",
+    "import",
+    "promise",
+    "eslint-comments",
+  ],
   rules: `...standardTS.rules,`,
 } satisfies Config;
 // EOF

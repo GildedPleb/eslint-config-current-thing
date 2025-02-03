@@ -1,3 +1,5 @@
+// eslint-disable-next-line @eslint-community/eslint-comments/disable-enable-pair -- needed
+/* eslint-disable no-console -- this is fine for UI */
 // PathMark: ./src/conflicts/get-fixables.ts
 
 import fs from "node:fs";
@@ -12,14 +14,14 @@ import plugins from "../definitions/plugins";
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
+export interface FinalConfig extends PopulatedConfig {
+  overrides: string[];
+}
+
 export interface PopulatedConfig extends Config {
   count: number;
   description: string;
   homepage: string;
-}
-
-export interface FinalConfig extends PopulatedConfig {
-  overrides: string[];
 }
 
 const packagesSet = new Set<string>();
@@ -73,7 +75,7 @@ import ${declaredAs} from "${pack}";`;
 // @ts-ignore yes, we need to ignore every import for this to run
 import { Linter } from 'eslint';
 
-const linter = new Linter();
+const linter = new Linter({ configType: "eslintrc" });
 const allRules = linter.getRules();
 
 const plugins = {
@@ -109,7 +111,6 @@ export default fixableRules;
 `;
 const outputPath = path.join(dirname, "plugins.js");
 try {
-  // eslint-disable-next-line security/detect-non-literal-fs-filename
   fs.writeFileSync(outputPath, generateCode, "utf8");
   console.log(`\n.${outputPath} has been updated successfully.`);
 } catch (error) {

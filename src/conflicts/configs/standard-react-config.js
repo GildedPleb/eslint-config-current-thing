@@ -1,11 +1,9 @@
 // PathMark: ./src/conflicts/configs/standard-react-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
-/* eslint-disable import/extensions */
+
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
-/* eslint-disable sonarjs/no-duplicate-string */
-/* eslint-disable id-length */
 
 /*
   This file is fully generated, to edit it change ./generate-conflicts.ts
@@ -15,10 +13,8 @@ import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
-import standardReact from "eslint-config-standard-react";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
-import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
@@ -91,10 +87,11 @@ const configGen = ({
       },
     },
     /* PROCESSORS */
-    {
-      files: mdFiles,
-      processor: markdown.processors.markdown,
-    },
+    // {
+    // files: mdFiles,
+    // Needs to be re-enabled if adding it back in
+    // processor: markdown.processors.markdown,
+    // },
     {
       files: mdFiles,
       processor: mdx.processors.remark,
@@ -215,7 +212,21 @@ const configGen = ({
               },
             },
             rules: {
-              ...standardReact.rules,
+              "react-hooks/exhaustive-deps": 1,
+              "react-hooks/rules-of-hooks": 2,
+              "react/jsx-no-bind": [
+                2,
+                {
+                  allowArrowFunctions: true,
+                  allowBind: false,
+                  ignoreRefs: true,
+                },
+              ],
+              "react/no-did-update-set-state": 2,
+              "react/no-unknown-property": 2,
+              "react/no-unused-prop-types": 2,
+              "react/prop-types": 2,
+              "react/react-in-jsx-scope": 2,
               ...("eslint-config-standard-react" in override
                 ? override["eslint-config-standard-react"]
                 : {}),

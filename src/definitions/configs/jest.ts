@@ -24,6 +24,8 @@ export default {
     },
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "jest",
   name: "Jest",
   packages: [

@@ -7,6 +7,8 @@ export default {
     files: jsFiles,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "jsdoc",
   name: "JSDoc",
   packages: [

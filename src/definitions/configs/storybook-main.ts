@@ -7,6 +7,8 @@ export default {
     files: storybook.configs.recommended.overrides[1].files,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "storybook",
   name: "Storybook",
   nameSecondary: "Main",

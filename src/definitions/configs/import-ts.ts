@@ -7,6 +7,8 @@ export default {
     files: tsFiles,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "import-js",
   name: "Import",
   nameSecondary: "ts",

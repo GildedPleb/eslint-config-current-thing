@@ -3,6 +3,7 @@
 import type { Plugin } from ".";
 
 export default {
+  enabled: true,
   name: "Playwright",
   packages: [
     {

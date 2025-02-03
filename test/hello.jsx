@@ -1,5 +1,5 @@
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
 // @ts-nocheck
 /* eslint-disable react/prop-types */
 // PathMark: ./test/hello.jsx

@@ -4,12 +4,14 @@ import type { Config } from ".";
 
 export default {
   conflicts: {
-    "unused-imports/no-unused-vars": ["markdown"],
+    // "unused-imports/no-unused-vars": ["markdown"],
   },
   definitions: `{
     files: jsFiles,
     ${RULES}
   }`,
+  ejected: true,
+  enabled: true,
   id: "unused-imports",
   name: "No Unused Imports",
   packages: [

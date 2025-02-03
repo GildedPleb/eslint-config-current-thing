@@ -13,6 +13,8 @@ export default {
     },
     ${RULES}
   }`,
+  ejected: true,
+  enabled: true,
   id: "rn",
   name: "React Native Config",
   nameSecondary: "Jest",
@@ -20,7 +22,7 @@ export default {
     {
       declaredAs: "reactNativeConfig",
       package: "@react-native-community/eslint-config",
-      requiresImport: true,
+      requiresImport: false,
     },
     {
       declaredAs: "rnConfig",
@@ -29,6 +31,7 @@ export default {
     },
   ],
   requiredPlugins: ["react-native"],
-  rules: `...reactNativeConfig.overrides[2].rules,`,
+  rules: `'react-native/no-inline-styles': 0,
+    quotes: [1, 'single', {avoidEscape: true, allowTemplateLiterals: true}],`,
 } satisfies Config;
 // EOF

@@ -1,8 +1,9 @@
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
-/* eslint-disable security/detect-object-injection */
-/* eslint-disable no-extra-label */
-/* eslint-disable no-labels */
-/* eslint-disable sonarjs/no-labels */
+/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair -- needed */
+/* eslint-disable sonarjs/no-labels -- makes it more clear */
+/* eslint-disable no-labels -- makes it more clear */
+/* eslint-disable security/detect-object-injection -- we own the data */
+/* eslint-disable no-console -- needed for UI */
+/* eslint-disable import/no-extraneous-dependencies -- needed for not prod */
 // PathMark: ./src/conflicts/get-incompatibles.ts
 
 import fs from "node:fs";
@@ -11,9 +12,7 @@ import readline from "node:readline";
 import { fileURLToPath } from "node:url";
 import v8 from "node:v8";
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 import chalk from "chalk";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { type BatchOperation, Level } from "level";
 
 import { hashString, isEmpty, printDiffLines } from "../helpers";
@@ -30,11 +29,11 @@ import {
   mergeIncompatible,
 } from "./helpers";
 import fixables from "./plugins";
-import {
-  type ConfigData,
-  type ConflictCache,
-  type IFlatESLint,
-  type Rule,
+import type {
+  ConfigData,
+  ConflictCache,
+  IFlatESLint,
+  RuleConfig,
 } from "./types";
 
 const filename = fileURLToPath(import.meta.url);
@@ -62,7 +61,7 @@ const heap = (warn = 0.75, error = 0.9): string => {
   const warningThreshold = Math.floor(heapMax * warn);
   const criticalThreshold = Math.floor(heapMax * error);
 
-  let currentHeapDisplay;
+  let currentHeapDisplay = "";
   if (currentHeap >= criticalThreshold) {
     currentHeapDisplay = chalk.red(`${currentHeap}MB`);
   } else if (currentHeap >= warningThreshold) {
@@ -138,15 +137,8 @@ for (const { def: codeToLint, filePath, short } of fileList) {
       console.log(`${chalk.blue(name)} - Zero applicable rules, No conflicts!`);
       return false;
     }
-
     return true;
-  }) as Array<{
-    es: IFlatESLint;
-    hash: string;
-    json: ConfigData;
-    location: string;
-    name: string;
-  }>;
+  });
 
   console.log(`\n${chalk.blue("All linters ready to process!")}\n`);
   const combinations = [];
@@ -193,27 +185,35 @@ for (const { def: codeToLint, filePath, short } of fileList) {
     );
 
     printDiffLines(output1, output2);
-    const rules1 = json1.rules ?? {};
-    const rules2 = json2.rules ?? {};
-    const rules1List = Object.entries<Rule>(rules1).filter(([ruleName]) =>
+    const rules1 = json1?.rules ?? {};
+    const rules2 = json2?.rules ?? {};
+    const rules1List = Object.entries(rules1).filter(([ruleName]) =>
       fixables.has(ruleName),
     );
     const rules1Zeroed = Object.fromEntries(
-      rules1List.map(([rule]) => [rule, 0 as Rule]),
+      rules1List.map(([rule]) => [rule, 0 as RuleConfig]),
     );
-    const rules2List = Object.entries<Rule>(rules2).filter(([ruleName]) =>
+    const rules2List = Object.entries(rules2).filter(([ruleName]) =>
       fixables.has(ruleName),
     );
     const rules2Zeroed = Object.fromEntries(
-      rules2List.map(([rule]) => [rule, 0 as Rule]),
+      rules2List.map(([rule]) => [rule, 0 as RuleConfig]),
     );
     linters.push({
       config1,
       config2,
       currentCheck,
       keyHash,
-      linter1: [es1, json1, hash1] as [IFlatESLint, ConfigData, string],
-      linter2: [es2, json2, hash1] as [IFlatESLint, ConfigData, string],
+      linter1: [es1, json1, hash1] as [
+        IFlatESLint,
+        ConfigData | undefined,
+        string,
+      ],
+      linter2: [es2, json2, hash1] as [
+        IFlatESLint,
+        ConfigData | undefined,
+        string,
+      ],
       r1: { rules1, rules1List, rules1Zeroed },
       r2: { rules2, rules2List, rules2Zeroed },
     });
@@ -397,6 +397,7 @@ for (const { def: codeToLint, filePath, short } of fileList) {
         diffCount++;
         if (compatible(output1, output2)) {
           rules2Zeroed[json2Rule] = 0;
+          // eslint-disable-next-line max-depth -- this is fine
           if (!skipCache) {
             batchOperations.push(
               {
@@ -444,13 +445,10 @@ for (const { def: codeToLint, filePath, short } of fileList) {
           );
 
         if (batchOperations.length > 0) {
-          await database
-            .batch(batchOperations)
-            // eslint-disable-next-line unicorn/prefer-top-level-await
-            .catch((error) => {
-              console.error(error);
-              throw new Error("Batch failed");
-            });
+          await database.batch(batchOperations).catch((error: unknown) => {
+            console.error(error);
+            throw new Error("Batch failed");
+          });
         }
 
         temporaryList = mergeIncompatible(innerConfigList, temporaryList);
@@ -500,7 +498,6 @@ const relative = `./incompatibilities.ts`;
 const outputPath = path.join(dirname, relative);
 
 try {
-  // eslint-disable-next-line security/detect-non-literal-fs-filename
   fs.writeFileSync(outputPath, generateCode, "utf8");
   console.log("\n./incompatibilities.js has been updated successfully.");
 } catch (error) {

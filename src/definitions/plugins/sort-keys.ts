@@ -2,6 +2,7 @@
 import type { Plugin } from ".";
 
 export default {
+  enabled: false,
   name: "Typescript Sort Keys",
   packages: [
     {

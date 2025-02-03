@@ -20,6 +20,8 @@ export default {
       },
     },
   }`,
+  ejected: false,
+  enabled: true,
   id: "react",
   name: "React",
   packages: [

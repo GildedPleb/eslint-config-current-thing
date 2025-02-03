@@ -8,6 +8,7 @@ export default {
       parser: graphQLparseForESLint,
     },
   }`,
+  enabled: true,
   name: "GraphQL",
   packages: [
     {

@@ -12,6 +12,8 @@ export default {
     },
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "cypress",
   name: "Cypress",
   packages: [

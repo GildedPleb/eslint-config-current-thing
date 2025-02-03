@@ -16,28 +16,25 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 
 <!-- Start Generated List of Configs DO NOT EDIT! -->
 
-|                                          |                             |                     |                             |
-| ---------------------------------------- | --------------------------- | ------------------- | --------------------------- |
-| AirBnb                                   | AirBnb Base                 | AirBnb-Typescript   | Ava                         |
-| CSS Modules                              | Chai Friendly               | Comments            | Compat                      |
-| Create React App                         | Cypress                     | ES-X                | ESLint                      |
-| Emotion CSS                              | Functional                  | Google              | GraphQL                     |
-| Import                                   | Internationalization (i18n) | JSDoc               | JSONC                       |
-| JSX Accessibility (JSX A11y)             | Jasmine                     | Jest                | Jest Dom                    |
-| Jest Formatting                          | MDX                         | Markdown            | Microsoft SDL               |
-| Mocha                                    | NextJS                      | No Only Tests       | No Unsanitized              |
-| No Unused Imports                        | No Use Extend Native        | Node.js             | Perfectionist               |
-| Playwright                               | Prefer Arrow                | Prettier            | Prettier Plugin PackageJSON |
-| Prettier Plugin Tailwind                 | Promises                    | React               | React Hooks                 |
-| React Native (Independent Plugin/Config) | React Native Config         | React Native Plugin | React Performance           |
-| React Prefer Function Component          | React Refresh               | Regular Expressions | RxJS                        |
-| Security                                 | Shopify                     | Simple Import Sort  | SonarJS                     |
-| Sort Class Members                       | Standard                    | Standard JSX        | Standard React              |
-| Standard TS                              | Storybook                   | Stylistic           | TSDoc                       |
-| Tailwind CSS                             | Testing Library             | TypeScript          | Typescript Sort Keys        |
-| Unicorn                                  | XO                          | YML                 | You Don't Need Lodash       |
-
-|
+| | | | |
+|,|,|,|,|
+| AirBnb | AirBnb Base | AirBnb-Typescript | Ava |
+| Chai Friendly | Comments | Compat | Create React App |
+| CSS Modules | Cypress | ES-X | ESLint |
+| Functional | Google | GraphQL | Import |
+| Internationalization (i18n) | Jasmine | Jest | Jest Dom |
+| Jest Formatting | JSDoc | JSONC | JSX Accessibility (JSX A11y) |
+| MDX | Microsoft SDL | Mocha | NextJS |
+| No Only Tests | No Unsanitized | No Unused Imports | No Use Extend Native |
+| Node.js | Perfectionist | Playwright | Prefer Arrow |
+| Prettier | Prettier Plugin PackageJSON | Prettier Plugin Tailwind | Promises |
+| React | React Hooks | React Native (Independent Plugin/Config) | React Native Config |
+| React Native Plugin | React Performance | React Prefer Function Component | React Refresh |
+| Regular Expressions | Security | Simple Import Sort | SonarJS |
+| Sort Class Members | Standard | Standard JSX | Standard React |
+| Standard TS | Storybook | Stylistic | Tailwind CSS |
+| Testing Library | TSDoc | TypeScript | Unicorn |
+| XO | YML | You Don't Need Lodash | |
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -49,7 +46,7 @@ The winning (and thus most readily supported) high-level architecture is:
 
 ## Technical explainer
 
-This is a meta-config of many configs. Each config/plugin above is added to ESLint's flat config in the order of its NPM download popularity. After the rules of flat-configs are applied, each rule is turned on or off and set with the settings that are present in the config that is the most popular which has an opinion about that rule. Rule are applied only to their appropriate file types. The result is an objectively set config.
+This is a meta-config of many configs. Each config/plugin above is added to ESLint's flat config in the order of its NPM download popularity. After the rules of flat-configs are applied, each rule is turned on or off and set with the settings that are present in the config that is the most popular which has an opinion about that rule. Rules are applied only to their appropriate file types. The result is an objectively set config.
 
 ## Why?
 
@@ -59,11 +56,11 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1282** TSX rules
-- **1262** Testing rules
-- **1225** JSX rules
-- **1142** Typescript rules
-- **1081** Javascript rules
+- **1516** Testing rules
+- **1513** JSX rules
+- **1498** TSX rules
+- **1364** Javascript rules
+- **1361** Typescript rules
 - **33** JSON rules
 - **24** YML rules
 - **5** MD rules
@@ -111,17 +108,7 @@ You'll also probably want something like this in your `package.json` (edit accor
 }
 ```
 
-And if you are using VS Code, you should get the extension for ESLint `dbaeumer.vscode-eslint` where you will need to add this to your `settings.json`:
-
-```json
-{
-  "eslint.experimental.useFlatConfig": true
-}
-```
-
 And you'll probably want to restart your ESLint server, maybe more than once. `Command Pallet` > `Restart ESLint Server`
-
-Oh god, what have we done.
 
 ---
 
@@ -358,11 +345,11 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **538**.
+The amount of packages reviewed and rejected **3774**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
-See [rejected](./src/packages/rejected.ts) for the full list with notes. But it's always open for debate!
+All rejected packages are always open for debate!
 
 ## We are considering adding these configs
 
@@ -370,47 +357,47 @@ See [rejected](./src/packages/rejected.ts) for the full list with notes. But it'
 
 The following section is generated according to spec.
 
-Generated on 6/18/2024, total known packages **15,046**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/3/2025, total known packages **25,122**. Top 40 next in line, downloads for the previous 28 days:
 
-- 3,362,769 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
-- 2,771,925 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
-- 2,693,610 downloads, [eslint-config-turbo](https://www.npmjs.com/package/eslint-config-turbo)
-- 2,590,999 downloads, [prettier-plugin-organize-imports](https://www.npmjs.com/package/prettier-plugin-organize-imports)
-- 2,018,047 downloads, [eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest)
-- 1,393,179 downloads, [@svgr/plugin-prettier](https://www.npmjs.com/package/@svgr/plugin-prettier)
-- 1,284,569 downloads, [@ianvs/prettier-plugin-sort-imports](https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports)
-- 1,283,246 downloads, [eslint-plugin-ban](https://www.npmjs.com/package/eslint-plugin-ban)
-- 1,266,962 downloads, [eslint-plugin-formatjs](https://www.npmjs.com/package/eslint-plugin-formatjs)
-- 1,045,830 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
-- 967,582 downloads, [@prettier/plugin-xml](https://www.npmjs.com/package/@prettier/plugin-xml)
-- 916,116 downloads, [toml-eslint-parser](https://www.npmjs.com/package/toml-eslint-parser)
-- 754,479 downloads, [eslint-plugin-no-relative-import-paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)
-- 744,030 downloads, [@vercel/edge-config](https://www.npmjs.com/package/@vercel/edge-config)
-- 728,155 downloads, [eslint-traverse](https://www.npmjs.com/package/eslint-traverse)
-- 696,341 downloads, [eslint-plugin-wdio](https://www.npmjs.com/package/eslint-plugin-wdio)
-- 581,558 downloads, [@prettier/plugin-ruby](https://www.npmjs.com/package/@prettier/plugin-ruby)
-- 530,957 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit)
-- 508,692 downloads, [prettier-plugin-sh](https://www.npmjs.com/package/prettier-plugin-sh)
-- 484,172 downloads, [eslint-plugin-import-x](https://www.npmjs.com/package/eslint-plugin-import-x)
-- 458,521 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin)
-- 444,309 downloads, [volar-service-prettier](https://www.npmjs.com/package/volar-service-prettier)
-- 436,134 downloads, [eslint-config-flat-gitignore](https://www.npmjs.com/package/eslint-config-flat-gitignore)
-- 434,990 downloads, [prettier-plugin-astro](https://www.npmjs.com/package/prettier-plugin-astro)
-- 412,312 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github)
-- 411,959 downloads, [prettier-plugin-java](https://www.npmjs.com/package/prettier-plugin-java)
-- 410,707 downloads, [eslint-plugin-import-helpers](https://www.npmjs.com/package/eslint-plugin-import-helpers)
-- 407,868 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu)
-- 404,137 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard)
-- 398,253 downloads, [eslint-plugin-react-compiler](https://www.npmjs.com/package/eslint-plugin-react-compiler) - Not Yet Eligible
-- 396,628 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc) - Not Yet Eligible
-- 395,258 downloads, [eslint-plugin-i18n-text](https://www.npmjs.com/package/eslint-plugin-i18n-text) - Not Yet Eligible
-- 394,634 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
-- 388,992 downloads, [wp-prettier](https://www.npmjs.com/package/wp-prettier) - Not Yet Eligible
-- 375,915 downloads, [@juigorg/sit-nam-neque](https://www.npmjs.com/package/@juigorg/sit-nam-neque) - Not Yet Eligible
-- 374,286 downloads, [eslint-plugin-testcafe](https://www.npmjs.com/package/eslint-plugin-testcafe) - Not Yet Eligible
-- 372,995 downloads, [@wordpress/prettier-config](https://www.npmjs.com/package/@wordpress/prettier-config) - Not Yet Eligible
-- 366,342 downloads, [@sap/eslint-plugin-cds](https://www.npmjs.com/package/@sap/eslint-plugin-cds) - Not Yet Eligible
-- 364,299 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
-- 363,645 downloads, [prettier-plugin-sort-json](https://www.npmjs.com/package/prettier-plugin-sort-json) - Not Yet Eligible
+- 4,309,284 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
+- 3,005,383 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
+- 2,755,868 downloads, [@tanstack/eslint-plugin-query](https://www.npmjs.com/package/@tanstack/eslint-plugin-query)
+- 2,721,788 downloads, [eslint-config-turbo](https://www.npmjs.com/package/eslint-config-turbo)
+- 2,542,801 downloads, [eslint-plugin-import-x](https://www.npmjs.com/package/eslint-plugin-import-x)
+- 1,862,444 downloads, [@vitest/eslint-plugin](https://www.npmjs.com/package/@vitest/eslint-plugin)
+- 1,845,538 downloads, [eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest)
+- 1,790,512 downloads, [eslint-plugin-json](https://www.npmjs.com/package/eslint-plugin-json)
+- 1,738,399 downloads, [eslint-plugin-markdown](https://www.npmjs.com/package/eslint-plugin-markdown)
+- 1,592,935 downloads, [recma-build-jsx](https://www.npmjs.com/package/recma-build-jsx)
+- 1,592,265 downloads, [recma-parse](https://www.npmjs.com/package/recma-parse)
+- 1,457,012 downloads, [@vue/cli-plugin-eslint](https://www.npmjs.com/package/@vue/cli-plugin-eslint)
+- 1,362,165 downloads, [react-with-styles](https://www.npmjs.com/package/react-with-styles)
+- 1,355,538 downloads, [eslint-plugin-filenames](https://www.npmjs.com/package/eslint-plugin-filenames)
+- 1,332,462 downloads, [eslint-rule-docs](https://www.npmjs.com/package/eslint-rule-docs)
+- 1,322,314 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
+- 1,318,277 downloads, [@ast-grep/cli](https://www.npmjs.com/package/@ast-grep/cli)
+- 1,286,332 downloads, [toml-eslint-parser](https://www.npmjs.com/package/toml-eslint-parser)
+- 1,280,375 downloads, [@craco/craco](https://www.npmjs.com/package/@craco/craco)
+- 1,276,537 downloads, [eslint-config-flat-gitignore](https://www.npmjs.com/package/eslint-config-flat-gitignore)
+- 1,207,334 downloads, [eslint-plugin-react-compiler](https://www.npmjs.com/package/eslint-plugin-react-compiler)
+- 1,158,793 downloads, [eslint-plugin-only-warn](https://www.npmjs.com/package/eslint-plugin-only-warn)
+- 1,124,452 downloads, [espurify](https://www.npmjs.com/package/espurify)
+- 1,105,000 downloads, [eslint-ast-utils](https://www.npmjs.com/package/eslint-ast-utils)
+- 1,068,285 downloads, [eslint-restricted-globals](https://www.npmjs.com/package/eslint-restricted-globals)
+- 1,056,319 downloads, [eslint-flat-config-utils](https://www.npmjs.com/package/eslint-flat-config-utils)
+- 1,036,954 downloads, [gts](https://www.npmjs.com/package/gts)
+- 985,387 downloads, [eslint-plugin-no-relative-import-paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)
+- 972,399 downloads, [eslint-json-compat-utils](https://www.npmjs.com/package/eslint-json-compat-utils)
+- 905,136 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
+- 884,064 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
+- 844,274 downloads, [idna-uts46-hx](https://www.npmjs.com/package/idna-uts46-hx)
+- 843,268 downloads, [@sap-ux/system-access](https://www.npmjs.com/package/@sap-ux/system-access)
+- 842,654 downloads, [express-openapi-validator](https://www.npmjs.com/package/express-openapi-validator)
+- 842,436 downloads, [@wordpress/element](https://www.npmjs.com/package/@wordpress/element)
+- 840,255 downloads, [loadjs](https://www.npmjs.com/package/loadjs)
+- 839,594 downloads, [react-native-render-html](https://www.npmjs.com/package/react-native-render-html)
+- 838,369 downloads, [@ionic/core](https://www.npmjs.com/package/@ionic/core)
+- 838,198 downloads, [web3-validator](https://www.npmjs.com/package/web3-validator)
+- 836,759 downloads, [serverless-esbuild](https://www.npmjs.com/package/serverless-esbuild)
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

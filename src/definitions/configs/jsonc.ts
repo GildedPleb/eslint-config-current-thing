@@ -7,6 +7,8 @@ export default {
     files: jsonFiles,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "jsonc",
   name: "JSONC",
   packages: [

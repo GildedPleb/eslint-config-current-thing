@@ -7,6 +7,8 @@ export default {
     files,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "prettier",
   name: "Prettier",
   packages: [
@@ -21,8 +23,8 @@ export default {
     "@typescript-eslint",
     "@babel",
     "unicorn",
-    "flowtype",
     "react",
+    "@stylistic",
   ],
   rules: `...prettierConfig.rules,
     "prettier/prettier": 2,`,

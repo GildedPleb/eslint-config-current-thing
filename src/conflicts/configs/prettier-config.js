@@ -1,11 +1,9 @@
 // PathMark: ./src/conflicts/configs/prettier-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
-/* eslint-disable import/extensions */
+
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
-/* eslint-disable sonarjs/no-duplicate-string */
-/* eslint-disable id-length */
 
 /*
   This file is fully generated, to edit it change ./generate-conflicts.ts
@@ -16,11 +14,10 @@ import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
+import stylistic from "@stylistic/eslint-plugin";
 import prettierConfig from "eslint-config-prettier";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
-import flowtype from "eslint-plugin-flowtype";
-import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import prettier from "eslint-plugin-prettier";
 import react from "eslint-plugin-react";
@@ -94,10 +91,11 @@ const configGen = ({
       },
     },
     /* PROCESSORS */
-    {
-      files: mdFiles,
-      processor: markdown.processors.markdown,
-    },
+    // {
+    // files: mdFiles,
+    // Needs to be re-enabled if adding it back in
+    // processor: markdown.processors.markdown,
+    // },
     {
       files: mdFiles,
       processor: mdx.processors.remark,
@@ -193,8 +191,8 @@ const configGen = ({
     {
       plugins: {
         "@babel": babelPlugin,
+        "@stylistic": stylistic,
         "@typescript-eslint": tseslint.plugin,
-        flowtype,
         prettier,
         react,
         unicorn,
@@ -206,7 +204,7 @@ const configGen = ({
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: prettier, @typescript-eslint, @babel, unicorn, flowtype, react
+      Requires: prettier, @typescript-eslint, @babel, unicorn, react, @stylistic
     */
     ...(disable.includes("eslint-config-prettier") || threshold > 1_000_000
       ? []

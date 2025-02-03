@@ -1,3 +1,5 @@
+// eslint-disable-next-line @eslint-community/eslint-comments/disable-enable-pair -- needed
+/* eslint-disable no-console -- this is needed for UI */
 // PathMark: ./src/conflicts/generate-conflicts.ts
 
 import fs from "node:fs";
@@ -160,10 +162,11 @@ const configGen = ({
       },
     },
     /* PROCESSORS */
-    {
-      files: mdFiles,
-      processor: markdown.processors.markdown,
-    },
+    // {
+    // files: mdFiles,
+    // Needs to be re-enabled if adding it back in
+    // processor: markdown.processors.markdown,
+    // },
     {
       files: mdFiles,
       processor: mdx.processors.remark,
@@ -219,6 +222,7 @@ ${sortedParsers.map(({ definitions, description, homepage, name }) => {
     },
 
 ${[configContext].map(
+  // eslint-disable-next-line complexity -- probably worth fixing
   ({
     count,
     definitions,
@@ -300,7 +304,7 @@ export default configGen();
 `;
   const outputPath = path.join(dirname, relative);
   try {
-    // eslint-disable-next-line security/detect-non-literal-fs-filename
+    // eslint-disable-next-line security/detect-non-literal-fs-filename -- this is fine
     fs.writeFileSync(outputPath, generateCode, "utf8");
     console.log(`\n.${outputPath} has been updated successfully.`);
   } catch (error) {
@@ -328,7 +332,6 @@ const relative = `./configs/index.js`;
 const outputPath = path.join(dirname, relative);
 
 try {
-  // eslint-disable-next-line security/detect-non-literal-fs-filename
   fs.writeFileSync(outputPath, generateCode, "utf8");
   console.log("\n./configs/index.js has been updated successfully.");
 } catch (error) {

@@ -60,10 +60,6 @@ const configList = [
     name: "css-modules",
   },
   { location: "./src/conflicts/configs/cypress-config.js", name: "cypress" },
-  {
-    location: "./src/conflicts/configs/emotion-css-config.js",
-    name: "emotion-css",
-  },
   { location: "./src/conflicts/configs/es-x-config.js", name: "es-x" },
   { location: "./src/conflicts/configs/eslint-config.js", name: "eslint" },
   {
@@ -109,7 +105,6 @@ const configList = [
   { location: "./src/conflicts/configs/jsdoc-ts-config.js", name: "jsdoc-ts" },
   { location: "./src/conflicts/configs/jsonc-config.js", name: "jsonc" },
   { location: "./src/conflicts/configs/jsx-a11y-config.js", name: "jsx-a11y" },
-  { location: "./src/conflicts/configs/markdown-config.js", name: "markdown" },
   { location: "./src/conflicts/configs/mdx-config.js", name: "mdx" },
   {
     location: "./src/conflicts/configs/mdx-code-blocks-config.js",
@@ -162,10 +157,6 @@ const configList = [
     name: "react-hooks",
   },
   { location: "./src/conflicts/configs/rn-config.js", name: "rn" },
-  {
-    location: "./src/conflicts/configs/rn-flowtype-config.js",
-    name: "rn-flowtype",
-  },
   { location: "./src/conflicts/configs/rn-ip-config.js", name: "rn-ip" },
   { location: "./src/conflicts/configs/rn-jest-config.js", name: "rn-jest" },
   { location: "./src/conflicts/configs/rn-p-config.js", name: "rn-p" },
@@ -179,7 +170,6 @@ const configList = [
     name: "react-refresh",
   },
   { location: "./src/conflicts/configs/regexp-config.js", name: "regexp" },
-  { location: "./src/conflicts/configs/rxjs-config.js", name: "rxjs" },
   { location: "./src/conflicts/configs/msdl-config.js", name: "msdl" },
   {
     location: "./src/conflicts/configs/msdl-node-config.js",
@@ -191,62 +181,10 @@ const configList = [
   },
   { location: "./src/conflicts/configs/msdl-ts-config.js", name: "msdl-ts" },
   { location: "./src/conflicts/configs/security-config.js", name: "security" },
-  {
-    location: "./src/conflicts/configs/shopify-core-config.js",
-    name: "shopify-core",
-  },
-  {
-    location: "./src/conflicts/configs/shopify-esnext-config.js",
-    name: "shopify-esnext",
-  },
-  {
-    location: "./src/conflicts/configs/shopify-jest-config.js",
-    name: "shopify-jest",
-  },
-  {
-    location: "./src/conflicts/configs/shopify-node-config.js",
-    name: "shopify-node",
-  },
-  {
-    location: "./src/conflicts/configs/shopify-polaris-config.js",
-    name: "shopify-polaris",
-  },
-  {
-    location: "./src/conflicts/configs/shopify-prettier-config.js",
-    name: "shopify-prettier",
-  },
-  {
-    location: "./src/conflicts/configs/shopify-prettier-ts-config.js",
-    name: "shopify-prettier-ts",
-  },
-  {
-    location: "./src/conflicts/configs/shopify-react-config.js",
-    name: "shopify-react",
-  },
-  {
-    location: "./src/conflicts/configs/shopify-react-test-config.js",
-    name: "shopify-react-test",
-  },
-  {
-    location: "./src/conflicts/configs/shopify-react-ts-config.js",
-    name: "shopify-react-ts",
-  },
-  {
-    location: "./src/conflicts/configs/shopify-ts-config.js",
-    name: "shopify-ts",
-  },
-  {
-    location: "./src/conflicts/configs/shopify-ts-typecheck-config.js",
-    name: "shopify-ts-typecheck",
-  },
   { location: "./src/conflicts/configs/sonarjs-config.js", name: "sonarjs" },
   {
     location: "./src/conflicts/configs/sort-class-config.js",
     name: "sort-class",
-  },
-  {
-    location: "./src/conflicts/configs/sort-keys-config.js",
-    name: "sort-keys",
   },
   { location: "./src/conflicts/configs/standard-config.js", name: "standard" },
   {

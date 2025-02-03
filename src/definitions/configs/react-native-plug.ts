@@ -8,6 +8,8 @@ export default {
     // Not added in any config
     ${RULES}
   }`,
+  ejected: true,
+  enabled: true,
   id: "rn-p",
   name: "React Native Plugin",
   packages: [

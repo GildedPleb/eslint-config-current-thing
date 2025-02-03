@@ -1,20 +1,11 @@
 // PathMark: ./src/conflicts/plugins.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable simple-import-sort/imports */
-/* eslint-disable id-length */
 
 /*
   This file is fully generated, to edit it change ./generate-conflicts.ts
 */
 
-// @ts-ignore yes, we need to ignore every import for this to run
-// @ts-ignore yes, we need to ignore every import for this to run
-// @ts-ignore yes, we need to ignore every import for this to run
-// @ts-ignore yes, we need to ignore every import for this to run
-// @ts-ignore yes, we need to ignore every import for this to run
-// @ts-ignore yes, we need to ignore every import for this to run
-// @ts-ignore yes, we need to ignore every import for this to run
-// @ts-ignore yes, we need to ignore every import for this to run
 // @ts-ignore yes, we need to ignore every import for this to run
 // @ts-ignore yes, we need to ignore every import for this to run
 // @ts-ignore yes, we need to ignore every import for this to run
@@ -35,15 +26,9 @@ import cssModules from "eslint-plugin-css-modules";
 // @ts-ignore yes, we need to ignore every import for this to run
 import cypress from "eslint-plugin-cypress";
 // @ts-ignore yes, we need to ignore every import for this to run
-import { rules as emotion } from "@emotion/eslint-plugin";
-// @ts-ignore yes, we need to ignore every import for this to run
 import esX from "eslint-plugin-es-x";
 // @ts-ignore yes, we need to ignore every import for this to run
 import es from "eslint-plugin-es";
-// @ts-ignore yes, we need to ignore every import for this to run
-import flowtype from "eslint-plugin-flowtype";
-// @ts-ignore yes, we need to ignore every import for this to run
-import ftFlow from "eslint-plugin-ft-flow";
 // @ts-ignore yes, we need to ignore every import for this to run
 import functional from "eslint-plugin-functional";
 // @ts-ignore yes, we need to ignore every import for this to run
@@ -68,8 +53,6 @@ import jsdoc from "eslint-plugin-jsdoc";
 import jsonc from "eslint-plugin-jsonc";
 // @ts-ignore yes, we need to ignore every import for this to run
 import jsxA11y from "eslint-plugin-jsx-a11y";
-// @ts-ignore yes, we need to ignore every import for this to run
-import markdown from "eslint-plugin-markdown";
 // @ts-ignore yes, we need to ignore every import for this to run
 import mocha from "eslint-plugin-mocha";
 // @ts-ignore yes, we need to ignore every import for this to run
@@ -109,13 +92,9 @@ import msdl from "@microsoft/eslint-plugin-sdl";
 // @ts-ignore yes, we need to ignore every import for this to run
 import security from "eslint-plugin-security";
 // @ts-ignore yes, we need to ignore every import for this to run
-import shopify from "@shopify/eslint-plugin";
-// @ts-ignore yes, we need to ignore every import for this to run
 import sonarjs from "eslint-plugin-sonarjs";
 // @ts-ignore yes, we need to ignore every import for this to run
 import sortClassMembers from "eslint-plugin-sort-class-members";
-// @ts-ignore yes, we need to ignore every import for this to run
-import sortKeys from "eslint-plugin-typescript-sort-keys";
 // @ts-ignore yes, we need to ignore every import for this to run
 import storybook from "eslint-plugin-storybook";
 // @ts-ignore yes, we need to ignore every import for this to run
@@ -138,8 +117,6 @@ import yml from "eslint-plugin-yml";
 import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
 // @ts-ignore yes, we need to ignore every import for this to run
 import * as mdx from "eslint-plugin-mdx";
-// @ts-ignore yes, we need to ignore every import for this to run
-import rxjs from "eslint-plugin-rxjs";
 // @ts-ignore yes, we need to ignore every import for this to run
 import jasmine from "eslint-plugin-jasmine";
 // @ts-ignore yes, we need to ignore every import for this to run
@@ -169,18 +146,16 @@ import { rules as graphQLRules } from "@graphql-eslint/eslint-plugin";
 // @ts-ignore yes, we need to ignore every import for this to run
 import { Linter } from "eslint";
 
-const linter = new Linter();
+const linter = new Linter({ configType: "eslintrc" });
 const allRules = linter.getRules();
 
 const plugins = {
   "@babel": babelPlugin,
-  "@emotion": { rules: emotion },
   "@eslint-community/eslint-comments": comments,
   "@graphql-eslint": { rules: graphQLRules },
   "@microsoft/sdl": msdl,
   "@next/next": nextjs,
   "@react-native": rnPlugin,
-  "@shopify": shopify,
   "@stylistic": stylistic,
   "@typescript-eslint": tseslint.plugin,
   ava,
@@ -192,8 +167,6 @@ const plugins = {
   es,
   "es-x": esX,
   "eslint-comments": commentsOld,
-  flowtype,
-  "ft-flow": ftFlow,
   functional,
   header,
   html,
@@ -206,7 +179,6 @@ const plugins = {
   jsdoc,
   jsonc,
   "jsx-a11y": jsxA11y,
-  markdown,
   mdx,
   mocha,
   n: nNode,
@@ -228,7 +200,6 @@ const plugins = {
   "react-prefer-function-component": preferFC,
   "react-refresh": reactRefresh,
   regexp,
-  rxjs,
   security,
   "simple-import-sort": importSort,
   sonarjs,
@@ -237,7 +208,6 @@ const plugins = {
   tailwindcss,
   "testing-library": testingLibrary,
   tsdoc,
-  "typescript-sort-keys": sortKeys,
   unicorn,
   "unused-imports": unusedImports,
   yml,

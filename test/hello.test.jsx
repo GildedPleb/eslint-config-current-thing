@@ -6,8 +6,8 @@ import React from "react";
 
 import HiddenMessage from "./hello";
 
-describe("Do tests of tests for JSX", function () {
-  it("shows the children when the checkbox is checked", function () {
+describe("Do tests of tests for JSX", function a() {
+  it("shows the children when the checkbox is checked", function s() {
     const testMessage = "Test Message";
     render(<HiddenMessage>{testMessage}</HiddenMessage>);
 

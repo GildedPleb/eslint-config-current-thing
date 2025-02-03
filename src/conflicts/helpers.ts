@@ -1,24 +1,20 @@
 // PathMark: ./src/conflicts/helpers.ts
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
-/* eslint-disable security/detect-object-injection */
-import ESLint from "eslint/use-at-your-own-risk";
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair -- needed */
+/* eslint-disable security/detect-object-injection -- needed */
+import { ESLint } from "eslint";
+import type { Rules } from "eslint-define-config";
+// eslint-disable-next-line import/no-extraneous-dependencies -- needed
 import memoize from "fast-memoize";
 
 import { hashObject, hashString } from "../helpers";
-// eslint-disable-next-line import/no-extraneous-dependencies
-import {
-  type ConfigData,
-  type ConflictCache,
-  type DiffReturn,
-  type Files,
-  type IFlatESLint,
-  type Rule,
+import type {
+  ConfigData,
+  ConflictCache,
+  DiffReturn,
+  Files,
+  IFlatESLint,
+  RuleConfig,
 } from "./types";
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/prefer-ts-expect-error
-// @ts-ignore this needs to be like this or there is a compile error.
-const { FlatESLint } = ESLint;
 
 /**
  *
@@ -28,15 +24,14 @@ const { FlatESLint } = ESLint;
  */
 export function linter(
   overrideConfigFile: string,
-  rules?: Record<string, Rule>,
-): IFlatESLint {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  return new FlatESLint({
+  rules?: Partial<Rules>,
+): ESLint {
+  return new ESLint({
     cache: true,
     fix: true,
     overrideConfigFile,
     ...(rules === undefined ? {} : { overrideConfig: { rules } }),
-  }) as IFlatESLint;
+  });
 }
 
 /**
@@ -49,10 +44,13 @@ export function linter(
 async function getLinterRaw(
   filePath: string,
   overrideConfigFile: string,
-  rules?: Record<string, Rule>,
+  rules?: Partial<Rules>,
 ): Promise<[IFlatESLint, ConfigData | undefined, string]> {
   const eslint = linter(overrideConfigFile, rules);
-  const json = await eslint.calculateConfigForFile(filePath);
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- we own it
+  const json = (await eslint.calculateConfigForFile(filePath)) as
+    | ConfigData
+    | undefined;
   const hash = hashObject({ json });
   return [eslint, json, hash];
 }
@@ -60,19 +58,12 @@ async function getLinterRaw(
 export const getLinter = memoize(getLinterRaw);
 
 const memoizedLintText = memoize(
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- The unused var is used and needed internally
   async (es: IFlatESLint, code: string, opt: Files, _hash: string) =>
     es.lintText(code, opt),
   {
-    serializer: (arguments_) => {
-      const [, code, opt, hash] = arguments_ as [
-        x: unknown,
-        code: string,
-        opt: Files,
-        hash: string,
-      ];
-      return hashString(code + hash + opt.filePath);
-    },
+    serializer: ([, code, { filePath }, hash]) =>
+      hashString(`${code}${hash}${filePath}`),
   },
 );
 
@@ -115,24 +106,17 @@ async function getDiffRaw(
     memoizedLintText(es2, results1A[0].output ?? "", opt, hash2),
   ]);
 
-  const output1 = results1B[0].output;
-  const output2 = results2B[0].output;
+  const [{ output: output1 }] = results1B;
+  const [{ output: output2 }] = results2B;
 
   return [output1, output2];
 }
 
 // Using fast-memoize with TypeScript
 export const getDiff = memoize(getDiffRaw, {
-  serializer: (arguments_: unknown[]): string => {
-    // eslint-disable-next-line unicorn/no-unreadable-array-destructuring
-    const [opt, codeToLint, [, , hash1], [, , hash2]] = arguments_ as [
-      Files,
-      string,
-      [IFlatESLint, ConfigData | undefined, string],
-      [IFlatESLint, ConfigData | undefined, string],
-    ];
-    return hashString(codeToLint + hash1 + hash2 + opt.filePath);
-  },
+  // eslint-disable-next-line unicorn/no-unreadable-array-destructuring -- it doesn't need to be readable
+  serializer: ([{ filePath }, codeToLint, [, , hash1], [, , hash2]]): string =>
+    hashString(`${codeToLint}${hash1}${hash2}${filePath}`),
 });
 
 /**
@@ -160,7 +144,7 @@ export async function getSimpleDiff(
     mainHash,
   );
   if (!("output" in results0[0])) return [undefined, undefined];
-  const output1 = results0[0].output;
+  const [{ output: output1 }] = results0;
   const results1 = await memoizedLintText(subRule, output1 ?? "", opt, subHash);
   if (!("output" in results1[0])) return [undefined, undefined];
   const results2 = await memoizedLintText(
@@ -169,11 +153,11 @@ export async function getSimpleDiff(
     opt,
     mainHash,
   );
-  const output2 = results2[0].output;
+  const [{ output: output2 }] = results2;
   return [output1, output2];
 }
 
-export const isRuleOff = (rule: Rule): boolean =>
+export const isRuleOff = (rule: RuleConfig): boolean =>
   typeof rule === "number" || typeof rule === "string"
     ? rule === 0 || rule === "off"
     : rule[0] === "off" || rule[0] === 0;
@@ -181,7 +165,7 @@ export const isRuleOff = (rule: Rule): boolean =>
 export const mergeIncompatible = (
   newRules: ConflictCache,
   oldRules: ConflictCache,
-): Record<string, Record<string, Rule>> => {
+): Record<string, Partial<Rules>> => {
   const fullList = { ...oldRules };
   for (const newRule of Object.keys(newRules)) {
     fullList[newRule] =
@@ -200,7 +184,7 @@ export const add0Rule = (
   list: ConflictCache,
   name: string,
   rule: string,
-): Record<string, Record<string, Rule>> => {
+): Record<string, Partial<Rules>> => {
   const newList = { ...list };
   newList[name] =
     name in list
@@ -227,17 +211,16 @@ export const compatible = (
 function cloneWithRuleRaw(
   hash: string,
   ruleName: string,
-  ruleSetting: Rule,
+  ruleSetting: RuleConfig,
 ): string {
   return hashString(hash + ruleName + hashObject({ ruleSetting }));
 }
 
 // Using fast-memoize with TypeScript
 export const cloneWithRule = memoize(cloneWithRuleRaw, {
-  serializer: (arguments_: unknown[]): string => {
-    const [hash, ruleName, ruleSetting] = arguments_ as [string, string, Rule];
-    return hashString(hash + ruleName + hashObject({ ruleSetting }));
-  },
+  serializer: ([hash, ruleName, ruleSetting]) =>
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- this is good enough
+    hashString(hash + ruleName + hashObject({ ruleSetting })),
 });
 
 // EOF

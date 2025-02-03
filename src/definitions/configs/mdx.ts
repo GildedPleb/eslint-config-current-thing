@@ -7,6 +7,8 @@ export default {
     files: mdFiles,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "mdx",
   name: "MDX",
   packages: [

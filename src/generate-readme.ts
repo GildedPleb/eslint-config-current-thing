@@ -1,20 +1,21 @@
 // PathMark: ./src/generate-readme.ts
-// eslint-disable-next-line @eslint-community/eslint-comments/disable-enable-pair
-/* eslint-disable es-x/no-import-attributes */
-// eslint-disable-next-line @eslint-community/eslint-comments/disable-enable-pair
-/* eslint-disable es-x/no-json-modules */
+/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair -- needed */
+/* eslint-disable es-x/no-import-attributes  -- needed */
+/* eslint-disable es-x/no-json-modules  -- needed */
+/* eslint-disable no-console -- needed for UI */
+
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import JSONConfigJs from "../current-js.json" assert { type: "json" };
-import JSONConfigJson from "../current-json.json" assert { type: "json" };
-import JSONConfigJsx from "../current-jsx.json" assert { type: "json" };
-import JSONConfigMd from "../current-md.json" assert { type: "json" };
-import JSONConfigTest from "../current-test.json" assert { type: "json" };
-import JSONConfigTs from "../current-ts.json" assert { type: "json" };
-import JSONConfigTsx from "../current-tsx.json" assert { type: "json" };
-import JSONConfigYml from "../current-yml.json" assert { type: "json" };
+import JSONConfigJs from "../current-js.json" with { type: "json" };
+import JSONConfigJson from "../current-json.json" with { type: "json" };
+import JSONConfigJsx from "../current-jsx.json" with { type: "json" };
+import JSONConfigMd from "../current-md.json" with { type: "json" };
+import JSONConfigTest from "../current-test.json" with { type: "json" };
+import JSONConfigTs from "../current-ts.json" with { type: "json" };
+import JSONConfigTsx from "../current-tsx.json" with { type: "json" };
+import JSONConfigYml from "../current-yml.json" with { type: "json" };
 import { LAST_DAY_INTERVAL, MINIMUMS } from "./constants";
 import configs from "./definitions/configs";
 import fetchEslintPlugins from "./packages/get-packages";
@@ -63,7 +64,8 @@ const uniqueNames = [...uniqueNamesSet].sort((first, second) =>
 );
 
 const maxColumns = 4;
-let markdownTable = `${"| ".repeat(maxColumns + 1)}\n${[..."|".repeat(maxColumns + 1)].join(" - ")}\n|`;
+
+let markdownTable = `${"| ".repeat(maxColumns + 1)}\n${[[..."|".repeat(maxColumns + 1)]].join(" - ")}\n|`;
 let columnCount = 0;
 
 for (const name of uniqueNames) {
@@ -119,12 +121,11 @@ ${newPackages.top40.map(({ count, name }) => `- ${count.toLocaleString()} downlo
 `;
 
 const rejected = await search("true", ["reject"]);
-const rejectedCounter = rejected.length;
 
 const rejectedMarker = "Rejected Count";
 const rejectedCount = `In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **${rejectedCounter}**. `;
+The amount of packages reviewed and rejected **${rejected.length}**. `;
 
 updateReadmeSection(configListMarker, markdownTable);
 updateReadmeSection(ruleCountMarker, ruleCount);

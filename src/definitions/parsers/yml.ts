@@ -8,6 +8,7 @@ export default {
       parser: ymlEslintParser,
     },
   }`,
+  enabled: true,
   name: "YML",
   packages: [
     {

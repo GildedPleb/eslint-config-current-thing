@@ -8,6 +8,7 @@ export default {
       parser: jsoncEslintParser,
     },
   }`,
+  enabled: true,
   name: "JSONC",
   packages: [
     {

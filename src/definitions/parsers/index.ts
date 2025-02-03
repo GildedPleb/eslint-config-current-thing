@@ -9,6 +9,7 @@ import yml from "./yml";
 
 export interface Parser {
   definitions: string;
+  enabled: boolean;
   name: string;
   packages: Array<{
     declaredAs: string;
@@ -18,5 +19,5 @@ export interface Parser {
 
 const parsers: Parser[] = [ts, jsonc, yml, graphql, eslint, md];
 
-export default parsers;
+export default parsers.filter(({ enabled }) => enabled);
 // EOF

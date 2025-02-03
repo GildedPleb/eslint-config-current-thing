@@ -1,3 +1,6 @@
+import type { Linter } from "eslint";
+import type { Rules } from "eslint-define-config";
+
 // PathMark: ./src/conflicts/types.ts
 export type Combinations = Array<
   Array<{
@@ -5,20 +8,25 @@ export type Combinations = Array<
     name: string;
   }>
 >;
-export type Rule = number | number[] | string | string[];
 
-export type ConflictCache = Record<string, Record<string, Rule>>;
-export type DiffReturn = Promise<[string | undefined, string | undefined]>;
-export interface SuggestionResult {
-  desc: string;
-  fix: {
-    range: [number, number];
-    text: string;
-  };
-  messageId?: string;
+export interface ConfigData {
+  rules?: Linter.RulesRecord;
 }
 
-export interface LintMessage {
+export type ConflictCache = Record<string, Partial<Rules>>;
+export type DiffReturn = Promise<[string | undefined, string | undefined]>;
+
+export interface Files {
+  filePath: string;
+}
+export interface IFlatESLint {
+  calculateConfigForFile: (filePath: string) => Promise<ConfigData>;
+  lintText: (
+    code: string,
+    options?: { filePath?: string; warnIgnored?: boolean },
+  ) => Promise<LintResult[]>;
+}
+interface LintMessage {
   column: number | undefined;
   endColumn?: number;
   endLine?: number;
@@ -36,7 +44,7 @@ export interface LintMessage {
   suggestions?: SuggestionResult[];
 }
 
-export interface LintResult {
+interface LintResult {
   errorCount: number;
   fatalErrorCount: number;
   filePath: string;
@@ -48,19 +56,14 @@ export interface LintResult {
   warningCount: number;
 }
 
-export interface ConfigData {
-  rules?: Record<string, Rule>;
-}
+export type RuleConfig = Linter.RuleEntry;
 
-export interface Files {
-  filePath: string;
-}
-
-export interface IFlatESLint {
-  calculateConfigForFile: (filePath: string) => Promise<ConfigData>;
-  lintText: (
-    code: string,
-    options?: { filePath?: string; warnIgnored?: boolean },
-  ) => Promise<LintResult[]>;
+interface SuggestionResult {
+  desc: string;
+  fix: {
+    range: [number, number];
+    text: string;
+  };
+  messageId?: string;
 }
 // EOF

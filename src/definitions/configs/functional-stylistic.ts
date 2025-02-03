@@ -7,6 +7,8 @@ export default {
     files,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "functional",
   name: "Functional",
   nameSecondary: "Stylistic",

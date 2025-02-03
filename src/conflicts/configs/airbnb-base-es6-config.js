@@ -1,11 +1,9 @@
 // PathMark: ./src/conflicts/configs/airbnb-base-es6-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
-/* eslint-disable import/extensions */
+
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
-/* eslint-disable sonarjs/no-duplicate-string */
-/* eslint-disable id-length */
 
 /*
   This file is fully generated, to edit it change ./generate-conflicts.ts
@@ -15,10 +13,8 @@ import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
-import airbnbBaseES6 from "eslint-config-airbnb-base/rules/es6";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
-import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import * as espree from "espree";
 import globals from "globals";
@@ -89,10 +85,11 @@ const configGen = ({
       },
     },
     /* PROCESSORS */
-    {
-      files: mdFiles,
-      processor: markdown.processors.markdown,
-    },
+    // {
+    // files: mdFiles,
+    // Needs to be re-enabled if adding it back in
+    // processor: markdown.processors.markdown,
+    // },
     {
       files: mdFiles,
       processor: mdx.processors.remark,
@@ -204,7 +201,110 @@ const configGen = ({
             files: jsFiles,
             ignores: testFiles,
             rules: {
-              ...airbnbBaseES6.rules,
+              "arrow-body-style": [
+                2,
+                "as-needed",
+                {
+                  requireReturnForObjectLiteral: false,
+                },
+              ],
+              "arrow-parens": [2, "always"],
+              "arrow-spacing": [2, { after: true, before: true }],
+              "constructor-super": 2,
+              "generator-star-spacing": [2, { after: true, before: false }],
+              "no-class-assign": 2,
+              "no-confusing-arrow": [
+                2,
+                {
+                  allowParens: true,
+                },
+              ],
+              "no-const-assign": 2,
+              "no-dupe-class-members": 2,
+              "no-duplicate-imports": 0,
+              "no-new-symbol": 2,
+              "no-restricted-exports": [
+                2,
+                {
+                  restrictedNamedExports: ["default", "then"],
+                },
+              ],
+              "no-restricted-imports": [
+                0,
+                {
+                  paths: [],
+                  patterns: [],
+                },
+              ],
+              "no-this-before-super": 2,
+              "no-useless-computed-key": 2,
+              "no-useless-constructor": 2,
+              "no-useless-rename": [
+                2,
+                {
+                  ignoreDestructuring: false,
+                  ignoreExport: false,
+                  ignoreImport: false,
+                },
+              ],
+              "no-var": 2,
+              "object-shorthand": [
+                2,
+                "always",
+                {
+                  avoidQuotes: true,
+                  ignoreConstructors: false,
+                },
+              ],
+              "prefer-arrow-callback": [
+                2,
+                {
+                  allowNamedFunctions: false,
+                  allowUnboundThis: true,
+                },
+              ],
+              "prefer-const": [
+                2,
+                {
+                  destructuring: "any",
+                  ignoreReadBeforeAssign: true,
+                },
+              ],
+              "prefer-destructuring": [
+                2,
+                {
+                  AssignmentExpression: {
+                    array: true,
+                    object: false,
+                  },
+                  VariableDeclarator: {
+                    array: false,
+                    object: true,
+                  },
+                },
+                {
+                  enforceForRenamedProperties: false,
+                },
+              ],
+              "prefer-numeric-literals": 2,
+              "prefer-reflect": 0,
+              "prefer-rest-params": 2,
+              "prefer-spread": 2,
+              "prefer-template": 2,
+              "require-yield": 2,
+              "rest-spread-spacing": [2, "never"],
+              "sort-imports": [
+                0,
+                {
+                  ignoreCase: false,
+                  ignoreDeclarationSort: false,
+                  ignoreMemberSort: false,
+                  memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
+                },
+              ],
+              "symbol-description": 2,
+              "template-curly-spacing": 2,
+              "yield-star-spacing": [2, "after"],
               ...("eslint-config-airbnb-base/es6" in override
                 ? override["eslint-config-airbnb-base/es6"]
                 : {}),

@@ -7,6 +7,8 @@ export default {
     files: [...jsxFiles, ...tsxFiles],
     ${RULES}
   }`,
+  ejected: true,
+  enabled: true,
   id: "react-refresh",
   name: "React Refresh",
   packages: [

@@ -1,10 +1,10 @@
+// eslint-disable-next-line @eslint-community/eslint-comments/disable-enable-pair -- needed
+/* eslint-disable import/no-extraneous-dependencies -- needed for not prod */
 // PathMark: ./src/helpers.ts
 
 import { createHash } from "node:crypto";
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 import chalk from "chalk";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import * as diff from "diff";
 
 /**
@@ -31,7 +31,7 @@ export function isMoreThanRandomDaysInThePast(dateString: string): boolean {
   const timeDiff = currentDate - givenDate;
   const daysDiff = timeDiff / (1000 * 60 * 60 * 24);
   // first number is how many days to spread this out over? Second number is how many days after is this invalidated?
-  // eslint-disable-next-line sonarjs/pseudo-random
+  // eslint-disable-next-line sonarjs/pseudo-random -- we can trust it
   return daysDiff > Math.random() * 60 + 1;
 }
 
@@ -44,12 +44,12 @@ const parseDif = (results: diff.Change[]): string => {
   for (const part of results) {
     // Use color coding to mark added and removed parts
     let color: keyof typeof chalk = "grey";
-    if (part.added === true) {
+    if (part.added) {
       color = "green";
-    } else if (part.removed === true) {
+    } else if (part.removed) {
       color = "red";
     }
-    // eslint-disable-next-line security/detect-object-injection
+    // eslint-disable-next-line security/detect-object-injection -- we can trust it
     accumulatedString += chalk[color](part.value);
     if (color === "green") accumulatedString += ADD;
     if (color === "red") accumulatedString += SUB;
@@ -91,6 +91,7 @@ export function printDiffLines(
     }
 
     if (changes !== "") {
+      // eslint-disable-next-line no-console -- needed for UI
       console.log(
         `${pad}${changes} ${String(index + 1).padStart(3, " ")}: ${editedLine}`,
       );

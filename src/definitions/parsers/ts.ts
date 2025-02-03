@@ -13,6 +13,7 @@ export default {
       },
     },
   }`,
+  enabled: true,
   name: "TypeScript",
   packages: [
     {

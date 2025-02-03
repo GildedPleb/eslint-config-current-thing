@@ -7,6 +7,8 @@ export default {
     files: graphQLFiles,
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "graphql",
   name: "GraphQL",
   packages: [

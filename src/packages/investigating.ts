@@ -11,6 +11,7 @@ const investigating = new Set([
   "@html-eslint/parser",
   "@mysticatea/eslint-plugin",
   "@putout/plugin-apply-shorthand-properties",
+  "@vercel/style-guide",
   "babel-eslint-parser",
   "eslint-config-adjunct",
   "eslint-config-airbnb-babel",
@@ -107,10 +108,9 @@ const investigating = new Set([
   "eslint-plugin-you-dont-need-momentjs",
   "healthier",
   "markdown-eslint-parser",
+  "prettier-plugin-css-order",
   "putout",
   "superlint",
-  "@vercel/style-guide",
-  "prettier-plugin-css-order",
 ]);
 
 export default investigating;

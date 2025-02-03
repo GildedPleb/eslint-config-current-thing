@@ -7,6 +7,8 @@ export default {
   files: ["**/*package.json"],
     ${RULES}
   }`,
+  ejected: true,
+  enabled: true,
   id: "prettier-package-json",
   name: "Prettier Plugin PackageJSON",
   packages: [

@@ -8,6 +8,7 @@ export default {
       parser: espree,
     },
   }`,
+  enabled: true,
   name: "Espree",
   packages: [
     {

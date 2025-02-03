@@ -7,6 +7,8 @@ export default {
     files: [...jsxFiles, ...tsxFiles],
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "tailwind",
   name: "Tailwind CSS",
   packages: [

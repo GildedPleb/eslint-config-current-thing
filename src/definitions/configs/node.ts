@@ -18,9 +18,11 @@ export default {
       },
     },
     // There are no recommended ways to use "node", as the "n" rule obsoletes
-    // it, but "node" is still used by the Shopify config.
+    // it, and is no longer used even by shopify
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "node",
   name: "Node.js",
   packages: [

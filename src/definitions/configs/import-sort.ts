@@ -4,12 +4,14 @@ import type { Config } from ".";
 
 export default {
   conflicts: {
-    "simple-import-sort/imports": ["shopify/esnext"],
+    // "simple-import-sort/imports": ["shopify/esnext"],
   },
   definitions: `{
     files,
     ${RULES}
   }`,
+  ejected: true,
+  enabled: true,
   id: "import-sort",
   name: "Simple Import Sort",
   packages: [

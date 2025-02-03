@@ -1,7 +1,9 @@
+/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair -- need it */
+/* eslint-disable no-console -- needed for UI */
+/* eslint-disable import/no-extraneous-dependencies -- needed for not prod */
 // PathMark: ./src/npm.ts
-// eslint-disable-next-line import/no-extraneous-dependencies
+
 import memoize from "fast-memoize";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Level } from "level";
 
 import { BASE_API, BASE_URL, LAST_DAY_INTERVAL } from "./constants";
@@ -22,14 +24,14 @@ interface NpmSearchResult {
   }>;
 }
 
-interface Stats {
-  downloads: number;
-}
-
 interface SearchEntry {
   date: string;
   result: string[];
   url: string;
+}
+
+interface Stats {
+  downloads: number;
 }
 
 /**
@@ -40,6 +42,8 @@ interface SearchEntry {
 async function getInfoLong(name: string): Promise<Info> {
   const request = `${BASE_URL}/${name.trim()}`;
   const response = await fetch(request);
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- we can trust it
   return (await response.json()) as Info;
 }
 
@@ -60,6 +64,7 @@ async function getDownloadCountLong(name: string): Promise<number | undefined> {
   const request = `${BASE_API}/${getDate(date)}:${getDate(new Date())}/${name.trim()}`;
   const response = await fetch(request);
   try {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- we own the data
     const parsed = (await response.json()) as Stats;
 
     return parsed.downloads;
@@ -79,13 +84,14 @@ export const getDownloadCount = memoize(getDownloadCountLong);
 async function fetchNPMURLsLong(searchStrings: string[]): Promise<string[]> {
   const pluginNames: string[] = [];
   let count = 0;
-  for await (const search of searchStrings) {
+  for (const search of searchStrings) {
     console.log(
       `Searching for "${search}" (${count++}/${searchStrings.length})`,
     );
     const url = `${BASE_URL}/-/v1/search?text=${search}&size=500`;
     try {
       const previous = await database.get(`search-${url}`);
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- we can trust the data
       const { date, result } = JSON.parse(previous) as SearchEntry;
       if (isMoreThanRandomDaysInThePast(date)) {
         await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -96,6 +102,7 @@ async function fetchNPMURLsLong(searchStrings: string[]): Promise<string[]> {
       console.log(`--> Data too old for search "${search}", refreshing...`);
       const searchResponse = await fetch(url);
       try {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- we can trust the data
         const searchData = (await searchResponse.json()) as NpmSearchResult;
         const names = searchData.objects.map((object) => object.package.name);
         pluginNames.push(...names);

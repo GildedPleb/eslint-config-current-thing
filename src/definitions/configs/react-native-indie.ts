@@ -10,6 +10,8 @@ export default {
     },
     ${RULES}
   }`,
+  ejected: false,
+  enabled: true,
   id: "rn-ip",
   name: "React Native (Independent Plugin/Config)",
   packages: [
