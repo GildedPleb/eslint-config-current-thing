@@ -41,6 +41,7 @@ const validator = ajv.compile<PackageAnalysis & { name: string }>({
       required: ["positive", "negative"],
       type: "object",
     },
+    isAI: { type: "boolean" },
     name: { type: "string" },
     purpose: { type: "string" },
     reject: { type: "boolean" },
@@ -53,6 +54,7 @@ const validator = ajv.compile<PackageAnalysis & { name: string }>({
     "confidence",
     "category",
     "evidence",
+    "isAI",
   ],
   type: "object",
 });
@@ -85,7 +87,7 @@ function displayTable(data: DataType[]): void {
       "top-right": "┐",
     },
     // eslint-disable-next-line unicorn/no-null -- null required
-    colWidths: [null, 3, 40, 40],
+    colWidths: [null, 3, 40, 40, null, null, null, 4],
     head: [
       "Name",
       "Reject",
@@ -113,7 +115,7 @@ function displayTable(data: DataType[]): void {
       item.confidence,
       item.category,
       item.date,
-      item.isAI,
+      item.isAI ? chalk.red("🤖") : chalk.green("🧠"),
     ]);
   }
 

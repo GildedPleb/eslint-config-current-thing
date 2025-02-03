@@ -9,7 +9,7 @@ const DELIMITER = "~";
 
 export type DataType = PackageAnalysis & {
   date: string;
-  isAI: string;
+  isAI: boolean;
   name: string;
 };
 
