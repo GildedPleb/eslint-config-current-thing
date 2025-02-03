@@ -101,6 +101,7 @@ import storybook from "./storybook";
 import storybookMain from "./storybook-main";
 import stylistic from "./stylistic";
 import tailwindConfig from "./tailwind-config";
+import tanstack from "./tanstack";
 import testingLibrary from "./testing-library";
 import ts from "./ts";
 import tsdoc from "./tsdoc";
@@ -234,6 +235,7 @@ const configs: Config[] = [
     storybookMain,
     stylistic,
     tailwindConfig,
+    tanstack,
     testingLibrary,
     ts,
     tsdoc,

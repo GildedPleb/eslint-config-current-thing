@@ -1352,6 +1352,11 @@
         "ignoreRestSiblings": true
       }
     ],
+    "@tanstack/exhaustive-deps": [2],
+    "@tanstack/infinite-query-property-order": [2],
+    "@tanstack/no-rest-destructuring": [1],
+    "@tanstack/no-unstable-deps": [2],
+    "@tanstack/stable-query-client": [2],
     "arrow-parens": [0],
     "block-spacing": [0],
     "brace-style": [0],
@@ -3086,6 +3091,7 @@
     "@next/next",
     "@react-native",
     "@stylistic",
+    "@tanstack:@tanstack/eslint-plugin-query",
     "@typescript-eslint:@typescript-eslint/eslint-plugin@8.23.0",
     "ava:eslint-plugin-ava@15.0.1",
     "chai-friendly:eslint-plugin-chai-friendly@1.0.1",

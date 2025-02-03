@@ -33,9 +33,9 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 | React Refresh | Regular Expressions | Security | Simple Import Sort |
 | SonarJS | Sort Class Members | Standard | Standard JSX |
 | Standard React | Standard TS | Storybook | Stylistic |
-| Tailwind CSS | Testing Library | TSDoc | Turbo |
-| TypeScript | Unicorn | XO | YML |
-| You Don't Need Lodash | | | |
+| Tailwind CSS | Tanstack Query | Testing Library | TSDoc |
+| Turbo | TypeScript | Unicorn | XO |
+| YML | You Don't Need Lodash | | |
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -57,11 +57,11 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1517** Testing rules
-- **1514** JSX rules
-- **1499** TSX rules
-- **1365** Javascript rules
-- **1362** Typescript rules
+- **1522** Testing rules
+- **1519** JSX rules
+- **1504** TSX rules
+- **1370** Javascript rules
+- **1367** Typescript rules
 - **33** JSON rules
 - **24** YML rules
 - **5** MD rules
@@ -346,7 +346,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **3809**.
+The amount of packages reviewed and rejected **3836**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -358,9 +358,8 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/3/2025, total known packages **25,159**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/3/2025, total known packages **25,244**. Top 40 next in line, downloads for the previous 28 days:
 
-- 2,755,868 downloads, [@tanstack/eslint-plugin-query](https://www.npmjs.com/package/@tanstack/eslint-plugin-query)
 - 2,542,801 downloads, [eslint-plugin-import-x](https://www.npmjs.com/package/eslint-plugin-import-x)
 - 1,862,444 downloads, [@vitest/eslint-plugin](https://www.npmjs.com/package/@vitest/eslint-plugin)
 - 1,845,538 downloads, [eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest)
@@ -387,18 +386,19 @@ Generated on 2/3/2025, total known packages **25,159**. Top 40 next in line, dow
 - 972,399 downloads, [eslint-json-compat-utils](https://www.npmjs.com/package/eslint-json-compat-utils)
 - 905,136 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 884,064 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
-- 821,213 downloads, [tiny-secp256k1](https://www.npmjs.com/package/tiny-secp256k1)
-- 820,439 downloads, [react-native-maps](https://www.npmjs.com/package/react-native-maps)
-- 820,277 downloads, [@rollup/plugin-yaml](https://www.npmjs.com/package/@rollup/plugin-yaml)
-- 818,433 downloads, [webpack-remove-empty-scripts](https://www.npmjs.com/package/webpack-remove-empty-scripts)
-- 816,135 downloads, [typescript-memoize](https://www.npmjs.com/package/typescript-memoize)
-- 814,586 downloads, [@vue/cli-plugin-unit-jest](https://www.npmjs.com/package/@vue/cli-plugin-unit-jest)
-- 814,091 downloads, [@vanilla-extract/sprinkles](https://www.npmjs.com/package/@vanilla-extract/sprinkles)
-- 812,645 downloads, [react-native-gradle-plugin](https://www.npmjs.com/package/react-native-gradle-plugin)
-- 812,441 downloads, [expo-crypto](https://www.npmjs.com/package/expo-crypto)
-- 812,347 downloads, [@intervolga/optimize-cssnano-plugin](https://www.npmjs.com/package/@intervolga/optimize-cssnano-plugin)
-- 812,033 downloads, [@safe-global/safe-gateway-typescript-sdk](https://www.npmjs.com/package/@safe-global/safe-gateway-typescript-sdk)
-- 811,499 downloads, [web3-errors](https://www.npmjs.com/package/web3-errors)
-- 809,886 downloads, [@ag-grid-community/react](https://www.npmjs.com/package/@ag-grid-community/react)
+- 804,333 downloads, [@linaria/core](https://www.npmjs.com/package/@linaria/core)
+- 800,607 downloads, [css-modules-require-hook](https://www.npmjs.com/package/css-modules-require-hook)
+- 800,514 downloads, [@stoplight/spectral-cli](https://www.npmjs.com/package/@stoplight/spectral-cli)
+- 799,003 downloads, [@trpc/next](https://www.npmjs.com/package/@trpc/next)
+- 798,269 downloads, [nx-cloud](https://www.npmjs.com/package/nx-cloud)
+- 798,200 downloads, [postcss-import-resolver](https://www.npmjs.com/package/postcss-import-resolver)
+- 795,822 downloads, [express-urlrewrite](https://www.npmjs.com/package/express-urlrewrite)
+- 795,715 downloads, [@sap-ux/logger](https://www.npmjs.com/package/@sap-ux/logger)
+- 794,513 downloads, [wasm-feature-detect](https://www.npmjs.com/package/wasm-feature-detect)
+- 793,752 downloads, [@0no-co/graphqlsp](https://www.npmjs.com/package/@0no-co/graphqlsp)
+- 792,782 downloads, [imagemin-jpegtran](https://www.npmjs.com/package/imagemin-jpegtran)
+- 792,327 downloads, [@axelar-network/axelar-gmp-sdk-solidity](https://www.npmjs.com/package/@axelar-network/axelar-gmp-sdk-solidity)
+- 791,589 downloads, [@metamask/object-multiplex](https://www.npmjs.com/package/@metamask/object-multiplex)
+- 789,214 downloads, [@slorber/remark-comment](https://www.npmjs.com/package/@slorber/remark-comment)
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

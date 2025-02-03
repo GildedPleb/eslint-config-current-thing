@@ -225,6 +225,7 @@ const configList = [
     name: "stylistic",
   },
   { location: "./src/conflicts/configs/tailwind-config.js", name: "tailwind" },
+  { location: "./src/conflicts/configs/tanstack-config.js", name: "tanstack" },
   {
     location: "./src/conflicts/configs/testing-library-config.js",
     name: "testing-library",

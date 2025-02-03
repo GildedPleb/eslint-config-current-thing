@@ -21,6 +21,7 @@ import msdl from "@microsoft/eslint-plugin-sdl";
 import nextjs from "@next/eslint-plugin-next";
 import rnPlugin from "@react-native/eslint-plugin";
 import stylistic from "@stylistic/eslint-plugin";
+import tanstack from "@tanstack/eslint-plugin-query";
 import restrictedGlobals from "confusing-browser-globals";
 import standardTS from "eslint-config-love";
 import prettierConfig from "eslint-config-prettier";
@@ -255,6 +256,7 @@ const configGen = ({
         "@next/next": nextjs,
         "@react-native": rnPlugin,
         "@stylistic": stylistic,
+        "@tanstack": tanstack,
         "@typescript-eslint": tseslint.plugin,
         ava,
         "chai-friendly": chaiFriendly,
@@ -1574,6 +1576,33 @@ const configGen = ({
                 : {}),
               ...("@react-native/eslint-config/ts" in override
                 ? override["@react-native/eslint-config/ts"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Tanstack Query
+      2,763,347 monthly downloads
+      ESLint plugin for TanStack Query
+      https://tanstack.com/query
+      Requires: @tanstack
+    */
+    ...(disable.includes("@tanstack/eslint-plugin-query") ||
+    threshold > 2_763_347
+      ? []
+      : [
+          {
+            files,
+            rules: {
+              "@tanstack/exhaustive-deps": 2,
+              "@tanstack/infinite-query-property-order": 2,
+              "@tanstack/no-rest-destructuring": 1,
+              "@tanstack/no-unstable-deps": 2,
+              "@tanstack/stable-query-client": 2,
+
+              ...("@tanstack/eslint-plugin-query" in override
+                ? override["@tanstack/eslint-plugin-query"]
                 : {}),
             },
           },

@@ -116,6 +116,8 @@ import stylistic from "@stylistic/eslint-plugin";
 // @ts-ignore yes, we need to ignore every import for this to run
 import tailwindcss from "eslint-plugin-tailwindcss";
 // @ts-ignore yes, we need to ignore every import for this to run
+import tanstack from "@tanstack/eslint-plugin-query";
+// @ts-ignore yes, we need to ignore every import for this to run
 import testingLibrary from "eslint-plugin-testing-library";
 // @ts-ignore yes, we need to ignore every import for this to run
 import tsdoc from "eslint-plugin-tsdoc";
@@ -161,6 +163,7 @@ const plugins = {
   "@next/next": nextjs,
   "@react-native": rnPlugin,
   "@stylistic": stylistic,
+  "@tanstack": tanstack,
   "@typescript-eslint": tseslint.plugin,
   ava,
   "chai-friendly": chaiFriendly,

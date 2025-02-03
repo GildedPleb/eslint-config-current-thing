@@ -97,6 +97,7 @@
     "@next/eslint-plugin-next": "^15.1.6",
     "@react-native/eslint-plugin": "^0.77.0",
     "@stylistic/eslint-plugin": "^3.0.1",
+    "@tanstack/eslint-plugin-query": "^5.66.0",
     "confusing-browser-globals": "^1.0.11",
     "eslint": "^9.19.0",
     "eslint-config-love": "^118.0.0",

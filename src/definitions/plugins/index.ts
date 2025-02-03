@@ -55,6 +55,7 @@ import sortKeys from "./sort-keys";
 import storybook from "./storybook";
 import stylistic from "./stylistic";
 import tailwindPlugin from "./tailwind-plugin";
+import tanstack from "./tanstack";
 import testingLibrary from "./testing-library";
 import ts from "./ts";
 import tsdoc from "./tsdoc";
@@ -134,6 +135,7 @@ const plugins = [
     storybook,
     stylistic,
     tailwindPlugin,
+    tanstack,
     testingLibrary,
     ts,
     tsdoc,
