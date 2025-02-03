@@ -48,6 +48,7 @@ import jestFormatting from "eslint-plugin-jest-formatting";
 import jsdoc from "eslint-plugin-jsdoc";
 import jsonc from "eslint-plugin-jsonc";
 import jsxA11y from "eslint-plugin-jsx-a11y";
+import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import mocha from "eslint-plugin-mocha";
 import nNode from "eslint-plugin-n";
@@ -148,11 +149,10 @@ const configGen = ({
       },
     },
     /* PROCESSORS */
-    // Need to be re-added if markdown is re-enabled
-    // {
-    //   files: mdFiles,
-    //   processor: markdown.processors.markdown,
-    // },
+    {
+      files: mdFiles,
+      processor: markdown.processors.markdown,
+    },
     {
       files: mdFiles,
       processor: mdx.processors.remark,
@@ -276,6 +276,7 @@ const configGen = ({
         jsdoc,
         jsonc,
         "jsx-a11y": jsxA11y,
+        markdown,
         mdx,
         mocha,
         n: nNode,
@@ -1243,6 +1244,35 @@ const configGen = ({
 
               ...("@graphql-eslint/eslint-plugin" in override
                 ? override["@graphql-eslint/eslint-plugin"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Markdown
+      1,738,399 monthly downloads
+      An ESLint plugin to lint JavaScript in Markdown code fences.
+      https://github.com/eslint/eslint-plugin-markdown#readme
+      Requires: markdown
+    */
+    ...(disable.includes("eslint-plugin-markdown") || threshold > 1_738_399
+      ? []
+      : [
+          {
+            files: codeBlocks,
+            languageOptions: {
+              parserOptions: {
+                ecmaFeatures: {
+                  impliedStrict: true,
+                },
+              },
+            },
+            rules: {
+              ...markdown.configs.recommended[2].rules,
+              "unused-imports/no-unused-vars": 0,
+              ...("eslint-plugin-markdown" in override
+                ? override["eslint-plugin-markdown"]
                 : {}),
             },
           },
@@ -3573,9 +3603,6 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
-              // "flowtype/define-flow-type": 1,
-              // "flowtype/require-valid-file-annotation": 1,
-              // "flowtype/use-flow-type": 1,
               "getter-return": 1,
               "import/first": 2,
               "import/no-amd": 2,
@@ -3789,11 +3816,9 @@ const configGen = ({
               "functional/no-expression-statements": 0,
               "functional/no-return-void": 0,
               "functional/no-throw-statements": 0,
-              // https://github.com/jest-community/eslint-plugin-jest
               "jest/no-conditional-expect": 2,
               "jest/no-identical-title": 2,
               "jest/no-interpolation-in-snapshots": 2,
-
               "jest/no-jasmine-globals": 2,
               "jest/no-mocks-import": 2,
               "jest/valid-describe-callback": 2,
@@ -3802,7 +3827,6 @@ const configGen = ({
               "jest/valid-title": 1,
               "playwright/no-standalone-expect": 0,
               "prefer-arrow/prefer-arrow-functions": 0,
-              // https://github.com/testing-library/eslint-plugin-testing-library
               "testing-library/await-async-queries": 2,
               "testing-library/await-async-utils": 2,
               "testing-library/no-await-sync-queries": 2,
@@ -3884,7 +3908,6 @@ const configGen = ({
                 },
               ],
               "@typescript-eslint/no-useless-constructor": 1,
-
               "default-case": 0,
               "functional/functional-parameters": 0,
               "functional/no-classes": 0,
@@ -5715,6 +5738,34 @@ const configGen = ({
 
               ...("eslint-plugin-mdx/code-blocks" in override
                 ? override["eslint-plugin-mdx/code-blocks"]
+                : {}),
+            },
+          },
+        ]),
+    /*
+      Markdown
+      1,738,399 monthly downloads
+      An ESLint plugin to lint JavaScript in Markdown code fences.
+      https://github.com/eslint/eslint-plugin-markdown#readme
+      Requires: markdown
+    */
+    ...(disable.includes("eslint-plugin-markdown") || threshold > 1_738_399
+      ? []
+      : [
+          {
+            files: codeBlocks,
+            languageOptions: {
+              parserOptions: {
+                ecmaFeatures: {
+                  impliedStrict: true,
+                },
+              },
+            },
+            rules: {
+              ...markdown.configs.recommended[2].rules,
+              "unused-imports/no-unused-vars": 0,
+              ...("eslint-plugin-markdown" in override
+                ? override["eslint-plugin-markdown"]
                 : {}),
             },
           },

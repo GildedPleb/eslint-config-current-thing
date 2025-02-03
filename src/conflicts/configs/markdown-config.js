@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/react-perf-config.js
+// PathMark: ./src/conflicts/configs/markdown-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 
@@ -17,7 +17,6 @@ import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
 import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
-import reactPerf from "eslint-plugin-react-perf";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
@@ -185,26 +184,33 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        "react-perf": reactPerf,
+        markdown,
       },
     },
 
     /*
-      React Performance
+      Markdown
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: react-perf
+      Requires: markdown
     */
-    ...(disable.includes("eslint-plugin-react-perf") || threshold > 1_000_000
+    ...(disable.includes("eslint-plugin-markdown") || threshold > 1_000_000
       ? []
       : [
           {
-            files: [...jsxFiles, ...tsxFiles],
+            files: codeBlocks,
+            languageOptions: {
+              parserOptions: {
+                ecmaFeatures: {
+                  impliedStrict: true,
+                },
+              },
+            },
             rules: {
-              ...reactPerf.configs.recommended.rules,
-              ...("eslint-plugin-react-perf" in override
-                ? override["eslint-plugin-react-perf"]
+              ...markdown.configs.recommended[2].rules,
+              ...("eslint-plugin-markdown" in override
+                ? override["eslint-plugin-markdown"]
                 : {}),
             },
           },

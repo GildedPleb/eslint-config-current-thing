@@ -24,17 +24,18 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 | Functional | Google | GraphQL | Import |
 | Internationalization (i18n) | Jasmine | Jest | Jest Dom |
 | Jest Formatting | JSDoc | JSONC | JSX Accessibility (JSX A11y) |
-| MDX | Microsoft SDL | Mocha | NextJS |
-| No Only Tests | No Unsanitized | No Unused Imports | No Use Extend Native |
-| Node.js | Perfectionist | Playwright | Prefer Arrow |
-| Prettier | Prettier Plugin PackageJSON | Prettier Plugin Tailwind | Promises |
-| React | React Hooks | React Native (Independent Plugin/Config) | React Native Config |
-| React Native Plugin | React Performance | React Prefer Function Component | React Refresh |
-| Regular Expressions | Security | Simple Import Sort | SonarJS |
-| Sort Class Members | Standard | Standard JSX | Standard React |
-| Standard TS | Storybook | Stylistic | Tailwind CSS |
-| Testing Library | TSDoc | TypeScript | Unicorn |
-| XO | YML | You Don't Need Lodash | |
+| Markdown | MDX | Microsoft SDL | Mocha |
+| NextJS | No Only Tests | No Unsanitized | No Unused Imports |
+| No Use Extend Native | Node.js | Perfectionist | Playwright |
+| Prefer Arrow | Prettier | Prettier Plugin PackageJSON | Prettier Plugin Tailwind |
+| Promises | React | React Hooks | React Native (Independent Plugin/Config) |
+| React Native Config | React Native Plugin | React Performance | React Prefer Function Component |
+| React Refresh | Regular Expressions | Security | Simple Import Sort |
+| SonarJS | Sort Class Members | Standard | Standard JSX |
+| Standard React | Standard TS | Storybook | Stylistic |
+| Tailwind CSS | Testing Library | TSDoc | TypeScript |
+| Unicorn | XO | YML | You Don't Need Lodash |
+|
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -345,7 +346,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **3774**.
+The amount of packages reviewed and rejected **3784**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -357,7 +358,7 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/3/2025, total known packages **25,122**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/3/2025, total known packages **25,116**. Top 40 next in line, downloads for the previous 28 days:
 
 - 4,309,284 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
 - 3,005,383 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
@@ -367,7 +368,6 @@ Generated on 2/3/2025, total known packages **25,122**. Top 40 next in line, dow
 - 1,862,444 downloads, [@vitest/eslint-plugin](https://www.npmjs.com/package/@vitest/eslint-plugin)
 - 1,845,538 downloads, [eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest)
 - 1,790,512 downloads, [eslint-plugin-json](https://www.npmjs.com/package/eslint-plugin-json)
-- 1,738,399 downloads, [eslint-plugin-markdown](https://www.npmjs.com/package/eslint-plugin-markdown)
 - 1,592,935 downloads, [recma-build-jsx](https://www.npmjs.com/package/recma-build-jsx)
 - 1,592,265 downloads, [recma-parse](https://www.npmjs.com/package/recma-parse)
 - 1,457,012 downloads, [@vue/cli-plugin-eslint](https://www.npmjs.com/package/@vue/cli-plugin-eslint)
@@ -390,14 +390,15 @@ Generated on 2/3/2025, total known packages **25,122**. Top 40 next in line, dow
 - 972,399 downloads, [eslint-json-compat-utils](https://www.npmjs.com/package/eslint-json-compat-utils)
 - 905,136 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 884,064 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
-- 844,274 downloads, [idna-uts46-hx](https://www.npmjs.com/package/idna-uts46-hx)
-- 843,268 downloads, [@sap-ux/system-access](https://www.npmjs.com/package/@sap-ux/system-access)
-- 842,654 downloads, [express-openapi-validator](https://www.npmjs.com/package/express-openapi-validator)
-- 842,436 downloads, [@wordpress/element](https://www.npmjs.com/package/@wordpress/element)
-- 840,255 downloads, [loadjs](https://www.npmjs.com/package/loadjs)
-- 839,594 downloads, [react-native-render-html](https://www.npmjs.com/package/react-native-render-html)
-- 838,369 downloads, [@ionic/core](https://www.npmjs.com/package/@ionic/core)
-- 838,198 downloads, [web3-validator](https://www.npmjs.com/package/web3-validator)
-- 836,759 downloads, [serverless-esbuild](https://www.npmjs.com/package/serverless-esbuild)
+- 836,457 downloads, [react-plaid-link](https://www.npmjs.com/package/react-plaid-link)
+- 834,757 downloads, [gatsby-plugin-typescript](https://www.npmjs.com/package/gatsby-plugin-typescript)
+- 833,672 downloads, [@lhci/utils](https://www.npmjs.com/package/@lhci/utils)
+- 831,691 downloads, [next-compose-plugins](https://www.npmjs.com/package/next-compose-plugins)
+- 830,350 downloads, [@tsconfig/react-native](https://www.npmjs.com/package/@tsconfig/react-native)
+- 829,206 downloads, [wagmi](https://www.npmjs.com/package/wagmi)
+- 829,133 downloads, [regl](https://www.npmjs.com/package/regl)
+- 824,677 downloads, [@splitsoftware/splitio-commons](https://www.npmjs.com/package/@splitsoftware/splitio-commons)
+- 823,979 downloads, [@mui/material-nextjs](https://www.npmjs.com/package/@mui/material-nextjs)
+- 823,869 downloads, [@builder.io/partytown](https://www.npmjs.com/package/@builder.io/partytown)
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

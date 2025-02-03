@@ -16,6 +16,7 @@ import {
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
 import jest from "eslint-plugin-jest";
+import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import testingLibrary from "eslint-plugin-testing-library";
 import * as espree from "espree";
@@ -87,11 +88,10 @@ const configGen = ({
       },
     },
     /* PROCESSORS */
-    // {
-    // files: mdFiles,
-    // Needs to be re-enabled if adding it back in
-    // processor: markdown.processors.markdown,
-    // },
+    {
+      files: mdFiles,
+      processor: markdown.processors.markdown,
+    },
     {
       files: mdFiles,
       processor: mdx.processors.remark,
@@ -210,7 +210,6 @@ const configGen = ({
               },
             },
             rules: {
-              // https://github.com/jest-community/eslint-plugin-jest
               "jest/no-conditional-expect": 2,
               "jest/no-identical-title": 2,
               "jest/no-interpolation-in-snapshots": 2,
@@ -220,8 +219,6 @@ const configGen = ({
               "jest/valid-expect": 2,
               "jest/valid-expect-in-promise": 2,
               "jest/valid-title": 1,
-
-              // https://github.com/testing-library/eslint-plugin-testing-library
               "testing-library/await-async-queries": 2,
               "testing-library/await-async-utils": 2,
               "testing-library/no-await-sync-queries": 2,

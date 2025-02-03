@@ -16,6 +16,7 @@ import {
 import stylistic from "@stylistic/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
+import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import * as espree from "espree";
 import globals from "globals";
@@ -86,11 +87,10 @@ const configGen = ({
       },
     },
     /* PROCESSORS */
-    // {
-    // files: mdFiles,
-    // Needs to be re-enabled if adding it back in
-    // processor: markdown.processors.markdown,
-    // },
+    {
+      files: mdFiles,
+      processor: markdown.processors.markdown,
+    },
     {
       files: mdFiles,
       processor: mdx.processors.remark,

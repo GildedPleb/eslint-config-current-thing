@@ -4,7 +4,7 @@ import type { Config } from ".";
 
 export default {
   conflicts: {
-    // "unused-imports/no-unused-vars": ["markdown"],
+    "unused-imports/no-unused-vars": ["markdown"],
   },
   definitions: `{
     files: jsFiles,

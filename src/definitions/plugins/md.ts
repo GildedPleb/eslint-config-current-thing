@@ -2,7 +2,7 @@
 import type { Plugin } from ".";
 
 export default {
-  enabled: false,
+  enabled: true,
   name: "Markdown",
   packages: [
     {

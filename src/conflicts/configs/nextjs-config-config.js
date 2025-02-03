@@ -17,6 +17,7 @@ import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
 import importPlugin from "eslint-plugin-import";
 import jsxA11y from "eslint-plugin-jsx-a11y";
+import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import react from "eslint-plugin-react";
 import * as espree from "espree";
@@ -88,11 +89,10 @@ const configGen = ({
       },
     },
     /* PROCESSORS */
-    // {
-    // files: mdFiles,
-    // Needs to be re-enabled if adding it back in
-    // processor: markdown.processors.markdown,
-    // },
+    {
+      files: mdFiles,
+      processor: markdown.processors.markdown,
+    },
     {
       files: mdFiles,
       processor: mdx.processors.remark,

@@ -105,6 +105,7 @@ const configList = [
   { location: "./src/conflicts/configs/jsdoc-ts-config.js", name: "jsdoc-ts" },
   { location: "./src/conflicts/configs/jsonc-config.js", name: "jsonc" },
   { location: "./src/conflicts/configs/jsx-a11y-config.js", name: "jsx-a11y" },
+  { location: "./src/conflicts/configs/markdown-config.js", name: "markdown" },
   { location: "./src/conflicts/configs/mdx-config.js", name: "mdx" },
   {
     location: "./src/conflicts/configs/mdx-code-blocks-config.js",

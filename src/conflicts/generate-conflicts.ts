@@ -162,11 +162,10 @@ const configGen = ({
       },
     },
     /* PROCESSORS */
-    // {
-    // files: mdFiles,
-    // Needs to be re-enabled if adding it back in
-    // processor: markdown.processors.markdown,
-    // },
+    {
+      files: mdFiles,
+      processor: markdown.processors.markdown,
+    },
     {
       files: mdFiles,
       processor: mdx.processors.remark,
