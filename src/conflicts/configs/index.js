@@ -148,6 +148,18 @@ const configList = [
     name: "prettier-md",
   },
   {
+    location: "./src/conflicts/configs/prettier-package-json-config.js",
+    name: "prettier-package-json",
+  },
+  {
+    location: "./src/conflicts/configs/prettier-plugin-config.js",
+    name: "prettier-plugin",
+  },
+  {
+    location: "./src/conflicts/configs/prettier-tailwind-config.js",
+    name: "prettier-tailwind",
+  },
+  {
     location: "./src/conflicts/configs/prettier-yml-config.js",
     name: "prettier-yml",
   },
@@ -219,6 +231,7 @@ const configList = [
   },
   { location: "./src/conflicts/configs/ts-config.js", name: "ts" },
   { location: "./src/conflicts/configs/tsdoc-config.js", name: "tsdoc" },
+  { location: "./src/conflicts/configs/turbo-config.js", name: "turbo" },
   { location: "./src/conflicts/configs/unicorn-config.js", name: "unicorn" },
   {
     location: "./src/conflicts/configs/unsanitized-config.js",
@@ -233,18 +246,6 @@ const configList = [
   {
     location: "./src/conflicts/configs/no-lodash-config.js",
     name: "no-lodash",
-  },
-  {
-    location: "./src/conflicts/configs/prettier-plugin-config.js",
-    name: "prettier-plugin",
-  },
-  {
-    location: "./src/conflicts/configs/prettier-package-json-config.js",
-    name: "prettier-package-json",
-  },
-  {
-    location: "./src/conflicts/configs/prettier-tailwind-config.js",
-    name: "prettier-tailwind",
   },
 ];
 

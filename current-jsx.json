@@ -1763,6 +1763,7 @@
         "onlyEquality": false
       }
     ],
+    "turbo/no-undeclared-env-vars": [0],
     "@eslint-community/eslint-comments/disable-enable-pair": [2],
     "@eslint-community/eslint-comments/no-aggregating-enable": [2],
     "@eslint-community/eslint-comments/no-duplicate-disable": [2],
@@ -3727,6 +3728,7 @@
     "tailwindcss",
     "testing-library:eslint-plugin-testing-library@7.1.1",
     "tsdoc",
+    "turbo",
     "unicorn:eslint-plugin-unicorn@56.0.1",
     "unused-imports:unused-imports",
     "yml:eslint-plugin-yml@1.16.0",

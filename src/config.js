@@ -76,6 +76,7 @@ import storybook from "eslint-plugin-storybook";
 import tailwindcss from "eslint-plugin-tailwindcss";
 import testingLibrary from "eslint-plugin-testing-library";
 import tsdoc from "eslint-plugin-tsdoc";
+import turbo from "eslint-plugin-turbo";
 import unicorn from "eslint-plugin-unicorn";
 import unusedImports from "eslint-plugin-unused-imports";
 import yml from "eslint-plugin-yml";
@@ -306,6 +307,7 @@ const configGen = ({
         tailwindcss,
         "testing-library": testingLibrary,
         tsdoc,
+        turbo,
         unicorn,
         "unused-imports": unusedImports,
         yml,
@@ -2072,6 +2074,34 @@ const configGen = ({
                 : {}),
               ...("eslint-plugin-react-native-globals" in override
                 ? override["eslint-plugin-react-native-globals"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Turbo
+      5,727,171 monthly downloads
+      ESLint plugin for Turborepo / ESLint config for Turborepo
+      https://github.com/vercel/turborepo#readme / https://github.com/vercel/turborepo#readme
+      Requires: turbo
+    */
+    ...(disable.includes("eslint-plugin-turbo") ||
+    disable.includes("eslint-config-turbo") ||
+    threshold > 5_727_171
+      ? []
+      : [
+          {
+            files,
+            rules: {
+              ...turbo.configs["flat/recommended"].rules,
+              "turbo/no-undeclared-env-vars": 0,
+
+              ...("eslint-plugin-turbo" in override
+                ? override["eslint-plugin-turbo"]
+                : {}),
+              ...("eslint-config-turbo" in override
+                ? override["eslint-config-turbo"]
                 : {}),
             },
           },
@@ -5398,28 +5428,6 @@ const configGen = ({
         ]),
 
     /*
-      Prettier - YML
-      52,384,089 monthly downloads
-      Runs prettier as an eslint rule
-      https://github.com/prettier/eslint-plugin-prettier#readme
-      Requires: prettier
-    */
-    ...(disable.includes("eslint-plugin-prettier/yml") || threshold > 52_384_089
-      ? []
-      : [
-          {
-            files: ymlFiles,
-            rules: {
-              "prettier/prettier": 2,
-              "yml/flow-mapping-curly-spacing": 0,
-              ...("eslint-plugin-prettier/yml" in override
-                ? override["eslint-plugin-prettier/yml"]
-                : {}),
-            },
-          },
-        ]),
-
-    /*
       Prettier - Plugin
       52,384,089 monthly downloads
       Runs prettier as an eslint rule
@@ -5460,6 +5468,28 @@ const configGen = ({
 
               ...("eslint-plugin-prettier/plugin" in override
                 ? override["eslint-plugin-prettier/plugin"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Prettier - YML
+      52,384,089 monthly downloads
+      Runs prettier as an eslint rule
+      https://github.com/prettier/eslint-plugin-prettier#readme
+      Requires: prettier
+    */
+    ...(disable.includes("eslint-plugin-prettier/yml") || threshold > 52_384_089
+      ? []
+      : [
+          {
+            files: ymlFiles,
+            rules: {
+              "prettier/prettier": 2,
+              "yml/flow-mapping-curly-spacing": 0,
+              ...("eslint-plugin-prettier/yml" in override
+                ? override["eslint-plugin-prettier/yml"]
                 : {}),
             },
           },

@@ -1748,6 +1748,7 @@
     "sonarjs/no-literal-call": [2],
     "sonarjs/reduce-initial-value": [2],
     "sonarjs/no-async-constructor": [2],
+    "turbo/no-undeclared-env-vars": [0],
     "@typescript-eslint/default-param-last": [2],
     "@typescript-eslint/no-extra-parens": [
       0,
@@ -2559,6 +2560,7 @@
     "tailwindcss",
     "testing-library:eslint-plugin-testing-library@7.1.1",
     "tsdoc",
+    "turbo",
     "unicorn:eslint-plugin-unicorn@56.0.1",
     "unused-imports:unused-imports",
     "yml:eslint-plugin-yml@1.16.0",

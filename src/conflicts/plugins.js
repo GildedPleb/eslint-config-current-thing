@@ -12,9 +12,13 @@
 // @ts-ignore yes, we need to ignore every import for this to run
 
 // @ts-ignore yes, we need to ignore every import for this to run
+import ava from "eslint-plugin-ava";
+// @ts-ignore yes, we need to ignore every import for this to run
 import babelPlugin from "@babel/eslint-plugin";
 // @ts-ignore yes, we need to ignore every import for this to run
 import chaiFriendly from "eslint-plugin-chai-friendly";
+// @ts-ignore yes, we need to ignore every import for this to run
+import checkFile from "eslint-plugin-check-file";
 // @ts-ignore yes, we need to ignore every import for this to run
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
 // @ts-ignore yes, we need to ignore every import for this to run
@@ -32,6 +36,8 @@ import es from "eslint-plugin-es";
 // @ts-ignore yes, we need to ignore every import for this to run
 import functional from "eslint-plugin-functional";
 // @ts-ignore yes, we need to ignore every import for this to run
+import preferFC from "eslint-plugin-react-prefer-function-component";
+// @ts-ignore yes, we need to ignore every import for this to run
 import header from "eslint-plugin-header";
 // @ts-ignore yes, we need to ignore every import for this to run
 import html from "eslint-plugin-html";
@@ -41,6 +47,8 @@ import i18next from "eslint-plugin-i18next";
 import importPlugin from "eslint-plugin-import";
 // @ts-ignore yes, we need to ignore every import for this to run
 import importSort from "eslint-plugin-simple-import-sort";
+// @ts-ignore yes, we need to ignore every import for this to run
+import jasmine from "eslint-plugin-jasmine";
 // @ts-ignore yes, we need to ignore every import for this to run
 import jest from "eslint-plugin-jest";
 // @ts-ignore yes, we need to ignore every import for this to run
@@ -56,6 +64,8 @@ import jsxA11y from "eslint-plugin-jsx-a11y";
 // @ts-ignore yes, we need to ignore every import for this to run
 import markdown from "eslint-plugin-markdown";
 // @ts-ignore yes, we need to ignore every import for this to run
+import * as mdx from "eslint-plugin-mdx";
+// @ts-ignore yes, we need to ignore every import for this to run
 import mocha from "eslint-plugin-mocha";
 // @ts-ignore yes, we need to ignore every import for this to run
 import nextjs from "@next/eslint-plugin-next";
@@ -65,6 +75,8 @@ import nNode from "eslint-plugin-n";
 import node from "eslint-plugin-node";
 // @ts-ignore yes, we need to ignore every import for this to run
 import noOnlyTest from "eslint-plugin-no-only-tests";
+// @ts-ignore yes, we need to ignore every import for this to run
+import noUseExtendNative from "eslint-plugin-no-use-extend-native";
 // @ts-ignore yes, we need to ignore every import for this to run
 import perfectionist from "eslint-plugin-perfectionist";
 // @ts-ignore yes, we need to ignore every import for this to run
@@ -108,6 +120,8 @@ import testingLibrary from "eslint-plugin-testing-library";
 // @ts-ignore yes, we need to ignore every import for this to run
 import tsdoc from "eslint-plugin-tsdoc";
 // @ts-ignore yes, we need to ignore every import for this to run
+import turbo from "eslint-plugin-turbo";
+// @ts-ignore yes, we need to ignore every import for this to run
 import unicorn from "eslint-plugin-unicorn";
 // @ts-ignore yes, we need to ignore every import for this to run
 import unsanitized from "eslint-plugin-no-unsanitized";
@@ -117,18 +131,6 @@ import unusedImports from "eslint-plugin-unused-imports";
 import yml from "eslint-plugin-yml";
 // @ts-ignore yes, we need to ignore every import for this to run
 import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
-// @ts-ignore yes, we need to ignore every import for this to run
-import * as mdx from "eslint-plugin-mdx";
-// @ts-ignore yes, we need to ignore every import for this to run
-import jasmine from "eslint-plugin-jasmine";
-// @ts-ignore yes, we need to ignore every import for this to run
-import checkFile from "eslint-plugin-check-file";
-// @ts-ignore yes, we need to ignore every import for this to run
-import ava from "eslint-plugin-ava";
-// @ts-ignore yes, we need to ignore every import for this to run
-import preferFC from "eslint-plugin-react-prefer-function-component";
-// @ts-ignore yes, we need to ignore every import for this to run
-import noUseExtendNative from "eslint-plugin-no-use-extend-native";
 
 // @ts-ignore yes, we need to ignore every import for this to run
 import tseslint from "typescript-eslint";
@@ -211,6 +213,7 @@ const plugins = {
   tailwindcss,
   "testing-library": testingLibrary,
   tsdoc,
+  turbo,
   unicorn,
   "unused-imports": unusedImports,
   yml,

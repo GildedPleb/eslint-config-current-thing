@@ -33,9 +33,9 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 | React Refresh | Regular Expressions | Security | Simple Import Sort |
 | SonarJS | Sort Class Members | Standard | Standard JSX |
 | Standard React | Standard TS | Storybook | Stylistic |
-| Tailwind CSS | Testing Library | TSDoc | TypeScript |
-| Unicorn | XO | YML | You Don't Need Lodash |
-|
+| Tailwind CSS | Testing Library | TSDoc | Turbo |
+| TypeScript | Unicorn | XO | YML |
+| You Don't Need Lodash | | | |
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -57,11 +57,11 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1516** Testing rules
-- **1513** JSX rules
-- **1498** TSX rules
-- **1364** Javascript rules
-- **1361** Typescript rules
+- **1517** Testing rules
+- **1514** JSX rules
+- **1499** TSX rules
+- **1365** Javascript rules
+- **1362** Typescript rules
 - **33** JSON rules
 - **24** YML rules
 - **5** MD rules
@@ -346,7 +346,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **3784**.
+The amount of packages reviewed and rejected **3809**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -358,12 +358,9 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/3/2025, total known packages **25,116**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/3/2025, total known packages **25,159**. Top 40 next in line, downloads for the previous 28 days:
 
-- 4,309,284 downloads, [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports)
-- 3,005,383 downloads, [eslint-plugin-turbo](https://www.npmjs.com/package/eslint-plugin-turbo)
 - 2,755,868 downloads, [@tanstack/eslint-plugin-query](https://www.npmjs.com/package/@tanstack/eslint-plugin-query)
-- 2,721,788 downloads, [eslint-config-turbo](https://www.npmjs.com/package/eslint-config-turbo)
 - 2,542,801 downloads, [eslint-plugin-import-x](https://www.npmjs.com/package/eslint-plugin-import-x)
 - 1,862,444 downloads, [@vitest/eslint-plugin](https://www.npmjs.com/package/@vitest/eslint-plugin)
 - 1,845,538 downloads, [eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest)
@@ -380,25 +377,28 @@ Generated on 2/3/2025, total known packages **25,116**. Top 40 next in line, dow
 - 1,280,375 downloads, [@craco/craco](https://www.npmjs.com/package/@craco/craco)
 - 1,276,537 downloads, [eslint-config-flat-gitignore](https://www.npmjs.com/package/eslint-config-flat-gitignore)
 - 1,207,334 downloads, [eslint-plugin-react-compiler](https://www.npmjs.com/package/eslint-plugin-react-compiler)
-- 1,158,793 downloads, [eslint-plugin-only-warn](https://www.npmjs.com/package/eslint-plugin-only-warn)
 - 1,124,452 downloads, [espurify](https://www.npmjs.com/package/espurify)
 - 1,105,000 downloads, [eslint-ast-utils](https://www.npmjs.com/package/eslint-ast-utils)
 - 1,068,285 downloads, [eslint-restricted-globals](https://www.npmjs.com/package/eslint-restricted-globals)
+- 1,062,991 downloads, [eslint-plugin-only-warn](https://www.npmjs.com/package/eslint-plugin-only-warn)
 - 1,056,319 downloads, [eslint-flat-config-utils](https://www.npmjs.com/package/eslint-flat-config-utils)
 - 1,036,954 downloads, [gts](https://www.npmjs.com/package/gts)
 - 985,387 downloads, [eslint-plugin-no-relative-import-paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)
 - 972,399 downloads, [eslint-json-compat-utils](https://www.npmjs.com/package/eslint-json-compat-utils)
 - 905,136 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 884,064 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
-- 836,457 downloads, [react-plaid-link](https://www.npmjs.com/package/react-plaid-link)
-- 834,757 downloads, [gatsby-plugin-typescript](https://www.npmjs.com/package/gatsby-plugin-typescript)
-- 833,672 downloads, [@lhci/utils](https://www.npmjs.com/package/@lhci/utils)
-- 831,691 downloads, [next-compose-plugins](https://www.npmjs.com/package/next-compose-plugins)
-- 830,350 downloads, [@tsconfig/react-native](https://www.npmjs.com/package/@tsconfig/react-native)
-- 829,206 downloads, [wagmi](https://www.npmjs.com/package/wagmi)
-- 829,133 downloads, [regl](https://www.npmjs.com/package/regl)
-- 824,677 downloads, [@splitsoftware/splitio-commons](https://www.npmjs.com/package/@splitsoftware/splitio-commons)
-- 823,979 downloads, [@mui/material-nextjs](https://www.npmjs.com/package/@mui/material-nextjs)
-- 823,869 downloads, [@builder.io/partytown](https://www.npmjs.com/package/@builder.io/partytown)
+- 821,213 downloads, [tiny-secp256k1](https://www.npmjs.com/package/tiny-secp256k1)
+- 820,439 downloads, [react-native-maps](https://www.npmjs.com/package/react-native-maps)
+- 820,277 downloads, [@rollup/plugin-yaml](https://www.npmjs.com/package/@rollup/plugin-yaml)
+- 818,433 downloads, [webpack-remove-empty-scripts](https://www.npmjs.com/package/webpack-remove-empty-scripts)
+- 816,135 downloads, [typescript-memoize](https://www.npmjs.com/package/typescript-memoize)
+- 814,586 downloads, [@vue/cli-plugin-unit-jest](https://www.npmjs.com/package/@vue/cli-plugin-unit-jest)
+- 814,091 downloads, [@vanilla-extract/sprinkles](https://www.npmjs.com/package/@vanilla-extract/sprinkles)
+- 812,645 downloads, [react-native-gradle-plugin](https://www.npmjs.com/package/react-native-gradle-plugin)
+- 812,441 downloads, [expo-crypto](https://www.npmjs.com/package/expo-crypto)
+- 812,347 downloads, [@intervolga/optimize-cssnano-plugin](https://www.npmjs.com/package/@intervolga/optimize-cssnano-plugin)
+- 812,033 downloads, [@safe-global/safe-gateway-typescript-sdk](https://www.npmjs.com/package/@safe-global/safe-gateway-typescript-sdk)
+- 811,499 downloads, [web3-errors](https://www.npmjs.com/package/web3-errors)
+- 809,886 downloads, [@ag-grid-community/react](https://www.npmjs.com/package/@ag-grid-community/react)
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->
