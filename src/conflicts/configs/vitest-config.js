@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/prettier-plugin-config.js
+// PathMark: ./src/conflicts/configs/vitest-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 
@@ -13,11 +13,11 @@ import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
+import vitest from "@vitest/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
 import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
-import prettier from "eslint-plugin-prettier";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
@@ -196,27 +196,36 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        prettier,
+        vitest,
       },
     },
 
     /*
-      Prettier - Plugin
+      Vitest
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: prettier
+      Requires: vitest
     */
-    ...(disable.includes("eslint-plugin-prettier-plugin") ||
+    ...(disable.includes("@vitest/eslint-plugin") ||
+    disable.includes("eslint-plugin-vitest") ||
     threshold > 1_000_000
       ? []
       : [
           {
-            files,
+            files: jsTestFiles,
+            languageOptions: {
+              globals: {
+                ...vitest.environments.env.globals,
+              },
+            },
             rules: {
-              "prettier/prettier": 2,
-              ...("eslint-plugin-prettier/plugin" in override
-                ? override["eslint-plugin-prettier/plugin"]
+              ...vitest.configs.recommended.rules,
+              ...("@vitest/eslint-plugin" in override
+                ? override["@vitest/eslint-plugin"]
+                : {}),
+              ...("eslint-plugin-vitest" in override
+                ? override["eslint-plugin-vitest"]
                 : {}),
             },
           },

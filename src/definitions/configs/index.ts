@@ -109,6 +109,8 @@ import turbo from "./turbo";
 import unicorn from "./unicorn";
 import unsanitized from "./unsanitized";
 import unusedImports from "./unused-imports";
+import vitest from "./vitest";
+import vitestTs from "./vitest-ts";
 import xo from "./xo";
 import yml from "./yml";
 import youDontNeedLodash from "./you-dont-need-lodash";
@@ -243,6 +245,8 @@ const configs: Config[] = [
     unicorn,
     unsanitized,
     unusedImports,
+    vitest,
+    vitestTs,
     xo,
     yml,
     youDontNeedLodash,

@@ -63,6 +63,7 @@ import turbo from "./turbo";
 import unicorn from "./unicorn";
 import unsanitized from "./unsanitized";
 import unusedImports from "./unused-imports";
+import vitest from "./vitest";
 import yml from "./yml";
 import youDontNeedLodash from "./you-dont-need-lodash";
 
@@ -143,6 +144,7 @@ const plugins = [
     unicorn,
     unsanitized,
     unusedImports,
+    vitest,
     yml,
     youDontNeedLodash,
   ]),

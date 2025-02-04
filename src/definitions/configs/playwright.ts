@@ -8,7 +8,7 @@ export default {
     "playwright/no-standalone-expect": [...testIds],
   },
   definitions: `{
-    files: testFiles,
+    files: [...jsTestFiles, ...tsTestFiles],
     languageOptions: {
       globals: globals["shared-node-browser"],
     },

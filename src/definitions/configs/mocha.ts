@@ -11,7 +11,7 @@ export default {
     ],
   },
   definitions: `{
-    files: testFiles,
+    files: jsTestFiles,
     languageOptions: {
       globals: globals.node,
     },

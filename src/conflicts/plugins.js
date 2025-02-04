@@ -130,6 +130,8 @@ import unsanitized from "eslint-plugin-no-unsanitized";
 // @ts-ignore yes, we need to ignore every import for this to run
 import unusedImports from "eslint-plugin-unused-imports";
 // @ts-ignore yes, we need to ignore every import for this to run
+import vitest from "@vitest/eslint-plugin";
+// @ts-ignore yes, we need to ignore every import for this to run
 import yml from "eslint-plugin-yml";
 // @ts-ignore yes, we need to ignore every import for this to run
 import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
@@ -219,6 +221,7 @@ const plugins = {
   turbo,
   unicorn,
   "unused-imports": unusedImports,
+  vitest,
   yml,
   "you-dont-need-lodash-underscore": youDontNeedLodash,
 };

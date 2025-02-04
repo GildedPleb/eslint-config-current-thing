@@ -42,16 +42,27 @@ const codeBlocks = ["**/*.md/**", "**/*.mdx/**"];
 const mdFiles = ["**/*.mdx", "**/*.md"];
 const graphQLFiles = ["**/*.graphql"];
 
-const testFiles = [
-  "**/*.test.*",
-  "**/*_test.*",
-  "**/*Test.*",
-  "**/*.spec.*",
-  "**/*_spec.*",
-  "**/*Spec.*",
+const TEST_PATTERNS = [
+  "**/*.test",
+  "**/*_test",
+  "**/*Test",
+  "**/*.spec",
+  "**/*_spec",
+  "**/*Spec",
   "**/__{mocks,tests}__/**/*",
-  "**/*.{spec,test}.[jt]s?(x)",
 ];
+
+/**
+ * Combines an array of file patterns with an array of extensions
+ * @param {string[]} patterns - Array of glob patterns without extensions
+ * @param {string[]} extensions - Array of file extensions without the dot (e.g. ['js', 'jsx'])
+ * @returns {string[]} Array of complete glob patterns with extensions
+ */
+const addExtensions = (patterns, extensions) =>
+  patterns.flatMap((p) => extensions.map((extension) => `${p}.${extension}`));
+
+const tsTestFiles = addExtensions(TEST_PATTERNS, ["ts", "tsx"]);
+const jsTestFiles = addExtensions(TEST_PATTERNS, ["js", "jsx"]);
 
 const defaultOptions = { disable: [], override: {}, threshold: 400_000 };
 

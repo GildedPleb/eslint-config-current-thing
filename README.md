@@ -34,8 +34,9 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 | SonarJS | Sort Class Members | Standard | Standard JSX |
 | Standard React | Standard TS | Storybook | Stylistic |
 | Tailwind CSS | Tanstack Query | Testing Library | TSDoc |
-| Turbo | TypeScript | Unicorn | XO |
-| YML | You Don't Need Lodash | | |
+| Turbo | TypeScript | Unicorn | Vitest |
+| Vitest TS | XO | YML | You Don't Need Lodash |
+|
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -57,7 +58,7 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1522** Testing rules
+- **1530** Testing rules
 - **1519** JSX rules
 - **1504** TSX rules
 - **1370** Javascript rules
@@ -346,7 +347,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **3836**.
+The amount of packages reviewed and rejected **3896**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -358,11 +359,8 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/3/2025, total known packages **25,244**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/3/2025, total known packages **25,288**. Top 40 next in line, downloads for the previous 28 days:
 
-- 2,542,801 downloads, [eslint-plugin-import-x](https://www.npmjs.com/package/eslint-plugin-import-x)
-- 1,862,444 downloads, [@vitest/eslint-plugin](https://www.npmjs.com/package/@vitest/eslint-plugin)
-- 1,845,538 downloads, [eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest)
 - 1,790,512 downloads, [eslint-plugin-json](https://www.npmjs.com/package/eslint-plugin-json)
 - 1,592,935 downloads, [recma-build-jsx](https://www.npmjs.com/package/recma-build-jsx)
 - 1,592,265 downloads, [recma-parse](https://www.npmjs.com/package/recma-parse)
@@ -383,22 +381,25 @@ Generated on 2/3/2025, total known packages **25,244**. Top 40 next in line, dow
 - 1,056,319 downloads, [eslint-flat-config-utils](https://www.npmjs.com/package/eslint-flat-config-utils)
 - 1,036,954 downloads, [gts](https://www.npmjs.com/package/gts)
 - 985,387 downloads, [eslint-plugin-no-relative-import-paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)
-- 972,399 downloads, [eslint-json-compat-utils](https://www.npmjs.com/package/eslint-json-compat-utils)
 - 905,136 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 884,064 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
+- 878,847 downloads, [eslint-json-compat-utils](https://www.npmjs.com/package/eslint-json-compat-utils)
 - 804,333 downloads, [@linaria/core](https://www.npmjs.com/package/@linaria/core)
-- 800,607 downloads, [css-modules-require-hook](https://www.npmjs.com/package/css-modules-require-hook)
-- 800,514 downloads, [@stoplight/spectral-cli](https://www.npmjs.com/package/@stoplight/spectral-cli)
-- 799,003 downloads, [@trpc/next](https://www.npmjs.com/package/@trpc/next)
-- 798,269 downloads, [nx-cloud](https://www.npmjs.com/package/nx-cloud)
-- 798,200 downloads, [postcss-import-resolver](https://www.npmjs.com/package/postcss-import-resolver)
-- 795,822 downloads, [express-urlrewrite](https://www.npmjs.com/package/express-urlrewrite)
-- 795,715 downloads, [@sap-ux/logger](https://www.npmjs.com/package/@sap-ux/logger)
-- 794,513 downloads, [wasm-feature-detect](https://www.npmjs.com/package/wasm-feature-detect)
-- 793,752 downloads, [@0no-co/graphqlsp](https://www.npmjs.com/package/@0no-co/graphqlsp)
-- 792,782 downloads, [imagemin-jpegtran](https://www.npmjs.com/package/imagemin-jpegtran)
-- 792,327 downloads, [@axelar-network/axelar-gmp-sdk-solidity](https://www.npmjs.com/package/@axelar-network/axelar-gmp-sdk-solidity)
-- 791,589 downloads, [@metamask/object-multiplex](https://www.npmjs.com/package/@metamask/object-multiplex)
-- 789,214 downloads, [@slorber/remark-comment](https://www.npmjs.com/package/@slorber/remark-comment)
+- 776,277 downloads, [eslint-merge-processors](https://www.npmjs.com/package/eslint-merge-processors)
+- 768,613 downloads, [eslint-processor-vue-blocks](https://www.npmjs.com/package/eslint-processor-vue-blocks)
+- 757,030 downloads, [@bugsnag/plugin-react](https://www.npmjs.com/package/@bugsnag/plugin-react)
+- 756,377 downloads, [express-http-context](https://www.npmjs.com/package/express-http-context)
+- 755,217 downloads, [babel-plugin-transform-async-to-promises](https://www.npmjs.com/package/babel-plugin-transform-async-to-promises)
+- 755,103 downloads, [@vanilla-extract/dynamic](https://www.npmjs.com/package/@vanilla-extract/dynamic)
+- 754,822 downloads, [serverless-webpack](https://www.npmjs.com/package/serverless-webpack)
+- 752,398 downloads, [react-lazyload](https://www.npmjs.com/package/react-lazyload)
+- 750,875 downloads, [@contentful/content-source-maps](https://www.npmjs.com/package/@contentful/content-source-maps)
+- 750,264 downloads, [@neondatabase/serverless](https://www.npmjs.com/package/@neondatabase/serverless)
+- 750,215 downloads, [@nuxtjs/i18n](https://www.npmjs.com/package/@nuxtjs/i18n)
+- 750,148 downloads, [css-modules-loader-core](https://www.npmjs.com/package/css-modules-loader-core)
+- 749,689 downloads, [@cypress/webpack-dev-server](https://www.npmjs.com/package/@cypress/webpack-dev-server)
+- 749,124 downloads, [react-native-mmkv](https://www.npmjs.com/package/react-native-mmkv)
+- 748,621 downloads, [ts-prune](https://www.npmjs.com/package/ts-prune)
+- 748,571 downloads, [@nuxtjs/eslint-config](https://www.npmjs.com/package/@nuxtjs/eslint-config)
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

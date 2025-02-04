@@ -4,7 +4,7 @@ import type { Config } from ".";
 
 export default {
   definitions: `{
-    files: testFiles,
+    files: jsTestFiles,
     languageOptions: {
       globals: {
         ...cypress.environments.globals.globals

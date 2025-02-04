@@ -8,7 +8,7 @@ export default {
   },
   definitions: `{
     files: jsFiles,
-    ignores: testFiles,
+    ignores: [...jsTestFiles, ...tsTestFiles],
     ${RULES}
   }`,
   ejected: true,

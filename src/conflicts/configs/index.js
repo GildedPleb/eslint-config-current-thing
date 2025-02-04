@@ -242,6 +242,11 @@ const configList = [
     location: "./src/conflicts/configs/unused-imports-config.js",
     name: "unused-imports",
   },
+  { location: "./src/conflicts/configs/vitest-config.js", name: "vitest" },
+  {
+    location: "./src/conflicts/configs/vitest-ts-config.js",
+    name: "vitest-ts",
+  },
   { location: "./src/conflicts/configs/xo-config.js", name: "xo" },
   { location: "./src/conflicts/configs/yml-config.js", name: "yml" },
   {

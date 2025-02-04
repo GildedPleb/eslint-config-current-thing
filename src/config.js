@@ -22,6 +22,7 @@ import nextjs from "@next/eslint-plugin-next";
 import rnPlugin from "@react-native/eslint-plugin";
 import stylistic from "@stylistic/eslint-plugin";
 import tanstack from "@tanstack/eslint-plugin-query";
+import vitest from "@vitest/eslint-plugin";
 import restrictedGlobals from "confusing-browser-globals";
 import standardTS from "eslint-config-love";
 import prettierConfig from "eslint-config-prettier";
@@ -106,16 +107,27 @@ const codeBlocks = ["**/*.md/**", "**/*.mdx/**"];
 const mdFiles = ["**/*.mdx", "**/*.md"];
 const graphQLFiles = ["**/*.graphql"];
 
-const testFiles = [
-  "**/*.test.*",
-  "**/*_test.*",
-  "**/*Test.*",
-  "**/*.spec.*",
-  "**/*_spec.*",
-  "**/*Spec.*",
+const TEST_PATTERNS = [
+  "**/*.test",
+  "**/*_test",
+  "**/*Test",
+  "**/*.spec",
+  "**/*_spec",
+  "**/*Spec",
   "**/__{mocks,tests}__/**/*",
-  "**/*.{spec,test}.[jt]s?(x)",
 ];
+
+/**
+ * Combines an array of file patterns with an array of extensions
+ * @param {string[]} patterns - Array of glob patterns without extensions
+ * @param {string[]} extensions - Array of file extensions without the dot (e.g. ['js', 'jsx'])
+ * @returns {string[]} Array of complete glob patterns with extensions
+ */
+const addExtensions = (patterns, extensions) =>
+  patterns.flatMap((p) => extensions.map((extension) => `${p}.${extension}`));
+
+const tsTestFiles = addExtensions(TEST_PATTERNS, ["ts", "tsx"]);
+const jsTestFiles = addExtensions(TEST_PATTERNS, ["js", "jsx"]);
 
 const defaultOptions = { disable: [], override: {}, threshold: 400_000 };
 
@@ -312,6 +324,7 @@ const configGen = ({
         turbo,
         unicorn,
         "unused-imports": unusedImports,
+        vitest,
         yml,
         "you-dont-need-lodash-underscore": youDontNeedLodash,
       },
@@ -529,7 +542,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: testFiles,
+            files: jsTestFiles,
             rules: {
               ...ava.configs.recommended.rules,
 
@@ -694,7 +707,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: testFiles,
+            files: jsTestFiles,
             languageOptions: {
               globals: {
                 jasmine: true,
@@ -842,7 +855,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: testFiles,
+            files: jsTestFiles,
             rules: {
               ...chaiFriendly.configs.recommended.rules,
 
@@ -1294,7 +1307,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: testFiles,
+            files: jsTestFiles,
             rules: {
               ...jestFormatting.configs.recommended.overrides[0].rules,
               "functional/functional-parameters": 0,
@@ -1512,7 +1525,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: testFiles,
+            files: jsTestFiles,
             languageOptions: {
               globals: {
                 jest: true,
@@ -1673,7 +1686,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: testFiles,
+            files: jsTestFiles,
             languageOptions: {
               globals: globals.node,
             },
@@ -1759,6 +1772,81 @@ const configGen = ({
         ]),
 
     /*
+      Vitest
+      3,548,824 monthly downloads
+      Eslint plugin for vitest / Eslint plugin for vitest
+      https://github.com/vitest-dev/eslint-plugin-vitest#readme / https://github.com/veritem/eslint-plugin-vitest#readme
+      Requires: vitest
+    */
+    ...(disable.includes("@vitest/eslint-plugin") ||
+    disable.includes("eslint-plugin-vitest") ||
+    threshold > 3_548_824
+      ? []
+      : [
+          {
+            files: jsTestFiles,
+            languageOptions: {
+              globals: {
+                ...vitest.environments.env.globals,
+              },
+            },
+            rules: {
+              ...vitest.configs.recommended.rules,
+
+              ...("@vitest/eslint-plugin" in override
+                ? override["@vitest/eslint-plugin"]
+                : {}),
+              ...("eslint-plugin-vitest" in override
+                ? override["eslint-plugin-vitest"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Vitest TS
+      3,548,824 monthly downloads
+      Eslint plugin for vitest / Eslint plugin for vitest
+      https://github.com/vitest-dev/eslint-plugin-vitest#readme / https://github.com/veritem/eslint-plugin-vitest#readme
+      Requires: vitest
+    */
+    ...(disable.includes("@vitest/eslint-plugin") ||
+    disable.includes("eslint-plugin-vitest") ||
+    threshold > 3_548_824
+      ? []
+      : [
+          {
+            files: tsTestFiles,
+            languageOptions: {
+              globals: {
+                ...vitest.environments.env.globals,
+              },
+              parser: tseslint.parser,
+              parserOptions: {
+                ecmaVersion: "latest",
+                project: true,
+                warnOnUnsupportedTypeScriptVersion: false,
+              },
+            },
+            rules: {
+              ...vitest.configs.recommended.rules,
+
+              ...("@vitest/eslint-plugin" in override
+                ? override["@vitest/eslint-plugin"]
+                : {}),
+              ...("eslint-plugin-vitest" in override
+                ? override["eslint-plugin-vitest"]
+                : {}),
+            },
+            settings: {
+              vitest: {
+                typecheck: true,
+              },
+            },
+          },
+        ]),
+
+    /*
       Jest Dom
       3,774,804 monthly downloads
       ESLint plugin to follow best practices and anticipate common mistakes when writing tests with jest-dom
@@ -1769,7 +1857,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: testFiles,
+            files: [...jsTestFiles, ...tsTestFiles],
             rules: {
               ...jestDom.configs.recommended.rules,
               "functional/functional-parameters": 0,
@@ -1818,7 +1906,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: testFiles,
+            files: jsTestFiles,
             rules: {
               "functional/functional-parameters": 0,
               "functional/no-conditional-statements": 0,
@@ -1845,7 +1933,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: testFiles,
+            files: [...jsTestFiles, ...tsTestFiles],
             languageOptions: {
               globals: globals["shared-node-browser"],
             },
@@ -2849,7 +2937,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: testFiles,
+            files: jsTestFiles,
             languageOptions: {
               globals: {
                 ...cypress.environments.globals.globals,
@@ -3862,7 +3950,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: testFiles,
+            files: [...jsTestFiles, ...tsTestFiles],
             languageOptions: {
               globals: {
                 "jest/globals": true,
@@ -4070,7 +4158,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: testFiles,
+            files: [...jsTestFiles, ...tsTestFiles],
             rules: {
               ...testingLibrary.configs.react.rules,
               "functional/functional-parameters": 0,
@@ -4497,7 +4585,7 @@ const configGen = ({
       : [
           {
             files: jsFiles,
-            ignores: testFiles,
+            ignores: [...jsTestFiles, ...tsTestFiles],
             rules: {
               "@stylistic/arrow-parens": 0,
               "arrow-body-style": [
@@ -5356,7 +5444,7 @@ const configGen = ({
       ? []
       : [
           {
-            files: testFiles,
+            files: [...jsTestFiles, ...tsTestFiles],
             languageOptions: {
               globals: {
                 afterAll: false,

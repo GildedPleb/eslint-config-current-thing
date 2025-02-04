@@ -41,7 +41,6 @@ const validator = ajv.compile<PackageAnalysis & { name: string }>({
       required: ["positive", "negative"],
       type: "object",
     },
-    isAI: { type: "boolean" },
     name: { type: "string" },
     purpose: { type: "string" },
     reject: { type: "boolean" },
@@ -54,7 +53,6 @@ const validator = ajv.compile<PackageAnalysis & { name: string }>({
     "confidence",
     "category",
     "evidence",
-    "isAI",
   ],
   type: "object",
 });
@@ -269,6 +267,7 @@ program
       } else {
         // Use the existing table display
         displayTable(results);
+        console.log("Result count:", results.length);
       }
     } catch (error) {
       console.error("Error searching items:", error);
