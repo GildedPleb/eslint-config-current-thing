@@ -39,6 +39,7 @@ import preferArrow from "./prefer-arrow";
 import prettier from "./prettier";
 import promises from "./promises";
 import react from "./react";
+import reactCompiler from "./react-compiler";
 import reactHooks from "./react-hooks";
 import reactNative from "./react-native";
 import reactNativeIndie from "./react-native-indie";
@@ -120,6 +121,7 @@ const plugins = [
     prettier,
     promises,
     react,
+    reactCompiler,
     reactHooks,
     reactNative,
     reactNativeIndie,

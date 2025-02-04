@@ -3077,6 +3077,7 @@
     "prettier-tailwind:eslint-plugin-prettier@5.2.3",
     "promise",
     "react",
+    "react-compiler",
     "react-hooks",
     "react-native",
     "react-perf:eslint-plugin-react-perf@3.3.3",

@@ -21,3 +21,4 @@ as in, if i write \_es used.eslint@typescript-eslint/no-unused-vars should be of
 - it would be good to get the two config generators to always be in line with each other, but i'm not sure its worth it...
 - In the case where two configs are in conflict, but only when the entire config is run against the other entire config, we should default to both configs disabling the other entire config.
 - Allow people to fully turn off a parser if they so choose.
+- Add TS and TSX tests

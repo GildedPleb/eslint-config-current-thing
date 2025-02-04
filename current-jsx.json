@@ -193,6 +193,7 @@
     "mocha/no-mocha-arrows": [0],
     "no-unsanitized/property": [2],
     "no-unsanitized/method": [2],
+    "react-compiler/react-compiler": [2],
     "@stylistic/arrow-parens": [
       0,
       "as-needed",
@@ -1775,7 +1776,6 @@
     "@eslint-community/eslint-comments/no-unlimited-disable": [2],
     "@eslint-community/eslint-comments/no-unused-enable": [2],
     "unicorn/no-nested-ternary": [0],
-    "react-refresh/only-export-components": [1],
     "jsdoc/check-access": [1],
     "jsdoc/check-alignment": [1],
     "jsdoc/check-examples": [0],
@@ -1832,6 +1832,7 @@
     "jsdoc/tag-lines": [1],
     "jsdoc/text-escaping": [0],
     "jsdoc/valid-types": [1],
+    "react-refresh/only-export-components": [1],
     "accessor-pairs": [
       0,
       {
@@ -3720,6 +3721,7 @@
     "prettier-tailwind:eslint-plugin-prettier@5.2.3",
     "promise",
     "react",
+    "react-compiler",
     "react-hooks",
     "react-native",
     "react-perf:eslint-plugin-react-perf@3.3.3",

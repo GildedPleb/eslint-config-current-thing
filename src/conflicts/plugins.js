@@ -90,6 +90,8 @@ import promise from "eslint-plugin-promise";
 // @ts-ignore yes, we need to ignore every import for this to run
 import react from "eslint-plugin-react";
 // @ts-ignore yes, we need to ignore every import for this to run
+import reactCompiler from "eslint-plugin-react-compiler";
+// @ts-ignore yes, we need to ignore every import for this to run
 import reactHooks from "eslint-plugin-react-hooks";
 // @ts-ignore yes, we need to ignore every import for this to run
 import rnPlugin from "@react-native/eslint-plugin";
@@ -204,6 +206,7 @@ const plugins = {
   "prettier-tailwind": prettier,
   promise,
   react,
+  "react-compiler": reactCompiler,
   "react-hooks": reactHooks,
   "react-native": reactNativeIndie,
   "react-perf": reactPerf,

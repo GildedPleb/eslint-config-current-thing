@@ -166,6 +166,10 @@ const configList = [
   { location: "./src/conflicts/configs/promises-config.js", name: "promises" },
   { location: "./src/conflicts/configs/react-config.js", name: "react" },
   {
+    location: "./src/conflicts/configs/react-compiler-config.js",
+    name: "react-compiler",
+  },
+  {
     location: "./src/conflicts/configs/react-hooks-config.js",
     name: "react-hooks",
   },

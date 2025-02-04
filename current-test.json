@@ -2063,20 +2063,6 @@
     "react/no-unknown-property": [0],
     "react/prop-types": [0],
     "react/react-in-jsx-scope": [0],
-    "testing-library/await-async-events": [
-      2,
-      {
-        "eventModule": "userEvent"
-      }
-    ],
-    "testing-library/no-await-sync-events": [
-      2,
-      {
-        "eventModules": ["fire-event"]
-      }
-    ],
-    "testing-library/no-global-regexp-flag-in-query": [2],
-    "testing-library/no-manual-cleanup": [2],
     "es-x/no-dynamic-import-options": [2],
     "es-x/no-import-attributes": [2],
     "es-x/no-iterator-prototype-drop": [2],
@@ -2103,6 +2089,20 @@
     "es-x/no-set-prototype-symmetricdifference": [2],
     "es-x/no-set-prototype-union": [2],
     "es-x/no-trailing-dynamic-import-commas": [2],
+    "testing-library/await-async-events": [
+      2,
+      {
+        "eventModule": "userEvent"
+      }
+    ],
+    "testing-library/no-await-sync-events": [
+      2,
+      {
+        "eventModules": ["fire-event"]
+      }
+    ],
+    "testing-library/no-global-regexp-flag-in-query": [2],
+    "testing-library/no-manual-cleanup": [2],
     "n/no-extraneous-import": [2],
     "n/no-extraneous-require": [2],
     "n/no-missing-import": [0],
@@ -3194,6 +3194,7 @@
     "prettier-tailwind:eslint-plugin-prettier@5.2.3",
     "promise",
     "react",
+    "react-compiler",
     "react-hooks",
     "react-native",
     "react-perf:eslint-plugin-react-perf@3.3.3",

@@ -63,6 +63,7 @@ import prettierTailwind from "./prettier-tailwind";
 import prettierYml from "./prettier-yml";
 import promises from "./promises";
 import react from "./react";
+import reactCompiler from "./react-compiler";
 import reactHooks from "./react-hooks";
 import reactNative from "./react-native";
 import reactNativeFt from "./react-native-ft";
@@ -199,6 +200,7 @@ const configs: Config[] = [
     prettierYml,
     promises,
     react,
+    reactCompiler,
     reactHooks,
     reactNative,
     reactNativeFt,
