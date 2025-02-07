@@ -211,6 +211,7 @@ const configList = [
     location: "./src/conflicts/configs/react-refresh-config.js",
     name: "react-refresh",
   },
+  { location: "./src/conflicts/configs/react-x-config.js", name: "react-x" },
   { location: "./src/conflicts/configs/regexp-config.js", name: "regexp" },
   { location: "./src/conflicts/configs/msdl-config.js", name: "msdl" },
   {

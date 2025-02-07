@@ -7,7 +7,7 @@ export default {
     files: tsFiles,
     ${RULES}
   }`,
-  ejected: false,
+  ejected: true,
   enabled: true,
   id: "react-hooks-extra",
   name: "React Hooks Extra",

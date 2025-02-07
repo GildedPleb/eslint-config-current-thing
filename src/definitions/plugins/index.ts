@@ -50,6 +50,7 @@ import reactNative from "./react-native";
 import reactNativeIndie from "./react-native-indie";
 import reactPerf from "./react-perf";
 import reactRefresh from "./react-refresh";
+import reactX from "./react-x";
 import regexp from "./regexp";
 import rxjs from "./rxjs";
 import sdl from "./sdl";
@@ -137,6 +138,7 @@ const plugins = [
     reactNativeIndie,
     reactPerf,
     reactRefresh,
+    reactX,
     regexp,
     rxjs,
     sdl,

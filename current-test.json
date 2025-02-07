@@ -3233,6 +3233,7 @@
     "react-perf:eslint-plugin-react-perf@3.3.3",
     "react-prefer-function-component",
     "react-refresh",
+    "react-x:eslint-plugin-react-x@1.26.2",
     "regexp:eslint-plugin-regexp@2.7.0",
     "security:eslint-plugin-security@3.0.1",
     "simple-import-sort:eslint-plugin-simple-import-sort@12.1.1",

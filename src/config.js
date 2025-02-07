@@ -75,6 +75,7 @@ import reactNativeIndie from "eslint-plugin-react-native";
 import reactPerf from "eslint-plugin-react-perf";
 import preferFC from "eslint-plugin-react-prefer-function-component";
 import reactRefresh from "eslint-plugin-react-refresh";
+import reactX from "eslint-plugin-react-x";
 import regexp from "eslint-plugin-regexp";
 import security from "eslint-plugin-security";
 import importSort from "eslint-plugin-simple-import-sort";
@@ -338,6 +339,7 @@ const configGen = ({
         "react-perf": reactPerf,
         "react-prefer-function-component": preferFC,
         "react-refresh": reactRefresh,
+        "react-x": reactX,
         regexp,
         security,
         "simple-import-sort": importSort,
@@ -717,6 +719,65 @@ const configGen = ({
 
               ...("eslint-plugin-you-dont-need-lodash-underscore" in override
                 ? override["eslint-plugin-you-dont-need-lodash-underscore"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      React X
+      589,302 monthly downloads
+      A set of composable linting rules for libraries and frameworks that use React as a UI runtime.
+      https://github.com/Rel1cx/eslint-react
+      Requires: react-x
+    */
+    ...(disable.includes("eslint-plugin-react-x") || threshold > 589_302
+      ? []
+      : [
+          {
+            files: tsFiles,
+            rules: {
+              "react-x/ensure-forward-ref-using-ref": "warn",
+              "react-x/no-access-state-in-setstate": "error",
+              "react-x/no-array-index-key": "warn",
+              "react-x/no-children-count": "warn",
+              "react-x/no-children-for-each": "warn",
+              "react-x/no-children-map": "warn",
+              "react-x/no-children-only": "warn",
+              "react-x/no-children-to-array": "warn",
+              "react-x/no-clone-element": "warn",
+              "react-x/no-comment-textnodes": "warn",
+              "react-x/no-component-will-mount": "error",
+              "react-x/no-component-will-receive-props": "error",
+              "react-x/no-component-will-update": "error",
+              "react-x/no-context-provider": "warn",
+              "react-x/no-create-ref": "error",
+              "react-x/no-default-props": "error",
+              "react-x/no-direct-mutation-state": "error",
+              "react-x/no-duplicate-jsx-props": "warn",
+              "react-x/no-duplicate-key": "error",
+              "react-x/no-forward-ref": "warn",
+              "react-x/no-implicit-key": "warn",
+              "react-x/no-missing-key": "error",
+              "react-x/no-nested-components": "error",
+              "react-x/no-prop-types": "error",
+              "react-x/no-redundant-should-component-update": "error",
+              "react-x/no-set-state-in-component-did-mount": "warn",
+              "react-x/no-set-state-in-component-did-update": "warn",
+              "react-x/no-set-state-in-component-will-update": "warn",
+              "react-x/no-string-refs": "error",
+              "react-x/no-unsafe-component-will-mount": "warn",
+              "react-x/no-unsafe-component-will-receive-props": "warn",
+              "react-x/no-unsafe-component-will-update": "warn",
+              "react-x/no-unstable-context-value": "warn",
+              "react-x/no-unstable-default-props": "warn",
+              "react-x/no-unused-class-component-members": "warn",
+              "react-x/no-unused-state": "warn",
+              "react-x/no-use-context": "warn",
+              "react-x/use-jsx-vars": "warn",
+
+              ...("eslint-plugin-react-x" in override
+                ? override["eslint-plugin-react-x"]
                 : {}),
             },
           },

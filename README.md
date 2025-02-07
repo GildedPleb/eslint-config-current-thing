@@ -31,13 +31,13 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 | Prefer Arrow | Prettier | Prettier Plugin PackageJSON | Prettier Plugin Tailwind |
 | Promises | React | React Compiler | React Hooks |
 | React Hooks Extra | React Native (Independent Plugin/Config) | React Native Config | React Native Plugin |
-| React Performance | React Prefer Function Component | React Refresh | Regular Expressions |
-| Security | Simple Import Sort | SonarJS | Sort Class Members |
-| Standard | Standard JSX | Standard React | Standard TS |
-| Storybook | Stylistic | Tailwind CSS | Tanstack Query |
-| Testing Library | TSDoc | Turbo | TypeScript |
-| Unicorn | Vitest | Vitest TS | XO |
-| YML | You Don't Need Lodash | | |
+| React Performance | React Prefer Function Component | React Refresh | React X |
+| Regular Expressions | Security | Simple Import Sort | SonarJS |
+| Sort Class Members | Standard | Standard JSX | Standard React |
+| Standard TS | Storybook | Stylistic | Tailwind CSS |
+| Tanstack Query | Testing Library | TSDoc | Turbo |
+| TypeScript | Unicorn | Vitest | Vitest TS |
+| XO | YML | You Don't Need Lodash | |
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -59,10 +59,10 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
+- **1569** TSX rules
 - **1542** JSX rules
-- **1531** TSX rules
 - **1525** Testing rules
-- **1393** Typescript rules
+- **1431** Typescript rules
 - **1392** Javascript rules
 - **33** JSON rules
 - **24** YML rules
@@ -348,7 +348,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **4494**.
+The amount of packages reviewed and rejected **4511**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -360,12 +360,11 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/7/2025, total known packages **25,451**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/7/2025, total known packages **25,435**. Top 40 next in line, downloads for the previous 28 days:
 
 - 1,322,314 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 905,136 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 884,064 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
-- 638,304 downloads, [eslint-plugin-react-x](https://www.npmjs.com/package/eslint-plugin-react-x)
 - 628,147 downloads, [eslint-plugin-react-dom](https://www.npmjs.com/package/eslint-plugin-react-dom)
 - 624,651 downloads, [eslint-plugin-react-naming-convention](https://www.npmjs.com/package/eslint-plugin-react-naming-convention)
 - 618,702 downloads, [eslint-plugin-react-web-api](https://www.npmjs.com/package/eslint-plugin-react-web-api)
@@ -385,22 +384,23 @@ Generated on 2/7/2025, total known packages **25,451**. Top 40 next in line, dow
 - 526,458 downloads, [eslint-plugin-toml](https://www.npmjs.com/package/eslint-plugin-toml)
 - 514,257 downloads, [@eslint-react/eslint-plugin](https://www.npmjs.com/package/@eslint-react/eslint-plugin)
 - 496,082 downloads, [eslint-plugin-command](https://www.npmjs.com/package/eslint-plugin-command)
-- 494,147 downloads, [express-ws](https://www.npmjs.com/package/express-ws)
-- 493,820 downloads, [react-country-flag](https://www.npmjs.com/package/react-country-flag)
-- 493,404 downloads, [webpack-retry-chunk-load-plugin](https://www.npmjs.com/package/webpack-retry-chunk-load-plugin)
-- 492,888 downloads, [@vanilla-extract/css-utils](https://www.npmjs.com/package/@vanilla-extract/css-utils)
-- 492,464 downloads, [@swc/plugin-styled-components](https://www.npmjs.com/package/@swc/plugin-styled-components)
-- 491,862 downloads, [gatsby-transformer-sharp](https://www.npmjs.com/package/gatsby-transformer-sharp)
-- 491,290 downloads, [modify-filename](https://www.npmjs.com/package/modify-filename)
 - 491,171 downloads, [@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config)
-- 489,652 downloads, [dmd](https://www.npmjs.com/package/dmd)
-- 488,814 downloads, [@sap/hdi](https://www.npmjs.com/package/@sap/hdi)
-- 488,651 downloads, [@types/yeoman-generator](https://www.npmjs.com/package/@types/yeoman-generator)
-- 488,146 downloads, [vega-functions](https://www.npmjs.com/package/vega-functions)
-- 487,736 downloads, [tslog](https://www.npmjs.com/package/tslog)
-- 487,146 downloads, [@syncfusion/ej2-navigations](https://www.npmjs.com/package/@syncfusion/ej2-navigations)
-- 487,110 downloads, [@wallet-standard/features](https://www.npmjs.com/package/@wallet-standard/features)
-- 485,952 downloads, [chakra-react-select](https://www.npmjs.com/package/chakra-react-select)
-- 484,431 downloads, [esbuild-plugin-copy](https://www.npmjs.com/package/esbuild-plugin-copy)
+- 482,251 downloads, [ejs-loader](https://www.npmjs.com/package/ejs-loader)
+- 481,067 downloads, [i18next-http-middleware](https://www.npmjs.com/package/i18next-http-middleware)
+- 480,905 downloads, [jest-sonar](https://www.npmjs.com/package/jest-sonar)
+- 480,446 downloads, [email-templates](https://www.npmjs.com/package/email-templates)
+- 479,934 downloads, [@tree-sitter-grammars/tree-sitter-yaml](https://www.npmjs.com/package/@tree-sitter-grammars/tree-sitter-yaml)
+- 479,917 downloads, [storybook-i18n](https://www.npmjs.com/package/storybook-i18n)
+- 479,915 downloads, [@paypal/sdk-constants](https://www.npmjs.com/package/@paypal/sdk-constants)
+- 478,574 downloads, [@eslint-react/types](https://www.npmjs.com/package/@eslint-react/types)
+- 478,568 downloads, [@salesforce/plugin-marketplace](https://www.npmjs.com/package/@salesforce/plugin-marketplace)
+- 478,537 downloads, [pluralize-esm](https://www.npmjs.com/package/pluralize-esm)
+- 477,049 downloads, [@sap-ux/yaml](https://www.npmjs.com/package/@sap-ux/yaml)
+- 476,730 downloads, [rxjs-exhaustmap-with-trailing](https://www.npmjs.com/package/rxjs-exhaustmap-with-trailing)
+- 475,886 downloads, [async-csv](https://www.npmjs.com/package/async-csv)
+- 475,838 downloads, [tailwind-scrollbar-hide](https://www.npmjs.com/package/tailwind-scrollbar-hide)
+- 475,676 downloads, [@prettier/plugin-ruby](https://www.npmjs.com/package/@prettier/plugin-ruby)
+- 472,973 downloads, [vuln-vects](https://www.npmjs.com/package/vuln-vects)
+- 472,506 downloads, [sjcl](https://www.npmjs.com/package/sjcl)
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

@@ -113,6 +113,8 @@ import reactPerf from "eslint-plugin-react-perf";
 // @ts-ignore yes, we need to ignore every import for this to run
 import reactRefresh from "eslint-plugin-react-refresh";
 // @ts-ignore yes, we need to ignore every import for this to run
+import reactX from "eslint-plugin-react-x";
+// @ts-ignore yes, we need to ignore every import for this to run
 import regexp from "eslint-plugin-regexp";
 // @ts-ignore yes, we need to ignore every import for this to run
 import msdl from "@microsoft/eslint-plugin-sdl";
@@ -230,6 +232,7 @@ const plugins = {
   "react-perf": reactPerf,
   "react-prefer-function-component": preferFC,
   "react-refresh": reactRefresh,
+  "react-x": reactX,
   regexp,
   security,
   "simple-import-sort": importSort,
