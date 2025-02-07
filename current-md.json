@@ -78,6 +78,7 @@
     "react-dom:eslint-plugin-react-dom@1.26.2",
     "react-hooks",
     "react-hooks-extra:eslint-plugin-react-hooks-extra@1.26.2",
+    "react-naming-convention:eslint-plugin-react-naming-convention@1.26.2",
     "react-native",
     "react-perf:eslint-plugin-react-perf@3.3.3",
     "react-prefer-function-component",

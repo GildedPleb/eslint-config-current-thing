@@ -107,6 +107,8 @@ import reactHooks from "eslint-plugin-react-hooks";
 // @ts-ignore yes, we need to ignore every import for this to run
 import reactHooksExtra from "eslint-plugin-react-hooks-extra";
 // @ts-ignore yes, we need to ignore every import for this to run
+import reactNamingConvention from "eslint-plugin-react-naming-convention";
+// @ts-ignore yes, we need to ignore every import for this to run
 import rnPlugin from "@react-native/eslint-plugin";
 // @ts-ignore yes, we need to ignore every import for this to run
 import reactNativeIndie from "eslint-plugin-react-native";
@@ -231,6 +233,7 @@ const plugins = {
   "react-dom": reactDom,
   "react-hooks": reactHooks,
   "react-hooks-extra": reactHooksExtra,
+  "react-naming-convention": reactNamingConvention,
   "react-native": reactNativeIndie,
   "react-perf": reactPerf,
   "react-prefer-function-component": preferFC,

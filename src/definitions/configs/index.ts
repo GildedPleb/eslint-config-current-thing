@@ -75,6 +75,7 @@ import reactCompiler from "./react-compiler";
 import reactDom from "./react-dom";
 import reactHooks from "./react-hooks";
 import reactHooksExtra from "./react-hooks-extra";
+import reactNamingConvention from "./react-naming-convention";
 import reactNative from "./react-native";
 import reactNativeFt from "./react-native-ft";
 import reactNativeIndie from "./react-native-indie";
@@ -223,6 +224,7 @@ const configs: Config[] = [
     reactDom,
     reactHooks,
     reactHooksExtra,
+    reactNamingConvention,
     reactNative,
     reactNativeFt,
     reactNativeIndie,

@@ -72,6 +72,7 @@ import reactCompiler from "eslint-plugin-react-compiler";
 import reactDom from "eslint-plugin-react-dom";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactHooksExtra from "eslint-plugin-react-hooks-extra";
+import reactNamingConvention from "eslint-plugin-react-naming-convention";
 import reactNativeIndie from "eslint-plugin-react-native";
 import reactPerf from "eslint-plugin-react-perf";
 import preferFC from "eslint-plugin-react-prefer-function-component";
@@ -337,6 +338,7 @@ const configGen = ({
         "react-dom": reactDom,
         "react-hooks": reactHooks,
         "react-hooks-extra": reactHooksExtra,
+        "react-naming-convention": reactNamingConvention,
         "react-native": reactNativeIndie,
         "react-perf": reactPerf,
         "react-prefer-function-component": preferFC,
@@ -780,6 +782,33 @@ const configGen = ({
 
               ...("eslint-plugin-react-x" in override
                 ? override["eslint-plugin-react-x"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      React Naming Convention
+      617,100 monthly downloads
+      ESLint React's ESLint plugin for naming convention related rules.
+      https://github.com/Rel1cx/eslint-react
+      Requires: react-naming-convention
+    */
+    ...(disable.includes("eslint-plugin-react-naming-convention") ||
+    threshold > 617_100
+      ? []
+      : [
+          {
+            files: tsFiles,
+            rules: {
+              "react-naming-convention/filename-extension": [
+                "warn",
+                "as-needed",
+              ],
+              "react-naming-convention/use-state": "warn",
+
+              ...("eslint-plugin-react-naming-convention" in override
+                ? override["eslint-plugin-react-naming-convention"]
                 : {}),
             },
           },

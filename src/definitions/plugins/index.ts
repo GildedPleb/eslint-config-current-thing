@@ -47,6 +47,7 @@ import reactCompiler from "./react-compiler";
 import reactDom from "./react-dom";
 import reactHooks from "./react-hooks";
 import reactHooksExtra from "./react-hooks-extra";
+import reactNamingConvention from "./react-naming-convention";
 import reactNative from "./react-native";
 import reactNativeIndie from "./react-native-indie";
 import reactPerf from "./react-perf";
@@ -136,6 +137,7 @@ const plugins = [
     reactDom,
     reactHooks,
     reactHooksExtra,
+    reactNamingConvention,
     reactNative,
     reactNativeIndie,
     reactPerf,
