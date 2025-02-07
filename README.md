@@ -29,15 +29,16 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 | No Only Tests | No Relative Import Paths | No Unsanitized | No Unused Imports |
 | No Use Extend Native | Node.js | Perfectionist | Playwright |
 | Prefer Arrow | Prettier | Prettier Plugin PackageJSON | Prettier Plugin Tailwind |
-| Promises | React | React Compiler | React Hooks |
-| React Hooks Extra | React Native (Independent Plugin/Config) | React Native Config | React Native Plugin |
-| React Performance | React Prefer Function Component | React Refresh | React X |
-| Regular Expressions | Security | Simple Import Sort | SonarJS |
-| Sort Class Members | Standard | Standard JSX | Standard React |
-| Standard TS | Storybook | Stylistic | Tailwind CSS |
-| Tanstack Query | Testing Library | TSDoc | Turbo |
-| TypeScript | Unicorn | Vitest | Vitest TS |
-| XO | YML | You Don't Need Lodash | |
+| Promises | React | React Compiler | React DOM |
+| React Hooks | React Hooks Extra | React Native (Independent Plugin/Config) | React Native Config |
+| React Native Plugin | React Performance | React Prefer Function Component | React Refresh |
+| React X | Regular Expressions | Security | Simple Import Sort |
+| SonarJS | Sort Class Members | Standard | Standard JSX |
+| Standard React | Standard TS | Storybook | Stylistic |
+| Tailwind CSS | Tanstack Query | Testing Library | TSDoc |
+| Turbo | TypeScript | Unicorn | Vitest |
+| Vitest TS | XO | YML | You Don't Need Lodash |
+|
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -59,10 +60,10 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1569** TSX rules
+- **1581** TSX rules
 - **1542** JSX rules
 - **1525** Testing rules
-- **1431** Typescript rules
+- **1443** Typescript rules
 - **1392** Javascript rules
 - **33** JSON rules
 - **24** YML rules
@@ -348,7 +349,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **4511**.
+The amount of packages reviewed and rejected **4532**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -360,12 +361,11 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/7/2025, total known packages **25,435**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/7/2025, total known packages **25,454**. Top 40 next in line, downloads for the previous 28 days:
 
 - 1,322,314 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 905,136 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 884,064 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
-- 628,147 downloads, [eslint-plugin-react-dom](https://www.npmjs.com/package/eslint-plugin-react-dom)
 - 624,651 downloads, [eslint-plugin-react-naming-convention](https://www.npmjs.com/package/eslint-plugin-react-naming-convention)
 - 618,702 downloads, [eslint-plugin-react-web-api](https://www.npmjs.com/package/eslint-plugin-react-web-api)
 - 602,538 downloads, [create-eslint-index](https://www.npmjs.com/package/create-eslint-index)
@@ -402,5 +402,6 @@ Generated on 2/7/2025, total known packages **25,435**. Top 40 next in line, dow
 - 475,676 downloads, [@prettier/plugin-ruby](https://www.npmjs.com/package/@prettier/plugin-ruby)
 - 472,973 downloads, [vuln-vects](https://www.npmjs.com/package/vuln-vects)
 - 472,506 downloads, [sjcl](https://www.npmjs.com/package/sjcl)
+- 471,957 downloads, [eslint-plugin-wdio](https://www.npmjs.com/package/eslint-plugin-wdio)
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

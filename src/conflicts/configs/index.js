@@ -191,6 +191,10 @@ const configList = [
     name: "react-compiler",
   },
   {
+    location: "./src/conflicts/configs/react-dom-config.js",
+    name: "react-dom",
+  },
+  {
     location: "./src/conflicts/configs/react-hooks-config.js",
     name: "react-hooks",
   },

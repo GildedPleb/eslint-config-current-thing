@@ -72,6 +72,7 @@ import prettierYml from "./prettier-yml";
 import promises from "./promises";
 import react from "./react";
 import reactCompiler from "./react-compiler";
+import reactDom from "./react-dom";
 import reactHooks from "./react-hooks";
 import reactHooksExtra from "./react-hooks-extra";
 import reactNative from "./react-native";
@@ -219,6 +220,7 @@ const configs: Config[] = [
     promises,
     react,
     reactCompiler,
+    reactDom,
     reactHooks,
     reactHooksExtra,
     reactNative,

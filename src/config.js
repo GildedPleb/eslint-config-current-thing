@@ -69,6 +69,7 @@ import prettier from "eslint-plugin-prettier";
 import promise from "eslint-plugin-promise";
 import react from "eslint-plugin-react";
 import reactCompiler from "eslint-plugin-react-compiler";
+import reactDom from "eslint-plugin-react-dom";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactHooksExtra from "eslint-plugin-react-hooks-extra";
 import reactNativeIndie from "eslint-plugin-react-native";
@@ -333,6 +334,7 @@ const configGen = ({
         promise,
         react,
         "react-compiler": reactCompiler,
+        "react-dom": reactDom,
         "react-hooks": reactHooks,
         "react-hooks-extra": reactHooksExtra,
         "react-native": reactNativeIndie,
@@ -805,6 +807,39 @@ const configGen = ({
 
               ...("eslint-plugin-jasmine" in override
                 ? override["eslint-plugin-jasmine"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      React DOM
+      620,696 monthly downloads
+      ESLint React's ESLint plugin for React DOM related rules.
+      https://github.com/Rel1cx/eslint-react
+      Requires: react-dom
+    */
+    ...(disable.includes("eslint-plugin-react-dom") || threshold > 620_696
+      ? []
+      : [
+          {
+            files: tsFiles,
+            rules: {
+              "react-dom/no-dangerously-set-innerhtml": "warn",
+              "react-dom/no-dangerously-set-innerhtml-with-children": "error",
+              "react-dom/no-find-dom-node": "error",
+              "react-dom/no-missing-button-type": "warn",
+              "react-dom/no-missing-iframe-sandbox": "warn",
+              "react-dom/no-namespace": "error",
+              "react-dom/no-render-return-value": "error",
+              "react-dom/no-script-url": "warn",
+              "react-dom/no-unknown-property": "warn",
+              "react-dom/no-unsafe-iframe-sandbox": "warn",
+              "react-dom/no-unsafe-target-blank": "warn",
+              "react-dom/no-void-elements-with-children": "warn",
+
+              ...("eslint-plugin-react-dom" in override
+                ? override["eslint-plugin-react-dom"]
                 : {}),
             },
           },
