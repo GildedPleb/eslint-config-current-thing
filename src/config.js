@@ -88,6 +88,7 @@ import yml from "eslint-plugin-yml";
 import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
 import * as espree from "espree";
 import globals from "globals";
+import gts from "gts";
 import jsoncEslintParser from "jsonc-eslint-parser";
 import tomlEslintParser from "toml-eslint-parser";
 import tseslint from "typescript-eslint";
@@ -805,6 +806,62 @@ const configGen = ({
               ...("eslint-config-xo" in override
                 ? override["eslint-config-xo"]
                 : {}),
+            },
+          },
+        ]),
+
+    /*
+      Google Typescript Style
+      841,359 monthly downloads
+      Google TypeScript Style
+      https://github.com/google/gts#readme
+      Requires: n, prettier
+    */
+    ...(disable.includes("gts") || threshold > 841_359
+      ? []
+      : [
+          {
+            files: jsFiles,
+            rules: {
+              "@stylistic/arrow-parens": 0,
+              "@stylistic/brace-style": 0,
+              "@stylistic/indent": 0,
+              "@stylistic/indent-binary-ops": 0,
+              "@stylistic/operator-linebreak": 0,
+              "@stylistic/quote-props": 0,
+              "@stylistic/quotes": 0,
+              "@stylistic/semi": 0,
+              "@stylistic/yield-star-spacing": 0,
+              "comma-dangle": 0,
+              "generator-star-spacing": 0,
+              indent: 0,
+              semi: 0,
+              "space-before-function-paren": 0,
+              "unicorn/no-nested-ternary": 0,
+              "yield-star-spacing": 0,
+              ...gts.rules,
+
+              ...("gts" in override ? override.gts : {}),
+            },
+          },
+        ]),
+
+    /*
+      Google Typescript Style - TS
+      841,359 monthly downloads
+      Google TypeScript Style
+      https://github.com/google/gts#readme
+      Requires: n, @typescript-eslint
+    */
+    ...(disable.includes("gts/ts") || threshold > 841_359
+      ? []
+      : [
+          {
+            files: tsFiles,
+            rules: {
+              ...gts.overrides[0].rules,
+
+              ...("gts/ts" in override ? override["gts/ts"] : {}),
             },
           },
         ]),

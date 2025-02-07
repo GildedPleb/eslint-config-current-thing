@@ -309,6 +309,64 @@
         "accessorPairPositioning": "getThenSet"
       }
     ],
+    "@typescript-eslint/ban-ts-comment": [
+      2,
+      {
+        "ts-expect-error": "allow-with-description",
+        "ts-ignore": true,
+        "ts-nocheck": true,
+        "ts-check": false,
+        "minimumDescriptionLength": 3
+      }
+    ],
+    "@typescript-eslint/no-floating-promises": [2],
+    "@typescript-eslint/no-non-null-assertion": [2],
+    "@typescript-eslint/no-use-before-define": [
+      0,
+      {
+        "classes": false,
+        "functions": false,
+        "typedefs": false,
+        "variables": false
+      }
+    ],
+    "@typescript-eslint/no-warning-comments": [0],
+    "@typescript-eslint/no-empty-function": [
+      2,
+      {
+        "allow": ["arrowFunctions", "functions", "methods"]
+      }
+    ],
+    "@typescript-eslint/no-var-requires": [0],
+    "@typescript-eslint/explicit-function-return-type": [
+      2,
+      {
+        "allowExpressions": true,
+        "allowHigherOrderFunctions": true,
+        "allowTypedFunctionExpressions": true,
+        "allowDirectConstAssertionInArrowFunctions": true
+      }
+    ],
+    "@typescript-eslint/explicit-module-boundary-types": [0],
+    "@typescript-eslint/ban-types": [0],
+    "@typescript-eslint/camelcase": [0],
+    "n/no-missing-import": [0],
+    "n/no-empty-function": [0],
+    "n/no-unsupported-features/es-syntax": [
+      2,
+      {
+        "ignores": ["modules"]
+      }
+    ],
+    "n/no-missing-require": [2],
+    "n/shebang": [0],
+    "no-dupe-class-members": [0],
+    "require-atomic-updates": [
+      0,
+      {
+        "allowProperties": false
+      }
+    ],
     "no-relative-import-paths/no-relative-import-paths": [
       1,
       {
@@ -662,16 +720,6 @@
       }
     ],
     "@typescript-eslint/await-thenable": [2],
-    "@typescript-eslint/ban-ts-comment": [
-      2,
-      {
-        "ts-expect-error": "allow-with-description",
-        "ts-ignore": true,
-        "ts-nocheck": true,
-        "ts-check": false,
-        "minimumDescriptionLength": 3
-      }
-    ],
     "@typescript-eslint/ban-tslint-comment": [2],
     "@typescript-eslint/class-literal-property-style": [2, "fields"],
     "@typescript-eslint/class-methods-use-this": [
@@ -715,15 +763,6 @@
         "allowPattern": "",
         "allowPrivateClassPropertyAccess": false,
         "allowProtectedClassPropertyAccess": false
-      }
-    ],
-    "@typescript-eslint/explicit-function-return-type": [
-      2,
-      {
-        "allowExpressions": true,
-        "allowHigherOrderFunctions": true,
-        "allowTypedFunctionExpressions": true,
-        "allowDirectConstAssertionInArrowFunctions": true
       }
     ],
     "@typescript-eslint/init-declarations": [2, "always"],
@@ -771,12 +810,6 @@
       }
     ],
     "@typescript-eslint/no-dynamic-delete": [2],
-    "@typescript-eslint/no-empty-function": [
-      2,
-      {
-        "allow": ["arrowFunctions", "functions", "methods"]
-      }
-    ],
     "@typescript-eslint/no-empty-object-type": [
       2,
       {
@@ -798,7 +831,6 @@
         "allowWithDecorator": true
       }
     ],
-    "@typescript-eslint/no-floating-promises": [2],
     "@typescript-eslint/no-for-in-array": [2],
     "@typescript-eslint/no-implied-eval": [2],
     "@typescript-eslint/no-import-type-side-effects": [2],
@@ -838,7 +870,6 @@
     "@typescript-eslint/no-namespace": [2],
     "@typescript-eslint/no-non-null-asserted-nullish-coalescing": [2],
     "@typescript-eslint/no-non-null-asserted-optional-chain": [2],
-    "@typescript-eslint/no-non-null-assertion": [2],
     "@typescript-eslint/no-redundant-type-constituents": [2],
     "@typescript-eslint/no-require-imports": [
       2,
@@ -890,15 +921,6 @@
       {
         "args": "none",
         "ignoreRestSiblings": true
-      }
-    ],
-    "@typescript-eslint/no-use-before-define": [
-      0,
-      {
-        "classes": false,
-        "functions": false,
-        "typedefs": false,
-        "variables": false
       }
     ],
     "@typescript-eslint/no-useless-constructor": [1],
@@ -2011,7 +2033,6 @@
     ],
     "no-catch-shadow": [1],
     "no-div-regex": [1],
-    "no-dupe-class-members": [0],
     "no-else-return": [
       0,
       {
@@ -2819,19 +2840,11 @@
     "es-x/no-trailing-dynamic-import-commas": [2],
     "n/no-extraneous-import": [2],
     "n/no-extraneous-require": [2],
-    "n/no-missing-import": [0],
-    "n/no-missing-require": [2],
     "n/no-process-exit": [2],
     "n/no-unpublished-bin": [2],
     "n/no-unpublished-import": [2],
     "n/no-unpublished-require": [2],
     "n/no-unsupported-features/es-builtins": [2],
-    "n/no-unsupported-features/es-syntax": [
-      2,
-      {
-        "ignores": ["modules"]
-      }
-    ],
     "n/no-unsupported-features/node-builtins": [2],
     "n/hashbang": [2],
     "@next/next/google-font-display": [1],

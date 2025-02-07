@@ -30,6 +30,8 @@ import functionalStylistic from "./functional-stylistic";
 import functionalTs from "./functional-ts";
 import google from "./google";
 import graphql from "./graphql";
+import gts from "./gts";
+import gtsTs from "./gts-ts";
 import i18next from "./i18next";
 import index from "./import";
 import importSort from "./import-sort";
@@ -172,6 +174,8 @@ const configs: Config[] = [
     functionalTs,
     google,
     graphql,
+    gts,
+    gtsTs,
     i18next,
     importSort,
     importTs,

@@ -199,16 +199,6 @@
       }
     ],
     "mocha/no-mocha-arrows": [0],
-    "no-relative-import-paths/no-relative-import-paths": [
-      1,
-      {
-        "allowedDepth": 2,
-        "allowSameFolder": true
-      }
-    ],
-    "no-unsanitized/property": [2],
-    "no-unsanitized/method": [2],
-    "react-compiler/react-compiler": [2],
     "@stylistic/arrow-parens": [
       0,
       "as-needed",
@@ -216,7 +206,6 @@
         "requireForBlockBody": true
       }
     ],
-    "@stylistic/block-spacing": [0, "always"],
     "@stylistic/brace-style": [
       0,
       "stroustrup",
@@ -259,37 +248,19 @@
         "VariableDeclarator": 1
       }
     ],
-    "@stylistic/object-curly-spacing": [0, "always"],
+    "@stylistic/indent-binary-ops": [0, 2],
     "@stylistic/operator-linebreak": [0, "before"],
+    "@stylistic/quote-props": [0, "consistent-as-needed"],
+    "@stylistic/quotes": [
+      0,
+      "single",
+      {
+        "allowTemplateLiterals": true,
+        "avoidEscape": false
+      }
+    ],
     "@stylistic/semi": [0, "never"],
-    "array-bracket-newline": [0, "consistent"],
-    "array-bracket-spacing": [0, "never"],
-    "array-element-newline": [
-      0,
-      {
-        "minItems": 3,
-        "multiline": true
-      }
-    ],
-    "arrow-parens": [0, "always"],
-    "block-spacing": [0, "always"],
-    "brace-style": [
-      0,
-      "1tbs",
-      {
-        "allowSingleLine": true
-      }
-    ],
-    "camelcase": [
-      2,
-      {
-        "allow": [],
-        "ignoreDestructuring": false,
-        "ignoreGlobals": false,
-        "ignoreImports": false,
-        "properties": "never"
-      }
-    ],
+    "@stylistic/yield-star-spacing": [0, "both"],
     "comma-dangle": [
       0,
       {
@@ -300,37 +271,6 @@
         "objects": "always-multiline"
       }
     ],
-    "comma-spacing": [
-      0,
-      {
-        "after": true,
-        "before": false
-      }
-    ],
-    "comma-style": [
-      0,
-      "last",
-      {
-        "exceptions": {
-          "ArrayExpression": false,
-          "ArrayPattern": false,
-          "ArrowFunctionExpression": false,
-          "CallExpression": false,
-          "FunctionDeclaration": false,
-          "FunctionExpression": false,
-          "ImportDeclaration": false,
-          "NewExpression": false,
-          "ObjectExpression": false,
-          "ObjectPattern": false,
-          "VariableDeclaration": false
-        }
-      }
-    ],
-    "computed-property-spacing": [0, "never"],
-    "constructor-super": [2],
-    "curly": [0, "multi-line"],
-    "eol-last": [0, "always"],
-    "func-call-spacing": [0, "never"],
     "generator-star-spacing": [
       0,
       {
@@ -338,7 +278,6 @@
         "before": false
       }
     ],
-    "guard-for-in": [2],
     "indent": [
       0,
       2,
@@ -382,6 +321,170 @@
         "VariableDeclarator": 1
       }
     ],
+    "semi": [0, "always"],
+    "space-before-function-paren": [
+      0,
+      {
+        "anonymous": "always",
+        "asyncArrow": "always",
+        "named": "never"
+      }
+    ],
+    "unicorn/no-nested-ternary": [0],
+    "yield-star-spacing": [0, "after"],
+    "prettier/prettier": [2],
+    "block-scoped-var": [2],
+    "eqeqeq": [
+      2,
+      "always",
+      {
+        "null": "ignore"
+      }
+    ],
+    "eol-last": [0, "always"],
+    "prefer-arrow-callback": [
+      2,
+      {
+        "allowNamedFunctions": false,
+        "allowUnboundThis": true
+      }
+    ],
+    "no-trailing-spaces": [
+      0,
+      {
+        "ignoreComments": false,
+        "skipBlankLines": false
+      }
+    ],
+    "quotes": [
+      0,
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "no-restricted-properties": [
+      2,
+      {
+        "message": "arguments.callee is deprecated",
+        "object": "arguments",
+        "property": "callee"
+      },
+      {
+        "message": "Please use Number.isFinite instead",
+        "object": "global",
+        "property": "isFinite"
+      },
+      {
+        "message": "Please use Number.isFinite instead",
+        "object": "self",
+        "property": "isFinite"
+      },
+      {
+        "message": "Please use Number.isFinite instead",
+        "object": "window",
+        "property": "isFinite"
+      },
+      {
+        "message": "Please use Number.isNaN instead",
+        "object": "global",
+        "property": "isNaN"
+      },
+      {
+        "message": "Please use Number.isNaN instead",
+        "object": "self",
+        "property": "isNaN"
+      },
+      {
+        "message": "Please use Number.isNaN instead",
+        "object": "window",
+        "property": "isNaN"
+      },
+      {
+        "message": "Please use Object.defineProperty instead.",
+        "property": "__defineGetter__"
+      },
+      {
+        "message": "Please use Object.defineProperty instead.",
+        "property": "__defineSetter__"
+      },
+      {
+        "message": "Use the exponentiation operator (**) instead.",
+        "object": "Math",
+        "property": "pow"
+      }
+    ],
+    "no-relative-import-paths/no-relative-import-paths": [
+      1,
+      {
+        "allowedDepth": 2,
+        "allowSameFolder": true
+      }
+    ],
+    "no-unsanitized/property": [2],
+    "no-unsanitized/method": [2],
+    "react-compiler/react-compiler": [2],
+    "@stylistic/block-spacing": [0, "always"],
+    "@stylistic/object-curly-spacing": [0, "always"],
+    "array-bracket-newline": [0, "consistent"],
+    "array-bracket-spacing": [0, "never"],
+    "array-element-newline": [
+      0,
+      {
+        "minItems": 3,
+        "multiline": true
+      }
+    ],
+    "arrow-parens": [0, "always"],
+    "block-spacing": [0, "always"],
+    "brace-style": [
+      0,
+      "1tbs",
+      {
+        "allowSingleLine": true
+      }
+    ],
+    "camelcase": [
+      2,
+      {
+        "allow": [],
+        "ignoreDestructuring": false,
+        "ignoreGlobals": false,
+        "ignoreImports": false,
+        "properties": "never"
+      }
+    ],
+    "comma-spacing": [
+      0,
+      {
+        "after": true,
+        "before": false
+      }
+    ],
+    "comma-style": [
+      0,
+      "last",
+      {
+        "exceptions": {
+          "ArrayExpression": false,
+          "ArrayPattern": false,
+          "ArrowFunctionExpression": false,
+          "CallExpression": false,
+          "FunctionDeclaration": false,
+          "FunctionExpression": false,
+          "ImportDeclaration": false,
+          "NewExpression": false,
+          "ObjectExpression": false,
+          "ObjectPattern": false,
+          "VariableDeclaration": false
+        }
+      }
+    ],
+    "computed-property-spacing": [0, "never"],
+    "constructor-super": [2],
+    "curly": [0, "multi-line"],
+    "func-call-spacing": [0, "never"],
+    "guard-for-in": [2],
     "jsdoc/require-jsdoc": [
       0,
       {
@@ -492,13 +595,6 @@
     "no-tabs": [0],
     "no-this-before-super": [2],
     "no-throw-literal": [2],
-    "no-trailing-spaces": [
-      0,
-      {
-        "ignoreComments": false,
-        "skipBlankLines": false
-      }
-    ],
     "no-unexpected-multiline": [2],
     "no-unused-vars": [
       2,
@@ -539,7 +635,6 @@
     ],
     "prefer-rest-params": [2],
     "prefer-spread": [2],
-    "prettier/prettier": [2],
     "quote-props": [
       0,
       "as-needed",
@@ -549,15 +644,7 @@
         "unnecessary": true
       }
     ],
-    "quotes": [
-      0,
-      "single",
-      {
-        "avoidEscape": true
-      }
-    ],
     "rest-spread-spacing": [0, "never"],
-    "semi": [0, "always"],
     "semi-spacing": [
       0,
       {
@@ -566,14 +653,6 @@
       }
     ],
     "space-before-blocks": [0, "always"],
-    "space-before-function-paren": [
-      0,
-      {
-        "anonymous": "always",
-        "asyncArrow": "always",
-        "named": "never"
-      }
-    ],
     "spaced-comment": [
       2,
       "always",
@@ -596,7 +675,6 @@
         "before": false
       }
     ],
-    "yield-star-spacing": [0, "after"],
     "simple-import-sort/imports": [2],
     "perfectionist/sort-variable-declarations": [
       2,
@@ -997,7 +1075,6 @@
     ],
     "@stylistic/dot-location": [0, "property"],
     "@stylistic/eol-last": [0],
-    "@stylistic/indent-binary-ops": [0, 2],
     "@stylistic/key-spacing": [
       0,
       {
@@ -1083,15 +1160,6 @@
         "switches": "never"
       }
     ],
-    "@stylistic/quote-props": [0, "consistent-as-needed"],
-    "@stylistic/quotes": [
-      0,
-      "single",
-      {
-        "allowTemplateLiterals": true,
-        "avoidEscape": false
-      }
-    ],
     "@stylistic/rest-spread-spacing": [0, "never"],
     "@stylistic/semi-spacing": [
       0,
@@ -1145,7 +1213,6 @@
         "functionPrototypeMethods": true
       }
     ],
-    "@stylistic/yield-star-spacing": [0, "both"],
     "@stylistic/jsx-closing-bracket-location": [0],
     "@stylistic/jsx-closing-tag-location": [0],
     "@stylistic/jsx-curly-brace-presence": [
@@ -1471,7 +1538,6 @@
     "sonarjs/no-literal-call": [2],
     "sonarjs/reduce-initial-value": [2],
     "sonarjs/no-async-constructor": [2],
-    "block-scoped-var": [2],
     "complexity": [0, 20],
     "consistent-return": [
       2,
@@ -1491,13 +1557,6 @@
       {
         "allowKeywords": true,
         "allowPattern": ""
-      }
-    ],
-    "eqeqeq": [
-      2,
-      "always",
-      {
-        "null": "ignore"
       }
     ],
     "eslint-comments/no-aggregating-enable": [1],
@@ -1798,7 +1857,6 @@
     "@eslint-community/eslint-comments/no-duplicate-disable": [2],
     "@eslint-community/eslint-comments/no-unlimited-disable": [2],
     "@eslint-community/eslint-comments/no-unused-enable": [2],
-    "unicorn/no-nested-ternary": [0],
     "jsdoc/check-access": [1],
     "jsdoc/check-alignment": [1],
     "jsdoc/check-examples": [0],
@@ -2950,57 +3008,6 @@
         "name": "top"
       }
     ],
-    "no-restricted-properties": [
-      2,
-      {
-        "message": "arguments.callee is deprecated",
-        "object": "arguments",
-        "property": "callee"
-      },
-      {
-        "message": "Please use Number.isFinite instead",
-        "object": "global",
-        "property": "isFinite"
-      },
-      {
-        "message": "Please use Number.isFinite instead",
-        "object": "self",
-        "property": "isFinite"
-      },
-      {
-        "message": "Please use Number.isFinite instead",
-        "object": "window",
-        "property": "isFinite"
-      },
-      {
-        "message": "Please use Number.isNaN instead",
-        "object": "global",
-        "property": "isNaN"
-      },
-      {
-        "message": "Please use Number.isNaN instead",
-        "object": "self",
-        "property": "isNaN"
-      },
-      {
-        "message": "Please use Number.isNaN instead",
-        "object": "window",
-        "property": "isNaN"
-      },
-      {
-        "message": "Please use Object.defineProperty instead.",
-        "property": "__defineGetter__"
-      },
-      {
-        "message": "Please use Object.defineProperty instead.",
-        "property": "__defineSetter__"
-      },
-      {
-        "message": "Use the exponentiation operator (**) instead.",
-        "object": "Math",
-        "property": "pow"
-      }
-    ],
     "no-unused-labels": [2],
     "no-useless-concat": [2],
     "require-yield": [2],
@@ -3178,13 +3185,6 @@
       {
         "paths": [],
         "patterns": []
-      }
-    ],
-    "prefer-arrow-callback": [
-      2,
-      {
-        "allowNamedFunctions": false,
-        "allowUnboundThis": true
       }
     ],
     "prefer-destructuring": [

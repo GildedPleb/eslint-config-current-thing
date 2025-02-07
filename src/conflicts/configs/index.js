@@ -81,6 +81,8 @@ const configList = [
   },
   { location: "./src/conflicts/configs/google-config.js", name: "google" },
   { location: "./src/conflicts/configs/graphql-config.js", name: "graphql" },
+  { location: "./src/conflicts/configs/gts-config.js", name: "gts" },
+  { location: "./src/conflicts/configs/gts-ts-config.js", name: "gts-ts" },
   { location: "./src/conflicts/configs/i18n-config.js", name: "i18n" },
   {
     location: "./src/conflicts/configs/import-sort-config.js",

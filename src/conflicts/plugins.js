@@ -10,6 +10,7 @@
 // @ts-ignore yes, we need to ignore every import for this to run
 // @ts-ignore yes, we need to ignore every import for this to run
 // @ts-ignore yes, we need to ignore every import for this to run
+// @ts-ignore yes, we need to ignore every import for this to run
 
 // @ts-ignore yes, we need to ignore every import for this to run
 import ava from "eslint-plugin-ava";

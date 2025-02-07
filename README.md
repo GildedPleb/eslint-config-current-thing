@@ -21,22 +21,23 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 | AirBnb | AirBnb Base | AirBnb-Typescript | Ava |
 | Chai Friendly | Comments | Compat | Create React App |
 | CSS Modules | Cypress | ES-X | ESLint |
-| Functional | Google | GraphQL | Import |
-| Import X | Internationalization (i18n) | Jasmine | Jest |
-| Jest Dom | Jest Formatting | JSDoc | JSONC |
-| JSX Accessibility (JSX A11y) | Markdown | MDX | Microsoft SDL |
-| Mocha | NextJS | No Only Tests | No Relative Import Paths |
-| No Unsanitized | No Unused Imports | No Use Extend Native | Node.js |
-| Perfectionist | Playwright | Prefer Arrow | Prettier |
-| Prettier Plugin PackageJSON | Prettier Plugin Tailwind | Promises | React |
-| React Compiler | React Hooks | React Native (Independent Plugin/Config) | React Native Config |
-| React Native Plugin | React Performance | React Prefer Function Component | React Refresh |
-| Regular Expressions | Security | Simple Import Sort | SonarJS |
-| Sort Class Members | Standard | Standard JSX | Standard React |
-| Standard TS | Storybook | Stylistic | Tailwind CSS |
-| Tanstack Query | Testing Library | TSDoc | Turbo |
-| TypeScript | Unicorn | Vitest | Vitest TS |
-| XO | YML | You Don't Need Lodash | |
+| Functional | Google | Google Typescript Style | GraphQL |
+| Import | Import X | Internationalization (i18n) | Jasmine |
+| Jest | Jest Dom | Jest Formatting | JSDoc |
+| JSONC | JSX Accessibility (JSX A11y) | Markdown | MDX |
+| Microsoft SDL | Mocha | NextJS | No Only Tests |
+| No Relative Import Paths | No Unsanitized | No Unused Imports | No Use Extend Native |
+| Node.js | Perfectionist | Playwright | Prefer Arrow |
+| Prettier | Prettier Plugin PackageJSON | Prettier Plugin Tailwind | Promises |
+| React | React Compiler | React Hooks | React Native (Independent Plugin/Config) |
+| React Native Config | React Native Plugin | React Performance | React Prefer Function Component |
+| React Refresh | Regular Expressions | Security | Simple Import Sort |
+| SonarJS | Sort Class Members | Standard | Standard JSX |
+| Standard React | Standard TS | Storybook | Stylistic |
+| Tailwind CSS | Tanstack Query | Testing Library | TSDoc |
+| Turbo | TypeScript | Unicorn | Vitest |
+| Vitest TS | XO | YML | You Don't Need Lodash |
+|
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -59,10 +60,10 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
 - **1528** JSX rules
+- **1514** TSX rules
 - **1511** Testing rules
-- **1506** TSX rules
 - **1378** Javascript rules
-- **1368** Typescript rules
+- **1376** Typescript rules
 - **33** JSON rules
 - **24** YML rules
 - **5** MD rules
@@ -347,7 +348,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **4415**.
+The amount of packages reviewed and rejected **4445**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -359,13 +360,11 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/7/2025, total known packages **25,213**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/7/2025, total known packages **25,412**. Top 40 next in line, downloads for the previous 28 days:
 
 - 1,322,314 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 905,136 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
-- 887,416 downloads, [eslint-restricted-globals](https://www.npmjs.com/package/eslint-restricted-globals)
 - 884,064 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
-- 860,344 downloads, [gts](https://www.npmjs.com/package/gts)
 - 664,429 downloads, [eslint-plugin-formatjs](https://www.npmjs.com/package/eslint-plugin-formatjs)
 - 654,572 downloads, [eslint-plugin-react-hooks-extra](https://www.npmjs.com/package/eslint-plugin-react-hooks-extra)
 - 639,620 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu)
@@ -379,27 +378,29 @@ Generated on 2/7/2025, total known packages **25,213**. Top 40 next in line, dow
 - 587,643 downloads, [@emotion/eslint-plugin](https://www.npmjs.com/package/@emotion/eslint-plugin)
 - 577,291 downloads, [eslint-plugin-sort-destructure-keys](https://www.npmjs.com/package/eslint-plugin-sort-destructure-keys)
 - 557,437 downloads, [eslint-formatter-friendly](https://www.npmjs.com/package/eslint-formatter-friendly)
-- 551,187 downloads, [@gatsbyjs/parcel-namer-relative-to-cwd](https://www.npmjs.com/package/@gatsbyjs/parcel-namer-relative-to-cwd)
 - 546,557 downloads, [@eslint-react/var](https://www.npmjs.com/package/@eslint-react/var)
 - 546,002 downloads, [@eslint-react/ast](https://www.npmjs.com/package/@eslint-react/ast)
 - 545,624 downloads, [@eslint-react/core](https://www.npmjs.com/package/@eslint-react/core)
 - 545,446 downloads, [@eslint-react/jsx](https://www.npmjs.com/package/@eslint-react/jsx)
 - 541,115 downloads, [@nuxt/eslint-config](https://www.npmjs.com/package/@nuxt/eslint-config)
 - 540,835 downloads, [enhance-visitors](https://www.npmjs.com/package/enhance-visitors)
-- 529,880 downloads, [@cush/relative](https://www.npmjs.com/package/@cush/relative)
 - 528,228 downloads, [ts-unused-exports](https://www.npmjs.com/package/ts-unused-exports)
 - 526,458 downloads, [eslint-plugin-toml](https://www.npmjs.com/package/eslint-plugin-toml)
-- 519,816 downloads, [@actions/glob](https://www.npmjs.com/package/@actions/glob)
-- 514,691 downloads, [react-router-dom-v5-compat](https://www.npmjs.com/package/react-router-dom-v5-compat)
 - 514,257 downloads, [@eslint-react/eslint-plugin](https://www.npmjs.com/package/@eslint-react/eslint-plugin)
-- 514,184 downloads, [@resvg/resvg-wasm](https://www.npmjs.com/package/@resvg/resvg-wasm)
-- 513,914 downloads, [@octokit/graphql-schema](https://www.npmjs.com/package/@octokit/graphql-schema)
-- 513,552 downloads, [firebase-functions-test](https://www.npmjs.com/package/firebase-functions-test)
-- 512,318 downloads, [react-native-redash](https://www.npmjs.com/package/react-native-redash)
-- 511,875 downloads, [ts-debounce](https://www.npmjs.com/package/ts-debounce)
-- 511,017 downloads, [@zag-js/checkbox](https://www.npmjs.com/package/@zag-js/checkbox)
-- 510,626 downloads, [@types/mochawesome](https://www.npmjs.com/package/@types/mochawesome)
-- 509,426 downloads, [cson-parser](https://www.npmjs.com/package/cson-parser)
-- 509,258 downloads, [express-async-handler](https://www.npmjs.com/package/express-async-handler)
+- 502,331 downloads, [flowbite-datepicker](https://www.npmjs.com/package/flowbite-datepicker)
+- 502,239 downloads, [browser-headers](https://www.npmjs.com/package/browser-headers)
+- 501,476 downloads, [react-native-image-crop-picker](https://www.npmjs.com/package/react-native-image-crop-picker)
+- 501,471 downloads, [flow-remove-types](https://www.npmjs.com/package/flow-remove-types)
+- 501,386 downloads, [testem](https://www.npmjs.com/package/testem)
+- 501,337 downloads, [chai-nightwatch](https://www.npmjs.com/package/chai-nightwatch)
+- 501,197 downloads, [jsonlint](https://www.npmjs.com/package/jsonlint)
+- 498,497 downloads, [lodash-match-pattern](https://www.npmjs.com/package/lodash-match-pattern)
+- 497,892 downloads, [@pact-foundation/pact](https://www.npmjs.com/package/@pact-foundation/pact)
+- 497,474 downloads, [react-native-qrcode-svg](https://www.npmjs.com/package/react-native-qrcode-svg)
+- 497,144 downloads, [@salesforce/cli](https://www.npmjs.com/package/@salesforce/cli)
+- 497,062 downloads, [semgrator](https://www.npmjs.com/package/semgrator)
+- 496,609 downloads, [auth-header](https://www.npmjs.com/package/auth-header)
+- 496,082 downloads, [eslint-plugin-command](https://www.npmjs.com/package/eslint-plugin-command)
+- 495,390 downloads, [ohm-js](https://www.npmjs.com/package/ohm-js)
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

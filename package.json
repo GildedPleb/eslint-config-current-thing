@@ -166,6 +166,7 @@
     "eslint-plugin-you-dont-need-lodash-underscore": "^6.14.0",
     "espree": "^10.3.0",
     "globals": "^15.14.0",
+    "gts": "^6.0.2",
     "jsonc-eslint-parser": "^2.4.0",
     "prettier": "^3.4.2",
     "prettier-plugin-packagejson": "^2.5.8",
