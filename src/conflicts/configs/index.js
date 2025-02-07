@@ -90,6 +90,20 @@ const configList = [
     location: "./src/conflicts/configs/import-js-ts-config.js",
     name: "import-js-ts",
   },
+  { location: "./src/conflicts/configs/import-x-config.js", name: "import-x" },
+  {
+    location: "./src/conflicts/configs/import-x-react-react-config.js",
+    name: "import-x-react-react",
+  },
+  {
+    location:
+      "./src/conflicts/configs/import-x-react-native-react-native-config.js",
+    name: "import-x-react-native-react-native",
+  },
+  {
+    location: "./src/conflicts/configs/import-x-ts-ts-config.js",
+    name: "import-x-ts-ts",
+  },
   {
     location: "./src/conflicts/configs/import-js-config.js",
     name: "import-js",

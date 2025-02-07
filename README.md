@@ -22,21 +22,21 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 | Chai Friendly | Comments | Compat | Create React App |
 | CSS Modules | Cypress | ES-X | ESLint |
 | Functional | Google | GraphQL | Import |
-| Internationalization (i18n) | Jasmine | Jest | Jest Dom |
-| Jest Formatting | JSDoc | JSONC | JSX Accessibility (JSX A11y) |
-| Markdown | MDX | Microsoft SDL | Mocha |
-| NextJS | No Only Tests | No Unsanitized | No Unused Imports |
-| No Use Extend Native | Node.js | Perfectionist | Playwright |
-| Prefer Arrow | Prettier | Prettier Plugin PackageJSON | Prettier Plugin Tailwind |
-| Promises | React | React Compiler | React Hooks |
-| React Native (Independent Plugin/Config) | React Native Config | React Native Plugin | React Performance |
-| React Prefer Function Component | React Refresh | Regular Expressions | Security |
-| Simple Import Sort | SonarJS | Sort Class Members | Standard |
-| Standard JSX | Standard React | Standard TS | Storybook |
-| Stylistic | Tailwind CSS | Tanstack Query | Testing Library |
-| TSDoc | Turbo | TypeScript | Unicorn |
-| Vitest | Vitest TS | XO | YML |
-| You Don't Need Lodash | | | |
+| Import X | Internationalization (i18n) | Jasmine | Jest |
+| Jest Dom | Jest Formatting | JSDoc | JSONC |
+| JSX Accessibility (JSX A11y) | Markdown | MDX | Microsoft SDL |
+| Mocha | NextJS | No Only Tests | No Unsanitized |
+| No Unused Imports | No Use Extend Native | Node.js | Perfectionist |
+| Playwright | Prefer Arrow | Prettier | Prettier Plugin PackageJSON |
+| Prettier Plugin Tailwind | Promises | React | React Compiler |
+| React Hooks | React Native (Independent Plugin/Config) | React Native Config | React Native Plugin |
+| React Performance | React Prefer Function Component | React Refresh | Regular Expressions |
+| Security | Simple Import Sort | SonarJS | Sort Class Members |
+| Standard | Standard JSX | Standard React | Standard TS |
+| Storybook | Stylistic | Tailwind CSS | Tanstack Query |
+| Testing Library | TSDoc | Turbo | TypeScript |
+| Unicorn | Vitest | Vitest TS | XO |
+| YML | You Don't Need Lodash | | |
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -58,11 +58,11 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1522** JSX rules
-- **1507** TSX rules
-- **1505** Testing rules
-- **1372** Javascript rules
-- **1369** Typescript rules
+- **1527** JSX rules
+- **1510** Testing rules
+- **1505** TSX rules
+- **1377** Javascript rules
+- **1367** Typescript rules
 - **33** JSON rules
 - **24** YML rules
 - **5** MD rules
@@ -347,7 +347,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **4301**.
+The amount of packages reviewed and rejected **4369**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -359,9 +359,8 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/6/2025, total known packages **25,041**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/7/2025, total known packages **25,109**. Top 40 next in line, downloads for the previous 28 days:
 
-- 2,542,801 downloads, [eslint-plugin-import-x](https://www.npmjs.com/package/eslint-plugin-import-x)
 - 1,322,314 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 1,196,631 downloads, [toml-eslint-parser](https://www.npmjs.com/package/toml-eslint-parser)
 - 943,328 downloads, [eslint-plugin-no-relative-import-paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)
@@ -390,16 +389,17 @@ Generated on 2/6/2025, total known packages **25,041**. Top 40 next in line, dow
 - 540,835 downloads, [enhance-visitors](https://www.npmjs.com/package/enhance-visitors)
 - 528,228 downloads, [ts-unused-exports](https://www.npmjs.com/package/ts-unused-exports)
 - 526,458 downloads, [eslint-plugin-toml](https://www.npmjs.com/package/eslint-plugin-toml)
-- 521,473 downloads, [@plotly/d3](https://www.npmjs.com/package/@plotly/d3)
-- 520,636 downloads, [single-spa-react](https://www.npmjs.com/package/single-spa-react)
-- 519,794 downloads, [string.prototype.replaceall](https://www.npmjs.com/package/string.prototype.replaceall)
-- 519,652 downloads, [@axelar-network/axelar-cgp-solidity](https://www.npmjs.com/package/@axelar-network/axelar-cgp-solidity)
-- 518,729 downloads, [@react-native-google-signin/google-signin](https://www.npmjs.com/package/@react-native-google-signin/google-signin)
-- 518,438 downloads, [@sap/hdi-deploy](https://www.npmjs.com/package/@sap/hdi-deploy)
-- 518,211 downloads, [prettier-plugin-astro](https://www.npmjs.com/package/prettier-plugin-astro)
-- 518,040 downloads, [@sanity/diff](https://www.npmjs.com/package/@sanity/diff)
-- 517,391 downloads, [prettier-plugin-sh](https://www.npmjs.com/package/prettier-plugin-sh)
-- 516,742 downloads, [@ui5/builder](https://www.npmjs.com/package/@ui5/builder)
+- 516,015 downloads, [cbor-x](https://www.npmjs.com/package/cbor-x)
 - 515,983 downloads, [@tanstack/vue-query](https://www.npmjs.com/package/@tanstack/vue-query)
+- 515,687 downloads, [gatsby-plugin-image](https://www.npmjs.com/package/gatsby-plugin-image)
+- 515,550 downloads, [next-pwa](https://www.npmjs.com/package/next-pwa)
+- 515,529 downloads, [vitest-fetch-mock](https://www.npmjs.com/package/vitest-fetch-mock)
+- 515,257 downloads, [create-storybook](https://www.npmjs.com/package/create-storybook)
+- 514,990 downloads, [tap-mocha-reporter](https://www.npmjs.com/package/tap-mocha-reporter)
+- 514,691 downloads, [react-router-dom-v5-compat](https://www.npmjs.com/package/react-router-dom-v5-compat)
+- 514,257 downloads, [@eslint-react/eslint-plugin](https://www.npmjs.com/package/@eslint-react/eslint-plugin)
+- 514,184 downloads, [@resvg/resvg-wasm](https://www.npmjs.com/package/@resvg/resvg-wasm)
+- 513,914 downloads, [@octokit/graphql-schema](https://www.npmjs.com/package/@octokit/graphql-schema)
+- 513,552 downloads, [firebase-functions-test](https://www.npmjs.com/package/firebase-functions-test)
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

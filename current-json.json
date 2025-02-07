@@ -70,6 +70,7 @@
     "html",
     "i18next",
     "import",
+    "import-x",
     "jasmine",
     "jest:eslint-plugin-jest@28.11.0",
     "jest-dom",

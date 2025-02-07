@@ -4,6 +4,26 @@
       "version": "detect",
       "pragma": "React"
     },
+    "import-x/extensions": [
+      ".ts",
+      ".tsx",
+      ".cts",
+      ".mts",
+      ".js",
+      ".jsx",
+      ".cjs",
+      ".mjs"
+    ],
+    "import-x/resolver": {
+      "node": {
+        "extensions": [".js", ".web.js", ".ios.js", ".android.js"]
+      },
+      "typescript": true
+    },
+    "import-x/external-module-folders": ["node_modules", "node_modules/@types"],
+    "import-x/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx", ".cts", ".mts"]
+    },
     "jsdoc": {
       "mode": "typescript"
     },
@@ -1305,6 +1325,7 @@
     "import/no-named-default": [2],
     "import/no-webpack-loader-syntax": [2],
     "tsdoc/syntax": [2],
+    "import-x/named": [0],
     "security/detect-buffer-noassert": [1],
     "security/detect-child-process": [1],
     "security/detect-disable-mustache-escape": [1],
@@ -3080,10 +3101,7 @@
       {
         "allowEmptyReject": false
       }
-    ],
-    "pathmark/add-eof": [1],
-    "pathmark/add-path": [1],
-    "pathmark/check-path": [1]
+    ]
   },
   "plugins": [
     "@",
@@ -3110,6 +3128,7 @@
     "html",
     "i18next",
     "import",
+    "import-x",
     "jasmine",
     "jest:eslint-plugin-jest@28.11.0",
     "jest-dom",
@@ -3153,8 +3172,7 @@
     "unused-imports:unused-imports",
     "vitest:vitest@1.1.24",
     "yml:eslint-plugin-yml@1.16.0",
-    "you-dont-need-lodash-underscore",
-    "pathmark"
+    "you-dont-need-lodash-underscore"
   ],
   "language": "@/js",
   "languageOptions": {

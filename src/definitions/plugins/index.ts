@@ -19,6 +19,7 @@ import html from "./html";
 import i18next from "./i18next";
 import importPlugin from "./import";
 import importSort from "./import-sort";
+import importX from "./import-x";
 import jasmine from "./jasmine";
 import jest from "./jest";
 import jestDom from "./jest-dom";
@@ -101,6 +102,7 @@ const plugins = [
     i18next,
     importPlugin,
     importSort,
+    importX,
     jasmine,
     jest,
     jestDom,

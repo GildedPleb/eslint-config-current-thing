@@ -34,6 +34,10 @@ import i18next from "./i18next";
 import index from "./import";
 import importSort from "./import-sort";
 import importTs from "./import-ts";
+import importX from "./import-x";
+import importXReact from "./import-x-react";
+import importXReactNative from "./import-x-react-native";
+import importXTs from "./import-x-ts";
 import jasmine from "./jasmine";
 import jest from "./jest";
 import jestDom from "./jest-dom";
@@ -170,6 +174,10 @@ const configs: Config[] = [
     i18next,
     importSort,
     importTs,
+    importX,
+    importXReact,
+    importXReactNative,
+    importXTs,
     index,
     jasmine,
     jest,

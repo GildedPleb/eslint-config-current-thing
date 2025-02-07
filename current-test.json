@@ -1,5 +1,14 @@
 {
   "settings": {
+    "import-x/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".mjs", ".cjs"],
+        "includeScoped": true,
+        "paths": ["node_modules"],
+        "resolvePaths": ["node_modules"]
+      },
+      "typescript": {}
+    },
     "import/core-modules": [],
     "import/extensions": [".js", ".mjs", ".jsx", ".ts", ".tsx", ".d.ts"],
     "import/external-module-folders": ["node_modules", "node_modules/@types"],
@@ -819,6 +828,14 @@
     "jest-formatting/padding-around-test-blocks": [2],
     "playwright/no-standalone-expect": [0],
     "compat/compat": [2],
+    "import-x/no-unresolved": [2],
+    "import-x/named": [2],
+    "import-x/namespace": [2],
+    "import-x/default": [2],
+    "import-x/export": [2],
+    "import-x/no-named-as-default": [1],
+    "import-x/no-named-as-default-member": [1],
+    "import-x/no-duplicates": [1],
     "security/detect-buffer-noassert": [1],
     "security/detect-child-process": [1],
     "security/detect-disable-mustache-escape": [1],
@@ -2061,20 +2078,6 @@
     "es-x/no-set-prototype-symmetricdifference": [2],
     "es-x/no-set-prototype-union": [2],
     "es-x/no-trailing-dynamic-import-commas": [2],
-    "testing-library/await-async-events": [
-      2,
-      {
-        "eventModule": "userEvent"
-      }
-    ],
-    "testing-library/no-await-sync-events": [
-      2,
-      {
-        "eventModules": ["fire-event"]
-      }
-    ],
-    "testing-library/no-global-regexp-flag-in-query": [2],
-    "testing-library/no-manual-cleanup": [2],
     "n/no-extraneous-import": [2],
     "n/no-extraneous-require": [2],
     "n/no-missing-import": [0],
@@ -2092,6 +2095,20 @@
     ],
     "n/no-unsupported-features/node-builtins": [2],
     "n/hashbang": [2],
+    "testing-library/await-async-events": [
+      2,
+      {
+        "eventModule": "userEvent"
+      }
+    ],
+    "testing-library/no-await-sync-events": [
+      2,
+      {
+        "eventModules": ["fire-event"]
+      }
+    ],
+    "testing-library/no-global-regexp-flag-in-query": [2],
+    "testing-library/no-manual-cleanup": [2],
     "@next/next/google-font-display": [1],
     "@next/next/google-font-preconnect": [1],
     "@next/next/next-script-for-ga": [1],
@@ -3116,10 +3133,7 @@
     "indent-legacy": [0],
     "no-confusing-arrow": [0],
     "react/jsx-space-before-closing": [0],
-    "require-yield": [2],
-    "pathmark/add-eof": [1],
-    "pathmark/add-path": [1],
-    "pathmark/check-path": [1]
+    "require-yield": [2]
   },
   "plugins": [
     "@",
@@ -3146,6 +3160,7 @@
     "html",
     "i18next",
     "import",
+    "import-x",
     "jasmine",
     "jest:eslint-plugin-jest@28.11.0",
     "jest-dom",
@@ -3189,8 +3204,7 @@
     "unused-imports:unused-imports",
     "vitest:vitest@1.1.24",
     "yml:eslint-plugin-yml@1.16.0",
-    "you-dont-need-lodash-underscore",
-    "pathmark"
+    "you-dont-need-lodash-underscore"
   ],
   "language": "@/js",
   "languageOptions": {

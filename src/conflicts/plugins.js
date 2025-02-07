@@ -48,6 +48,8 @@ import importPlugin from "eslint-plugin-import";
 // @ts-ignore yes, we need to ignore every import for this to run
 import importSort from "eslint-plugin-simple-import-sort";
 // @ts-ignore yes, we need to ignore every import for this to run
+import importX from "eslint-plugin-import-x";
+// @ts-ignore yes, we need to ignore every import for this to run
 import jasmine from "eslint-plugin-jasmine";
 // @ts-ignore yes, we need to ignore every import for this to run
 import jest from "eslint-plugin-jest";
@@ -183,6 +185,7 @@ const plugins = {
   html,
   i18next,
   import: importPlugin,
+  "import-x": importX,
   jasmine,
   jest,
   "jest-dom": jestDom,

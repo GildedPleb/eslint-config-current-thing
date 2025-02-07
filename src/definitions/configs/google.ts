@@ -19,7 +19,7 @@ export default {
     },
   ],
   requiredPlugins: ["jsdoc"],
-  rules: ` "array-bracket-newline": 0,
+  rules: `"array-bracket-newline": 0,
     "array-bracket-spacing": [2, "never"],
     "array-element-newline": 0,
     "arrow-parens": [2, "always"],

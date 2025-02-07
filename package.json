@@ -121,6 +121,7 @@
     "eslint-plugin-html": "^8.1.2",
     "eslint-plugin-i18next": "^6.1.1",
     "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-import-x": "^4.6.1",
     "eslint-plugin-jasmine": "^4.2.2",
     "eslint-plugin-jest": "^28.11.0",
     "eslint-plugin-jest-dom": "^5.5.0",
