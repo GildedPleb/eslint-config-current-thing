@@ -24,6 +24,7 @@ import cypress from "./cypress";
 import emotion from "./emotion";
 import es from "./es";
 import eslint from "./eslint";
+import formatJs from "./formatjs";
 import functional from "./functional";
 import functionalComponents from "./functional-components";
 import functionalStylistic from "./functional-stylistic";
@@ -168,6 +169,7 @@ const configs: Config[] = [
     emotion,
     es,
     eslint,
+    formatJs,
     functional,
     functionalComponents,
     functionalStylistic,

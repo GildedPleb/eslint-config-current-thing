@@ -62,6 +62,7 @@ const configList = [
   { location: "./src/conflicts/configs/cypress-config.js", name: "cypress" },
   { location: "./src/conflicts/configs/es-x-config.js", name: "es-x" },
   { location: "./src/conflicts/configs/eslint-config.js", name: "eslint" },
+  { location: "./src/conflicts/configs/formatjs-config.js", name: "formatjs" },
   {
     location: "./src/conflicts/configs/functional-config.js",
     name: "functional",

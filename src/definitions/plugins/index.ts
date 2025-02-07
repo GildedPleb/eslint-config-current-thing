@@ -11,6 +11,7 @@ import cypress from "./cypress";
 import emotion from "./emotion";
 import es from "./es";
 import flowtype from "./flowtype";
+import formatjs from "./formatjs";
 import functional from "./functional";
 import functionalComponents from "./functional-components";
 import graphql from "./graphql";
@@ -95,6 +96,7 @@ const plugins = [
     emotion,
     es,
     flowtype,
+    formatjs,
     functional,
     functionalComponents,
     graphql,

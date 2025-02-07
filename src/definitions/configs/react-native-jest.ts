@@ -32,6 +32,10 @@ export default {
   ],
   requiredPlugins: ["react-native"],
   rules: `"react-native/no-inline-styles": 0,
-    quotes: [1, "single", { avoidEscape: true, allowTemplateLiterals: true }],`,
+    quotes: [
+      1,
+      "single",
+      { allowTemplateLiterals: true, avoidEscape: true },
+    ],`,
 } satisfies Config;
 // EOF

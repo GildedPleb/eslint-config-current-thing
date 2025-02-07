@@ -183,6 +183,38 @@
     "you-dont-need-lodash-underscore/union-by": [1],
     "you-dont-need-lodash-underscore/is-array-buffer": [1],
     "i18next/no-literal-string": [2],
+    "formatjs/no-offset": [2],
+    "formatjs/enforce-default-message": [2, "literal"],
+    "formatjs/enforce-description": [2, "literal"],
+    "formatjs/enforce-placeholders": [2],
+    "formatjs/no-emoji": [2],
+    "formatjs/no-multiple-whitespaces": [2],
+    "formatjs/no-multiple-plurals": [2],
+    "formatjs/no-complex-selectors": [
+      2,
+      {
+        "limit": 20
+      }
+    ],
+    "formatjs/no-useless-message": [2],
+    "formatjs/prefer-pound-in-plural": [2],
+    "formatjs/no-missing-icu-plural-one-placeholders": [2],
+    "formatjs/enforce-plural-rules": [
+      2,
+      {
+        "one": true,
+        "other": true
+      }
+    ],
+    "formatjs/no-literal-string-in-jsx": [
+      1,
+      {
+        "props": {
+          "include": [["*", "{label,placeholder,title}"]]
+        }
+      }
+    ],
+    "formatjs/blocklist-elements": [2, ["selectordinal"]],
     "sort-class-members/sort-class-members": [
       2,
       {
@@ -3716,6 +3748,7 @@
     "es",
     "es-x:eslint-plugin-es-x@8.4.1",
     "eslint-comments",
+    "formatjs:eslint-plugin-formatjs@5.2.13",
     "functional:eslint-plugin-functional@8.0.0",
     "header",
     "html",

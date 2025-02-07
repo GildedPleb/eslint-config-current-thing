@@ -35,6 +35,8 @@ import esX from "eslint-plugin-es-x";
 // @ts-ignore yes, we need to ignore every import for this to run
 import es from "eslint-plugin-es";
 // @ts-ignore yes, we need to ignore every import for this to run
+import formatJs from "eslint-plugin-formatjs";
+// @ts-ignore yes, we need to ignore every import for this to run
 import functional from "eslint-plugin-functional";
 // @ts-ignore yes, we need to ignore every import for this to run
 import preferFC from "eslint-plugin-react-prefer-function-component";
@@ -185,6 +187,7 @@ const plugins = {
   es,
   "es-x": esX,
   "eslint-comments": commentsOld,
+  formatjs: formatJs,
   functional,
   header,
   html,

@@ -38,6 +38,7 @@ import cypress from "eslint-plugin-cypress";
 import es from "eslint-plugin-es";
 import esX from "eslint-plugin-es-x";
 import commentsOld from "eslint-plugin-eslint-comments";
+import formatJs from "eslint-plugin-formatjs";
 import functional from "eslint-plugin-functional";
 import header from "eslint-plugin-header";
 import html from "eslint-plugin-html";
@@ -296,6 +297,7 @@ const configGen = ({
         es,
         "es-x": esX,
         "eslint-comments": commentsOld,
+        formatjs: formatJs,
         functional,
         header,
         html,
@@ -760,6 +762,28 @@ const configGen = ({
 
               ...("eslint-plugin-i18next" in override
                 ? override["eslint-plugin-i18next"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      FormatJS
+      638,865 monthly downloads
+      ESLint plugin for formatjs
+      https://github.com/formatjs/formatjs#readme
+      Requires: formatjs
+    */
+    ...(disable.includes("eslint-plugin-formatjs") || threshold > 638_865
+      ? []
+      : [
+          {
+            files,
+            rules: {
+              ...formatJs.configs.recommended.rules,
+
+              ...("eslint-plugin-formatjs" in override
+                ? override["eslint-plugin-formatjs"]
                 : {}),
             },
           },

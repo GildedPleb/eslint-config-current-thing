@@ -21,23 +21,23 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 | AirBnb | AirBnb Base | AirBnb-Typescript | Ava |
 | Chai Friendly | Comments | Compat | Create React App |
 | CSS Modules | Cypress | ES-X | ESLint |
-| Functional | Google | Google Typescript Style | GraphQL |
-| Import | Import X | Internationalization (i18n) | Jasmine |
-| Jest | Jest Dom | Jest Formatting | JSDoc |
-| JSONC | JSX Accessibility (JSX A11y) | Markdown | MDX |
-| Microsoft SDL | Mocha | NextJS | No Only Tests |
-| No Relative Import Paths | No Unsanitized | No Unused Imports | No Use Extend Native |
-| Node.js | Perfectionist | Playwright | Prefer Arrow |
-| Prettier | Prettier Plugin PackageJSON | Prettier Plugin Tailwind | Promises |
-| React | React Compiler | React Hooks | React Native (Independent Plugin/Config) |
-| React Native Config | React Native Plugin | React Performance | React Prefer Function Component |
-| React Refresh | Regular Expressions | Security | Simple Import Sort |
-| SonarJS | Sort Class Members | Standard | Standard JSX |
-| Standard React | Standard TS | Storybook | Stylistic |
-| Tailwind CSS | Tanstack Query | Testing Library | TSDoc |
-| Turbo | TypeScript | Unicorn | Vitest |
-| Vitest TS | XO | YML | You Don't Need Lodash |
-|
+| FormatJS | Functional | Google | Google Typescript Style |
+| GraphQL | Import | Import X | Internationalization (i18n) |
+| Jasmine | Jest | Jest Dom | Jest Formatting |
+| JSDoc | JSONC | JSX Accessibility (JSX A11y) | Markdown |
+| MDX | Microsoft SDL | Mocha | NextJS |
+| No Only Tests | No Relative Import Paths | No Unsanitized | No Unused Imports |
+| No Use Extend Native | Node.js | Perfectionist | Playwright |
+| Prefer Arrow | Prettier | Prettier Plugin PackageJSON | Prettier Plugin Tailwind |
+| Promises | React | React Compiler | React Hooks |
+| React Native (Independent Plugin/Config) | React Native Config | React Native Plugin | React Performance |
+| React Prefer Function Component | React Refresh | Regular Expressions | Security |
+| Simple Import Sort | SonarJS | Sort Class Members | Standard |
+| Standard JSX | Standard React | Standard TS | Storybook |
+| Stylistic | Tailwind CSS | Tanstack Query | Testing Library |
+| TSDoc | Turbo | TypeScript | Unicorn |
+| Vitest | Vitest TS | XO | YML |
+| You Don't Need Lodash | | | |
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -59,11 +59,11 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1528** JSX rules
-- **1514** TSX rules
-- **1511** Testing rules
-- **1378** Javascript rules
-- **1376** Typescript rules
+- **1542** JSX rules
+- **1528** TSX rules
+- **1525** Testing rules
+- **1392** Javascript rules
+- **1390** Typescript rules
 - **33** JSON rules
 - **24** YML rules
 - **5** MD rules
@@ -348,7 +348,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **4445**.
+The amount of packages reviewed and rejected **4461**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -360,12 +360,11 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/7/2025, total known packages **25,412**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/7/2025, total known packages **25,422**. Top 40 next in line, downloads for the previous 28 days:
 
 - 1,322,314 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 905,136 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 884,064 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
-- 664,429 downloads, [eslint-plugin-formatjs](https://www.npmjs.com/package/eslint-plugin-formatjs)
 - 654,572 downloads, [eslint-plugin-react-hooks-extra](https://www.npmjs.com/package/eslint-plugin-react-hooks-extra)
 - 639,620 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu)
 - 638,304 downloads, [eslint-plugin-react-x](https://www.npmjs.com/package/eslint-plugin-react-x)
@@ -387,20 +386,21 @@ Generated on 2/7/2025, total known packages **25,412**. Top 40 next in line, dow
 - 528,228 downloads, [ts-unused-exports](https://www.npmjs.com/package/ts-unused-exports)
 - 526,458 downloads, [eslint-plugin-toml](https://www.npmjs.com/package/eslint-plugin-toml)
 - 514,257 downloads, [@eslint-react/eslint-plugin](https://www.npmjs.com/package/@eslint-react/eslint-plugin)
-- 502,331 downloads, [flowbite-datepicker](https://www.npmjs.com/package/flowbite-datepicker)
-- 502,239 downloads, [browser-headers](https://www.npmjs.com/package/browser-headers)
-- 501,476 downloads, [react-native-image-crop-picker](https://www.npmjs.com/package/react-native-image-crop-picker)
-- 501,471 downloads, [flow-remove-types](https://www.npmjs.com/package/flow-remove-types)
-- 501,386 downloads, [testem](https://www.npmjs.com/package/testem)
-- 501,337 downloads, [chai-nightwatch](https://www.npmjs.com/package/chai-nightwatch)
-- 501,197 downloads, [jsonlint](https://www.npmjs.com/package/jsonlint)
-- 498,497 downloads, [lodash-match-pattern](https://www.npmjs.com/package/lodash-match-pattern)
-- 497,892 downloads, [@pact-foundation/pact](https://www.npmjs.com/package/@pact-foundation/pact)
-- 497,474 downloads, [react-native-qrcode-svg](https://www.npmjs.com/package/react-native-qrcode-svg)
 - 497,144 downloads, [@salesforce/cli](https://www.npmjs.com/package/@salesforce/cli)
 - 497,062 downloads, [semgrator](https://www.npmjs.com/package/semgrator)
 - 496,609 downloads, [auth-header](https://www.npmjs.com/package/auth-header)
 - 496,082 downloads, [eslint-plugin-command](https://www.npmjs.com/package/eslint-plugin-command)
 - 495,390 downloads, [ohm-js](https://www.npmjs.com/package/ohm-js)
+- 495,221 downloads, [@storybook/react-native-theming](https://www.npmjs.com/package/@storybook/react-native-theming)
+- 495,191 downloads, [broccoli-rollup](https://www.npmjs.com/package/broccoli-rollup)
+- 494,707 downloads, [react-native-dotenv](https://www.npmjs.com/package/react-native-dotenv)
+- 494,430 downloads, [less-openui5](https://www.npmjs.com/package/less-openui5)
+- 494,173 downloads, [serverless-plugin-datadog](https://www.npmjs.com/package/serverless-plugin-datadog)
+- 494,147 downloads, [express-ws](https://www.npmjs.com/package/express-ws)
+- 493,820 downloads, [react-country-flag](https://www.npmjs.com/package/react-country-flag)
+- 493,404 downloads, [webpack-retry-chunk-load-plugin](https://www.npmjs.com/package/webpack-retry-chunk-load-plugin)
+- 492,888 downloads, [@vanilla-extract/css-utils](https://www.npmjs.com/package/@vanilla-extract/css-utils)
+- 492,464 downloads, [@swc/plugin-styled-components](https://www.npmjs.com/package/@swc/plugin-styled-components)
+- 491,862 downloads, [gatsby-transformer-sharp](https://www.npmjs.com/package/gatsby-transformer-sharp)
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->
