@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/prettier.ts
+// PathMark: ./src/definitions/configs/prettier-plugin.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

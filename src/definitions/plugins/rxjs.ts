@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/plugins/sdl.ts
+// PathMark: ./src/definitions/plugins/rxjs.ts
 import type { Plugin } from ".";
 
 export default {

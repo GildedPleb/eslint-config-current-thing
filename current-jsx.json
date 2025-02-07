@@ -33,7 +33,6 @@
     "reportUnusedDisableDirectives": 1
   },
   "rules": {
-    "no-use-extend-native/no-use-extend-native": [2],
     "react-perf/jsx-no-new-object-as-prop": [2],
     "react-perf/jsx-no-new-array-as-prop": [2],
     "react-perf/jsx-no-new-function-as-prop": [2],
@@ -1832,7 +1831,6 @@
     "jsdoc/tag-lines": [1],
     "jsdoc/text-escaping": [0],
     "jsdoc/valid-types": [1],
-    "react-refresh/only-export-components": [1],
     "accessor-pairs": [
       0,
       {
@@ -2014,6 +2012,7 @@
     "template-curly-spacing": [0, "never"],
     "template-tag-spacing": [0, "never"],
     "unicode-bom": [2, "never"],
+    "react-refresh/only-export-components": [1],
     "simple-import-sort/exports": [2],
     "no-negated-condition": [0],
     "unicorn/better-regex": [0],
@@ -3671,7 +3670,10 @@
     "space-after-keywords": [0],
     "space-before-keywords": [0],
     "space-return-throw-case": [0],
-    "indent-legacy": [0]
+    "indent-legacy": [0],
+    "pathmark/add-eof": [1],
+    "pathmark/add-path": [1],
+    "pathmark/check-path": [1]
   },
   "plugins": [
     "@",
@@ -3741,7 +3743,8 @@
     "unused-imports:unused-imports",
     "vitest:vitest@1.1.24",
     "yml:eslint-plugin-yml@1.16.0",
-    "you-dont-need-lodash-underscore"
+    "you-dont-need-lodash-underscore",
+    "pathmark"
   ],
   "language": "@/js",
   "languageOptions": {

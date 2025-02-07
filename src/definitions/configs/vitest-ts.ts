@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/vitest.ts
+// PathMark: ./src/definitions/configs/vitest-ts.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

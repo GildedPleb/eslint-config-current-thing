@@ -7,6 +7,8 @@ import { createHash } from "node:crypto";
 import chalk from "chalk";
 import * as diff from "diff";
 
+import { LAST_DAY_INTERVAL } from "./constants";
+
 /**
  *
  * @param dateString - formatted like "3/15/24"
@@ -21,18 +23,29 @@ export function isMoreThan1DaysInThePast(dateString: string): boolean {
 }
 
 /**
- * Decides if a cache is invalid
+ * Decides if a cache is invalid based on date criteria
  * @param dateString - formatted like "3/15/24"
- * @returns the outcome
+ * @returns boolean indicating if cache should be invalidated
  */
 export function isMoreThanRandomDaysInThePast(dateString: string): boolean {
   const givenDate = new Date(dateString).getTime();
   const currentDate = Date.now();
   const timeDiff = currentDate - givenDate;
-  const daysDiff = timeDiff / (1000 * 60 * 60 * 24);
-  // first number is how many days to spread this out over? Second number is how many days after is this invalidated?
-  // eslint-disable-next-line sonarjs/pseudo-random -- we can trust it
-  return daysDiff > Math.random() * 60 + 1;
+  const hoursDiff = timeDiff / (1000 * 60 * 60);
+
+  // If cache is less than 24 hours old, never invalidate
+  if (hoursDiff < 24) {
+    return false;
+  }
+
+  // If more than 30 days old, always invalidate
+  if (hoursDiff > 24 * LAST_DAY_INTERVAL) {
+    return true;
+  }
+
+  // For caches between 24 hours and 30 days old, invalidate 0.1% of the time
+  // eslint-disable-next-line sonarjs/pseudo-random -- we do not need secure random
+  return Math.random() < 0.001;
 }
 
 const ADD = "[~~~+]";

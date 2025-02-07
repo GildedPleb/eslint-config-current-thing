@@ -76,5 +76,6 @@ declare module "eslint-plugin-check-file";
 declare module "eslint-plugin-jasmine";
 declare module "eslint-plugin-no-use-extend-native";
 declare module "eslint-plugin-react-prefer-function-component";
+declare module "eslint-plugin-react-compiler";
 
 // EOF

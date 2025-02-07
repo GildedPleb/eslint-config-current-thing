@@ -101,7 +101,6 @@ const investigating = new Set([
   "eslint-plugin-toplevel",
   "eslint-plugin-total-functions",
   "eslint-plugin-tree-shaking",
-  "eslint-plugin-turbo",
   "eslint-plugin-validate-jsx-nesting",
   "eslint-plugin-woke",
   "eslint-plugin-write-good-comments",

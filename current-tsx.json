@@ -36,7 +36,6 @@
     "reportUnusedDisableDirectives": 1
   },
   "rules": {
-    "no-use-extend-native/no-use-extend-native": [2],
     "react-perf/jsx-no-new-object-as-prop": [2],
     "react-perf/jsx-no-new-array-as-prop": [2],
     "react-perf/jsx-no-new-function-as-prop": [2],
@@ -628,7 +627,6 @@
     "regexp/strict": [2],
     "regexp/use-ignore-case": [2],
     "compat/compat": [2],
-    "tsdoc/syntax": [2],
     "@typescript-eslint/adjacent-overload-signatures": [2],
     "@typescript-eslint/array-type": [
       2,
@@ -1306,6 +1304,7 @@
     "import/no-duplicates": [1],
     "import/no-named-default": [2],
     "import/no-webpack-loader-syntax": [2],
+    "tsdoc/syntax": [2],
     "security/detect-buffer-noassert": [1],
     "security/detect-child-process": [1],
     "security/detect-disable-mustache-escape": [1],
@@ -3081,7 +3080,10 @@
       {
         "allowEmptyReject": false
       }
-    ]
+    ],
+    "pathmark/add-eof": [1],
+    "pathmark/add-path": [1],
+    "pathmark/check-path": [1]
   },
   "plugins": [
     "@",
@@ -3151,7 +3153,8 @@
     "unused-imports:unused-imports",
     "vitest:vitest@1.1.24",
     "yml:eslint-plugin-yml@1.16.0",
-    "you-dont-need-lodash-underscore"
+    "you-dont-need-lodash-underscore",
+    "pathmark"
   ],
   "language": "@/js",
   "languageOptions": {

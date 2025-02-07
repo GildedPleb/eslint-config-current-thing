@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/sort-class.ts
+// PathMark: ./src/definitions/configs/tanstack.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

@@ -29,7 +29,6 @@
     "reportUnusedDisableDirectives": 1
   },
   "rules": {
-    "no-use-extend-native/no-use-extend-native": [2],
     "prefer-const": [
       2,
       {
@@ -3027,7 +3026,10 @@
     "space-before-keywords": [0],
     "space-return-throw-case": [0],
     "indent-legacy": [0],
-    "react/jsx-space-before-closing": [0]
+    "react/jsx-space-before-closing": [0],
+    "pathmark/add-eof": [1],
+    "pathmark/add-path": [1],
+    "pathmark/check-path": [1]
   },
   "plugins": [
     "@",
@@ -3097,7 +3099,8 @@
     "unused-imports:unused-imports",
     "vitest:vitest@1.1.24",
     "yml:eslint-plugin-yml@1.16.0",
-    "you-dont-need-lodash-underscore"
+    "you-dont-need-lodash-underscore",
+    "pathmark"
   ],
   "language": "@/js",
   "languageOptions": {

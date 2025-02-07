@@ -58,11 +58,11 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1530** Testing rules
-- **1520** JSX rules
-- **1505** TSX rules
-- **1370** Javascript rules
-- **1367** Typescript rules
+- **1522** JSX rules
+- **1507** TSX rules
+- **1505** Testing rules
+- **1372** Javascript rules
+- **1369** Typescript rules
 - **33** JSON rules
 - **24** YML rules
 - **5** MD rules
@@ -347,7 +347,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **4225**.
+The amount of packages reviewed and rejected **4301**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -359,47 +359,47 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/4/2025, total known packages **25,041**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/6/2025, total known packages **25,041**. Top 40 next in line, downloads for the previous 28 days:
 
+- 2,542,801 downloads, [eslint-plugin-import-x](https://www.npmjs.com/package/eslint-plugin-import-x)
 - 1,322,314 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 1,196,631 downloads, [toml-eslint-parser](https://www.npmjs.com/package/toml-eslint-parser)
-- 1,036,954 downloads, [gts](https://www.npmjs.com/package/gts)
 - 943,328 downloads, [eslint-plugin-no-relative-import-paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)
 - 905,136 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 887,416 downloads, [eslint-restricted-globals](https://www.npmjs.com/package/eslint-restricted-globals)
 - 884,064 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
-- 748,571 downloads, [@nuxtjs/eslint-config](https://www.npmjs.com/package/@nuxtjs/eslint-config)
-- 743,642 downloads, [@eslint-react/jsx](https://www.npmjs.com/package/@eslint-react/jsx)
-- 676,505 downloads, [@eslint-react/types](https://www.npmjs.com/package/@eslint-react/types)
-- 668,756 downloads, [@nuxt/eslint-config](https://www.npmjs.com/package/@nuxt/eslint-config)
-- 665,370 downloads, [@emotion/eslint-plugin](https://www.npmjs.com/package/@emotion/eslint-plugin)
+- 860,344 downloads, [gts](https://www.npmjs.com/package/gts)
 - 664,429 downloads, [eslint-plugin-formatjs](https://www.npmjs.com/package/eslint-plugin-formatjs)
-- 660,879 downloads, [@eslint-react/var](https://www.npmjs.com/package/@eslint-react/var)
-- 660,446 downloads, [@eslint-react/ast](https://www.npmjs.com/package/@eslint-react/ast)
 - 654,572 downloads, [eslint-plugin-react-hooks-extra](https://www.npmjs.com/package/eslint-plugin-react-hooks-extra)
 - 639,620 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu)
-- 638,722 downloads, [@eslint-react/eslint-plugin](https://www.npmjs.com/package/@eslint-react/eslint-plugin)
 - 638,304 downloads, [eslint-plugin-react-x](https://www.npmjs.com/package/eslint-plugin-react-x)
 - 628,147 downloads, [eslint-plugin-react-dom](https://www.npmjs.com/package/eslint-plugin-react-dom)
-- 625,749 downloads, [@eslint-react/core](https://www.npmjs.com/package/@eslint-react/core)
 - 624,651 downloads, [eslint-plugin-react-naming-convention](https://www.npmjs.com/package/eslint-plugin-react-naming-convention)
 - 618,702 downloads, [eslint-plugin-react-web-api](https://www.npmjs.com/package/eslint-plugin-react-web-api)
 - 602,538 downloads, [create-eslint-index](https://www.npmjs.com/package/create-eslint-index)
+- 592,028 downloads, [@nuxtjs/eslint-config](https://www.npmjs.com/package/@nuxtjs/eslint-config)
 - 589,925 downloads, [eslint-plugin-react-debug](https://www.npmjs.com/package/eslint-plugin-react-debug)
+- 587,643 downloads, [@emotion/eslint-plugin](https://www.npmjs.com/package/@emotion/eslint-plugin)
 - 577,291 downloads, [eslint-plugin-sort-destructure-keys](https://www.npmjs.com/package/eslint-plugin-sort-destructure-keys)
-- 569,565 downloads, [@nuxt/eslint-plugin](https://www.npmjs.com/package/@nuxt/eslint-plugin)
-- 568,149 downloads, [indefinite](https://www.npmjs.com/package/indefinite)
-- 567,658 downloads, [jest-fixed-jsdom](https://www.npmjs.com/package/jest-fixed-jsdom)
-- 567,288 downloads, [@sparticuz/chromium](https://www.npmjs.com/package/@sparticuz/chromium)
-- 566,630 downloads, [react-native-keychain](https://www.npmjs.com/package/react-native-keychain)
-- 566,131 downloads, [storyblok-js-client](https://www.npmjs.com/package/storyblok-js-client)
-- 565,698 downloads, [ember-source](https://www.npmjs.com/package/ember-source)
-- 565,363 downloads, [jsdoc-api](https://www.npmjs.com/package/jsdoc-api)
-- 564,820 downloads, [html_codesniffer](https://www.npmjs.com/package/html_codesniffer)
-- 564,085 downloads, [@playwright/browser-chromium](https://www.npmjs.com/package/@playwright/browser-chromium)
-- 563,734 downloads, [@tsd/typescript](https://www.npmjs.com/package/@tsd/typescript)
-- 562,452 downloads, [@sap/cds-foss](https://www.npmjs.com/package/@sap/cds-foss)
-- 561,885 downloads, [url-regex-safe](https://www.npmjs.com/package/url-regex-safe)
-- 561,389 downloads, [morphdom](https://www.npmjs.com/package/morphdom)
+- 557,437 downloads, [eslint-formatter-friendly](https://www.npmjs.com/package/eslint-formatter-friendly)
+- 546,557 downloads, [@eslint-react/var](https://www.npmjs.com/package/@eslint-react/var)
+- 546,002 downloads, [@eslint-react/ast](https://www.npmjs.com/package/@eslint-react/ast)
+- 545,624 downloads, [@eslint-react/core](https://www.npmjs.com/package/@eslint-react/core)
+- 545,446 downloads, [@eslint-react/jsx](https://www.npmjs.com/package/@eslint-react/jsx)
+- 541,115 downloads, [@nuxt/eslint-config](https://www.npmjs.com/package/@nuxt/eslint-config)
+- 540,835 downloads, [enhance-visitors](https://www.npmjs.com/package/enhance-visitors)
+- 528,228 downloads, [ts-unused-exports](https://www.npmjs.com/package/ts-unused-exports)
+- 526,458 downloads, [eslint-plugin-toml](https://www.npmjs.com/package/eslint-plugin-toml)
+- 521,473 downloads, [@plotly/d3](https://www.npmjs.com/package/@plotly/d3)
+- 520,636 downloads, [single-spa-react](https://www.npmjs.com/package/single-spa-react)
+- 519,794 downloads, [string.prototype.replaceall](https://www.npmjs.com/package/string.prototype.replaceall)
+- 519,652 downloads, [@axelar-network/axelar-cgp-solidity](https://www.npmjs.com/package/@axelar-network/axelar-cgp-solidity)
+- 518,729 downloads, [@react-native-google-signin/google-signin](https://www.npmjs.com/package/@react-native-google-signin/google-signin)
+- 518,438 downloads, [@sap/hdi-deploy](https://www.npmjs.com/package/@sap/hdi-deploy)
+- 518,211 downloads, [prettier-plugin-astro](https://www.npmjs.com/package/prettier-plugin-astro)
+- 518,040 downloads, [@sanity/diff](https://www.npmjs.com/package/@sanity/diff)
+- 517,391 downloads, [prettier-plugin-sh](https://www.npmjs.com/package/prettier-plugin-sh)
+- 516,742 downloads, [@ui5/builder](https://www.npmjs.com/package/@ui5/builder)
+- 515,983 downloads, [@tanstack/vue-query](https://www.npmjs.com/package/@tanstack/vue-query)
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

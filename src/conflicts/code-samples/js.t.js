@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/code-samples/js.test.js
+// PathMark: ./src/conflicts/code-samples/js.t.js
 
 /*
      !!! DO NOT EDIT !!!

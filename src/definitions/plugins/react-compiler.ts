@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/plugins/chai.ts
+// PathMark: ./src/definitions/plugins/react-compiler.ts
 import type { Plugin } from ".";
 
 export default {

@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/tailwind-config.ts
+// PathMark: ./src/definitions/configs/react-compiler.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
