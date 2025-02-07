@@ -84,6 +84,7 @@ import reactNativePlug from "./react-native-plug";
 import reactNativeTs from "./react-native-ts";
 import reactPerf from "./react-perf";
 import reactRefresh from "./react-refresh";
+import reactWebApi from "./react-web-api";
 import reactX from "./react-x";
 import regexp from "./regexp";
 import rxjs from "./rxjs";
@@ -233,6 +234,7 @@ const configs: Config[] = [
     reactNativeTs,
     reactPerf,
     reactRefresh,
+    reactWebApi,
     reactX,
     regexp,
     rxjs,

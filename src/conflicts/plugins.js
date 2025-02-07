@@ -117,6 +117,8 @@ import reactPerf from "eslint-plugin-react-perf";
 // @ts-ignore yes, we need to ignore every import for this to run
 import reactRefresh from "eslint-plugin-react-refresh";
 // @ts-ignore yes, we need to ignore every import for this to run
+import reactWebAPI from "eslint-plugin-react-web-api";
+// @ts-ignore yes, we need to ignore every import for this to run
 import reactX from "eslint-plugin-react-x";
 // @ts-ignore yes, we need to ignore every import for this to run
 import regexp from "eslint-plugin-regexp";
@@ -238,6 +240,7 @@ const plugins = {
   "react-perf": reactPerf,
   "react-prefer-function-component": preferFC,
   "react-refresh": reactRefresh,
+  "react-web-api": reactWebAPI,
   "react-x": reactX,
   regexp,
   security,

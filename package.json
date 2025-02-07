@@ -155,6 +155,7 @@
     "eslint-plugin-react-perf": "^3.3.3",
     "eslint-plugin-react-prefer-function-component": "^3.4.0",
     "eslint-plugin-react-refresh": "^0.4.18",
+    "eslint-plugin-react-web-api": "^1.26.2",
     "eslint-plugin-react-x": "^1.26.2",
     "eslint-plugin-regexp": "^2.7.0",
     "eslint-plugin-security": "^3.0.1",

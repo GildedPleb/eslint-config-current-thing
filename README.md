@@ -32,13 +32,13 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 | Promises | React | React Compiler | React DOM |
 | React Hooks | React Hooks Extra | React Naming Convention | React Native (Independent Plugin/Config) |
 | React Native Config | React Native Plugin | React Performance | React Prefer Function Component |
-| React Refresh | React X | Regular Expressions | Security |
-| Simple Import Sort | SonarJS | Sort Class Members | Standard |
-| Standard JSX | Standard React | Standard TS | Storybook |
-| Stylistic | Tailwind CSS | Tanstack Query | Testing Library |
-| TSDoc | Turbo | TypeScript | Unicorn |
-| Vitest | Vitest TS | XO | YML |
-| You Don't Need Lodash | | | |
+| React Refresh | React Web API | React X | Regular Expressions |
+| Security | Simple Import Sort | SonarJS | Sort Class Members |
+| Standard | Standard JSX | Standard React | Standard TS |
+| Storybook | Stylistic | Tailwind CSS | Tanstack Query |
+| Testing Library | TSDoc | Turbo | TypeScript |
+| Unicorn | Vitest | Vitest TS | XO |
+| YML | You Don't Need Lodash | | |
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -60,10 +60,10 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1583** TSX rules
+- **1587** TSX rules
 - **1542** JSX rules
 - **1525** Testing rules
-- **1445** Typescript rules
+- **1449** Typescript rules
 - **1392** Javascript rules
 - **33** JSON rules
 - **24** YML rules
@@ -349,7 +349,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **4551**.
+The amount of packages reviewed and rejected **4576**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -361,12 +361,11 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/7/2025, total known packages **25,515**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/7/2025, total known packages **25,533**. Top 40 next in line, downloads for the previous 28 days:
 
 - 1,322,314 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 905,136 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 884,064 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
-- 618,702 downloads, [eslint-plugin-react-web-api](https://www.npmjs.com/package/eslint-plugin-react-web-api)
 - 602,538 downloads, [create-eslint-index](https://www.npmjs.com/package/create-eslint-index)
 - 592,028 downloads, [@nuxtjs/eslint-config](https://www.npmjs.com/package/@nuxtjs/eslint-config)
 - 589,925 downloads, [eslint-plugin-react-debug](https://www.npmjs.com/package/eslint-plugin-react-debug)
@@ -403,5 +402,6 @@ Generated on 2/7/2025, total known packages **25,515**. Top 40 next in line, dow
 - 471,408 downloads, [twitter-api-v2](https://www.npmjs.com/package/twitter-api-v2)
 - 470,025 downloads, [vega-selections](https://www.npmjs.com/package/vega-selections)
 - 469,335 downloads, [@bufbuild/buf](https://www.npmjs.com/package/@bufbuild/buf)
+- 469,325 downloads, [jest-css-modules](https://www.npmjs.com/package/jest-css-modules)
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

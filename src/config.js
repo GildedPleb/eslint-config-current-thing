@@ -77,6 +77,7 @@ import reactNativeIndie from "eslint-plugin-react-native";
 import reactPerf from "eslint-plugin-react-perf";
 import preferFC from "eslint-plugin-react-prefer-function-component";
 import reactRefresh from "eslint-plugin-react-refresh";
+import reactWebAPI from "eslint-plugin-react-web-api";
 import reactX from "eslint-plugin-react-x";
 import regexp from "eslint-plugin-regexp";
 import security from "eslint-plugin-security";
@@ -343,6 +344,7 @@ const configGen = ({
         "react-perf": reactPerf,
         "react-prefer-function-component": preferFC,
         "react-refresh": reactRefresh,
+        "react-web-api": reactWebAPI,
         "react-x": reactX,
         regexp,
         security,
@@ -782,6 +784,31 @@ const configGen = ({
 
               ...("eslint-plugin-react-x" in override
                 ? override["eslint-plugin-react-x"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      React Web API
+      610,902 monthly downloads
+      ESLint React's ESLint plugin for interacting with Web APIs
+      https://github.com/Rel1cx/eslint-react
+      Requires: react-web-api
+    */
+    ...(disable.includes("eslint-plugin-react-web-api") || threshold > 610_902
+      ? []
+      : [
+          {
+            files: tsFiles,
+            rules: {
+              "react-web-api/no-leaked-event-listener": "warn",
+              "react-web-api/no-leaked-interval": "warn",
+              "react-web-api/no-leaked-resize-observer": "warn",
+              "react-web-api/no-leaked-timeout": "warn",
+
+              ...("eslint-plugin-react-web-api" in override
+                ? override["eslint-plugin-react-web-api"]
                 : {}),
             },
           },
