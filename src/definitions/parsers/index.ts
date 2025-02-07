@@ -4,6 +4,7 @@ import eslint from "./eslint";
 import graphql from "./graphql";
 import jsonc from "./jsonc";
 import md from "./md";
+import toml from "./toml";
 import ts from "./ts";
 import yml from "./yml";
 
@@ -17,7 +18,7 @@ export interface Parser {
   }>;
 }
 
-const parsers: Parser[] = [ts, jsonc, yml, graphql, eslint, md];
+const parsers: Parser[] = [ts, jsonc, yml, graphql, eslint, md, toml];
 
 export default parsers.filter(({ enabled }) => enabled);
 // EOF

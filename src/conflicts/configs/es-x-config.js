@@ -22,6 +22,7 @@ import * as mdx from "eslint-plugin-mdx";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
+import tomlEslintParser from "toml-eslint-parser";
 import tseslint from "typescript-eslint";
 import ymlEslintParser from "yaml-eslint-parser";
 
@@ -132,6 +133,17 @@ const configGen = ({
         },
         parser: eslintMdx,
         sourceType: "module",
+      },
+    },
+    /*
+      TOML
+      A TOML parser that produces output compatible with ESLint
+      https://github.com/ota-meshi/toml-eslint-parser#readme
+    */
+    {
+      files: ["*.toml"],
+      languageOptions: {
+        parser: tomlEslintParser,
       },
     },
     /*

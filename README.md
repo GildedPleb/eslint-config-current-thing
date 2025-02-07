@@ -347,7 +347,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **4369**.
+The amount of packages reviewed and rejected **4382**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -359,10 +359,9 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/7/2025, total known packages **25,109**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/7/2025, total known packages **25,137**. Top 40 next in line, downloads for the previous 28 days:
 
 - 1,322,314 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
-- 1,196,631 downloads, [toml-eslint-parser](https://www.npmjs.com/package/toml-eslint-parser)
 - 943,328 downloads, [eslint-plugin-no-relative-import-paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)
 - 905,136 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 887,416 downloads, [eslint-restricted-globals](https://www.npmjs.com/package/eslint-restricted-globals)
@@ -389,17 +388,18 @@ Generated on 2/7/2025, total known packages **25,109**. Top 40 next in line, dow
 - 540,835 downloads, [enhance-visitors](https://www.npmjs.com/package/enhance-visitors)
 - 528,228 downloads, [ts-unused-exports](https://www.npmjs.com/package/ts-unused-exports)
 - 526,458 downloads, [eslint-plugin-toml](https://www.npmjs.com/package/eslint-plugin-toml)
-- 516,015 downloads, [cbor-x](https://www.npmjs.com/package/cbor-x)
-- 515,983 downloads, [@tanstack/vue-query](https://www.npmjs.com/package/@tanstack/vue-query)
-- 515,687 downloads, [gatsby-plugin-image](https://www.npmjs.com/package/gatsby-plugin-image)
-- 515,550 downloads, [next-pwa](https://www.npmjs.com/package/next-pwa)
-- 515,529 downloads, [vitest-fetch-mock](https://www.npmjs.com/package/vitest-fetch-mock)
-- 515,257 downloads, [create-storybook](https://www.npmjs.com/package/create-storybook)
-- 514,990 downloads, [tap-mocha-reporter](https://www.npmjs.com/package/tap-mocha-reporter)
 - 514,691 downloads, [react-router-dom-v5-compat](https://www.npmjs.com/package/react-router-dom-v5-compat)
 - 514,257 downloads, [@eslint-react/eslint-plugin](https://www.npmjs.com/package/@eslint-react/eslint-plugin)
 - 514,184 downloads, [@resvg/resvg-wasm](https://www.npmjs.com/package/@resvg/resvg-wasm)
 - 513,914 downloads, [@octokit/graphql-schema](https://www.npmjs.com/package/@octokit/graphql-schema)
 - 513,552 downloads, [firebase-functions-test](https://www.npmjs.com/package/firebase-functions-test)
+- 512,318 downloads, [react-native-redash](https://www.npmjs.com/package/react-native-redash)
+- 511,875 downloads, [ts-debounce](https://www.npmjs.com/package/ts-debounce)
+- 511,017 downloads, [@zag-js/checkbox](https://www.npmjs.com/package/@zag-js/checkbox)
+- 510,626 downloads, [@types/mochawesome](https://www.npmjs.com/package/@types/mochawesome)
+- 509,426 downloads, [cson-parser](https://www.npmjs.com/package/cson-parser)
+- 509,258 downloads, [express-async-handler](https://www.npmjs.com/package/express-async-handler)
+- 508,731 downloads, [@plotly/regl](https://www.npmjs.com/package/@plotly/regl)
+- 508,131 downloads, [@ui5/project](https://www.npmjs.com/package/@ui5/project)
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

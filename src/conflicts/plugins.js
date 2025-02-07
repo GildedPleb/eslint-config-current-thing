@@ -155,6 +155,8 @@ import { rules as graphQLRules } from "@graphql-eslint/eslint-plugin";
 // @ts-ignore yes, we need to ignore every import for this to run
 
 // @ts-ignore yes, we need to ignore every import for this to run
+
+// @ts-ignore yes, we need to ignore every import for this to run
 // @ts-ignore yes, we need to ignore every import for this to run
 import { Linter } from "eslint";
 
