@@ -44,6 +44,7 @@ import promises from "./promises";
 import react from "./react";
 import reactCompiler from "./react-compiler";
 import reactHooks from "./react-hooks";
+import reactHooksExtra from "./react-hooks-extra";
 import reactNative from "./react-native";
 import reactNativeIndie from "./react-native-indie";
 import reactPerf from "./react-perf";
@@ -129,6 +130,7 @@ const plugins = [
     react,
     reactCompiler,
     reactHooks,
+    reactHooksExtra,
     reactNative,
     reactNativeIndie,
     reactPerf,

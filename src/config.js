@@ -69,6 +69,7 @@ import promise from "eslint-plugin-promise";
 import react from "eslint-plugin-react";
 import reactCompiler from "eslint-plugin-react-compiler";
 import reactHooks from "eslint-plugin-react-hooks";
+import reactHooksExtra from "eslint-plugin-react-hooks-extra";
 import reactNativeIndie from "eslint-plugin-react-native";
 import reactPerf from "eslint-plugin-react-perf";
 import preferFC from "eslint-plugin-react-prefer-function-component";
@@ -330,6 +331,7 @@ const configGen = ({
         react,
         "react-compiler": reactCompiler,
         "react-hooks": reactHooks,
+        "react-hooks-extra": reactHooksExtra,
         "react-native": reactNativeIndie,
         "react-perf": reactPerf,
         "react-prefer-function-component": preferFC,
@@ -740,6 +742,31 @@ const configGen = ({
 
               ...("eslint-plugin-jasmine" in override
                 ? override["eslint-plugin-jasmine"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      React Hooks Extra
+      625,199 monthly downloads
+      ESLint React's ESLint plugin for React Hooks related rules.
+      https://github.com/Rel1cx/eslint-react
+      Requires: react-hooks-extra
+    */
+    ...(disable.includes("eslint-plugin-react-hooks-extra") ||
+    threshold > 625_199
+      ? []
+      : [
+          {
+            files: tsFiles,
+            rules: {
+              "react-hooks-extra/no-direct-set-state-in-use-effect": "warn",
+              "react-hooks-extra/no-useless-custom-hooks": "warn",
+              "react-hooks-extra/prefer-use-state-lazy-initialization": "warn",
+
+              ...("eslint-plugin-react-hooks-extra" in override
+                ? override["eslint-plugin-react-hooks-extra"]
                 : {}),
             },
           },

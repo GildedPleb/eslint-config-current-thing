@@ -30,14 +30,14 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 | No Use Extend Native | Node.js | Perfectionist | Playwright |
 | Prefer Arrow | Prettier | Prettier Plugin PackageJSON | Prettier Plugin Tailwind |
 | Promises | React | React Compiler | React Hooks |
-| React Native (Independent Plugin/Config) | React Native Config | React Native Plugin | React Performance |
-| React Prefer Function Component | React Refresh | Regular Expressions | Security |
-| Simple Import Sort | SonarJS | Sort Class Members | Standard |
-| Standard JSX | Standard React | Standard TS | Storybook |
-| Stylistic | Tailwind CSS | Tanstack Query | Testing Library |
-| TSDoc | Turbo | TypeScript | Unicorn |
-| Vitest | Vitest TS | XO | YML |
-| You Don't Need Lodash | | | |
+| React Hooks Extra | React Native (Independent Plugin/Config) | React Native Config | React Native Plugin |
+| React Performance | React Prefer Function Component | React Refresh | Regular Expressions |
+| Security | Simple Import Sort | SonarJS | Sort Class Members |
+| Standard | Standard JSX | Standard React | Standard TS |
+| Storybook | Stylistic | Tailwind CSS | Tanstack Query |
+| Testing Library | TSDoc | Turbo | TypeScript |
+| Unicorn | Vitest | Vitest TS | XO |
+| YML | You Don't Need Lodash | | |
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -60,10 +60,10 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
 - **1542** JSX rules
-- **1528** TSX rules
+- **1531** TSX rules
 - **1525** Testing rules
+- **1393** Typescript rules
 - **1392** Javascript rules
-- **1390** Typescript rules
 - **33** JSON rules
 - **24** YML rules
 - **5** MD rules
@@ -348,7 +348,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **4461**.
+The amount of packages reviewed and rejected **4477**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -360,12 +360,11 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/7/2025, total known packages **25,422**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/7/2025, total known packages **25,419**. Top 40 next in line, downloads for the previous 28 days:
 
 - 1,322,314 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 905,136 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 884,064 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
-- 654,572 downloads, [eslint-plugin-react-hooks-extra](https://www.npmjs.com/package/eslint-plugin-react-hooks-extra)
 - 639,620 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu)
 - 638,304 downloads, [eslint-plugin-react-x](https://www.npmjs.com/package/eslint-plugin-react-x)
 - 628,147 downloads, [eslint-plugin-react-dom](https://www.npmjs.com/package/eslint-plugin-react-dom)
@@ -386,13 +385,7 @@ Generated on 2/7/2025, total known packages **25,422**. Top 40 next in line, dow
 - 528,228 downloads, [ts-unused-exports](https://www.npmjs.com/package/ts-unused-exports)
 - 526,458 downloads, [eslint-plugin-toml](https://www.npmjs.com/package/eslint-plugin-toml)
 - 514,257 downloads, [@eslint-react/eslint-plugin](https://www.npmjs.com/package/@eslint-react/eslint-plugin)
-- 497,144 downloads, [@salesforce/cli](https://www.npmjs.com/package/@salesforce/cli)
-- 497,062 downloads, [semgrator](https://www.npmjs.com/package/semgrator)
-- 496,609 downloads, [auth-header](https://www.npmjs.com/package/auth-header)
 - 496,082 downloads, [eslint-plugin-command](https://www.npmjs.com/package/eslint-plugin-command)
-- 495,390 downloads, [ohm-js](https://www.npmjs.com/package/ohm-js)
-- 495,221 downloads, [@storybook/react-native-theming](https://www.npmjs.com/package/@storybook/react-native-theming)
-- 495,191 downloads, [broccoli-rollup](https://www.npmjs.com/package/broccoli-rollup)
 - 494,707 downloads, [react-native-dotenv](https://www.npmjs.com/package/react-native-dotenv)
 - 494,430 downloads, [less-openui5](https://www.npmjs.com/package/less-openui5)
 - 494,173 downloads, [serverless-plugin-datadog](https://www.npmjs.com/package/serverless-plugin-datadog)
@@ -402,5 +395,12 @@ Generated on 2/7/2025, total known packages **25,422**. Top 40 next in line, dow
 - 492,888 downloads, [@vanilla-extract/css-utils](https://www.npmjs.com/package/@vanilla-extract/css-utils)
 - 492,464 downloads, [@swc/plugin-styled-components](https://www.npmjs.com/package/@swc/plugin-styled-components)
 - 491,862 downloads, [gatsby-transformer-sharp](https://www.npmjs.com/package/gatsby-transformer-sharp)
+- 491,290 downloads, [modify-filename](https://www.npmjs.com/package/modify-filename)
+- 491,171 downloads, [@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config)
+- 489,652 downloads, [dmd](https://www.npmjs.com/package/dmd)
+- 488,814 downloads, [@sap/hdi](https://www.npmjs.com/package/@sap/hdi)
+- 488,651 downloads, [@types/yeoman-generator](https://www.npmjs.com/package/@types/yeoman-generator)
+- 488,146 downloads, [vega-functions](https://www.npmjs.com/package/vega-functions)
+- 487,736 downloads, [tslog](https://www.npmjs.com/package/tslog)
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

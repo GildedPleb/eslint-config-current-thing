@@ -73,6 +73,7 @@ import promises from "./promises";
 import react from "./react";
 import reactCompiler from "./react-compiler";
 import reactHooks from "./react-hooks";
+import reactHooksExtra from "./react-hooks-extra";
 import reactNative from "./react-native";
 import reactNativeFt from "./react-native-ft";
 import reactNativeIndie from "./react-native-indie";
@@ -218,6 +219,7 @@ const configs: Config[] = [
     react,
     reactCompiler,
     reactHooks,
+    reactHooksExtra,
     reactNative,
     reactNativeFt,
     reactNativeIndie,

@@ -194,6 +194,10 @@ const configList = [
     location: "./src/conflicts/configs/react-hooks-config.js",
     name: "react-hooks",
   },
+  {
+    location: "./src/conflicts/configs/react-hooks-extra-config.js",
+    name: "react-hooks-extra",
+  },
   { location: "./src/conflicts/configs/rn-config.js", name: "rn" },
   { location: "./src/conflicts/configs/rn-ip-config.js", name: "rn-ip" },
   { location: "./src/conflicts/configs/rn-jest-config.js", name: "rn-jest" },
