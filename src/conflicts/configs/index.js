@@ -137,6 +137,10 @@ const configList = [
     name: "no-only-test",
   },
   {
+    location: "./src/conflicts/configs/no-relative-import-config.js",
+    name: "no-relative-import",
+  },
+  {
     location: "./src/conflicts/configs/no-use-extend-native-config.js",
     name: "no-use-extend-native",
   },

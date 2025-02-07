@@ -199,6 +199,13 @@
       }
     ],
     "mocha/no-mocha-arrows": [0],
+    "no-relative-import-paths/no-relative-import-paths": [
+      1,
+      {
+        "allowedDepth": 2,
+        "allowSameFolder": true
+      }
+    ],
     "no-unsanitized/property": [2],
     "no-unsanitized/method": [2],
     "react-compiler/react-compiler": [2],
@@ -3727,6 +3734,7 @@
     "mocha",
     "n:eslint-plugin-n@17.15.1",
     "no-only-tests",
+    "no-relative-import-paths",
     "no-unsanitized:eslint-plugin-no-unsanitized@4.1.2",
     "no-use-extend-native:eslint-plugin-no-use-extend-native@0.7.2",
     "node",

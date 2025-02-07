@@ -60,6 +60,7 @@
     "mocha",
     "n:eslint-plugin-n@17.15.1",
     "no-only-tests",
+    "no-relative-import-paths",
     "no-unsanitized:eslint-plugin-no-unsanitized@4.1.2",
     "no-use-extend-native:eslint-plugin-no-use-extend-native@0.7.2",
     "node",

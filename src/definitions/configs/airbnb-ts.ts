@@ -20,7 +20,7 @@ export default {
     },
   ],
   requiredPlugins: ["@typescript-eslint", "import", "react"],
-  rules: ` "@typescript-eslint/default-param-last": 2,
+  rules: `"@typescript-eslint/default-param-last": 2,
     "@typescript-eslint/dot-notation": [2, { allowKeywords: true }],
     "@typescript-eslint/naming-convention": [
       2,

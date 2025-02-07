@@ -53,6 +53,7 @@ import mocha from "./mocha";
 import nextjs from "./nextjs";
 import nextjsConfig from "./nextjs-config";
 import noOnlyTest from "./no-only-test";
+import noRelativeImport from "./no-relative-import";
 import noUseExtendNative from "./no-use-extend-native";
 import node from "./node";
 import perfectionist from "./perfectionist";
@@ -195,6 +196,7 @@ const configs: Config[] = [
     nextjsConfig,
     node,
     noOnlyTest,
+    noRelativeImport,
     noUseExtendNative,
     perfectionist,
     playwright,
