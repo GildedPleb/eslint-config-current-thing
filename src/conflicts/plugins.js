@@ -13,6 +13,8 @@
 // @ts-ignore yes, we need to ignore every import for this to run
 
 // @ts-ignore yes, we need to ignore every import for this to run
+import antfu from "eslint-plugin-antfu";
+// @ts-ignore yes, we need to ignore every import for this to run
 import ava from "eslint-plugin-ava";
 // @ts-ignore yes, we need to ignore every import for this to run
 import babelPlugin from "@babel/eslint-plugin";
@@ -180,6 +182,7 @@ const plugins = {
   "@stylistic": stylistic,
   "@tanstack": tanstack,
   "@typescript-eslint": tseslint.plugin,
+  antfu,
   ava,
   "chai-friendly": chaiFriendly,
   "check-file": checkFile,

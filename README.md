@@ -348,7 +348,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **4477**.
+The amount of packages reviewed and rejected **4494**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -360,12 +360,11 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/7/2025, total known packages **25,419**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/7/2025, total known packages **25,451**. Top 40 next in line, downloads for the previous 28 days:
 
 - 1,322,314 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 905,136 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 884,064 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
-- 639,620 downloads, [eslint-plugin-antfu](https://www.npmjs.com/package/eslint-plugin-antfu)
 - 638,304 downloads, [eslint-plugin-react-x](https://www.npmjs.com/package/eslint-plugin-react-x)
 - 628,147 downloads, [eslint-plugin-react-dom](https://www.npmjs.com/package/eslint-plugin-react-dom)
 - 624,651 downloads, [eslint-plugin-react-naming-convention](https://www.npmjs.com/package/eslint-plugin-react-naming-convention)
@@ -386,9 +385,6 @@ Generated on 2/7/2025, total known packages **25,419**. Top 40 next in line, dow
 - 526,458 downloads, [eslint-plugin-toml](https://www.npmjs.com/package/eslint-plugin-toml)
 - 514,257 downloads, [@eslint-react/eslint-plugin](https://www.npmjs.com/package/@eslint-react/eslint-plugin)
 - 496,082 downloads, [eslint-plugin-command](https://www.npmjs.com/package/eslint-plugin-command)
-- 494,707 downloads, [react-native-dotenv](https://www.npmjs.com/package/react-native-dotenv)
-- 494,430 downloads, [less-openui5](https://www.npmjs.com/package/less-openui5)
-- 494,173 downloads, [serverless-plugin-datadog](https://www.npmjs.com/package/serverless-plugin-datadog)
 - 494,147 downloads, [express-ws](https://www.npmjs.com/package/express-ws)
 - 493,820 downloads, [react-country-flag](https://www.npmjs.com/package/react-country-flag)
 - 493,404 downloads, [webpack-retry-chunk-load-plugin](https://www.npmjs.com/package/webpack-retry-chunk-load-plugin)
@@ -402,5 +398,9 @@ Generated on 2/7/2025, total known packages **25,419**. Top 40 next in line, dow
 - 488,651 downloads, [@types/yeoman-generator](https://www.npmjs.com/package/@types/yeoman-generator)
 - 488,146 downloads, [vega-functions](https://www.npmjs.com/package/vega-functions)
 - 487,736 downloads, [tslog](https://www.npmjs.com/package/tslog)
+- 487,146 downloads, [@syncfusion/ej2-navigations](https://www.npmjs.com/package/@syncfusion/ej2-navigations)
+- 487,110 downloads, [@wallet-standard/features](https://www.npmjs.com/package/@wallet-standard/features)
+- 485,952 downloads, [chakra-react-select](https://www.npmjs.com/package/chakra-react-select)
+- 484,431 downloads, [esbuild-plugin-copy](https://www.npmjs.com/package/esbuild-plugin-copy)
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

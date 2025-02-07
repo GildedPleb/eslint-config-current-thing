@@ -1,5 +1,6 @@
 // PathMark: ./src/definitions/plugins/index.ts
 
+import antfu from "./antfu";
 import ava from "./ava";
 import babel from "./babel";
 import chai from "./chai";
@@ -86,6 +87,7 @@ export interface Plugin<N extends string> {
 
 const plugins = [
   ...new Set([
+    antfu,
     ava,
     babel,
     chai,

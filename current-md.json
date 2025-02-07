@@ -33,6 +33,7 @@
     "@stylistic",
     "@tanstack:@tanstack/eslint-plugin-query",
     "@typescript-eslint:@typescript-eslint/eslint-plugin@8.23.0",
+    "antfu:antfu@3.0.0",
     "ava:eslint-plugin-ava@15.0.1",
     "chai-friendly:eslint-plugin-chai-friendly@1.0.1",
     "check-file:eslint-plugin-check-file@3.0.0",

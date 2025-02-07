@@ -107,6 +107,7 @@
     "eslint-define-config": "^2.1.0",
     "eslint-import-resolver-typescript": "^3.7.0",
     "eslint-mdx": "^3.1.5",
+    "eslint-plugin-antfu": "^3.0.0",
     "eslint-plugin-ava": "^15.0.1",
     "eslint-plugin-chai-friendly": "^1.0.1",
     "eslint-plugin-check-file": "^3.0.0",

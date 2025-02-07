@@ -29,6 +29,7 @@ import prettierConfig from "eslint-config-prettier";
 import xo from "eslint-config-xo";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
+import antfu from "eslint-plugin-antfu";
 import ava from "eslint-plugin-ava";
 import chaiFriendly from "eslint-plugin-chai-friendly";
 import checkFile from "eslint-plugin-check-file";
@@ -289,6 +290,7 @@ const configGen = ({
         "@stylistic": stylistic,
         "@tanstack": tanstack,
         "@typescript-eslint": tseslint.plugin,
+        antfu,
         ava,
         "chai-friendly": chaiFriendly,
         "check-file": checkFile,
