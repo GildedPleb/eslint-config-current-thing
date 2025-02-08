@@ -69,6 +69,7 @@ import prettier from "eslint-plugin-prettier";
 import promise from "eslint-plugin-promise";
 import react from "eslint-plugin-react";
 import reactCompiler from "eslint-plugin-react-compiler";
+import reactDebug from "eslint-plugin-react-debug";
 import reactDom from "eslint-plugin-react-dom";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactHooksExtra from "eslint-plugin-react-hooks-extra";
@@ -336,6 +337,7 @@ const configGen = ({
         promise,
         react,
         "react-compiler": reactCompiler,
+        "react-debug": reactDebug,
         "react-dom": reactDom,
         "react-hooks": reactHooks,
         "react-hooks-extra": reactHooksExtra,
@@ -809,6 +811,31 @@ const configGen = ({
 
               ...("eslint-plugin-react-web-api" in override
                 ? override["eslint-plugin-react-web-api"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      React Debug
+      614,815 monthly downloads
+      ESLint React's ESLint plugin for debugging related rules.
+      https://github.com/Rel1cx/eslint-react
+      Requires: react-debug
+    */
+    ...(disable.includes("eslint-plugin-react-debug") || threshold > 614_815
+      ? []
+      : [
+          {
+            files: tsFiles,
+            rules: {
+              "react-debug/class-component": "warn",
+              "react-debug/function-component": "warn",
+              "react-debug/hook": "warn",
+              "react-debug/is-from-react": "off",
+
+              ...("eslint-plugin-react-debug" in override
+                ? override["eslint-plugin-react-debug"]
                 : {}),
             },
           },

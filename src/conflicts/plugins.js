@@ -101,6 +101,8 @@ import react from "eslint-plugin-react";
 // @ts-ignore yes, we need to ignore every import for this to run
 import reactCompiler from "eslint-plugin-react-compiler";
 // @ts-ignore yes, we need to ignore every import for this to run
+import reactDebug from "eslint-plugin-react-debug";
+// @ts-ignore yes, we need to ignore every import for this to run
 import reactDom from "eslint-plugin-react-dom";
 // @ts-ignore yes, we need to ignore every import for this to run
 import reactHooks from "eslint-plugin-react-hooks";
@@ -232,6 +234,7 @@ const plugins = {
   promise,
   react,
   "react-compiler": reactCompiler,
+  "react-debug": reactDebug,
   "react-dom": reactDom,
   "react-hooks": reactHooks,
   "react-hooks-extra": reactHooksExtra,

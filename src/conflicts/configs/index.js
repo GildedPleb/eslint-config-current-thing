@@ -191,6 +191,10 @@ const configList = [
     name: "react-compiler",
   },
   {
+    location: "./src/conflicts/configs/react-debug-config.js",
+    name: "react-debug",
+  },
+  {
     location: "./src/conflicts/configs/react-dom-config.js",
     name: "react-dom",
   },

@@ -44,6 +44,7 @@ import prettier from "./prettier";
 import promises from "./promises";
 import react from "./react";
 import reactCompiler from "./react-compiler";
+import reactDebug from "./react-debug";
 import reactDom from "./react-dom";
 import reactHooks from "./react-hooks";
 import reactHooksExtra from "./react-hooks-extra";
@@ -135,6 +136,7 @@ const plugins = [
     promises,
     react,
     reactCompiler,
+    reactDebug,
     reactDom,
     reactHooks,
     reactHooksExtra,
