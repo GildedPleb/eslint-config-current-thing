@@ -107,6 +107,7 @@ import shopifyTs from "./shopify-ts";
 import shopifyTsTypeCheck from "./shopify-ts-typecheck";
 import sonarjs from "./sonarjs";
 import sortClass from "./sort-class";
+import sortDestructure from "./sort-destructure";
 import sortKeys from "./sort-keys";
 import standard from "./standard";
 import standardJsx from "./standard-jsx";
@@ -258,6 +259,7 @@ const configs: Config[] = [
     shopifyTsTypeCheck,
     sonarjs,
     sortClass,
+    sortDestructure,
     sortKeys,
     standard,
     standardJsx,

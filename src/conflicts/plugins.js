@@ -133,6 +133,8 @@ import sonarjs from "eslint-plugin-sonarjs";
 // @ts-ignore yes, we need to ignore every import for this to run
 import sortClassMembers from "eslint-plugin-sort-class-members";
 // @ts-ignore yes, we need to ignore every import for this to run
+import sortDestructure from "eslint-plugin-sort-destructure-keys";
+// @ts-ignore yes, we need to ignore every import for this to run
 import storybook from "eslint-plugin-storybook";
 // @ts-ignore yes, we need to ignore every import for this to run
 import stylistic from "@stylistic/eslint-plugin";
@@ -250,6 +252,7 @@ const plugins = {
   "simple-import-sort": importSort,
   sonarjs,
   "sort-class-members": sortClassMembers,
+  "sort-destructure-keys": sortDestructure,
   storybook,
   tailwindcss,
   "testing-library": testingLibrary,

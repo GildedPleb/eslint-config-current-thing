@@ -40,6 +40,7 @@ const investigating = new Set([
   "eslint-plugin-astro",
   "eslint-plugin-backbone",
   "eslint-plugin-better-styled-components",
+  "eslint-plugin-canonical",
   "eslint-plugin-chai-assert-bdd",
   "eslint-plugin-chai-expect",
   "eslint-plugin-codacy-eslint",

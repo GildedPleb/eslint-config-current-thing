@@ -62,6 +62,7 @@ import security from "./security";
 import shopify from "./shopify";
 import sonarjs from "./sonarjs";
 import sortClass from "./sort-class";
+import sortDestructure from "./sort-destructure";
 import sortKeys from "./sort-keys";
 import storybook from "./storybook";
 import stylistic from "./stylistic";
@@ -154,6 +155,7 @@ const plugins = [
     shopify,
     sonarjs,
     sortClass,
+    sortDestructure,
     sortKeys,
     storybook,
     stylistic,

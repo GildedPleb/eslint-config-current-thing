@@ -85,6 +85,7 @@ import security from "eslint-plugin-security";
 import importSort from "eslint-plugin-simple-import-sort";
 import sonarjs from "eslint-plugin-sonarjs";
 import sortClassMembers from "eslint-plugin-sort-class-members";
+import sortDestructure from "eslint-plugin-sort-destructure-keys";
 import storybook from "eslint-plugin-storybook";
 import tailwindcss from "eslint-plugin-tailwindcss";
 import testingLibrary from "eslint-plugin-testing-library";
@@ -353,6 +354,7 @@ const configGen = ({
         "simple-import-sort": importSort,
         sonarjs,
         "sort-class-members": sortClassMembers,
+        "sort-destructure-keys": sortDestructure,
         storybook,
         tailwindcss,
         "testing-library": testingLibrary,
@@ -992,6 +994,34 @@ const configGen = ({
 
               ...("eslint-plugin-formatjs" in override
                 ? override["eslint-plugin-formatjs"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Sort Destructure Keys
+      684,889 monthly downloads
+      require object destructure key to be sorted
+      https://github.com/mthadley/eslint-plugin-sort-destructure-keys#readme
+      Requires: sort-destructure-keys
+    */
+    ...(disable.includes("eslint-plugin-sort-destructure-keys") ||
+    threshold > 684_889
+      ? []
+      : [
+          {
+            files,
+            rules: {
+              "sort-destructure-keys/sort-destructure-keys": [
+                "error",
+                {
+                  caseSensitive: false,
+                },
+              ],
+
+              ...("eslint-plugin-sort-destructure-keys" in override
+                ? override["eslint-plugin-sort-destructure-keys"]
                 : {}),
             },
           },

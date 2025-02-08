@@ -245,6 +245,10 @@ const configList = [
     location: "./src/conflicts/configs/sort-class-config.js",
     name: "sort-class",
   },
+  {
+    location: "./src/conflicts/configs/sort-destructure-config.js",
+    name: "sort-destructure",
+  },
   { location: "./src/conflicts/configs/standard-config.js", name: "standard" },
   {
     location: "./src/conflicts/configs/standard-jsx-config.js",

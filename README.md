@@ -34,11 +34,12 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 | React Native (Independent Plugin/Config) | React Native Config | React Native Plugin | React Performance |
 | React Prefer Function Component | React Refresh | React Web API | React X |
 | Regular Expressions | Security | Simple Import Sort | SonarJS |
-| Sort Class Members | Standard | Standard JSX | Standard React |
-| Standard TS | Storybook | Stylistic | Tailwind CSS |
-| Tanstack Query | Testing Library | TSDoc | Turbo |
-| TypeScript | Unicorn | Vitest | Vitest TS |
-| XO | YML | You Don't Need Lodash | |
+| Sort Class Members | Sort Destructure Keys | Standard | Standard JSX |
+| Standard React | Standard TS | Storybook | Stylistic |
+| Tailwind CSS | Tanstack Query | Testing Library | TSDoc |
+| Turbo | TypeScript | Unicorn | Vitest |
+| Vitest TS | XO | YML | You Don't Need Lodash |
+|
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -60,11 +61,11 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1591** TSX rules
-- **1542** JSX rules
-- **1525** Testing rules
-- **1453** Typescript rules
-- **1392** Javascript rules
+- **1592** TSX rules
+- **1543** JSX rules
+- **1526** Testing rules
+- **1454** Typescript rules
+- **1393** Javascript rules
 - **33** JSON rules
 - **24** YML rules
 - **5** MD rules
@@ -349,7 +350,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **4630**.
+The amount of packages reviewed and rejected **4869**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -361,47 +362,47 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/7/2025, total known packages **25,497**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/7/2025, total known packages **25,263**. Top 40 next in line, downloads for the previous 28 days:
 
 - 1,322,314 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 905,136 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 884,064 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
-- 602,538 downloads, [create-eslint-index](https://www.npmjs.com/package/create-eslint-index)
-- 587,643 downloads, [@emotion/eslint-plugin](https://www.npmjs.com/package/@emotion/eslint-plugin)
-- 577,291 downloads, [eslint-plugin-sort-destructure-keys](https://www.npmjs.com/package/eslint-plugin-sort-destructure-keys)
-- 557,437 downloads, [eslint-formatter-friendly](https://www.npmjs.com/package/eslint-formatter-friendly)
-- 546,557 downloads, [@eslint-react/var](https://www.npmjs.com/package/@eslint-react/var)
-- 546,002 downloads, [@eslint-react/ast](https://www.npmjs.com/package/@eslint-react/ast)
-- 545,624 downloads, [@eslint-react/core](https://www.npmjs.com/package/@eslint-react/core)
-- 545,446 downloads, [@eslint-react/jsx](https://www.npmjs.com/package/@eslint-react/jsx)
-- 541,115 downloads, [@nuxt/eslint-config](https://www.npmjs.com/package/@nuxt/eslint-config)
-- 540,835 downloads, [enhance-visitors](https://www.npmjs.com/package/enhance-visitors)
-- 528,228 downloads, [ts-unused-exports](https://www.npmjs.com/package/ts-unused-exports)
+- 752,367 downloads, [@emotion/eslint-plugin](https://www.npmjs.com/package/@emotion/eslint-plugin)
 - 526,458 downloads, [eslint-plugin-toml](https://www.npmjs.com/package/eslint-plugin-toml)
 - 514,257 downloads, [@eslint-react/eslint-plugin](https://www.npmjs.com/package/@eslint-react/eslint-plugin)
 - 496,082 downloads, [eslint-plugin-command](https://www.npmjs.com/package/eslint-plugin-command)
 - 491,171 downloads, [@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config)
-- 478,574 downloads, [@eslint-react/types](https://www.npmjs.com/package/@eslint-react/types)
 - 471,957 downloads, [eslint-plugin-wdio](https://www.npmjs.com/package/eslint-plugin-wdio)
 - 469,129 downloads, [meriyah](https://www.npmjs.com/package/meriyah)
-- 462,479 downloads, [@nuxt/eslint-plugin](https://www.npmjs.com/package/@nuxt/eslint-plugin)
-- 459,014 downloads, [@aws-lambda-powertools/metrics](https://www.npmjs.com/package/@aws-lambda-powertools/metrics)
-- 458,250 downloads, [@tiptap/extension-typography](https://www.npmjs.com/package/@tiptap/extension-typography)
-- 458,214 downloads, [playwright-chromium](https://www.npmjs.com/package/playwright-chromium)
-- 457,784 downloads, [react-native-builder-bob](https://www.npmjs.com/package/react-native-builder-bob)
-- 457,678 downloads, [@storybook/addon-ondevice-actions](https://www.npmjs.com/package/@storybook/addon-ondevice-actions)
-- 457,576 downloads, [mdast-util-heading-style](https://www.npmjs.com/package/mdast-util-heading-style)
-- 457,277 downloads, [@vue/apollo-option](https://www.npmjs.com/package/@vue/apollo-option)
 - 457,049 downloads, [eslint-plugin-depend](https://www.npmjs.com/package/eslint-plugin-depend)
-- 456,892 downloads, [@stylistic/stylelint-plugin](https://www.npmjs.com/package/@stylistic/stylelint-plugin)
-- 456,623 downloads, [sh-syntax](https://www.npmjs.com/package/sh-syntax)
-- 456,497 downloads, [jest-mock-axios](https://www.npmjs.com/package/jest-mock-axios)
-- 456,179 downloads, [mj-context-menu](https://www.npmjs.com/package/mj-context-menu)
-- 455,879 downloads, [prettier-plugin-sort-json](https://www.npmjs.com/package/prettier-plugin-sort-json)
-- 455,280 downloads, [@tailwindcss/node](https://www.npmjs.com/package/@tailwindcss/node)
-- 455,100 downloads, [mock-apollo-client](https://www.npmjs.com/package/mock-apollo-client)
-- 455,099 downloads, [vega-dataflow](https://www.npmjs.com/package/vega-dataflow)
-- 454,995 downloads, [eachr](https://www.npmjs.com/package/eachr)
-- 454,844 downloads, [rehype-pretty-code](https://www.npmjs.com/package/rehype-pretty-code)
+- 446,701 downloads, [eslint-typegen](https://www.npmjs.com/package/eslint-typegen)
+- 433,317 downloads, [@eslint/config-inspector](https://www.npmjs.com/package/@eslint/config-inspector)
+- 430,691 downloads, [@remix-run/eslint-config](https://www.npmjs.com/package/@remix-run/eslint-config)
+- 415,308 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp)
+- 410,274 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc)
+- 401,831 downloads, [eslint-plugin-no-jquery](https://www.npmjs.com/package/eslint-plugin-no-jquery)
+- 401,588 downloads, [eslint-plugin-sort-imports-es6-autofix](https://www.npmjs.com/package/eslint-plugin-sort-imports-es6-autofix)
+- 397,532 downloads, [@nuxtjs/eslint-module](https://www.npmjs.com/package/@nuxtjs/eslint-module) - Not Yet Eligible
+- 391,305 downloads, [eslint-plugin-boundaries](https://www.npmjs.com/package/eslint-plugin-boundaries) - Not Yet Eligible
+- 389,973 downloads, [@shopify/eslint-plugin](https://www.npmjs.com/package/@shopify/eslint-plugin) - Not Yet Eligible
+- 388,575 downloads, [@sap/eslint-plugin-cds](https://www.npmjs.com/package/@sap/eslint-plugin-cds) - Not Yet Eligible
+- 387,964 downloads, [@ngrx/eslint-plugin](https://www.npmjs.com/package/@ngrx/eslint-plugin) - Not Yet Eligible
+- 378,459 downloads, [@eslint/markdown](https://www.npmjs.com/package/@eslint/markdown) - Not Yet Eligible
+- 376,440 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit) - Not Yet Eligible
+- 373,925 downloads, [eslint-plugin-astro](https://www.npmjs.com/package/eslint-plugin-astro) - Not Yet Eligible
+- 371,524 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
+- 370,785 downloads, [keep-func-props](https://www.npmjs.com/package/keep-func-props) - Not Yet Eligible
+- 370,498 downloads, [@sap/generator-fiori](https://www.npmjs.com/package/@sap/generator-fiori) - Not Yet Eligible
+- 369,851 downloads, [@carbon/icons-react](https://www.npmjs.com/package/@carbon/icons-react) - Not Yet Eligible
+- 369,455 downloads, [eslint-plugin-relay](https://www.npmjs.com/package/eslint-plugin-relay) - Not Yet Eligible
+- 369,054 downloads, [eslint-plugin-ban](https://www.npmjs.com/package/eslint-plugin-ban) - Not Yet Eligible
+- 368,645 downloads, [cypress-image-snapshot](https://www.npmjs.com/package/cypress-image-snapshot) - Not Yet Eligible
+- 368,378 downloads, [@react-native-community/cli-config-android](https://www.npmjs.com/package/@react-native-community/cli-config-android) - Not Yet Eligible
+- 368,350 downloads, [val-loader](https://www.npmjs.com/package/val-loader) - Not Yet Eligible
+- 368,126 downloads, [@capacitor/haptics](https://www.npmjs.com/package/@capacitor/haptics) - Not Yet Eligible
+- 368,001 downloads, [cypress-if](https://www.npmjs.com/package/cypress-if) - Not Yet Eligible
+- 367,991 downloads, [prettier-plugin-java](https://www.npmjs.com/package/prettier-plugin-java) - Not Yet Eligible
+- 367,692 downloads, [@fluentui/react-hooks](https://www.npmjs.com/package/@fluentui/react-hooks) - Not Yet Eligible
+- 367,502 downloads, [underscore.deep](https://www.npmjs.com/package/underscore.deep) - Not Yet Eligible
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->
