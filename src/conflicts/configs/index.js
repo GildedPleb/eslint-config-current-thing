@@ -281,6 +281,7 @@ const configList = [
     location: "./src/conflicts/configs/testing-library-config.js",
     name: "testing-library",
   },
+  { location: "./src/conflicts/configs/toml-config.js", name: "toml" },
   { location: "./src/conflicts/configs/ts-config.js", name: "ts" },
   { location: "./src/conflicts/configs/tsdoc-config.js", name: "tsdoc" },
   { location: "./src/conflicts/configs/turbo-config.js", name: "turbo" },

@@ -3,7 +3,7 @@ import type { Parser } from ".";
 
 export default {
   definitions: `{
-    files: ["*.toml"],
+    files: tomlFiles,
     languageOptions: {
       parser: tomlEslintParser,
     },

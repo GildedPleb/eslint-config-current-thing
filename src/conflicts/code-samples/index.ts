@@ -6,6 +6,7 @@ import testCodeToLint from "./js.t";
 import jsonCodeToLint from "./json";
 import jsxCodeToLint from "./jsx";
 import mdCodeToLint from "./markdown";
+import tomlCodeToLint from "./toml";
 import tsxCodeToLint from "./tsx";
 import tsCodeToLint from "./typescript";
 import ymlCodeToLint from "./yml";
@@ -61,6 +62,11 @@ const fileList: FileList[] = [
     def: ymlCodeToLint,
     filePath: "./src/conflicts/code-samples/yml.yml",
     short: "yml",
+  },
+  {
+    def: tomlCodeToLint,
+    filePath: "./src/conflicts/code-samples/toml.toml",
+    short: "toml",
   },
   {
     def: cssInJS,

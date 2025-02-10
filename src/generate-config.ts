@@ -82,6 +82,7 @@ const jsonFiles = ["*.json", "**/*.json", "*.json5", "**/*.json5", "*.jsonc", "*
 const ymlFiles = ["**/*.yaml", "**/*.yml"];
 const codeBlocks = ["**/*.md/**", "**/*.mdx/**"];
 const mdFiles = ["**/*.mdx", "**/*.md"];
+const tomlFiles = ["**/*.toml"];
 const graphQLFiles = ["**/*.graphql"];
 
 const TEST_PATTERNS = [

@@ -37,6 +37,7 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import reactWebAPI from "eslint-plugin-react-web-api";
 import reactX from "eslint-plugin-react-x";
 import regexp from "eslint-plugin-regexp";
+import toml from "eslint-plugin-toml";
 import unicorn from "eslint-plugin-unicorn";
 import unusedImports from "eslint-plugin-unused-imports";
 import yml from "eslint-plugin-yml";
@@ -81,6 +82,7 @@ const jsonFiles = [
 const ymlFiles = ["**/*.yaml", "**/*.yml"];
 const codeBlocks = ["**/*.md/**", "**/*.mdx/**"];
 const mdFiles = ["**/*.mdx", "**/*.md"];
+const tomlFiles = ["**/*.toml"];
 const graphQLFiles = ["**/*.graphql"];
 
 const TEST_PATTERNS = [
@@ -180,7 +182,7 @@ const configGen = ({
       https://github.com/ota-meshi/toml-eslint-parser#readme
     */
     {
-      files: ["*.toml"],
+      files: tomlFiles,
       languageOptions: {
         parser: tomlEslintParser,
       },
@@ -267,6 +269,7 @@ const configGen = ({
         "react-web-api": reactWebAPI,
         "react-x": reactX,
         regexp,
+        toml,
         unicorn,
         "unused-imports": unusedImports,
         vitest,
@@ -279,7 +282,7 @@ const configGen = ({
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: antfu, command, @typescript-eslint, n, import-x, yml, @stylistic, vitest, no-only-tests, jsdoc, jsonc, perfectionist, regexp, unicorn, unused-imports, eslint-comments, react-dom, react-hooks, react-hooks-extra, react-naming-convention, react-refresh, react-web-api, react-x
+      Requires: antfu, command, @typescript-eslint, n, import-x, yml, @stylistic, vitest, no-only-tests, jsdoc, jsonc, perfectionist, regexp, toml, unicorn, unused-imports, eslint-comments, react-dom, react-hooks, react-hooks-extra, react-naming-convention, react-refresh, react-web-api, react-x
     */
     ...(disable.includes("@antfu/eslint-config") || threshold > 1_000_000
       ? []

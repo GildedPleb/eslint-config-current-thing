@@ -148,6 +148,8 @@ import tanstack from "@tanstack/eslint-plugin-query";
 // @ts-ignore yes, we need to ignore every import for this to run
 import testingLibrary from "eslint-plugin-testing-library";
 // @ts-ignore yes, we need to ignore every import for this to run
+import toml from "eslint-plugin-toml";
+// @ts-ignore yes, we need to ignore every import for this to run
 import tsdoc from "eslint-plugin-tsdoc";
 // @ts-ignore yes, we need to ignore every import for this to run
 import turbo from "eslint-plugin-turbo";
@@ -260,6 +262,7 @@ const plugins = {
   storybook,
   tailwindcss,
   "testing-library": testingLibrary,
+  toml,
   tsdoc,
   turbo,
   unicorn,

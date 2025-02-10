@@ -120,6 +120,7 @@ import stylistic from "./stylistic";
 import tailwindConfig from "./tailwind-config";
 import tanstack from "./tanstack";
 import testingLibrary from "./testing-library";
+import toml from "./toml";
 import ts from "./ts";
 import tsdoc from "./tsdoc";
 import turbo from "./turbo";
@@ -274,6 +275,7 @@ const configs: Config[] = [
     tailwindConfig,
     tanstack,
     testingLibrary,
+    toml,
     ts,
     tsdoc,
     turbo,

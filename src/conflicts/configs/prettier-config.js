@@ -46,6 +46,7 @@ const jsonFiles = [
 const ymlFiles = ["**/*.yaml", "**/*.yml"];
 const codeBlocks = ["**/*.md/**", "**/*.mdx/**"];
 const mdFiles = ["**/*.mdx", "**/*.md"];
+const tomlFiles = ["**/*.toml"];
 const graphQLFiles = ["**/*.graphql"];
 
 const TEST_PATTERNS = [
@@ -145,7 +146,7 @@ const configGen = ({
       https://github.com/ota-meshi/toml-eslint-parser#readme
     */
     {
-      files: ["*.toml"],
+      files: tomlFiles,
       languageOptions: {
         parser: tomlEslintParser,
       },

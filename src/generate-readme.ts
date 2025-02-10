@@ -13,6 +13,7 @@ import JSONConfigJson from "../current-json.json" with { type: "json" };
 import JSONConfigJsx from "../current-jsx.json" with { type: "json" };
 import JSONConfigMd from "../current-md.json" with { type: "json" };
 import JSONConfigTest from "../current-test.json" with { type: "json" };
+import JSONConfigToml from "../current-toml.json" with { type: "json" };
 import JSONConfigTs from "../current-ts.json" with { type: "json" };
 import JSONConfigTsx from "../current-tsx.json" with { type: "json" };
 import JSONConfigYml from "../current-yml.json" with { type: "json" };
@@ -100,6 +101,7 @@ const JSONconfigs = [
   { config: JSONConfigJson, name: "JSON" },
   { config: JSONConfigYml, name: "YML" },
   { config: JSONConfigMd, name: "MD" },
+  { config: JSONConfigToml, name: "TOML" },
 ];
 const ruleCountMarker = "Rule Counts";
 const ruleCount = `Unsurprisingly, it is incredibly strict with popularity-based opinions on:\n\n${JSONconfigs.map(

@@ -37,9 +37,9 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 | SonarJS | Sort Class Members | Sort Destructure Keys | Standard |
 | Standard JSX | Standard React | Standard TS | Storybook |
 | Stylistic | Tailwind CSS | Tanstack Query | Testing Library |
-| TSDoc | Turbo | TypeScript | Unicorn |
-| Vitest | Vitest TS | XO | YML |
-| You Don't Need Lodash | | | |
+| TOML | TSDoc | Turbo | TypeScript |
+| Unicorn | Vitest | Vitest TS | XO |
+| YML | You Don't Need Lodash | | |
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -68,6 +68,7 @@ Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 - **1473** Javascript rules
 - **335** JSON rules
 - **317** YML rules
+- **315** TOML rules
 - **299** MD rules
 
 <!-- End Generated Rule Counts DO NOT EDIT! -->
@@ -350,7 +351,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **5163**.
+The amount of packages reviewed and rejected **5168**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -362,13 +363,12 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/10/2025, total known packages **25,123**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/10/2025, total known packages **25,116**. Top 40 next in line, downloads for the previous 28 days:
 
 - 1,565,714 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 1,053,762 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 1,026,674 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
 - 790,102 downloads, [@emotion/eslint-plugin](https://www.npmjs.com/package/@emotion/eslint-plugin)
-- 597,306 downloads, [eslint-plugin-toml](https://www.npmjs.com/package/eslint-plugin-toml)
 - 596,071 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc)
 - 573,136 downloads, [eslint-plugin-depend](https://www.npmjs.com/package/eslint-plugin-depend)
 - 541,110 downloads, [eslint-plugin-wdio](https://www.npmjs.com/package/eslint-plugin-wdio)
@@ -400,9 +400,10 @@ Generated on 2/10/2025, total known packages **25,123**. Top 40 next in line, do
 - 400,937 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript)
 - 396,141 downloads, [grunt-eslint](https://www.npmjs.com/package/grunt-eslint) - Not Yet Eligible
 - 383,914 downloads, [eslint-plugin-vitest-globals](https://www.npmjs.com/package/eslint-plugin-vitest-globals) - Not Yet Eligible
-- 378,635 downloads, [@apollo/client-react-streaming](https://www.npmjs.com/package/@apollo/client-react-streaming) - Not Yet Eligible
 - 378,295 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
 - 377,309 downloads, [@salesforce/eslint-plugin-lightning](https://www.npmjs.com/package/@salesforce/eslint-plugin-lightning) - Not Yet Eligible
-- 376,631 downloads, [@aws-sdk/client-eks](https://www.npmjs.com/package/@aws-sdk/client-eks) - Not Yet Eligible
+- 376,171 downloads, [@gitlab/eslint-plugin](https://www.npmjs.com/package/@gitlab/eslint-plugin) - Not Yet Eligible
+- 373,803 downloads, [@ui5/cli](https://www.npmjs.com/package/@ui5/cli) - Not Yet Eligible
+- 373,449 downloads, [@oxc-resolver/binding-linux-arm64-musl](https://www.npmjs.com/package/@oxc-resolver/binding-linux-arm64-musl) - Not Yet Eligible
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

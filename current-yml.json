@@ -917,6 +917,7 @@
     "storybook",
     "tailwindcss",
     "testing-library:eslint-plugin-testing-library@7.1.1",
+    "toml:eslint-plugin-toml@0.12.0",
     "tsdoc",
     "turbo",
     "unicorn:eslint-plugin-unicorn@56.0.1",

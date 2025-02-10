@@ -91,6 +91,7 @@ import sortDestructure from "eslint-plugin-sort-destructure-keys";
 import storybook from "eslint-plugin-storybook";
 import tailwindcss from "eslint-plugin-tailwindcss";
 import testingLibrary from "eslint-plugin-testing-library";
+import toml from "eslint-plugin-toml";
 import tsdoc from "eslint-plugin-tsdoc";
 import turbo from "eslint-plugin-turbo";
 import unicorn from "eslint-plugin-unicorn";
@@ -139,6 +140,7 @@ const jsonFiles = [
 const ymlFiles = ["**/*.yaml", "**/*.yml"];
 const codeBlocks = ["**/*.md/**", "**/*.mdx/**"];
 const mdFiles = ["**/*.mdx", "**/*.md"];
+const tomlFiles = ["**/*.toml"];
 const graphQLFiles = ["**/*.graphql"];
 
 const TEST_PATTERNS = [
@@ -234,7 +236,7 @@ const configGen = ({
       https://github.com/ota-meshi/toml-eslint-parser#readme
     */
     {
-      files: ["*.toml"],
+      files: tomlFiles,
       languageOptions: {
         parser: tomlEslintParser,
       },
@@ -379,6 +381,7 @@ const configGen = ({
         storybook,
         tailwindcss,
         "testing-library": testingLibrary,
+        toml,
         tsdoc,
         turbo,
         unicorn,
@@ -661,11 +664,35 @@ const configGen = ({
         ]),
 
     /*
+      TOML
+      621,228 monthly downloads
+      This ESLint plugin provides linting rules for TOML.
+      https://ota-meshi.github.io/eslint-plugin-toml/
+      Requires: toml
+    */
+    ...(disable.includes("eslint-plugin-toml") || threshold > 621_228
+      ? []
+      : [
+          {
+            files: tomlFiles,
+            rules: {
+              ...toml.configs.base.overrides[0].rules,
+              ...toml.configs.recommended.rules,
+              ...toml.configs.standard.rules,
+
+              ...("eslint-plugin-toml" in override
+                ? override["eslint-plugin-toml"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
       Antfu
       652,247 monthly downloads
       Anthony's ESLint config
       https://github.com/antfu/eslint-config
-      Requires: antfu, command, @typescript-eslint, n, import-x, yml, @stylistic, vitest, no-only-tests, jsdoc, jsonc, perfectionist, regexp, unicorn, unused-imports, eslint-comments, react-dom, react-hooks, react-hooks-extra, react-naming-convention, react-refresh, react-web-api, react-x
+      Requires: antfu, command, @typescript-eslint, n, import-x, yml, @stylistic, vitest, no-only-tests, jsdoc, jsonc, perfectionist, regexp, toml, unicorn, unused-imports, eslint-comments, react-dom, react-hooks, react-hooks-extra, react-naming-convention, react-refresh, react-web-api, react-x
     */
     ...(disable.includes("@antfu/eslint-config") || threshold > 652_247
       ? []
@@ -1496,7 +1523,6 @@ const configGen = ({
             files,
             rules: {
               "simple-import-sort/imports": 0,
-              "sort-class-members/sort-class-members": 0,
               ...perfectionist.configs["recommended-natural"].rules,
               "perfectionist/sort-modules": 0,
               ...("eslint-plugin-perfectionist" in override
@@ -5476,7 +5502,6 @@ const configGen = ({
           {
             files: jsFiles,
             rules: {
-              "@stylistic/operator-linebreak": 0,
               "@stylistic/quote-props": 0,
               "@stylistic/semi": 0,
               "array-bracket-newline": [0, "consistent"],

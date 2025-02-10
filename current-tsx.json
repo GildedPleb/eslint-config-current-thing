@@ -1385,7 +1385,7 @@
     ],
     "formatjs/blocklist-elements": [2, ["selectordinal"]],
     "sort-class-members/sort-class-members": [
-      0,
+      2,
       {
         "order": [
           "[static-properties]",
@@ -3377,6 +3377,7 @@
     "storybook",
     "tailwindcss",
     "testing-library:eslint-plugin-testing-library@7.1.1",
+    "toml:eslint-plugin-toml@0.12.0",
     "tsdoc",
     "turbo",
     "unicorn:eslint-plugin-unicorn@56.0.1",

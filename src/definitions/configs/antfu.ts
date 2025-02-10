@@ -83,7 +83,7 @@ export default {
     "jsonc",
     "perfectionist",
     "regexp",
-    // "toml",
+    "toml",
     "unicorn",
     "unused-imports",
     "eslint-comments",

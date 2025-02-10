@@ -15,7 +15,6 @@ const incompatibles: ConflictCache = {
     "@stylistic/arrow-parens": 0,
   },
   "airbnb-base-style": {
-    "@stylistic/operator-linebreak": 0,
     "@stylistic/quote-props": 0,
     "@stylistic/semi": 0,
     "prettier/prettier": 0,
@@ -67,7 +66,6 @@ const incompatibles: ConflictCache = {
   },
   perfectionist: {
     "simple-import-sort/imports": 0,
-    "sort-class-members/sort-class-members": 0,
   },
   "prettier-md": {
     "@stylistic/quotes": 0,

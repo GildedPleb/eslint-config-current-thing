@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/turbo-config.js
+// PathMark: ./src/conflicts/configs/toml-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 
@@ -17,7 +17,7 @@ import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
 import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
-import turbo from "eslint-plugin-turbo";
+import toml from "eslint-plugin-toml";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
@@ -209,32 +209,28 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        turbo,
+        toml,
       },
     },
 
     /*
-      Turbo
+      TOML
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: turbo
+      Requires: toml
     */
-    ...(disable.includes("eslint-plugin-turbo") ||
-    disable.includes("eslint-config-turbo") ||
-    threshold > 1_000_000
+    ...(disable.includes("eslint-plugin-toml") || threshold > 1_000_000
       ? []
       : [
           {
-            files,
+            files: tomlFiles,
             rules: {
-              ...turbo.configs["flat/recommended"].rules,
-              "turbo/no-undeclared-env-vars": 0,
-              ...("eslint-plugin-turbo" in override
-                ? override["eslint-plugin-turbo"]
-                : {}),
-              ...("eslint-config-turbo" in override
-                ? override["eslint-config-turbo"]
+              ...toml.configs.base.overrides[0].rules,
+              ...toml.configs.recommended.rules,
+              ...toml.configs.standard.rules,
+              ...("eslint-plugin-toml" in override
+                ? override["eslint-plugin-toml"]
                 : {}),
             },
           },

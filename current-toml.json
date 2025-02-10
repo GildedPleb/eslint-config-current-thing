@@ -3,6 +3,36 @@
     "reportUnusedDisableDirectives": 1
   },
   "rules": {
+    "no-irregular-whitespace": [
+      2,
+      {
+        "skipComments": false,
+        "skipJSXText": false,
+        "skipRegExps": false,
+        "skipStrings": true,
+        "skipTemplates": false
+      }
+    ],
+    "spaced-comment": [0],
+    "toml/no-unreadable-number-separator": [2],
+    "toml/precision-of-fractional-seconds": [2],
+    "toml/precision-of-integer": [2],
+    "toml/vue-custom-block/no-parsing-error": [2],
+    "toml/array-bracket-newline": [2],
+    "toml/array-bracket-spacing": [2],
+    "toml/array-element-newline": [2],
+    "toml/comma-style": [2],
+    "toml/indent": [2, 2],
+    "toml/inline-table-curly-spacing": [2],
+    "toml/key-spacing": [2],
+    "toml/keys-order": [2],
+    "toml/no-space-dots": [2],
+    "toml/padding-line-between-pairs": [2],
+    "toml/padding-line-between-tables": [2],
+    "toml/quoted-keys": [2],
+    "toml/spaced-comment": [2],
+    "toml/table-bracket-spacing": [2],
+    "toml/tables-order": [2],
     "accessor-pairs": [
       2,
       {
@@ -120,16 +150,6 @@
     "no-implied-eval": [2],
     "no-import-assign": [2],
     "no-invalid-regexp": [0, {}],
-    "no-irregular-whitespace": [
-      2,
-      {
-        "skipComments": false,
-        "skipJSXText": false,
-        "skipRegExps": false,
-        "skipStrings": true,
-        "skipTemplates": false
-      }
-    ],
     "no-iterator": [2],
     "no-labels": [
       2,
@@ -245,7 +265,7 @@
       }
     ],
     "no-unused-expressions": [
-      0,
+      2,
       {
         "allowShortCircuit": true,
         "allowTernary": true,
@@ -254,7 +274,7 @@
       }
     ],
     "no-unused-vars": [
-      0,
+      2,
       {
         "args": "none",
         "caughtErrors": "none",
@@ -674,7 +694,7 @@
       }
     ],
     "@stylistic/spaced-comment": [
-      2,
+      0,
       "always",
       {
         "block": {
@@ -813,65 +833,7 @@
     "regexp/simplify-set-operations": [2],
     "regexp/sort-flags": [2],
     "regexp/strict": [2],
-    "regexp/use-ignore-case": [2],
-    "jsonc/no-bigint-literals": [2],
-    "jsonc/no-binary-expression": [2],
-    "jsonc/no-binary-numeric-literals": [2],
-    "jsonc/no-dupe-keys": [2],
-    "jsonc/no-escape-sequence-in-identifier": [2],
-    "jsonc/no-floating-decimal": [2],
-    "jsonc/no-hexadecimal-numeric-literals": [2],
-    "jsonc/no-infinity": [2],
-    "jsonc/no-multi-str": [2],
-    "jsonc/no-nan": [2],
-    "jsonc/no-number-props": [2],
-    "jsonc/no-numeric-separators": [2],
-    "jsonc/no-octal": [2],
-    "jsonc/no-octal-escape": [2],
-    "jsonc/no-octal-numeric-literals": [2],
-    "jsonc/no-parenthesized": [2],
-    "jsonc/no-plus-sign": [2],
-    "jsonc/no-regexp-literals": [2],
-    "jsonc/no-sparse-arrays": [2],
-    "jsonc/no-template-literals": [2],
-    "jsonc/no-undefined-value": [2],
-    "jsonc/no-unicode-codepoint-escapes": [2],
-    "jsonc/no-useless-escape": [2],
-    "jsonc/space-unary-ops": [2],
-    "jsonc/valid-json-number": [2],
-    "jsonc/vue-custom-block/no-parsing-error": [2],
-    "jsonc/array-bracket-spacing": [2, "never"],
-    "jsonc/comma-dangle": [2, "never"],
-    "jsonc/comma-style": [2, "last"],
-    "jsonc/indent": [2, 2],
-    "jsonc/key-spacing": [
-      2,
-      {
-        "afterColon": true,
-        "beforeColon": false
-      }
-    ],
-    "jsonc/object-curly-newline": [
-      2,
-      {
-        "consistent": true,
-        "multiline": true
-      }
-    ],
-    "jsonc/object-curly-spacing": [2, "always"],
-    "jsonc/object-property-newline": [
-      2,
-      {
-        "allowMultiplePropertiesPerLine": true,
-        "allowAllPropertiesOnSameLine": false
-      }
-    ],
-    "jsonc/quote-props": [2],
-    "jsonc/quotes": [2],
-    "strict": [0, "safe"],
-    "jsonc/no-comments": [2],
-    "jsonc/sort-keys": [0],
-    "prettier/prettier": [2]
+    "regexp/use-ignore-case": [2]
   },
   "plugins": [
     "@",
@@ -960,7 +922,7 @@
   "languageOptions": {
     "sourceType": "module",
     "ecmaVersion": 2025,
-    "parser": "jsonc-eslint-parser@2.4.0",
+    "parser": "toml-eslint-parser@0.10.0",
     "parserOptions": {
       "ecmaFeatures": {
         "jsx": true
