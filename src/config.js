@@ -1496,6 +1496,7 @@ const configGen = ({
             files,
             rules: {
               "simple-import-sort/imports": 0,
+              "sort-class-members/sort-class-members": 0,
               ...perfectionist.configs["recommended-natural"].rules,
               "perfectionist/sort-modules": 0,
               ...("eslint-plugin-perfectionist" in override
@@ -5475,6 +5476,7 @@ const configGen = ({
           {
             files: jsFiles,
             rules: {
+              "@stylistic/operator-linebreak": 0,
               "@stylistic/quote-props": 0,
               "@stylistic/semi": 0,
               "array-bracket-newline": [0, "consistent"],

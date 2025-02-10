@@ -350,7 +350,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **5159**.
+The amount of packages reviewed and rejected **5163**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -362,7 +362,7 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/10/2025, total known packages **25,127**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/10/2025, total known packages **25,123**. Top 40 next in line, downloads for the previous 28 days:
 
 - 1,565,714 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 1,053,762 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
@@ -380,6 +380,7 @@ Generated on 2/10/2025, total known packages **25,127**. Top 40 next in line, do
 - 472,178 downloads, [eslint-plugin-no-jquery](https://www.npmjs.com/package/eslint-plugin-no-jquery)
 - 455,309 downloads, [eslint-plugin-sort-imports-es6-autofix](https://www.npmjs.com/package/eslint-plugin-sort-imports-es6-autofix)
 - 454,614 downloads, [eslint-plugin-boundaries](https://www.npmjs.com/package/eslint-plugin-boundaries)
+- 449,804 downloads, [@ngrx/eslint-plugin](https://www.npmjs.com/package/@ngrx/eslint-plugin)
 - 448,368 downloads, [@sap/eslint-plugin-cds](https://www.npmjs.com/package/@sap/eslint-plugin-cds)
 - 445,535 downloads, [eslint-plugin-ban](https://www.npmjs.com/package/eslint-plugin-ban)
 - 442,908 downloads, [eslint-plugin-relay](https://www.npmjs.com/package/eslint-plugin-relay)
@@ -388,21 +389,20 @@ Generated on 2/10/2025, total known packages **25,127**. Top 40 next in line, do
 - 438,291 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp)
 - 437,114 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc)
 - 435,021 downloads, [eslint-plugin-no-null](https://www.npmjs.com/package/eslint-plugin-no-null)
-- 429,861 downloads, [@ngrx/eslint-plugin](https://www.npmjs.com/package/@ngrx/eslint-plugin)
 - 426,011 downloads, [@shopify/eslint-plugin](https://www.npmjs.com/package/@shopify/eslint-plugin)
 - 426,001 downloads, [eslint-plugin-astro](https://www.npmjs.com/package/eslint-plugin-astro)
 - 417,985 downloads, [eslint-friendly-formatter](https://www.npmjs.com/package/eslint-friendly-formatter)
+- 416,164 downloads, [sherif-linux-x64](https://www.npmjs.com/package/sherif-linux-x64)
 - 414,408 downloads, [sherif](https://www.npmjs.com/package/sherif)
 - 413,551 downloads, [@eslint-react/tools](https://www.npmjs.com/package/@eslint-react/tools)
 - 410,468 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit)
 - 401,455 downloads, [eslint-rule-documentation](https://www.npmjs.com/package/eslint-rule-documentation)
 - 400,937 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript)
-- 400,427 downloads, [sherif-linux-x64](https://www.npmjs.com/package/sherif-linux-x64)
 - 396,141 downloads, [grunt-eslint](https://www.npmjs.com/package/grunt-eslint) - Not Yet Eligible
 - 383,914 downloads, [eslint-plugin-vitest-globals](https://www.npmjs.com/package/eslint-plugin-vitest-globals) - Not Yet Eligible
-- 379,829 downloads, [jest-transformer-svg](https://www.npmjs.com/package/jest-transformer-svg) - Not Yet Eligible
-- 379,352 downloads, [change-file-extension](https://www.npmjs.com/package/change-file-extension) - Not Yet Eligible
-- 379,325 downloads, [@reportportal/agent-js-playwright](https://www.npmjs.com/package/@reportportal/agent-js-playwright) - Not Yet Eligible
-- 379,045 downloads, [@polkadot/wasm-util](https://www.npmjs.com/package/@polkadot/wasm-util) - Not Yet Eligible
+- 378,635 downloads, [@apollo/client-react-streaming](https://www.npmjs.com/package/@apollo/client-react-streaming) - Not Yet Eligible
+- 378,295 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
+- 377,309 downloads, [@salesforce/eslint-plugin-lightning](https://www.npmjs.com/package/@salesforce/eslint-plugin-lightning) - Not Yet Eligible
+- 376,631 downloads, [@aws-sdk/client-eks](https://www.npmjs.com/package/@aws-sdk/client-eks) - Not Yet Eligible
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

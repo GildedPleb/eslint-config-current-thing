@@ -1385,7 +1385,7 @@
     ],
     "formatjs/blocklist-elements": [2, ["selectordinal"]],
     "sort-class-members/sort-class-members": [
-      2,
+      0,
       {
         "order": [
           "[static-properties]",
@@ -3313,7 +3313,7 @@
     "@react-native",
     "@stylistic",
     "@tanstack:@tanstack/eslint-plugin-query",
-    "@typescript-eslint:@typescript-eslint/eslint-plugin@8.23.0",
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@8.24.0",
     "antfu:antfu@3.0.0",
     "ava:eslint-plugin-ava@15.0.1",
     "chai-friendly:eslint-plugin-chai-friendly@1.0.1",
@@ -3325,7 +3325,7 @@
     "es",
     "es-x:eslint-plugin-es-x@8.4.1",
     "eslint-comments",
-    "formatjs:eslint-plugin-formatjs@5.2.13",
+    "formatjs:eslint-plugin-formatjs@5.2.14",
     "functional:eslint-plugin-functional@8.0.0",
     "header",
     "html",
@@ -3381,7 +3381,7 @@
     "turbo",
     "unicorn:eslint-plugin-unicorn@56.0.1",
     "unused-imports:unused-imports",
-    "vitest:vitest@1.1.27",
+    "vitest:vitest@1.1.28",
     "yml:eslint-plugin-yml@1.16.0",
     "you-dont-need-lodash-underscore"
   ],
@@ -3389,7 +3389,7 @@
   "languageOptions": {
     "sourceType": "module",
     "ecmaVersion": 2025,
-    "parser": "typescript-eslint/parser@8.23.0",
+    "parser": "typescript-eslint/parser@8.24.0",
     "parserOptions": {
       "ecmaVersion": "latest",
       "project": true,
