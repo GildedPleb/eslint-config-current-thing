@@ -1,18 +1,8 @@
 // PathMark: ./src/definitions/configs/prefer-arrow.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
-import { reactIds } from "./id-groups";
 
 export default {
-  conflicts: {
-    "prefer-arrow/prefer-arrow-functions": [
-      "mocha",
-      ...reactIds,
-      "functional",
-      "functional/ts",
-      "ts",
-    ],
-  },
   definitions: `{
     files,
     ${RULES}
@@ -30,11 +20,12 @@ export default {
   ],
   requiredPlugins: ["prefer-arrow"],
   rules: `"prefer-arrow/prefer-arrow-functions": [
-      1,
+      "error",
       {
-        "disallowPrototype": true,
-        "singleReturnOnly": false,
-        "classPropertiesAllowed": false
+        "disallowPrototype": false,
+        "singleReturnOnly": true,
+        "classPropertiesAllowed": false,
+        "allowStandaloneDeclarations": true
       }
     ],`,
 } satisfies Config;

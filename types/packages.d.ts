@@ -77,5 +77,25 @@ declare module "eslint-plugin-jasmine";
 declare module "eslint-plugin-no-use-extend-native";
 declare module "eslint-plugin-react-prefer-function-component";
 declare module "eslint-plugin-react-compiler";
+declare module "eslint-plugin-sort-destructure-keys";
+
+declare module "gts" {
+  interface GtsConfig {
+    overrides: Array<Record<string, Record<string, string>>>;
+    rules: Record<string, string>;
+  }
+
+  const gts: GtsConfig;
+  export default gts;
+}
+
+declare module "eslint-plugin-formatjs" {
+  interface FormatJsConfig {
+    configs: { recommended: { rules: Record<string, string> } };
+  }
+
+  const formatJs: FormatJsConfig;
+  export default formatJs;
+}
 
 // EOF

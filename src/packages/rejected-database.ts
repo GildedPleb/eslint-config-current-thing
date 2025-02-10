@@ -94,7 +94,7 @@ async function getCategoryItems(category: string): Promise<DataType[]> {
 
   for await (const [key, value] of database.iterator({
     gte: prefix,
-    lt: prefix + "\uFFFF",
+    lt: `${prefix}\uFFFF`,
   })) {
     if (!key.startsWith(`_names${DELIMITER}`)) {
       items.push({

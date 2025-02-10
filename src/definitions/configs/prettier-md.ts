@@ -20,6 +20,6 @@ export default {
     },
   ],
   requiredPlugins: ["prettier"],
-  rules: `"prettier/prettier": 2,`,
+  rules: `"prettier/prettier": [2, { parser: "markdown" }],`,
 } satisfies Config;
 // EOF

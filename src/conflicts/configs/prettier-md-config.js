@@ -225,7 +225,7 @@ const configGen = ({
           {
             files: mdFiles,
             rules: {
-              "prettier/prettier": 2,
+              "prettier/prettier": [2, { parser: "markdown" }],
               ...("eslint-plugin-prettier/md" in override
                 ? override["eslint-plugin-prettier/md"]
                 : {}),

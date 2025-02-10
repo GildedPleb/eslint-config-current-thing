@@ -3,7 +3,7 @@
 /* eslint-disable no-console -- console needed for UI */
 /* eslint-disable import/no-extraneous-dependencies -- used for prod */
 
-import { stdin as input, stdout as output } from "node:process";
+import process, { stdin as input, stdout as output } from "node:process";
 // eslint-disable-next-line n/no-unsupported-features/node-builtins -- not used for prod
 import { createInterface } from "node:readline/promises";
 
@@ -12,9 +12,9 @@ import chalk from "chalk";
 import Table from "cli-table3";
 import { Command } from "commander";
 
+import type { DataType } from "./rejected-database";
 import {
   addItem,
-  type DataType,
   getAll,
   getCategories,
   getCategoryItems,

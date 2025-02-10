@@ -6,7 +6,8 @@
 import { Level } from "level";
 
 import { isMoreThan1DaysInThePast } from "../helpers";
-import { getDownloadCount, getInfo, type Info } from "../npm";
+import type { Info } from "../npm";
+import { getDownloadCount, getInfo } from "../npm";
 import type { Config } from "./configs";
 import configs from "./configs";
 import type { Parser } from "./parsers";

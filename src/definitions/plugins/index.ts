@@ -5,6 +5,7 @@ import ava from "./ava";
 import babel from "./babel";
 import chai from "./chai";
 import checkFile from "./check-file";
+import command from "./command";
 import comments from "./comments";
 import compat from "./compat";
 import cssModules from "./css-modules";
@@ -98,6 +99,7 @@ const plugins = [
     babel,
     chai,
     checkFile,
+    command,
     comments,
     compat,
     cssModules,

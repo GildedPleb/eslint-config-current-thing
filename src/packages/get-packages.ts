@@ -3,6 +3,7 @@
 /* eslint-disable import/no-extraneous-dependencies -- not for prod */
 /* eslint-disable no-console -- needed for UI */
 
+import process from "node:process";
 import readline from "node:readline";
 
 import { Level } from "level";

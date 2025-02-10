@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/import-x-react-config.js
+// PathMark: ./src/conflicts/configs/antfu-config.js
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 
@@ -9,20 +9,61 @@
   This file is fully generated, to edit it change ./generate-conflicts.ts
 */
 
+import antfuConfig from "@antfu/eslint-config";
 import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
+import stylistic from "@stylistic/eslint-plugin";
+import vitest from "@vitest/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
+import antfu from "eslint-plugin-antfu";
+import command from "eslint-plugin-command";
+import commentsOld from "eslint-plugin-eslint-comments";
 import importX from "eslint-plugin-import-x";
+import jsdoc from "eslint-plugin-jsdoc";
+import jsonc from "eslint-plugin-jsonc";
 import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
+import nNode from "eslint-plugin-n";
+import noOnlyTest from "eslint-plugin-no-only-tests";
+import perfectionist from "eslint-plugin-perfectionist";
+import reactDom from "eslint-plugin-react-dom";
+import reactHooks from "eslint-plugin-react-hooks";
+import reactHooksExtra from "eslint-plugin-react-hooks-extra";
+import reactNamingConvention from "eslint-plugin-react-naming-convention";
+import reactRefresh from "eslint-plugin-react-refresh";
+import reactWebAPI from "eslint-plugin-react-web-api";
+import reactX from "eslint-plugin-react-x";
+import regexp from "eslint-plugin-regexp";
+import unicorn from "eslint-plugin-unicorn";
+import unusedImports from "eslint-plugin-unused-imports";
+import yml from "eslint-plugin-yml";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
+import tomlEslintParser from "toml-eslint-parser";
 import tseslint from "typescript-eslint";
 import ymlEslintParser from "yaml-eslint-parser";
+
+const antfuConfigRaw = await antfuConfig({
+  lessOpinionated: true,
+  // formatters: {
+  //   css: true,
+  //   html: true,
+  //   markdown: "prettier",
+  // },
+  react: true,
+}).renamePlugins({
+  import: "import-x",
+  node: "n",
+  react: "react-x",
+  style: "@stylistic",
+  test: "vitest",
+  ts: "@typescript-eslint",
+  yaml: "yml",
+});
 
 const jsxFiles = ["**/*.jsx"];
 const tsxFiles = ["**/*.tsx"];
@@ -134,6 +175,17 @@ const configGen = ({
       },
     },
     /*
+      TOML
+      A TOML parser that produces output compatible with ESLint
+      https://github.com/ota-meshi/toml-eslint-parser#readme
+    */
+    {
+      files: ["*.toml"],
+      languageOptions: {
+        parser: tomlEslintParser,
+      },
+    },
+    /*
       GraphQL
       GraphQL plugin for ESLint
       https://github.com/dimaMachina/graphql-eslint#readme
@@ -196,29 +248,78 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
+        "@stylistic": stylistic,
+        "@typescript-eslint": tseslint.plugin,
+        antfu,
+        command,
+        "eslint-comments": commentsOld,
         "import-x": importX,
+        jsdoc,
+        jsonc,
+        n: nNode,
+        "no-only-tests": noOnlyTest,
+        perfectionist,
+        "react-dom": reactDom,
+        "react-hooks": reactHooks,
+        "react-hooks-extra": reactHooksExtra,
+        "react-naming-convention": reactNamingConvention,
+        "react-refresh": reactRefresh,
+        "react-web-api": reactWebAPI,
+        "react-x": reactX,
+        regexp,
+        unicorn,
+        "unused-imports": unusedImports,
+        vitest,
+        yml,
       },
     },
 
     /*
-      Import X React
+      Antfu
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: import-x
+      Requires: antfu, command, @typescript-eslint, n, import-x, yml, @stylistic, vitest, no-only-tests, jsdoc, jsonc, perfectionist, regexp, unicorn, unused-imports, eslint-comments, react-dom, react-hooks, react-hooks-extra, react-naming-convention, react-refresh, react-web-api, react-x
     */
-    ...(disable.includes("eslint-plugin-import-x") || threshold > 1_000_000
+    ...(disable.includes("@antfu/eslint-config") || threshold > 1_000_000
       ? []
       : [
+          ...antfuConfigRaw.map(({ plugins: _plugins, ...config }) => {
+            // Change the test name space
+            if (config.name === "antfu/test/rules") {
+              return {
+                ...config,
+                rules: {
+                  ...config.rules,
+                  "no-only-tests/no-only-tests":
+                    config.rules?.["vitest/no-only-tests"] ?? 0,
+                  "vitest/no-only-tests": 0,
+                },
+              };
+            }
+            // Change the ecma version for JS files to allow 'with' imports
+            if (config.name === "antfu/javascript/setup") {
+              return {
+                ...config,
+                languageOptions: {
+                  ...config.languageOptions,
+                  ecmaVersion: "latest",
+                  parserOptions: {
+                    ...config.languageOptions?.parserOptions,
+                    ecmaVersion: "latest",
+                  },
+                },
+              };
+            }
+            return config;
+          }),
           {
-            files: tsFiles,
-            languageOptions: importX.flatConfigs.react.languageOptions,
+            files,
             rules: {
-              ...("eslint-plugin-import-x" in override
-                ? override["eslint-plugin-import-x"]
+              ...("@antfu/eslint-config" in override
+                ? override["@antfu/eslint-config"]
                 : {}),
             },
-            settings: importX.flatConfigs.react.settings,
           },
         ]),
   ]);

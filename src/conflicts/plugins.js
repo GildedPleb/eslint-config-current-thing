@@ -11,6 +11,7 @@
 // @ts-ignore yes, we need to ignore every import for this to run
 // @ts-ignore yes, we need to ignore every import for this to run
 // @ts-ignore yes, we need to ignore every import for this to run
+// @ts-ignore yes, we need to ignore every import for this to run
 
 // @ts-ignore yes, we need to ignore every import for this to run
 import antfu from "eslint-plugin-antfu";
@@ -22,6 +23,8 @@ import babelPlugin from "@babel/eslint-plugin";
 import chaiFriendly from "eslint-plugin-chai-friendly";
 // @ts-ignore yes, we need to ignore every import for this to run
 import checkFile from "eslint-plugin-check-file";
+// @ts-ignore yes, we need to ignore every import for this to run
+import command from "eslint-plugin-command";
 // @ts-ignore yes, we need to ignore every import for this to run
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
 // @ts-ignore yes, we need to ignore every import for this to run
@@ -198,6 +201,7 @@ const plugins = {
   ava,
   "chai-friendly": chaiFriendly,
   "check-file": checkFile,
+  command,
   compat,
   "css-modules": cssModules,
   cypress,

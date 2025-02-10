@@ -10,7 +10,8 @@ import { MINIMUMS, RULES } from "../constants";
 import { parsers } from "../definitions";
 import type { Config } from "../definitions/configs";
 import rawConfigs from "../definitions/configs";
-import plugins, { type Namespace, type Plugin } from "../definitions/plugins";
+import type { Namespace, Plugin } from "../definitions/plugins";
+import plugins from "../definitions/plugins";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -105,6 +106,8 @@ ${configContext.packages
 import globals from "globals";
 import restrictedGlobals from 'confusing-browser-globals';
 import { defineFlatConfig } from 'eslint-define-config';
+
+${configContext.preProcess ?? ""}
 
 const jsxFiles = ["**/*.jsx"];
 const tsxFiles = ["**/*.tsx"];
@@ -252,7 +255,8 @@ ${[configContext].map(
     if (
       definitions.includes("rules: ") &&
       !name.includes("Shopify") &&
-      name !== "Emotion CSS"
+      name !== "Emotion CSS" &&
+      name !== "Antfu"
     ) {
       const message = `Formatting Error: ${name}.definitions includes a 'rules' key when it should use the 'RULES' replacement inline placeholder. See other config definitions for examples.`;
       throw new Error(message);

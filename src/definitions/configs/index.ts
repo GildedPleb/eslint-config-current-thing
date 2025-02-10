@@ -12,6 +12,7 @@ import airbnbReact from "./airbnb-react";
 import airbnbReactA11y from "./airbnb-react-a11y";
 import airbnbReactHooks from "./airbnb-react-hooks";
 import airbnbTs from "./airbnb-ts";
+import antfu from "./antfu";
 import ava from "./ava";
 import chai from "./chai";
 import comments from "./comments";
@@ -146,6 +147,7 @@ export interface Config {
     requiresImport: boolean;
     subModule?: string;
   }>;
+  preProcess?: string;
   requiredPlugins: Namespace[];
   rules?: string;
 }
@@ -164,6 +166,7 @@ const configs: Config[] = [
     airbnbReactA11y,
     airbnbReactHooks,
     airbnbTs,
+    antfu,
     ava,
     chai,
     comments,

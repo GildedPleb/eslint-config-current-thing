@@ -2,6 +2,8 @@
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair -- not needed */
 /* eslint-disable no-console -- not for prod */
 /* eslint-disable import/no-extraneous-dependencies -- not for prod */
+import process from "node:process";
+
 import Ajv from "ajv";
 import chalk from "chalk";
 import OpenAI from "openai";

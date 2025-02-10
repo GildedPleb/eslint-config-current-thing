@@ -2,7 +2,7 @@
 
 /*
   This file is fully generated, to edit it change ./get-incompatibilities.ts
-  Generated on 2/7/2025
+  Generated on 2/10/2025
 */
 
 import type { ConflictCache } from "./types";
@@ -18,6 +18,20 @@ const incompatibles: ConflictCache = {
     "@stylistic/quote-props": 0,
     "@stylistic/semi": 0,
     "prettier/prettier": 0,
+  },
+  antfu: {
+    "arrow-parens": 0,
+    "block-spacing": 0,
+    "brace-style": 0,
+    "comma-dangle": 0,
+    indent: 0,
+    "object-curly-spacing": 0,
+    "operator-linebreak": 0,
+    "prettier-tailwind/prettier": 0,
+    "prettier/prettier": 0,
+    "quote-props": 0,
+    semi: 0,
+    "space-before-function-paren": 0,
   },
   google: {
     "@stylistic/arrow-parens": 0,
@@ -52,6 +66,10 @@ const incompatibles: ConflictCache = {
   },
   perfectionist: {
     "simple-import-sort/imports": 0,
+  },
+  "prettier-md": {
+    "@stylistic/quotes": 0,
+    "@stylistic/semi": 0,
   },
   "prettier-plugin": {
     "@stylistic/arrow-parens": 0,

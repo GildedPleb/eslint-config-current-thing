@@ -226,11 +226,12 @@ const configGen = ({
             files,
             rules: {
               "prefer-arrow/prefer-arrow-functions": [
-                1,
+                "error",
                 {
+                  allowStandaloneDeclarations: true,
                   classPropertiesAllowed: false,
-                  disallowPrototype: true,
-                  singleReturnOnly: false,
+                  disallowPrototype: false,
+                  singleReturnOnly: true,
                 },
               ],
               ...("eslint-plugin-prefer-arrow" in override

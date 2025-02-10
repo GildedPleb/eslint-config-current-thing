@@ -8,12 +8,14 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import process from "node:process";
 import readline from "node:readline";
 import { fileURLToPath } from "node:url";
 import v8 from "node:v8";
 
 import chalk from "chalk";
-import { type BatchOperation, Level } from "level";
+import type { BatchOperation } from "level";
+import { Level } from "level";
 
 import { hashString, isEmpty, printDiffLines } from "../helpers";
 import fileList from "./code-samples";

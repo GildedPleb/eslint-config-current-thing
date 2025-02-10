@@ -70,6 +70,9 @@ import restrictedGlobals from "confusing-browser-globals";
 import { defineFlatConfig } from "eslint-define-config";
 /* eslint-enable import/extensions */
 
+${configs.map(({ preProcess }) => preProcess ?? "").join(`
+`)}
+
 const jsxFiles = ["**/*.jsx"];
 const tsxFiles = ["**/*.tsx"];
 const jsFiles = ["**/*.js", ...jsxFiles, "**/*.mjs", "**/*.cjs"];
@@ -215,14 +218,15 @@ ${sortedConfigs.map(
     if (
       definitions.includes("rules: ") &&
       !name.includes("Shopify") &&
-      name !== "Emotion CSS"
+      name !== "Emotion CSS" &&
+      name !== "Antfu"
     ) {
       const message = `Formatting Error: ${name}.definitions includes a 'rules' key when it should use the 'RULES' replacement inline placeholder. See other config definitions for examples.`;
       throw new Error(message);
     }
 
     if (!definitions.includes(RULES)) {
-      const message = `Formatting Error: ${name}.definitions does not include a 'RULES' inline market to show were rules should be added as a placeholder. See other config definitions for examples.`;
+      const message = `Formatting Error: ${name}.definitions does not include a 'RULES' inline marker to show were rules should be added as a placeholder. See other config definitions for examples.`;
       throw new Error(message);
     }
 
@@ -313,7 +317,6 @@ try {
   // eslint-disable-next-line no-console -- needed for UI
   console.log("\n./config.js has been updated successfully.");
 } catch (error) {
-  // eslint-disable-next-line no-console -- needed for UI
   console.error("Error processing the config.js file:", error);
   throw new Error("Failed");
 }

@@ -48,6 +48,7 @@ const configList = [
     location: "./src/conflicts/configs/airbnb-ts-config.js",
     name: "airbnb-ts",
   },
+  { location: "./src/conflicts/configs/antfu-config.js", name: "antfu" },
   { location: "./src/conflicts/configs/ava-config.js", name: "ava" },
   { location: "./src/conflicts/configs/chai-config.js", name: "chai" },
   { location: "./src/conflicts/configs/comments-config.js", name: "comments" },
