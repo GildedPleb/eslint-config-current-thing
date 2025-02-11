@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/plugins/functional-components.ts
+// PathMark: ./src/definitions/plugins/formatjs.ts
 import type { Plugin } from ".";
 
 export default {

@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/no-only-test.ts
+// PathMark: ./src/definitions/configs/no-relative-import.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

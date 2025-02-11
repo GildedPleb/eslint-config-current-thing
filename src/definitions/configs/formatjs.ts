@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/i18next.ts
+// PathMark: ./src/definitions/configs/formatjs.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

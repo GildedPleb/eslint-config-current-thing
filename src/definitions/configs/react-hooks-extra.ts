@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/react-hooks.ts
+// PathMark: ./src/definitions/configs/react-hooks-extra.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

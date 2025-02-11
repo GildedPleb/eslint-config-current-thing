@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/sort-keys.ts
+// PathMark: ./src/definitions/configs/sort-destructure.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

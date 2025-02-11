@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/plugins/compat.ts
+// PathMark: ./src/definitions/plugins/command.ts
 import type { Plugin } from ".";
 
 export default {

@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/plugins/no-only-test.ts
+// PathMark: ./src/definitions/plugins/no-relative-import.ts
 import type { Plugin } from ".";
 
 export default {

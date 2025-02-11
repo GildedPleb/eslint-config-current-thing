@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/yml.ts
+// PathMark: ./src/definitions/configs/toml.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

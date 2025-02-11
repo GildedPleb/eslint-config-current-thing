@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/plugins/react-compiler.ts
+// PathMark: ./src/definitions/plugins/react-dom.ts
 import type { Plugin } from ".";
 
 export default {

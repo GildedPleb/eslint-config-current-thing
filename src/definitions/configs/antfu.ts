@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/ava.ts
+// PathMark: ./src/definitions/configs/antfu.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

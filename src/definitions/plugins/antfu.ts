@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/plugins/security.ts
+// PathMark: ./src/definitions/plugins/antfu.ts
 import type { Plugin } from ".";
 
 export default {

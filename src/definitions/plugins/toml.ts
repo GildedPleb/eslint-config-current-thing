@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/plugins/yml.ts
+// PathMark: ./src/definitions/plugins/toml.ts
 import type { Plugin } from ".";
 
 export default {

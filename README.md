@@ -88,11 +88,13 @@ npm i -D eslint-config-current-thing
 Then in your `eslint.config.js`
 
 ```js
+// PathMark: ./README.md/1_1.js
 import currentThing from "eslint-config-current-thing";
 
 const config = [...currentThing()];
 
 export default config;
+// EOF
 ```
 
 You'll also probably want something like this in your `package.json` (edit accordingly):
@@ -121,6 +123,7 @@ And you'll probably want to restart your ESLint server, maybe more than once. `C
 ## Usage
 
 ```js
+// PathMark: ./README.md/3_3.js
 import currentThing from "eslint-config-current-thing";
 
 const config = [
@@ -130,6 +133,7 @@ const config = [
 ];
 
 export default config;
+// EOF
 ```
 
 ### Options
@@ -143,11 +147,13 @@ For `disable` and `override` a few configs will have internal configs or overrid
 To disable the entirety of a particular config, that config must be named via its package name, like so:
 
 ```js
+// PathMark: ./README.md/4_4.js
 import currentThing from "eslint-config-current-thing";
 
 const config = [...currentThing({ disable: ["eslint-config-import"] })];
 
 export default config;
+// EOF
 ```
 
 E.g. if you disable every config, in order from the most downloaded down, until you hit `functional`, then functional will be your leading config and your project will then be linted with the recommended functional style.
@@ -159,6 +165,7 @@ E.g. if you disable every config, in order from the most downloaded down, until 
 In the event that you need to override or change a rule in order with respect to all other rules:
 
 ```js
+// PathMark: ./README.md/5_5.js
 import currentThing from "eslint-config-current-thing";
 
 const config = [
@@ -168,6 +175,7 @@ const config = [
 ];
 
 export default config;
+// EOF
 ```
 
 `override` will not clear existing rules but is provided in the unlikely case that a given rule needs more fine-tuning,
@@ -179,6 +187,7 @@ export default config;
 `threshold` can be passed to the options object to set the popularity threshold for packages. Defaulting to 400,000 downloads per month.
 
 ```js
+// PathMark: ./README.md/6_6.js
 import currentThing from "eslint-config-current-thing";
 
 const config = [
@@ -188,6 +197,7 @@ const config = [
 ];
 
 export default config;
+// EOF
 ```
 
 This would only include packages that exceed 1,000,000 downloads per month, and thus would constitute a more lenient linting config as less rules will be activated.
@@ -211,6 +221,7 @@ There are a crazy amount of rules in this config, and they are completely overwh
 What is more, you can Enable, Disable, Add or Alter any rule you come across, like so:
 
 ```js
+// PathMark: ./README.md/7_7.js
 import currentThing from "eslint-config-current-thing";
 
 const config = [
@@ -224,6 +235,7 @@ const config = [
 ];
 
 export default config;
+// EOF
 ```
 
 ---
@@ -351,7 +363,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **5209**.
+The amount of packages reviewed and rejected **5227**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -363,7 +375,7 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/10/2025, total known packages **25,189**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/10/2025, total known packages **25,168**. Top 40 next in line, downloads for the previous 28 days:
 
 - 1,569,528 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 1,058,816 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
@@ -400,10 +412,10 @@ Generated on 2/10/2025, total known packages **25,189**. Top 40 next in line, do
 - 374,406 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
 - 371,073 downloads, [eslint-plugin-import-newlines](https://www.npmjs.com/package/eslint-plugin-import-newlines) - Not Yet Eligible
 - 366,804 downloads, [eslint-config-airbnb-typescript-prettier](https://www.npmjs.com/package/eslint-config-airbnb-typescript-prettier) - Not Yet Eligible
-- 365,948 downloads, [@angular/pwa](https://www.npmjs.com/package/@angular/pwa) - Not Yet Eligible
-- 365,946 downloads, [@gitlab/at.js](https://www.npmjs.com/package/@gitlab/at.js) - Not Yet Eligible
-- 365,505 downloads, [@gitlab/cluster-client](https://www.npmjs.com/package/@gitlab/cluster-client) - Not Yet Eligible
-- 365,367 downloads, [libheif-js](https://www.npmjs.com/package/libheif-js) - Not Yet Eligible
-- 365,022 downloads, [storybook-addon-remix-react-router](https://www.npmjs.com/package/storybook-addon-remix-react-router) - Not Yet Eligible
+- 364,114 downloads, [eslint-config-semistandard](https://www.npmjs.com/package/eslint-config-semistandard) - Not Yet Eligible
+- 361,477 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
+- 361,229 downloads, [@shopify/liquid-html-parser](https://www.npmjs.com/package/@shopify/liquid-html-parser) - Not Yet Eligible
+- 359,815 downloads, [vite-plugin-top-level-await](https://www.npmjs.com/package/vite-plugin-top-level-await) - Not Yet Eligible
+- 359,582 downloads, [unused-filename](https://www.npmjs.com/package/unused-filename) - Not Yet Eligible
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

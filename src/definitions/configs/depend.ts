@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/stylistic.ts
+// PathMark: ./src/definitions/configs/depend.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

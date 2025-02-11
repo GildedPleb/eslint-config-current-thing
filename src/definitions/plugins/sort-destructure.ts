@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/plugins/sort-keys.ts
+// PathMark: ./src/definitions/plugins/sort-destructure.ts
 import type { Plugin } from ".";
 
 export default {
