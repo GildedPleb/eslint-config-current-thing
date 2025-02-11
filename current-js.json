@@ -38,19 +38,6 @@
     "reportUnusedDisableDirectives": 1
   },
   "rules": {
-    "boundaries/element-types": [2],
-    "boundaries/entry-point": [2],
-    "boundaries/external": [2],
-    "boundaries/no-ignored": [0],
-    "boundaries/no-private": [
-      2,
-      {
-        "allowUncles": true
-      }
-    ],
-    "boundaries/no-unknown-files": [0],
-    "boundaries/no-unknown": [0],
-    "no-jquery/variable-pattern": [2],
     "no-use-extend-native/no-use-extend-native": [2],
     "wdio/await-expect": [2],
     "wdio/no-debug": [2],

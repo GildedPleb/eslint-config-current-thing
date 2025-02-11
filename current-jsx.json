@@ -42,6 +42,13 @@
     "reportUnusedDisableDirectives": 1
   },
   "rules": {
+    "no-use-extend-native/no-use-extend-native": [2],
+    "wdio/await-expect": [2],
+    "wdio/no-debug": [2],
+    "wdio/no-pause": [2],
+    "react-perf/jsx-no-new-object-as-prop": [2],
+    "react-perf/jsx-no-new-array-as-prop": [2],
+    "react-perf/jsx-no-new-function-as-prop": [2],
     "functional/functional-parameters": [0],
     "functional/no-classes": [0],
     "functional/no-conditional-statements": [0],
@@ -53,58 +60,6 @@
         "allowToRejectPromises": true
       }
     ],
-    "react-hooks/exhaustive-deps": [1],
-    "react-hooks/rules-of-hooks": [2],
-    "react/jsx-no-bind": [
-      2,
-      {
-        "allowArrowFunctions": true,
-        "allowBind": false,
-        "allowFunctions": false,
-        "ignoreDOMComponents": true,
-        "ignoreRefs": true
-      }
-    ],
-    "react/no-did-update-set-state": [2],
-    "react/no-unknown-property": [2],
-    "react/no-unused-prop-types": [
-      2,
-      {
-        "customValidators": [],
-        "skipShapeProps": true
-      }
-    ],
-    "react/prop-types": [
-      2,
-      {
-        "customValidators": [],
-        "ignore": [],
-        "skipUndeclared": false
-      }
-    ],
-    "react/react-in-jsx-scope": [2],
-    "css-modules/no-unused-class": [2],
-    "css-modules/no-undef-class": [2],
-    "boundaries/element-types": [2],
-    "boundaries/entry-point": [2],
-    "boundaries/external": [2],
-    "boundaries/no-ignored": [0],
-    "boundaries/no-private": [
-      2,
-      {
-        "allowUncles": true
-      }
-    ],
-    "boundaries/no-unknown-files": [0],
-    "boundaries/no-unknown": [0],
-    "no-jquery/variable-pattern": [2],
-    "no-use-extend-native/no-use-extend-native": [2],
-    "wdio/await-expect": [2],
-    "wdio/no-debug": [2],
-    "wdio/no-pause": [2],
-    "react-perf/jsx-no-new-object-as-prop": [2],
-    "react-perf/jsx-no-new-array-as-prop": [2],
-    "react-perf/jsx-no-new-function-as-prop": [2],
     "depend/ban-dependencies": [
       2,
       {
@@ -1181,6 +1136,8 @@
     "react-dom/no-script-url": [1],
     "react-dom/no-unsafe-iframe-sandbox": [1],
     "react-dom/no-unsafe-target-blank": [1],
+    "react-hooks/exhaustive-deps": [1],
+    "react-hooks/rules-of-hooks": [2],
     "react-refresh/only-export-components": [
       1,
       {
@@ -2396,8 +2353,19 @@
       }
     ],
     "react/no-did-mount-set-state": [0],
+    "react/no-did-update-set-state": [2],
     "react/no-multi-comp": [0],
+    "react/no-unknown-property": [2],
     "react/no-unstable-nested-components": [2],
+    "react/prop-types": [
+      2,
+      {
+        "customValidators": [],
+        "ignore": [],
+        "skipUndeclared": false
+      }
+    ],
+    "react/react-in-jsx-scope": [2],
     "react/wrap-multilines": [0],
     "sort-vars": [
       0,
@@ -2765,6 +2733,16 @@
       }
     ],
     "react/jsx-newline": [0],
+    "react/jsx-no-bind": [
+      2,
+      {
+        "allowArrowFunctions": true,
+        "allowBind": false,
+        "allowFunctions": false,
+        "ignoreDOMComponents": true,
+        "ignoreRefs": true
+      }
+    ],
     "react/jsx-no-constructed-context-values": [2],
     "react/jsx-no-leaked-render": [0],
     "react/jsx-no-literals": [
@@ -2821,6 +2799,13 @@
     "react/no-typos": [2],
     "react/no-unsafe": [0],
     "react/no-unused-class-component-methods": [2],
+    "react/no-unused-prop-types": [
+      2,
+      {
+        "customValidators": [],
+        "skipShapeProps": true
+      }
+    ],
     "react/no-unused-state": [2],
     "react/no-will-update-set-state": [2],
     "react/prefer-es6-class": [2, "always"],

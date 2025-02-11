@@ -5,7 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { MINIMUMS, RULES } from "../constants";
+import { RULES } from "../constants";
 import { parsers } from "../definitions";
 import type { Config } from "../definitions/configs";
 import rawConfigs from "../definitions/configs";
@@ -142,7 +142,7 @@ const addExtensions = (patterns, extensions) =>
 const tsTestFiles = addExtensions(TEST_PATTERNS, ["ts", "tsx"]);
 const jsTestFiles = addExtensions(TEST_PATTERNS, ["js", "jsx"]);
 
-const defaultOptions = { disable: [], override: {}, threshold: ${MINIMUMS} };
+const defaultOptions = { disable: [], override: {}, threshold: 400_000 };
 
 /**
  * @param {{ disable: string[], override: Record<string, Record<string, number | string>>, threshold: number }} default - Options

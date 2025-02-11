@@ -64,11 +64,11 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1647** Testing rules
-- **1632** TSX rules
-- **1626** JSX rules
-- **1498** Typescript rules
-- **1481** Javascript rules
+- **1639** Testing rules
+- **1620** TSX rules
+- **1616** JSX rules
+- **1490** Typescript rules
+- **1473** Javascript rules
 - **76** JSON rules
 - **59** YML rules
 - **56** TOML rules
@@ -179,7 +179,7 @@ export default config;
 
 #### `threshold`
 
-`threshold` can be passed to the options object to set the popularity threshold for packages. Defaulting to 400,000 downloads per month.
+`threshold` can be passed to the options object to set the popularity threshold for packages. See [threshold](#1-additions) for default setting.
 
 ```js
 import currentThing from "eslint-config-current-thing";
@@ -235,7 +235,11 @@ export default config;
 
 ### 1. Additions
 
-**For a CONFIG to be added, it needs to have around 400,000 monthly downloads (or 4 consecutive weeks above 100,000 weekly downloads).** This is to prevent spam, bloat, needless PRs, and arguments about minutia. But it's also variable as configs change popularity. Yes, it's arbitrary (and it can be spoofed/is [naively calculated](https://blog.npmjs.org/post/92574016600/numeric-precision-matters-how-npm-download-counts-work.html)), but it seems to be a good heuristic for the cutoff between generally used configs and niche configs.
+<!-- Start Generated Threshold DO NOT EDIT! -->
+
+**For a CONFIG to be added, it needs to have around 531,405 monthly downloads (or 4 consecutive weeks above 100,000 weekly downloads Circa Feb 2023 adjusted for 15% annual download inflation).** This is to prevent spam, bloat, needless PRs, drift, and arguments about minutia. But it's also variable as configs change popularity. Yes, it's arbitrary (and it can be spoofed/is [naively calculated](https://blog.npmjs.org/post/92574016600/numeric-precision-matters-how-npm-download-counts-work.html)), but it seems to be a good heuristic for the cutoff between generally used configs and niche configs. It is also the default threshold for the cutoff.
+
+<!-- End Generated Threshold DO NOT EDIT! -->
 
 **For a PLUGIN to be added, it needs to be included in an added config, or meet similar config quality standards.** This is to ensure that configs work as intended.
 
@@ -354,7 +358,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **5399**. 
+The amount of packages reviewed and rejected **5416**. 
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -366,29 +370,29 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/11/2025, total known packages **25,219**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/11/2025, total known packages **25,201**. Top 40 next in line, downloads for the previous 28 days:
 
 - 1,569,528 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 1,058,816 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 1,025,475 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
 - 785,672 downloads, [@emotion/eslint-plugin](https://www.npmjs.com/package/@emotion/eslint-plugin)
 - 594,187 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc)
-- 475,022 downloads, [eslint-config-ngs](https://www.npmjs.com/package/eslint-config-ngs)
-- 444,582 downloads, [astro-eslint-parser](https://www.npmjs.com/package/astro-eslint-parser)
-- 441,765 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe)
-- 438,604 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp)
-- 438,264 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc)
-- 434,677 downloads, [eslint-plugin-no-null](https://www.npmjs.com/package/eslint-plugin-no-null)
-- 431,944 downloads, [@ngrx/eslint-plugin](https://www.npmjs.com/package/@ngrx/eslint-plugin)
-- 429,081 downloads, [eslint-plugin-astro](https://www.npmjs.com/package/eslint-plugin-astro)
-- 414,989 downloads, [sherif](https://www.npmjs.com/package/sherif)
-- 414,553 downloads, [@shopify/eslint-plugin](https://www.npmjs.com/package/@shopify/eslint-plugin)
-- 407,589 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit)
-- 401,114 downloads, [sherif-linux-x64](https://www.npmjs.com/package/sherif-linux-x64)
+- 475,022 downloads, [eslint-config-ngs](https://www.npmjs.com/package/eslint-config-ngs) - Not Yet Eligible
+- 444,582 downloads, [astro-eslint-parser](https://www.npmjs.com/package/astro-eslint-parser) - Not Yet Eligible
+- 441,765 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe) - Not Yet Eligible
+- 438,604 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp) - Not Yet Eligible
+- 438,264 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc) - Not Yet Eligible
+- 434,677 downloads, [eslint-plugin-no-null](https://www.npmjs.com/package/eslint-plugin-no-null) - Not Yet Eligible
+- 431,944 downloads, [@ngrx/eslint-plugin](https://www.npmjs.com/package/@ngrx/eslint-plugin) - Not Yet Eligible
+- 429,081 downloads, [eslint-plugin-astro](https://www.npmjs.com/package/eslint-plugin-astro) - Not Yet Eligible
+- 414,989 downloads, [sherif](https://www.npmjs.com/package/sherif) - Not Yet Eligible
+- 414,553 downloads, [@shopify/eslint-plugin](https://www.npmjs.com/package/@shopify/eslint-plugin) - Not Yet Eligible
+- 407,589 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit) - Not Yet Eligible
+- 401,114 downloads, [sherif-linux-x64](https://www.npmjs.com/package/sherif-linux-x64) - Not Yet Eligible
 - 399,406 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
 - 399,347 downloads, [eslint-rule-documentation](https://www.npmjs.com/package/eslint-rule-documentation) - Not Yet Eligible
+- 397,597 downloads, [@salesforce/eslint-plugin-lightning](https://www.npmjs.com/package/@salesforce/eslint-plugin-lightning) - Not Yet Eligible
 - 382,592 downloads, [eslint-plugin-vitest-globals](https://www.npmjs.com/package/eslint-plugin-vitest-globals) - Not Yet Eligible
-- 378,806 downloads, [@salesforce/eslint-plugin-lightning](https://www.npmjs.com/package/@salesforce/eslint-plugin-lightning) - Not Yet Eligible
 - 378,172 downloads, [@gitlab/eslint-plugin](https://www.npmjs.com/package/@gitlab/eslint-plugin) - Not Yet Eligible
 - 374,406 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
 - 371,073 downloads, [eslint-plugin-import-newlines](https://www.npmjs.com/package/eslint-plugin-import-newlines) - Not Yet Eligible
@@ -404,10 +408,10 @@ Generated on 2/11/2025, total known packages **25,219**. Top 40 next in line, do
 - 341,430 downloads, [hermes-eslint](https://www.npmjs.com/package/hermes-eslint) - Not Yet Eligible
 - 340,183 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin) - Not Yet Eligible
 - 338,833 downloads, [eslint-plugin-no-secrets](https://www.npmjs.com/package/eslint-plugin-no-secrets) - Not Yet Eligible
-- 336,302 downloads, [@docusaurus/plugin-svgr](https://www.npmjs.com/package/@docusaurus/plugin-svgr) - Not Yet Eligible
-- 336,145 downloads, [@types/oracledb](https://www.npmjs.com/package/@types/oracledb) - Not Yet Eligible
 - 336,144 downloads, [eslint-plugin-escompat](https://www.npmjs.com/package/eslint-plugin-escompat) - Not Yet Eligible
-- 335,956 downloads, [@types/chai-dom](https://www.npmjs.com/package/@types/chai-dom) - Not Yet Eligible
+- 334,345 downloads, [eslint-filtered-fix](https://www.npmjs.com/package/eslint-filtered-fix) - Not Yet Eligible
+- 333,253 downloads, [@escape.tech/graphql-armor-max-depth](https://www.npmjs.com/package/@escape.tech/graphql-armor-max-depth) - Not Yet Eligible
+- 333,228 downloads, [eslint-nibble](https://www.npmjs.com/package/eslint-nibble) - Not Yet Eligible
 
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

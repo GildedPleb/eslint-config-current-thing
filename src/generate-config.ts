@@ -116,7 +116,7 @@ const defaultOptions = { disable: [], override: {}, threshold: ${MINIMUMS} };
 const configGen = ({
   disable = [],
   override = {},
-  threshold = 400_000,
+  threshold = ${MINIMUMS},
 } = defaultOptions) =>
   // @ts-expect-error type mismatching here is expected because the return is defined as a literal type, on literal types.
   defineFlatConfig([

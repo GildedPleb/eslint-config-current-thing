@@ -167,7 +167,7 @@ const addExtensions = (patterns, extensions) =>
 const tsTestFiles = addExtensions(TEST_PATTERNS, ["ts", "tsx"]);
 const jsTestFiles = addExtensions(TEST_PATTERNS, ["js", "jsx"]);
 
-const defaultOptions = { disable: [], override: {}, threshold: 400_000 };
+const defaultOptions = { disable: [], override: {}, threshold: 531_405 };
 
 /**
  * @param {{ disable: string[], override: Record<string, Record<string, number | string>>, threshold: number }} default - Options
@@ -176,7 +176,7 @@ const defaultOptions = { disable: [], override: {}, threshold: 400_000 };
 const configGen = ({
   disable = [],
   override = {},
-  threshold = 400_000,
+  threshold = 531_405,
 } = defaultOptions) =>
   // @ts-expect-error type mismatching here is expected because the return is defined as a literal type, on literal types.
   defineFlatConfig([

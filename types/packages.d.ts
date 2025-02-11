@@ -80,6 +80,7 @@ declare module "eslint-plugin-react-compiler";
 declare module "eslint-plugin-sort-destructure-keys";
 declare module "eslint-plugin-ban";
 declare module "eslint-plugin-boundaries";
+declare module "eslint-plugin-no-jquery";
 
 declare module "gts" {
   interface GtsConfig {

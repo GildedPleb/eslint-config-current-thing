@@ -56,6 +56,13 @@
     "reportUnusedDisableDirectives": 1
   },
   "rules": {
+    "no-use-extend-native/no-use-extend-native": [2],
+    "wdio/await-expect": [2],
+    "wdio/no-debug": [2],
+    "wdio/no-pause": [2],
+    "react-perf/jsx-no-new-object-as-prop": [2],
+    "react-perf/jsx-no-new-array-as-prop": [2],
+    "react-perf/jsx-no-new-function-as-prop": [2],
     "functional/functional-parameters": [
       0,
       {
@@ -94,45 +101,6 @@
         "allowToRejectPromises": true
       }
     ],
-    "react-hooks/exhaustive-deps": [1],
-    "react-hooks/rules-of-hooks": [2],
-    "react/jsx-no-bind": [
-      2,
-      {
-        "allowArrowFunctions": true,
-        "allowBind": false,
-        "ignoreRefs": true,
-        "allowFunctions": false,
-        "ignoreDOMComponents": false
-      }
-    ],
-    "react/no-did-update-set-state": [1],
-    "react/no-unknown-property": [2],
-    "react/no-unused-prop-types": [2],
-    "react/prop-types": [2],
-    "react/react-in-jsx-scope": [2],
-    "css-modules/no-unused-class": [2],
-    "css-modules/no-undef-class": [2],
-    "boundaries/element-types": [2],
-    "boundaries/entry-point": [2],
-    "boundaries/external": [2],
-    "boundaries/no-ignored": [0],
-    "boundaries/no-private": [
-      2,
-      {
-        "allowUncles": true
-      }
-    ],
-    "boundaries/no-unknown-files": [0],
-    "boundaries/no-unknown": [0],
-    "no-jquery/variable-pattern": [2],
-    "no-use-extend-native/no-use-extend-native": [2],
-    "wdio/await-expect": [2],
-    "wdio/no-debug": [2],
-    "wdio/no-pause": [2],
-    "react-perf/jsx-no-new-object-as-prop": [2],
-    "react-perf/jsx-no-new-array-as-prop": [2],
-    "react-perf/jsx-no-new-function-as-prop": [2],
     "depend/ban-dependencies": [
       2,
       {
@@ -1105,6 +1073,8 @@
     "react-dom/no-script-url": [1],
     "react-dom/no-unsafe-iframe-sandbox": [1],
     "react-dom/no-unsafe-target-blank": [1],
+    "react-hooks/exhaustive-deps": [1],
+    "react-hooks/rules-of-hooks": [2],
     "react-refresh/only-export-components": [
       1,
       {
@@ -2471,8 +2441,12 @@
     "react/display-name": [2],
     "react/jsx-sort-props": [0],
     "react/no-did-mount-set-state": [1],
+    "react/no-did-update-set-state": [1],
     "react/no-multi-comp": [0],
+    "react/no-unknown-property": [2],
     "react/no-unstable-nested-components": [1],
+    "react/prop-types": [2],
+    "react/react-in-jsx-scope": [2],
     "react/wrap-multilines": [0],
     "semi-spacing": [0],
     "sort-vars": [
