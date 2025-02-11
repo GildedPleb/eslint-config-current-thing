@@ -20,13 +20,13 @@ export default {
   nameSecondary: "Jest",
   packages: [
     {
-      declaredAs: "reactNativeConfig",
-      package: "@react-native-community/eslint-config",
+      declaredAs: "rnConfig",
+      package: "@react-native/eslint-config",
       requiresImport: false,
     },
     {
-      declaredAs: "rnConfig",
-      package: "@react-native/eslint-config",
+      declaredAs: "reactNativeConfig",
+      package: "@react-native-community/eslint-config",
       requiresImport: false,
     },
   ],

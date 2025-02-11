@@ -2039,13 +2039,13 @@ const configGen = ({
     /*
       MDX
       2,613,990 monthly downloads
-      ESLint Plugin for MDX / remark plugin to lint Markdown code style / remark preset to configure remark-lint with rules that prevent mistakes or stuff that fails across vendors.
+      ESLint Plugin for MDX / remark preset to configure remark-lint with rules that prevent mistakes or stuff that fails across vendors. / remark plugin to lint Markdown code style
       https://github.com/mdx-js/eslint-mdx/blob/master/packages/eslint-plugin-mdx / https://github.com/remarkjs/remark-lint/tree/main#readme / https://github.com/remarkjs/remark-lint/tree/main#readme
       Requires: mdx, react
     */
     ...(disable.includes("eslint-plugin-mdx") ||
-    disable.includes("remark-lint") ||
     disable.includes("remark-preset-lint-recommended") ||
+    disable.includes("remark-lint") ||
     threshold > 2_613_990
       ? []
       : [
@@ -2063,10 +2063,10 @@ const configGen = ({
               ...("eslint-plugin-mdx" in override
                 ? override["eslint-plugin-mdx"]
                 : {}),
-              ...("remark-lint" in override ? override["remark-lint"] : {}),
               ...("remark-preset-lint-recommended" in override
                 ? override["remark-preset-lint-recommended"]
                 : {}),
+              ...("remark-lint" in override ? override["remark-lint"] : {}),
             },
           },
         ]),
@@ -2324,11 +2324,11 @@ const configGen = ({
       React Native Config - Jest
       3,163,421 monthly downloads
       ESLint config for React Native / ESLint config for React Native
-      https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native-community#readme / https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native#readme
+      https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native#readme / https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native-community#readme
       Requires: react-native
     */
-    ...(disable.includes("@react-native-community/eslint-config/jest") ||
-    disable.includes("@react-native/eslint-config/jest") ||
+    ...(disable.includes("@react-native/eslint-config/jest") ||
+    disable.includes("@react-native-community/eslint-config/jest") ||
     threshold > 3_163_421
       ? []
       : [
@@ -2349,11 +2349,11 @@ const configGen = ({
               ],
               "react-native/no-inline-styles": 0,
 
-              ...("@react-native-community/eslint-config/jest" in override
-                ? override["@react-native-community/eslint-config/jest"]
-                : {}),
               ...("@react-native/eslint-config/jest" in override
                 ? override["@react-native/eslint-config/jest"]
+                : {}),
+              ...("@react-native-community/eslint-config/jest" in override
+                ? override["@react-native-community/eslint-config/jest"]
                 : {}),
             },
           },
@@ -2562,14 +2562,14 @@ const configGen = ({
         ]),
 
     /*
-      Vitest TS
+      Vitest - TS
       4,336,313 monthly downloads
       Eslint plugin for vitest / Eslint plugin for vitest
       https://github.com/vitest-dev/eslint-plugin-vitest#readme / https://github.com/veritem/eslint-plugin-vitest#readme
       Requires: vitest
     */
-    ...(disable.includes("@vitest/eslint-plugin") ||
-    disable.includes("eslint-plugin-vitest") ||
+    ...(disable.includes("@vitest/eslint-plugin/ts") ||
+    disable.includes("eslint-plugin-vitest/ts") ||
     threshold > 4_336_313
       ? []
       : [
@@ -2586,15 +2586,15 @@ const configGen = ({
                 warnOnUnsupportedTypeScriptVersion: false,
               },
             },
-            name: "Vitest TS",
+            name: "Vitest/ts",
             rules: {
               ...vitest.configs.recommended.rules,
 
-              ...("@vitest/eslint-plugin" in override
-                ? override["@vitest/eslint-plugin"]
+              ...("@vitest/eslint-plugin/ts" in override
+                ? override["@vitest/eslint-plugin/ts"]
                 : {}),
-              ...("eslint-plugin-vitest" in override
-                ? override["eslint-plugin-vitest"]
+              ...("eslint-plugin-vitest/ts" in override
+                ? override["eslint-plugin-vitest/ts"]
                 : {}),
             },
             settings: {
@@ -3252,11 +3252,11 @@ const configGen = ({
       Comments
       9,855,549 monthly downloads
       Additional ESLint rules for ESLint directive comments. / Additional ESLint rules for ESLint directive comments.
-      https://github.com/eslint-community/eslint-plugin-eslint-comments#readme / https://github.com/mysticatea/eslint-plugin-eslint-comments#readme
+      https://github.com/mysticatea/eslint-plugin-eslint-comments#readme / https://github.com/eslint-community/eslint-plugin-eslint-comments#readme
       Requires: eslint-comments
     */
-    ...(disable.includes("@eslint-community/eslint-plugin-eslint-comments") ||
-    disable.includes("eslint-plugin-eslint-comments") ||
+    ...(disable.includes("eslint-plugin-eslint-comments") ||
+    disable.includes("@eslint-community/eslint-plugin-eslint-comments") ||
     threshold > 9_855_549
       ? []
       : [
@@ -3270,11 +3270,11 @@ const configGen = ({
               "eslint-comments/no-unlimited-disable": 2,
               "eslint-comments/no-unused-enable": 2,
 
-              ...("@eslint-community/eslint-plugin-eslint-comments" in override
-                ? override["@eslint-community/eslint-plugin-eslint-comments"]
-                : {}),
               ...("eslint-plugin-eslint-comments" in override
                 ? override["eslint-plugin-eslint-comments"]
+                : {}),
+              ...("@eslint-community/eslint-plugin-eslint-comments" in override
+                ? override["@eslint-community/eslint-plugin-eslint-comments"]
                 : {}),
             },
           },
@@ -4989,11 +4989,11 @@ const configGen = ({
       ES-X
       23,203,202 monthly downloads
       ESLint plugin about ECMAScript syntactic features. / ESLint plugin about ECMAScript syntactic features.
-      https://github.com/eslint-community/eslint-plugin-es-x#readme / https://github.com/mysticatea/eslint-plugin-es#readme
+      https://github.com/mysticatea/eslint-plugin-es#readme / https://github.com/eslint-community/eslint-plugin-es-x#readme
       Requires: es-x
     */
-    ...(disable.includes("eslint-plugin-es-x") ||
-    disable.includes("eslint-plugin-es") ||
+    ...(disable.includes("eslint-plugin-es") ||
+    disable.includes("eslint-plugin-es-x") ||
     threshold > 23_203_202
       ? []
       : [
@@ -5003,11 +5003,11 @@ const configGen = ({
             rules: {
               ...esX.configs["no-new-in-esnext"].rules,
 
-              ...("eslint-plugin-es-x" in override
-                ? override["eslint-plugin-es-x"]
-                : {}),
               ...("eslint-plugin-es" in override
                 ? override["eslint-plugin-es"]
+                : {}),
+              ...("eslint-plugin-es-x" in override
+                ? override["eslint-plugin-es-x"]
                 : {}),
             },
           },
@@ -5017,11 +5017,11 @@ const configGen = ({
       Node.js
       23,464,870 monthly downloads
       Additional ESLint's rules for Node.js / Additional ESLint's rules for Node.js
-      https://github.com/eslint-community/eslint-plugin-n#readme / https://github.com/mysticatea/eslint-plugin-node#readme
+      https://github.com/mysticatea/eslint-plugin-node#readme / https://github.com/eslint-community/eslint-plugin-n#readme
       Requires: n
     */
-    ...(disable.includes("eslint-plugin-n") ||
-    disable.includes("eslint-plugin-node") ||
+    ...(disable.includes("eslint-plugin-node") ||
+    disable.includes("eslint-plugin-n") ||
     threshold > 23_464_870
       ? []
       : [
@@ -5042,11 +5042,11 @@ const configGen = ({
               "functional/no-conditional-statements": 0,
               "functional/no-expression-statements": 0,
               "functional/no-throw-statements": 0,
-              ...("eslint-plugin-n" in override
-                ? override["eslint-plugin-n"]
-                : {}),
               ...("eslint-plugin-node" in override
                 ? override["eslint-plugin-node"]
+                : {}),
+              ...("eslint-plugin-n" in override
+                ? override["eslint-plugin-n"]
                 : {}),
             },
           },
@@ -6603,12 +6603,12 @@ const configGen = ({
     /*
       Import - ts
       140,997,047 monthly downloads
-      Import with sanity. / This plugin adds `TypeScript` support to `eslint-plugin-import`
-      https://github.com/import-js/eslint-plugin-import / https://github.com/import-js/eslint-import-resolver-typescript#readme
+      This plugin adds `TypeScript` support to `eslint-plugin-import` / Import with sanity.
+      https://github.com/import-js/eslint-import-resolver-typescript#readme / https://github.com/import-js/eslint-plugin-import
       Requires: import
     */
-    ...(disable.includes("eslint-plugin-import/ts") ||
-    disable.includes("eslint-import-resolver-typescript/ts") ||
+    ...(disable.includes("eslint-import-resolver-typescript/ts") ||
+    disable.includes("eslint-plugin-import/ts") ||
     threshold > 140_997_047
       ? []
       : [
@@ -6618,11 +6618,11 @@ const configGen = ({
             rules: {
               ...importPlugin.configs.typescript.rules,
 
-              ...("eslint-plugin-import/ts" in override
-                ? override["eslint-plugin-import/ts"]
-                : {}),
               ...("eslint-import-resolver-typescript/ts" in override
                 ? override["eslint-import-resolver-typescript/ts"]
+                : {}),
+              ...("eslint-plugin-import/ts" in override
+                ? override["eslint-plugin-import/ts"]
                 : {}),
             },
           },
@@ -6631,12 +6631,12 @@ const configGen = ({
     /*
       Import
       140,997,047 monthly downloads
-      Import with sanity. / This plugin adds `TypeScript` support to `eslint-plugin-import`
-      https://github.com/import-js/eslint-plugin-import / https://github.com/import-js/eslint-import-resolver-typescript#readme
+      This plugin adds `TypeScript` support to `eslint-plugin-import` / Import with sanity.
+      https://github.com/import-js/eslint-import-resolver-typescript#readme / https://github.com/import-js/eslint-plugin-import
       Requires: import
     */
-    ...(disable.includes("eslint-plugin-import") ||
-    disable.includes("eslint-import-resolver-typescript") ||
+    ...(disable.includes("eslint-import-resolver-typescript") ||
+    disable.includes("eslint-plugin-import") ||
     threshold > 140_997_047
       ? []
       : [
@@ -6646,11 +6646,11 @@ const configGen = ({
             rules: {
               ...importPlugin.configs.recommended.rules,
               "n/no-missing-import": 0,
-              ...("eslint-plugin-import" in override
-                ? override["eslint-plugin-import"]
-                : {}),
               ...("eslint-import-resolver-typescript" in override
                 ? override["eslint-import-resolver-typescript"]
+                : {}),
+              ...("eslint-plugin-import" in override
+                ? override["eslint-plugin-import"]
                 : {}),
             },
             settings: {

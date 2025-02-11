@@ -220,8 +220,8 @@ const configGen = ({
       www.nope.com
       Requires: import
     */
-    ...(disable.includes("eslint-plugin-import") ||
-    disable.includes("eslint-import-resolver-typescript") ||
+    ...(disable.includes("eslint-import-resolver-typescript") ||
+    disable.includes("eslint-plugin-import") ||
     threshold > 1_000_000
       ? []
       : [
@@ -229,11 +229,11 @@ const configGen = ({
             files,
             rules: {
               ...importPlugin.configs.recommended.rules,
-              ...("eslint-plugin-import" in override
-                ? override["eslint-plugin-import"]
-                : {}),
               ...("eslint-import-resolver-typescript" in override
                 ? override["eslint-import-resolver-typescript"]
+                : {}),
+              ...("eslint-plugin-import" in override
+                ? override["eslint-plugin-import"]
                 : {}),
             },
             settings: {

@@ -18,6 +18,7 @@ import JSONConfigTs from "../current-ts.json" with { type: "json" };
 import JSONConfigTsx from "../current-tsx.json" with { type: "json" };
 import JSONConfigYml from "../current-yml.json" with { type: "json" };
 import { LAST_DAY_INTERVAL, MINIMUMS } from "./constants";
+import type { Config } from "./definitions/configs";
 import configs from "./definitions/configs";
 import fetchEslintPlugins from "./packages/get-packages";
 import { search } from "./packages/rejected-database";
@@ -58,34 +59,71 @@ function updateReadmeSection(marker: string, newContent: string): void {
   }
 }
 
-const uniqueNamesSet = new Set<string>();
-for (const config of configs) uniqueNamesSet.add(config.name);
-const uniqueNames = [...uniqueNamesSet].sort((first, second) =>
-  first.localeCompare(second, "en", { sensitivity: "base" }),
-);
+const getMaxLinkedNameWidth = (configsInner: Config[]): number =>
+  Math.max(
+    ...configsInner.map((config) => {
+      const packageName = config.packages.at(-1)?.package ?? "";
+      return (
+        config.name.length +
+        packageName.length +
+        "https://www.npmjs.com/package/".length +
+        4
+      );
+    }),
+  );
 
-const maxColumns = 4;
+const generateTable = (configsInner: Config[], maxColumns = 4): string => {
+  const uniqueLinkedNames = [
+    ...new Set(
+      configsInner.map((config: Config): string => {
+        const packageName = config.packages.at(-1)?.package ?? "";
+        return `[${config.name}](https://www.npmjs.com/package/${packageName})`;
+      }),
+    ),
+  ].sort((first, second) =>
+    first.localeCompare(second, "en", { sensitivity: "base" }),
+  );
 
-let markdownTable = `${"| ".repeat(maxColumns + 1)}\n${[[..."|".repeat(maxColumns + 1)]].join(" - ")}\n|`;
-let columnCount = 0;
+  const columnWidth = getMaxLinkedNameWidth(configsInner);
 
-for (const name of uniqueNames) {
-  markdownTable += ` ${name} |`;
-  columnCount++;
-  if (columnCount === maxColumns) {
-    markdownTable += "\n|";
-    columnCount = 0;
+  // Fixed header row with proper spacing
+  let markdownTable = "|";
+  for (let index = 0; index < maxColumns; index++) {
+    markdownTable += ` ${" ".repeat(columnWidth)} |`;
   }
-}
-
-if (columnCount !== 0) {
-  while (columnCount < maxColumns) {
-    markdownTable += "  |";
-    columnCount++;
-  }
-
   markdownTable += "\n";
-}
+
+  // Separator row
+  markdownTable += "|";
+  for (let index = 0; index < maxColumns; index++) {
+    markdownTable += `${"-".repeat(columnWidth + 2)}|`;
+  }
+  markdownTable += "\n";
+
+  let columnCount = 0;
+  markdownTable += "|";
+
+  for (const linkedName of uniqueLinkedNames) {
+    const paddedName = linkedName.padEnd(columnWidth);
+    markdownTable += ` ${paddedName} |`;
+    columnCount++;
+
+    if (columnCount === maxColumns) {
+      markdownTable += "\n|";
+      columnCount = 0;
+    }
+  }
+
+  if (columnCount !== 0) {
+    while (columnCount < maxColumns) {
+      markdownTable += `${" ".repeat(columnWidth + 1)}|`;
+      columnCount++;
+    }
+    markdownTable += "\n";
+  }
+
+  return markdownTable;
+};
 
 const configListMarker = "List of Configs";
 
@@ -129,7 +167,7 @@ const rejectedCount = `In an effort to find as many possible ESLint appropriate 
 
 The amount of packages reviewed and rejected **${rejected.length}**. `;
 
-updateReadmeSection(configListMarker, markdownTable);
+updateReadmeSection(configListMarker, generateTable(configs));
 updateReadmeSection(ruleCountMarker, ruleCount);
 updateReadmeSection(underConsiderationMarker, underConsideration);
 updateReadmeSection(rejectedMarker, rejectedCount);

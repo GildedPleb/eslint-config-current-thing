@@ -220,8 +220,8 @@ const configGen = ({
       www.nope.com
       Requires: n
     */
-    ...(disable.includes("eslint-plugin-n") ||
-    disable.includes("eslint-plugin-node") ||
+    ...(disable.includes("eslint-plugin-node") ||
+    disable.includes("eslint-plugin-n") ||
     threshold > 1_000_000
       ? []
       : [
@@ -238,11 +238,11 @@ const configGen = ({
             },
             rules: {
               ...nNode.configs["flat/recommended-module"].rules,
-              ...("eslint-plugin-n" in override
-                ? override["eslint-plugin-n"]
-                : {}),
               ...("eslint-plugin-node" in override
                 ? override["eslint-plugin-node"]
+                : {}),
+              ...("eslint-plugin-n" in override
+                ? override["eslint-plugin-n"]
                 : {}),
             },
           },

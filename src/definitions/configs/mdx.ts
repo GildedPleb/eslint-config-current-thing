@@ -18,13 +18,13 @@ export default {
       requiresImport: false,
     },
     {
-      declaredAs: "remarkLint",
-      package: "remark-lint",
+      declaredAs: "remarkLintRecommended",
+      package: "remark-preset-lint-recommended",
       requiresImport: false,
     },
     {
-      declaredAs: "remarkLintRecommended",
-      package: "remark-preset-lint-recommended",
+      declaredAs: "remarkLint",
+      package: "remark-lint",
       requiresImport: false,
     },
   ],

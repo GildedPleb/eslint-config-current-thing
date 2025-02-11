@@ -220,8 +220,8 @@ const configGen = ({
       www.nope.com
       Requires: es-x
     */
-    ...(disable.includes("eslint-plugin-es-x") ||
-    disable.includes("eslint-plugin-es") ||
+    ...(disable.includes("eslint-plugin-es") ||
+    disable.includes("eslint-plugin-es-x") ||
     threshold > 1_000_000
       ? []
       : [
@@ -229,11 +229,11 @@ const configGen = ({
             files,
             rules: {
               ...esX.configs["no-new-in-esnext"].rules,
-              ...("eslint-plugin-es-x" in override
-                ? override["eslint-plugin-es-x"]
-                : {}),
               ...("eslint-plugin-es" in override
                 ? override["eslint-plugin-es"]
+                : {}),
+              ...("eslint-plugin-es-x" in override
+                ? override["eslint-plugin-es-x"]
                 : {}),
             },
           },

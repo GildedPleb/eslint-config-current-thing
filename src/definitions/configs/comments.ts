@@ -13,13 +13,13 @@ export default {
   name: "Comments",
   packages: [
     {
-      declaredAs: "comments",
-      package: "@eslint-community/eslint-plugin-eslint-comments",
+      declaredAs: "commentsOld",
+      package: "eslint-plugin-eslint-comments",
       requiresImport: false,
     },
     {
-      declaredAs: "commentsOld",
-      package: "eslint-plugin-eslint-comments",
+      declaredAs: "comments",
+      package: "@eslint-community/eslint-plugin-eslint-comments",
       requiresImport: false,
     },
   ],

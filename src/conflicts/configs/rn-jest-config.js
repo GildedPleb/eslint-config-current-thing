@@ -220,8 +220,8 @@ const configGen = ({
       www.nope.com
       Requires: react-native
     */
-    ...(disable.includes("@react-native-community/eslint-config-jest") ||
-    disable.includes("@react-native/eslint-config-jest") ||
+    ...(disable.includes("@react-native/eslint-config-jest") ||
+    disable.includes("@react-native-community/eslint-config-jest") ||
     threshold > 1_000_000
       ? []
       : [
@@ -240,11 +240,11 @@ const configGen = ({
                 { allowTemplateLiterals: true, avoidEscape: true },
               ],
               "react-native/no-inline-styles": 0,
-              ...("@react-native-community/eslint-config/jest" in override
-                ? override["@react-native-community/eslint-config/jest"]
-                : {}),
               ...("@react-native/eslint-config/jest" in override
                 ? override["@react-native/eslint-config/jest"]
+                : {}),
+              ...("@react-native-community/eslint-config/jest" in override
+                ? override["@react-native-community/eslint-config/jest"]
                 : {}),
             },
           },

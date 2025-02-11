@@ -214,14 +214,14 @@ const configGen = ({
     },
 
     /*
-      Vitest TS
+      Vitest - TS
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
       Requires: vitest
     */
-    ...(disable.includes("@vitest/eslint-plugin") ||
-    disable.includes("eslint-plugin-vitest") ||
+    ...(disable.includes("@vitest/eslint-plugin-ts") ||
+    disable.includes("eslint-plugin-vitest-ts") ||
     threshold > 1_000_000
       ? []
       : [
@@ -240,11 +240,11 @@ const configGen = ({
             },
             rules: {
               ...vitest.configs.recommended.rules,
-              ...("@vitest/eslint-plugin" in override
-                ? override["@vitest/eslint-plugin"]
+              ...("@vitest/eslint-plugin/ts" in override
+                ? override["@vitest/eslint-plugin/ts"]
                 : {}),
-              ...("eslint-plugin-vitest" in override
-                ? override["eslint-plugin-vitest"]
+              ...("eslint-plugin-vitest/ts" in override
+                ? override["eslint-plugin-vitest/ts"]
                 : {}),
             },
             settings: {

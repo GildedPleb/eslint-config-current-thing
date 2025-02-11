@@ -25,8 +25,9 @@ export default {
   }`,
   ejected: false,
   enabled: true,
-  id: "vitest-ts",
-  name: "Vitest TS",
+  id: "vitest",
+  name: "Vitest",
+  nameSecondary: "TS",
   packages: [
     {
       declaredAs: "vitest",

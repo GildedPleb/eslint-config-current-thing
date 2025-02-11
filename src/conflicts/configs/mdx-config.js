@@ -222,8 +222,8 @@ const configGen = ({
       Requires: mdx, react
     */
     ...(disable.includes("eslint-plugin-mdx") ||
-    disable.includes("remark-lint") ||
     disable.includes("remark-preset-lint-recommended") ||
+    disable.includes("remark-lint") ||
     threshold > 1_000_000
       ? []
       : [
@@ -240,10 +240,10 @@ const configGen = ({
               ...("eslint-plugin-mdx" in override
                 ? override["eslint-plugin-mdx"]
                 : {}),
-              ...("remark-lint" in override ? override["remark-lint"] : {}),
               ...("remark-preset-lint-recommended" in override
                 ? override["remark-preset-lint-recommended"]
                 : {}),
+              ...("remark-lint" in override ? override["remark-lint"] : {}),
             },
           },
         ]),

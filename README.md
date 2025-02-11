@@ -16,32 +16,32 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 
 <!-- Start Generated List of Configs DO NOT EDIT! -->
 
-| | | | | 
-|,|,|,|,|
-| AirBnb | AirBnb Base | AirBnb-Typescript | Antfu |
-| Ava | Boundaries | Chai Friendly | Comments |
-| Compat | Create React App | CSS Modules | Cypress |
-| Depend | ES-X | ESLint | FormatJS |
-| Functional | Google | Google Typescript Style | GraphQL |
-| Import | Import X | Internationalization (i18n) | Jasmine |
-| Jest | Jest Dom | Jest Formatting | JSDoc |
-| JSONC | JSX Accessibility (JSX A11y) | Markdown | MDX |
-| Microsoft SDL | Mocha | NextJS | No JQuery |
-| No Only Tests | No Relative Import Paths | No Unsanitized | No Unused Imports |
-| No Use Extend Native | Node.js | Perfectionist | Playwright |
-| Prefer Arrow | Prettier | Prettier Plugin PackageJSON | Prettier Plugin Tailwind |
-| Promises | React | React Compiler | React Debug |
-| React DOM | React Hooks | React Hooks Extra | React Naming Convention |
-| React Native (Independent Plugin/Config) | React Native Config | React Native Plugin | React Performance |
-| React Prefer Function Component | React Refresh | React Web API | React X |
-| Regular Expressions | Security | Simple Import Sort | SonarJS |
-| Sort Class Members | Sort Destructure Keys | Standard | Standard JSX |
-| Standard React | Standard TS | Storybook | Stylistic |
-| Tailwind CSS | Tanstack Query | Testing Library | TOML |
-| TSDoc | Turbo | TypeScript | Unicorn |
-| Vitest | Vitest TS | Webdriver IO | XO |
-| YML | You Don't Need Lodash |  |  |
-
+|                                                                                                                |                                                                                                      |                                                                                                      |                                                                                                  |
+| -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| [AirBnb Base](https://www.npmjs.com/package/eslint-config-airbnb-base)                                         | [AirBnb-Typescript](https://www.npmjs.com/package/eslint-config-airbnb-typescript)                   | [AirBnb](https://www.npmjs.com/package/eslint-config-airbnb)                                         | [Antfu](https://www.npmjs.com/package/@antfu/eslint-config)                                      |
+| [Ava](https://www.npmjs.com/package/eslint-plugin-ava)                                                         | [Boundaries](https://www.npmjs.com/package/eslint-plugin-boundaries)                                 | [Chai Friendly](https://www.npmjs.com/package/eslint-plugin-chai-friendly)                           | [Comments](https://www.npmjs.com/package/@eslint-community/eslint-plugin-eslint-comments)        |
+| [Compat](https://www.npmjs.com/package/eslint-plugin-compat)                                                   | [Create React App](https://www.npmjs.com/package/eslint-config-react-app)                            | [CSS Modules](https://www.npmjs.com/package/eslint-plugin-css-modules)                               | [Cypress](https://www.npmjs.com/package/eslint-plugin-cypress)                                   |
+| [Depend](https://www.npmjs.com/package/eslint-plugin-depend)                                                   | [ES-X](https://www.npmjs.com/package/eslint-plugin-es-x)                                             | [ESLint](https://www.npmjs.com/package/@eslint/js)                                                   | [FormatJS](https://www.npmjs.com/package/eslint-plugin-formatjs)                                 |
+| [Functional](https://www.npmjs.com/package/eslint-plugin-functional)                                           | [Google Typescript Style](https://www.npmjs.com/package/gts)                                         | [Google](https://www.npmjs.com/package/eslint-config-google)                                         | [GraphQL](https://www.npmjs.com/package/@graphql-eslint/eslint-plugin)                           |
+| [Import X](https://www.npmjs.com/package/eslint-plugin-import-x)                                               | [Import](https://www.npmjs.com/package/eslint-plugin-import)                                         | [Internationalization (i18n)](https://www.npmjs.com/package/eslint-plugin-i18next)                   | [Jasmine](https://www.npmjs.com/package/eslint-plugin-jasmine)                                   |
+| [Jest Dom](https://www.npmjs.com/package/eslint-plugin-jest-dom)                                               | [Jest Formatting](https://www.npmjs.com/package/eslint-plugin-jest-formatting)                       | [Jest](https://www.npmjs.com/package/eslint-plugin-jest)                                             | [JSDoc](https://www.npmjs.com/package/eslint-plugin-jsdoc)                                       |
+| [JSONC](https://www.npmjs.com/package/eslint-plugin-jsonc)                                                     | [JSX Accessibility (JSX A11y)](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)                 | [Markdown](https://www.npmjs.com/package/@eslint/markdown)                                           | [MDX](https://www.npmjs.com/package/eslint-plugin-mdx)                                           |
+| [MDX](https://www.npmjs.com/package/remark-lint)                                                               | [Microsoft SDL](https://www.npmjs.com/package/@microsoft/eslint-plugin-sdl)                          | [Mocha](https://www.npmjs.com/package/eslint-plugin-mocha)                                           | [NextJS](https://www.npmjs.com/package/@next/eslint-plugin-next)                                 |
+| [NextJS](https://www.npmjs.com/package/eslint-config-next)                                                     | [No JQuery](https://www.npmjs.com/package/eslint-plugin-no-jquery)                                   | [No Only Tests](https://www.npmjs.com/package/eslint-plugin-no-only-tests)                           | [No Relative Import Paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths) |
+| [No Unsanitized](https://www.npmjs.com/package/eslint-plugin-no-unsanitized)                                   | [No Unused Imports](https://www.npmjs.com/package/eslint-plugin-unused-imports)                      | [No Use Extend Native](https://www.npmjs.com/package/eslint-plugin-ava)                              | [Node.js](https://www.npmjs.com/package/eslint-plugin-n)                                         |
+| [Perfectionist](https://www.npmjs.com/package/eslint-plugin-perfectionist)                                     | [Playwright](https://www.npmjs.com/package/eslint-plugin-playwright)                                 | [Prefer Arrow](https://www.npmjs.com/package/eslint-plugin-prefer-arrow)                             | [Prettier Plugin PackageJSON](https://www.npmjs.com/package/prettier-plugin-packagejson)         |
+| [Prettier Plugin Tailwind](https://www.npmjs.com/package/prettier-plugin-tailwindcss)                          | [Prettier](https://www.npmjs.com/package/eslint-config-prettier)                                     | [Prettier](https://www.npmjs.com/package/eslint-plugin-prettier)                                     | [Promises](https://www.npmjs.com/package/eslint-plugin-promise)                                  |
+| [React Compiler](https://www.npmjs.com/package/eslint-plugin-react-compiler)                                   | [React Debug](https://www.npmjs.com/package/eslint-plugin-react-debug)                               | [React DOM](https://www.npmjs.com/package/eslint-plugin-react-dom)                                   | [React Hooks Extra](https://www.npmjs.com/package/eslint-plugin-react-hooks-extra)               |
+| [React Hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)                                         | [React Naming Convention](https://www.npmjs.com/package/eslint-plugin-react-naming-convention)       | [React Native (Independent Plugin/Config)](https://www.npmjs.com/package/eslint-plugin-react-native) | [React Native Config](https://www.npmjs.com/package/@react-native-community/eslint-config)       |
+| [React Native Config](https://www.npmjs.com/package/@react-native/eslint-config)                               | [React Native Config](https://www.npmjs.com/package/eslint-plugin-react-native-globals)              | [React Native Plugin](https://www.npmjs.com/package/@react-native-community/eslint-plugin)           | [React Performance](https://www.npmjs.com/package/eslint-plugin-react-perf)                      |
+| [React Prefer Function Component](https://www.npmjs.com/package/eslint-plugin-react-prefer-function-component) | [React Refresh](https://www.npmjs.com/package/eslint-plugin-react-refresh)                           | [React Web API](https://www.npmjs.com/package/eslint-plugin-react-web-api)                           | [React X](https://www.npmjs.com/package/eslint-plugin-react-x)                                   |
+| [React](https://www.npmjs.com/package/eslint-plugin-react)                                                     | [Regular Expressions](https://www.npmjs.com/package/eslint-plugin-regexp)                            | [Security](https://www.npmjs.com/package/eslint-plugin-security)                                     | [Simple Import Sort](https://www.npmjs.com/package/eslint-plugin-simple-import-sort)             |
+| [SonarJS](https://www.npmjs.com/package/eslint-plugin-sonarjs)                                                 | [Sort Class Members](https://www.npmjs.com/package/eslint-plugin-sort-class-members)                 | [Sort Destructure Keys](https://www.npmjs.com/package/eslint-plugin-sort-destructure-keys)           | [Standard JSX](https://www.npmjs.com/package/eslint-config-standard-jsx)                         |
+| [Standard React](https://www.npmjs.com/package/eslint-config-standard-react)                                   | [Standard TS](https://www.npmjs.com/package/eslint-config-love)                                      | [Standard](https://www.npmjs.com/package/eslint-config-standard)                                     | [Storybook](https://www.npmjs.com/package/eslint-plugin-storybook)                               |
+| [Stylistic](https://www.npmjs.com/package/@stylistic/eslint-plugin)                                            | [Tailwind CSS](https://www.npmjs.com/package/eslint-plugin-tailwindcss)                              | [Tanstack Query](https://www.npmjs.com/package/@tanstack/eslint-plugin-query)                        | [Testing Library](https://www.npmjs.com/package/eslint-plugin-testing-library)                   |
+| [TOML](https://www.npmjs.com/package/eslint-plugin-toml)                                                       | [TSDoc](https://www.npmjs.com/package/eslint-plugin-tsdoc)                                           | [Turbo](https://www.npmjs.com/package/eslint-config-turbo)                                           | [TypeScript](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin)                     |
+| [Unicorn](https://www.npmjs.com/package/eslint-plugin-unicorn)                                                 | [Vitest](https://www.npmjs.com/package/eslint-plugin-vitest)                                         | [Webdriver IO](https://www.npmjs.com/package/eslint-plugin-wdio)                                     | [XO](https://www.npmjs.com/package/eslint-config-xo)                                             |
+| [YML](https://www.npmjs.com/package/eslint-plugin-yml)                                                         | [You Don't Need Lodash](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore) |                                                                                                      |                                                                                                  |
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
 
@@ -90,13 +90,11 @@ npm i -D eslint-config-current-thing
 Then in your `eslint.config.js`
 
 ```js
-// PathMark: ./README.md/1_1.js
 import currentThing from "eslint-config-current-thing";
 
 const config = [...currentThing()];
 
 export default config;
-// EOF
 ```
 
 You'll also probably want something like this in your `package.json` (edit accordingly):
@@ -125,7 +123,6 @@ And you'll probably want to restart your ESLint server, maybe more than once. `C
 ## Usage
 
 ```js
-// PathMark: ./README.md/3_3.js
 import currentThing from "eslint-config-current-thing";
 
 const config = [
@@ -135,7 +132,6 @@ const config = [
 ];
 
 export default config;
-// EOF
 ```
 
 ### Options
@@ -149,13 +145,11 @@ For `disable` and `override` a few configs will have internal configs or overrid
 To disable the entirety of a particular config, that config must be named via its package name, like so:
 
 ```js
-// PathMark: ./README.md/4_4.js
 import currentThing from "eslint-config-current-thing";
 
 const config = [...currentThing({ disable: ["eslint-config-import"] })];
 
 export default config;
-// EOF
 ```
 
 E.g. if you disable every config, in order from the most downloaded down, until you hit `functional`, then functional will be your leading config and your project will then be linted with the recommended functional style.
@@ -167,7 +161,6 @@ E.g. if you disable every config, in order from the most downloaded down, until 
 In the event that you need to override or change a rule in order with respect to all other rules:
 
 ```js
-// PathMark: ./README.md/5_5.js
 import currentThing from "eslint-config-current-thing";
 
 const config = [
@@ -177,7 +170,6 @@ const config = [
 ];
 
 export default config;
-// EOF
 ```
 
 `override` will not clear existing rules but is provided in the unlikely case that a given rule needs more fine-tuning,
@@ -189,7 +181,6 @@ export default config;
 `threshold` can be passed to the options object to set the popularity threshold for packages. Defaulting to 400,000 downloads per month.
 
 ```js
-// PathMark: ./README.md/6_6.js
 import currentThing from "eslint-config-current-thing";
 
 const config = [
@@ -199,7 +190,6 @@ const config = [
 ];
 
 export default config;
-// EOF
 ```
 
 This would only include packages that exceed 1,000,000 downloads per month, and thus would constitute a more lenient linting config as less rules will be activated.
@@ -223,7 +213,6 @@ There are a crazy amount of rules in this config, and they are completely overwh
 What is more, you can Enable, Disable, Add or Alter any rule you come across, like so:
 
 ```js
-// PathMark: ./README.md/7_7.js
 import currentThing from "eslint-config-current-thing";
 
 const config = [
@@ -237,7 +226,6 @@ const config = [
 ];
 
 export default config;
-// EOF
 ```
 
 ---
@@ -365,7 +353,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **5350**. 
+The amount of packages reviewed and rejected **5391**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -377,7 +365,7 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/11/2025, total known packages **25,254**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/11/2025, total known packages **25,223**. Top 40 next in line, downloads for the previous 28 days:
 
 - 1,569,528 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 1,058,816 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
@@ -385,8 +373,6 @@ Generated on 2/11/2025, total known packages **25,254**. Top 40 next in line, do
 - 785,672 downloads, [@emotion/eslint-plugin](https://www.npmjs.com/package/@emotion/eslint-plugin)
 - 594,187 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc)
 - 475,022 downloads, [eslint-config-ngs](https://www.npmjs.com/package/eslint-config-ngs)
-- 449,642 downloads, [@sap/eslint-plugin-cds](https://www.npmjs.com/package/@sap/eslint-plugin-cds)
-- 447,205 downloads, [eslint-plugin-ban](https://www.npmjs.com/package/eslint-plugin-ban)
 - 444,876 downloads, [eslint-plugin-relay](https://www.npmjs.com/package/eslint-plugin-relay)
 - 444,582 downloads, [astro-eslint-parser](https://www.npmjs.com/package/astro-eslint-parser)
 - 441,765 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe)
@@ -414,11 +400,12 @@ Generated on 2/11/2025, total known packages **25,254**. Top 40 next in line, do
 - 353,053 downloads, [eslint-config-react](https://www.npmjs.com/package/eslint-config-react) - Not Yet Eligible
 - 351,496 downloads, [@types/eslint-plugin-jsx-a11y](https://www.npmjs.com/package/@types/eslint-plugin-jsx-a11y) - Not Yet Eligible
 - 349,453 downloads, [eslint-plugin-import-helpers](https://www.npmjs.com/package/eslint-plugin-import-helpers) - Not Yet Eligible
-- 348,391 downloads, [@unocss/transformer-attributify-jsx-babel](https://www.npmjs.com/package/@unocss/transformer-attributify-jsx-babel) - Not Yet Eligible
-- 348,360 downloads, [botframework-schema](https://www.npmjs.com/package/botframework-schema) - Not Yet Eligible
-- 348,082 downloads, [typescript-strict-plugin](https://www.npmjs.com/package/typescript-strict-plugin) - Not Yet Eligible
-- 347,851 downloads, [@mergeapi/react-merge-link](https://www.npmjs.com/package/@mergeapi/react-merge-link) - Not Yet Eligible
-- 347,379 downloads, [@shopify/cli-kit](https://www.npmjs.com/package/@shopify/cli-kit) - Not Yet Eligible
-
+- 341,880 downloads, [eslint-config-xo-space](https://www.npmjs.com/package/eslint-config-xo-space) - Not Yet Eligible
+- 341,430 downloads, [hermes-eslint](https://www.npmjs.com/package/hermes-eslint) - Not Yet Eligible
+- 340,183 downloads, [@wordpress/eslint-plugin](https://www.npmjs.com/package/@wordpress/eslint-plugin) - Not Yet Eligible
+- 338,833 downloads, [eslint-plugin-no-secrets](https://www.npmjs.com/package/eslint-plugin-no-secrets) - Not Yet Eligible
+- 338,822 downloads, [@jsverse/transloco](https://www.npmjs.com/package/@jsverse/transloco) - Not Yet Eligible
+- 338,804 downloads, [@textlint/source-code-fixer](https://www.npmjs.com/package/@textlint/source-code-fixer) - Not Yet Eligible
+- 338,607 downloads, [@mui/joy](https://www.npmjs.com/package/@mui/joy) - Not Yet Eligible
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

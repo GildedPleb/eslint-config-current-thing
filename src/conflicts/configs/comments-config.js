@@ -220,8 +220,8 @@ const configGen = ({
       www.nope.com
       Requires: eslint-comments
     */
-    ...(disable.includes("@eslint-community/eslint-plugin-eslint-comments") ||
-    disable.includes("eslint-plugin-eslint-comments") ||
+    ...(disable.includes("eslint-plugin-eslint-comments") ||
+    disable.includes("@eslint-community/eslint-plugin-eslint-comments") ||
     threshold > 1_000_000
       ? []
       : [
@@ -233,11 +233,11 @@ const configGen = ({
               "eslint-comments/no-duplicate-disable": 2,
               "eslint-comments/no-unlimited-disable": 2,
               "eslint-comments/no-unused-enable": 2,
-              ...("@eslint-community/eslint-plugin-eslint-comments" in override
-                ? override["@eslint-community/eslint-plugin-eslint-comments"]
-                : {}),
               ...("eslint-plugin-eslint-comments" in override
                 ? override["eslint-plugin-eslint-comments"]
+                : {}),
+              ...("@eslint-community/eslint-plugin-eslint-comments" in override
+                ? override["@eslint-community/eslint-plugin-eslint-comments"]
                 : {}),
             },
           },

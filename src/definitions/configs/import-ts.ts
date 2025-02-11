@@ -14,13 +14,13 @@ export default {
   nameSecondary: "ts",
   packages: [
     {
-      declaredAs: "importPlugin",
-      package: "eslint-plugin-import",
+      declaredAs: "importResolver",
+      package: "eslint-import-resolver-typescript",
       requiresImport: false,
     },
     {
-      declaredAs: "importResolver",
-      package: "eslint-import-resolver-typescript",
+      declaredAs: "importPlugin",
+      package: "eslint-plugin-import",
       requiresImport: false,
     },
   ],

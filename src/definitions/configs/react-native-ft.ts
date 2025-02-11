@@ -13,16 +13,16 @@ export default {
   name: "React Native Config",
   nameSecondary: "Flowtype",
   packages: [
-    {
-      declaredAs: "reactNativeConfig",
-      package: "@react-native-community/eslint-config",
-      requiresImport: true,
-    },
     // Throws WARN in NPM and is literally the exact same as @react-native-community/eslint-config, not installed
     {
       declaredAs: "rnConfig",
       package: "@react-native/eslint-config",
       requiresImport: false,
+    },
+    {
+      declaredAs: "reactNativeConfig",
+      package: "@react-native-community/eslint-config",
+      requiresImport: true,
     },
   ],
   requiredPlugins: ["ft-flow"],
