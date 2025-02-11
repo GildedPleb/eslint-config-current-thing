@@ -168,7 +168,7 @@ const rejectedCount = `In an effort to find as many possible ESLint appropriate 
 The amount of packages reviewed and rejected **${rejected.length}**. `;
 
 const thresholdMarker = "Threshold";
-const thresholdCount = `**For a CONFIG to be added, it needs to have around ${MINIMUMS.toLocaleString()} monthly downloads (or 4 consecutive weeks above 100,000 weekly downloads Circa Feb 2023 adjusted for 15% annual download inflation).** This is to prevent spam, bloat, needless PRs, drift, and arguments about minutia. But it's also variable as configs change popularity. Yes, it's arbitrary (and it can be spoofed/is [naively calculated](https://blog.npmjs.org/post/92574016600/numeric-precision-matters-how-npm-download-counts-work.html)), but it seems to be a good heuristic for the cutoff between generally used configs and niche configs. It is also the default threshold for the cutoff.`;
+const thresholdCount = `**For a CONFIG to be added, it needs to have around ${MINIMUMS.toLocaleString()} monthly downloads (or 4 consecutive weeks above 100,000 weekly downloads Circa Feb 2023 adjusted for 15% annual download inflation).** This is to prevent spam, bloat, needless PRs, drift, and arguments about minutia. But it's also variable as configs change popularity. Yes, it's arbitrary (and it can be spoofed/is [naively calculated](https://blog.npmjs.org/post/92574016600/numeric-precision-matters-how-npm-download-counts-work.html)), but it seems to be a good heuristic for the cutoff between generally used configs and niche configs. It is also the default threshold.`;
 
 updateReadmeSection(thresholdMarker, thresholdCount);
 updateReadmeSection(configListMarker, generateTable(configs));

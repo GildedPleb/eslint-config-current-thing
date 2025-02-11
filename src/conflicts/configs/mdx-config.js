@@ -221,9 +221,9 @@ const configGen = ({
       www.nope.com
       Requires: mdx, react
     */
-    ...(disable.includes("eslint-plugin-mdx") ||
-    disable.includes("remark-preset-lint-recommended") ||
+    ...(disable.includes("remark-preset-lint-recommended") ||
     disable.includes("remark-lint") ||
+    disable.includes("eslint-plugin-mdx") ||
     threshold > 1_000_000
       ? []
       : [
@@ -237,13 +237,13 @@ const configGen = ({
               // Base:
               ...mdx.configs.base.rules,
 
-              ...("eslint-plugin-mdx" in override
-                ? override["eslint-plugin-mdx"]
-                : {}),
               ...("remark-preset-lint-recommended" in override
                 ? override["remark-preset-lint-recommended"]
                 : {}),
               ...("remark-lint" in override ? override["remark-lint"] : {}),
+              ...("eslint-plugin-mdx" in override
+                ? override["eslint-plugin-mdx"]
+                : {}),
             },
           },
         ]),

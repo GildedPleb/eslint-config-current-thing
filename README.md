@@ -26,22 +26,22 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 | [Import X](https://www.npmjs.com/package/eslint-plugin-import-x)                                               | [Import](https://www.npmjs.com/package/eslint-plugin-import)                                                   | [Internationalization (i18n)](https://www.npmjs.com/package/eslint-plugin-i18next)                             | [Jasmine](https://www.npmjs.com/package/eslint-plugin-jasmine)                                                 |
 | [Jest Dom](https://www.npmjs.com/package/eslint-plugin-jest-dom)                                               | [Jest Formatting](https://www.npmjs.com/package/eslint-plugin-jest-formatting)                                 | [Jest](https://www.npmjs.com/package/eslint-plugin-jest)                                                       | [JSDoc](https://www.npmjs.com/package/eslint-plugin-jsdoc)                                                     |
 | [JSONC](https://www.npmjs.com/package/eslint-plugin-jsonc)                                                     | [JSX Accessibility (JSX A11y)](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)                           | [Markdown](https://www.npmjs.com/package/@eslint/markdown)                                                     | [MDX](https://www.npmjs.com/package/eslint-plugin-mdx)                                                         |
-| [MDX](https://www.npmjs.com/package/remark-lint)                                                               | [Microsoft SDL](https://www.npmjs.com/package/@microsoft/eslint-plugin-sdl)                                    | [Mocha](https://www.npmjs.com/package/eslint-plugin-mocha)                                                     | [NextJS](https://www.npmjs.com/package/@next/eslint-plugin-next)                                               |
-| [NextJS](https://www.npmjs.com/package/eslint-config-next)                                                     | [No JQuery](https://www.npmjs.com/package/eslint-plugin-no-jquery)                                             | [No Only Tests](https://www.npmjs.com/package/eslint-plugin-no-only-tests)                                     | [No Relative Import Paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)               |
-| [No Unsanitized](https://www.npmjs.com/package/eslint-plugin-no-unsanitized)                                   | [No Unused Imports](https://www.npmjs.com/package/eslint-plugin-unused-imports)                                | [No Use Extend Native](https://www.npmjs.com/package/eslint-plugin-ava)                                        | [Node.js](https://www.npmjs.com/package/eslint-plugin-n)                                                       |
-| [Perfectionist](https://www.npmjs.com/package/eslint-plugin-perfectionist)                                     | [Playwright](https://www.npmjs.com/package/eslint-plugin-playwright)                                           | [Prefer Arrow](https://www.npmjs.com/package/eslint-plugin-prefer-arrow)                                       | [Prettier Plugin PackageJSON](https://www.npmjs.com/package/prettier-plugin-packagejson)                       |
-| [Prettier Plugin Tailwind](https://www.npmjs.com/package/prettier-plugin-tailwindcss)                          | [Prettier](https://www.npmjs.com/package/eslint-config-prettier)                                               | [Prettier](https://www.npmjs.com/package/eslint-plugin-prettier)                                               | [Promises](https://www.npmjs.com/package/eslint-plugin-promise)                                                |
-| [React Compiler](https://www.npmjs.com/package/eslint-plugin-react-compiler)                                   | [React Debug](https://www.npmjs.com/package/eslint-plugin-react-debug)                                         | [React DOM](https://www.npmjs.com/package/eslint-plugin-react-dom)                                             | [React Hooks Extra](https://www.npmjs.com/package/eslint-plugin-react-hooks-extra)                             |
-| [React Hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)                                         | [React Naming Convention](https://www.npmjs.com/package/eslint-plugin-react-naming-convention)                 | [React Native (Independent Plugin/Config)](https://www.npmjs.com/package/eslint-plugin-react-native)           | [React Native Config](https://www.npmjs.com/package/@react-native-community/eslint-config)                     |
-| [React Native Config](https://www.npmjs.com/package/@react-native/eslint-config)                               | [React Native Config](https://www.npmjs.com/package/eslint-plugin-react-native-globals)                        | [React Native Plugin](https://www.npmjs.com/package/@react-native-community/eslint-plugin)                     | [React Performance](https://www.npmjs.com/package/eslint-plugin-react-perf)                                    |
-| [React Prefer Function Component](https://www.npmjs.com/package/eslint-plugin-react-prefer-function-component) | [React Refresh](https://www.npmjs.com/package/eslint-plugin-react-refresh)                                     | [React Web API](https://www.npmjs.com/package/eslint-plugin-react-web-api)                                     | [React X](https://www.npmjs.com/package/eslint-plugin-react-x)                                                 |
-| [React](https://www.npmjs.com/package/eslint-plugin-react)                                                     | [Regular Expressions](https://www.npmjs.com/package/eslint-plugin-regexp)                                      | [Security](https://www.npmjs.com/package/eslint-plugin-security)                                               | [Simple Import Sort](https://www.npmjs.com/package/eslint-plugin-simple-import-sort)                           |
-| [SonarJS](https://www.npmjs.com/package/eslint-plugin-sonarjs)                                                 | [Sort Class Members](https://www.npmjs.com/package/eslint-plugin-sort-class-members)                           | [Sort Destructure Keys](https://www.npmjs.com/package/eslint-plugin-sort-destructure-keys)                     | [Standard JSX](https://www.npmjs.com/package/eslint-config-standard-jsx)                                       |
-| [Standard React](https://www.npmjs.com/package/eslint-config-standard-react)                                   | [Standard TS](https://www.npmjs.com/package/eslint-config-love)                                                | [Standard](https://www.npmjs.com/package/eslint-config-standard)                                               | [Storybook](https://www.npmjs.com/package/eslint-plugin-storybook)                                             |
-| [Stylistic](https://www.npmjs.com/package/@stylistic/eslint-plugin)                                            | [Tailwind CSS](https://www.npmjs.com/package/eslint-plugin-tailwindcss)                                        | [Tanstack Query](https://www.npmjs.com/package/@tanstack/eslint-plugin-query)                                  | [Testing Library](https://www.npmjs.com/package/eslint-plugin-testing-library)                                 |
-| [TOML](https://www.npmjs.com/package/eslint-plugin-toml)                                                       | [TSDoc](https://www.npmjs.com/package/eslint-plugin-tsdoc)                                                     | [Turbo](https://www.npmjs.com/package/eslint-config-turbo)                                                     | [TypeScript](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin)                                   |
-| [Unicorn](https://www.npmjs.com/package/eslint-plugin-unicorn)                                                 | [Vitest](https://www.npmjs.com/package/eslint-plugin-vitest)                                                   | [Webdriver IO](https://www.npmjs.com/package/eslint-plugin-wdio)                                               | [XO](https://www.npmjs.com/package/eslint-config-xo)                                                           |
-| [YML](https://www.npmjs.com/package/eslint-plugin-yml)                                                         | [You Don't Need Lodash](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore)           |                                                                                                               |                                                                                                               |
+| [Microsoft SDL](https://www.npmjs.com/package/@microsoft/eslint-plugin-sdl)                                    | [Mocha](https://www.npmjs.com/package/eslint-plugin-mocha)                                                     | [NextJS](https://www.npmjs.com/package/@next/eslint-plugin-next)                                               | [NextJS](https://www.npmjs.com/package/eslint-config-next)                                                     |
+| [No JQuery](https://www.npmjs.com/package/eslint-plugin-no-jquery)                                             | [No Only Tests](https://www.npmjs.com/package/eslint-plugin-no-only-tests)                                     | [No Relative Import Paths](https://www.npmjs.com/package/eslint-plugin-no-relative-import-paths)               | [No Unsanitized](https://www.npmjs.com/package/eslint-plugin-no-unsanitized)                                   |
+| [No Unused Imports](https://www.npmjs.com/package/eslint-plugin-unused-imports)                                | [No Use Extend Native](https://www.npmjs.com/package/eslint-plugin-ava)                                        | [Node.js](https://www.npmjs.com/package/eslint-plugin-n)                                                       | [Perfectionist](https://www.npmjs.com/package/eslint-plugin-perfectionist)                                     |
+| [Playwright](https://www.npmjs.com/package/eslint-plugin-playwright)                                           | [Prefer Arrow](https://www.npmjs.com/package/eslint-plugin-prefer-arrow)                                       | [Prettier Plugin PackageJSON](https://www.npmjs.com/package/prettier-plugin-packagejson)                       | [Prettier Plugin Tailwind](https://www.npmjs.com/package/prettier-plugin-tailwindcss)                          |
+| [Prettier](https://www.npmjs.com/package/eslint-config-prettier)                                               | [Prettier](https://www.npmjs.com/package/eslint-plugin-prettier)                                               | [Promises](https://www.npmjs.com/package/eslint-plugin-promise)                                                | [React Compiler](https://www.npmjs.com/package/eslint-plugin-react-compiler)                                   |
+| [React Debug](https://www.npmjs.com/package/eslint-plugin-react-debug)                                         | [React DOM](https://www.npmjs.com/package/eslint-plugin-react-dom)                                             | [React Hooks Extra](https://www.npmjs.com/package/eslint-plugin-react-hooks-extra)                             | [React Hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)                                         |
+| [React Naming Convention](https://www.npmjs.com/package/eslint-plugin-react-naming-convention)                 | [React Native (Independent Plugin/Config)](https://www.npmjs.com/package/eslint-plugin-react-native)           | [React Native Config](https://www.npmjs.com/package/@react-native-community/eslint-config)                     | [React Native Config](https://www.npmjs.com/package/@react-native/eslint-config)                               |
+| [React Native Config](https://www.npmjs.com/package/eslint-plugin-react-native-globals)                        | [React Native Plugin](https://www.npmjs.com/package/@react-native-community/eslint-plugin)                     | [React Performance](https://www.npmjs.com/package/eslint-plugin-react-perf)                                    | [React Prefer Function Component](https://www.npmjs.com/package/eslint-plugin-react-prefer-function-component) |
+| [React Refresh](https://www.npmjs.com/package/eslint-plugin-react-refresh)                                     | [React Web API](https://www.npmjs.com/package/eslint-plugin-react-web-api)                                     | [React X](https://www.npmjs.com/package/eslint-plugin-react-x)                                                 | [React](https://www.npmjs.com/package/eslint-plugin-react)                                                     |
+| [Regular Expressions](https://www.npmjs.com/package/eslint-plugin-regexp)                                      | [Security](https://www.npmjs.com/package/eslint-plugin-security)                                               | [Simple Import Sort](https://www.npmjs.com/package/eslint-plugin-simple-import-sort)                           | [SonarJS](https://www.npmjs.com/package/eslint-plugin-sonarjs)                                                 |
+| [Sort Class Members](https://www.npmjs.com/package/eslint-plugin-sort-class-members)                           | [Sort Destructure Keys](https://www.npmjs.com/package/eslint-plugin-sort-destructure-keys)                     | [Standard JSX](https://www.npmjs.com/package/eslint-config-standard-jsx)                                       | [Standard React](https://www.npmjs.com/package/eslint-config-standard-react)                                   |
+| [Standard TS](https://www.npmjs.com/package/eslint-config-love)                                                | [Standard](https://www.npmjs.com/package/eslint-config-standard)                                               | [Storybook](https://www.npmjs.com/package/eslint-plugin-storybook)                                             | [Stylistic](https://www.npmjs.com/package/@stylistic/eslint-plugin)                                            |
+| [Tailwind CSS](https://www.npmjs.com/package/eslint-plugin-tailwindcss)                                        | [Tanstack Query](https://www.npmjs.com/package/@tanstack/eslint-plugin-query)                                  | [Testing Library](https://www.npmjs.com/package/eslint-plugin-testing-library)                                 | [TOML](https://www.npmjs.com/package/eslint-plugin-toml)                                                       |
+| [TSDoc](https://www.npmjs.com/package/eslint-plugin-tsdoc)                                                     | [Turbo](https://www.npmjs.com/package/eslint-config-turbo)                                                     | [TypeScript](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin)                                   | [Unicorn](https://www.npmjs.com/package/eslint-plugin-unicorn)                                                 |
+| [Vitest](https://www.npmjs.com/package/eslint-plugin-vitest)                                                   | [Webdriver IO](https://www.npmjs.com/package/eslint-plugin-wdio)                                               | [XO](https://www.npmjs.com/package/eslint-config-xo)                                                           | [YML](https://www.npmjs.com/package/eslint-plugin-yml)                                                         |
+| [You Don't Need Lodash](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore)           |                                                                                                               |                                                                                                               |                                                                                                               |
 
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
@@ -108,7 +108,7 @@ You'll also probably want something like this in your `package.json` (edit accor
     "plugins": ["remark-preset-lint-recommended"]
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=22.0.0"
   },
   "browserslist": [
     "defaults and supports es6-module",
@@ -179,7 +179,7 @@ export default config;
 
 #### `threshold`
 
-`threshold` can be passed to the options object to set the popularity threshold for packages. See [threshold](#1-additions) for default setting.
+`threshold` can be passed to the options object to set the popularity threshold for packages. See [threshold](#1-additions) for default setting. Configs exist down to the 300,000 range presently, if you really want to open up your codebase to rules.
 
 ```js
 import currentThing from "eslint-config-current-thing";
@@ -237,7 +237,7 @@ export default config;
 
 <!-- Start Generated Threshold DO NOT EDIT! -->
 
-**For a CONFIG to be added, it needs to have around 531,405 monthly downloads (or 4 consecutive weeks above 100,000 weekly downloads Circa Feb 2023 adjusted for 15% annual download inflation).** This is to prevent spam, bloat, needless PRs, drift, and arguments about minutia. But it's also variable as configs change popularity. Yes, it's arbitrary (and it can be spoofed/is [naively calculated](https://blog.npmjs.org/post/92574016600/numeric-precision-matters-how-npm-download-counts-work.html)), but it seems to be a good heuristic for the cutoff between generally used configs and niche configs. It is also the default threshold for the cutoff.
+**For a CONFIG to be added, it needs to have around 531,407 monthly downloads (or 4 consecutive weeks above 100,000 weekly downloads Circa Feb 2023 adjusted for 15% annual download inflation).** This is to prevent spam, bloat, needless PRs, drift, and arguments about minutia. But it's also variable as configs change popularity. Yes, it's arbitrary (and it can be spoofed/is [naively calculated](https://blog.npmjs.org/post/92574016600/numeric-precision-matters-how-npm-download-counts-work.html)), but it seems to be a good heuristic for the cutoff between generally used configs and niche configs. It is also the default threshold.
 
 <!-- End Generated Threshold DO NOT EDIT! -->
 
@@ -358,7 +358,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **5416**. 
+The amount of packages reviewed and rejected **5422**. 
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -370,7 +370,7 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/11/2025, total known packages **25,201**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/11/2025, total known packages **25,195**. Top 40 next in line, downloads for the previous 28 days:
 
 - 1,569,528 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 1,058,816 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
@@ -385,10 +385,10 @@ Generated on 2/11/2025, total known packages **25,201**. Top 40 next in line, do
 - 434,677 downloads, [eslint-plugin-no-null](https://www.npmjs.com/package/eslint-plugin-no-null) - Not Yet Eligible
 - 431,944 downloads, [@ngrx/eslint-plugin](https://www.npmjs.com/package/@ngrx/eslint-plugin) - Not Yet Eligible
 - 429,081 downloads, [eslint-plugin-astro](https://www.npmjs.com/package/eslint-plugin-astro) - Not Yet Eligible
+- 420,071 downloads, [sherif-linux-x64](https://www.npmjs.com/package/sherif-linux-x64) - Not Yet Eligible
 - 414,989 downloads, [sherif](https://www.npmjs.com/package/sherif) - Not Yet Eligible
 - 414,553 downloads, [@shopify/eslint-plugin](https://www.npmjs.com/package/@shopify/eslint-plugin) - Not Yet Eligible
 - 407,589 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit) - Not Yet Eligible
-- 401,114 downloads, [sherif-linux-x64](https://www.npmjs.com/package/sherif-linux-x64) - Not Yet Eligible
 - 399,406 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
 - 399,347 downloads, [eslint-rule-documentation](https://www.npmjs.com/package/eslint-rule-documentation) - Not Yet Eligible
 - 397,597 downloads, [@salesforce/eslint-plugin-lightning](https://www.npmjs.com/package/@salesforce/eslint-plugin-lightning) - Not Yet Eligible
@@ -402,7 +402,6 @@ Generated on 2/11/2025, total known packages **25,201**. Top 40 next in line, do
 - 357,795 downloads, [eslint-plugin-file-progress](https://www.npmjs.com/package/eslint-plugin-file-progress) - Not Yet Eligible
 - 357,570 downloads, [eslint-plugin-i18n-text](https://www.npmjs.com/package/eslint-plugin-i18n-text) - Not Yet Eligible
 - 353,053 downloads, [eslint-config-react](https://www.npmjs.com/package/eslint-config-react) - Not Yet Eligible
-- 351,496 downloads, [@types/eslint-plugin-jsx-a11y](https://www.npmjs.com/package/@types/eslint-plugin-jsx-a11y) - Not Yet Eligible
 - 349,453 downloads, [eslint-plugin-import-helpers](https://www.npmjs.com/package/eslint-plugin-import-helpers) - Not Yet Eligible
 - 341,880 downloads, [eslint-config-xo-space](https://www.npmjs.com/package/eslint-config-xo-space) - Not Yet Eligible
 - 341,430 downloads, [hermes-eslint](https://www.npmjs.com/package/hermes-eslint) - Not Yet Eligible
@@ -410,8 +409,9 @@ Generated on 2/11/2025, total known packages **25,201**. Top 40 next in line, do
 - 338,833 downloads, [eslint-plugin-no-secrets](https://www.npmjs.com/package/eslint-plugin-no-secrets) - Not Yet Eligible
 - 336,144 downloads, [eslint-plugin-escompat](https://www.npmjs.com/package/eslint-plugin-escompat) - Not Yet Eligible
 - 334,345 downloads, [eslint-filtered-fix](https://www.npmjs.com/package/eslint-filtered-fix) - Not Yet Eligible
-- 333,253 downloads, [@escape.tech/graphql-armor-max-depth](https://www.npmjs.com/package/@escape.tech/graphql-armor-max-depth) - Not Yet Eligible
 - 333,228 downloads, [eslint-nibble](https://www.npmjs.com/package/eslint-nibble) - Not Yet Eligible
+- 332,928 downloads, [typed-css-modules](https://www.npmjs.com/package/typed-css-modules) - Not Yet Eligible
+- 332,922 downloads, [@storybook/server](https://www.npmjs.com/package/@storybook/server) - Not Yet Eligible
 
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

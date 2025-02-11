@@ -167,7 +167,7 @@ const addExtensions = (patterns, extensions) =>
 const tsTestFiles = addExtensions(TEST_PATTERNS, ["ts", "tsx"]);
 const jsTestFiles = addExtensions(TEST_PATTERNS, ["js", "jsx"]);
 
-const defaultOptions = { disable: [], override: {}, threshold: 531_405 };
+const defaultOptions = { disable: [], override: {}, threshold: 531_407 };
 
 /**
  * @param {{ disable: string[], override: Record<string, Record<string, number | string>>, threshold: number }} default - Options
@@ -176,7 +176,7 @@ const defaultOptions = { disable: [], override: {}, threshold: 531_405 };
 const configGen = ({
   disable = [],
   override = {},
-  threshold = 531_405,
+  threshold = 531_407,
 } = defaultOptions) =>
   // @ts-expect-error type mismatching here is expected because the return is defined as a literal type, on literal types.
   defineFlatConfig([
@@ -2039,13 +2039,13 @@ const configGen = ({
     /*
       MDX
       2,613,990 monthly downloads
-      ESLint Plugin for MDX / remark preset to configure remark-lint with rules that prevent mistakes or stuff that fails across vendors. / remark plugin to lint Markdown code style
-      https://github.com/mdx-js/eslint-mdx/blob/master/packages/eslint-plugin-mdx / https://github.com/remarkjs/remark-lint/tree/main#readme / https://github.com/remarkjs/remark-lint/tree/main#readme
+      remark preset to configure remark-lint with rules that prevent mistakes or stuff that fails across vendors. / remark plugin to lint Markdown code style / ESLint Plugin for MDX
+      https://github.com/remarkjs/remark-lint/tree/main#readme / https://github.com/remarkjs/remark-lint/tree/main#readme / https://github.com/mdx-js/eslint-mdx/blob/master/packages/eslint-plugin-mdx
       Requires: mdx, react
     */
-    ...(disable.includes("eslint-plugin-mdx") ||
-    disable.includes("remark-preset-lint-recommended") ||
+    ...(disable.includes("remark-preset-lint-recommended") ||
     disable.includes("remark-lint") ||
+    disable.includes("eslint-plugin-mdx") ||
     threshold > 2_613_990
       ? []
       : [
@@ -2060,13 +2060,13 @@ const configGen = ({
               // Base:
               ...mdx.configs.base.rules,
 
-              ...("eslint-plugin-mdx" in override
-                ? override["eslint-plugin-mdx"]
-                : {}),
               ...("remark-preset-lint-recommended" in override
                 ? override["remark-preset-lint-recommended"]
                 : {}),
               ...("remark-lint" in override ? override["remark-lint"] : {}),
+              ...("eslint-plugin-mdx" in override
+                ? override["eslint-plugin-mdx"]
+                : {}),
             },
           },
         ]),

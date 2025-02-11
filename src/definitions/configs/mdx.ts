@@ -13,11 +13,6 @@ export default {
   name: "MDX",
   packages: [
     {
-      declaredAs: "* as mdx",
-      package: "eslint-plugin-mdx",
-      requiresImport: false,
-    },
-    {
       declaredAs: "remarkLintRecommended",
       package: "remark-preset-lint-recommended",
       requiresImport: false,
@@ -25,6 +20,11 @@ export default {
     {
       declaredAs: "remarkLint",
       package: "remark-lint",
+      requiresImport: false,
+    },
+    {
+      declaredAs: "* as mdx",
+      package: "eslint-plugin-mdx",
       requiresImport: false,
     },
   ],
