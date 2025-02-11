@@ -58,6 +58,7 @@ import jsxA11y from "eslint-plugin-jsx-a11y";
 import * as mdx from "eslint-plugin-mdx";
 import mocha from "eslint-plugin-mocha";
 import nNode from "eslint-plugin-n";
+import noJQuery from "eslint-plugin-no-jquery";
 import noOnlyTest from "eslint-plugin-no-only-tests";
 import noRelativeImport from "eslint-plugin-no-relative-import-paths";
 import unsanitized from "eslint-plugin-no-unsanitized";
@@ -345,6 +346,7 @@ const configGen = ({
         mdx,
         mocha,
         n: nNode,
+        "no-jquery": noJQuery,
         "no-only-tests": noOnlyTest,
         "no-relative-import-paths": noRelativeImport,
         "no-unsanitized": unsanitized,
@@ -592,6 +594,29 @@ const configGen = ({
 
               ...("eslint-plugin-css-modules" in override
                 ? override["eslint-plugin-css-modules"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      No JQuery
+      492,049 monthly downloads
+      Disallow jQuery functions with native equivalents.
+      https://github.com/wikimedia/eslint-plugin-no-jquery#readme
+      Requires: no-jquery
+    */
+    ...(disable.includes("eslint-plugin-no-jquery") || threshold > 492_049
+      ? []
+      : [
+          {
+            files,
+            name: "No JQuery",
+            rules: {
+              "no-jquery/variable-pattern": "error",
+
+              ...("eslint-plugin-no-jquery" in override
+                ? override["eslint-plugin-no-jquery"]
                 : {}),
             },
           },

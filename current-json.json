@@ -150,6 +150,7 @@
     "mdx:eslint-plugin-mdx@3.1.5",
     "mocha",
     "n:eslint-plugin-n@17.15.1",
+    "no-jquery",
     "no-only-tests",
     "no-relative-import-paths",
     "no-unsanitized:eslint-plugin-no-unsanitized@4.1.2",

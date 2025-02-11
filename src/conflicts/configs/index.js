@@ -142,6 +142,10 @@ const configList = [
   },
   { location: "./src/conflicts/configs/node-config.js", name: "node" },
   {
+    location: "./src/conflicts/configs/no-jquery-config.js",
+    name: "no-jquery",
+  },
+  {
     location: "./src/conflicts/configs/no-only-test-config.js",
     name: "no-only-test",
   },

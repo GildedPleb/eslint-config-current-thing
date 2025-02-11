@@ -38,6 +38,7 @@
     "reportUnusedDisableDirectives": 1
   },
   "rules": {
+    "no-jquery/variable-pattern": [2],
     "no-use-extend-native/no-use-extend-native": [2],
     "wdio/await-expect": [2],
     "wdio/no-debug": [2],
@@ -3231,6 +3232,7 @@
     "mdx:eslint-plugin-mdx@3.1.5",
     "mocha",
     "n:eslint-plugin-n@17.15.1",
+    "no-jquery",
     "no-only-tests",
     "no-relative-import-paths",
     "no-unsanitized:eslint-plugin-no-unsanitized@4.1.2",

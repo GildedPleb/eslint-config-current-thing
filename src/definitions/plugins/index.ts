@@ -35,6 +35,7 @@ import md from "./md";
 import mdx from "./mdx";
 import mocha from "./mocha";
 import nextjs from "./nextjs";
+import noJquery from "./no-jquery";
 import noOnlyTest from "./no-only-test";
 import noRelativeImport from "./no-relative-import";
 import noUseExtendNative from "./no-use-extend-native";
@@ -133,6 +134,7 @@ const plugins = [
     mocha,
     nextjs,
     node,
+    noJquery,
     noOnlyTest,
     noRelativeImport,
     noUseExtendNative,

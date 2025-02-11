@@ -80,6 +80,8 @@ import nextjs from "@next/eslint-plugin-next";
 // @ts-ignore yes, we need to ignore every import for this to run
 import nNode from "eslint-plugin-n";
 // @ts-ignore yes, we need to ignore every import for this to run
+import noJQuery from "eslint-plugin-no-jquery";
+// @ts-ignore yes, we need to ignore every import for this to run
 import noOnlyTest from "eslint-plugin-no-only-tests";
 // @ts-ignore yes, we need to ignore every import for this to run
 import noRelativeImport from "eslint-plugin-no-relative-import-paths";
@@ -225,6 +227,7 @@ const plugins = {
   mdx,
   mocha,
   n: nNode,
+  "no-jquery": noJQuery,
   "no-only-tests": noOnlyTest,
   "no-relative-import-paths": noRelativeImport,
   "no-unsanitized": unsanitized,
