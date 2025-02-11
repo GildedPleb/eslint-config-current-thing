@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/turbo.ts
+// PathMark: ./src/definitions/configs/wdio.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

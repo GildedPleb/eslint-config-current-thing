@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/gts.ts
+// PathMark: ./src/definitions/configs/relay.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

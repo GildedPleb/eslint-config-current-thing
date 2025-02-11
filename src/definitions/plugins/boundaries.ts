@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/plugins/unused-imports.ts
+// PathMark: ./src/definitions/plugins/boundaries.ts
 import type { Plugin } from ".";
 
 export default {

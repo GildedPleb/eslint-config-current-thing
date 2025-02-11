@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/unsanitized.ts
+// PathMark: ./src/definitions/configs/boundaries.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

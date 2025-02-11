@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/plugins/ts.ts
+// PathMark: ./src/definitions/plugins/no-jquery.ts
 import type { Plugin } from ".";
 
 export default {

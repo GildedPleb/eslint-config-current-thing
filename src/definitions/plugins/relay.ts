@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/plugins/unsanitized.ts
+// PathMark: ./src/definitions/plugins/relay.ts
 import type { Plugin } from ".";
 
 export default {

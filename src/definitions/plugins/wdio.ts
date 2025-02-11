@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/plugins/vitest.ts
+// PathMark: ./src/definitions/plugins/wdio.ts
 import type { Plugin } from ".";
 
 export default {

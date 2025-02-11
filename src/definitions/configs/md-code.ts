@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/md.ts
+// PathMark: ./src/definitions/configs/md-code.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 

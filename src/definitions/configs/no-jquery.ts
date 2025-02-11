@@ -1,4 +1,4 @@
-// PathMark: ./src/definitions/configs/tsdoc.ts
+// PathMark: ./src/definitions/configs/no-jquery.ts
 import { RULES } from "../../constants";
 import type { Config } from ".";
 
