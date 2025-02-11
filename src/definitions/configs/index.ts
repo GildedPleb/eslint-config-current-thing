@@ -14,6 +14,7 @@ import airbnbReactHooks from "./airbnb-react-hooks";
 import airbnbTs from "./airbnb-ts";
 import antfu from "./antfu";
 import ava from "./ava";
+import boundaries from "./boundaries";
 import chai from "./chai";
 import comments from "./comments";
 import compat from "./compat";
@@ -173,6 +174,7 @@ const configs: Config[] = [
     airbnbTs,
     antfu,
     ava,
+    boundaries,
     chai,
     comments,
     compat,

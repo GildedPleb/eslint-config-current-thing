@@ -19,28 +19,28 @@ Presently, lint the current thing combines these configs (and their plugins, sub
 | | | | | 
 |,|,|,|,|
 | AirBnb | AirBnb Base | AirBnb-Typescript | Antfu |
-| Ava | Chai Friendly | Comments | Compat |
-| Create React App | CSS Modules | Cypress | Depend |
-| ES-X | ESLint | FormatJS | Functional |
-| Google | Google Typescript Style | GraphQL | Import |
-| Import X | Internationalization (i18n) | Jasmine | Jest |
-| Jest Dom | Jest Formatting | JSDoc | JSONC |
-| JSX Accessibility (JSX A11y) | Markdown | MDX | Microsoft SDL |
-| Mocha | NextJS | No JQuery | No Only Tests |
-| No Relative Import Paths | No Unsanitized | No Unused Imports | No Use Extend Native |
-| Node.js | Perfectionist | Playwright | Prefer Arrow |
-| Prettier | Prettier Plugin PackageJSON | Prettier Plugin Tailwind | Promises |
-| React | React Compiler | React Debug | React DOM |
-| React Hooks | React Hooks Extra | React Naming Convention | React Native (Independent Plugin/Config) |
-| React Native Config | React Native Plugin | React Performance | React Prefer Function Component |
-| React Refresh | React Web API | React X | Regular Expressions |
-| Security | Simple Import Sort | SonarJS | Sort Class Members |
-| Sort Destructure Keys | Standard | Standard JSX | Standard React |
-| Standard TS | Storybook | Stylistic | Tailwind CSS |
-| Tanstack Query | Testing Library | TOML | TSDoc |
-| Turbo | TypeScript | Unicorn | Vitest |
-| Vitest TS | Webdriver IO | XO | YML |
-| You Don't Need Lodash |  |  |  |
+| Ava | Boundaries | Chai Friendly | Comments |
+| Compat | Create React App | CSS Modules | Cypress |
+| Depend | ES-X | ESLint | FormatJS |
+| Functional | Google | Google Typescript Style | GraphQL |
+| Import | Import X | Internationalization (i18n) | Jasmine |
+| Jest | Jest Dom | Jest Formatting | JSDoc |
+| JSONC | JSX Accessibility (JSX A11y) | Markdown | MDX |
+| Microsoft SDL | Mocha | NextJS | No JQuery |
+| No Only Tests | No Relative Import Paths | No Unsanitized | No Unused Imports |
+| No Use Extend Native | Node.js | Perfectionist | Playwright |
+| Prefer Arrow | Prettier | Prettier Plugin PackageJSON | Prettier Plugin Tailwind |
+| Promises | React | React Compiler | React Debug |
+| React DOM | React Hooks | React Hooks Extra | React Naming Convention |
+| React Native (Independent Plugin/Config) | React Native Config | React Native Plugin | React Performance |
+| React Prefer Function Component | React Refresh | React Web API | React X |
+| Regular Expressions | Security | Simple Import Sort | SonarJS |
+| Sort Class Members | Sort Destructure Keys | Standard | Standard JSX |
+| Standard React | Standard TS | Storybook | Stylistic |
+| Tailwind CSS | Tanstack Query | Testing Library | TOML |
+| TSDoc | Turbo | TypeScript | Unicorn |
+| Vitest | Vitest TS | Webdriver IO | XO |
+| YML | You Don't Need Lodash |  |  |
 
 
 <!-- End Generated List of Configs DO NOT EDIT! -->
@@ -63,11 +63,11 @@ Linting is usually very basic or incrementally added as teams have no reason or 
 
 Unsurprisingly, it is incredibly strict with popularity-based opinions on:
 
-- **1640** Testing rules
-- **1625** TSX rules
-- **1619** JSX rules
-- **1491** Typescript rules
-- **1474** Javascript rules
+- **1647** Testing rules
+- **1632** TSX rules
+- **1626** JSX rules
+- **1498** Typescript rules
+- **1481** Javascript rules
 - **76** JSON rules
 - **59** YML rules
 - **56** TOML rules
@@ -365,7 +365,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **5334**. 
+The amount of packages reviewed and rejected **5350**. 
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -377,17 +377,14 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/11/2025, total known packages **25,269**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/11/2025, total known packages **25,254**. Top 40 next in line, downloads for the previous 28 days:
 
 - 1,569,528 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 1,058,816 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
 - 1,025,475 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
 - 785,672 downloads, [@emotion/eslint-plugin](https://www.npmjs.com/package/@emotion/eslint-plugin)
-- 774,279 downloads, [esprima-next](https://www.npmjs.com/package/esprima-next)
 - 594,187 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc)
 - 475,022 downloads, [eslint-config-ngs](https://www.npmjs.com/package/eslint-config-ngs)
-- 471,660 downloads, [eslint-plugin-sort-imports-es6-autofix](https://www.npmjs.com/package/eslint-plugin-sort-imports-es6-autofix)
-- 457,026 downloads, [eslint-plugin-boundaries](https://www.npmjs.com/package/eslint-plugin-boundaries)
 - 449,642 downloads, [@sap/eslint-plugin-cds](https://www.npmjs.com/package/@sap/eslint-plugin-cds)
 - 447,205 downloads, [eslint-plugin-ban](https://www.npmjs.com/package/eslint-plugin-ban)
 - 444,876 downloads, [eslint-plugin-relay](https://www.npmjs.com/package/eslint-plugin-relay)
@@ -414,11 +411,14 @@ Generated on 2/11/2025, total known packages **25,269**. Top 40 next in line, do
 - 361,477 downloads, [eslint-plugin-github](https://www.npmjs.com/package/eslint-plugin-github) - Not Yet Eligible
 - 357,795 downloads, [eslint-plugin-file-progress](https://www.npmjs.com/package/eslint-plugin-file-progress) - Not Yet Eligible
 - 357,570 downloads, [eslint-plugin-i18n-text](https://www.npmjs.com/package/eslint-plugin-i18n-text) - Not Yet Eligible
-- 353,404 downloads, [@cloudflare/workerd-windows-64](https://www.npmjs.com/package/@cloudflare/workerd-windows-64) - Not Yet Eligible
-- 353,060 downloads, [react-facebook-login](https://www.npmjs.com/package/react-facebook-login) - Not Yet Eligible
 - 353,053 downloads, [eslint-config-react](https://www.npmjs.com/package/eslint-config-react) - Not Yet Eligible
-- 352,701 downloads, [@fastify/type-provider-typebox](https://www.npmjs.com/package/@fastify/type-provider-typebox) - Not Yet Eligible
-- 351,545 downloads, [es-check](https://www.npmjs.com/package/es-check) - Not Yet Eligible
+- 351,496 downloads, [@types/eslint-plugin-jsx-a11y](https://www.npmjs.com/package/@types/eslint-plugin-jsx-a11y) - Not Yet Eligible
+- 349,453 downloads, [eslint-plugin-import-helpers](https://www.npmjs.com/package/eslint-plugin-import-helpers) - Not Yet Eligible
+- 348,391 downloads, [@unocss/transformer-attributify-jsx-babel](https://www.npmjs.com/package/@unocss/transformer-attributify-jsx-babel) - Not Yet Eligible
+- 348,360 downloads, [botframework-schema](https://www.npmjs.com/package/botframework-schema) - Not Yet Eligible
+- 348,082 downloads, [typescript-strict-plugin](https://www.npmjs.com/package/typescript-strict-plugin) - Not Yet Eligible
+- 347,851 downloads, [@mergeapi/react-merge-link](https://www.npmjs.com/package/@mergeapi/react-merge-link) - Not Yet Eligible
+- 347,379 downloads, [@shopify/cli-kit](https://www.npmjs.com/package/@shopify/cli-kit) - Not Yet Eligible
 
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

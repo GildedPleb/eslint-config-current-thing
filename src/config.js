@@ -33,6 +33,7 @@ import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
 import antfu from "eslint-plugin-antfu";
 import ava from "eslint-plugin-ava";
+import boundaries from "eslint-plugin-boundaries";
 import chaiFriendly from "eslint-plugin-chai-friendly";
 import checkFile from "eslint-plugin-check-file";
 import command from "eslint-plugin-command";
@@ -319,6 +320,7 @@ const configGen = ({
         "@typescript-eslint": tseslint.plugin,
         antfu,
         ava,
+        boundaries,
         "chai-friendly": chaiFriendly,
         "check-file": checkFile,
         command,
@@ -594,6 +596,29 @@ const configGen = ({
 
               ...("eslint-plugin-css-modules" in override
                 ? override["eslint-plugin-css-modules"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Boundaries
+      479,388 monthly downloads
+      Eslint plugin checking architecture boundaries between elements
+      https://github.com/javierbrea/eslint-plugin-boundaries#readme
+      Requires: boundaries
+    */
+    ...(disable.includes("eslint-plugin-boundaries") || threshold > 479_388
+      ? []
+      : [
+          {
+            files,
+            name: "Boundaries",
+            rules: {
+              ...boundaries.configs.recommended.rules,
+
+              ...("eslint-plugin-boundaries" in override
+                ? override["eslint-plugin-boundaries"]
                 : {}),
             },
           },

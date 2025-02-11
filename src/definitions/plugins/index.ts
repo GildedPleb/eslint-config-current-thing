@@ -3,6 +3,7 @@
 import antfu from "./antfu";
 import ava from "./ava";
 import babel from "./babel";
+import boundaries from "./boundaries";
 import chai from "./chai";
 import checkFile from "./check-file";
 import command from "./command";
@@ -101,6 +102,7 @@ const plugins = [
     antfu,
     ava,
     babel,
+    boundaries,
     chai,
     checkFile,
     command,

@@ -50,6 +50,10 @@ const configList = [
   },
   { location: "./src/conflicts/configs/antfu-config.js", name: "antfu" },
   { location: "./src/conflicts/configs/ava-config.js", name: "ava" },
+  {
+    location: "./src/conflicts/configs/boundaries-config.js",
+    name: "boundaries",
+  },
   { location: "./src/conflicts/configs/chai-config.js", name: "chai" },
   { location: "./src/conflicts/configs/comments-config.js", name: "comments" },
   { location: "./src/conflicts/configs/compat-config.js", name: "compat" },

@@ -38,6 +38,18 @@
     "reportUnusedDisableDirectives": 1
   },
   "rules": {
+    "boundaries/element-types": [2],
+    "boundaries/entry-point": [2],
+    "boundaries/external": [2],
+    "boundaries/no-ignored": [0],
+    "boundaries/no-private": [
+      2,
+      {
+        "allowUncles": true
+      }
+    ],
+    "boundaries/no-unknown-files": [0],
+    "boundaries/no-unknown": [0],
     "no-jquery/variable-pattern": [2],
     "ava/assertion-arguments": [2],
     "ava/hooks-order": [2],
@@ -3334,6 +3346,7 @@
     "@typescript-eslint:@typescript-eslint/eslint-plugin@8.24.0",
     "antfu:antfu@3.0.0",
     "ava:eslint-plugin-ava@15.0.1",
+    "boundaries:eslint-plugin-boundaries@5.0.1",
     "chai-friendly:eslint-plugin-chai-friendly@1.0.1",
     "check-file:eslint-plugin-check-file@3.0.0",
     "command:command@3.0.0",
