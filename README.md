@@ -351,7 +351,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **5187**.
+The amount of packages reviewed and rejected **5209**.
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -363,47 +363,47 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/10/2025, total known packages **25,112**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/10/2025, total known packages **25,189**. Top 40 next in line, downloads for the previous 28 days:
 
-- 1,565,714 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
-- 1,053,762 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
-- 1,026,674 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
-- 790,102 downloads, [@emotion/eslint-plugin](https://www.npmjs.com/package/@emotion/eslint-plugin)
-- 596,071 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc)
-- 541,110 downloads, [eslint-plugin-wdio](https://www.npmjs.com/package/eslint-plugin-wdio)
-- 512,265 downloads, [@eslint/markdown](https://www.npmjs.com/package/@eslint/markdown)
-- 497,856 downloads, [eslint-plugin-filename-rules](https://www.npmjs.com/package/eslint-plugin-filename-rules)
-- 496,103 downloads, [@remix-run/eslint-config](https://www.npmjs.com/package/@remix-run/eslint-config)
-- 496,032 downloads, [@netlify/run-utils](https://www.npmjs.com/package/@netlify/run-utils)
+- 1,569,528 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
+- 1,058,816 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
+- 1,025,475 downloads, [eslint-plugin-rxjs](https://www.npmjs.com/package/eslint-plugin-rxjs)
+- 785,672 downloads, [@emotion/eslint-plugin](https://www.npmjs.com/package/@emotion/eslint-plugin)
+- 594,187 downloads, [@lwc/eslint-plugin-lwc](https://www.npmjs.com/package/@lwc/eslint-plugin-lwc)
+- 542,429 downloads, [eslint-plugin-wdio](https://www.npmjs.com/package/eslint-plugin-wdio)
+- 506,521 downloads, [@eslint/markdown](https://www.npmjs.com/package/@eslint/markdown)
+- 498,197 downloads, [eslint-plugin-filename-rules](https://www.npmjs.com/package/eslint-plugin-filename-rules)
+- 490,911 downloads, [@remix-run/eslint-config](https://www.npmjs.com/package/@remix-run/eslint-config)
 - 475,022 downloads, [eslint-config-ngs](https://www.npmjs.com/package/eslint-config-ngs)
-- 472,178 downloads, [eslint-plugin-no-jquery](https://www.npmjs.com/package/eslint-plugin-no-jquery)
-- 455,309 downloads, [eslint-plugin-sort-imports-es6-autofix](https://www.npmjs.com/package/eslint-plugin-sort-imports-es6-autofix)
-- 454,614 downloads, [eslint-plugin-boundaries](https://www.npmjs.com/package/eslint-plugin-boundaries)
-- 449,804 downloads, [@ngrx/eslint-plugin](https://www.npmjs.com/package/@ngrx/eslint-plugin)
-- 448,368 downloads, [@sap/eslint-plugin-cds](https://www.npmjs.com/package/@sap/eslint-plugin-cds)
-- 445,535 downloads, [eslint-plugin-ban](https://www.npmjs.com/package/eslint-plugin-ban)
-- 442,908 downloads, [eslint-plugin-relay](https://www.npmjs.com/package/eslint-plugin-relay)
-- 441,216 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe)
-- 440,814 downloads, [astro-eslint-parser](https://www.npmjs.com/package/astro-eslint-parser)
-- 438,291 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp)
-- 437,114 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc)
-- 435,021 downloads, [eslint-plugin-no-null](https://www.npmjs.com/package/eslint-plugin-no-null)
-- 426,011 downloads, [@shopify/eslint-plugin](https://www.npmjs.com/package/@shopify/eslint-plugin)
-- 426,001 downloads, [eslint-plugin-astro](https://www.npmjs.com/package/eslint-plugin-astro)
-- 417,985 downloads, [eslint-friendly-formatter](https://www.npmjs.com/package/eslint-friendly-formatter)
-- 416,164 downloads, [sherif-linux-x64](https://www.npmjs.com/package/sherif-linux-x64)
-- 414,408 downloads, [sherif](https://www.npmjs.com/package/sherif)
-- 413,551 downloads, [@eslint-react/tools](https://www.npmjs.com/package/@eslint-react/tools)
-- 410,468 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit)
-- 401,455 downloads, [eslint-rule-documentation](https://www.npmjs.com/package/eslint-rule-documentation)
-- 400,937 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript)
-- 396,141 downloads, [grunt-eslint](https://www.npmjs.com/package/grunt-eslint) - Not Yet Eligible
-- 383,914 downloads, [eslint-plugin-vitest-globals](https://www.npmjs.com/package/eslint-plugin-vitest-globals) - Not Yet Eligible
-- 378,295 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
-- 377,309 downloads, [@salesforce/eslint-plugin-lightning](https://www.npmjs.com/package/@salesforce/eslint-plugin-lightning) - Not Yet Eligible
-- 376,171 downloads, [@gitlab/eslint-plugin](https://www.npmjs.com/package/@gitlab/eslint-plugin) - Not Yet Eligible
-- 370,938 downloads, [eslint-plugin-import-newlines](https://www.npmjs.com/package/eslint-plugin-import-newlines) - Not Yet Eligible
-- 370,502 downloads, [eslint-config-airbnb-typescript-prettier](https://www.npmjs.com/package/eslint-config-airbnb-typescript-prettier) - Not Yet Eligible
-- 370,236 downloads, [babel-plugin-relay](https://www.npmjs.com/package/babel-plugin-relay) - Not Yet Eligible
+- 472,955 downloads, [eslint-plugin-no-jquery](https://www.npmjs.com/package/eslint-plugin-no-jquery)
+- 471,660 downloads, [eslint-plugin-sort-imports-es6-autofix](https://www.npmjs.com/package/eslint-plugin-sort-imports-es6-autofix)
+- 457,026 downloads, [eslint-plugin-boundaries](https://www.npmjs.com/package/eslint-plugin-boundaries)
+- 449,642 downloads, [@sap/eslint-plugin-cds](https://www.npmjs.com/package/@sap/eslint-plugin-cds)
+- 447,205 downloads, [eslint-plugin-ban](https://www.npmjs.com/package/eslint-plugin-ban)
+- 444,876 downloads, [eslint-plugin-relay](https://www.npmjs.com/package/eslint-plugin-relay)
+- 444,582 downloads, [astro-eslint-parser](https://www.npmjs.com/package/astro-eslint-parser)
+- 441,765 downloads, [eslint-config-universe](https://www.npmjs.com/package/eslint-config-universe)
+- 438,604 downloads, [eslint-plugin-fp](https://www.npmjs.com/package/eslint-plugin-fp)
+- 438,264 downloads, [@salesforce/eslint-config-lwc](https://www.npmjs.com/package/@salesforce/eslint-config-lwc)
+- 434,677 downloads, [eslint-plugin-no-null](https://www.npmjs.com/package/eslint-plugin-no-null)
+- 431,944 downloads, [@ngrx/eslint-plugin](https://www.npmjs.com/package/@ngrx/eslint-plugin)
+- 429,081 downloads, [eslint-plugin-astro](https://www.npmjs.com/package/eslint-plugin-astro)
+- 414,989 downloads, [sherif](https://www.npmjs.com/package/sherif)
+- 414,553 downloads, [@shopify/eslint-plugin](https://www.npmjs.com/package/@shopify/eslint-plugin)
+- 407,589 downloads, [eslint-plugin-qunit](https://www.npmjs.com/package/eslint-plugin-qunit)
+- 401,114 downloads, [sherif-linux-x64](https://www.npmjs.com/package/sherif-linux-x64)
+- 399,406 downloads, [eslint-config-xo-typescript](https://www.npmjs.com/package/eslint-config-xo-typescript) - Not Yet Eligible
+- 399,347 downloads, [eslint-rule-documentation](https://www.npmjs.com/package/eslint-rule-documentation) - Not Yet Eligible
+- 382,592 downloads, [eslint-plugin-vitest-globals](https://www.npmjs.com/package/eslint-plugin-vitest-globals) - Not Yet Eligible
+- 378,806 downloads, [@salesforce/eslint-plugin-lightning](https://www.npmjs.com/package/@salesforce/eslint-plugin-lightning) - Not Yet Eligible
+- 378,172 downloads, [@gitlab/eslint-plugin](https://www.npmjs.com/package/@gitlab/eslint-plugin) - Not Yet Eligible
+- 374,406 downloads, [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y) - Not Yet Eligible
+- 371,073 downloads, [eslint-plugin-import-newlines](https://www.npmjs.com/package/eslint-plugin-import-newlines) - Not Yet Eligible
+- 366,804 downloads, [eslint-config-airbnb-typescript-prettier](https://www.npmjs.com/package/eslint-config-airbnb-typescript-prettier) - Not Yet Eligible
+- 365,948 downloads, [@angular/pwa](https://www.npmjs.com/package/@angular/pwa) - Not Yet Eligible
+- 365,946 downloads, [@gitlab/at.js](https://www.npmjs.com/package/@gitlab/at.js) - Not Yet Eligible
+- 365,505 downloads, [@gitlab/cluster-client](https://www.npmjs.com/package/@gitlab/cluster-client) - Not Yet Eligible
+- 365,367 downloads, [libheif-js](https://www.npmjs.com/package/libheif-js) - Not Yet Eligible
+- 365,022 downloads, [storybook-addon-remix-react-router](https://www.npmjs.com/package/storybook-addon-remix-react-router) - Not Yet Eligible
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->
