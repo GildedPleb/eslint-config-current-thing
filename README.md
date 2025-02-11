@@ -237,7 +237,7 @@ export default config;
 
 <!-- Start Generated Threshold DO NOT EDIT! -->
 
-**For a CONFIG to be added, it needs to have around 531,411 monthly downloads (or 4 consecutive weeks above 100,000 weekly downloads Circa Feb 2023 adjusted for 15% annual download inflation).** This is to prevent spam, bloat, needless PRs, drift, and arguments about minutia. But it's also variable as configs change popularity. Yes, it's arbitrary (and it can be spoofed/is [naively calculated](https://blog.npmjs.org/post/92574016600/numeric-precision-matters-how-npm-download-counts-work.html)), but it seems to be a good heuristic for the cutoff between generally used configs and niche configs. It is also the default threshold.
+**For a CONFIG to be added, it needs to have around 531,417 monthly downloads (or 4 consecutive weeks above 100,000 weekly downloads Circa Feb 2023 adjusted for 15% annual download inflation).** This is to prevent spam, bloat, needless PRs, drift, and arguments about minutia. But it's also variable as configs change popularity. Yes, it's arbitrary (and it can be spoofed/is [naively calculated](https://blog.npmjs.org/post/92574016600/numeric-precision-matters-how-npm-download-counts-work.html)), but it seems to be a good heuristic for the cutoff between generally used configs and niche configs. It is also the default threshold.
 
 <!-- End Generated Threshold DO NOT EDIT! -->
 
@@ -358,7 +358,7 @@ graph LR
 
 In an effort to find as many possible ESLint appropriate packages, plugins, and configs, we have cast a massive net to comb through NPM packages so you don't have to. The amount of acceptable packages is bottomless, but taken from the most downloaded package that meets our widest search terms ("config" "plugin" or "eslint") the count of rejected packages should be a heuristic for the depth at which the current package runner-up is at.
 
-The amount of packages reviewed and rejected **5430**. 
+The amount of packages reviewed and rejected **5432**. 
 
 <!-- End Generated Rejected Count DO NOT EDIT! -->
 
@@ -370,7 +370,7 @@ All rejected packages are always open for debate!
 
 The following section is generated according to spec.
 
-Generated on 2/11/2025, total known packages **25,187**. Top 40 next in line, downloads for the previous 28 days:
+Generated on 2/11/2025, total known packages **25,185**. Top 40 next in line, downloads for the previous 28 days:
 
 - 1,569,528 downloads, [eslint-plugin-typescript-sort-keys](https://www.npmjs.com/package/eslint-plugin-typescript-sort-keys)
 - 1,058,816 downloads, [@vercel/style-guide](https://www.npmjs.com/package/@vercel/style-guide)
@@ -410,8 +410,8 @@ Generated on 2/11/2025, total known packages **25,187**. Top 40 next in line, do
 - 336,144 downloads, [eslint-plugin-escompat](https://www.npmjs.com/package/eslint-plugin-escompat) - Not Yet Eligible
 - 334,345 downloads, [eslint-filtered-fix](https://www.npmjs.com/package/eslint-filtered-fix) - Not Yet Eligible
 - 333,228 downloads, [eslint-nibble](https://www.npmjs.com/package/eslint-nibble) - Not Yet Eligible
-- 330,045 downloads, [@nx-tools/nx-container](https://www.npmjs.com/package/@nx-tools/nx-container) - Not Yet Eligible
-- 329,769 downloads, [cypress-cloud](https://www.npmjs.com/package/cypress-cloud) - Not Yet Eligible
+- 329,051 downloads, [@oxc-resolver/binding-darwin-arm64](https://www.npmjs.com/package/@oxc-resolver/binding-darwin-arm64) - Not Yet Eligible
+- 328,772 downloads, [@pnpm/npm-resolver](https://www.npmjs.com/package/@pnpm/npm-resolver) - Not Yet Eligible
 
 
 <!-- End Generated Under Consideration List DO NOT EDIT! -->

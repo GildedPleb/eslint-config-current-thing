@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-current-thing",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "description": "Lint The Current Thing",
   "keywords": [
     "eslint",
@@ -76,6 +76,7 @@
     "predeploy": "npx update-browserslist-db@latest -y",
     "reject": "npm run tsc:file --file=./src/packages/rejected-research.ts && npm run node:file --file=./src/packages/rejected-research.ts",
     "reject-cli": "npm run tsc:file --file=./src/packages/rejected-cli.ts && npm run node:file --file=./src/packages/rejected-cli.ts",
+    "test": "npm run predeploy && npm run lint && npx jest ./test",
     "tsc:base": "npx tsc --noEmit --target ESNext --module ESNext --moduleResolution Bundler --allowJs --checkJs --strict --skipLibCheck --allowSyntheticDefaultImports --jsx react-jsx",
     "tsc:file": "npm run tsc:base -- $npm_config_file"
   },
@@ -98,13 +99,13 @@
     "@eslint/markdown": "^6.2.2",
     "@graphql-eslint/eslint-plugin": "^4.3.0",
     "@microsoft/eslint-plugin-sdl": "^1.0.1",
-    "@next/eslint-plugin-next": "^15.1.6",
+    "@next/eslint-plugin-next": "^15.1.7",
     "@react-native/eslint-plugin": "^0.77.0",
     "@stylistic/eslint-plugin": "^3.1.0",
     "@tanstack/eslint-plugin-query": "^5.66.1",
     "@vitest/eslint-plugin": "^1.1.28",
     "confusing-browser-globals": "^1.0.11",
-    "eslint": "^9.20.0",
+    "eslint": "^9.20.1",
     "eslint-config-love": "^118.0.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-config-xo": "^0.46.0",
