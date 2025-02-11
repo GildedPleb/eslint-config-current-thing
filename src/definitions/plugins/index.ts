@@ -61,6 +61,7 @@ import reactRefresh from "./react-refresh";
 import reactWebApi from "./react-web-api";
 import reactX from "./react-x";
 import regexp from "./regexp";
+import relay from "./relay";
 import rxjs from "./rxjs";
 import sdl from "./sdl";
 import security from "./security";
@@ -161,6 +162,7 @@ const plugins = [
     reactWebApi,
     reactX,
     regexp,
+    relay,
     rxjs,
     sdl,
     security,
