@@ -70,7 +70,7 @@ import jsonc from "eslint-plugin-jsonc";
 // @ts-ignore yes, we need to ignore every import for this to run
 import jsxA11y from "eslint-plugin-jsx-a11y";
 // @ts-ignore yes, we need to ignore every import for this to run
-import markdown from "eslint-plugin-markdown";
+import markdown from "@eslint/markdown";
 // @ts-ignore yes, we need to ignore every import for this to run
 import * as mdx from "eslint-plugin-mdx";
 // @ts-ignore yes, we need to ignore every import for this to run

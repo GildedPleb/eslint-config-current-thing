@@ -9,13 +9,13 @@
   This file is fully generated, to edit it change ./generate-conflicts.ts
 */
 
+import markdown from "@eslint/markdown";
 import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
-import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import * as espree from "espree";
 import globals from "globals";
@@ -219,22 +219,21 @@ const configGen = ({
       www.nope.com
       Requires: markdown
     */
-    ...(disable.includes("eslint-plugin-markdown") || threshold > 1_000_000
+    ...(disable.includes("eslint-plugin-markdown") ||
+    disable.includes("@eslint/markdown") ||
+    threshold > 1_000_000
       ? []
       : [
           {
-            files: codeBlocks,
-            languageOptions: {
-              parserOptions: {
-                ecmaFeatures: {
-                  impliedStrict: true,
-                },
-              },
-            },
+            files: mdFiles,
+            language: "markdown/commonmark",
             rules: {
-              ...markdown.configs.recommended[2].rules,
+              ...markdown.configs.recommended[0].rules,
               ...("eslint-plugin-markdown" in override
                 ? override["eslint-plugin-markdown"]
+                : {}),
+              ...("@eslint/markdown" in override
+                ? override["@eslint/markdown"]
                 : {}),
             },
           },

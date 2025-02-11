@@ -52,6 +52,7 @@ import jsdocTs from "./jsdoc-ts";
 import jsonc from "./jsonc";
 import jsxA11y from "./jsx-a11y";
 import md from "./md";
+import mdCode from "./md-code";
 import mdx from "./mdx";
 import mdxCode from "./mdx-code";
 import mocha from "./mocha";
@@ -209,6 +210,7 @@ const configs: Config[] = [
     jsonc,
     jsxA11y,
     md,
+    mdCode,
     mdx,
     mdxCode,
     mocha,

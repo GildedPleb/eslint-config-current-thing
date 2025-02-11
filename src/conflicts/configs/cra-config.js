@@ -9,6 +9,7 @@
   This file is fully generated, to edit it change ./generate-conflicts.ts
 */
 
+import markdown from "@eslint/markdown";
 import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
@@ -18,7 +19,6 @@ import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
 import importPlugin from "eslint-plugin-import";
 import jsxA11y from "eslint-plugin-jsx-a11y";
-import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";

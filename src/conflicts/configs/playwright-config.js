@@ -9,13 +9,13 @@
   This file is fully generated, to edit it change ./generate-conflicts.ts
 */
 
+import markdown from "@eslint/markdown";
 import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
-import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import playwright from "eslint-plugin-playwright";
 import * as espree from "espree";

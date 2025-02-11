@@ -11,6 +11,7 @@
 import antfuConfig from "@antfu/eslint-config";
 import babelPlugin from "@babel/eslint-plugin";
 import eslint from "@eslint/js";
+import markdown from "@eslint/markdown";
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
 import {
   configs as graphqlConfigs,
@@ -54,7 +55,6 @@ import jestFormatting from "eslint-plugin-jest-formatting";
 import jsdoc from "eslint-plugin-jsdoc";
 import jsonc from "eslint-plugin-jsonc";
 import jsxA11y from "eslint-plugin-jsx-a11y";
-import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import mocha from "eslint-plugin-mocha";
 import nNode from "eslint-plugin-n";
@@ -786,6 +786,22 @@ const configGen = ({
                     ecmaVersion: "latest",
                   },
                 },
+              };
+            }
+            // Because these configs do not have files defined, they will attempt to lint things like .md files that should not be linted as js files
+            const ruleConfigs = [
+              "antfu/javascript/rules",
+              "antfu/eslint-comments/rules",
+              "antfu/command/rules",
+              "antfu/perfectionist/setup",
+              "antfu/stylistic/rules",
+              "antfu/regexp/rules",
+              "antfu/jsdoc/rules",
+            ];
+            if (config.name && ruleConfigs.includes(config.name)) {
+              return {
+                ...config,
+                files,
               };
             }
             return config;
@@ -1697,36 +1713,6 @@ const configGen = ({
         ]),
 
     /*
-      Markdown
-      2,113,692 monthly downloads
-      An ESLint plugin to lint JavaScript in Markdown code fences.
-      https://github.com/eslint/eslint-plugin-markdown#readme
-      Requires: markdown
-    */
-    ...(disable.includes("eslint-plugin-markdown") || threshold > 2_113_692
-      ? []
-      : [
-          {
-            files: codeBlocks,
-            languageOptions: {
-              parserOptions: {
-                ecmaFeatures: {
-                  impliedStrict: true,
-                },
-              },
-            },
-            name: "Markdown",
-            rules: {
-              ...markdown.configs.recommended[2].rules,
-              "unused-imports/no-unused-vars": 0,
-              ...("eslint-plugin-markdown" in override
-                ? override["eslint-plugin-markdown"]
-                : {}),
-            },
-          },
-        ]),
-
-    /*
       Standard JSX
       2,131,280 monthly downloads
       JavaScript Standard Style JSX support - ESLint Shareable Config
@@ -2028,6 +2014,70 @@ const configGen = ({
               ...("remark-lint" in override ? override["remark-lint"] : {}),
               ...("remark-preset-lint-recommended" in override
                 ? override["remark-preset-lint-recommended"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Markdown
+      2,649,119 monthly downloads
+      An ESLint plugin to lint JavaScript in Markdown code fences. / The official ESLint language plugin for Markdown
+      https://github.com/eslint/eslint-plugin-markdown#readme / https://github.com/eslint/markdown#readme
+      Requires: markdown
+    */
+    ...(disable.includes("eslint-plugin-markdown") ||
+    disable.includes("@eslint/markdown") ||
+    threshold > 2_649_119
+      ? []
+      : [
+          {
+            files: mdFiles,
+            language: "markdown/commonmark",
+            name: "Markdown",
+            rules: {
+              ...markdown.configs.recommended[0].rules,
+              "unused-imports/no-unused-vars": 0,
+              ...("eslint-plugin-markdown" in override
+                ? override["eslint-plugin-markdown"]
+                : {}),
+              ...("@eslint/markdown" in override
+                ? override["@eslint/markdown"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Markdown - Code-Blocks
+      2,649,119 monthly downloads
+      An ESLint plugin to lint JavaScript in Markdown code fences. / The official ESLint language plugin for Markdown
+      https://github.com/eslint/eslint-plugin-markdown#readme / https://github.com/eslint/markdown#readme
+      Requires: markdown
+    */
+    ...(disable.includes("eslint-plugin-markdown/code-blocks") ||
+    disable.includes("@eslint/markdown/code-blocks") ||
+    threshold > 2_649_119
+      ? []
+      : [
+          {
+            files: codeBlocks,
+            languageOptions: {
+              parserOptions: {
+                ecmaFeatures: {
+                  impliedStrict: true,
+                },
+              },
+            },
+            name: "Markdown/code-blocks",
+            rules: {
+              ...markdown.configs.processor[2].rules,
+
+              ...("eslint-plugin-markdown/code-blocks" in override
+                ? override["eslint-plugin-markdown/code-blocks"]
+                : {}),
+              ...("@eslint/markdown/code-blocks" in override
+                ? override["@eslint/markdown/code-blocks"]
                 : {}),
             },
           },
@@ -6286,9 +6336,25 @@ const configGen = ({
             files: mdFiles,
             name: "Prettier/md",
             rules: {
-              "@stylistic/quotes": 0,
-              "@stylistic/semi": 0,
+              "antfu/import-dedupe": 0,
+              "import-x/consistent-type-specifier-style": 0,
+              "import-x/first": 0,
+              "import-x/newline-after-import": 0,
+              "import-x/no-duplicates": 0,
               "prettier/prettier": [2, { parser: "markdown" }],
+              "unicorn/consistent-empty-array-spread": 0,
+              "unicorn/escape-case": 0,
+              "unicorn/new-for-builtins": 0,
+              "unicorn/no-instanceof-array": 0,
+              "unicorn/no-new-array": 0,
+              "unicorn/no-new-buffer": 0,
+              "unicorn/number-literal-case": 0,
+              "unicorn/prefer-includes": 0,
+              "unicorn/prefer-node-protocol": 0,
+              "unicorn/prefer-number-properties": 0,
+              "unicorn/prefer-string-starts-ends-with": 0,
+              "unicorn/prefer-type-error": 0,
+              "unicorn/throw-new-error": 0,
 
               ...("eslint-plugin-prettier/md" in override
                 ? override["eslint-plugin-prettier/md"]
@@ -6652,13 +6718,15 @@ const configGen = ({
           },
         ]),
     /*
-      Markdown
-      2,113,692 monthly downloads
-      An ESLint plugin to lint JavaScript in Markdown code fences.
-      https://github.com/eslint/eslint-plugin-markdown#readme
+      Markdown - Code-Blocks
+      2,649,119 monthly downloads
+      An ESLint plugin to lint JavaScript in Markdown code fences. / The official ESLint language plugin for Markdown
+      https://github.com/eslint/eslint-plugin-markdown#readme / https://github.com/eslint/markdown#readme
       Requires: markdown
     */
-    ...(disable.includes("eslint-plugin-markdown") || threshold > 2_113_692
+    ...(disable.includes("eslint-plugin-markdown/code-blocks") ||
+    disable.includes("@eslint/markdown/code-blocks") ||
+    threshold > 2_649_119
       ? []
       : [
           {
@@ -6670,12 +6738,15 @@ const configGen = ({
                 },
               },
             },
-            name: "Markdown",
+            name: "Markdown/code-blocks",
             rules: {
-              ...markdown.configs.recommended[2].rules,
-              "unused-imports/no-unused-vars": 0,
-              ...("eslint-plugin-markdown" in override
-                ? override["eslint-plugin-markdown"]
+              ...markdown.configs.processor[2].rules,
+
+              ...("eslint-plugin-markdown/code-blocks" in override
+                ? override["eslint-plugin-markdown/code-blocks"]
+                : {}),
+              ...("@eslint/markdown/code-blocks" in override
+                ? override["@eslint/markdown/code-blocks"]
                 : {}),
             },
           },

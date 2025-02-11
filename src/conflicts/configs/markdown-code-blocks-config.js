@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/eslint-config.js
+// PathMark: ./src/conflicts/configs/markdown-code-blocks-config.js
 /* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 
@@ -9,7 +9,6 @@
   This file is fully generated, to edit it change ./generate-conflicts.ts
 */
 
-import eslint from "@eslint/js";
 import markdown from "@eslint/markdown";
 import {
   parseForESLint as graphQLparseForESLint,
@@ -208,24 +207,40 @@ const configGen = ({
     },
     /* PLUGINS */
     {
-      plugins: {},
+      plugins: {
+        markdown,
+      },
     },
 
     /*
-      ESLint
+      Markdown - Code-Blocks
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: (None)
+      Requires: markdown
     */
-    ...(disable.includes("@eslint/js") || threshold > 1_000_000
+    ...(disable.includes("eslint-plugin-markdown-code-blocks") ||
+    disable.includes("@eslint/markdown-code-blocks") ||
+    threshold > 1_000_000
       ? []
       : [
           {
-            files: jsFiles,
+            files: codeBlocks,
+            languageOptions: {
+              parserOptions: {
+                ecmaFeatures: {
+                  impliedStrict: true,
+                },
+              },
+            },
             rules: {
-              ...eslint.configs.recommended.rules,
-              ...("@eslint/js" in override ? override["@eslint/js"] : {}),
+              ...markdown.configs.processor[2].rules,
+              ...("eslint-plugin-markdown/code-blocks" in override
+                ? override["eslint-plugin-markdown/code-blocks"]
+                : {}),
+              ...("@eslint/markdown/code-blocks" in override
+                ? override["@eslint/markdown/code-blocks"]
+                : {}),
             },
           },
         ]),

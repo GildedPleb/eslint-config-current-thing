@@ -10,6 +10,7 @@
 */
 
 import babelPlugin from "@babel/eslint-plugin";
+import markdown from "@eslint/markdown";
 import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
@@ -18,7 +19,6 @@ import stylistic from "@stylistic/eslint-plugin";
 import prettierConfig from "eslint-config-prettier";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
-import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import prettier from "eslint-plugin-prettier";
 import react from "eslint-plugin-react";

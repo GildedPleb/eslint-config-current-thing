@@ -3,15 +3,23 @@ import { RULES } from "../../constants";
 import type { Config } from ".";
 
 export default {
+  contextOverride: true,
   definitions: `{
-    files: mdFiles,
-    language: "markdown/commonmark",
+    files: codeBlocks,
+    languageOptions: {
+      parserOptions: {
+        ecmaFeatures: {
+          impliedStrict: true
+        },
+      },
+    },
     ${RULES}
   }`,
   ejected: false,
   enabled: true,
   id: "markdown",
   name: "Markdown",
+  nameSecondary: "Code-Blocks",
   packages: [
     {
       declaredAs: "markdown",
@@ -25,6 +33,6 @@ export default {
     },
   ],
   requiredPlugins: ["markdown"],
-  rules: `...markdown.configs.recommended[0].rules,`,
+  rules: `...markdown.configs.processor[2].rules,`,
 } satisfies Config;
 // EOF

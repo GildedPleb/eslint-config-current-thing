@@ -9,7 +9,7 @@ export default {
       declaredAs: "markdown",
       mappedAs: "markdown",
       namespace: "markdown",
-      package: "eslint-plugin-markdown",
+      package: "@eslint/markdown",
       requiresImport: true,
     },
   ],

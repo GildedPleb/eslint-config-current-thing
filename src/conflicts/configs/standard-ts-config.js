@@ -9,6 +9,7 @@
   This file is fully generated, to edit it change ./generate-conflicts.ts
 */
 
+import markdown from "@eslint/markdown";
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
 import {
   parseForESLint as graphQLparseForESLint,
@@ -18,7 +19,6 @@ import standardTS from "eslint-config-love";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
 import importPlugin from "eslint-plugin-import";
-import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import nNode from "eslint-plugin-n";
 import promise from "eslint-plugin-promise";

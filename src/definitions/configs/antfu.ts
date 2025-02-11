@@ -35,6 +35,22 @@ export default {
         },
       };
     }
+    // Because these configs do not have files defined, they will attempt to lint things like .md files that should not be linted as js files
+    const ruleConfigs = [
+      "antfu/javascript/rules",
+      "antfu/eslint-comments/rules",
+      "antfu/command/rules",
+      "antfu/perfectionist/setup",
+      "antfu/stylistic/rules",
+      "antfu/regexp/rules",
+      "antfu/jsdoc/rules"
+    ];
+    if (config.name && ruleConfigs.includes(config.name)) {
+      return {
+        ...config,
+        files,
+      };
+    }
     return config;
   }),
   {

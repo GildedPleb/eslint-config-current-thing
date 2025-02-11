@@ -125,6 +125,10 @@ const configList = [
   { location: "./src/conflicts/configs/jsonc-config.js", name: "jsonc" },
   { location: "./src/conflicts/configs/jsx-a11y-config.js", name: "jsx-a11y" },
   { location: "./src/conflicts/configs/markdown-config.js", name: "markdown" },
+  {
+    location: "./src/conflicts/configs/markdown-code-blocks-config.js",
+    name: "markdown-code-blocks",
+  },
   { location: "./src/conflicts/configs/mdx-config.js", name: "mdx" },
   {
     location: "./src/conflicts/configs/mdx-code-blocks-config.js",

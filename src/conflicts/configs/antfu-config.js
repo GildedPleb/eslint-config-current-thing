@@ -10,6 +10,7 @@
 */
 
 import antfuConfig from "@antfu/eslint-config";
+import markdown from "@eslint/markdown";
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
 import {
   parseForESLint as graphQLparseForESLint,
@@ -24,7 +25,6 @@ import command from "eslint-plugin-command";
 import importX from "eslint-plugin-import-x";
 import jsdoc from "eslint-plugin-jsdoc";
 import jsonc from "eslint-plugin-jsonc";
-import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import nNode from "eslint-plugin-n";
 import noOnlyTest from "eslint-plugin-no-only-tests";
@@ -312,6 +312,22 @@ const configGen = ({
                     ecmaVersion: "latest",
                   },
                 },
+              };
+            }
+            // Because these configs do not have files defined, they will attempt to lint things like .md files that should not be linted as js files
+            const ruleConfigs = [
+              "antfu/javascript/rules",
+              "antfu/eslint-comments/rules",
+              "antfu/command/rules",
+              "antfu/perfectionist/setup",
+              "antfu/stylistic/rules",
+              "antfu/regexp/rules",
+              "antfu/jsdoc/rules",
+            ];
+            if (config.name && ruleConfigs.includes(config.name)) {
+              return {
+                ...config,
+                files,
               };
             }
             return config;

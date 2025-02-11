@@ -117,9 +117,13 @@ Use three or more dashes for a horizontal rule.
 
 ### Task List
 
+<!-- eslint-disable markdown/no-missing-label-refs -- this is OK -->
+
 - \[x] Task 1
 - \[ ] Task 2
 - \[ ] Task 3
+
+<!-- eslint-enable markdown/no-missing-label-refs -- safe to re-enable now -->
 
 ### HTML in Markdown
 
