@@ -20,6 +20,8 @@ import ava from "eslint-plugin-ava";
 // @ts-ignore yes, we need to ignore every import for this to run
 import babelPlugin from "@babel/eslint-plugin";
 // @ts-ignore yes, we need to ignore every import for this to run
+import ban from "eslint-plugin-ban";
+// @ts-ignore yes, we need to ignore every import for this to run
 import boundaries from "eslint-plugin-boundaries";
 // @ts-ignore yes, we need to ignore every import for this to run
 import chaiFriendly from "eslint-plugin-chai-friendly";
@@ -202,6 +204,7 @@ const plugins = {
   "@typescript-eslint": tseslint.plugin,
   antfu,
   ava,
+  ban,
   boundaries,
   "chai-friendly": chaiFriendly,
   "check-file": checkFile,

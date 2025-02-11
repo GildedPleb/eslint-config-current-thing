@@ -33,6 +33,7 @@ import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
 import antfu from "eslint-plugin-antfu";
 import ava from "eslint-plugin-ava";
+import ban from "eslint-plugin-ban";
 import boundaries from "eslint-plugin-boundaries";
 import chaiFriendly from "eslint-plugin-chai-friendly";
 import checkFile from "eslint-plugin-check-file";
@@ -320,6 +321,7 @@ const configGen = ({
         "@typescript-eslint": tseslint.plugin,
         antfu,
         ava,
+        ban,
         boundaries,
         "chai-friendly": chaiFriendly,
         "check-file": checkFile,
