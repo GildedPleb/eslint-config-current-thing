@@ -320,7 +320,7 @@ export default configGen();
   try {
     // eslint-disable-next-line security/detect-non-literal-fs-filename -- this is fine
     fs.writeFileSync(outputPath, generateCode, "utf8");
-    console.log(`\n.${outputPath} has been updated successfully.`);
+    console.log(`.${outputPath} has been updated successfully.`);
   } catch (error) {
     console.error(`Error processing the ${outputPath} file:`, error);
     throw new Error("Failed");

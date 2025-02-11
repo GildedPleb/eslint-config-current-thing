@@ -158,6 +158,8 @@ import unusedImports from "eslint-plugin-unused-imports";
 // @ts-ignore yes, we need to ignore every import for this to run
 import vitest from "@vitest/eslint-plugin";
 // @ts-ignore yes, we need to ignore every import for this to run
+import { rules as wdioPlugin } from "eslint-plugin-wdio";
+// @ts-ignore yes, we need to ignore every import for this to run
 import yml from "eslint-plugin-yml";
 // @ts-ignore yes, we need to ignore every import for this to run
 import youDontNeedLodash from "eslint-plugin-you-dont-need-lodash-underscore";
@@ -262,6 +264,7 @@ const plugins = {
   unicorn,
   "unused-imports": unusedImports,
   vitest,
+  wdio: { rules: wdioPlugin },
   yml,
   "you-dont-need-lodash-underscore": youDontNeedLodash,
 };

@@ -300,6 +300,7 @@ const configList = [
     location: "./src/conflicts/configs/vitest-ts-config.js",
     name: "vitest-ts",
   },
+  { location: "./src/conflicts/configs/wdio-config.js", name: "wdio" },
   { location: "./src/conflicts/configs/xo-config.js", name: "xo" },
   { location: "./src/conflicts/configs/yml-config.js", name: "yml" },
   {

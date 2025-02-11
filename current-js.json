@@ -39,6 +39,9 @@
   },
   "rules": {
     "no-use-extend-native/no-use-extend-native": [2],
+    "wdio/await-expect": [2],
+    "wdio/no-debug": [2],
+    "wdio/no-pause": [2],
     "depend/ban-dependencies": [
       2,
       {
@@ -3267,6 +3270,7 @@
     "unicorn:eslint-plugin-unicorn@56.0.1",
     "unused-imports:unused-imports",
     "vitest:vitest@1.1.28",
+    "wdio",
     "yml:eslint-plugin-yml@1.16.0",
     "you-dont-need-lodash-underscore"
   ],
@@ -4422,6 +4426,12 @@
       "process": false,
       "require": false,
       "setImmediate": false,
+      "$": false,
+      "$$": false,
+      "browser": true,
+      "driver": false,
+      "expect": false,
+      "multiremotebrowser": false,
       "AggregateError": false,
       "Array": false,
       "ArrayBuffer": false,
@@ -4481,8 +4491,7 @@
       "URIError": false,
       "WeakMap": false,
       "WeakRef": false,
-      "WeakSet": false,
-      "browser": true
+      "WeakSet": false
     }
   },
   "processor": "@graphql-eslint/processor@4.3.0"

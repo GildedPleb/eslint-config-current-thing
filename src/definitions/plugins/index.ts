@@ -79,6 +79,7 @@ import unicorn from "./unicorn";
 import unsanitized from "./unsanitized";
 import unusedImports from "./unused-imports";
 import vitest from "./vitest";
+import wdio from "./wdio";
 import yml from "./yml";
 import youDontNeedLodash from "./you-dont-need-lodash";
 
@@ -175,6 +176,7 @@ const plugins = [
     unsanitized,
     unusedImports,
     vitest,
+    wdio,
     yml,
     youDontNeedLodash,
   ]),

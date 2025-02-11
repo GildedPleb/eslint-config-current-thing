@@ -53,6 +53,9 @@
   },
   "rules": {
     "no-use-extend-native/no-use-extend-native": [2],
+    "wdio/await-expect": [2],
+    "wdio/no-debug": [2],
+    "wdio/no-pause": [2],
     "depend/ban-dependencies": [
       2,
       {
@@ -1062,6 +1065,10 @@
     "quote-props": [0],
     "semi": [0],
     "space-before-function-paren": [0],
+    "react-debug/class-component": [1],
+    "react-debug/function-component": [1],
+    "react-debug/hook": [1],
+    "react-debug/is-from-react": [0],
     "functional/prefer-property-signatures": [2],
     "functional/prefer-tacit": [1],
     "functional/readonly-type": [2],
@@ -1207,17 +1214,13 @@
         "considerDefaultExhaustiveForUnions": true
       }
     ],
-    "react-debug/class-component": [1],
-    "react-debug/function-component": [1],
-    "react-debug/hook": [1],
-    "react-debug/is-from-react": [0],
     "react-naming-convention/filename-extension": [1, "as-needed"],
     "react-naming-convention/use-state": [1],
+    "react-dom/no-unknown-property": [1],
+    "react-dom/no-void-elements-with-children": [1],
     "react-x/no-duplicate-jsx-props": [1],
     "react-x/no-use-context": [1],
     "react-x/use-jsx-vars": [1],
-    "react-dom/no-unknown-property": [1],
-    "react-dom/no-void-elements-with-children": [1],
     "sort-destructure-keys/sort-destructure-keys": [
       2,
       {
@@ -2842,6 +2845,7 @@
     "unicorn:eslint-plugin-unicorn@56.0.1",
     "unused-imports:unused-imports",
     "vitest:vitest@1.1.28",
+    "wdio",
     "yml:eslint-plugin-yml@1.16.0",
     "you-dont-need-lodash-underscore"
   ],
@@ -3999,6 +4003,12 @@
       "process": false,
       "require": false,
       "setImmediate": false,
+      "$": false,
+      "$$": false,
+      "browser": true,
+      "driver": false,
+      "expect": false,
+      "multiremotebrowser": false,
       "AggregateError": false,
       "Array": false,
       "ArrayBuffer": false,
@@ -4058,8 +4068,7 @@
       "URIError": false,
       "WeakMap": false,
       "WeakRef": false,
-      "WeakSet": false,
-      "browser": true
+      "WeakSet": false
     }
   },
   "processor": "@graphql-eslint/processor@4.3.0"

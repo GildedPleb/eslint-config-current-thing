@@ -130,6 +130,7 @@ import unsanitized from "./unsanitized";
 import unusedImports from "./unused-imports";
 import vitest from "./vitest";
 import vitestTs from "./vitest-ts";
+import wdio from "./wdio";
 import xo from "./xo";
 import yml from "./yml";
 import youDontNeedLodash from "./you-dont-need-lodash";
@@ -286,6 +287,7 @@ const configs: Config[] = [
     unusedImports,
     vitest,
     vitestTs,
+    wdio,
     xo,
     yml,
     youDontNeedLodash,

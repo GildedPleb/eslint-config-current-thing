@@ -98,7 +98,6 @@ const investigating = new Set([
   "eslint-plugin-ssr-friendly",
   "eslint-plugin-styled-components-a11y",
   "eslint-plugin-testcafe",
-  "eslint-plugin-toml",
   "eslint-plugin-toplevel",
   "eslint-plugin-total-functions",
   "eslint-plugin-tree-shaking",
