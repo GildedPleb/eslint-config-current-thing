@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-current-thing",
-  "version": "7.3.6",
+  "version": "8.0.0",
   "description": "Lint The Current Thing",
   "keywords": [
     "eslint",
@@ -25,6 +25,7 @@
     "es2022",
     "es2023",
     "es2024",
+    "es2025",
     "esnext",
     "flat",
     "flatconfig"
