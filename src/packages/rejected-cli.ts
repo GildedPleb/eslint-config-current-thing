@@ -1,5 +1,5 @@
 // PathMark: ./src/packages/rejected-cli.ts
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair -- not used for prod */
+
 /* eslint-disable no-console -- console needed for UI */
 /* eslint-disable import/no-extraneous-dependencies -- used for prod */
 

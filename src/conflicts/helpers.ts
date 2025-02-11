@@ -1,5 +1,5 @@
 // PathMark: ./src/conflicts/helpers.ts
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair -- needed */
+
 /* eslint-disable security/detect-object-injection -- needed */
 import { ESLint } from "eslint";
 import type { Rules } from "eslint-define-config";

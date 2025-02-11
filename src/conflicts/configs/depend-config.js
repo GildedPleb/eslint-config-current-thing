@@ -1,4 +1,4 @@
-// PathMark: ./src/conflicts/configs/toml-config.js
+// PathMark: ./src/conflicts/configs/depend-config.js
 /* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 
@@ -15,9 +15,9 @@ import {
 } from "@graphql-eslint/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
+import depend from "eslint-plugin-depend";
 import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
-import toml from "eslint-plugin-toml";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
@@ -209,28 +209,32 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        toml,
+        depend,
       },
     },
 
     /*
-      TOML
+      Depend
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: toml
+      Requires: depend
     */
-    ...(disable.includes("eslint-plugin-toml") || threshold > 1_000_000
+    ...(disable.includes("eslint-plugin-depend") || threshold > 1_000_000
       ? []
       : [
           {
-            files: tomlFiles,
+            files,
             rules: {
-              ...toml.configs.base.overrides[0].rules,
-              ...toml.configs.recommended.rules,
-              ...toml.configs.standard.rules,
-              ...("eslint-plugin-toml" in override
-                ? override["eslint-plugin-toml"]
+              "depend/ban-dependencies": [
+                2,
+                {
+                  // Allowing these because they are not deprecated / abandoned
+                  allowed: ["eslint-plugin-import", "eslint-plugin-react"],
+                },
+              ],
+              ...("eslint-plugin-depend" in override
+                ? override["eslint-plugin-depend"]
                 : {}),
             },
           },

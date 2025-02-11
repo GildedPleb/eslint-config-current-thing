@@ -1,5 +1,5 @@
 // PathMark: ./src/config.js
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable eslint-comments/disable-enable-pair */
 
 /* eslint-disable sonarjs/cognitive-complexity */
 
@@ -38,9 +38,8 @@ import command from "eslint-plugin-command";
 import compat from "eslint-plugin-compat";
 import cssModules from "eslint-plugin-css-modules";
 import cypress from "eslint-plugin-cypress";
-import es from "eslint-plugin-es";
+import depend from "eslint-plugin-depend";
 import esX from "eslint-plugin-es-x";
-import commentsOld from "eslint-plugin-eslint-comments";
 import formatJs from "eslint-plugin-formatjs";
 import functional from "eslint-plugin-functional";
 import header from "eslint-plugin-header";
@@ -63,7 +62,6 @@ import noOnlyTest from "eslint-plugin-no-only-tests";
 import noRelativeImport from "eslint-plugin-no-relative-import-paths";
 import unsanitized from "eslint-plugin-no-unsanitized";
 import noUseExtendNative from "eslint-plugin-no-use-extend-native";
-import node from "eslint-plugin-node";
 import perfectionist from "eslint-plugin-perfectionist";
 import playwright from "eslint-plugin-playwright";
 import preferArrow from "eslint-plugin-prefer-arrow";
@@ -310,7 +308,6 @@ const configGen = ({
     {
       plugins: {
         "@babel": babelPlugin,
-        "@eslint-community/eslint-comments": comments,
         "@graphql-eslint": { rules: graphQLRules },
         "@microsoft/sdl": msdl,
         "@next/next": nextjs,
@@ -326,9 +323,9 @@ const configGen = ({
         compat,
         "css-modules": cssModules,
         cypress,
-        es,
+        depend,
         "es-x": esX,
-        "eslint-comments": commentsOld,
+        "eslint-comments": comments,
         formatjs: formatJs,
         functional,
         header,
@@ -351,7 +348,6 @@ const configGen = ({
         "no-relative-import-paths": noRelativeImport,
         "no-unsanitized": unsanitized,
         "no-use-extend-native": noUseExtendNative,
-        node,
         perfectionist,
         playwright,
         "prefer-arrow": preferArrow,
@@ -405,6 +401,7 @@ const configGen = ({
       : [
           {
             files: [...jsxFiles, ...tsxFiles],
+            name: "React Prefer Function Component",
             rules: {
               ...preferFC.configs.recommended.rules,
 
@@ -427,6 +424,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "Microsoft SDL",
             rules: {
               // "Recommended" is just a smattering of everything: If Angular ever becomes a thing then we should add the angular modules here.
               ...msdl.configs.common.rules,
@@ -443,7 +441,7 @@ const configGen = ({
       311,615 monthly downloads
       ESLint plugin focused on common security issues and misconfigurations discoverable during static testing as part of Microsoft Security Development Lifecycle (SDL)
       https://github.com/microsoft/eslint-plugin-sdl
-      Requires: node, @microsoft/sdl
+      Requires: n, @microsoft/sdl
     */
     ...(disable.includes("@microsoft/eslint-plugin-sdl/node") ||
     threshold > 311_615
@@ -451,6 +449,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "Microsoft SDL/node",
             rules: {
               // "Recommended" is just a smattering of everything
               ...msdl.configs.node.rules,
@@ -482,6 +481,7 @@ const configGen = ({
                 },
               },
             },
+            name: "Microsoft SDL/react",
             rules: {
               // "Recommended" is just a smattering of everything
               ...msdl.configs.react.rules,
@@ -506,6 +506,7 @@ const configGen = ({
       : [
           {
             files: tsFiles,
+            name: "Microsoft SDL/ts",
             rules: {
               // "Recommended" is just a smattering of everything
               ...msdl.configs.typescript.rules,
@@ -536,6 +537,7 @@ const configGen = ({
                 },
               },
             },
+            name: "Standard React",
             rules: {
               "functional/functional-parameters": 0,
               "functional/no-classes": 0,
@@ -582,6 +584,7 @@ const configGen = ({
       : [
           {
             files: [...jsxFiles, ...tsxFiles],
+            name: "CSS Modules",
             rules: {
               ...cssModules.configs.recommended.rules,
 
@@ -604,6 +607,7 @@ const configGen = ({
       : [
           {
             files: jsTestFiles,
+            name: "Ava",
             rules: {
               ...ava.configs.recommended.rules,
 
@@ -626,6 +630,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "No Use Extend Native",
             rules: {
               ...noUseExtendNative.configs.recommended.rules,
 
@@ -648,6 +653,7 @@ const configGen = ({
       : [
           {
             files: [...jsxFiles, ...tsxFiles],
+            name: "React Performance",
             rules: {
               ...reactPerf.configs.recommended.rules,
               "functional/functional-parameters": 0,
@@ -658,6 +664,35 @@ const configGen = ({
               "functional/no-throw-statements": 0,
               ...("eslint-plugin-react-perf" in override
                 ? override["eslint-plugin-react-perf"]
+                : {}),
+            },
+          },
+        ]),
+
+    /*
+      Depend
+      598,961 monthly downloads
+      An ESLint plugin to suggest optimized dependencies, native alternatives and more
+      https://github.com/es-tooling/eslint-plugin-depend#readme
+      Requires: depend
+    */
+    ...(disable.includes("eslint-plugin-depend") || threshold > 598_961
+      ? []
+      : [
+          {
+            files,
+            name: "Depend",
+            rules: {
+              "depend/ban-dependencies": [
+                2,
+                {
+                  // Allowing these because they are not deprecated / abandoned
+                  allowed: ["eslint-plugin-import", "eslint-plugin-react"],
+                },
+              ],
+
+              ...("eslint-plugin-depend" in override
+                ? override["eslint-plugin-depend"]
                 : {}),
             },
           },
@@ -675,6 +710,7 @@ const configGen = ({
       : [
           {
             files: tomlFiles,
+            name: "TOML",
             rules: {
               ...toml.configs.base.overrides[0].rules,
               ...toml.configs.recommended.rules,
@@ -728,6 +764,7 @@ const configGen = ({
           }),
           {
             files,
+            name: "Antfu",
             rules: {
               "arrow-parens": 0,
               "block-spacing": 0,
@@ -761,6 +798,7 @@ const configGen = ({
       : [
           {
             files: tsFiles,
+            name: "React Web API",
             rules: {
               "react-web-api/no-leaked-event-listener": "warn",
               "react-web-api/no-leaked-interval": "warn",
@@ -786,6 +824,7 @@ const configGen = ({
       : [
           {
             files: jsFiles,
+            name: "Functional",
             rules: {
               ...functional.configs.externalVanillaRecommended.rules,
               ...functional.configs.recommended.rules,
@@ -811,6 +850,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "Functional/stylistic",
             rules: {
               ...functional.configs.stylistic.rules,
 
@@ -833,6 +873,7 @@ const configGen = ({
       : [
           {
             files: tsFiles,
+            name: "Functional/ts",
             rules: {
               ...functional.configs.recommended.rules,
               ...functional.configs.externalTypeScriptRecommended.rules,
@@ -856,6 +897,7 @@ const configGen = ({
       : [
           {
             files: tsFiles,
+            name: "React Debug",
             rules: {
               "react-debug/class-component": "warn",
               "react-debug/function-component": "warn",
@@ -882,6 +924,7 @@ const configGen = ({
       : [
           {
             files: tsFiles,
+            name: "React Naming Convention",
             rules: {
               "react-naming-convention/filename-extension": [
                 "warn",
@@ -908,6 +951,7 @@ const configGen = ({
       : [
           {
             files: tsFiles,
+            name: "React X",
             rules: {
               "react-x/ensure-forward-ref-using-ref": "warn",
               "react-x/no-access-state-in-setstate": "error",
@@ -967,6 +1011,7 @@ const configGen = ({
       : [
           {
             files: tsFiles,
+            name: "React DOM",
             rules: {
               "react-dom/no-dangerously-set-innerhtml": "warn",
               "react-dom/no-dangerously-set-innerhtml-with-children": "error",
@@ -1001,6 +1046,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "Sort Destructure Keys",
             rules: {
               "sort-destructure-keys/sort-destructure-keys": [
                 "error",
@@ -1029,6 +1075,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "You Don't Need Lodash",
             rules: {
               ...youDontNeedLodash.configs.compatible.rules,
 
@@ -1052,6 +1099,7 @@ const configGen = ({
       : [
           {
             files: tsFiles,
+            name: "React Hooks Extra",
             rules: {
               "react-hooks-extra/no-direct-set-state-in-use-effect": "warn",
               "react-hooks-extra/no-useless-custom-hooks": "warn",
@@ -1081,6 +1129,7 @@ const configGen = ({
                 jasmine: true,
               },
             },
+            name: "Jasmine",
             rules: {
               ...jasmine.configs.recommended.rules,
 
@@ -1103,6 +1152,7 @@ const configGen = ({
       : [
           {
             files: [...jsxFiles, ...tsxFiles],
+            name: "Internationalization (i18n)",
             rules: {
               ...i18next.configs.recommended.rules,
 
@@ -1125,6 +1175,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "FormatJS",
             rules: {
               ...formatJs.configs.recommended.rules,
 
@@ -1148,6 +1199,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "Sort Class Members",
             rules: {
               ...sortClassMembers.configs["flat/recommended"].rules,
 
@@ -1170,6 +1222,7 @@ const configGen = ({
       : [
           {
             files: jsFiles,
+            name: "Google Typescript Style",
             rules: {
               "@stylistic/arrow-parens": 0,
               "@stylistic/brace-style": 0,
@@ -1206,6 +1259,7 @@ const configGen = ({
       : [
           {
             files: tsFiles,
+            name: "Google Typescript Style/ts",
             rules: {
               ...gts.overrides[0].rules,
 
@@ -1226,6 +1280,7 @@ const configGen = ({
       : [
           {
             files: jsFiles,
+            name: "XO",
             rules: {
               ...xo.rules,
               "mocha/no-mocha-arrows": 0,
@@ -1256,6 +1311,7 @@ const configGen = ({
                 },
               },
             },
+            name: "MDX/code-blocks",
             rules: {
               // MDX "recommended" is composed of Overrides, Base, and CodeBlocks but with unneeded conditional logic
               // CodeBlocks:
@@ -1281,6 +1337,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "No Relative Import Paths",
             rules: {
               "no-relative-import-paths/no-relative-import-paths": [
                 "warn",
@@ -1310,6 +1367,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "No Unsanitized",
             rules: {
               ...unsanitized.configs.recommended.rules,
 
@@ -1332,6 +1390,7 @@ const configGen = ({
       : [
           {
             files: jsTestFiles,
+            name: "Chai Friendly",
             rules: {
               ...chaiFriendly.configs.recommended.rules,
 
@@ -1355,6 +1414,7 @@ const configGen = ({
       : [
           {
             files: [...jsxFiles, ...tsxFiles],
+            name: "React Compiler",
             rules: {
               ...reactCompiler.configs.recommended.rules,
 
@@ -1377,6 +1437,7 @@ const configGen = ({
       : [
           {
             files: jsFiles,
+            name: "Google",
             rules: {
               "@stylistic/arrow-parens": 0,
               "@stylistic/block-spacing": 0,
@@ -1521,6 +1582,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "Perfectionist",
             rules: {
               "simple-import-sort/imports": 0,
               ...perfectionist.configs["recommended-natural"].rules,
@@ -1544,6 +1606,7 @@ const configGen = ({
       : [
           {
             files: ymlFiles,
+            name: "YML",
             rules: {
               ...yml.configs.base.overrides[0].rules,
               ...yml.configs.standard.rules,
@@ -1568,6 +1631,7 @@ const configGen = ({
       : [
           {
             files: jsonFiles,
+            name: "JSONC",
             rules: {
               ...jsonc.configs.base.overrides[0].rules,
               ...jsonc.configs["recommended-with-json"].rules,
@@ -1593,6 +1657,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "Regular Expressions",
             rules: {
               ...regexp.configs["flat/recommended"].rules,
 
@@ -1622,6 +1687,7 @@ const configGen = ({
                 },
               },
             },
+            name: "Markdown",
             rules: {
               ...markdown.configs.recommended[2].rules,
               "unused-imports/no-unused-vars": 0,
@@ -1651,6 +1717,7 @@ const configGen = ({
                 },
               },
             },
+            name: "Standard JSX",
             rules: {
               "functional/functional-parameters": 0,
               "functional/no-classes": 0,
@@ -1782,6 +1849,7 @@ const configGen = ({
       : [
           {
             files: graphQLFiles,
+            name: "GraphQL",
             rules: {
               ...graphqlConfigs["schema-recommended"].rules,
               ...graphqlConfigs["operations-recommended"].rules,
@@ -1806,6 +1874,7 @@ const configGen = ({
       : [
           {
             files: jsTestFiles,
+            name: "Jest Formatting",
             rules: {
               ...jestFormatting.configs.recommended.overrides[0].rules,
               "functional/functional-parameters": 0,
@@ -1838,6 +1907,7 @@ const configGen = ({
                 browser: true,
               },
             },
+            name: "Compat",
             rules: {
               ...compat.configs.recommended.rules,
 
@@ -1862,6 +1932,7 @@ const configGen = ({
       : [
           {
             files: tsFiles,
+            name: "Standard TS",
             rules: {
               "prettier/prettier": 0,
               ...standardTS.rules,
@@ -1888,6 +1959,7 @@ const configGen = ({
       : [
           {
             files: tsFiles,
+            name: "TSDoc",
             rules: {
               "tsdoc/syntax": 2,
 
@@ -1913,6 +1985,7 @@ const configGen = ({
       : [
           {
             files: mdFiles,
+            name: "MDX",
             rules: {
               // MDX "recommended" is composed of Overrides, Base, and CodeBlocks but with unneeded conditional logic
               // Overrides:
@@ -1944,6 +2017,7 @@ const configGen = ({
       : [
           {
             files: jsFiles,
+            name: "Import X",
             rules: {
               ...importX.flatConfigs.recommended.rules,
 
@@ -1979,6 +2053,7 @@ const configGen = ({
           {
             files: tsFiles,
             languageOptions: importX.flatConfigs.react.languageOptions,
+            name: "Import X/react",
             rules: {
               ...("eslint-plugin-import-x/react" in override
                 ? override["eslint-plugin-import-x/react"]
@@ -2001,6 +2076,7 @@ const configGen = ({
       : [
           {
             files: tsFiles,
+            name: "Import X/react-native",
             rules: {
               ...("eslint-plugin-import-x/react-native" in override
                 ? override["eslint-plugin-import-x/react-native"]
@@ -2022,6 +2098,7 @@ const configGen = ({
       : [
           {
             files: tsFiles,
+            name: "Import X/ts",
             rules: {
               ...importX.flatConfigs.typescript.rules,
 
@@ -2045,6 +2122,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "Security",
             rules: {
               ...security.configs.recommended.rules,
 
@@ -2067,6 +2145,7 @@ const configGen = ({
       : [
           {
             files: [...jsxFiles, ...tsxFiles],
+            name: "Tailwind CSS",
             rules: {
               ...tailwindcss.configs.recommended.rules,
 
@@ -2092,6 +2171,7 @@ const configGen = ({
           {
             files: [...jsxFiles, ...tsxFiles],
             // Not added in any config
+            name: "React Native Plugin",
             rules: {
               "@react-native/platform-colors": 1,
               "functional/functional-parameters": 0,
@@ -2130,6 +2210,7 @@ const configGen = ({
                 "jest/globals": true,
               },
             },
+            name: "React Native Config/jest",
             rules: {
               quotes: [
                 1,
@@ -2162,6 +2243,7 @@ const configGen = ({
       : [
           {
             files: tsxFiles,
+            name: "React Native Config/ts",
             rules: {
               "@typescript-eslint/no-shadow": 1,
               "@typescript-eslint/no-unused-vars": [
@@ -2203,6 +2285,7 @@ const configGen = ({
       : [
           {
             files: ["**/*package.json"],
+            name: "Prettier Plugin PackageJSON",
             rules: {
               "prettier-package-json/prettier": [
                 2,
@@ -2229,6 +2312,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "Tanstack Query",
             rules: {
               "@tanstack/exhaustive-deps": 2,
               "@tanstack/infinite-query-property-order": 2,
@@ -2255,6 +2339,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "Prefer Arrow",
             rules: {
               "prefer-arrow/prefer-arrow-functions": [
                 "error",
@@ -2292,6 +2377,7 @@ const configGen = ({
                 ...vitest.environments.env.globals,
               },
             },
+            name: "Vitest",
             rules: {
               ...vitest.configs.recommended.rules,
 
@@ -2330,6 +2416,7 @@ const configGen = ({
                 warnOnUnsupportedTypeScriptVersion: false,
               },
             },
+            name: "Vitest TS",
             rules: {
               ...vitest.configs.recommended.rules,
 
@@ -2365,6 +2452,7 @@ const configGen = ({
                 warnOnUnsupportedTypeScriptVersion: false,
               },
             },
+            name: "Stylistic",
             rules: {
               "arrow-parens": 0,
               "block-spacing": 0,
@@ -2402,6 +2490,7 @@ const configGen = ({
             languageOptions: {
               globals: globals.node,
             },
+            name: "Mocha",
             rules: {
               ...mocha.configs.recommended.rules,
               "prefer-arrow-callback": 0,
@@ -2427,6 +2516,7 @@ const configGen = ({
             languageOptions: {
               globals: reactNativeIndie.environments["react-native"].globals,
             },
+            name: "React Native (Independent Plugin/Config)",
             rules: {
               ...reactNativeIndie.configs.all.rules,
               "functional/functional-parameters": 0,
@@ -2454,6 +2544,7 @@ const configGen = ({
       : [
           {
             files: [...jsTestFiles, ...tsTestFiles],
+            name: "Jest Dom",
             rules: {
               ...jestDom.configs.recommended.rules,
               "functional/functional-parameters": 0,
@@ -2481,6 +2572,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "SonarJS",
             rules: {
               ...sonarjs.configs.recommended.rules,
 
@@ -2503,6 +2595,7 @@ const configGen = ({
       : [
           {
             files: jsTestFiles,
+            name: "No Only Tests",
             rules: {
               "functional/functional-parameters": 0,
               "functional/no-conditional-statements": 0,
@@ -2533,6 +2626,7 @@ const configGen = ({
             languageOptions: {
               globals: globals["shared-node-browser"],
             },
+            name: "Playwright",
             rules: {
               ...playwright.configs.recommended.rules,
 
@@ -2605,6 +2699,7 @@ const configGen = ({
                 XMLHttpRequest: false,
               },
             },
+            name: "React Native Config",
             rules: {
               "block-scoped-var": 0,
               "brace-style": 0,
@@ -2805,6 +2900,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "Turbo",
             rules: {
               ...turbo.configs["flat/recommended"].rules,
               "turbo/no-undeclared-env-vars": 0,
@@ -2832,6 +2928,7 @@ const configGen = ({
       : [
           {
             files: tsFiles,
+            name: "AirBnb-Typescript",
             rules: {
               "@typescript-eslint/default-param-last": 2,
               "@typescript-eslint/dot-notation": [2, { allowKeywords: true }],
@@ -3026,7 +3123,7 @@ const configGen = ({
       9,385,318 monthly downloads
       Additional ESLint rules for ESLint directive comments. / Additional ESLint rules for ESLint directive comments.
       https://github.com/eslint-community/eslint-plugin-eslint-comments#readme / https://github.com/mysticatea/eslint-plugin-eslint-comments#readme
-      Requires: eslint-comments, @eslint-community/eslint-comments
+      Requires: eslint-comments
     */
     ...(disable.includes("@eslint-community/eslint-plugin-eslint-comments") ||
     disable.includes("eslint-plugin-eslint-comments") ||
@@ -3035,10 +3132,13 @@ const configGen = ({
       : [
           {
             files,
-            // CommentsOld (mysticatea/eslint-plugin-eslint-comments) intentionally
-            // left out: it has the most downloads, but is out of date / not maintained.
+            name: "Comments",
             rules: {
-              ...comments.configs.recommended.rules,
+              "eslint-comments/disable-enable-pair": 2,
+              "eslint-comments/no-aggregating-enable": 2,
+              "eslint-comments/no-duplicate-disable": 2,
+              "eslint-comments/no-unlimited-disable": 2,
+              "eslint-comments/no-unused-enable": 2,
 
               ...("@eslint-community/eslint-plugin-eslint-comments" in override
                 ? override["@eslint-community/eslint-plugin-eslint-comments"]
@@ -3062,6 +3162,7 @@ const configGen = ({
       : [
           {
             files: [...jsxFiles, ...tsxFiles],
+            name: "Prettier Plugin Tailwind",
             rules: {
               "@stylistic/arrow-parens": 0,
               "@stylistic/jsx-one-expression-per-line": 0,
@@ -3098,6 +3199,7 @@ const configGen = ({
       : [
           {
             files: jsFiles,
+            name: "JSDoc",
             rules: {
               ...jsdoc.configs["flat/recommended"].rules,
 
@@ -3120,6 +3222,7 @@ const configGen = ({
       : [
           {
             files: tsFiles,
+            name: "JSDoc/ts",
             rules: {
               ...jsdoc.configs["flat/recommended-typescript"].rules,
               "jsdoc/require-yields": 0,
@@ -3155,6 +3258,7 @@ const configGen = ({
                 window: "readonly",
               },
             },
+            name: "Standard",
             rules: {
               "@stylistic/comma-dangle": 0,
               "@stylistic/operator-linebreak": 0,
@@ -3481,6 +3585,7 @@ const configGen = ({
       : [
           {
             files: [...jsxFiles, ...tsxFiles],
+            name: "React Refresh",
             rules: {
               "functional/functional-parameters": 0,
               "functional/no-classes": 0,
@@ -3509,6 +3614,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "Simple Import Sort",
             rules: {
               "perfectionist/sort-imports": 0,
               "simple-import-sort/exports": 2,
@@ -3538,6 +3644,7 @@ const configGen = ({
                 ...cypress.environments.globals.globals,
               },
             },
+            name: "Cypress",
             rules: {
               ...cypress.configs.recommended.rules,
 
@@ -3560,6 +3667,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "Unicorn",
             rules: {
               "prettier-tailwind/prettier": 0,
               "prettier/prettier": 0,
@@ -3596,6 +3704,7 @@ const configGen = ({
       : [
           {
             files: storybook.configs.recommended.overrides[0].files,
+            name: "Storybook",
             rules: {
               ...storybook.configs.recommended.overrides[0].rules,
               "functional/functional-parameters": 0,
@@ -3624,6 +3733,7 @@ const configGen = ({
       : [
           {
             files: storybook.configs.recommended.overrides[1].files,
+            name: "Storybook/main",
             rules: {
               ...storybook.configs.recommended.overrides[1].rules,
 
@@ -3647,6 +3757,7 @@ const configGen = ({
       : [
           {
             files: jsFiles,
+            name: "No Unused Imports",
             rules: {
               "@typescript-eslint/no-unused-vars": 0,
               "no-unused-vars": 0,
@@ -3687,6 +3798,7 @@ const configGen = ({
                 },
               },
             },
+            name: "AirBnb/react",
             rules: {
               "class-methods-use-this": [
                 2,
@@ -4071,6 +4183,7 @@ const configGen = ({
                 },
               },
             },
+            name: "AirBnb/react-a11y",
             rules: {
               "functional/functional-parameters": 0,
               "functional/no-classes": 0,
@@ -4289,6 +4402,7 @@ const configGen = ({
                 },
               },
             },
+            name: "AirBnb/react-hooks",
             rules: {
               "functional/functional-parameters": 0,
               "functional/no-classes": 0,
@@ -4317,6 +4431,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "Promises",
             rules: {
               ...promise.configs.recommended.rules,
               "functional/immutable-data": 0,
@@ -4355,6 +4470,7 @@ const configGen = ({
                 },
               },
             },
+            name: "Create React App",
             rules: {
               "array-callback-return": 1,
               "default-case": [1, { commentPattern: "^no default$" }],
@@ -4571,6 +4687,7 @@ const configGen = ({
                 "jest/globals": true,
               },
             },
+            name: "Create React App/jest",
             rules: {
               "functional/functional-parameters": 0,
               "functional/no-classes": 0,
@@ -4640,6 +4757,7 @@ const configGen = ({
                 warnOnUnsupportedTypeScriptVersion: false,
               },
             },
+            name: "Create React App/ts",
             rules: {
               "@typescript-eslint/consistent-type-assertions": 1,
               "@typescript-eslint/no-array-constructor": 1,
@@ -4708,6 +4826,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "NextJS/config",
             rules: {
               // Rules Ejected because requires no longer needed: "@rushstack/eslint-patch/modern-module-resolution"
               "import/no-anonymous-default-export": 1,
@@ -4740,7 +4859,7 @@ const configGen = ({
       22,122,473 monthly downloads
       ESLint plugin about ECMAScript syntactic features. / ESLint plugin about ECMAScript syntactic features.
       https://github.com/eslint-community/eslint-plugin-es-x#readme / https://github.com/mysticatea/eslint-plugin-es#readme
-      Requires: es, es-x
+      Requires: es-x
     */
     ...(disable.includes("eslint-plugin-es-x") ||
     disable.includes("eslint-plugin-es") ||
@@ -4749,6 +4868,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "ES-X",
             rules: {
               ...esX.configs["no-new-in-esnext"].rules,
 
@@ -4767,7 +4887,7 @@ const configGen = ({
       22,373,839 monthly downloads
       Additional ESLint's rules for Node.js / Additional ESLint's rules for Node.js
       https://github.com/eslint-community/eslint-plugin-n#readme / https://github.com/mysticatea/eslint-plugin-node#readme
-      Requires: node, n
+      Requires: n
     */
     ...(disable.includes("eslint-plugin-n") ||
     disable.includes("eslint-plugin-node") ||
@@ -4785,8 +4905,7 @@ const configGen = ({
                 require: false,
               },
             },
-            // There are no recommended ways to use "node", as the "n" rule obsoletes
-            // it, and is no longer used even by shopify
+            name: "Node.js",
             rules: {
               ...nNode.configs["flat/recommended-module"].rules,
               "functional/no-conditional-statements": 0,
@@ -4814,6 +4933,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "NextJS",
             rules: {
               ...nextjs.configs.recommended.rules,
 
@@ -4837,6 +4957,7 @@ const configGen = ({
       : [
           {
             files: [...jsTestFiles, ...tsTestFiles],
+            name: "Testing Library",
             rules: {
               ...testingLibrary.configs.react.rules,
               "functional/functional-parameters": 0,
@@ -4865,6 +4986,7 @@ const configGen = ({
       : [
           {
             files: jsFiles,
+            name: "AirBnb Base/best-practices",
             rules: {
               "accessor-pairs": 0,
               "array-callback-return": [2, { allowImplicit: true }],
@@ -5086,6 +5208,7 @@ const configGen = ({
       : [
           {
             files: jsFiles,
+            name: "AirBnb Base/errors",
             rules: {
               "for-direction": 2,
               "getter-return": [2, { allowImplicit: true }],
@@ -5175,6 +5298,7 @@ const configGen = ({
           {
             files: jsFiles,
             ignores: [...jsTestFiles, ...tsTestFiles],
+            name: "AirBnb Base/es6",
             rules: {
               "@stylistic/arrow-parens": 0,
               "arrow-body-style": [
@@ -5302,6 +5426,7 @@ const configGen = ({
       : [
           {
             files: jsFiles,
+            name: "AirBnb Base/imports",
             rules: {
               "import/consistent-type-specifier-style": [0, "prefer-inline"],
               "import/default": 0,
@@ -5445,6 +5570,7 @@ const configGen = ({
       : [
           {
             files: jsFiles,
+            name: "AirBnb Base/node",
             rules: {
               "callback-return": 0,
               "global-require": 2,
@@ -5478,6 +5604,7 @@ const configGen = ({
       : [
           {
             files: jsFiles,
+            name: "AirBnb Base/strict",
             rules: {
               strict: [2, "never"],
 
@@ -5501,6 +5628,7 @@ const configGen = ({
       : [
           {
             files: jsFiles,
+            name: "AirBnb Base/style",
             rules: {
               "@stylistic/quote-props": 0,
               "@stylistic/semi": 0,
@@ -5920,6 +6048,7 @@ const configGen = ({
       : [
           {
             files: jsFiles,
+            name: "AirBnb Base/variables",
             rules: {
               "init-declarations": 0,
               "no-catch-shadow": 0,
@@ -6051,6 +6180,7 @@ const configGen = ({
                 xtest: false,
               },
             },
+            name: "Jest",
             rules: {
               ...jest.configs["flat/recommended"].rules,
               "functional/functional-parameters": 0,
@@ -6078,6 +6208,7 @@ const configGen = ({
       : [
           {
             files: [...jsxFiles, ...tsxFiles],
+            name: "JSX Accessibility (JSX A11y)",
             rules: {
               ...jsxA11y.configs.recommended.rules,
 
@@ -6101,6 +6232,7 @@ const configGen = ({
       : [
           {
             files: jsonFiles,
+            name: "Prettier/json",
             rules: {
               "jsonc/sort-keys": 0,
               "prettier/prettier": 2,
@@ -6123,6 +6255,7 @@ const configGen = ({
       : [
           {
             files: mdFiles,
+            name: "Prettier/md",
             rules: {
               "@stylistic/quotes": 0,
               "@stylistic/semi": 0,
@@ -6148,6 +6281,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "Prettier/plugin",
             rules: {
               "@stylistic/arrow-parens": 0,
               "@stylistic/brace-style": 0,
@@ -6193,6 +6327,7 @@ const configGen = ({
       : [
           {
             files: ymlFiles,
+            name: "Prettier/yml",
             rules: {
               "prettier/prettier": 2,
               "yml/flow-mapping-curly-spacing": 0,
@@ -6215,6 +6350,7 @@ const configGen = ({
       : [
           {
             files: [...jsxFiles, ...tsxFiles],
+            name: "React Hooks",
             rules: {
               ...reactHooks.configs.recommended.rules,
               "functional/functional-parameters": 0,
@@ -6249,6 +6385,7 @@ const configGen = ({
                 },
               },
             },
+            name: "React",
             rules: {
               ...react.configs.recommended.rules,
               "functional/functional-parameters": 0,
@@ -6282,6 +6419,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "Prettier",
             rules: {
               ...prettierConfig.rules,
               "@next/next/no-html-link-for-pages": 0,
@@ -6306,6 +6444,7 @@ const configGen = ({
       : [
           {
             files: jsFiles,
+            name: "ESLint",
             rules: {
               ...eslint.configs.recommended.rules,
               "@next/next/no-html-link-for-pages": 0,
@@ -6328,6 +6467,7 @@ const configGen = ({
       : [
           {
             files: tsFiles,
+            name: "Import/ts",
             rules: {
               ...importPlugin.configs.typescript.rules,
 
@@ -6355,6 +6495,7 @@ const configGen = ({
       : [
           {
             files,
+            name: "Import",
             rules: {
               ...importPlugin.configs.recommended.rules,
               "n/no-missing-import": 0,
@@ -6427,6 +6568,7 @@ const configGen = ({
       : [
           {
             files: tsFiles,
+            name: "TypeScript",
             rules: {
               ...tseslint.configs.recommendedTypeChecked[1].rules,
               ...tseslint.configs.recommendedTypeChecked[2].rules,
@@ -6468,6 +6610,7 @@ const configGen = ({
                 },
               },
             },
+            name: "MDX/code-blocks",
             rules: {
               // MDX "recommended" is composed of Overrides, Base, and CodeBlocks but with unneeded conditional logic
               // CodeBlocks:
@@ -6498,6 +6641,7 @@ const configGen = ({
                 },
               },
             },
+            name: "Markdown",
             rules: {
               ...markdown.configs.recommended[2].rules,
               "unused-imports/no-unused-vars": 0,

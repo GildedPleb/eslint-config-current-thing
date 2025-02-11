@@ -1,5 +1,5 @@
 // PathMark: ./src/conflicts/plugins.js
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable simple-import-sort/imports */
 
 /*
@@ -28,17 +28,15 @@ import command from "eslint-plugin-command";
 // @ts-ignore yes, we need to ignore every import for this to run
 import comments from "@eslint-community/eslint-plugin-eslint-comments";
 // @ts-ignore yes, we need to ignore every import for this to run
-import commentsOld from "eslint-plugin-eslint-comments";
-// @ts-ignore yes, we need to ignore every import for this to run
 import compat from "eslint-plugin-compat";
 // @ts-ignore yes, we need to ignore every import for this to run
 import cssModules from "eslint-plugin-css-modules";
 // @ts-ignore yes, we need to ignore every import for this to run
 import cypress from "eslint-plugin-cypress";
 // @ts-ignore yes, we need to ignore every import for this to run
-import esX from "eslint-plugin-es-x";
+import depend from "eslint-plugin-depend";
 // @ts-ignore yes, we need to ignore every import for this to run
-import es from "eslint-plugin-es";
+import esX from "eslint-plugin-es-x";
 // @ts-ignore yes, we need to ignore every import for this to run
 import formatJs from "eslint-plugin-formatjs";
 // @ts-ignore yes, we need to ignore every import for this to run
@@ -81,8 +79,6 @@ import mocha from "eslint-plugin-mocha";
 import nextjs from "@next/eslint-plugin-next";
 // @ts-ignore yes, we need to ignore every import for this to run
 import nNode from "eslint-plugin-n";
-// @ts-ignore yes, we need to ignore every import for this to run
-import node from "eslint-plugin-node";
 // @ts-ignore yes, we need to ignore every import for this to run
 import noOnlyTest from "eslint-plugin-no-only-tests";
 // @ts-ignore yes, we need to ignore every import for this to run
@@ -191,7 +187,6 @@ const allRules = linter.getRules();
 
 const plugins = {
   "@babel": babelPlugin,
-  "@eslint-community/eslint-comments": comments,
   "@graphql-eslint": { rules: graphQLRules },
   "@microsoft/sdl": msdl,
   "@next/next": nextjs,
@@ -207,9 +202,9 @@ const plugins = {
   compat,
   "css-modules": cssModules,
   cypress,
-  es,
+  depend,
   "es-x": esX,
-  "eslint-comments": commentsOld,
+  "eslint-comments": comments,
   formatjs: formatJs,
   functional,
   header,
@@ -232,7 +227,6 @@ const plugins = {
   "no-relative-import-paths": noRelativeImport,
   "no-unsanitized": unsanitized,
   "no-use-extend-native": noUseExtendNative,
-  node,
   perfectionist,
   playwright,
   "prefer-arrow": preferArrow,

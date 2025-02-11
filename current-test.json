@@ -66,6 +66,12 @@
     "ava/use-test": [2],
     "ava/use-true-false": [2],
     "no-use-extend-native/no-use-extend-native": [2],
+    "depend/ban-dependencies": [
+      2,
+      {
+        "allowed": ["eslint-plugin-import", "eslint-plugin-react"]
+      }
+    ],
     "accessor-pairs": [
       0,
       {
@@ -2170,11 +2176,7 @@
     "playwright/valid-expect-in-promise": [2],
     "playwright/valid-title": [2],
     "turbo/no-undeclared-env-vars": [0],
-    "@eslint-community/eslint-comments/disable-enable-pair": [2],
-    "@eslint-community/eslint-comments/no-aggregating-enable": [2],
-    "@eslint-community/eslint-comments/no-duplicate-disable": [2],
-    "@eslint-community/eslint-comments/no-unlimited-disable": [2],
-    "@eslint-community/eslint-comments/no-unused-enable": [2],
+    "eslint-comments/disable-enable-pair": [2],
     "jsdoc/check-examples": [0],
     "jsdoc/check-indentation": [0],
     "jsdoc/check-line-alignment": [0],
@@ -3319,7 +3321,6 @@
   "plugins": [
     "@",
     "@babel:@babel/eslint-plugin@7.25.9",
-    "@eslint-community/eslint-comments",
     "@graphql-eslint",
     "@microsoft/sdl:@microsoft/eslint-plugin-sdl@1.0.1",
     "@next/next",
@@ -3335,7 +3336,7 @@
     "compat:eslint-plugin-compat@6.0.2",
     "css-modules",
     "cypress",
-    "es",
+    "depend",
     "es-x:eslint-plugin-es-x@8.4.1",
     "eslint-comments",
     "formatjs:eslint-plugin-formatjs@5.2.14",
@@ -3360,7 +3361,6 @@
     "no-relative-import-paths",
     "no-unsanitized:eslint-plugin-no-unsanitized@4.1.2",
     "no-use-extend-native:eslint-plugin-no-use-extend-native@0.7.2",
-    "node",
     "perfectionist:perfectionist",
     "playwright",
     "prefer-arrow",

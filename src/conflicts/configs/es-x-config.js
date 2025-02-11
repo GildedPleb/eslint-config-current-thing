@@ -1,5 +1,5 @@
 // PathMark: ./src/conflicts/configs/es-x-config.js
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 
 /* eslint-disable no-unused-vars */
@@ -15,7 +15,6 @@ import {
 } from "@graphql-eslint/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
-import es from "eslint-plugin-es";
 import esX from "eslint-plugin-es-x";
 import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
@@ -210,7 +209,6 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        es,
         "es-x": esX,
       },
     },
@@ -220,7 +218,7 @@ const configGen = ({
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: es, es-x
+      Requires: es-x
     */
     ...(disable.includes("eslint-plugin-es-x") ||
     disable.includes("eslint-plugin-es") ||

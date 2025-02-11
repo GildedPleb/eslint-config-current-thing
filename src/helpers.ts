@@ -1,4 +1,3 @@
-// eslint-disable-next-line @eslint-community/eslint-comments/disable-enable-pair -- needed
 /* eslint-disable import/no-extraneous-dependencies -- needed for not prod */
 // PathMark: ./src/helpers.ts
 

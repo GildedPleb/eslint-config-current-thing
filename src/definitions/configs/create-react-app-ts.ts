@@ -17,7 +17,7 @@ export default {
         ecmaFeatures: {
           jsx: true,
         },
-        "warnOnUnsupportedTypeScriptVersion": false,
+        warnOnUnsupportedTypeScriptVersion: false,
       },
     },
     ${RULES}

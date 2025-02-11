@@ -1,4 +1,3 @@
-// eslint-disable-next-line @eslint-community/eslint-comments/disable-enable-pair -- needed
 /* eslint-disable no-console -- needed for UI */
 // PathMark: ./src/definitions/index.ts
 

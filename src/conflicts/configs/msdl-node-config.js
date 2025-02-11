@@ -1,5 +1,5 @@
 // PathMark: ./src/conflicts/configs/msdl-node-config.js
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 
 /* eslint-disable no-unused-vars */
@@ -18,7 +18,7 @@ import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
 import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
-import node from "eslint-plugin-node";
+import nNode from "eslint-plugin-n";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
@@ -211,7 +211,7 @@ const configGen = ({
     {
       plugins: {
         "@microsoft/sdl": msdl,
-        node,
+        n: nNode,
       },
     },
 
@@ -220,7 +220,7 @@ const configGen = ({
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: node, @microsoft/sdl
+      Requires: n, @microsoft/sdl
     */
     ...(disable.includes("@microsoft/eslint-plugin-sdl-node") ||
     threshold > 1_000_000

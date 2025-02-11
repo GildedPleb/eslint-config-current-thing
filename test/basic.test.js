@@ -1,4 +1,4 @@
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable eslint-comments/disable-enable-pair */
 // PathMark: ./test/basic.test.js
 /**
  * @param {number} first - numberator

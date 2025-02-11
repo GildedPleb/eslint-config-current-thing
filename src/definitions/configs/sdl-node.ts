@@ -19,7 +19,7 @@ export default {
       requiresImport: false,
     },
   ],
-  requiredPlugins: ["node", "@microsoft/sdl"],
+  requiredPlugins: ["n", "@microsoft/sdl"],
   rules: `// "Recommended" is just a smattering of everything
     ...msdl.configs.node.rules,`,
 } satisfies Config;

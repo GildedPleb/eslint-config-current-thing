@@ -1,4 +1,3 @@
-// eslint-disable-next-line @eslint-community/eslint-comments/disable-enable-pair -- needed
 /* eslint-disable no-console -- this is fine for UI */
 // PathMark: ./src/conflicts/get-fixables.ts
 
@@ -27,7 +26,7 @@ export interface PopulatedConfig extends Config {
 const packagesSet = new Set<string>();
 
 const generateCode = `// PathMark: ./src/conflicts/plugins.js
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable simple-import-sort/imports */
 /* eslint-disable id-length */
 

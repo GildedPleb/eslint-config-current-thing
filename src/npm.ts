@@ -1,4 +1,3 @@
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair -- need it */
 /* eslint-disable no-console -- needed for UI */
 /* eslint-disable import/no-extraneous-dependencies -- needed for not prod */
 // PathMark: ./src/npm.ts

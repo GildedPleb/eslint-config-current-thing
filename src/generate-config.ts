@@ -23,7 +23,7 @@ const sortedConfigs = configs.toSorted(
 );
 
 const generateCode = `// PathMark: ./src/config.js
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable sonarjs/no-duplicate-string */
 /* eslint-disable sonarjs/cognitive-complexity */
 /* eslint-disable id-length */
@@ -264,7 +264,8 @@ ${sortedConfigs.map(
     .join("\n")
     .replace(
       RULES,
-      `rules: {
+      `name: "${name}${second}",
+            rules: {
               ${incompatibleRules}
               ${parsedRules}
               ${overrides.map((rule) => `"${rule}": 0,`).join(`

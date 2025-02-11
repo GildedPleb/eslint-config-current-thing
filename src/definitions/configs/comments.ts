@@ -5,11 +5,9 @@ import type { Config } from ".";
 export default {
   definitions: `{
     files,
-    // CommentsOld (mysticatea/eslint-plugin-eslint-comments) intentionally
-    // left out: it has the most downloads, but is out of date / not maintained.
     ${RULES}
   }`,
-  ejected: false,
+  ejected: true,
   enabled: true,
   id: "comments",
   name: "Comments",
@@ -25,7 +23,11 @@ export default {
       requiresImport: false,
     },
   ],
-  requiredPlugins: ["eslint-comments", "@eslint-community/eslint-comments"],
-  rules: `...comments.configs.recommended.rules,`,
+  requiredPlugins: ["eslint-comments"],
+  rules: `"eslint-comments/disable-enable-pair": 2,
+    "eslint-comments/no-aggregating-enable": 2,
+    "eslint-comments/no-duplicate-disable": 2,
+    "eslint-comments/no-unlimited-disable": 2,
+    "eslint-comments/no-unused-enable": 2,`,
 } satisfies Config;
 // EOF

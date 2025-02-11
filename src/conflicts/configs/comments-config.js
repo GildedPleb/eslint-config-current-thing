@@ -1,5 +1,5 @@
 // PathMark: ./src/conflicts/configs/comments-config.js
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 
 /* eslint-disable no-unused-vars */
@@ -16,7 +16,6 @@ import {
 } from "@graphql-eslint/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
-import commentsOld from "eslint-plugin-eslint-comments";
 import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import * as espree from "espree";
@@ -210,8 +209,7 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        "@eslint-community/eslint-comments": comments,
-        "eslint-comments": commentsOld,
+        "eslint-comments": comments,
       },
     },
 
@@ -220,7 +218,7 @@ const configGen = ({
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: eslint-comments, @eslint-community/eslint-comments
+      Requires: eslint-comments
     */
     ...(disable.includes("@eslint-community/eslint-plugin-eslint-comments") ||
     disable.includes("eslint-plugin-eslint-comments") ||
@@ -229,10 +227,12 @@ const configGen = ({
       : [
           {
             files,
-            // CommentsOld (mysticatea/eslint-plugin-eslint-comments) intentionally
-            // left out: it has the most downloads, but is out of date / not maintained.
             rules: {
-              ...comments.configs.recommended.rules,
+              "eslint-comments/disable-enable-pair": 2,
+              "eslint-comments/no-aggregating-enable": 2,
+              "eslint-comments/no-duplicate-disable": 2,
+              "eslint-comments/no-unlimited-disable": 2,
+              "eslint-comments/no-unused-enable": 2,
               ...("@eslint-community/eslint-plugin-eslint-comments" in override
                 ? override["@eslint-community/eslint-plugin-eslint-comments"]
                 : {}),

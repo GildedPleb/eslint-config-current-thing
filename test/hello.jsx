@@ -1,4 +1,4 @@
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable eslint-comments/disable-enable-pair */
 
 // @ts-nocheck
 /* eslint-disable react/prop-types */

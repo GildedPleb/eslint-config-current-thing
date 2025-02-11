@@ -1,5 +1,5 @@
 // PathMark: ./src/generate-readme.ts
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair -- needed */
+
 /* eslint-disable es-x/no-import-attributes  -- needed */
 /* eslint-disable es-x/no-json-modules  -- needed */
 /* eslint-disable no-console -- needed for UI */

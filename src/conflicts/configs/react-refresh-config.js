@@ -1,5 +1,5 @@
 // PathMark: ./src/conflicts/configs/react-refresh-config.js
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 
 /* eslint-disable no-unused-vars */

@@ -17,8 +17,6 @@ export default {
         require: false,
       },
     },
-    // There are no recommended ways to use "node", as the "n" rule obsoletes
-    // it, and is no longer used even by shopify
     ${RULES}
   }`,
   ejected: false,
@@ -33,7 +31,7 @@ export default {
       requiresImport: false,
     },
   ],
-  requiredPlugins: ["node", "n"],
+  requiredPlugins: ["n"],
   rules: `...nNode.configs["flat/recommended-module"].rules,`,
 } satisfies Config;
 // EOF

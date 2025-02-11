@@ -12,13 +12,6 @@ export default {
       package: "eslint-plugin-es-x",
       requiresImport: true,
     },
-    {
-      declaredAs: "es",
-      mappedAs: "es",
-      namespace: "es",
-      package: "eslint-plugin-es",
-      requiresImport: true,
-    },
   ],
-} satisfies Plugin<"es" | "es-x">;
+} satisfies Plugin<"es-x">;
 // EOF

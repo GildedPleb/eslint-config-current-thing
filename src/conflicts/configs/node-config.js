@@ -1,5 +1,5 @@
 // PathMark: ./src/conflicts/configs/node-config.js
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 
 /* eslint-disable no-unused-vars */
@@ -18,7 +18,6 @@ import * as eslintMdx from "eslint-mdx";
 import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
 import nNode from "eslint-plugin-n";
-import node from "eslint-plugin-node";
 import * as espree from "espree";
 import globals from "globals";
 import jsoncEslintParser from "jsonc-eslint-parser";
@@ -211,7 +210,6 @@ const configGen = ({
     {
       plugins: {
         n: nNode,
-        node,
       },
     },
 
@@ -220,7 +218,7 @@ const configGen = ({
       1,000,000 monthly downloads
       Purply for generating conflicts
       www.nope.com
-      Requires: node, n
+      Requires: n
     */
     ...(disable.includes("eslint-plugin-n") ||
     disable.includes("eslint-plugin-node") ||
@@ -238,8 +236,6 @@ const configGen = ({
                 require: false,
               },
             },
-            // There are no recommended ways to use "node", as the "n" rule obsoletes
-            // it, and is no longer used even by shopify
             rules: {
               ...nNode.configs["flat/recommended-module"].rules,
               ...("eslint-plugin-n" in override

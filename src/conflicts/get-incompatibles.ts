@@ -1,4 +1,3 @@
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair -- needed */
 /* eslint-disable sonarjs/no-labels -- makes it more clear */
 /* eslint-disable no-labels -- makes it more clear */
 /* eslint-disable security/detect-object-injection -- we own the data */

@@ -1,5 +1,5 @@
 // PathMark: ./src/conflicts/configs/rn-config.js
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 
 /* eslint-disable no-unused-vars */
@@ -9,13 +9,13 @@
   This file is fully generated, to edit it change ./generate-conflicts.ts
 */
 
+import comments from "@eslint-community/eslint-plugin-eslint-comments";
 import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
 } from "@graphql-eslint/eslint-plugin";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
-import commentsOld from "eslint-plugin-eslint-comments";
 import jest from "eslint-plugin-jest";
 import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
@@ -213,7 +213,7 @@ const configGen = ({
     /* PLUGINS */
     {
       plugins: {
-        "eslint-comments": commentsOld,
+        "eslint-comments": comments,
         jest,
         react,
         "react-hooks": reactHooks,

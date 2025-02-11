@@ -12,13 +12,6 @@ export default {
       package: "eslint-plugin-n",
       requiresImport: true,
     },
-    {
-      declaredAs: "node",
-      mappedAs: "node",
-      namespace: "node",
-      package: "eslint-plugin-node",
-      requiresImport: true,
-    },
   ],
-} satisfies Plugin<"n" | "node">;
+} satisfies Plugin<"n">;
 // EOF

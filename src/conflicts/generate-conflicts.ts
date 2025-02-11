@@ -1,4 +1,3 @@
-// eslint-disable-next-line @eslint-community/eslint-comments/disable-enable-pair -- needed
 /* eslint-disable no-console -- this is needed for UI */
 // PathMark: ./src/conflicts/generate-conflicts.ts
 
@@ -65,7 +64,7 @@ for (const configContext of configs) {
   const relative = `./configs/${configContext.id}${second}-config.js`;
 
   const generateCode = `// PathMark: ./src/conflicts/${relative.slice(2)}
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */

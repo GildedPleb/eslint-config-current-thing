@@ -117,6 +117,12 @@
     "react-perf/jsx-no-new-object-as-prop": [2],
     "react-perf/jsx-no-new-array-as-prop": [2],
     "react-perf/jsx-no-new-function-as-prop": [2],
+    "depend/ban-dependencies": [
+      2,
+      {
+        "allowed": ["eslint-plugin-import", "eslint-plugin-react"]
+      }
+    ],
     "accessor-pairs": [
       2,
       {
@@ -512,10 +518,10 @@
         "onlyEquality": false
       }
     ],
-    "eslint-comments/no-aggregating-enable": [1],
+    "eslint-comments/no-aggregating-enable": [2],
     "eslint-comments/no-duplicate-disable": [2],
-    "eslint-comments/no-unlimited-disable": [1],
-    "eslint-comments/no-unused-enable": [1],
+    "eslint-comments/no-unlimited-disable": [2],
+    "eslint-comments/no-unused-enable": [2],
     "n/handle-callback-err": [2, "^(err|error)$"],
     "n/no-deprecated-api": [2],
     "n/no-exports-assign": [2],
@@ -2558,11 +2564,6 @@
     "no-return-await": [0],
     "require-await": [0],
     "space-before-blocks": [0],
-    "@eslint-community/eslint-comments/disable-enable-pair": [2],
-    "@eslint-community/eslint-comments/no-aggregating-enable": [2],
-    "@eslint-community/eslint-comments/no-duplicate-disable": [2],
-    "@eslint-community/eslint-comments/no-unlimited-disable": [2],
-    "@eslint-community/eslint-comments/no-unused-enable": [2],
     "unicorn/no-nested-ternary": [0],
     "jsdoc/check-examples": [0],
     "jsdoc/check-indentation": [0],
@@ -3306,7 +3307,6 @@
   "plugins": [
     "@",
     "@babel:@babel/eslint-plugin@7.25.9",
-    "@eslint-community/eslint-comments",
     "@graphql-eslint",
     "@microsoft/sdl:@microsoft/eslint-plugin-sdl@1.0.1",
     "@next/next",
@@ -3322,7 +3322,7 @@
     "compat:eslint-plugin-compat@6.0.2",
     "css-modules",
     "cypress",
-    "es",
+    "depend",
     "es-x:eslint-plugin-es-x@8.4.1",
     "eslint-comments",
     "formatjs:eslint-plugin-formatjs@5.2.14",
@@ -3347,7 +3347,6 @@
     "no-relative-import-paths",
     "no-unsanitized:eslint-plugin-no-unsanitized@4.1.2",
     "no-use-extend-native:eslint-plugin-no-use-extend-native@0.7.2",
-    "node",
     "perfectionist:perfectionist",
     "playwright",
     "prefer-arrow",

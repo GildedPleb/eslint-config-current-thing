@@ -1,5 +1,5 @@
 // PathMark: ./src/conflicts/configs/standard-ts-config.js
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 
 /* eslint-disable no-unused-vars */
@@ -9,6 +9,7 @@
   This file is fully generated, to edit it change ./generate-conflicts.ts
 */
 
+import comments from "@eslint-community/eslint-plugin-eslint-comments";
 import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
@@ -16,7 +17,6 @@ import {
 import standardTS from "eslint-config-love";
 import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
-import commentsOld from "eslint-plugin-eslint-comments";
 import importPlugin from "eslint-plugin-import";
 import markdown from "eslint-plugin-markdown";
 import * as mdx from "eslint-plugin-mdx";
@@ -214,7 +214,7 @@ const configGen = ({
     {
       plugins: {
         "@typescript-eslint": tseslint.plugin,
-        "eslint-comments": commentsOld,
+        "eslint-comments": comments,
         import: importPlugin,
         n: nNode,
         promise,

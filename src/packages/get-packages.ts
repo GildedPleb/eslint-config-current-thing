@@ -1,5 +1,5 @@
 // PathMark: ./src/packages/get-packages.ts
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair -- wild */
+
 /* eslint-disable import/no-extraneous-dependencies -- not for prod */
 /* eslint-disable no-console -- needed for UI */
 

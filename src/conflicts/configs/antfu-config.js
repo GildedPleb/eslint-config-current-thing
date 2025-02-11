@@ -1,5 +1,5 @@
 // PathMark: ./src/conflicts/configs/antfu-config.js
-/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable unused-imports/no-unused-vars */
 
 /* eslint-disable no-unused-vars */
@@ -10,6 +10,7 @@
 */
 
 import antfuConfig from "@antfu/eslint-config";
+import comments from "@eslint-community/eslint-plugin-eslint-comments";
 import {
   parseForESLint as graphQLparseForESLint,
   processors as graphqlProcessors,
@@ -20,7 +21,6 @@ import { defineFlatConfig } from "eslint-define-config";
 import * as eslintMdx from "eslint-mdx";
 import antfu from "eslint-plugin-antfu";
 import command from "eslint-plugin-command";
-import commentsOld from "eslint-plugin-eslint-comments";
 import importX from "eslint-plugin-import-x";
 import jsdoc from "eslint-plugin-jsdoc";
 import jsonc from "eslint-plugin-jsonc";
@@ -254,7 +254,7 @@ const configGen = ({
         "@typescript-eslint": tseslint.plugin,
         antfu,
         command,
-        "eslint-comments": commentsOld,
+        "eslint-comments": comments,
         "import-x": importX,
         jsdoc,
         jsonc,
